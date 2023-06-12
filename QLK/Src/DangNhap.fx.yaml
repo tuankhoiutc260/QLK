@@ -179,12 +179,10 @@ DangNhap As screen:
                 )
             );
             
-            
-            
             Set(maxQuantity, Max(col_TopProductImport, TotalQuantity));
-            Set(width_contRight, 300);
-            Set(width_contRight_Right, 0);
-            Set(pos_contRight, 1066);
+            //Set(width_contRight, 300);
+            //Set(width_contRight_Right, 0);
+            //Set(pos_contRight, 1066);
             Set(back_Black_HomeAdmin, false);
             
             
