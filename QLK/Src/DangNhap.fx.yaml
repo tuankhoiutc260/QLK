@@ -1,0 +1,197 @@
+DangNhap As screen:
+    Fill: =RGBA(232, 244, 217, 1)
+
+    Image1 As image:
+        Height: =675
+        Image: =xe
+        Width: =754
+        X: =601
+        Y: =46
+        ZIndex: =1
+
+    Rectangle1 As rectangle:
+        Fill: =RGBA(76, 133, 45, 0.77)
+        Height: =768
+        Width: =587
+        ZIndex: =2
+
+    Nen As button:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        BorderThickness: =0
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderColor: =
+        Height: =348
+        HoverBorderColor: =
+        HoverColor: =
+        HoverFill: =
+        PaddingBottom: =50
+        PressedFill: =
+        RadiusBottomLeft: =30
+        RadiusBottomRight: =30
+        RadiusTopLeft: |
+            =30
+        RadiusTopRight: =30
+        Size: =24
+        Text: =""
+        Width: =416
+        X: =85
+        Y: =244
+        ZIndex: =3
+
+    Label1 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Semibold
+        Height: =81
+        Size: =60
+        Text: ="LOGIN"
+        Width: =245
+        X: =174
+        Y: =139
+        ZIndex: =4
+
+    Image2 As image:
+        Image: =Logo
+        Width: =257
+        X: =601
+        Y: =16
+        ZIndex: =5
+
+    txt_Email_Login As text:
+        BorderColor: =RGBA(99, 139, 44, 1)
+        BorderThickness: =1
+        Color: =RGBA(202, 202, 202, 1)
+        Default: =""
+        Fill: =RGBA(241, 244, 249, 1)
+        Font: =Font.'Segoe UI'
+        Height: =57
+        HintText: ="Gmail"
+        HoverBorderColor: =RGBA(99, 139, 44, 1)
+        HoverFill: =RGBA(209, 232, 178, 1)
+        PressedBorderColor: =RGBA(99, 139, 44, 1)
+        Size: =15
+        Width: =346
+        X: =124
+        Y: =286
+        ZIndex: =6
+
+    txt_Password_Login As text:
+        BorderColor: =RGBA(99, 139, 44, 1)
+        BorderThickness: =1
+        Color: =RGBA(202, 202, 202, 1)
+        Default: =""
+        Fill: =RGBA(241, 244, 249, 1)
+        Font: =Font.'Segoe UI'
+        Height: =57
+        HintText: ="Password"
+        HoverBorderColor: =RGBA(99, 139, 44, 1)
+        HoverFill: =RGBA(209, 232, 178, 1)
+        Mode: =If(showPassword = false, TextMode.Password, TextMode.SingleLine)
+        PressedBorderColor: =RGBA(99, 139, 44, 1)
+        Size: =15
+        Width: =346
+        X: =124
+        Y: =364
+        ZIndex: =7
+
+    Icon1 As icon.Person:
+        Color: =RGBA(99, 139, 44, 1)
+        Height: =48
+        Icon: =Icon.Person
+        Width: =36
+        X: =428
+        Y: =286
+        ZIndex: =8
+
+    btn_ShowPassword As icon.View:
+        Color: =RGBA(99, 139, 44, 1)
+        Height: =29
+        Icon: =Icon.View
+        OnSelect: =If(showPassword = false, Set(showPassword, true), Set(showPassword, false));
+        Width: =30
+        X: =428
+        Y: =378
+        ZIndex: =9
+
+    btn_DangNhap As button:
+        Fill: =RGBA(127, 178, 57, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =63
+        HoverFill: =RGBA(99, 139, 44, 1)
+        OnSelect: |+
+            =If(!IsBlank(LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text)), 
+                If(LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, ' Permission').Value = "Stocker",
+                    Navigate(SoDoKho);
+                    Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
+                    Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Permission')),
+                    If(LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, ' Permission').Value = "Manager",
+                        Navigate(TrangchuGD);
+                        Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
+                        Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Permission')),
+                        If(LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, ' Permission').Value = "WarehouseStaff",
+                            Navigate(NhapHang_3);
+                            Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
+                            Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Permission')),
+                            If(LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, ' Permission').Value = "Stocker",
+                                
+                                Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
+                                Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Permission'))                   
+                            )
+                        )
+                    )
+                ),
+                Notify("Username or password is wrong!")
+            );
+            
+            
+            ClearCollect(col_ProductImport, 
+                ShowColumns(
+                    Filter(
+                        QLK_OrderFormInformation, 
+                        IDOrderForm in ShowColumns(
+                            Filter(
+                                QLK_OrderForm, Status = 4
+                            ), "IDOrder"
+                        )
+                    ),
+                    "IDProduct_Supplier", "Quantity"
+                )
+            );
+            
+            ClearCollect(col_SumQuantityProductImport, GroupBy(col_ProductImport, "IDProduct_Supplier","GroupedItems"));
+            
+            ClearCollect(col_Temp, ShowColumns(Filter(QLK_Product_Supplier, IDProduct_Supplier in ShowColumns(col_SumQuantityProductImport, "IDProduct_Supplier")), "IDProduct_Supplier", "Image_Pro_x002d_Supplier"));
+            
+            ClearCollect(
+                col_TopProductImport, 
+                SortByColumns(
+                    AddColumns(
+                        col_SumQuantityProductImport, 
+                        "TotalQuantity", 
+                        Sum(GroupedItems, Quantity), 
+                    "Image",
+                    LookUp(col_Temp, IDProduct_Supplier = col_SumQuantityProductImport[@IDProduct_Supplier], Image_Pro_x002d_Supplier)  
+                    ), "TotalQuantity"
+                )
+            );
+            
+            
+            
+            Set(maxQuantity, Max(col_TopProductImport, TotalQuantity));
+            Set(width_contRight, 300);
+            Set(width_contRight_Right, 0);
+            Set(pos_contRight, 1066);
+            Set(back_Black_HomeAdmin, false);
+            
+            
+            
+        Size: =25
+        Text: ="Login"
+        Width: =182
+        X: =206
+        Y: =468
+        ZIndex: =10
+

@@ -1,0 +1,53 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =Set(showDialogueThemNCC, false);
+        Set(showThemNCCThanhCong, false);
+        Set(showDialogueSuaNCC, false);
+        Set(showDialogueXoaNCC, false);
+        Set(showDialogueXoaKH, false);
+        Set(ShowDialogueSuaKH, false);
+        Set(showXacNhanDatPhieu, true);
+        
+        Set(showInformationImportInvoiceForm, false);
+        Set(showOrderProductForm, false);
+        Set(visible_btnDeleteProduct_DetailOrder, false);
+        Set(showSuccess, false);
+        Set(showSuccess_DuyetDatHang, false);
+        Set(showgrp_DetailOrdered_DuyetDatHang, false);
+        Set(visible_btnUpdateOrder, false);
+        Set(showgrp_FilterStatus, false);
+        ClearCollect(col_OrderedList, QLK_OrderForm);
+        Set(showSearchProduct_DetailOrder, false);
+        Set(datasource_OrderedList, "pending");
+        Set(showbtn_Approve_DetailOrdered_DuyetDatHang, false);
+        Set(showThongTinHangHoa, false);
+        Set(showUpdateThongTinHangHoa, false);
+        Set(showXacNhatUpDateThongTinHangHoa, false);
+        Set(showXacNhanXoaThongTinHangHoa,false);
+        Set(showThongTinHangHoa_SoDo, false);
+        Set(showThongBaoKhongCoSanPham, false);
+        Set(showBtnImport_ImportProduct, true);
+        Set(showNotification_ImportPrroduct, false);
+        Set(showImportRequest, false);
+        Set(showYeuCauDatHang, false); 
+        Set(visible_RightHomeAdmin, true);
+        
+        //Tạo lịch
+        If(IsBlank(_userDomain),         
+        	//UpdateContext({_showLoading: true});         
+        	Set(_userDomain, Right(User().Email, Len(User().Email) - Find("@", User().Email)));         
+        	Set(_dateSelected, Today());         
+        	Set(_firstDayOfMonth, DateAdd(Today(), 1 - Day(Today()), TimeUnit.Days));         
+        	Set(_firstDayInView, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days));         
+        	Set(_lastDayOfMonth, DateAdd(DateAdd(_firstDayOfMonth, 1, TimeUnit.Months), -1, TimeUnit.Days))         
+        );     
+    StartScreen: =
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

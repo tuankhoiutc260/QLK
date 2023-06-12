@@ -1,0 +1,610 @@
+TrangchuGD_2 As screen:
+    Fill: =RGBA(237, 237, 237, 0.9)
+
+    Container8_1 As groupContainer.manualLayoutContainer:
+        Height: =768
+        Width: =1366
+        ZIndex: =1
+
+        shadow_ImportGoods_IMPI_14 As htmlViewer:
+            Height: =768
+            HtmlText: |-
+                ="<div style='margin:0px;width:" & shadow_ImportGoods_IMPI_14.Width & "px;height:" & shadow_ImportGoods_IMPI_14.Height - 11 & "px;
+                background: rgb(255,255,255);
+                background: radial-gradient(circle, rgba(255,255,255,1) 31%, rgba(238,238,238,1) 100%);
+                '></div>" 
+            Width: =1366
+            ZIndex: =1
+
+        Container3_1 As groupContainer.manualLayoutContainer:
+            Height: =768
+            Width: =264
+            ZIndex: =2
+
+            shadow_ImportGoods_IMPI_16 As htmlViewer:
+                Height: =768
+                HtmlText: |-
+                    ="<div style='
+                    margin: 10px;
+                    width:" & shadow_ImportGoods_IMPI_16.Width - 32 & "px;
+                    height:" & shadow_ImportGoods_IMPI_16.Height - 32 & "px;
+                    background-color:RGBA(255, 255, 255, 0.7);
+                    box-shadow:0 5px 10px 0px  #ccc; 
+                    border-radius:15px
+                    '></div>" 
+                Width: =254
+                ZIndex: =1
+
+            Image4_4 As image:
+                Height: =62
+                Image: =Logo
+                Width: =204
+                X: =25
+                Y: =31
+                ZIndex: =3
+
+            Image18_1 As image:
+                Height: =55
+                RadiusBottomLeft: =45
+                RadiusBottomRight: =45
+                RadiusTopLeft: =45
+                RadiusTopRight: =45
+                Width: =55
+                X: =99
+                Y: =105
+                ZIndex: =4
+
+            Label28_2 As label:
+                Align: =Align.Center
+                AutoHeight: =true
+                Color: =RGBA(149, 149, 149, 1)
+                Size: =11
+                Text: ="Welcome back"
+                Width: =132
+                X: =61
+                Y: =160
+                ZIndex: =5
+
+            Label28_3 As label:
+                Align: =Align.Center
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =32
+                Text: ="Name"
+                Width: =204
+                X: =25
+                Y: =188
+                ZIndex: =6
+
+            Button4_4 As button:
+                BorderColor: =RGBA(127, 235, 117, 1)
+                Fill: =RGBA(127, 235, 117, 1)
+                HoverBorderColor: =RGBA(127, 235, 117, 1)
+                HoverColor: =RGBA(21, 161, 60, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(127, 235, 117, 1)
+                Size: =12
+                Text: ="Home"
+                Width: =175
+                X: =39
+                Y: =269
+                ZIndex: =7
+
+            Button4_5 As button:
+                Color: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                HoverBorderColor: =RGBA(127, 235, 117, 1)
+                HoverColor: =RGBA(21, 161, 60, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(127, 235, 117, 1)
+                Size: =12
+                Text: ="Import"
+                Width: =175
+                X: =39
+                Y: =324
+                ZIndex: =8
+
+            Button4_6 As button:
+                Color: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                HoverBorderColor: =RGBA(127, 235, 117, 1)
+                HoverColor: =RGBA(21, 161, 60, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(127, 235, 117, 1)
+                Size: =12
+                Text: ="Export"
+                Width: =175
+                X: =39
+                Y: =379
+                ZIndex: =9
+
+            Button4_7 As button:
+                BorderColor: =RGBA(127, 235, 117, 1)
+                BorderThickness: =1
+                Color: =RGBA(38, 240, 95, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Bold
+                HoverBorderColor: =RGBA(127, 235, 117, 1)
+                HoverFill: =RGBA(127, 235, 117, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(127, 235, 117, 1)
+                Size: =12
+                Text: ="Log Out"
+                Width: =175
+                X: =39
+                Y: =696
+                ZIndex: =10
+
+        Container4_1 As groupContainer.manualLayoutContainer:
+            Height: =768
+            Width: =1098
+            X: =264
+            ZIndex: =3
+
+            Label23_1 As label:
+                FontWeight: =FontWeight.Semibold
+                Text: ="Order"
+                Y: =17
+                ZIndex: =2
+
+            "gal_InformationProduct_cIP_IP2_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                DelayItemLoading: =true
+                Height: =306
+                Items: |-
+                    =If(
+                        datasource_OrderedList = "pending",    
+                        Filter(QLK_OrderForm, Status = 1),
+                        If(
+                            datasource_OrderedList = "approved",
+                            Filter(QLK_OrderForm, Status = 2),
+                            If(
+                                datasource_OrderedList = "refused",
+                                Filter(QLK_OrderForm, Status = 3),
+                                If(
+                                    datasource_OrderedList = "completed",
+                                    Filter(QLK_OrderForm, Status = 4)
+                                )          
+                            )            
+                        )
+                    )
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                ShowScrollbar: =false
+                TemplatePadding: =0
+                TemplateSize: =93
+                Width: =1047
+                Y: =166
+                ZIndex: =3
+
+                shadow_ImportGoods_IMPI_18 As htmlViewer:
+                    Height: =93
+                    HtmlText: |-
+                        ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_18.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_18.Height - 32 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 5px 10px 0px  #ccc; border-radius:15px'></div>" 
+                    Visible: =If(ThisItem.IsSelected, true, false)
+                    Width: =800
+                    ZIndex: =1
+
+                img_Product_cIP_IP2_2 As image:
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Height: =52
+                    Image: =Logo
+                    RadiusBottomLeft: =15
+                    RadiusBottomRight: =15
+                    RadiusTopLeft: =15
+                    RadiusTopRight: =15
+                    Width: =52
+                    X: =29
+                    Y: =28
+                    ZIndex: =2
+
+                Label25_1 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    OnSelect: =Select(Parent)
+                    Text: =ThisItem.IDOrder
+                    Width: =250
+                    X: =111
+                    Y: =22
+                    ZIndex: =3
+
+                Label26_1 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Lighter
+                    OnSelect: =Select(Parent)
+                    Size: =10
+                    Text: =ThisItem.Created
+                    Width: =250
+                    X: =111
+                    Y: =47
+                    ZIndex: =4
+
+                Label27_3 As label:
+                    Align: =Align.Center
+                    OnSelect: =Select(Parent)
+                    Size: =11
+                    Text: |-
+                        =Text(ThisItem.TotalPrice, "#,###")
+                    X: =620
+                    Y: =34
+                    ZIndex: =5
+
+                Label27_2 As label:
+                    Align: =Align.Center
+                    OnSelect: =Select(Parent)
+                    Size: =11
+                    Text: =CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = ThisItem.IDOrder)) & " Products"
+                    X: =448
+                    Y: =34
+                    ZIndex: =6
+
+                Button9_1 As button:
+                    BorderStyle: =BorderStyle.None
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =77
+                    HoverFill: =
+                    OnSelect: |-
+                        =Set(width_contRight, 700);
+                        Set(width_contRight_Right, 400);
+                        Set(pos_contRight, 666);
+                        Set(back_Black_HomeAdmin, true);
+                    RadiusBottomLeft: =15
+                    RadiusBottomRight: =15
+                    RadiusTopLeft: =15
+                    RadiusTopRight: =15
+                    Text: =""
+                    Width: =765
+                    X: =17
+                    Y: =16
+                    ZIndex: =7
+
+            Label24_5 As label:
+                Align: =Align.Center
+                Size: =10
+                Text: =Last(FirstN(col_TopProductImport, 5)).TotalQuantity
+                Width: =50
+                X: =116
+                Y: =668
+                ZIndex: =4
+
+            Label24_6 As label:
+                Align: =Align.Center
+                Size: =10
+                Text: =Last(FirstN(col_TopProductImport, 4)).TotalQuantity
+                Width: =50
+                X: =181
+                Y: =668
+                ZIndex: =5
+
+            Label24_7 As label:
+                Align: =Align.Center
+                Size: =10
+                Text: =Last(FirstN(col_TopProductImport, 2)).TotalQuantity
+                Width: =50
+                X: =311
+                Y: =668
+                ZIndex: =6
+
+            Label24_8 As label:
+                Align: =Align.Center
+                Size: =10
+                Text: =Last(FirstN(col_TopProductImport, 3)).TotalQuantity
+                Width: =50
+                X: =246
+                Y: =668
+                ZIndex: =7
+
+            Label24_9 As label:
+                Align: =Align.Center
+                Size: =10
+                Text: =Last(FirstN(col_TopProductImport, 1)).TotalQuantity
+                Width: =50
+                X: =376
+                Y: =668
+                ZIndex: =8
+
+            Separator1_20 As rectangle:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(219, 219, 219, 1)
+                Height: =1
+                OnSelect: =
+                Width: =340
+                X: =104
+                Y: =465
+                ZIndex: =9
+
+            Separator1_21 As rectangle:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(219, 219, 219, 1)
+                Height: =1
+                OnSelect: =
+                Width: =340
+                X: =104
+                Y: =505
+                ZIndex: =10
+
+            Separator1_22 As rectangle:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(219, 219, 219, 1)
+                Height: =1
+                OnSelect: =
+                Width: =340
+                X: =104
+                Y: =545
+                ZIndex: =11
+
+            Separator1_23 As rectangle:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(219, 219, 219, 1)
+                Height: =1
+                OnSelect: =
+                Width: =340
+                X: =104
+                Y: =585
+                ZIndex: =12
+
+            Separator1_24 As rectangle:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(219, 219, 219, 1)
+                Height: =1
+                OnSelect: =
+                Width: =340
+                X: =104
+                Y: =625
+                ZIndex: =13
+
+            Separator1_25 As rectangle:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(219, 219, 219, 1)
+                Height: =1
+                OnSelect: =
+                Width: =340
+                X: =104
+                Y: =665
+                ZIndex: =14
+
+            shadow_ImportGoods_IMPI_17 As htmlViewer:
+                Height: =303
+                HtmlText: |-
+                    ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_17.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_17.Height - 32 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 5px 10px 0px  #ccc; border-radius:15px'></div>" 
+                Width: =415
+                X: =64
+                Y: =424
+                ZIndex: =15
+
+            shadow_ProductSelected_ciFP_20 As htmlViewer:
+                Height: =200 * (Last(FirstN(col_TopProductImport, 5)).TotalQuantity / maxQuantity) + 32
+                HtmlText: |+
+                    ="<div style='margin:10px;
+                    background: rgb(229,255,228);
+                    background: linear-gradient(270deg, rgba(229,255,228,1) 15%, rgba(243,252,242,1) 100%);
+                    width:" &shadow_ProductSelected_ciFP_20.Width - 31 &"px;
+                    height:"& shadow_ProductSelected_ciFP_20.Height - 31& "px;
+                    box-shadow:0 3px 6px 4px  #ccc; 
+                    border-radius:10px'>
+                    </div>" 
+                    
+                    
+                    
+                Width: =75
+                X: =104
+                Y: =450
+                ZIndex: =16
+
+            shadow_ProductSelected_ciFP_21 As htmlViewer:
+                Height: =200 * (Last(FirstN(col_TopProductImport, 2)).TotalQuantity / maxQuantity) + 32
+                HtmlText: |+
+                    ="<div style='margin:10px;
+                    background: rgb(229,255,228);
+                    background: linear-gradient(90deg, rgba(229,255,228,1) 15%, rgba(243,252,242,1) 100%);
+                    width:" &shadow_ProductSelected_ciFP_21.Width - 31 &"px;
+                    height:"& shadow_ProductSelected_ciFP_21.Height - 31& "px;
+                    box-shadow:0 3px 6px 4px  #ccc; 
+                    border-radius:10px'>
+                    </div>" 
+                    
+                    
+                    
+                Width: =75
+                X: =299
+                Y: =630
+                ZIndex: =17
+
+            shadow_ProductSelected_ciFP_22 As htmlViewer:
+                Height: =200 * (Last(FirstN(col_TopProductImport, 4)).TotalQuantity / maxQuantity) + 32
+                HtmlText: |+
+                    ="<div style='margin:10px;
+                    background: rgb(229,255,228);
+                    background: linear-gradient(90deg, rgba(229,255,228,1) 15%, rgba(243,252,242,1) 100%);
+                    width:" &shadow_ProductSelected_ciFP_22.Width - 31 &"px;
+                    height:"& shadow_ProductSelected_ciFP_22.Height - 31& "px;
+                    box-shadow:0 3px 6px 4px  #ccc; 
+                    border-radius:10px'>
+                    </div>" 
+                    
+                    
+                    
+                Width: =75
+                X: =169
+                Y: =594
+                ZIndex: =18
+
+            shadow_ProductSelected_ciFP_23 As htmlViewer:
+                Height: =200 * (Last(FirstN(col_TopProductImport, 3)).TotalQuantity / maxQuantity) + 32
+                HtmlText: |+
+                    ="<div style='margin:10px;
+                    background: rgb(229,255,228);
+                    background: linear-gradient(270deg, rgba(229,255,228,1) 15%, rgba(243,252,242,1) 100%);
+                    width:" &shadow_ProductSelected_ciFP_23.Width - 31 &"px;
+                    height:"& shadow_ProductSelected_ciFP_23.Height - 31& "px;
+                    box-shadow:0 3px 6px 4px  #ccc; 
+                    border-radius:10px'>
+                    </div>" 
+                    
+                    
+                    
+                Width: =75
+                X: =234
+                Y: =626
+                ZIndex: =19
+
+            shadow_ProductSelected_ciFP_24 As htmlViewer:
+                Height: =200 * (Last(FirstN(col_TopProductImport, 1)).TotalQuantity / maxQuantity) + 32
+                HtmlText: |+
+                    ="<div style='margin:10px;
+                    background: rgb(229,255,228);
+                    background: linear-gradient(270deg, rgba(229,255,228,1) 15%, rgba(243,252,242,1) 100%);
+                    width:" &shadow_ProductSelected_ciFP_24.Width - 31 &"px;
+                    height:"& shadow_ProductSelected_ciFP_24.Height - 31& "px;
+                    box-shadow:0 3px 6px 4px  #ccc; 
+                    border-radius:10px'>
+                    </div>" 
+                    
+                    
+                    
+                Width: =75
+                X: =364
+                Y: =634
+                ZIndex: =20
+
+            btn_PendingList_DuyetDatHang_9 As button:
+                AutoDisableOnSelect: =false
+                BorderColor: =RGBA(237, 237, 237, 1)
+                BorderThickness: =0
+                Color: =RGBA(255, 191, 0, 1)
+                Fill: =RGBA(237, 237, 237, 1)
+                HoverBorderColor: =RGBA(237, 237, 237, 1)
+                HoverFill: =RGBA(255, 191, 0, 1)
+                OnSelect: |-
+                    =Set(datasource_OrderedList, "pending");
+                    Refresh(QLK_OrderForm);
+                PressedBorderColor: =RGBA(237, 237, 237, 1)
+                RadiusBottomLeft: =20
+                RadiusBottomRight: =20
+                RadiusTopLeft: =20
+                RadiusTopRight: =20
+                Size: =13
+                Text: ="Unapproved list"
+                Width: =156
+                X: =364
+                Y: =585
+                ZIndex: =21
+
+            btn_ApprovedList_DuyetDatHang_1 As button:
+                AutoDisableOnSelect: =false
+                BorderColor: =RGBA(237, 237, 237, 1)
+                BorderThickness: =0
+                Color: =RGBA(54, 176, 75, 1)
+                Fill: =RGBA(237, 237, 237, 1)
+                HoverBorderColor: =RGBA(237, 237, 237, 1)
+                HoverFill: =RGBA(81, 224, 105, 1)
+                OnSelect: |-
+                    =Set(datasource_OrderedList, "approved");
+                    Refresh(QLK_OrderForm);
+                PressedBorderColor: =RGBA(237, 237, 237, 1)
+                RadiusBottomLeft: =20
+                RadiusBottomRight: =20
+                RadiusTopLeft: =20
+                RadiusTopRight: =20
+                Size: =13
+                Text: ="Unapproved list"
+                Width: =156
+                X: =540
+                Y: =585
+                ZIndex: =22
+
+            btn_RefusedList_DuyetDatHang_1 As button:
+                AutoDisableOnSelect: =false
+                BorderColor: =RGBA(237, 237, 237, 1)
+                BorderThickness: =0
+                Color: =RGBA(255, 0, 0, 1)
+                Fill: =RGBA(237, 237, 237, 1)
+                HoverBorderColor: =RGBA(237, 237, 237, 1)
+                HoverFill: =RGBA(255, 0, 0, 1)
+                OnSelect: |-
+                    =Set(datasource_OrderedList, "refused");
+                    Refresh(QLK_OrderForm);
+                PressedBorderColor: =RGBA(237, 237, 237, 1)
+                RadiusBottomLeft: =20
+                RadiusBottomRight: =20
+                RadiusTopLeft: =20
+                RadiusTopRight: =20
+                Size: =13
+                Text: ="Unapproved list"
+                Width: =156
+                X: =714
+                Y: =585
+                ZIndex: =23
+
+            btn_RefusedList_DuyetDatHang_2 As button:
+                AutoDisableOnSelect: =false
+                BorderColor: =RGBA(237, 237, 237, 1)
+                BorderThickness: =0
+                Color: =RGBA(255, 0, 0, 1)
+                Fill: =RGBA(237, 237, 237, 1)
+                HoverBorderColor: =RGBA(237, 237, 237, 1)
+                HoverFill: =RGBA(255, 0, 0, 1)
+                OnSelect: |-
+                    =Set(datasource_OrderedList, "completed");
+                    Refresh(QLK_OrderForm);
+                PressedBorderColor: =RGBA(237, 237, 237, 1)
+                RadiusBottomLeft: =20
+                RadiusBottomRight: =20
+                RadiusTopLeft: =20
+                RadiusTopRight: =20
+                Size: =13
+                Text: ="Unapproved list"
+                Width: =156
+                X: =908
+                Y: =585
+                ZIndex: =24
+
+            TextInput3 As text:
+                Default: ="Text input"
+                Height: =50
+                RadiusBottomLeft: =15
+                RadiusBottomRight: =15
+                RadiusTopLeft: =15
+                RadiusTopRight: =15
+                X: =41
+                Y: =57
+                ZIndex: =25
+
+            DatePicker1 As datepicker:
+                X: =553
+                Y: =88
+                ZIndex: =26
+
+            HtmlText1 As htmlViewer:
+                Height: =130
+                HtmlText: |-
+                    ="<input type='date'>{
+                        border-radius: 10px}
+                    "
+                Width: =258
+                X: =361
+                Y: =147
+                ZIndex: =27
+
+            Label29 As label:
+                Text: =HtmlText1.ContentLanguage
+                Width: =358
+                X: =423
+                Y: =57
+                ZIndex: =28
+
+        Separator1_26 As rectangle:
+            BorderColor: =RGBA(237, 237, 237, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            Height: =1
+            OnSelect: =
+            Width: =198
+            X: =33
+            Y: =242
+            ZIndex: =4
+

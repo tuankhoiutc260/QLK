@@ -1,0 +1,9 @@
+[
+  {
+    "IsComponentScoped": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "Oldcol_OrderedInf",
+    "Type": "CollectionDataSourceInfo"
+  }
+]

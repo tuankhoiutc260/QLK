@@ -1,0 +1,1694 @@
+DatHangNhap As screen:
+    Fill: =RGBA(214, 223, 238, 1)
+
+    TextInput1_6 As text:
+        Default: =
+        DisabledBorderColor: =RGBA(219, 219, 219, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.Disabled
+        Height: =604
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Width: =1134
+        X: =194
+        Y: =132
+        ZIndex: =1
+
+    TextInput1_7 As text:
+        Default: =
+        DisabledBorderColor: =RGBA(219, 219, 219, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.Disabled
+        Height: =508
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Width: =1072
+        X: =230
+        Y: =200
+        ZIndex: =2
+
+    Rectangle1_21 As rectangle:
+        Fill: =RGBA(76, 133, 45, 0.77)
+        Height: =768
+        Width: =164
+        ZIndex: =3
+
+    Button2_106 As button:
+        BorderStyle: =BorderStyle.Dotted
+        BorderThickness: =1
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(TrangchuGD)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Home"
+        Width: =164
+        ZIndex: =4
+
+    Icon4_20 As icon.Home:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Home
+        Width: =50
+        X: =57
+        Y: =15
+        ZIndex: =5
+
+    Button2_107 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Import"
+        Width: =164
+        Y: =110
+        ZIndex: =6
+
+    Button2_108 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(XuatHang)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Export"
+        Width: =164
+        Y: =220
+        ZIndex: =7
+
+    Icon5_11 As icon.ShoppingCart:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.ShoppingCart
+        Width: =50
+        X: =57
+        Y: =134
+        ZIndex: =8
+
+    Icon7_11 As icon.Share:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Share
+        Width: =50
+        X: =57
+        Y: =238
+        ZIndex: =9
+
+    Icon11_27 As icon.VerticalLine:
+        Height: =110
+        Icon: =Icon.VerticalLine
+        X: =132
+        Y: =110
+        ZIndex: =10
+
+    Image4_36 As image:
+        Height: =74
+        Image: =Logo
+        Width: =258
+        X: =164
+        Y: =11
+        ZIndex: =11
+
+    Icon12_9 As icon.Hamburger:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =36
+        Icon: =Icon.Hamburger
+        Width: =34
+        X: =1296
+        Y: =30
+        ZIndex: =12
+
+    "gal_OrderedList As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        DelayItemLoading: =true
+        Height: =455
+        Items: |-
+            =//QLK_OrderForm
+            //set_datasource_gal_OrderedList
+            Sort(col_OrderedList, Created, SortOrder.Ascending)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =74
+        Width: =1072
+        X: =230
+        Y: =252
+        ZIndex: =13
+
+        Separator1_3 As rectangle:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(166, 166, 166, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            ZIndex: =5
+
+        Label8_5 As label:
+            Height: =38
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.IDOrder
+            Width: =202
+            X: =23
+            Y: =18
+            ZIndex: =6
+
+        Label13_2 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Title
+            X: =314
+            Y: =34
+            ZIndex: =7
+
+        Label8_6 As label:
+            Height: =38
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Created
+            Width: =202
+            X: =262
+            Y: =18
+            ZIndex: =8
+
+        Label8_7 As label:
+            Height: =38
+            OnSelect: =Select(Parent)
+            Text: |-
+                =Text(ThisItem.TotalPrice, "#,###") & " VND"
+            Width: =202
+            X: =597
+            Y: =18
+            ZIndex: =9
+
+        TextInput2_1 As text:
+            Align: =Align.Center
+            Default: =If(ThisItem.Status = 1, "Chờ duyệt", If(ThisItem.Status = 2, "Đã duyệt", If(ThisItem.Status = 3, "Từ chối duyệt")))
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            DisabledColor: =If(ThisItem.Status = 1, RGBA(255, 191, 0, 1), If(ThisItem.Status = 2, RGBA(5, 232, 27, 1), If(ThisItem.Status = 3, RGBA(255, 0, 0, 1))))
+            DisabledFill: =If(ThisItem.Status = 1, RGBA(255, 226, 168, 1), If(ThisItem.Status = 2, RGBA(216, 255, 201, 1), If(ThisItem.Status = 3, RGBA(250, 233, 225, 1))))
+            DisplayMode: =DisplayMode.Disabled
+            FontWeight: =FontWeight.Semibold
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Width: =150
+            X: =855
+            Y: =18
+            ZIndex: =11
+
+        Button5_1 As button:
+            DisabledFill: =RGBA(244, 244, 244, 0.22)
+            Fill: =If(ThisItem.IsSelected, RGBA(216, 255, 201, 0.40), RGBA(0, 0, 0, 0))
+            Height: =74
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(237, 237, 237, 0.4)
+            OnSelect: |+
+                =Set(ID_Ordered, ThisItem.IDOrder);
+                Set(DateCreated_Ordered, ThisItem.Created);
+                Set(showInformationImportInvoiceForm, true);
+                If(
+                    ThisItem.Status = 1, 
+                    Set(visible_btnDeleteProduct_DetailOrder, true) && Set(displaymode_txtValueQuantity_DetailOrder, DisplayMode.Edit) && Set(visible_btnUpdateOrder, true) && Set(showSearchProduct_DetailOrder, true), 
+                    Set(visible_btnDeleteProduct_DetailOrder, false) && Set(displaymode_txtValueQuantity_DetailOrder, DisplayMode.Disabled) && Set(visible_btnUpdateOrder, false) && Set(showSearchProduct_DetailOrder, false));
+                ClearCollect(col_OrderedInf, ShowColumns(Filter(QLK_OrderFormInformation, IDOrderForm = ID_Ordered), "IDOrderForm", "IDProduct_Supplier", "Quantity"));
+                Set(oldCountRows_col_OrderedInf, CountRows(col_OrderedInf));
+                
+                If(
+                    ckb_Pending_Order.Value = true,
+                    ClearCollect(col_PendingOrder, Filter(QLK_OrderForm, Status = 1))
+                );
+                
+                If(
+                    ckb_Approved_Order.Value = true,
+                    ClearCollect(col_ApprovedOrder, Filter(QLK_OrderForm, Status = 2))
+                );
+                
+                If(
+                    ckb_Refused_Order.Value = true,
+                    ClearCollect(col_RefusedOrder, Filter(QLK_OrderForm, Status = 3))
+                );
+                
+                ClearCollect(col_OrderedList, col_PendingOrder, col_ApprovedOrder, col_RefusedOrder);
+                ClearCollect(Oldcol_OrderedInf, col_OrderedInf);
+                
+            PressedColor: =
+            PressedFill: =RGBA(237, 237, 237, 0.4)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: =""
+            Width: =1072
+            ZIndex: =12
+
+    Label11_3 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =71
+        Size: =20
+        Text: ="Order Invoices"
+        Width: =261
+        X: =230
+        Y: =129
+        ZIndex: =14
+
+    Button7_2 As button:
+        BorderColor: =RGBA(151, 0, 0, 1)
+        DisabledBorderColor: =RGBA(219, 219, 219, 1)
+        DisabledFill: =RGBA(148, 255, 87, 0.48)
+        DisplayMode: =DisplayMode.Disabled
+        Fill: =RGBA(76, 133, 45, 1)
+        FocusedBorderColor: =
+        Height: =52
+        HoverBorderColor: =
+        HoverColor: =
+        HoverFill: =
+        PaddingBottom: =50
+        PressedFill: =
+        RadiusBottomLeft: |
+            =0
+        RadiusBottomRight: |
+            =0
+        RadiusTopLeft: =20
+        RadiusTopRight: |
+            =20
+        Size: =24
+        Text: =""
+        Width: =1072
+        X: =230
+        Y: =200
+        ZIndex: =15
+
+    Label7_8 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Text: ="Date Created"
+        X: =492
+        Y: =200
+        ZIndex: =16
+
+    lbl_IDOrder_QLNhapHang_1 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Size: =14
+        Text: ="Input ID"
+        Width: =185
+        X: =254
+        Y: =200
+        ZIndex: =17
+
+    Label7_9 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Text: ="Total Price"
+        X: =826
+        Y: =200
+        ZIndex: =18
+
+    Label7_10 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Text: ="Status"
+        X: =1084
+        Y: =200
+        ZIndex: =19
+
+    btn_OrderProduct As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =RGBA(237, 237, 237, 1)
+        BorderThickness: =0
+        Color: =RGBA(54, 176, 75, 1)
+        Fill: =RGBA(237, 237, 237, 1)
+        HoverBorderColor: =RGBA(237, 237, 237, 1)
+        HoverFill: =RGBA(81, 224, 105, 1)
+        OnSelect: |-
+            =Set(showNewOrderProductForm, true);
+            Set(DateTimeCreateOrderProduct, Text(Now(), "dd/mm/yyyy hh:mm:ss"));
+            Set(IDNewOrderProduct, "OD" & Text(Now(), "ddmmyyyyhhmmss"));
+            Set(NumDateNewOrderProduct, Text(Now(), "ddmmyyyyhhmmss"));
+        PressedBorderColor: =RGBA(237, 237, 237, 1)
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =13
+        Text: ="+  Order Product"
+        Width: =237
+        X: =1064
+        Y: =145
+        ZIndex: =20
+
+    txt_Search_Import As text:
+        Align: =Align.Center
+        BorderColor: =RGBA(219, 219, 219, 1)
+        Default: ="Search here"
+        Height: =44
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        X: =570
+        Y: =65
+        ZIndex: =21
+
+    ic_Search_Import As icon.Search:
+        Color: =RGBA(219, 219, 219, 1)
+        Height: =30
+        Icon: =Icon.Search
+        Width: =30
+        X: =584
+        Y: =73
+        ZIndex: =22
+
+    btn_FilterStatus_Import As icon.Filter:
+        Height: =15
+        Icon: =Icon.Filter
+        OnSelect: |
+            =If(showgrp_FilterStatus = false, Set(showgrp_FilterStatus, true), Set(showgrp_FilterStatus, false));
+        Width: =20
+        X: =1149
+        Y: =218
+        ZIndex: =23
+
+    btn_CancelOrderDetailOrder_2 As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =RGBA(255, 226, 168, 1)
+        BorderThickness: =3
+        Color: =RGBA(255, 191, 0, 1)
+        Fill: =RGBA(255, 226, 168, 1)
+        HoverBorderColor: =RGBA(255, 226, 168, 1)
+        HoverFill: =RGBA(255, 191, 0, 1)
+        OnSelect: |-
+            =Set(showInformationImportInvoiceForm, false);
+            
+            Clear(col_OrderedInf);
+            Reset(txt_Search_DetailOrder);
+            Set(showOrderProductForm, false);
+            Set(visible_btnUpdateOrder, false)
+        PressedBorderColor: =RGBA(255, 226, 168, 1)
+        PressedFill: =RGBA(245, 207, 95, 1)
+        Size: =13
+        Text: ="Pending"
+        Visible: =
+        Width: =150
+        X: =938
+        Y: =124
+        ZIndex: =29
+
+    btn_CancelOrderDetailOrder_3 As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =RGBA(250, 233, 225, 1)
+        BorderThickness: =3
+        Color: =RGBA(255, 0, 0, 1)
+        Fill: =RGBA(250, 233, 225, 1)
+        HoverBorderColor: =RGBA(250, 233, 225, 1)
+        HoverFill: =RGBA(232, 102, 102, 1)
+        OnSelect: |-
+            =Set(showInformationImportInvoiceForm, false);
+            
+            Clear(col_OrderedInf);
+            Reset(txt_Search_DetailOrder);
+            Set(showOrderProductForm, false);
+            Set(visible_btnUpdateOrder, false)
+        PressedBorderColor: =RGBA(250, 233, 225, 1)
+        PressedFill: =RGBA(232, 102, 102, 1)
+        Size: =13
+        Text: ="Refuse"
+        Visible: =
+        Width: =150
+        X: =938
+        Y: =81
+        ZIndex: =30
+
+    grp_ListProduct_OrderProduct As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =53
+
+        "gal_ListProduct_OrderProduct As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+            BorderColor: =RGBA(219, 219, 219, 1)
+            BorderThickness: =1
+            DelayItemLoading: =true
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =289
+            Items: |
+                =Search(Filter(QLK_Product_Supplier, Not(IDProduct_Supplier exactin Filter(col_NewOrderList, IDProduct_Supplier))), txt_Search_NewOrderProduct.Text, "Name_Supplier")
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =61
+            Visible: =If(Len(txt_Search_NewOrderProduct) >=1, true, false)
+            Width: =936
+            X: =298
+            Y: =238
+            ZIndex: =53
+
+            Separator1_5 As rectangle:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(166, 166, 166, 1)
+                Height: =1
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                ZIndex: =1
+
+            lbl_ProductName_ListProduct As label:
+                Height: =60
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.'Name_Pro-Supplier'
+                Width: =292
+                X: =22
+                Y: =1
+                ZIndex: =2
+
+            lbl_PriceProduct_ListProduct As label:
+                Height: =61
+                OnSelect: =Select(Parent)
+                Text: |-
+                    =Text(ThisItem.'Price_Pro-Supplier', "#,###") & " VND"
+                Width: =198
+                X: =601
+                ZIndex: =4
+
+            img_IamgeProduct_ListProduct As image:
+                Height: =54
+                Image: =ThisItem.'Image_Pro-Supplier'
+                OnSelect: =Select(Parent)
+                Width: =71
+                X: =843
+                Y: =4
+                ZIndex: =5
+
+            btn_ChooseProduct_ListProduct As button:
+                DisabledFill: =RGBA(244, 244, 244, 0.22)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =61
+                HoverColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(237, 237, 237, 0.4)
+                OnSelect: |+
+                    =Collect(col_NewOrderList,  
+                        {
+                            IDProduct_Supplier: ThisItem.IDProduct_Supplier
+                        }
+                    );
+                    Notify("Success", NotificationType.Success, 2);
+                    
+                PressedColor: =
+                PressedFill: =RGBA(237, 237, 237, 0.4)
+                Text: =""
+                Width: =936
+                ZIndex: =6
+
+        Label7 As label:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =73
+            Text: =""
+            Visible: =If(Len(txt_Search_NewOrderProduct) >=1, true, false)
+            Width: =936
+            X: =298
+            Y: =527
+            ZIndex: =54
+
+    grp_DetailOrdered As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =63
+
+        bgr_Black_DetailOrder As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(128, 128, 128, 0.42)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =768
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =showInformationImportInvoiceForm
+            Width: =1366
+            ZIndex: =55
+
+        bgr_DetailOrder As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledColor: =RGBA(0, 0, 0, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =635
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showInformationImportInvoiceForm
+            Width: =1004
+            X: =264
+            Y: =67
+            ZIndex: =56
+
+        lbl_Title_DetailOrder As label:
+            Align: =Align.Center
+            Color: =RGBA(184, 0, 0, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =72
+            Size: =30
+            Text: ="Order"
+            Visible: =showInformationImportInvoiceForm
+            Width: =1004
+            X: =264
+            Y: =65
+            ZIndex: =57
+
+        lbl_IDOrder_DetailOrder As label:
+            Font: =Font.'Segoe UI'
+            Height: =46
+            Size: =15
+            Text: |-
+                ="ID Order: " & ID_Ordered
+            Visible: =showInformationImportInvoiceForm
+            Width: =345
+            X: =318
+            Y: =132
+            ZIndex: =58
+
+        lbl_DateCreated_DetailOrder As label:
+            Font: =Font.'Segoe UI'
+            Height: =46
+            Size: =15
+            Text: |-
+                ="Date Created: " & DateCreated_Ordered
+            Visible: =showInformationImportInvoiceForm
+            Width: =414
+            X: =791
+            Y: =132
+            ZIndex: =59
+
+        "gal_OrderedInfList As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+            DelayItemLoading: =true
+            Height: =312
+            Items: |-
+                =ShowColumns(col_OrderedInf, "IDOrderForm" ,"IDProduct_Supplier", "Quantity")
+                //col_OrderedInf
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =66
+            Visible: =showInformationImportInvoiceForm
+            Width: =936
+            X: =298
+            Y: =288
+            ZIndex: =60
+
+            Separator1_6 As rectangle:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(166, 166, 166, 1)
+                Height: =1
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                ZIndex: =1
+
+            btn_ValueUnit_DetailOrder As label:
+                Height: =65
+                OnSelect: =Select(Parent)
+                Text: =LookUp(QLK_Unit, ID = (LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct_Supplier, ID_Unit)), UnitName)
+                Width: =90
+                X: =493
+                Y: =1
+                ZIndex: =2
+
+            lbl_ValueTotalPrice_DetailOrder As label:
+                Height: =66
+                OnSelect: =Select(Parent)
+                Text: |-
+                    =Text(txt_ValueQuantity_DetailOrder.Text * LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct_Supplier, 'Price_Pro-Supplier'), "#,###")
+                Width: =155
+                X: =738
+                ZIndex: =3
+
+            lbl_ValuePrice_DetailOrder As label:
+                Height: =66
+                OnSelect: =Select(Parent)
+                Text: |-
+                    =Text(LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct_Supplier, 'Price_Pro-Supplier'), "#,###")
+                Width: =155
+                X: =583
+                ZIndex: =4
+
+            btn_DeleteProduct_DetailOrder As icon.Cancel:
+                Color: =RGBA(255, 0, 0, 1)
+                Height: =40
+                Icon: =Icon.Cancel
+                OnSelect: =Remove(col_OrderedInf, LookUp(col_OrderedInf, IDProduct_Supplier = ThisItem.IDProduct_Supplier))
+                Visible: =visible_btnDeleteProduct_DetailOrder
+                Width: =40
+                X: =892
+                Y: =13
+                ZIndex: =5
+
+            txt_ValueQuantity_DetailOrder As text:
+                Default: =ThisItem.Quantity
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(0, 0, 0, 1)
+                DisabledFill: =RGBA(255, 255, 255, 1)
+                DisplayMode: =displaymode_txtValueQuantity_DetailOrder
+                Format: =TextFormat.Number
+                OnSelect: =Select(Parent)
+                Width: =73
+                X: =380
+                Y: =13
+                ZIndex: =6
+
+            lbl_ValueProductName_DetailOrder As label:
+                Height: =66
+                OnSelect: =Select(Parent)
+                Text: |
+                    =//LookUp(QLK_Product_Supplier, IDProduct_Supplier = LookUp(QLK_OrderFormInformation, IDOrderForm = ThisItem.IDOrderForm, ThisItem.IDProduct_Supplier), 'Name_Pro-Supplier')
+                    LookUp(QLK_Product_Supplier, IDProduct_Supplier = Value(LookUp(col_OrderedInf, IDOrderForm = ID_Ordered, ThisItem.IDProduct_Supplier)), 'Name_Pro-Supplier')
+                Width: =232
+                X: =69
+                ZIndex: =7
+
+        txt_Search_DetailOrder As text:
+            Align: =Align.Center
+            BorderColor: =RGBA(219, 219, 219, 1)
+            Default: =
+            DisabledFill: =RGBA(219, 219, 219, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =51
+            HintText: ="Search Product"
+            OnChange: =If(Len(txt_Search_DetailOrder.Text) >= 2, Set(showProductOfSuppiler, true), Set(showProductOfSuppiler, false))
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: |-
+                =//showInformationImportInvoiceForm
+                showSearchProduct_DetailOrder
+            Width: =936
+            X: =298
+            Y: =187
+            ZIndex: =61
+
+        btn_ResetSearchProduct_DetailOrder As icon.Cancel:
+            Color: =RGBA(219, 219, 219, 1)
+            Height: =35
+            Icon: =Icon.Cancel
+            OnSelect: =Reset(txt_Search_DetailOrder)
+            Visible: =showInformationImportInvoiceForm
+            Width: =35
+            X: =1185
+            Y: =195
+            ZIndex: =62
+
+        lbl_ProductName_DetailOrder As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =34
+            OnSelect: =
+            Text: ="Product Name"
+            Visible: =showInformationImportInvoiceForm
+            X: =328
+            Y: =251
+            ZIndex: =63
+
+        lbl_Quantity_DetailOrder As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =34
+            OnSelect: =
+            Text: ="Quantity"
+            Visible: =showInformationImportInvoiceForm
+            Width: =91
+            X: =664
+            Y: =245
+            ZIndex: =64
+
+        btn_Unit_DetailOrder As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =34
+            OnSelect: =
+            Text: ="Unit"
+            Visible: =showInformationImportInvoiceForm
+            Width: =89
+            X: =792
+            Y: =246
+            ZIndex: =65
+
+        lbl_Price_DetailOrder As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =34
+            OnSelect: =
+            Text: ="Price"
+            Visible: =showInformationImportInvoiceForm
+            X: =881
+            Y: =246
+            ZIndex: =66
+
+        lbl_TotalPrice_DetailOrder As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =34
+            OnSelect: =
+            Text: ="Total Price"
+            Visible: =showInformationImportInvoiceForm
+            X: =1035
+            Y: =246
+            ZIndex: =67
+
+        lbl_TotalOrder_DetailOrder As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =42
+            OnSelect: =
+            Text: |-
+                ="Total: " &
+                Text(Sum(
+                   gal_OrderedInfList.AllItems,
+                   lbl_ValueTotalPrice_DetailOrder
+                ),  "#,###") & " VND"
+            Visible: =showInformationImportInvoiceForm
+            Width: =246
+            X: =638
+            Y: =600
+            ZIndex: =68
+
+        btn_CancelOrderDetailOrder As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: |-
+                =Set(showInformationImportInvoiceForm, false);
+                
+                Clear(col_OrderedInf);
+                Reset(txt_Search_DetailOrder);
+                Set(showOrderProductForm, false);
+                Set(visible_btnUpdateOrder, false);
+                Set(showSearchProduct_DetailOrder, false);
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="x Cancel"
+            Visible: =showInformationImportInvoiceForm
+            Width: =150
+            X: =849
+            Y: =647
+            ZIndex: =69
+
+        btn_Create_NewOrderProduct_1 As timer:
+            BorderThickness: =0
+            Color: =RGBA(54, 176, 75, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            DisplayMode: |-
+                =If(
+                    CountIf(gal_OrderedInfList.AllItems, IsBlank(txt_ValueQuantity_DetailOrder)) > 0 || 
+                    CountRows(col_OrderedInf) <= 0 || 
+                    CountIf(gal_OrderedInfList.AllItems, Value(txt_ValueQuantity_DetailOrder.Text) <= 0),
+                    DisplayMode.Disabled, DisplayMode.Edit
+                )
+            Duration: =1590
+            Fill: =RGBA(205, 247, 205, 1)
+            FontWeight: =FontWeight.Semibold
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(81, 224, 105, 1)
+            OnSelect: |
+                =ForAll(
+                    Oldcol_OrderedInf,
+                    Remove(QLK_OrderFormInformation, LookUp(QLK_OrderFormInformation, IDOrderForm = ID_Ordered && IDProduct_Supplier = Oldcol_OrderedInf[@IDProduct_Supplier]))
+                );
+                
+                ForAll(
+                    col_OrderedInf, 
+                    QLK_OrderInformation.Run(
+                        ID_Ordered,
+                        col_OrderedInf[@IDProduct_Supplier],
+                        Value(LookUp(gal_OrderedInfList.AllItems, IDProduct_Supplier = col_OrderedInf[@IDProduct_Supplier], txt_ValueQuantity_DetailOrder.Text)),
+                        Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_OrderedInf[@IDProduct_Supplier], ID_Unit)),
+                        Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_OrderedInf[@IDProduct_Supplier], 'Price_Pro-Supplier')),
+                        Value(LookUp(gal_OrderedInfList.AllItems, IDProduct_Supplier = col_OrderedInf[@IDProduct_Supplier], txt_ValueQuantity_DetailOrder.Text)) * 
+                            Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_OrderedInf[@IDProduct_Supplier], 'Price_Pro-Supplier'))
+                    )
+                );
+                
+                Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = ID_Ordered),
+                    {
+                        IDOrder: ID_Ordered,
+                        DateCreatedNumber: Value(NumDateNewOrderProduct),
+                        TotalPrice: Sum(gal_OrderedInfList.AllItems, lbl_ValueTotalPrice_DetailOrder),
+                        Status: 1
+                    }
+                );
+                Clear(col_OrderedInf);
+                Set(visible_btnUpdateOrder, false);
+                Set(showSearchProduct_DetailOrder, false);
+                
+                
+                If(
+                    ckb_Pending_Order.Value = true,
+                    ClearCollect(col_PendingOrder, Filter(QLK_OrderForm, Status = 1))
+                );
+                
+                If(
+                    ckb_Approved_Order.Value = true,
+                    ClearCollect(col_ApprovedOrder, Filter(QLK_OrderForm, Status = 2))
+                );
+                
+                If(
+                    ckb_Refused_Order.Value = true,
+                    ClearCollect(col_RefusedOrder, Filter(QLK_OrderForm, Status = 3))
+                );
+                //Sort( IceCream, Quantity, SortOrder.Descending )
+                ClearCollect(col_OrderedList, col_PendingOrder, col_ApprovedOrder, col_RefusedOrder);
+            OnTimerEnd: |-
+                =Set(showSuccess, false) && 
+                Set(showInformationImportInvoiceForm, false)
+            OnTimerStart: =Set(showSuccess, true) 
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Start: =
+            Text: ="+  Update"
+            Visible: |-
+                =//showInformationImportInvoiceForm
+                visible_btnUpdateOrder
+            Width: =150
+            X: =686
+            Y: =647
+            ZIndex: =70
+
+    grp_Success As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =63
+
+        bgr_Black_Success As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(128, 128, 128, 0.42)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =768
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =showSuccess
+            Width: =1366
+            ZIndex: =26
+
+        img_Success As image:
+            Image: =green_success
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showSuccess
+            X: =713
+            Y: =344
+            ZIndex: =27
+
+    grp_NewOrderProduct As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =71
+
+        HtmlText1_11 As htmlViewer:
+            Height: =667
+            HtmlText: |-
+                ="<div style='margin:12px;width:" & HtmlText1_11.Width - 36 & "px;height:" & HtmlText1_11.Height - 36 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 3px 6px 8px  #ccc; border-radius:20px'></div>" 
+            Visible: =showNewOrderProductForm
+            Width: =1036
+            X: =248
+            Y: =51
+            ZIndex: =34
+
+        bgr_Black_NewOrderProduct As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(128, 128, 128, 0.42)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =768
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =showNewOrderProductForm
+            Width: =1366
+            ZIndex: =35
+
+        bgr_NewOrderProduct As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledColor: =RGBA(0, 0, 0, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =635
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showNewOrderProductForm
+            Width: =1004
+            X: =264
+            Y: =67
+            ZIndex: =36
+
+        lbl_Title_NewOrderProduct As label:
+            Align: =Align.Center
+            Color: =RGBA(184, 0, 0, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =72
+            Size: =30
+            Text: ="Order"
+            Visible: =showNewOrderProductForm
+            Width: =1004
+            X: =264
+            Y: =65
+            ZIndex: =37
+
+        lbl_IDOrder_NewOrderProduct As label:
+            Font: =Font.'Segoe UI'
+            Height: =46
+            Size: =15
+            Text: |-
+                ="ID Order: " & IDNewOrderProduct
+            Visible: =showNewOrderProductForm
+            Width: =345
+            X: =318
+            Y: =132
+            ZIndex: =38
+
+        lbl_DateCreated_NewOrderProduct As label:
+            Font: =Font.'Segoe UI'
+            Height: =46
+            Size: =15
+            Text: |-
+                ="Date Created: " & DateTimeCreateOrderProduct
+            Visible: =showNewOrderProductForm
+            Width: =414
+            X: =791
+            Y: =132
+            ZIndex: =39
+
+        "gal_NewOrderProductList As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+            DelayItemLoading: =true
+            Height: =312
+            Items: =col_NewOrderList
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =66
+            Visible: =showNewOrderProductForm
+            Width: =936
+            X: =298
+            Y: =288
+            ZIndex: =40
+
+            Separator1_4 As rectangle:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(166, 166, 166, 1)
+                Height: =1
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                ZIndex: =5
+
+            lbl_ValueProductName_NewOrderProduct As label:
+                Height: =66
+                OnSelect: =Select(Parent)
+                Text: =LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct_Supplier, 'Name_Pro-Supplier')
+                Width: =312
+                X: =86
+                ZIndex: =6
+
+            btn_ValueUnit_NewOrderProduct As label:
+                Height: =66
+                OnSelect: =Select(Parent)
+                Text: =LookUp(QLK_Unit, ID = Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct_Supplier, ID_Unit)), UnitName)
+                Width: =90
+                X: =508
+                ZIndex: =8
+
+            lbl_ValueTotalPrice_NewOrderProduct As label:
+                Height: =66
+                OnSelect: =Select(Parent)
+                Text: |-
+                    =Text(txt_ValueQuantity_NewOrderProduct.Text * LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct_Supplier, 'Price_Pro-Supplier'), "#,###")
+                Width: =135
+                X: =753
+                ZIndex: =9
+
+            lbl_ValuePrice_NewOrderProduct As label:
+                Height: =66
+                OnSelect: =Select(Parent)
+                Text: |-
+                    =Text(LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct_Supplier, 'Price_Pro-Supplier'), "#,###")
+                Width: =135
+                X: =608
+                ZIndex: =11
+
+            txt_ValueQuantity_NewOrderProduct As text:
+                Default: =""
+                Format: =TextFormat.Number
+                Height: =38
+                OnSelect: =Select(Parent)
+                Width: =60
+                X: =419
+                Y: =14
+                ZIndex: =12
+
+            btn_DeleteProduct_NewOrderProduct As icon.Cancel:
+                Color: =RGBA(255, 0, 0, 1)
+                Height: =40
+                Icon: =Icon.Cancel
+                OnSelect: =Remove(col_NewOrderList, LookUp(col_NewOrderList, IDProduct_Supplier = ThisItem.IDProduct_Supplier))
+                Width: =40
+                X: =892
+                Y: =14
+                ZIndex: =13
+
+            Group1_3 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =16
+
+                HtmlText1_8 As htmlViewer:
+                    Height: =66
+                    HtmlText: |-
+                        ="<div style='margin:5px;width:" & HtmlText1_8.Width - 21 & "px;height:" & HtmlText1_8.Height - 21 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 3px 6px 1px  #ccc; border-radius:5px'></div>" 
+                    Width: =66
+                    X: =10
+                    ZIndex: =14
+
+                Image8_3 As image:
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Height: =40
+                    Image: =LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct_Supplier, 'Image_Pro-Supplier')
+                    ImagePosition: =ImagePosition.Fill
+                    RadiusBottomLeft: =5
+                    RadiusBottomRight: =5
+                    RadiusTopLeft: =5
+                    RadiusTopRight: =5
+                    Width: =40
+                    X: =23
+                    Y: =13
+                    ZIndex: =15
+
+        txt_Search_NewOrderProduct As text:
+            Align: =Align.Center
+            BorderColor: =RGBA(219, 219, 219, 1)
+            Default: =
+            DisabledFill: =RGBA(219, 219, 219, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =51
+            HintText: ="Search Product"
+            OnChange: =If(Len(txt_Search_NewOrderProduct.Text) >= 2, Set(showProductOfSuppiler, true), Set(showProductOfSuppiler, false))
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showNewOrderProductForm
+            Width: =936
+            X: =298
+            Y: =187
+            ZIndex: =41
+
+        btn_ResetSearchProduct_NewOrderProduct As icon.Cancel:
+            Color: =RGBA(219, 219, 219, 1)
+            Height: =35
+            Icon: =Icon.Cancel
+            OnSelect: =Reset(txt_Search_NewOrderProduct)
+            Visible: =showNewOrderProductForm
+            Width: =35
+            X: =1185
+            Y: =195
+            ZIndex: =42
+
+        lbl_ProductName_NewOrderProduct As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =51
+            OnSelect: =
+            Text: ="Product Name"
+            Visible: =showNewOrderProductForm
+            Width: =312
+            X: =384
+            Y: =238
+            ZIndex: =43
+
+        lbl_Quantity_NewOrderProduct As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =50
+            OnSelect: =
+            Text: ="Quantity"
+            Visible: =showNewOrderProductForm
+            Width: =90
+            X: =706
+            Y: =239
+            ZIndex: =44
+
+        btn_Unit_NewOrderProduct As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =50
+            OnSelect: =
+            Text: ="Unit"
+            Visible: =showNewOrderProductForm
+            Width: =90
+            X: =806
+            Y: =238
+            ZIndex: =45
+
+        lbl_Price_NewOrderProduct As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =50
+            OnSelect: =
+            Text: ="Price"
+            Visible: =showNewOrderProductForm
+            Width: =135
+            X: =906
+            Y: =238
+            ZIndex: =46
+
+        lbl_TotalPrice_NewOrderProduct As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =50
+            OnSelect: =
+            Text: ="Total Price"
+            Visible: =showNewOrderProductForm
+            Width: =134
+            X: =1051
+            Y: =238
+            ZIndex: =47
+
+        lbl_TotalOrder_NewOrderProduct As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =42
+            OnSelect: =
+            Text: |-
+                ="Total: " &
+                Text(Sum(
+                   gal_NewOrderProductList.AllItems,
+                   lbl_ValueTotalPrice_NewOrderProduct
+                ),  "#,###") & " VND"
+            Visible: =showNewOrderProductForm
+            Width: =246
+            X: =638
+            Y: =600
+            ZIndex: =48
+
+        HtmlText1_9 As htmlViewer:
+            Height: =72
+            HtmlText: |-
+                ="<div style='margin:10px;width:" & HtmlText1_9.Width - 32 & "px;height:" & HtmlText1_9.Height - 32 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 3px 6px 5px  #ccc; border-radius:20px'></div>" 
+            Visible: =showNewOrderProductForm
+            Width: =165
+            X: =834
+            Y: =632
+            ZIndex: =49
+
+        btn_CancelOrder_NewOrderProduct As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: |-
+                =Clear(col_NewOrderList);
+                Reset(txt_Search_NewOrderProduct);
+                Set(showNewOrderProductForm, false)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="x Cancel"
+            Visible: =showNewOrderProductForm
+            Width: =136
+            X: =849
+            Y: =647
+            ZIndex: =50
+
+        HtmlText1_10 As htmlViewer:
+            Height: =72
+            HtmlText: |-
+                ="<div style='margin:10px;width:" & HtmlText1_10.Width - 32 & "px;height:" & HtmlText1_10.Height - 32 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 3px 6px 5px  #ccc; border-radius:20px'></div>" 
+            Visible: =showNewOrderProductForm
+            Width: =214
+            X: =988
+            Y: =632
+            ZIndex: =51
+
+        btn_Create_NewOrderProduct As timer:
+            BorderThickness: =0
+            Color: =RGBA(54, 176, 75, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            DisplayMode: |-
+                =//If(CountRows(col_NewOrder) <= 0 || ForAll(gal_NewOrderProductList.AllItems, If(IsBlank(txt_ValueQuantity_NewOrderProduct)) , DisplayMode.Disabled, DisplayMode.Edit)
+                If(CountIf(gal_NewOrderProductList.AllItems, IsBlank(txt_ValueQuantity_NewOrderProduct)) > 0 || CountRows(col_NewOrderList) <= 0 || 
+                CountIf(gal_NewOrderProductList.AllItems, Value(txt_ValueQuantity_NewOrderProduct.Text) <= 0), DisplayMode.Disabled, DisplayMode.Edit)
+            Duration: =1590
+            Fill: =RGBA(205, 247, 205, 1)
+            FontWeight: =FontWeight.Semibold
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(81, 224, 105, 1)
+            OnSelect: |+
+                =ForAll(col_NewOrderList, 
+                    QLK_OrderInformation.Run(
+                        IDNewOrderProduct,
+                        col_NewOrderList[@IDProduct_Supplier],
+                        Value(LookUp(gal_NewOrderProductList.AllItems, IDProduct_Supplier = col_NewOrderList[@IDProduct_Supplier], txt_ValueQuantity_NewOrderProduct.Text)),
+                        Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_NewOrderList[@IDProduct_Supplier], ID_Unit)),
+                        Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_NewOrderList[@IDProduct_Supplier], 'Price_Pro-Supplier')),
+                        Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_NewOrderList[@IDProduct_Supplier], 'Price_Pro-Supplier') * 
+                            LookUp(gal_NewOrderProductList.AllItems, IDProduct_Supplier = col_NewOrderList[@IDProduct_Supplier], txt_ValueQuantity_NewOrderProduct.Text))
+                    )
+                );
+                
+                Patch(QLK_OrderForm, Defaults(QLK_OrderForm),
+                    {
+                        IDOrder: IDNewOrderProduct,
+                        DateCreatedNumber: Value(NumDateNewOrderProduct),
+                        TotalPrice: Sum(gal_NewOrderProductList.AllItems, lbl_ValueTotalPrice_NewOrderProduct),
+                        Status: 1
+                    }
+                );
+                
+                If(
+                    ckb_Pending_Order.Value = true,
+                    ClearCollect(col_PendingOrder, Filter(QLK_OrderForm, Status = 1))
+                );
+                
+                If(
+                    ckb_Approved_Order.Value = true,
+                    ClearCollect(col_ApprovedOrder, Filter(QLK_OrderForm, Status = 2))
+                );
+                
+                If(
+                    ckb_Refused_Order.Value = true,
+                    ClearCollect(col_RefusedOrder, Filter(QLK_OrderForm, Status = 3))
+                );
+                //Sort( IceCream, Quantity, SortOrder.Descending )
+                ClearCollect(col_OrderedList, col_PendingOrder, col_ApprovedOrder, col_RefusedOrder);
+                
+                Clear(col_NewOrderList);
+                
+                
+                
+                
+                
+                
+                
+            OnTimerEnd: |-
+                =Set(showSuccess, false) && Set(showbgr_Black_SuccessOrder, false);
+                Set(showNewOrderProductForm, false);
+            OnTimerStart: =Set(showSuccess, true) && Set(showbgr_Black_SuccessOrder, true);
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Start: =
+            Text: ="+  Create"
+            Visible: =showNewOrderProductForm
+            Width: =182
+            X: =1003
+            Y: =647
+            ZIndex: =52
+
+    grp_ListProduct_OrderProduct_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =71
+
+        "gal_ListProduct_OrderProduct_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+            BorderColor: =RGBA(219, 219, 219, 1)
+            BorderThickness: =1
+            DelayItemLoading: =true
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =289
+            Items: |+
+                =Search(Filter(QLK_Product_Supplier, Not(IDProduct_Supplier exactin (Filter(col_OrderedInf, IDProduct_Supplier).IDProduct_Supplier))), txt_Search_DetailOrder.Text, "Name_Supplier")
+                //Filter(QLX_PhieuDat,ID exactin (Filter(QLX_DieuPhoi,Value('Số chỗ đặt')-Value('Số chỗ đã điều phối')>0)).'ID Phiếu đặt')
+                
+                //Filter(QLK_Product_Supplier, IDProduct_Supplier exactin (Filter(col_OrderedInf, IDProduct_Supplier).'IDProduct_Supplier')
+                
+                
+                
+                
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =61
+            Visible: =If(Len(txt_Search_DetailOrder) >=1, true, false)
+            Width: =936
+            X: =298
+            Y: =238
+            ZIndex: =24
+
+            Separator1_7 As rectangle:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(166, 166, 166, 1)
+                Height: =1
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                ZIndex: =1
+
+            lbl_ProductName_ListProduct_1 As label:
+                Height: =60
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.'Name_Pro-Supplier'
+                Width: =292
+                X: =22
+                Y: =1
+                ZIndex: =2
+
+            lbl_PriceProduct_ListProduct_1 As label:
+                Height: =61
+                OnSelect: =Select(Parent)
+                Text: |-
+                    =Text(ThisItem.'Price_Pro-Supplier', "#,###") & " VND"
+                Width: =198
+                X: =601
+                ZIndex: =4
+
+            img_IamgeProduct_ListProduct_1 As image:
+                Height: =54
+                Image: =ThisItem.'Image_Pro-Supplier'
+                OnSelect: =Select(Parent)
+                Width: =71
+                X: =843
+                Y: =4
+                ZIndex: =5
+
+            btn_ChooseProduct_ListProduct_1 As button:
+                DisabledFill: =RGBA(244, 244, 244, 0.22)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =61
+                HoverColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(237, 237, 237, 0.4)
+                OnSelect: |+
+                    =Collect(col_OrderedInf,  
+                        {
+                            IDOrderForm: ID_Ordered,
+                            IDProduct_Supplier: ThisItem.IDProduct_Supplier, 
+                            Quantity: 0
+                        }
+                    );
+                    Notify("Success", NotificationType.Success, 2);
+                    
+                PressedColor: =
+                PressedFill: =RGBA(237, 237, 237, 0.4)
+                Text: =""
+                Width: =936
+                ZIndex: =6
+
+        Label7_1 As label:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =73
+            Text: =""
+            Visible: =If(Len(txt_Search_DetailOrder) >=1, true, false)
+            Width: =936
+            X: =298
+            Y: =527
+            ZIndex: =25
+
+    Group1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =73
+
+        TextInput4 As text:
+            BorderThickness: =0
+            Default: =""
+            DisabledBorderColor: =RGBA(127, 178, 57, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =150
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Visible: =showgrp_FilterStatus
+            Width: =193
+            X: =1084
+            Y: =238
+            ZIndex: =28
+
+        ckb_Approved_Order As checkbox:
+            Default: =true
+            OnCheck: |
+                =If(
+                    ckb_Refused_Order.Value = true, // 3
+                    If(
+                        ckb_Pending_Order.Value = true, // 1
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 1 || Status = 2 || Status = 3)
+                        ),
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 2 || Status = 3)
+                        )
+                    ),
+                    If(
+                        ckb_Pending_Order.Value = true,
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 1 || Status = 2)
+                
+                        ),
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 2)
+                        )
+                    )
+                )
+            OnSelect: =Set(showgrp_FilterStatus, false)
+            OnUncheck: |-
+                =If(
+                    ckb_Refused_Order.Value = true, // 3
+                    If(
+                        ckb_Pending_Order.Value = true, // 1
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 1|| Status = 3)
+                        ),
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 3)
+                        )
+                    ),
+                    If(
+                        ckb_Pending_Order.Value = true,
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 1)
+                        ),
+                        Clear(
+                            col_OrderedList
+                        )
+                    )
+                )
+                
+                
+                
+                /*
+                If(set_datasource_gal_OrderedList = QLK_OrderForm, 
+                    Set(set_datasource_gal_OrderedList, Filter(QLK_OrderForm, Status = 1)), 
+                    Set(set_datasource_gal_OrderedList, QLK_OrderForm)
+                )*/
+            Size: =10
+            Text: ="Approved"
+            Visible: =showgrp_FilterStatus
+            X: =1107
+            Y: =283
+            ZIndex: =31
+
+        ckb_Refused_Order As checkbox:
+            Default: =true
+            OnCheck: |-
+                =If(
+                    ckb_Pending_Order.Value = true, // 1
+                    If(
+                        ckb_Approved_Order.Value = true, // 2
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 1 || Status = 2 || Status = 3)
+                        ),
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 1 || Status = 3)
+                        )
+                    ),
+                    If(
+                        ckb_Approved_Order.Value = true,
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 3 || Status = 2)
+                        ),
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 3)
+                        )
+                    )
+                )
+                
+                
+                
+                /*
+                If(set_datasource_gal_OrderedList = QLK_OrderForm, 
+                    Set(set_datasource_gal_OrderedList, Filter(QLK_OrderForm, Status = 1)), 
+                    Set(set_datasource_gal_OrderedList, QLK_OrderForm)
+                )*/
+            OnSelect: =Set(showgrp_FilterStatus, false)
+            OnUncheck: |
+                =If(
+                    ckb_Pending_Order.Value = true, // 1
+                    If(
+                        ckb_Approved_Order.Value = true, // 2
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 1), 
+                            Filter(QLK_OrderForm, Status = 2)
+                        ),
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 1)
+                        )
+                    ),
+                    If(
+                        ckb_Approved_Order.Value = true,
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 2)
+                        ),
+                        Clear(
+                            col_OrderedList
+                        )
+                    )
+                )
+            Size: =10
+            Text: ="Refused"
+            Visible: =showgrp_FilterStatus
+            X: =1107
+            Y: =333
+            ZIndex: =32
+
+        ckb_Pending_Order As checkbox:
+            Default: =true
+            OnCheck: |
+                =If(
+                    ckb_Refused_Order.Value = true, // 3
+                    If(
+                        ckb_Approved_Order.Value = true, // 2
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 1 || Status = 2 || Status = 3)
+                        ),
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 1 || Status = 3)
+                        )
+                    ),
+                    If(
+                        ckb_Approved_Order.Value = true,
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 1 || Status = 2)
+                        ),
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 1)
+                        )
+                    )
+                )
+            OnSelect: =Set(showgrp_FilterStatus, false)
+            OnUncheck: |-
+                =If(
+                    ckb_Refused_Order.Value = true, // 3
+                    If(
+                        ckb_Approved_Order.Value = true, // 2
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 2 || Status = 3)
+                        ),
+                        ClearCollect(
+                            col_OrderedList, 
+                            Filter(QLK_OrderForm, Status = 3)
+                        )
+                    ),
+                    If(
+                        ckb_Approved_Order.Value = true,
+                        ClearCollect(
+                            col_OrderedList,  
+                            Filter(QLK_OrderForm, Status = 2)
+                        ),
+                        Clear(
+                            col_OrderedList
+                        )
+                    )
+                )
+            Size: =10
+            Text: ="Pending"
+            Visible: =showgrp_FilterStatus
+            X: =1107
+            Y: =233
+            ZIndex: =33
+

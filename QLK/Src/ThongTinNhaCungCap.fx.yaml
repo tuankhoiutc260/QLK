@@ -1,0 +1,665 @@
+ThongTinNhaCungCap As screen:
+    Fill: =RGBA(214, 223, 238, 1)
+
+    Nen_8 As button:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        BorderThickness: =0
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderColor: =
+        Height: =520
+        HoverBorderColor: =
+        HoverColor: =
+        HoverFill: =
+        PaddingBottom: =50
+        PressedFill: =
+        RadiusBottomLeft: =30
+        RadiusBottomRight: =30
+        RadiusTopLeft: |
+            =30
+        RadiusTopRight: =30
+        Size: =24
+        Text: =""
+        Width: =1132
+        X: =198
+        Y: =153
+        ZIndex: =1
+
+    Rectangle1_9 As rectangle:
+        Fill: =RGBA(76, 133, 45, 0.77)
+        Height: =768
+        Width: =164
+        ZIndex: =2
+
+    Button2_52 As button:
+        BorderStyle: =BorderStyle.Dotted
+        BorderThickness: =1
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(TrangchuGD)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Home"
+        Width: =164
+        ZIndex: =3
+
+    Icon4_8 As icon.Home:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Home
+        Width: =50
+        X: =57
+        Y: =15
+        ZIndex: =4
+
+    Button2_53 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(NhaCungCap)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Supplier"
+        Width: =164
+        Y: =110
+        ZIndex: =5
+
+    Button2_54 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(KhachHang)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Customer"
+        Width: =164
+        Y: =220
+        ZIndex: =6
+
+    Button2_55 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(TaiKhoan)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Acount"
+        Width: =164
+        Y: =330
+        ZIndex: =7
+
+    Button2_56 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(DangNhap)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            
+            Logout"
+        Width: =164
+        Y: =658
+        ZIndex: =8
+
+    Icon10_8 As icon.Leave:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Leave
+        Width: =50
+        X: =57
+        Y: =682
+        ZIndex: =9
+
+    Icon11_15 As icon.VerticalLine:
+        Height: =110
+        Icon: =Icon.VerticalLine
+        Width: =30
+        X: =149
+        Y: =110
+        ZIndex: =10
+
+    Image4_13 As image:
+        Height: =74
+        Image: =Logo
+        Width: =258
+        X: =179
+        Y: =11
+        ZIndex: =11
+
+    Image4_14 As image:
+        Height: =56
+        Image: =LookUp(QLK_Account, ID = idDangNhap,' Portrait')
+        RadiusBottomLeft: =35
+        RadiusBottomRight: =35
+        RadiusTopLeft: =35
+        RadiusTopRight: =35
+        Width: =56
+        X: =966
+        Y: =20
+        ZIndex: =12
+
+    Label2_12 As label:
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Semibold
+        Size: =20
+        Text: =LookUp(QLK_Account, ID = idDangNhap, FullName)
+        Width: =196
+        X: =1035
+        Y: =16
+        ZIndex: =13
+
+    Icon14_2 As icon.AddUser:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.AddUser
+        Width: =50
+        X: =57
+        Y: =350
+        ZIndex: =15
+
+    Icon17_2 As icon.Person:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Person
+        Width: =50
+        X: =57
+        Y: =242
+        ZIndex: =16
+
+    Icon18_2 As icon.LogJournal:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.LogJournal
+        Width: =50
+        X: =57
+        Y: =127
+        ZIndex: =17
+
+    Label3_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(184, 0, 0, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =65
+        Size: =25
+        Text: ="Fill in supplier information"
+        Width: =476
+        X: =526
+        Y: =177
+        ZIndex: =18
+
+    Label4_5 As label:
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =20
+        Text: |-
+            ="Supplier Name:"
+        Width: =236
+        X: =378
+        Y: =276
+        ZIndex: =19
+
+    Label4_6 As label:
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =20
+        Text: |-
+            ="Phone Number:"
+        Width: =237
+        X: =378
+        Y: =338
+        ZIndex: =20
+
+    Label4_7 As label:
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =20
+        Text: |-
+            ="Gmail:"
+        Width: =237
+        X: =378
+        Y: =400
+        ZIndex: =21
+
+    Label4_8 As label:
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =20
+        Text: |-
+            ="Address:"
+        Width: =237
+        X: =378
+        Y: =463
+        ZIndex: =22
+
+    Label4_9 As label:
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =20
+        Text: |-
+            ="Area:"
+        Width: =237
+        X: =378
+        Y: =525
+        ZIndex: =23
+
+    txt_SupName_1 As text:
+        Align: =Align.Center
+        BorderThickness: =1
+        Default: =gal_NhaCungCap.Selected.SupplierName
+        Font: =Font.'Segoe UI'
+        HintText: ="Supplier Name"
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =20
+        Width: =452
+        X: =615
+        Y: =276
+        ZIndex: =24
+
+    txt_SupPhone_1 As text:
+        Align: =Align.Center
+        BorderThickness: =1
+        Default: =gal_NhaCungCap.Selected.PhoneNumber
+        Font: =Font.'Segoe UI'
+        HintText: ="Phone Number"
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =20
+        Width: =452
+        X: =615
+        Y: =338
+        ZIndex: =25
+
+    txt_SupGmail_1 As text:
+        Align: =Align.Center
+        BorderThickness: =1
+        Default: =gal_NhaCungCap.Selected.Gmail
+        Font: =Font.'Segoe UI'
+        HintText: ="Gmail"
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =20
+        Width: =452
+        X: =615
+        Y: =400
+        ZIndex: =26
+
+    txt_SupAdd_1 As text:
+        Align: =Align.Center
+        BorderThickness: =1
+        Default: =gal_NhaCungCap.Selected.' Address'
+        Font: =Font.'Segoe UI'
+        HintText: ="Address"
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =20
+        Width: =452
+        X: =615
+        Y: =463
+        ZIndex: =27
+
+    drop_SupArea_1 As dropdown:
+        BorderThickness: =1
+        Default: |
+            =LookUp(QLK_Area, ID = Value(gal_NhaCungCap.Selected.ID_Area), Area)
+        Font: =Font.'Segoe UI'
+        Items: =QLK_Area
+        Size: =20
+        Width: =452
+        X: =615
+        Y: =525
+        ZIndex: =28
+
+    Button3_18 As button:
+        Height: =47
+        OnSelect: |-
+            =If(txt_SupName_1.Text = "", Notify("You have not entered the supplier name"),
+                If(txt_SupPhone_1.Text = "", Notify("You have not entered the supplier phone number"),
+                    If(txt_SupGmail_1.Text = "", Notify("You have not entered the supplier gmail"),
+                        If(txt_SupAdd_1.Text = "", Notify("You have not entered the supplier address"),
+                            Set(showDialogueSuaNCC, true)
+                        )
+                    )
+                )
+            )
+            //Set(showDialogueThemNCC, true)
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Text: ="Update"
+        Visible: |
+            =true
+        Width: =145
+        X: =1109
+        Y: =689
+        ZIndex: =34
+
+    Icon2_1 As icon.Trash:
+        Height: =46
+        Icon: =Icon.Trash
+        OnSelect: =Set(showDialogueXoaNCC, true)
+        Width: =51
+        X: =1269
+        Y: =689
+        ZIndex: =35
+
+    GroupThemNCCThanhCong_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =39
+
+        Nen_9 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =
+            Height: =289
+            HoverBorderColor: =
+            HoverColor: =
+            HoverFill: =
+            PaddingBottom: =50
+            PressedFill: =
+            RadiusBottomLeft: =30
+            RadiusBottomRight: =30
+            RadiusTopLeft: |
+                =30
+            RadiusTopRight: =30
+            Size: =24
+            Text: =""
+            Visible: =showThemNCCThanhCong
+            Width: =473
+            X: =445
+            Y: =239
+            ZIndex: =47
+
+        Button3_16 As button:
+            Fill: =RGBA(184, 0, 0, 1)
+            Height: =47
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: |-
+                =Set(showDialogueThemNCC, false);
+                Set(showThemNCCThanhCong,false);
+                Set(showDialogueSuaNCC, false);
+                Set(showDialogueXoaNCC, false);
+                Navigate(NhaCungCap)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Text: ="OK"
+            Visible: =showThemNCCThanhCong
+            Width: =145
+            X: =610
+            Y: =459
+            ZIndex: =48
+
+        Label5_4 As label:
+            Align: =Align.Center
+            Color: =RGBA(127, 178, 57, 1)
+            Font: =Font.'Patrick Hand'
+            FontWeight: =FontWeight.Semibold
+            Height: =67
+            Size: =30
+            Text: ="Successfully added supplier"
+            Visible: =showThemNCCThanhCong
+            Width: =408
+            X: =477
+            Y: =249
+            ZIndex: =49
+
+        Image5_1 As image:
+            Height: =117
+            Image: =user
+            Visible: =showThemNCCThanhCong
+            Width: =122
+            X: =621
+            Y: =320
+            ZIndex: =50
+
+    GroupDialogSuaNCC_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =46
+
+        Rectangle2_4 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.39)
+            Height: =768
+            Visible: =showDialogueSuaNCC
+            Width: =1366
+            ZIndex: =37
+
+        Nen_11 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =
+            Height: =289
+            HoverBorderColor: =
+            HoverColor: =
+            HoverFill: =
+            PaddingBottom: =50
+            PressedFill: =
+            RadiusBottomLeft: =30
+            RadiusBottomRight: =30
+            RadiusTopLeft: |
+                =30
+            RadiusTopRight: =30
+            Size: =24
+            Text: =""
+            Visible: =showDialogueSuaNCC
+            Width: =473
+            X: =446
+            Y: =240
+            ZIndex: =38
+
+        Label5_5 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =131
+            Size: =20
+            Text: ="Are you sure you want to edit the supplier information?"
+            Visible: =showDialogueSuaNCC
+            Width: =440
+            X: =461
+            Y: =281
+            ZIndex: =39
+
+        Button3_10 As button:
+            Font: =Font.'Segoe UI'
+            Height: =47
+            OnSelect: |-
+                =Patch(
+                    QLK_Supplier, LookUp(QLK_Supplier, ID = IDSupplier_GalSupplier),
+                    {
+                        SupplierName: txt_SupName_1.Text,
+                        PhoneNumber: txt_SupPhone_1.Text,
+                        Gmail: txt_SupGmail_1.Text,
+                        ' Address': txt_SupAdd_1.Text,
+                        ID_Area: LookUp(QLK_Area, Area = drop_SupArea_1.SelectedText.Value, Text(ID))
+                    }
+                );
+                Set(showThemNCCThanhCong, true)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Text: ="Yes"
+            Visible: =showDialogueSuaNCC
+            Width: =145
+            X: =526
+            Y: =451
+            ZIndex: =40
+
+        Button3_14 As button:
+            Fill: =RGBA(184, 0, 0, 1)
+            Font: =Font.'Segoe UI'
+            Height: =47
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: =Set(showDialogueSuaNCC, false)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Text: ="Cancel"
+            Visible: =showDialogueSuaNCC
+            Width: =145
+            X: =704
+            Y: =451
+            ZIndex: =41
+
+    Label2_21 As label:
+        Align: =Align.Center
+        Color: |-
+            =If(Label2_21.Text = "Stocker", RGBA(50, 200, 0, 100),
+                If(Label2_21.Text = "Manager", RGBA(200,0,0,100),
+                    If(Label2_21.Text = "WarehouseStaff", RGBA(60,100,170,100),
+                        If(Label2_21.Text = "Accountant", RGBA(255,190,0,100))
+                    )
+                )
+            )
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Semibold
+        Height: =31
+        Size: =15
+        Text: =LookUp(QLK_Account, ID = idDangNhap, ' Permission'.Value)
+        Width: =196
+        X: =1035
+        Y: =45
+        ZIndex: =51
+
+    GroupDialogXoaNCC_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =51
+
+        Rectangle2_5 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.39)
+            Height: =768
+            Visible: =showDialogueXoaNCC
+            Width: =1366
+            ZIndex: =42
+
+        Nen_12 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =
+            Height: =289
+            HoverBorderColor: =
+            HoverColor: =
+            HoverFill: =
+            PaddingBottom: =50
+            PressedFill: =
+            RadiusBottomLeft: =30
+            RadiusBottomRight: =30
+            RadiusTopLeft: |
+                =30
+            RadiusTopRight: =30
+            Size: =24
+            Text: =""
+            Visible: =showDialogueXoaNCC
+            Width: =473
+            X: =446
+            Y: =240
+            ZIndex: =43
+
+        Label5_6 As label:
+            Align: =Align.Center
+            Font: =Font.'Patrick Hand'
+            FontWeight: =FontWeight.Semibold
+            Height: =131
+            Size: =30
+            Text: ="Are you sure you want to delete the supplier information?"
+            Visible: =showDialogueXoaNCC
+            Width: =440
+            X: =461
+            Y: =281
+            ZIndex: =44
+
+        Button3_11 As button:
+            Height: =47
+            OnSelect: |-
+                =Remove(QLK_Supplier, LookUp(QLK_Supplier, ID = IDSupplier_GalSupplier));
+                Set(showThemNCCThanhCong, true)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Text: ="Yes"
+            Visible: =showDialogueXoaNCC
+            Width: =145
+            X: =526
+            Y: =451
+            ZIndex: =45
+
+        Button3_15 As button:
+            Fill: =RGBA(184, 0, 0, 1)
+            Height: =47
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: =Set(showDialogueXoaNCC, false)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Text: ="Cancel"
+            Visible: =showDialogueXoaNCC
+            Width: =145
+            X: =704
+            Y: =451
+            ZIndex: =46
+

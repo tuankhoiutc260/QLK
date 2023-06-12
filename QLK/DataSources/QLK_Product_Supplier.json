@@ -1,0 +1,52 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2023-05-23T16:50:55.0860000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "{Attachments}": "Attachments",
+      "{Attachments}@odata.type": "{Attachments} ({Attachments}@odata.type)",
+      "{FilenameWithExtension}": "File name with extension",
+      "{FullPath}": "Full Path",
+      "{HasAttachments}": "Has attachments",
+      "{Identifier}": "Identifier",
+      "{IsFolder}": "IsFolder",
+      "{Link}": "Link to item",
+      "{ModerationComment}": "Comments associated with the content approval of this list item",
+      "{ModerationStatus}": "Content approval status",
+      "{Name}": "Name",
+      "{Path}": "Folder path",
+      "{Thumbnail}": "Thumbnail",
+      "{TriggerWindowEndToken}": "Trigger Window End Token",
+      "{TriggerWindowStartToken}": "Trigger Window Start Token",
+      "{VersionNumber}": "Version number",
+      "Author": "Created By",
+      "Author#Claims": "Created By Claims",
+      "Barcode_Supplier": "Barcode_Pro-Supplier",
+      "ComplianceAssetId": "Compliance Asset Id",
+      "Created": "Created",
+      "Describe_Pro_x002d_Supplier": "Describe_Pro-Supplier",
+      "Editor": "Modified By",
+      "Editor#Claims": "Modified By Claims",
+      "ID": "ID",
+      "ID_Supplier": "ID_Supplier",
+      "ID_Unit": "ID_Unit",
+      "IDProduct_Supplier": "IDProduct_Supplier",
+      "Image_Pro_x002d_Supplier": "Image_Pro-Supplier",
+      "Modified": "Modified",
+      "Name_Supplier": "Name_Pro-Supplier",
+      "OData__ColorTag": "Color Tag",
+      "Price_Supplier": "Price_Pro-Supplier",
+      "Title": "Title"
+    },
+    "DatasetName": "https://bhktechcorp.sharepoint.com/sites/Khoi",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "QLK_Product_Supplier",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

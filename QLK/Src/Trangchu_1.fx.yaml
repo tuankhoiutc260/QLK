@@ -1,0 +1,226 @@
+Trangchu_1 As screen:
+    Fill: =RGBA(214, 223, 238, 1)
+
+    Image7_1 As image:
+        Height: =238
+        Image: ='Xe 2'
+        Width: =1202
+        X: =164
+        ZIndex: =1
+
+    Rectangle1_16 As rectangle:
+        Fill: =RGBA(76, 133, 45, 0.77)
+        Height: =768
+        Width: =164
+        ZIndex: =2
+
+    Button2_87 As button:
+        BorderStyle: =BorderStyle.Dotted
+        BorderThickness: =1
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Home"
+        Width: =164
+        ZIndex: =3
+
+    Icon4_15 As icon.Home:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Home
+        Width: =50
+        X: =57
+        Y: =15
+        ZIndex: =4
+
+    Button2_90 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(HangHoa)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Product"
+        Width: =164
+        Y: =330
+        ZIndex: =7
+
+    Button2_91 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(KiemKho)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Inventory"
+        Width: =164
+        Y: =440
+        ZIndex: =8
+
+    Icon8_6 As icon.Shop:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Shop
+        Width: =50
+        X: =57
+        Y: =353
+        ZIndex: =11
+
+    Icon11_22 As icon.ListWatchlistRemind:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.ListWatchlistRemind
+        Width: =50
+        X: =57
+        Y: =464
+        ZIndex: =12
+
+    Button2_92 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(PheDuyet)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Approve"
+        Width: =164
+        Y: =550
+        ZIndex: =13
+
+    Icon9_6 As icon.Draw:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Draw
+        Width: =50
+        X: =57
+        Y: =568
+        ZIndex: =14
+
+    Button2_93 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(DangNhap)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            
+            Logout"
+        Width: =164
+        Y: =658
+        ZIndex: =15
+
+    Icon10_15 As icon.Leave:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Leave
+        Width: =50
+        X: =57
+        Y: =682
+        ZIndex: =16
+
+    Icon11_12 As icon.VerticalLine:
+        Height: =110
+        Icon: =Icon.VerticalLine
+        X: =132
+        ZIndex: =17
+
+    Image4_27 As image:
+        Height: =74
+        Image: =Logo
+        Width: =258
+        X: =179
+        Y: =11
+        ZIndex: =18
+
+    Image4_28 As image:
+        Height: =56
+        Image: =LookUp(QLK_Account, ID = idDangNhap,' Portrait')
+        RadiusBottomLeft: =35
+        RadiusBottomRight: =35
+        RadiusTopLeft: =35
+        RadiusTopRight: =35
+        Width: =56
+        X: =966
+        Y: =20
+        ZIndex: =19
+
+    Label2_6 As label:
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Semibold
+        Size: =20
+        Text: =LookUp(QLK_Account, ID = idDangNhap, FullName)
+        Width: =196
+        X: =1035
+        Y: =14
+        ZIndex: =20
+
+    icMenu_1 As icon.Hamburger:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =36
+        Icon: =Icon.Hamburger
+        OnSelect: |-
+            =If(!IsBlank(LookUp(QLK_Account, userPermision.Value = "Manager")), 
+                Navigate(NhaCungCap),
+                Notify("Only the manager can use this function?")
+                )
+                
+        Width: =34
+        X: =1296
+        Y: =30
+        ZIndex: =21
+
+    Label2_31 As label:
+        Color: |-
+            =If(Label2_31.Text = "Stocker", RGBA(50, 200, 0, 100),
+                If(Label2_31.Text = "Manager", RGBA(200,0,0,100),
+                    If(Label2_31.Text = "WarehouseStaff", RGBA(60,100,170,100),
+                        If(Label2_31.Text = "Accountant", RGBA(255,190,0,100))
+                    )
+                )
+            )
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Semibold
+        Height: =31
+        Size: =15
+        Text: =LookUp(QLK_Account, ID = idDangNhap, ' Permission'.Value)
+        Width: =196
+        X: =1035
+        Y: =45
+        ZIndex: =22
+

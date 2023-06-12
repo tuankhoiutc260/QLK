@@ -1,0 +1,150 @@
+{
+  "10afa7bd-9860-4730-ba15-0ce266cca5f1": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "276c7d45-bfe7-4b38-b653-48308dff6f77": {
+          "value": "shared_sharepointonline"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "3a7b23e6-98fe-4666-b44c-c6adb7a19e6e"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "276c7d45-bfe7-4b38-b653-48308dff6f77"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "3a7b23e6-98fe-4666-b44c-c6adb7a19e6e"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "QLK_OrderInformation"
+    ],
+    "dependencies": {
+      "shared_sharepointonline": "276c7d45-bfe7-4b38-b653-48308dff6f77"
+    },
+    "dependents": [],
+    "id": "10afa7bd-9860-4730-ba15-0ce266cca5f1"
+  },
+  "276c7d45-bfe7-4b38-b653-48308dff6f77": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/shgogna/globalperconnector-train1/1.0.1639.3310/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://bhktechcorp.sharepoint.com/sites/Khoi": {
+        "dataSources": {
+          "QLK_Account": {
+            "tableName": "22a18518-ee45-4703-b3ac-49309444fbe2"
+          },
+          "QLK_Area": {
+            "tableName": "b765d257-a22f-4491-bb93-6b4eeb06bac8"
+          },
+          "QLK_Customer": {
+            "tableName": "104fd451-2786-4669-80e5-264470a7f9f2"
+          },
+          "QLK_ImportRequest": {
+            "tableName": "b31d03b3-3b48-4d7d-bdfb-b979f350cc57"
+          },
+          "QLK_Location": {
+            "tableName": "2b958fd3-4717-42bf-b4cf-b330f5a9c69a"
+          },
+          "QLK_OrderForm": {
+            "tableName": "1619db08-8b68-43c0-9aca-c803dddb6500"
+          },
+          "QLK_OrderFormInformation": {
+            "tableName": "443d99ab-18c2-4827-81f1-b49556a5debb"
+          },
+          "QLK_OutputFormInformation": {
+            "tableName": "efd8a2b6-f327-4ee6-8f85-e6cb0f3e57a6"
+          },
+          "QLK_Product": {
+            "tableName": "7ae79b72-ebf1-474f-86a8-05dc12c689bd"
+          },
+          "QLK_Supplier": {
+            "tableName": "433aca23-8260-489e-9ed5-dadab226ba37"
+          },
+          "QLK_Unit": {
+            "tableName": "b3f0f76e-068f-4b41-b170-249de916086e"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "QLK_Supplier",
+      "QLK_Account",
+      "QLK_Product",
+      "QLK_Area",
+      "QLK_Customer",
+      "QLK_OrderForm",
+      "QLK_Unit",
+      "QLK_OutputFormInformation",
+      "QLK_OrderFormInformation",
+      "QLK_Location",
+      "QLK_ImportRequest"
+    ],
+    "dependencies": {},
+    "dependents": [
+      "10afa7bd-9860-4730-ba15-0ce266cca5f1"
+    ],
+    "id": "276c7d45-bfe7-4b38-b653-48308dff6f77"
+  },
+  "6163a375-9043-4469-818a-cba8353da2be": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/laborbol/partial-builds/390724148/1.0.1641.3326/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "6163a375-9043-4469-818a-cba8353da2be"
+  },
+  "a2bb899c-405e-4866-bf49-96e20ff92ba2": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/shgogna/globalperconnector-train1/1.0.1639.3310/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://bhktechcorp.sharepoint.com/sites/Khoi": {
+        "dataSources": {
+          "QLK_InputForm": {
+            "tableName": "82779b78-2cd5-40f1-9a2c-f15a15dafadc"
+          },
+          "QLK_Product_Supplier": {
+            "tableName": "77ec279f-b72c-4ff2-b1d0-6e2c3fb00d7a"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "QLK_InputForm",
+      "QLK_Product_Supplier"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "a2bb899c-405e-4866-bf49-96e20ff92ba2"
+  }
+}

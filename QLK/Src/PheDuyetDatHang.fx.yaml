@@ -1,0 +1,862 @@
+PheDuyetDatHang As screen:
+    Fill: =RGBA(214, 223, 238, 1)
+
+    Rectangle1_17 As rectangle:
+        Fill: =RGBA(76, 133, 45, 0.77)
+        Height: =768
+        Width: =164
+        ZIndex: =1
+
+    Button2_1 As button:
+        BorderStyle: =BorderStyle.Dotted
+        BorderThickness: =1
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(TrangchuGD)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Home"
+        Width: =164
+        ZIndex: =2
+
+    Icon4_16 As icon.Home:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Home
+        Width: =50
+        X: =57
+        Y: =15
+        ZIndex: =3
+
+    Button2_17 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(HangHoa)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Order approval"
+        Width: =164
+        Y: =110
+        ZIndex: =4
+
+    Button2_18 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(KiemKho)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Import approval"
+        Width: =164
+        Y: =220
+        ZIndex: =5
+
+    Icon8_2 As icon.Shop:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Shop
+        Width: =50
+        X: =57
+        Y: =124
+        ZIndex: =6
+
+    Icon11_25 As icon.ListWatchlistRemind:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.ListWatchlistRemind
+        Width: =50
+        X: =57
+        Y: =238
+        ZIndex: =7
+
+    Button2_96 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(DangNhap)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            
+            Logout"
+        Width: =164
+        Y: =644
+        ZIndex: =8
+
+    Icon10_2 As icon.Leave:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Leave
+        Width: =50
+        X: =57
+        Y: =668
+        ZIndex: =9
+
+    Icon11_23 As icon.VerticalLine:
+        Height: =110
+        Icon: =Icon.VerticalLine
+        X: =132
+        Y: =110
+        ZIndex: =10
+
+    Image4_29 As image:
+        Height: =74
+        Image: =Logo
+        Width: =258
+        X: =179
+        Y: =11
+        ZIndex: =11
+
+    Image4_30 As image:
+        Height: =56
+        Image: =LookUp(QLK_Account, ID = idDangNhap,' Portrait')
+        RadiusBottomLeft: =35
+        RadiusBottomRight: =35
+        RadiusTopLeft: =35
+        RadiusTopRight: =35
+        Width: =56
+        X: =966
+        Y: =20
+        ZIndex: =12
+
+    Label2_32 As label:
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =15
+        Text: =LookUp(QLK_Account, ID = idDangNhap, FullName)
+        Width: =204
+        X: =1035
+        Y: =14
+        ZIndex: =13
+
+    icMenu_2 As icon.Hamburger:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =36
+        Icon: =Icon.Hamburger
+        OnSelect: |-
+            =If(!IsBlank(LookUp(QLK_Account, userPermision.Value = "Manager")), 
+                Navigate(NhaCungCap),
+                Notify("Only the manager can use this function?")
+                )
+                
+        Width: =34
+        X: =1296
+        Y: =30
+        ZIndex: =14
+
+    Label2_33 As label:
+        Color: |-
+            =If(Label2_33.Text = "Stocker", RGBA(50, 200, 0, 100),
+                If(Label2_33.Text = "Manager", RGBA(200,0,0,100),
+                    If(Label2_33.Text = "WarehouseStaff", RGBA(60,100,170,100),
+                        If(Label2_33.Text = "Accountant", RGBA(255,190,0,100))
+                    )
+                )
+            )
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =31
+        Size: =15
+        Text: =LookUp(QLK_Account, ID = idDangNhap, ' Permission'.Value)
+        Width: =196
+        X: =1035
+        Y: =45
+        ZIndex: =15
+
+    Button2_19 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(KiemKho)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Export approval"
+        Width: =164
+        Y: =330
+        ZIndex: =16
+
+    Icon11_28 As icon.ListWatchlistRemind:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.ListWatchlistRemind
+        Width: =50
+        X: =57
+        Y: =343
+        ZIndex: =17
+
+    TextInput1_8 As text:
+        Default: =
+        DisabledBorderColor: =RGBA(219, 219, 219, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.Disabled
+        Height: =604
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Width: =1134
+        X: =196
+        Y: =134
+        ZIndex: =18
+
+    lbl_Title_DuyetDatHang As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =71
+        Size: =20
+        Text: ="Ordered approval"
+        Width: =261
+        X: =230
+        Y: =129
+        ZIndex: =19
+
+    Button7_3 As button:
+        BorderColor: =RGBA(151, 0, 0, 1)
+        DisabledBorderColor: =RGBA(219, 219, 219, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.Disabled
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderColor: =
+        Height: =52
+        HoverBorderColor: =
+        HoverColor: =
+        HoverFill: =
+        PaddingBottom: =50
+        PressedFill: =
+        RadiusBottomLeft: |
+            =0
+        RadiusBottomRight: |
+            =0
+        RadiusTopLeft: =20
+        RadiusTopRight: |
+            =20
+        Size: =24
+        Text: =""
+        Width: =1072
+        X: =230
+        Y: =200
+        ZIndex: =20
+
+    lbl_DateCreated_DuyetDatHang As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Text: ="Date Created"
+        X: =492
+        Y: =200
+        ZIndex: =21
+
+    lbl_OrderedID_DuyetDatHang As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Size: =14
+        Text: ="Order ID"
+        Width: =185
+        X: =254
+        Y: =200
+        ZIndex: =22
+
+    lbl_TotalPrice_DuyetDatHang As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Text: ="Total Price"
+        X: =826
+        Y: =200
+        ZIndex: =23
+
+    lbl_Status_DuyetDatHang As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Text: ="Status"
+        X: =1084
+        Y: =200
+        ZIndex: =24
+
+    btn_PendingList_DuyetDatHang As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =RGBA(237, 237, 237, 1)
+        BorderThickness: =0
+        Color: =RGBA(255, 191, 0, 1)
+        Fill: =RGBA(237, 237, 237, 1)
+        HoverBorderColor: =RGBA(237, 237, 237, 1)
+        HoverFill: =RGBA(255, 191, 0, 1)
+        OnSelect: |-
+            =Set(datasource_OrderedList, "pending");
+            Refresh(QLK_OrderForm);
+        PressedBorderColor: =RGBA(237, 237, 237, 1)
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =13
+        Text: ="Unapproved list"
+        Width: =156
+        X: =771
+        Y: =148
+        ZIndex: =25
+
+    txt_SearchOrdered_DuyetDatHang As text:
+        Align: =Align.Center
+        BorderColor: =RGBA(219, 219, 219, 1)
+        Default: ="Search here"
+        Height: =44
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        X: =570
+        Y: =65
+        ZIndex: =26
+
+    btn_ApprovedList_DuyetDatHang As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =RGBA(237, 237, 237, 1)
+        BorderThickness: =0
+        Color: =RGBA(54, 176, 75, 1)
+        Fill: =RGBA(237, 237, 237, 1)
+        HoverBorderColor: =RGBA(237, 237, 237, 1)
+        HoverFill: =RGBA(81, 224, 105, 1)
+        OnSelect: |-
+            =Set(datasource_OrderedList, "approved");
+            Refresh(QLK_OrderForm);
+        PressedBorderColor: =RGBA(237, 237, 237, 1)
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =13
+        Text: ="Unapproved list"
+        Width: =156
+        X: =947
+        Y: =148
+        ZIndex: =27
+
+    btn_RefusedList_DuyetDatHang As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =RGBA(237, 237, 237, 1)
+        BorderThickness: =0
+        Color: =RGBA(255, 0, 0, 1)
+        Fill: =RGBA(237, 237, 237, 1)
+        HoverBorderColor: =RGBA(237, 237, 237, 1)
+        HoverFill: =RGBA(255, 0, 0, 1)
+        OnSelect: |-
+            =Set(datasource_OrderedList, "refused");
+            Refresh(QLK_OrderForm);
+        PressedBorderColor: =RGBA(237, 237, 237, 1)
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =13
+        Text: ="Unapproved list"
+        Width: =156
+        X: =1121
+        Y: =148
+        ZIndex: =28
+
+    "gal_OrderedList_DuyetDatHang As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        DelayItemLoading: =true
+        Height: =407
+        Items: |-
+            =If(
+                datasource_OrderedList = "pending",    
+                Filter(QLK_OrderForm, Status = 1),
+                If(
+                    datasource_OrderedList = "approved",
+                    Filter(QLK_OrderForm, Status = 2),
+                    If(
+                        datasource_OrderedList = "refused",
+                        Filter(QLK_OrderForm, Status = 3)
+                    )            
+                )
+            )
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =74
+        Width: =1072
+        X: =230
+        Y: =251
+        ZIndex: =31
+
+        Separator1_10 As rectangle:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(166, 166, 166, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            ZIndex: =5
+
+        lbl_ValueOrderID_DuyetDatHang As label:
+            Height: =38
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.IDOrder
+            Width: =202
+            X: =23
+            Y: =18
+            ZIndex: =6
+
+        lbl_ValueDateCreated_DuyetDatHang As label:
+            Height: =38
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Created
+            Width: =202
+            X: =262
+            Y: =18
+            ZIndex: =8
+
+        lbl_ValueTotalPrice_DuyetDatHang As label:
+            Height: =38
+            OnSelect: =Select(Parent)
+            Text: |-
+                =Text(ThisItem.TotalPrice, "#,###") & " VND"
+            Width: =202
+            X: =597
+            Y: =18
+            ZIndex: =9
+
+        lbl_ValueStatus_DuyetDatHang As text:
+            Align: =Align.Center
+            Default: =If(ThisItem.Status = 1, "Chờ duyệt", If(ThisItem.Status = 2, "Đã duyệt", If(ThisItem.Status = 3, "Từ chối duyệt")))
+            DisabledBorderColor: =RGBA(255, 255, 255, 1)
+            DisabledColor: =If(ThisItem.Status = 1, RGBA(255, 191, 0, 1), If(ThisItem.Status = 2, RGBA(5, 232, 27, 1), If(ThisItem.Status = 3, RGBA(255, 0, 0, 1))))
+            DisabledFill: =If(ThisItem.Status = 1, RGBA(255, 226, 168, 1), If(ThisItem.Status = 2, RGBA(216, 255, 201, 1), If(ThisItem.Status = 3, RGBA(250, 233, 225, 1))))
+            DisplayMode: =DisplayMode.Disabled
+            FontWeight: =FontWeight.Semibold
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Width: =150
+            X: =855
+            Y: =18
+            ZIndex: =11
+
+        btn_ShowDetailOrdered_DuyetDatHang As button:
+            DisabledFill: =RGBA(244, 244, 244, 0.22)
+            Fill: =If(ThisItem.IsSelected, RGBA(216, 255, 201, 0.40), RGBA(0, 0, 0, 0))
+            Height: =74
+            HoverColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(237, 237, 237, 0.4)
+            OnSelect: |+
+                =Set(IDOrdered_DuyetDatHang, ThisItem.IDOrder);
+                Set(DateCreated_DuyetDatHang, ThisItem.Created);
+                Set(showgrp_DetailOrdered_DuyetDatHang, true);
+                If(ThisItem.Status = 1 || ThisItem.Status = 3, Set(showbtn_Approve_DetailOrdered_DuyetDatHang, true), Set(showbtn_Approve_DetailOrdered_DuyetDatHang, false));
+                /*
+                If(
+                    ThisItem.Status = 1, 
+                    Set(visible_btnDeleteProduct_DetailOrder, true) && lbl_ValueQuantity_DetailOrdered_DuyetDatHang.DisplayMode = DisplayMode.Edit, 
+                    Set(visible_btnDeleteProduct_DetailOrder, false) && lbl_ValueQuantity_DetailOrdered_DuyetDatHang.DisplayMode = DisplayMode.Disabled);
+                    */
+                ClearCollect(
+                    col_DetailOrdered_DuyetDatHang, 
+                    ShowColumns(Filter(QLK_OrderFormInformation, IDOrderForm = IDOrdered_DuyetDatHang), 
+                    "IDOrderForm", "IDProduct_Supplier", "Quantity")
+                );
+                //Set(oldCountRows_col_OrderedInf, CountRows(col_OrderedInf));
+                
+            PressedColor: =
+            PressedFill: =RGBA(237, 237, 237, 0.4)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: =""
+            Width: =1072
+            ZIndex: =12
+
+    btn_Approve_DetailOrdered_DuyetDatHang_1 As timer:
+        BorderThickness: =0
+        Color: =RGBA(184, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =
+        Duration: =1590
+        Fill: =RGBA(251, 188, 159, 1)
+        FontWeight: =FontWeight.Semibold
+        HoverBorderColor: =RGBA(237, 237, 237, 1)
+        HoverFill: =RGBA(184, 0, 0, 1)
+        OnSelect: |-
+            =Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = IDOrdered_DuyetDatHang),
+                {
+                    Status: 3
+                }
+            );
+            Set(showgrp_DetailOrdered_DuyetDatHang, false);
+            Set(showbtn_Approve_DetailOrdered_DuyetDatHang, false);
+            
+            Clear(col_DetailOrdered_DuyetDatHang)
+        OnTimerEnd: |-
+            =Set(showSuccess_1, false) && 
+            Set(showInformationImportInvoiceForm_1, false)
+        OnTimerStart: =Set(showSuccess_1, true) 
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Start: =
+        Text: ="Refuse approval"
+        Visible: |-
+            =//showgrp_DetailOrdered_DuyetDatHang
+            showbtn_Approve_DetailOrdered_DuyetDatHang
+        Width: =237
+        X: =861
+        Y: =642
+        ZIndex: =48
+
+    grp_DetailOrdered_DuyetDatHang As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =52
+
+        bgr_Black_DetailOrdered_DuyetDatHang As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(128, 128, 128, 0.42)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =768
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =showgrp_DetailOrdered_DuyetDatHang
+            Width: =1366
+            ZIndex: =32
+
+        bgr_DetailOrdered_DuyetDatHang As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledColor: =RGBA(0, 0, 0, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =635
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showgrp_DetailOrdered_DuyetDatHang
+            Width: =1004
+            X: =264
+            Y: =67
+            ZIndex: =33
+
+        lbl_Title_DetailOrdered_DuyetDatHang As label:
+            Align: =Align.Center
+            Color: =RGBA(184, 0, 0, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =72
+            Size: =30
+            Text: ="Order"
+            Visible: =showgrp_DetailOrdered_DuyetDatHang
+            Width: =1004
+            X: =264
+            Y: =65
+            ZIndex: =34
+
+        lbl_IDOrder_DetailOrdered_DuyetDatHang As label:
+            Font: =Font.'Segoe UI'
+            Height: =46
+            Size: =15
+            Text: |-
+                ="ID Order: " & IDOrdered_DuyetDatHang
+            Visible: =showgrp_DetailOrdered_DuyetDatHang
+            Width: =345
+            X: =318
+            Y: =132
+            ZIndex: =35
+
+        lbl_DateCreated_DetailOrdered_DuyetDatHang As label:
+            Font: =Font.'Segoe UI'
+            Height: =46
+            Size: =15
+            Text: |-
+                ="Date Created: " & DateCreated_DuyetDatHang
+            Visible: =showgrp_DetailOrdered_DuyetDatHang
+            Width: =414
+            X: =791
+            Y: =132
+            ZIndex: =36
+
+        "gal_OrderedList_DetailOrdered_DuyetDatHang As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+            DelayItemLoading: =true
+            Height: =345
+            Items: |-
+                =ShowColumns(col_DetailOrdered_DuyetDatHang, "IDOrderForm" ,"IDProduct_Supplier", "Quantity")
+                //col_OrderedInf
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =66
+            Visible: =showgrp_DetailOrdered_DuyetDatHang
+            Width: =936
+            X: =298
+            Y: =238
+            ZIndex: =37
+
+            Separator1_9 As rectangle:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(166, 166, 166, 1)
+                Height: =1
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                ZIndex: =5
+
+            lbl_ValueTotalPrice_DetailOrdered_DuyetDatHang As label:
+                Height: =66
+                OnSelect: =Select(Parent)
+                Text: |-
+                    =Text(lbl_ValueQuantity_DetailOrdered_DuyetDatHang.Text * LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct_Supplier, 'Price_Pro-Supplier'), "#,###")
+                Width: =155
+                X: =738
+                ZIndex: =9
+
+            lbl_ValuePrice_DetailOrdered_DuyetDatHang As label:
+                Height: =66
+                OnSelect: =Select(Parent)
+                Text: |-
+                    =Text(LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct_Supplier, 'Price_Pro-Supplier'), "#,###")
+                Width: =155
+                X: =583
+                ZIndex: =11
+
+            lbl_ValueQuantity_DetailOrdered_DuyetDatHang As label:
+                Align: =Align.Center
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.Quantity
+                Width: =75
+                X: =370
+                Y: =13
+                ZIndex: =14
+
+            btn_ValueUnit_DetailOrdered_DuyetDatHang As label:
+                Height: =65
+                OnSelect: =Select(Parent)
+                Text: =LookUp(QLK_Unit, ID = Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct_Supplier, ID_Unit)), UnitName)
+                Width: =90
+                X: =493
+                Y: =1
+                ZIndex: =15
+
+            lbl_ValueProductName_DetailOrdered_DuyetDatHang As label:
+                Height: =66
+                OnSelect: =Select(Parent)
+                Text: |-
+                    =//LookUp(QLK_Product_Supplier, IDProduct_Supplier = LookUp(QLK_OrderFormInformation, IDOrderForm = ThisItem.IDOrderForm, ThisItem.IDProduct_Supplier), 'Name_Pro-Supplier')
+                    LookUp(QLK_Product_Supplier, IDProduct_Supplier = LookUp(col_DetailOrdered_DuyetDatHang, IDOrderForm = IDOrdered_DuyetDatHang, ThisItem.IDProduct_Supplier), 'Name_Pro-Supplier')
+                Width: =318
+                X: =32
+                ZIndex: =16
+
+        lbl_ProductName_DetailOrdered_DuyetDatHang As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =34
+            OnSelect: =
+            Text: ="Product Name"
+            Visible: =showgrp_DetailOrdered_DuyetDatHang
+            X: =328
+            Y: =202
+            ZIndex: =40
+
+        lbl_Quantity_DetailOrdered_DuyetDatHang As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =34
+            OnSelect: =
+            Text: ="Quantity"
+            Visible: =showgrp_DetailOrdered_DuyetDatHang
+            Width: =91
+            X: =664
+            Y: =196
+            ZIndex: =41
+
+        btn_Unit_DetailOrdered_DuyetDatHang As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =34
+            OnSelect: =
+            Text: ="Unit"
+            Visible: =showgrp_DetailOrdered_DuyetDatHang
+            Width: =89
+            X: =792
+            Y: =197
+            ZIndex: =42
+
+        lbl_Price_DetailOrdered_DuyetDatHang As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =34
+            OnSelect: =
+            Text: ="Price"
+            Visible: =showgrp_DetailOrdered_DuyetDatHang
+            X: =881
+            Y: =197
+            ZIndex: =43
+
+        lbl_TotalPrice_DetailOrdered_DuyetDatHang As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =34
+            OnSelect: =
+            Text: ="Total Price"
+            Visible: =showgrp_DetailOrdered_DuyetDatHang
+            X: =1035
+            Y: =197
+            ZIndex: =44
+
+        lbl_TotalOrder_DetailOrdered_DuyetDatHang As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =42
+            OnSelect: =
+            Text: |-
+                ="Total: " &
+                Text(Sum(
+                   gal_OrderedList_DetailOrdered_DuyetDatHang.AllItems,
+                   lbl_ValueTotalPrice_DetailOrdered_DuyetDatHang
+                ),  "#,###") & " VND"
+            Visible: =showgrp_DetailOrdered_DuyetDatHang
+            Width: =246
+            X: =638
+            Y: =600
+            ZIndex: =45
+
+        btn_Cancel_DetailOrdered_DuyetDatHang As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: |-
+                =Set(showgrp_DetailOrdered_DuyetDatHang, false);
+                Set(showbtn_Approve_DetailOrdered_DuyetDatHang, false);
+                Clear(col_DetailOrdered_DuyetDatHang);
+                
+                //Set(showOrderProductForm, false)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="x Cancel"
+            Visible: =showgrp_DetailOrdered_DuyetDatHang
+            Width: =136
+            X: =1103
+            Y: =642
+            ZIndex: =46
+
+        btn_Approve_DetailOrdered_DuyetDatHang As timer:
+            BorderThickness: =0
+            Color: =RGBA(54, 176, 75, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            DisplayMode: =
+            Duration: =1590
+            Fill: =RGBA(205, 247, 205, 1)
+            FontWeight: =FontWeight.Semibold
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(81, 224, 105, 1)
+            OnSelect: |-
+                =Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = IDOrdered_DuyetDatHang),
+                    {
+                        Status: 2
+                    }
+                );
+                Set(showgrp_DetailOrdered_DuyetDatHang, false);
+                Set(showbtn_Approve_DetailOrdered_DuyetDatHang, false);
+                
+                Clear(col_DetailOrdered_DuyetDatHang)
+            OnTimerEnd: |-
+                =Set(showSuccess_1, false) && 
+                Set(showInformationImportInvoiceForm_1, false)
+            OnTimerStart: =Set(showSuccess_1, true) 
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Start: =
+            Text: ="Approve"
+            Visible: |-
+                =//showgrp_DetailOrdered_DuyetDatHang
+                showbtn_Approve_DetailOrdered_DuyetDatHang
+            Width: =237
+            X: =617
+            Y: =642
+            ZIndex: =47
+
+    grp_Success_DuyetDatHang As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =54
+
+        bgr_Black_Success_DuyetDatHang As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(128, 128, 128, 0.42)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =768
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =showSuccess_1
+            Width: =1366
+            ZIndex: =29
+
+        img_Success_DuyetDatHang As image:
+            Image: =green_success
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showSuccess_1
+            X: =713
+            Y: =344
+            ZIndex: =30
+

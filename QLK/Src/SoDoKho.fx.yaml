@@ -1,0 +1,1025 @@
+SoDoKho As screen:
+    Fill: =RGBA(214, 223, 238, 1)
+
+    TextInput1_10 As text:
+        Default: =
+        DisabledBorderColor: =RGBA(219, 219, 219, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.Disabled
+        Height: =633
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Width: =1134
+        X: =196
+        Y: =110
+        ZIndex: =1
+
+    Rectangle10 As rectangle:
+        BorderThickness: =2
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =553
+        Width: =1083
+        X: =220
+        Y: =172
+        ZIndex: =2
+
+    Rectangle1_20 As rectangle:
+        Fill: =RGBA(76, 133, 45, 0.77)
+        Height: =768
+        Width: =164
+        ZIndex: =3
+
+    Button2_8 As button:
+        BorderStyle: =BorderStyle.Dotted
+        BorderThickness: =1
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(TrangchuGD)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Warehouse"
+        Width: =164
+        ZIndex: =4
+
+    Icon4_19 As icon.Home:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Home
+        Width: =50
+        X: =57
+        Y: =15
+        ZIndex: =5
+
+    Button2_12 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: |-
+            =Navigate(HangHoa);
+            Set(DSHangHoa, "DSTrongKho")
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Product"
+        Width: =164
+        Y: =110
+        ZIndex: =6
+
+    Button2_88 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Inventory"
+        Width: =164
+        Y: =220
+        ZIndex: =7
+
+    Icon8_8 As icon.Shop:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Shop
+        Width: =50
+        X: =57
+        Y: =122
+        ZIndex: =8
+
+    Icon11_32 As icon.ListWatchlistRemind:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.ListWatchlistRemind
+        Width: =50
+        X: =57
+        Y: =232
+        ZIndex: =9
+
+    Button2_89 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(DangNhap)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            
+            Logout"
+        Width: =164
+        Y: =651
+        ZIndex: =10
+
+    Icon10_17 As icon.Leave:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Leave
+        Width: =50
+        X: =57
+        Y: =675
+        ZIndex: =11
+
+    Icon11_26 As icon.VerticalLine:
+        Height: =110
+        Icon: =Icon.VerticalLine
+        X: =132
+        ZIndex: =12
+
+    Image4_39 As image:
+        Height: =56
+        Image: =LookUp(QLK_Account, ID = idDangNhap,' Portrait')
+        RadiusBottomLeft: =35
+        RadiusBottomRight: =35
+        RadiusTopLeft: =35
+        RadiusTopRight: =35
+        Width: =56
+        X: =966
+        Y: =20
+        ZIndex: =13
+
+    Label2_38 As label:
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =15
+        Text: =LookUp(QLK_Account, ID = idDangNhap, FullName)
+        Width: =243
+        X: =1035
+        Y: =15
+        ZIndex: =14
+
+    Label2_39 As label:
+        Color: |-
+            =If(Label2_39.Text = "Stocker", RGBA(50, 200, 0, 100),
+                If(Label2_39.Text = "Manager", RGBA(200,0,0,100),
+                    If(Label2_39.Text = "WarehouseStaff", RGBA(60,100,170,100),
+                        If(Label2_39.Text = "Accountant", RGBA(255,190,0,100))
+                    )
+                )
+            )
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =31
+        Size: =15
+        Text: =LookUp(QLK_Account, ID = idDangNhap, ' Permission'.Value)
+        Width: =196
+        X: =1035
+        Y: =45
+        ZIndex: =15
+
+    Image4_38 As image:
+        Height: =74
+        Image: =Logo
+        Width: =258
+        X: =179
+        Y: =11
+        ZIndex: =16
+
+    btn_A1 As button:
+        Fill: =RGBA(102, 182, 227, 1)
+        Height: =66
+        OnSelect: |-
+            =Set(IDViTriKho, btn_A1.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="A1"
+        Width: =144
+        X: =253
+        Y: =293
+        ZIndex: =17
+
+    btn_A2 As button:
+        Fill: =RGBA(102, 182, 227, 1)
+        Height: =66
+        OnSelect: |-
+            =Set(IDViTriKho, btn_A2.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="A2"
+        Width: =144
+        X: =413
+        Y: =293
+        ZIndex: =18
+
+    btn_A3 As button:
+        Fill: =RGBA(102, 182, 227, 1)
+        Height: =66
+        OnSelect: |-
+            =Set(IDViTriKho, btn_A3.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="A3"
+        Width: =144
+        X: =574
+        Y: =293
+        ZIndex: =19
+
+    btn_A4 As button:
+        Fill: =RGBA(102, 182, 227, 1)
+        Height: =66
+        OnSelect: |-
+            =Set(IDViTriKho, btn_A4.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="A4"
+        Width: =144
+        X: =253
+        Y: =375
+        ZIndex: =20
+
+    btn_A5 As button:
+        Fill: =RGBA(102, 182, 227, 1)
+        Height: =66
+        OnSelect: |-
+            =Set(IDViTriKho, btn_A5.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="A5"
+        Width: =144
+        X: =413
+        Y: =375
+        ZIndex: =21
+
+    btn_A6 As button:
+        Fill: =RGBA(102, 182, 227, 1)
+        Height: =66
+        OnSelect: |-
+            =Set(IDViTriKho, btn_A6.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="A6"
+        Width: =144
+        X: =574
+        Y: =375
+        ZIndex: =22
+
+    btn_c4 As button:
+        Fill: =RGBA(250, 155, 112, 1)
+        Height: =66
+        HoverFill: =RGBA(221, 79, 14, 1)
+        OnSelect: |-
+            =Set(IDViTriKho, btn_c4.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="C4"
+        Width: =144
+        X: =253
+        Y: =616
+        ZIndex: =23
+
+    btn_C5 As button:
+        Fill: =RGBA(250, 155, 112, 1)
+        Height: =66
+        HoverFill: =RGBA(221, 79, 14, 1)
+        OnSelect: |-
+            =Set(IDViTriKho, btn_C5.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="C5"
+        Width: =144
+        X: =413
+        Y: =616
+        ZIndex: =24
+
+    btn_C6 As button:
+        Fill: =RGBA(250, 155, 112, 1)
+        Height: =66
+        HoverFill: =RGBA(221, 79, 14, 1)
+        OnSelect: |-
+            =Set(IDViTriKho, btn_C6.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="C6"
+        Width: =144
+        X: =574
+        Y: =616
+        ZIndex: =25
+
+    btn_C1 As button:
+        Fill: =RGBA(250, 155, 112, 1)
+        Height: =66
+        HoverFill: =RGBA(221, 79, 14, 1)
+        OnSelect: |-
+            =Set(IDViTriKho, btn_C1.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="C1"
+        Width: =144
+        X: =253
+        Y: =536
+        ZIndex: =26
+
+    btn_C2 As button:
+        Fill: =RGBA(250, 155, 112, 1)
+        Height: =66
+        HoverFill: =RGBA(221, 79, 14, 1)
+        OnSelect: |-
+            =Set(IDViTriKho, btn_C2.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="C2"
+        Width: =144
+        X: =413
+        Y: =536
+        ZIndex: =27
+
+    btn_C3 As button:
+        Fill: =RGBA(250, 155, 112, 1)
+        Height: =66
+        HoverFill: =RGBA(221, 79, 14, 1)
+        OnSelect: |-
+            =Set(IDViTriKho, btn_C3.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="C3"
+        Width: =144
+        X: =574
+        Y: =536
+        ZIndex: =28
+
+    btn_D6 As button:
+        Fill: =RGBA(187, 221, 140, 1)
+        Height: =66
+        HoverFill: =RGBA(99, 139, 44, 1)
+        OnSelect: |-
+            =Set(IDViTriKho, btn_D6.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="D6"
+        Width: =144
+        X: =1134
+        Y: =616
+        ZIndex: =29
+
+    btn_D5 As button:
+        Fill: =RGBA(187, 221, 140, 1)
+        Height: =66
+        HoverFill: =RGBA(99, 139, 44, 1)
+        OnSelect: |-
+            =Set(IDViTriKho, btn_D5.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="D5"
+        Width: =144
+        X: =973
+        Y: =616
+        ZIndex: =30
+
+    btn_D4 As button:
+        Fill: =RGBA(187, 221, 140, 1)
+        Height: =66
+        HoverFill: =RGBA(99, 139, 44, 1)
+        OnSelect: |-
+            =Set(IDViTriKho, btn_D4.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="D4"
+        Width: =144
+        X: =813
+        Y: =616
+        ZIndex: =31
+
+    btn_D1 As button:
+        Fill: =RGBA(187, 221, 140, 1)
+        Height: =66
+        HoverFill: =RGBA(99, 139, 44, 1)
+        OnSelect: |-
+            =Set(IDViTriKho, btn_D1.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="D1"
+        Width: =144
+        X: =813
+        Y: =536
+        ZIndex: =32
+
+    btn_D2 As button:
+        Fill: =RGBA(187, 221, 140, 1)
+        Height: =66
+        HoverFill: =RGBA(99, 139, 44, 1)
+        OnSelect: |-
+            =Set(IDViTriKho, btn_D2.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="D2"
+        Width: =144
+        X: =973
+        Y: =536
+        ZIndex: =33
+
+    btn_D3 As button:
+        Fill: =RGBA(187, 221, 140, 1)
+        Height: =66
+        HoverFill: =RGBA(99, 139, 44, 1)
+        OnSelect: |-
+            =Set(IDViTriKho, btn_D3.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="D3"
+        Width: =144
+        X: =1134
+        Y: =536
+        ZIndex: =34
+
+    Btn_B4 As button:
+        Fill: =RGBA(229, 240, 113, 1)
+        Height: =66
+        HoverFill: =RGBA(186, 186, 0, 1)
+        OnSelect: |-
+            =Set(IDViTriKho, Btn_B4.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="B4"
+        Width: =144
+        X: =813
+        Y: =375
+        ZIndex: =35
+
+    btn_B1 As button:
+        Fill: =RGBA(229, 240, 113, 1)
+        Height: =66
+        HoverFill: =RGBA(186, 186, 0, 1)
+        OnSelect: |-
+            =Set(IDViTriKho, btn_B1.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="B1"
+        Width: =144
+        X: =813
+        Y: =293
+        ZIndex: =36
+
+    btn_B2 As button:
+        Fill: =RGBA(229, 240, 113, 1)
+        Height: =66
+        HoverFill: =RGBA(186, 186, 0, 1)
+        OnSelect: |-
+            =Set(IDViTriKho, btn_B2.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="B2"
+        Width: =144
+        X: =973
+        Y: =293
+        ZIndex: =37
+
+    Btn_B5 As button:
+        Fill: =RGBA(229, 240, 113, 1)
+        Height: =66
+        HoverFill: =RGBA(186, 186, 0, 1)
+        OnSelect: |-
+            =Set(IDViTriKho, Btn_B5.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="B5"
+        Width: =144
+        X: =973
+        Y: =375
+        ZIndex: =38
+
+    btn_B6 As button:
+        Fill: =RGBA(229, 240, 113, 1)
+        Height: =66
+        HoverFill: =RGBA(186, 186, 0, 1)
+        OnSelect: |-
+            =Set(IDViTriKho, btn_B6.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="B6"
+        Width: =144
+        X: =1134
+        Y: =375
+        ZIndex: =39
+
+    btn_B3 As button:
+        Fill: =RGBA(229, 240, 113, 1)
+        Height: =66
+        HoverFill: =RGBA(186, 186, 0, 1)
+        OnSelect: |-
+            =Set(IDViTriKho, btn_B3.Text);
+            If(LookUp(QLK_Product, Location = IDViTriKho, Location), Set(showThongTinHangHoa_SoDo, true),
+                Set(showThongBaoKhongCoSanPham, true))
+        Text: ="B3"
+        Width: =144
+        X: =1134
+        Y: =293
+        ZIndex: =40
+
+    Label11 As label:
+        Align: =Align.Center
+        Color: =RGBA(184, 0, 0, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Size: =20
+        Text: ="WAREHOUSE DIAGRAM"
+        Width: =445
+        X: =540
+        Y: =127
+        ZIndex: =41
+
+    Label11_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 13, 75, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Size: =15
+        Text: ="Zone A (Crate)"
+        Width: =445
+        X: =262
+        Y: =242
+        ZIndex: =42
+
+    Label11_2 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 13, 75, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Size: =15
+        Text: ="Zone B (Bottle)"
+        Width: =445
+        X: =822
+        Y: =242
+        ZIndex: =43
+
+    Label11_4 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 13, 75, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Size: =15
+        Text: ="Zone C (Batch)"
+        Width: =445
+        X: =266
+        Y: =686
+        ZIndex: =44
+
+    Label11_5 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 13, 75, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Size: =15
+        Text: ="Zone D (Safe)"
+        Width: =445
+        X: =822
+        Y: =686
+        ZIndex: =45
+
+    Button2_101 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(ThietLapGia)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Set price"
+        Width: =164
+        Y: =332
+        ZIndex: =46
+
+    Icon2 As icon.Money:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Money
+        Width: =50
+        X: =57
+        Y: =345
+        ZIndex: =47
+
+    Rectangle9 As rectangle:
+        Fill: =RGBA(202, 202, 202, 1)
+        Height: =60
+        Width: =1083
+        X: =220
+        Y: =460
+        ZIndex: =48
+
+    Rectangle9_1 As rectangle:
+        Fill: =RGBA(202, 202, 202, 1)
+        Height: =514
+        Width: =51
+        X: =739
+        Y: =212
+        ZIndex: =49
+
+    Rectangle9_2 As rectangle:
+        Fill: =RGBA(202, 202, 202, 1)
+        Height: =38
+        Width: =1080
+        X: =220
+        Y: =201
+        ZIndex: =50
+
+    Rectangle11 As rectangle:
+        Height: =53
+        Width: =160
+        X: =326
+        Y: =147
+        ZIndex: =51
+
+    Rectangle11_1 As rectangle:
+        Height: =53
+        Width: =160
+        X: =1053
+        Y: =149
+        ZIndex: =52
+
+    Label15 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =15
+        Text: ="Import area"
+        X: =331
+        Y: =153
+        ZIndex: =53
+
+    Label15_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =15
+        Text: ="Export area"
+        X: =1058
+        Y: =156
+        ZIndex: =54
+
+    Label15_2 As label:
+        Align: =Align.Center
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =26
+        Size: =10
+        Text: ="Gateway"
+        Width: =101
+        X: =714
+        Y: =700
+        ZIndex: =55
+
+    Icon6 As icon.ChevronUp:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =25
+        Icon: =Icon.ChevronUp
+        Width: =25
+        X: =752
+        Y: =675
+        ZIndex: =56
+
+    Label15_3 As label:
+        Align: =Align.Center
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =26
+        Size: =10
+        Text: ="Way"
+        Width: =101
+        X: =434
+        Y: =477
+        ZIndex: =57
+
+    Label15_4 As label:
+        Align: =Align.Center
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =26
+        Size: =10
+        Text: ="Way"
+        Width: =101
+        X: =994
+        Y: =474
+        ZIndex: =58
+
+    Label15_5 As label:
+        Align: =Align.Center
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =26
+        Size: =10
+        Text: ="Way"
+        Width: =40
+        X: =745
+        Y: =320
+        ZIndex: =59
+
+    ThongTinHangHoa_SoDo As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =64
+
+        Rectangle3 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.44)
+            Height: =768
+            Visible: =showThongTinHangHoa_SoDo
+            Width: =1365
+            ZIndex: =60
+
+        TextInput1_11 As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =489
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showThongTinHangHoa_SoDo
+            Width: =428
+            X: =549
+            Y: =113
+            ZIndex: =61
+
+        Image9 As image:
+            BorderThickness: =2
+            Height: =185
+            Image: =LookUp(QLK_Product, Location = IDViTriKho, Image)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showThongTinHangHoa_SoDo
+            Width: =168
+            X: =780
+            Y: =295
+            ZIndex: =62
+
+        Label12 As label:
+            Align: =Align.Center
+            Color: =RGBA(184, 0, 0, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =97
+            Size: =20
+            Text: =LookUp(QLK_Product, Location = IDViTriKho, Name)
+            Visible: =showThongTinHangHoa_SoDo
+            Width: =376
+            X: =574
+            Y: =115
+            ZIndex: =63
+
+        Label13 As label:
+            Color: =RGBA(0, 13, 75, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="ID Product:"
+            Visible: =showThongTinHangHoa_SoDo
+            X: =574
+            Y: =212
+            ZIndex: =64
+
+        Label13_1 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            Size: =15
+            Text: =LookUp(QLK_Product,Location=IDViTriKho,IDProduct)
+            Visible: =showThongTinHangHoa_SoDo
+            Width: =194
+            X: =574
+            Y: =252
+            ZIndex: =65
+
+        Label13_3 As label:
+            Color: =RGBA(0, 13, 75, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Quantity:"
+            Visible: =showThongTinHangHoa_SoDo
+            Width: =95
+            X: =574
+            Y: =292
+            ZIndex: =66
+
+        Label13_4 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            Size: =15
+            Text: =LookUp(QLK_Product,Location=IDViTriKho,Quantity)
+            Visible: =showThongTinHangHoa_SoDo
+            Width: =97
+            X: =669
+            Y: =292
+            ZIndex: =67
+
+        Label13_5 As label:
+            Color: =RGBA(0, 13, 75, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Unit:"
+            Visible: =showThongTinHangHoa_SoDo
+            Width: =95
+            X: =574
+            Y: =332
+            ZIndex: =68
+
+        Label13_6 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            Size: =15
+            Text: =LookUp(QLK_Unit, ID = LookUp(QLK_Product, Location = IDViTriKho, Unit), UnitName)
+            Visible: =showThongTinHangHoa_SoDo
+            Width: =97
+            X: =671
+            Y: =332
+            ZIndex: =69
+
+        Label13_7 As label:
+            Color: =RGBA(0, 13, 75, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Input Price:"
+            Visible: =showThongTinHangHoa_SoDo
+            Width: =119
+            X: =574
+            Y: =372
+            ZIndex: =70
+
+        Label13_8 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            Size: =15
+            Text: =LookUp(QLK_Product, Location = IDViTriKho, InputPrice) & " Vnđ"
+            Visible: =showThongTinHangHoa_SoDo
+            Width: =187
+            X: =581
+            Y: =412
+            ZIndex: =71
+
+        Label13_9 As label:
+            Color: =RGBA(0, 13, 75, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Output Price:"
+            Visible: =showThongTinHangHoa_SoDo
+            Width: =133
+            X: =574
+            Y: =452
+            ZIndex: =72
+
+        Label13_10 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            Size: =15
+            Text: =LookUp(QLK_Product, Location = IDViTriKho, OutputPrice) & " Vnđ"
+            Visible: =showThongTinHangHoa_SoDo
+            Width: =187
+            X: =581
+            Y: =492
+            ZIndex: =73
+
+        Label13_11 As label:
+            Color: =RGBA(0, 13, 75, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Location:"
+            Visible: =showThongTinHangHoa_SoDo
+            Width: =97
+            X: =780
+            Y: =212
+            ZIndex: =74
+
+        Label13_12 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            Size: =15
+            Text: =LookUp(QLK_Product, Location = IDViTriKho, Location)
+            Visible: =showThongTinHangHoa_SoDo
+            Width: =71
+            X: =877
+            Y: =212
+            ZIndex: =75
+
+        btn_CloseTTHHSoDo As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: =Set(showThongTinHangHoa_SoDo, false)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="Close"
+            Visible: =showThongTinHangHoa_SoDo
+            Width: =156
+            X: =772
+            Y: =549
+            ZIndex: =76
+
+    ThongBao As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =68
+
+        Rectangle4 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.45)
+            Height: =768
+            Visible: =showThongBaoKhongCoSanPham
+            Width: =1366
+            ZIndex: =77
+
+        TextInput1_12 As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =204
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showThongBaoKhongCoSanPham
+            Width: =402
+            X: =561
+            Y: =282
+            ZIndex: =78
+
+        Label14 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: ="This area has no products"
+            Visible: =showThongBaoKhongCoSanPham
+            Width: =293
+            X: =616
+            Y: =331
+            ZIndex: =79
+
+        btn_PendingList_DuyetDatHang_6 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: =Set(showThongBaoKhongCoSanPham, false)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="Close"
+            Visible: =showThongBaoKhongCoSanPham
+            Width: =156
+            X: =685
+            Y: =404
+            ZIndex: =80
+

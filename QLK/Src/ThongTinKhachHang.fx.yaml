@@ -1,0 +1,726 @@
+ThongTinKhachHang As screen:
+    Fill: =RGBA(214, 223, 238, 1)
+
+    Nen_15 As button:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        BorderThickness: =0
+        DisplayMode: =DisplayMode.View
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderColor: =
+        Height: =520
+        HoverBorderColor: =
+        HoverColor: =
+        HoverFill: =
+        PaddingBottom: =50
+        PressedFill: =
+        RadiusBottomLeft: =30
+        RadiusBottomRight: =30
+        RadiusTopLeft: |
+            =30
+        RadiusTopRight: =30
+        Size: =24
+        Text: =""
+        Width: =1132
+        X: =198
+        Y: =145
+        ZIndex: =1
+
+    Rectangle1_12 As rectangle:
+        Fill: =RGBA(76, 133, 45, 0.77)
+        Height: =768
+        Width: =164
+        ZIndex: =2
+
+    Button2_67 As button:
+        BorderStyle: =BorderStyle.Dotted
+        BorderThickness: =1
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(TrangchuGD)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Home"
+        Width: =164
+        ZIndex: =3
+
+    Icon4_11 As icon.Home:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Home
+        Width: =50
+        X: =57
+        Y: =15
+        ZIndex: =4
+
+    Button2_68 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(NhaCungCap)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Supplier"
+        Width: =164
+        Y: =110
+        ZIndex: =5
+
+    Button2_69 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(KhachHang)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Customer"
+        Width: =164
+        Y: =220
+        ZIndex: =6
+
+    Button2_70 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(TaiKhoan)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Acount"
+        Width: =164
+        Y: =330
+        ZIndex: =7
+
+    Button2_71 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(DangNhap)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            
+            Logout"
+        Width: =164
+        Y: =658
+        ZIndex: =8
+
+    Icon10_11 As icon.Leave:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Leave
+        Width: =50
+        X: =57
+        Y: =682
+        ZIndex: =9
+
+    Icon11_18 As icon.VerticalLine:
+        Height: =110
+        Icon: =Icon.VerticalLine
+        Width: =30
+        X: =149
+        Y: =220
+        ZIndex: =10
+
+    Image4_19 As image:
+        Height: =74
+        Image: =Logo
+        Width: =258
+        X: =179
+        Y: =11
+        ZIndex: =11
+
+    Image4_20 As image:
+        Height: =56
+        Image: =LookUp(QLK_Account, ID = idDangNhap,' Portrait')
+        RadiusBottomLeft: =35
+        RadiusBottomRight: =35
+        RadiusTopLeft: =35
+        RadiusTopRight: =35
+        Width: =56
+        X: =966
+        Y: =20
+        ZIndex: =12
+
+    Label2_15 As label:
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Semibold
+        Size: =20
+        Text: =LookUp(QLK_Account, ID = idDangNhap, FullName)
+        Width: =196
+        X: =1035
+        Y: =16
+        ZIndex: =13
+
+    Icon14_5 As icon.AddUser:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.AddUser
+        Width: =50
+        X: =57
+        Y: =350
+        ZIndex: =15
+
+    Icon17_5 As icon.Person:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Person
+        Width: =50
+        X: =57
+        Y: =242
+        ZIndex: =16
+
+    Icon18_5 As icon.LogJournal:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.LogJournal
+        Width: =50
+        X: =57
+        Y: =127
+        ZIndex: =17
+
+    Label3_3 As label:
+        Align: =Align.Center
+        Color: =RGBA(184, 0, 0, 1)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Semibold
+        Height: =65
+        Size: =30
+        Text: ="Fill in customer information"
+        Width: =476
+        X: =526
+        Y: =177
+        ZIndex: =18
+
+    Label4_17 As label:
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Semibold
+        Size: =20
+        Text: |-
+            ="Customer Name:"
+        Width: =189
+        X: =258
+        Y: =276
+        ZIndex: =19
+
+    Label4_19 As label:
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Semibold
+        Size: =20
+        Text: |-
+            ="Phone Number:"
+        Width: =189
+        X: =258
+        Y: =334
+        ZIndex: =20
+
+    Label4_21 As label:
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Semibold
+        Size: =20
+        Text: |-
+            ="Gmail:"
+        Width: =100
+        X: =266
+        Y: =392
+        ZIndex: =21
+
+    Label4_22 As label:
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Semibold
+        Size: =20
+        Text: |-
+            ="Address:"
+        Width: =183
+        X: =262
+        Y: =458
+        ZIndex: =22
+
+    Label4_23 As label:
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Semibold
+        Size: =20
+        Text: |-
+            ="Area:"
+        Width: =180
+        X: =262
+        Y: =521
+        ZIndex: =23
+
+    txt_CusName_1 As text:
+        Align: =Align.Center
+        BorderThickness: =1
+        Default: =gal_KhachHang.Selected.CustomerName
+        Font: =Font.'Patrick Hand'
+        HintText: ="Customer Name"
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =20
+        Width: =452
+        X: =446
+        Y: =276
+        ZIndex: =24
+
+    txt_CusPhone_1 As text:
+        Align: =Align.Center
+        BorderThickness: =1
+        Default: =gal_KhachHang.Selected.PhoneNumber
+        Font: =Font.'Patrick Hand'
+        HintText: ="Phone Number"
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =20
+        Width: =452
+        X: =446
+        Y: =334
+        ZIndex: =25
+
+    txt_CusGmail_1 As text:
+        Align: =Align.Center
+        BorderThickness: =1
+        Default: =gal_KhachHang.Selected.Gmail
+        Font: =Font.'Patrick Hand'
+        HintText: ="Gmail"
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =20
+        Width: =451
+        X: =447
+        Y: =392
+        ZIndex: =26
+
+    txt_CusAdd_1 As text:
+        Align: =Align.Center
+        BorderThickness: =1
+        Default: =gal_KhachHang.Selected.Address
+        Font: =Font.'Patrick Hand'
+        HintText: ="Address"
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =20
+        Width: =451
+        X: =445
+        Y: =456
+        ZIndex: =27
+
+    drop_CusArea_1 As dropdown:
+        BorderThickness: =1
+        Default: =LookUp(QLK_Area, ID = Value(gal_KhachHang.Selected.ID_Area), Area)
+        Font: =Font.'Patrick Hand'
+        Items: =QLK_Area
+        Size: =20
+        Width: =452
+        X: =440
+        Y: =521
+        ZIndex: =28
+
+    drop_CusSex_1 As dropdown:
+        BorderThickness: =1
+        Default: =gal_KhachHang.Selected.Sex.Value
+        Font: =Font.'Patrick Hand'
+        Items: =Choices(QLK_Customer.Sex)
+        Size: =20
+        Width: =202
+        X: =1022
+        Y: =278
+        ZIndex: =29
+
+    Label4_18 As label:
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Semibold
+        Size: =20
+        Text: |-
+            ="Sex:"
+        Width: =71
+        X: =931
+        Y: =276
+        ZIndex: =30
+
+    Label4_20 As label:
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Semibold
+        Size: =20
+        Text: |-
+            ="Photo:"
+        Width: =71
+        X: =931
+        Y: =334
+        ZIndex: =31
+
+    GroupDialogSuaKH As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =35
+
+        Rectangle2_2 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.39)
+            Height: =768
+            Visible: =showDialogueSuaKH
+            Width: =1366
+            ZIndex: =34
+
+        Nen_17 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =
+            Height: =289
+            HoverBorderColor: =
+            HoverColor: =
+            HoverFill: =
+            PaddingBottom: =50
+            PressedFill: =
+            RadiusBottomLeft: =30
+            RadiusBottomRight: =30
+            RadiusTopLeft: |
+                =30
+            RadiusTopRight: =30
+            Size: =24
+            Text: =""
+            Visible: =showDialogueSuaKH
+            Width: =473
+            X: =446
+            Y: =240
+            ZIndex: =35
+
+        Label5_8 As label:
+            Align: =Align.Center
+            Font: =Font.'Patrick Hand'
+            FontWeight: =FontWeight.Semibold
+            Height: =101
+            Size: =30
+            Text: ="Do you want to edit customer information?"
+            Visible: =showDialogueSuaKH
+            Width: =408
+            X: =478
+            Y: =291
+            ZIndex: =36
+
+        Button3_12 As button:
+            Height: =47
+            OnSelect: |-
+                =Patch(
+                    QLK_Customer,LookUp(QLK_Customer, ID = IDCustomer_GalCustomer),
+                    {
+                        CustomerName: txt_CusName_1.Text,
+                        PhoneNumber: txt_CusPhone_1.Text,
+                        Gmail: txt_CusGmail_1.Text,
+                        Address: txt_CusAdd_1.Text,
+                        Sex: drop_CusSex_1.Selected,
+                        CustomerPhoto: {Value: pho_Cus_1.Image},
+                        ID_Area: LookUp(QLK_Area, Area = drop_CusArea_1.SelectedText.Value, Text(ID))
+                    }
+                );
+                
+                Set(showThemNCCThanhCong, true);
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Text: ="Yes"
+            Visible: =showDialogueSuaKH
+            Width: =145
+            X: =534
+            Y: =451
+            ZIndex: =37
+
+        Button3_13 As button:
+            Fill: =RGBA(184, 0, 0, 1)
+            Height: =47
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: =Set(showDialogueSuaKH, false)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Text: ="Cancel"
+            Visible: =showDialogueSuaKH
+            Width: =145
+            X: =704
+            Y: =451
+            ZIndex: =38
+
+    Button3_19 As button:
+        Height: =47
+        OnSelect: |-
+            =If(txt_SupName_1.Text = "", Notify("You have not entered the supplier name"),
+                If(txt_SupPhone_1.Text = "", Notify("You have not entered the supplier phone number"),
+                    If(txt_SupGmail_1.Text = "", Notify("You have not entered the supplier gmail"),
+                        If(txt_SupAdd_1.Text = "", Notify("You have not entered the supplier address"),
+                            Set(showDialogueSuaKH, true)
+                        )
+                    )
+                )
+            )
+            //Set(showDialogueThemNCC, true)
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Text: ="Update"
+        Visible: |
+            =true
+        Width: =145
+        X: =1109
+        Y: =689
+        ZIndex: =39
+
+    GroupThemNCCThanhCong_3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =39
+
+        Nen_16 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =
+            Height: =289
+            HoverBorderColor: =
+            HoverColor: =
+            HoverFill: =
+            PaddingBottom: =50
+            PressedFill: =
+            RadiusBottomLeft: =30
+            RadiusBottomRight: =30
+            RadiusTopLeft: |
+                =30
+            RadiusTopRight: =30
+            Size: =24
+            Text: =""
+            Visible: =showThemNCCThanhCong
+            Width: =473
+            X: =445
+            Y: =239
+            ZIndex: =46
+
+        Button3_17 As button:
+            Fill: =RGBA(184, 0, 0, 1)
+            Height: =47
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: |-
+                =Set(showDialogueThemNCC, false);
+                Set(showThemNCCThanhCong,false);
+                Set(showDialogueSuaNCC, false);
+                Set(showDialogueXoaNCC, false);
+                Set(showDialogueSuaKH, false);
+                Set(showDialogueXoaKH, false);
+                Navigate(KhachHang)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Text: ="OK"
+            Visible: =showThemNCCThanhCong
+            Width: =145
+            X: =610
+            Y: =459
+            ZIndex: =47
+
+        Label5_7 As label:
+            Align: =Align.Center
+            Color: =RGBA(127, 178, 57, 1)
+            Font: =Font.'Patrick Hand'
+            FontWeight: =FontWeight.Semibold
+            Height: =67
+            Size: =30
+            Text: ="Successfully added supplier"
+            Visible: =showThemNCCThanhCong
+            Width: =408
+            X: =477
+            Y: =249
+            ZIndex: =48
+
+        Image5_3 As image:
+            Height: =117
+            Image: =user
+            Visible: =showThemNCCThanhCong
+            Width: =122
+            X: =621
+            Y: =320
+            ZIndex: =49
+
+    Icon2_2 As icon.Trash:
+        Height: =46
+        Icon: =Icon.Trash
+        OnSelect: =Set(showDialogueXoaKH, true)
+        Width: =51
+        X: =1269
+        Y: =689
+        ZIndex: =40
+
+    Label2_24 As label:
+        Align: =Align.Center
+        Color: |-
+            =If(Label2_24.Text = "Stocker", RGBA(50, 200, 0, 100),
+                If(Label2_24.Text = "Manager", RGBA(200,0,0,100),
+                    If(Label2_24.Text = "WarehouseStaff", RGBA(60,100,170,100),
+                        If(Label2_24.Text = "Accountant", RGBA(255,190,0,100))
+                    )
+                )
+            )
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Semibold
+        Height: =31
+        Size: =15
+        Text: =LookUp(QLK_Account, ID = idDangNhap, ' Permission'.Value)
+        Width: =196
+        X: =1035
+        Y: =45
+        ZIndex: =50
+
+    GroupDialogXoaKH As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =51
+
+        Rectangle2_6 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.39)
+            Height: =768
+            Visible: =showDialogueXoaKH
+            Width: =1366
+            ZIndex: =41
+
+        Nen_18 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =
+            Height: =289
+            HoverBorderColor: =
+            HoverColor: =
+            HoverFill: =
+            PaddingBottom: =50
+            PressedFill: =
+            RadiusBottomLeft: =30
+            RadiusBottomRight: =30
+            RadiusTopLeft: |
+                =30
+            RadiusTopRight: =30
+            Size: =24
+            Text: =""
+            Visible: =showDialogueXoaKH
+            Width: =473
+            X: =446
+            Y: =240
+            ZIndex: =42
+
+        Label5_9 As label:
+            Align: =Align.Center
+            Font: =Font.'Patrick Hand'
+            FontWeight: =FontWeight.Semibold
+            Height: =131
+            Size: =30
+            Text: ="Are you sure you want to delete the customer information?"
+            Visible: =showDialogueXoaKH
+            Width: =440
+            X: =461
+            Y: =281
+            ZIndex: =43
+
+        Button3_20 As button:
+            Height: =47
+            OnSelect: |-
+                =Remove(QLK_Customer, LookUp(QLK_Customer, ID = IDCustomer_GalCustomer));
+                Set(showThemNCCThanhCong, true)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Text: ="Yes"
+            Visible: =showDialogueXoaKH
+            Width: =145
+            X: =526
+            Y: =451
+            ZIndex: =44
+
+        Button3_21 As button:
+            Fill: =RGBA(184, 0, 0, 1)
+            Height: =47
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: =Set(showDialogueXoaNCC, false)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Text: ="Cancel"
+            Visible: =showDialogueXoaKH
+            Width: =145
+            X: =704
+            Y: =451
+            ZIndex: =45
+
+    pic_CusPhoto_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =54
+
+        pho_Cus_1 As image:
+            Height: =AddMediaButton3_1.Height
+            Image: =If(IsBlank(AddMediaButton3_1.Media), SampleImage, AddMediaButton3_1.Media)
+            ImagePosition: =ImagePosition.Fill
+            Width: =AddMediaButton3_1.Width
+            X: =AddMediaButton3_1.X
+            Y: =AddMediaButton3_1.Y
+            ZIndex: =32
+
+        AddMediaButton3_1 As addMedia:
+            Font: =Font.'Patrick Hand'
+            FontWeight: =FontWeight.Normal
+            Height: =169
+            Size: =20
+            Width: =183
+            X: =1031
+            Y: =400
+            ZIndex: =33
+

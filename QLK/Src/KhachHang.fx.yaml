@@ -1,0 +1,547 @@
+KhachHang As screen:
+    Fill: =RGBA(214, 223, 238, 1)
+    OnVisible: =
+
+    Rectangle1_10 As rectangle:
+        Fill: =RGBA(76, 133, 45, 0.77)
+        Height: =768
+        Width: =164
+        ZIndex: =1
+
+    "gal_KhachHang As gallery.'BrowseLayout_Vertical_ThreeTextOneImageVariant_ver4.0'":
+        DelayItemLoading: =true
+        Height: =545
+        Items: =SortByColumns(Filter(QLK_Customer, StartsWith(CustomerName, TextSearchBox1_1.Text) || StartsWith(PhoneNumber, TextSearchBox1.Text)), "Title", If(SortDescending1, SortOrder.Descending, SortOrder.Ascending))
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: =
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =196
+        Width: =1133
+        X: =197
+        Y: =188
+        ZIndex: =1
+
+        Nen_6 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =
+            Height: =180
+            HoverBorderColor: =
+            HoverColor: =
+            HoverFill: =
+            PaddingBottom: =50
+            PressedFill: =
+            RadiusBottomLeft: =30
+            RadiusBottomRight: =30
+            RadiusTopLeft: |
+                =30
+            RadiusTopRight: =30
+            Size: =24
+            Text: =""
+            Width: =1133
+            Y: =16
+            ZIndex: =1
+
+        Image3 As image:
+            Height: =141
+            Image: =ThisItem.CustomerPhoto
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Width: =141
+            X: =47
+            Y: =39
+            ZIndex: =2
+
+        Title1 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =74
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =ThisItem.Address
+            VerticalAlign: =VerticalAlign.Top
+            Width: =380
+            X: =704
+            Y: =73
+            ZIndex: =3
+
+        Subtitle1 As label:
+            Font: =Font.'Segoe UI'
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =LookUp(QLK_Area, ID = Value(ThisItem.ID_Area), Area)
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title1.Width
+            X: =704
+            Y: =150
+            ZIndex: =4
+
+        Body2 As label:
+            Color: =RGBA(184, 0, 0, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =36
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: =ThisItem.CustomerName
+            VerticalAlign: =VerticalAlign.Top
+            Width: =734
+            X: =399
+            Y: =31
+            ZIndex: =5
+
+        Title1_1 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =21
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =ThisItem.Sex.Value
+            VerticalAlign: =VerticalAlign.Top
+            Width: =272
+            X: =331
+            Y: =73
+            ZIndex: =6
+
+        Label6 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =34
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: |-
+                ="Sex:"
+            Width: =116
+            X: =215
+            Y: =67
+            ZIndex: =7
+
+        Label6_1 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: |-
+                ="Gmail:"
+            Width: =116
+            X: =215
+            Y: =101
+            ZIndex: =8
+
+        Label6_2 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: |-
+                ="Phone Number:"
+            Width: =170
+            X: =215
+            Y: =141
+            ZIndex: =9
+
+        Title1_2 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =34
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =ThisItem.Gmail
+            VerticalAlign: =VerticalAlign.Top
+            Width: =272
+            X: =331
+            Y: =107
+            ZIndex: =10
+
+        Title1_3 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =34
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =ThisItem.PhoneNumber
+            VerticalAlign: =VerticalAlign.Top
+            Width: =218
+            X: =385
+            Y: =147
+            ZIndex: =11
+
+        Label6_3 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: |-
+                ="Address:"
+            Width: =101
+            X: =603
+            Y: =67
+            ZIndex: =12
+
+        Label6_4 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: |-
+                ="Area:"
+            Width: =101
+            X: =603
+            Y: =141
+            ZIndex: =13
+
+        Label6_5 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: |-
+                ="Name Customer:"
+            Width: =184
+            X: =215
+            Y: =29
+            ZIndex: =14
+
+        Nen_14 As button:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            BorderThickness: =0
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderColor: =
+            Height: =180
+            HoverBorderColor: =
+            HoverColor: =
+            HoverFill: =RGBA(187, 221, 140, 0.4)
+            OnSelect: |-
+                =Select(Parent);
+                Set(IDCustomer_GalCustomer, ThisItem.ID);
+                Reset(AddMediaButton3_1);
+                Navigate(ThongTinKhachHang)
+            PaddingBottom: =50
+            PressedFill: =RGBA(0, 0, 0, 0)
+            RadiusBottomLeft: =30
+            RadiusBottomRight: =30
+            RadiusTopLeft: |
+                =30
+            RadiusTopRight: =30
+            Size: =24
+            Text: =""
+            Width: =1133
+            Y: =16
+            ZIndex: =15
+
+    Button2_57 As button:
+        BorderStyle: =BorderStyle.Dotted
+        BorderThickness: =1
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(TrangchuGD)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Home"
+        Width: =164
+        ZIndex: =2
+
+    Icon4_9 As icon.Home:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Home
+        Width: =50
+        X: =57
+        Y: =15
+        ZIndex: =3
+
+    Button2_58 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(NhaCungCap)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Supplier"
+        Width: =164
+        Y: =110
+        ZIndex: =4
+
+    Button2_59 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Customer"
+        Width: =164
+        Y: =220
+        ZIndex: =5
+
+    Button2_60 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(TaiKhoan)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Acount"
+        Width: =164
+        Y: =330
+        ZIndex: =6
+
+    Button2_61 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(DangNhap)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            
+            Logout"
+        Width: =164
+        Y: =658
+        ZIndex: =7
+
+    Icon10_9 As icon.Leave:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Leave
+        Width: =50
+        X: =57
+        Y: =682
+        ZIndex: =8
+
+    Icon11_16 As icon.VerticalLine:
+        Height: =110
+        Icon: =Icon.VerticalLine
+        Width: =27
+        X: =152
+        Y: =220
+        ZIndex: =9
+
+    Image4_15 As image:
+        Height: =74
+        Image: =Logo
+        Width: =258
+        X: =179
+        Y: =11
+        ZIndex: =10
+
+    Image4_16 As image:
+        Height: =56
+        Image: =LookUp(QLK_Account, ID = idDangNhap,' Portrait')
+        RadiusBottomLeft: =35
+        RadiusBottomRight: =35
+        RadiusTopLeft: =35
+        RadiusTopRight: =35
+        Width: =56
+        X: =966
+        Y: =20
+        ZIndex: =11
+
+    Label2_13 As label:
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Semibold
+        Size: =20
+        Text: =LookUp(QLK_Account, ID = idDangNhap, FullName)
+        Width: =196
+        X: =1035
+        Y: =16
+        ZIndex: =12
+
+    Icon14_3 As icon.AddUser:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.AddUser
+        Width: =50
+        X: =57
+        Y: =350
+        ZIndex: =14
+
+    Icon17_3 As icon.Person:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Person
+        Width: =50
+        X: =57
+        Y: =242
+        ZIndex: =15
+
+    Icon18_3 As icon.LogJournal:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.LogJournal
+        Width: =50
+        X: =57
+        Y: =127
+        ZIndex: =16
+
+    IconSortUpDown1_1 As icon.ArrowsUpDown:
+        AccessibleLabel: =Self.Tooltip
+        FocusedBorderThickness: =0
+        Height: =88
+        Icon: =Icon.Sort
+        OnSelect: |-
+            =UpdateContext({SortDescending1: !SortDescending1})
+        PaddingBottom: =26
+        PaddingLeft: =26
+        PaddingRight: =26
+        PaddingTop: =26
+        TabIndex: =0
+        Tooltip: =If(SortDescending1, "Sort list in reverse alphabetical order", "Sort list in alphabetical order")
+        Width: =88
+        X: =771
+        Y: =100
+        ZIndex: =18
+
+    TextSearchBox1_1 As text:
+        Default: =""
+        DelayOutput: =true
+        Font: =Font.'Patrick Hand'
+        Height: =68
+        HintText: ="Search items"
+        PaddingLeft: =70
+        RadiusBottomLeft: =30
+        RadiusBottomRight: =30
+        RadiusTopLeft: =30
+        RadiusTopRight: =30
+        Size: =21
+        Width: =323
+        X: =342
+        Y: =108
+        ZIndex: =19
+
+    SearchIcon1_1 As icon.Search:
+        Color: =RGBA(191, 190, 190, 1)
+        Height: =Self.Width
+        Icon: =Icon.Search
+        PaddingBottom: =14
+        PaddingLeft: =14
+        PaddingRight: =14
+        PaddingTop: =14
+        Tooltip: ="Search"
+        Width: =TextSearchBox1_1.Height
+        X: =TextSearchBox1_1.X
+        Y: =TextSearchBox1_1.Y
+        ZIndex: =20
+
+    Button3_5 As button:
+        Height: =47
+        OnSelect: |-
+            =Navigate(ThemKhachHang, ScreenTransition.None);
+            Reset(txt_CusAdd);
+            Reset(txt_CusGmail);
+            Reset(txt_CusName);
+            Reset(txt_CusPhone);
+            Reset(AddMediaButton1)
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Text: ="Add"
+        Width: =145
+        X: =1185
+        Y: =125
+        ZIndex: =21
+
+    IconRefresh1_1 As icon.Reload:
+        AccessibleLabel: =Self.Tooltip
+        FocusedBorderThickness: =0
+        Height: =88
+        Icon: =Icon.Reload
+        OnSelect: =Refresh([@QLK_Customer])
+        PaddingBottom: =22
+        PaddingLeft: =22
+        PaddingRight: =22
+        PaddingTop: =22
+        TabIndex: =0
+        Tooltip: ="Refresh list"
+        Width: =88
+        X: =683
+        Y: =99
+        ZIndex: =22
+
+    Label2_22 As label:
+        Color: |-
+            =If(Label2_22.Text = "Stocker", RGBA(50, 200, 0, 100),
+                If(Label2_22.Text = "Manager", RGBA(200,0,0,100),
+                    If(Label2_22.Text = "WarehouseStaff", RGBA(60,100,170,100),
+                        If(Label2_22.Text = "Accountant", RGBA(255,190,0,100))
+                    )
+                )
+            )
+        Font: =Font.'Patrick Hand'
+        FontWeight: =FontWeight.Semibold
+        Height: =31
+        Size: =15
+        Text: =LookUp(QLK_Account, ID = idDangNhap, ' Permission'.Value)
+        Width: =196
+        X: =1035
+        Y: =45
+        ZIndex: =23
+
