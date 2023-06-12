@@ -143,6 +143,27 @@ TrangchuGD_3 As screen:
                 Width: =1120
                 ZIndex: =1
 
+            Gallery4 As gallery.galleryHorizontal:
+                DelayItemLoading: =true
+                Height: =210
+                Items: =col_TopProductImport
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplateSize: =55
+                X: =119
+                Y: =37
+                ZIndex: =1
+
+                Button1_5 As button:
+                    BorderStyle: =BorderStyle.None
+                    Fill: =RGBA(127, 235, 117, 0.7)
+                    Height: =200 * ThisItem.TotalQuantity / maxQuantity
+                    HoverFill: =RGBA(127, 235, 117, 1)
+                    PressedFill: =RGBA(118, 214, 109, 1)
+                    Text: =""
+                    Width: =44
+                    Y: =200 - Self.Height
+                    ZIndex: =1
+
             Label23_2 As label:
                 FontWeight: =FontWeight.Semibold
                 Text: ="Home"
@@ -160,6 +181,7 @@ TrangchuGD_3 As screen:
                 ShowScrollbar: =false
                 TemplatePadding: =0
                 TemplateSize: =93
+                Transition: =Transition.Pop
                 Width: =368
                 X: =431
                 Y: =432
@@ -242,8 +264,8 @@ TrangchuGD_3 As screen:
                     RadiusTopLeft: =15
                     RadiusTopRight: =15
                     Text: =""
-                    Width: =765
-                    X: =17
+                    Width: =199
+                    X: =169
                     Y: =16
                     ZIndex: =7
 
@@ -286,14 +308,14 @@ TrangchuGD_3 As screen:
                 DisabledBorderColor: =RGBA(219, 219, 219, 1)
                 DisabledFill: =RGBA(255, 255, 255, 1)
                 DisplayMode: =DisplayMode.Disabled
-                Height: =351
+                Height: =336
                 RadiusBottomLeft: =15
                 RadiusBottomRight: =15
                 RadiusTopLeft: =15
                 RadiusTopRight: =15
                 Width: =387
                 X: =45
-                Y: =366
+                Y: =385
                 ZIndex: =6
 
             Label24_10 As label:
@@ -504,7 +526,7 @@ TrangchuGD_3 As screen:
                 Size: =20
                 Text: ="Top Products Imported"
                 Width: =350
-                X: =60
+                X: =63
                 Y: =388
                 ZIndex: =23
 

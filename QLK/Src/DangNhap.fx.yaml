@@ -174,7 +174,8 @@ DangNhap As screen:
                         Sum(GroupedItems, Quantity), 
                     "Image",
                     LookUp(col_Temp, IDProduct_Supplier = col_SumQuantityProductImport[@IDProduct_Supplier], Image_Pro_x002d_Supplier)  
-                    ), "TotalQuantity"
+                    ), "TotalQuantity",
+                    SortOrder.Descending
                 )
             );
             
