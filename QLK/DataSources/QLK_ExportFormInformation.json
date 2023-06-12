@@ -30,7 +30,7 @@
       "Editor": "Modified By",
       "Editor#Claims": "Modified By Claims",
       "ID": "ID",
-      "IDImport": "IDImport",
+      "IDExportForm": "IDExportForm",
       "IDProduct": "IDProduct",
       "Modified": "Modified",
       "OData__ColorTag": "Color Tag",
@@ -44,7 +44,7 @@
     "EncodeDataset": true,
     "IsSampleData": false,
     "IsWritable": true,
-    "Name": "QLK_ImportFormInformation",
+    "Name": "QLK_ExportFormInformation",
     "Type": "ConnectedDataSourceInfo"
   }
 ]

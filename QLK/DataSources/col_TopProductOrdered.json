@@ -3,7 +3,7 @@
     "IsComponentScoped": false,
     "IsSampleData": false,
     "IsWritable": true,
-    "Name": "col_TopProductOrderd",
+    "Name": "col_TopProductOrdered",
     "Type": "CollectionDataSourceInfo"
   }
 ]

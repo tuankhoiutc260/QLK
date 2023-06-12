@@ -161,60 +161,97 @@ DangNhap As screen:
                 )
             );
             
-            ClearCollect(col_SumQuantityProductImport, GroupBy(col_ProductOrdered, "IDProduct_Supplier","GroupedItems"));
+            ClearCollect(col_SumQuantityProductOrdered, GroupBy(col_ProductOrdered, "IDProduct_Supplier","GroupedItems"));
             
-            ClearCollect(col_Temp, ShowColumns(Filter(QLK_Product_Supplier, IDProduct_Supplier in ShowColumns(col_SumQuantityProductImport, "IDProduct_Supplier")), "IDProduct_Supplier", "Image_Pro_x002d_Supplier"));
+            ClearCollect(col_Temp, ShowColumns(Filter(QLK_Product_Supplier, IDProduct_Supplier in ShowColumns(col_SumQuantityProductOrdered, "IDProduct_Supplier")), "IDProduct_Supplier", "Image_Pro_x002d_Supplier"));
             
             ClearCollect(
-                col_TopProductOrderd, 
+                col_TopProductOrdered, 
                 SortByColumns(
                     AddColumns(
-                        col_SumQuantityProductImport, 
+                        col_SumQuantityProductOrdered, 
                         "TotalQuantity", 
                         Sum(GroupedItems, Quantity), 
                     "Image",
-                    LookUp(col_Temp, IDProduct_Supplier = col_SumQuantityProductImport[@IDProduct_Supplier], Image_Pro_x002d_Supplier)  
+                    LookUp(col_Temp, IDProduct_Supplier = col_SumQuantityProductOrdered[@IDProduct_Supplier], Image_Pro_x002d_Supplier)  
                     ), "TotalQuantity",
                     SortOrder.Descending
                 )
             );
             
-            Set(maxQuantityImported, Max(col_TopProductImport, TotalQuantity));
+            Set(maxQuantityOrdered, Max(col_TopProductOrdered, TotalQuantity));
             
             // Get Top Imported
             ClearCollect(col_ProductImported, 
                 ShowColumns(
                     Filter(
                         QLK_ImportFormInformation, 
-                        IDImportForm in ShowColumns(
+                        IDImport in ShowColumns(
                             Filter(
                                 QLK_ImportForm, Status = 4
-                            ), "IDImported"
+                            ), "IDImport"
                         )
                     ),
-                    "IDProduct_Supplier", "Quantity"
+                    "IDProduct", "Quantity"
                 )
             );
             
-            ClearCollect(col_SumQuantityProductImport, GroupBy(col_ProductImport, "IDProduct_Supplier","GroupedItems"));
+            ClearCollect(col_SumQuantityProductImported, GroupBy(col_ProductImported, "IDProduct","GroupedItems"));
             
-            ClearCollect(col_Temp, ShowColumns(Filter(QLK_Product_Supplier, IDProduct_Supplier in ShowColumns(col_SumQuantityProductImport, "IDProduct_Supplier")), "IDProduct_Supplier", "Image_Pro_x002d_Supplier"));
+            ClearCollect(col_Temp, ShowColumns(Filter(QLK_Product, IDProduct in ShowColumns(col_SumQuantityProductImported, "IDProduct")), "IDProduct", "Image"));
             
             ClearCollect(
-                col_TopProductImport, 
+                col_TopProductImported, 
                 SortByColumns(
                     AddColumns(
-                        col_SumQuantityProductImport, 
+                        col_SumQuantityProductImported, 
                         "TotalQuantity", 
                         Sum(GroupedItems, Quantity), 
                     "Image",
-                    LookUp(col_Temp, IDProduct_Supplier = col_SumQuantityProductImport[@IDProduct_Supplier], Image_Pro_x002d_Supplier)  
+                    LookUp(col_Temp, IDProduct_Supplier = col_SumQuantityProductImported[@IDProduct], "Image")  
                     ), "TotalQuantity",
                     SortOrder.Descending
                 )
             );
             
-            Set(maxQuantityImported, Max(col_TopProductImport, TotalQuantity));
+            Set(maxQuantityImported, Max(col_TopProductImported, TotalQuantity));
+            
+            // Get Top Exported
+            ClearCollect(col_ProductExported, 
+                ShowColumns(
+                    Filter(
+                        QLK_ExportFormInformation, 
+                        IDExportForm in ShowColumns(
+                            Filter(
+                                QLK_ExportForm, Status = 4
+                            ), "IDExport"
+                        )
+                    ),
+                    "IDProduct", "Quantity"
+                )
+            );
+            
+            ClearCollect(col_SumQuantityProductExported, GroupBy(col_ProductExported, "IDProduct","GroupedItems"));
+            
+            ClearCollect(col_Temp, ShowColumns(Filter(QLK_Product, IDProduct in ShowColumns(col_SumQuantityProductExported, "IDProduct")), "IDProduct", "Image"));
+            
+            ClearCollect(
+                col_TopProductExported, 
+                SortByColumns(
+                    AddColumns(
+                        col_SumQuantityProductExported, 
+                        "TotalQuantity", 
+                        Sum(GroupedItems, Quantity), 
+                    "Image",
+                    LookUp(col_Temp, IDProduct = col_SumQuantityProductExported[@IDProduct], "Image")  
+                    ), "TotalQuantity",
+                    SortOrder.Descending
+                )
+            );
+            
+            Set(maxQuantityExported, Max(col_TopProductExported, TotalQuantity));
+            
+            
             //Set(width_contRight, 300);
             //Set(width_contRight_Right, 0);
             //Set(pos_contRight, 1066);
@@ -228,4 +265,24 @@ DangNhap As screen:
         X: =206
         Y: =468
         ZIndex: =10
+
+    Button1 As button:
+        OnSelect: |-
+            =ClearCollect(col_ProductImported, 
+                ShowColumns(
+                    Filter(
+                        QLK_ImportFormInformation, 
+                        IDImport in ShowColumns(
+                            Filter(
+                                QLK_ImportForm, Status = 4
+                            ), "IDImport"
+                        )
+                    ),
+                    "IDProduct", "Quantity"
+                )
+            );
+        Text: ="Button"
+        X: =707
+        Y: =135
+        ZIndex: =11
 

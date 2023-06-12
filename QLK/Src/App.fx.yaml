@@ -33,7 +33,7 @@ App As appinfo:
         Set(showYeuCauDatHang, false); 
         Set(visible_RightHomeAdmin, true);
         
-        // Admin
+        // Home Admin
         Set(fontSizeImport_HomeAdmin, 12);
         Set(fontSizeOrder_HomeAdmin, 12);
         Set(fontSizeExport_HomeAdmin, 12);
@@ -41,6 +41,7 @@ App As appinfo:
         Set(visLineOrder_HomeAdmin, false);
         Set(visLineExport_HomeAdmin, false);
         Set(textChart_HomeAdmin, "Top Products Imported");
+        Set(datasourceImported_HomeAdmin, col_TopProductOrdered);
         
         //Tạo lịch
         If(IsBlank(_userDomain),         

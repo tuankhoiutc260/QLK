@@ -58,9 +58,6 @@
           "QLK_ImportForm": {
             "tableName": "82779b78-2cd5-40f1-9a2c-f15a15dafadc"
           },
-          "QLK_ImportFormInformation": {
-            "tableName": "24e90931-4192-4122-9252-dc17d4c7f4ba"
-          },
           "QLK_ImportRequest": {
             "tableName": "b31d03b3-3b48-4d7d-bdfb-b979f350cc57"
           },
@@ -72,9 +69,6 @@
           },
           "QLK_OrderFormInformation": {
             "tableName": "443d99ab-18c2-4827-81f1-b49556a5debb"
-          },
-          "QLK_OutputFormInformation": {
-            "tableName": "efd8a2b6-f327-4ee6-8f85-e6cb0f3e57a6"
           },
           "QLK_Product": {
             "tableName": "7ae79b72-ebf1-474f-86a8-05dc12c689bd"
@@ -96,11 +90,9 @@
       "QLK_Customer",
       "QLK_OrderForm",
       "QLK_Unit",
-      "QLK_OutputFormInformation",
       "QLK_OrderFormInformation",
       "QLK_Location",
       "QLK_ImportRequest",
-      "QLK_ImportFormInformation",
       "QLK_ImportForm"
     ],
     "dependencies": {},
@@ -138,6 +130,15 @@
     "datasets": {
       "https://bhktechcorp.sharepoint.com/sites/Khoi": {
         "dataSources": {
+          "QLK_ExportForm": {
+            "tableName": "751c82e1-0fc3-4770-8513-0c48b53c47f8"
+          },
+          "QLK_ExportFormInformation": {
+            "tableName": "efd8a2b6-f327-4ee6-8f85-e6cb0f3e57a6"
+          },
+          "QLK_ImportFormInformation": {
+            "tableName": "24e90931-4192-4122-9252-dc17d4c7f4ba"
+          },
           "QLK_Product_Supplier": {
             "tableName": "77ec279f-b72c-4ff2-b1d0-6e2c3fb00d7a"
           }
@@ -145,7 +146,10 @@
       }
     },
     "dataSources": [
-      "QLK_Product_Supplier"
+      "QLK_Product_Supplier",
+      "QLK_ImportFormInformation",
+      "QLK_ExportFormInformation",
+      "QLK_ExportForm"
     ],
     "dependencies": {},
     "dependents": [],
