@@ -27,24 +27,24 @@
       "Author#Claims": "Created By Claims",
       "ComplianceAssetId": "Compliance Asset Id",
       "Created": "Created",
-      "DateCreateNumber": "DateCreateNumber",
       "Editor": "Modified By",
       "Editor#Claims": "Modified By Claims",
       "ID": "ID",
-      "IDInputForm": "IDInputForm",
-      "ImportDate": "ImportDate",
-      "Importer": "Importer",
+      "IDInputForm": "IDImportForm",
+      "IDProduct": "IDProduct",
       "Modified": "Modified",
       "OData__ColorTag": "Color Tag",
-      "Status": "Status",
+      "Price": "Price",
+      "Quantity": "Quantity",
       "Title": "Title",
-      "TotalPrice": "TotalPrice"
+      "TotalPrice": "TotalPrice",
+      "Unit": "Unit"
     },
     "DatasetName": "https://bhktechcorp.sharepoint.com/sites/Khoi",
     "EncodeDataset": true,
     "IsSampleData": false,
     "IsWritable": true,
-    "Name": "QLK_InputForm",
+    "Name": "QLK_ImportFormInformation",
     "Type": "ConnectedDataSourceInfo"
   }
 ]

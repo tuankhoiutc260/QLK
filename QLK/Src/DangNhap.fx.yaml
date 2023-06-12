@@ -146,8 +146,8 @@ DangNhap As screen:
                 Notify("Username or password is wrong!")
             );
             
-            
-            ClearCollect(col_ProductImport, 
+            // Get Top Ordered
+            ClearCollect(col_ProductOrdered, 
                 ShowColumns(
                     Filter(
                         QLK_OrderFormInformation, 
@@ -155,6 +155,41 @@ DangNhap As screen:
                             Filter(
                                 QLK_OrderForm, Status = 4
                             ), "IDOrder"
+                        )
+                    ),
+                    "IDProduct_Supplier", "Quantity"
+                )
+            );
+            
+            ClearCollect(col_SumQuantityProductImport, GroupBy(col_ProductOrdered, "IDProduct_Supplier","GroupedItems"));
+            
+            ClearCollect(col_Temp, ShowColumns(Filter(QLK_Product_Supplier, IDProduct_Supplier in ShowColumns(col_SumQuantityProductImport, "IDProduct_Supplier")), "IDProduct_Supplier", "Image_Pro_x002d_Supplier"));
+            
+            ClearCollect(
+                col_TopProductOrderd, 
+                SortByColumns(
+                    AddColumns(
+                        col_SumQuantityProductImport, 
+                        "TotalQuantity", 
+                        Sum(GroupedItems, Quantity), 
+                    "Image",
+                    LookUp(col_Temp, IDProduct_Supplier = col_SumQuantityProductImport[@IDProduct_Supplier], Image_Pro_x002d_Supplier)  
+                    ), "TotalQuantity",
+                    SortOrder.Descending
+                )
+            );
+            
+            Set(maxQuantityImported, Max(col_TopProductImport, TotalQuantity));
+            
+            // Get Top Imported
+            ClearCollect(col_ProductImported, 
+                ShowColumns(
+                    Filter(
+                        QLK_ImportFormInformation, 
+                        IDImportForm in ShowColumns(
+                            Filter(
+                                QLK_ImportForm, Status = 4
+                            ), "IDImported"
                         )
                     ),
                     "IDProduct_Supplier", "Quantity"
@@ -179,7 +214,7 @@ DangNhap As screen:
                 )
             );
             
-            Set(maxQuantity, Max(col_TopProductImport, TotalQuantity));
+            Set(maxQuantityImported, Max(col_TopProductImport, TotalQuantity));
             //Set(width_contRight, 300);
             //Set(width_contRight_Right, 0);
             //Set(pos_contRight, 1066);

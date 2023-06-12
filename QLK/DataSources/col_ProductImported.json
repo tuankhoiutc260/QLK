@@ -3,7 +3,7 @@
     "IsComponentScoped": false,
     "IsSampleData": false,
     "IsWritable": true,
-    "Name": "col_ProductImport",
+    "Name": "col_ProductImported",
     "Type": "CollectionDataSourceInfo"
   }
 ]

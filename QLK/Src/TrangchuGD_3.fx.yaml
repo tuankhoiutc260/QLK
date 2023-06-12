@@ -380,7 +380,7 @@ TrangchuGD_3 As screen:
                 Gallery4 As gallery.galleryHorizontal:
                     DelayItemLoading: =true
                     Height: =300
-                    Items: =col_TopProductImport
+                    Items: =col_TopProductOrdered
                     LoadingSpinner: =LoadingSpinner.Data
                     ShowScrollbar: =false
                     TemplateSize: =55
@@ -393,7 +393,7 @@ TrangchuGD_3 As screen:
                     Button1_5 As button:
                         BorderStyle: =BorderStyle.None
                         Fill: =RGBA(127, 235, 117, 0.7)
-                        Height: =200 * ThisItem.TotalQuantity / maxQuantity
+                        Height: =200 * ThisItem.TotalQuantity / maxQuantityImported
                         HoverFill: =RGBA(127, 235, 117, 1)
                         PressedFill: =RGBA(118, 214, 109, 1)
                         Text: =""
