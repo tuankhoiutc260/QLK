@@ -37,6 +37,10 @@ App As appinfo:
         Set(fontSizeImport_HomeAdmin, 12);
         Set(fontSizeOrder_HomeAdmin, 12);
         Set(fontSizeExport_HomeAdmin, 12);
+        Set(visLineImport_HomeAdmin, true);
+        Set(visLineOrder_HomeAdmin, false);
+        Set(visLineExport_HomeAdmin, false);
+        Set(textChart_HomeAdmin, "Top Products Imported");
         
         //Tạo lịch
         If(IsBlank(_userDomain),         

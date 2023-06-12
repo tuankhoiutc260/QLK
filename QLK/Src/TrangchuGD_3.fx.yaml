@@ -283,28 +283,6 @@ TrangchuGD_3 As screen:
                     Y: =10
                     ZIndex: =2
 
-            Button4_12 As button:
-                BorderColor: =RGBA(127, 235, 117, 1)
-                BorderStyle: =BorderStyle.None
-                Color: =RGBA(0, 0, 0, 1)
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =37
-                HoverBorderColor: =RGBA(127, 235, 117, 1)
-                HoverColor: =RGBA(21, 161, 60, 1)
-                HoverFill: =RGBA(0, 0, 0, 0)
-                OnSelect: |-
-                    =Set(fontSizeImport_HomeAdmin, 12);
-                    Set(fontSizeOrder_HomeAdmin, 12);
-                    Set(fontSizeExport_HomeAdmin, 15);
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =RGBA(127, 235, 117, 1)
-                Size: =fontSizeExport_HomeAdmin
-                Text: ="Export"
-                Width: =127
-                X: =433
-                Y: =329
-                ZIndex: =19
-
             Group2 As group:
                 Height: =5
                 Width: =5
@@ -393,7 +371,7 @@ TrangchuGD_3 As screen:
                     FontWeight: =FontWeight.Bold
                     Height: =161
                     Size: =20
-                    Text: ="Top Products Imported"
+                    Text: =textChart_HomeAdmin
                     Width: =350
                     X: =64
                     Y: =412
@@ -432,59 +410,140 @@ TrangchuGD_3 As screen:
                         Y: =250
                         ZIndex: =2
 
-            Button4_13 As button:
-                BorderColor: =RGBA(127, 235, 117, 1)
-                BorderStyle: =BorderStyle.None
-                Color: =RGBA(0, 0, 0, 1)
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =37
-                HoverBorderColor: =RGBA(127, 235, 117, 1)
-                HoverColor: =RGBA(21, 161, 60, 1)
-                HoverFill: =RGBA(0, 0, 0, 0)
-                OnSelect: |-
-                    =Set(fontSizeImport_HomeAdmin, 12);
-                    Set(fontSizeOrder_HomeAdmin, 15);
-                    Set(fontSizeExport_HomeAdmin, 12);
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =RGBA(127, 235, 117, 1)
-                Size: =fontSizeOrder_HomeAdmin
-                Text: ="Order"
-                Width: =127
-                X: =306
-                Y: =329
-                ZIndex: =20
+            Group8 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =25
 
-            Button4_14 As button:
-                BorderColor: =RGBA(127, 235, 117, 1)
-                BorderStyle: =BorderStyle.None
-                Color: =RGBA(0, 0, 0, 1)
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =37
-                HoverBorderColor: =RGBA(127, 235, 117, 1)
-                HoverColor: =RGBA(21, 161, 60, 1)
-                HoverFill: =RGBA(0, 0, 0, 0)
-                OnSelect: |
-                    =Set(fontSizeImport_HomeAdmin, 15);
-                    Set(fontSizeOrder_HomeAdmin, 12);
-                    Set(fontSizeExport_HomeAdmin, 12);
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =RGBA(127, 235, 117, 1)
-                Size: =fontSizeImport_HomeAdmin
-                Text: ="Import"
-                Width: =127
-                X: =180
-                Y: =329
-                ZIndex: =21
+                Button4_13 As button:
+                    BorderColor: =RGBA(127, 235, 117, 1)
+                    BorderStyle: =BorderStyle.None
+                    Color: =RGBA(0, 0, 0, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =37
+                    HoverBorderColor: =RGBA(127, 235, 117, 1)
+                    HoverColor: =RGBA(21, 161, 60, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnSelect: |-
+                        =Set(fontSizeImport_HomeAdmin, 12);
+                        Set(fontSizeOrder_HomeAdmin, 15);
+                        Set(fontSizeExport_HomeAdmin, 12);
+                        Set(visLineImport_HomeAdmin, false);
+                        Set(visLineOrder_HomeAdmin, true);
+                        Set(visLineExport_HomeAdmin, false);
+                        Set(textChart_HomeAdmin, "Top Products Ordered");
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(127, 235, 117, 1)
+                    Size: =fontSizeOrder_HomeAdmin
+                    Text: ="Order"
+                    Width: =127
+                    X: =306
+                    Y: =329
+                    ZIndex: =20
 
-            Separator1_34 As rectangle:
-                BorderColor: =RGBA(166, 166, 166, 1)
-                Fill: =RGBA(219, 219, 219, 1)
-                Height: =2
-                OnSelect: =
-                Width: =55
-                X: =211
-                Y: =364
-                ZIndex: =22
+                TextInput6_1 As text:
+                    BorderStyle: =BorderStyle.None
+                    Default: =""
+                    DisabledFill: =RGBA(127, 235, 117, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Height: =4
+                    Visible: =visLineOrder_HomeAdmin
+                    Width: =46
+                    X: =342
+                    Y: =363
+                    ZIndex: =24
+
+            Group7 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =25
+
+                Button4_14 As button:
+                    BorderColor: =RGBA(127, 235, 117, 1)
+                    BorderStyle: =BorderStyle.None
+                    Color: =RGBA(0, 0, 0, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =37
+                    HoverBorderColor: =RGBA(127, 235, 117, 1)
+                    HoverColor: =RGBA(21, 161, 60, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnSelect: |-
+                        =Set(fontSizeImport_HomeAdmin, 15);
+                        Set(fontSizeOrder_HomeAdmin, 12);
+                        Set(fontSizeExport_HomeAdmin, 12);
+                        Set(visLineImport_HomeAdmin, true);
+                        Set(visLineOrder_HomeAdmin, false);
+                        Set(visLineExport_HomeAdmin, false);
+                        Set(textChart_HomeAdmin, "Top Products Imported");
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(127, 235, 117, 1)
+                    Size: =fontSizeImport_HomeAdmin
+                    Text: ="Import"
+                    Width: =127
+                    X: =180
+                    Y: =329
+                    ZIndex: =21
+
+                TextInput6 As text:
+                    BorderStyle: =BorderStyle.None
+                    Default: =""
+                    DisabledFill: =RGBA(127, 235, 117, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Height: =4
+                    Visible: =visLineImport_HomeAdmin
+                    Width: =46
+                    X: =212
+                    Y: =363
+                    ZIndex: =23
+
+            Group9 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =26
+
+                Button4_12 As button:
+                    BorderColor: =RGBA(127, 235, 117, 1)
+                    BorderStyle: =BorderStyle.None
+                    Color: =RGBA(0, 0, 0, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =37
+                    HoverBorderColor: =RGBA(127, 235, 117, 1)
+                    HoverColor: =RGBA(21, 161, 60, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnSelect: |-
+                        =Set(fontSizeImport_HomeAdmin, 12);
+                        Set(fontSizeOrder_HomeAdmin, 12);
+                        Set(fontSizeExport_HomeAdmin, 15);
+                        Set(visLineImport_HomeAdmin, false);
+                        Set(visLineOrder_HomeAdmin, false);
+                        Set(visLineExport_HomeAdmin, true);
+                        Set(textChart_HomeAdmin, "Top Products Exported");
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(127, 235, 117, 1)
+                    Size: =fontSizeExport_HomeAdmin
+                    Text: ="Export"
+                    Width: =127
+                    X: =433
+                    Y: =329
+                    ZIndex: =19
+
+                TextInput6_2 As text:
+                    BorderStyle: =BorderStyle.None
+                    Default: =""
+                    DisabledFill: =RGBA(127, 235, 117, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Height: =4
+                    Visible: =visLineExport_HomeAdmin
+                    Width: =46
+                    X: =468
+                    Y: =363
+                    ZIndex: =25
 
         Separator1_33 As rectangle:
             BorderColor: =RGBA(237, 237, 237, 1)
