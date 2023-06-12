@@ -33,6 +33,11 @@ App As appinfo:
         Set(showYeuCauDatHang, false); 
         Set(visible_RightHomeAdmin, true);
         
+        // Admin
+        Set(fontSizeImport_HomeAdmin, 12);
+        Set(fontSizeOrder_HomeAdmin, 12);
+        Set(fontSizeExport_HomeAdmin, 12);
+        
         //Tạo lịch
         If(IsBlank(_userDomain),         
         	//UpdateContext({_showLoading: true});         
