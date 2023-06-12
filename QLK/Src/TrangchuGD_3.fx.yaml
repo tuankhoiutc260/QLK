@@ -150,18 +150,19 @@ TrangchuGD_3 As screen:
                 Y: =17
                 ZIndex: =2
 
-            "gal_InformationProduct_cIP_IP2_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            "gal_DetailOrderNotPending As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =1
                 DelayItemLoading: =true
                 Height: =339
-                Items: =QLK_OrderForm
+                Items: =datasourceOrder
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 ShowScrollbar: =false
                 TemplatePadding: =0
                 TemplateSize: =93
                 Transition: =Transition.Pop
+                Visible: =visibleDetailOrderNotPending
                 Width: =655
                 X: =433
                 Y: =399
@@ -247,8 +248,8 @@ TrangchuGD_3 As screen:
                     RadiusTopLeft: =15
                     RadiusTopRight: =15
                     Text: =""
-                    Width: =622
-                    X: =14
+                    Width: =236
+                    X: =399
                     Y: =16
                     ZIndex: =7
 
@@ -415,14 +416,21 @@ TrangchuGD_3 As screen:
                     HoverColor: =RGBA(21, 161, 60, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
                     OnSelect: |-
-                        =Set(fontSizeImport_HomeAdmin, 12);
+                        =Set(fontSizeApprove_HomeAdmin, 12);
+                        Set(fontSizeImport_HomeAdmin, 12);
                         Set(fontSizeOrder_HomeAdmin, 12);
                         Set(fontSizeExport_HomeAdmin, 15);
+                        Set(visLineApprove_HomeAdmin, false);
                         Set(visLineImport_HomeAdmin, false);
                         Set(visLineOrder_HomeAdmin, false);
                         Set(visLineExport_HomeAdmin, true);
                         Set(textChart_HomeAdmin, "Top Products Exported");
-                        //Set(datasourceTopProduct_HomeAdmin, col_TopProductExported)
+                        
+                        Set(visibleDetailOrderNotPending, true);
+                        Set(visibleDetailOrderPending, false);
+                        
+                        //Set(datasourceTopProduct_HomeAdmin, col_TopProductExported);
+                        //Set(datasourceOrder, Filter(QLK_ExportForm, Status = 4))
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(127, 235, 117, 1)
                     Size: =fontSizeExport_HomeAdmin
@@ -442,14 +450,20 @@ TrangchuGD_3 As screen:
                     HoverColor: =RGBA(21, 161, 60, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
                     OnSelect: |-
-                        =Set(fontSizeImport_HomeAdmin, 12);
+                        =Set(fontSizeApprove_HomeAdmin, 12);
+                        Set(fontSizeImport_HomeAdmin, 12);
                         Set(fontSizeOrder_HomeAdmin, 15);
                         Set(fontSizeExport_HomeAdmin, 12);
                         Set(visLineImport_HomeAdmin, false);
                         Set(visLineOrder_HomeAdmin, true);
                         Set(visLineExport_HomeAdmin, false);
                         Set(textChart_HomeAdmin, "Top Products Ordered");
-                        Set(datasourceTopProduct_HomeAdmin, col_TopProductOrdered)
+                        
+                        Set(visibleDetailOrderNotPending, true);
+                        Set(visibleDetailOrderPending, false);
+                        
+                        Set(datasourceTopProduct_HomeAdmin, col_TopProductOrdered);
+                        Set(datasourceOrder, Filter(QLK_OrderForm, Status = 4))
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(127, 235, 117, 1)
                     Size: =fontSizeOrder_HomeAdmin
@@ -469,14 +483,20 @@ TrangchuGD_3 As screen:
                     HoverColor: =RGBA(21, 161, 60, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
                     OnSelect: |-
-                        =Set(fontSizeImport_HomeAdmin, 15);
+                        =Set(fontSizeApprove_HomeAdmin, 15);
+                        Set(fontSizeImport_HomeAdmin, 15);
                         Set(fontSizeOrder_HomeAdmin, 12);
                         Set(fontSizeExport_HomeAdmin, 12);
+                        Set(visLineApprove_HomeAdmin, false);
                         Set(visLineImport_HomeAdmin, true);
                         Set(visLineOrder_HomeAdmin, false);
                         Set(visLineExport_HomeAdmin, false);
                         Set(textChart_HomeAdmin, "Top Products Imported");
+                        
+                        Set(visibleDetailOrderNotPending, true);
+                        Set(visibleDetailOrderPending, false);
                         //Set(datasourceTopProduct_HomeAdmin, col_TopProductImported)
+                        //Set(datasourceOrder, Filter(QLK_InportForm, Status = 4))
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(127, 235, 117, 1)
                     Size: =fontSizeImport_HomeAdmin
@@ -555,6 +575,175 @@ TrangchuGD_3 As screen:
                 X: =80
                 Y: =179
                 ZIndex: =29
+
+            Button1 As button:
+                OnSelect: =Set(visibleDetailOrderNotPending, true);
+                Text: ="Button"
+                X: =638
+                Y: =230
+                ZIndex: =32
+
+            Group7 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =32
+
+                Button4_15 As button:
+                    BorderColor: =RGBA(127, 235, 117, 1)
+                    BorderStyle: =BorderStyle.None
+                    Color: =RGBA(0, 0, 0, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =37
+                    HoverBorderColor: =RGBA(127, 235, 117, 1)
+                    HoverColor: =RGBA(21, 161, 60, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnSelect: |+
+                        =Set(fontSizeApprove_HomeAdmin, 15);
+                        Set(fontSizeImport_HomeAdmin, 12);
+                        Set(fontSizeOrder_HomeAdmin, 12);
+                        Set(fontSizeExport_HomeAdmin, 12);
+                        Set(visLineApprove_HomeAdmin, true);
+                        Set(visLineImport_HomeAdmin, false);
+                        Set(visLineOrder_HomeAdmin, false);
+                        Set(visLineExport_HomeAdmin, false);
+                        Set(textChart_HomeAdmin, "Approve");
+                        
+                        Set(visibleDetailOrderNotPending, false);
+                        Set(visibleDetailOrderPending, true);
+                        
+                        ClearCollect(col_PendingOrder, Filter(QLK_OrderForm, Status = 1));
+                        Set(datasourceOrder, col_PendingOrder)
+                        
+                        
+                        //ClearCollect(col_PendingImport, Filter(QLK_ImportForm, Status = 1));
+                        //ClearCollect(col_PendingExport, Filter(QLK_ExportForm, Status = 1));
+                        
+                        //ClearCollect(col_AllPending, col_PendingOrder, col_PendingImport, col_PendingExport);
+                        
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(127, 235, 117, 1)
+                    Size: =fontSizeImport_HomeAdmin
+                    Text: ="Approve"
+                    Width: =127
+                    X: =211
+                    Y: =344
+                    ZIndex: =30
+
+                TextInput6_3 As text:
+                    BorderStyle: =BorderStyle.None
+                    Default: =""
+                    DisabledFill: =RGBA(127, 235, 117, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Height: =4
+                    Width: =46
+                    X: =234
+                    Y: =378
+                    ZIndex: =31
+
+            "gal_DetailOrderNotPending_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                DelayItemLoading: =true
+                Height: =339
+                Items: =datasourceOrder
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                ShowScrollbar: =false
+                TemplatePadding: =0
+                TemplateSize: =93
+                Transition: =Transition.Pop
+                Visible: =visibleDetailOrderNotPending
+                Width: =655
+                X: =40
+                Y: =40
+                ZIndex: =33
+
+                shadow_ImportGoods_IMPI_24 As htmlViewer:
+                    Height: =93
+                    HtmlText: |-
+                        ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_24.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_24.Height - 32 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 5px 10px 0px  #ccc; border-radius:15px'></div>" 
+                    Visible: =If(ThisItem.IsSelected, true, false)
+                    Width: =655
+                    ZIndex: =1
+
+                img_Product_cIP_IP2_4 As image:
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Height: =52
+                    Image: =Logo
+                    RadiusBottomLeft: =15
+                    RadiusBottomRight: =15
+                    RadiusTopLeft: =15
+                    RadiusTopRight: =15
+                    Width: =52
+                    X: =23
+                    Y: =20
+                    ZIndex: =2
+
+                Label25_3 As label:
+                    Align: =Align.Center
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Semibold
+                    OnSelect: =Select(Parent)
+                    Text: =ThisItem.IDOrder
+                    Width: =287
+                    X: =75
+                    Y: =21
+                    ZIndex: =3
+
+                Label26_3 As label:
+                    Align: =Align.Center
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Lighter
+                    Height: =38
+                    OnSelect: =Select(Parent)
+                    Size: =10
+                    Text: =ThisItem.Created
+                    Width: =287
+                    X: =75
+                    Y: =45
+                    ZIndex: =4
+
+                Label27_7 As label:
+                    Align: =Align.Center
+                    OnSelect: =Select(Parent)
+                    Size: =11
+                    Text: |-
+                        =Text(ThisItem.TotalPrice, "#,###")
+                    X: =486
+                    Y: =26
+                    ZIndex: =5
+
+                Label27_6 As label:
+                    Align: =Align.Center
+                    OnSelect: =Select(Parent)
+                    Size: =11
+                    Text: =CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = ThisItem.IDOrder)) & " Products"
+                    X: =336
+                    Y: =26
+                    ZIndex: =6
+
+                Button9_3 As button:
+                    BorderStyle: =BorderStyle.None
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =60
+                    HoverFill: =
+                    OnSelect: |-
+                        =Set(width_contRight, 700);
+                        Set(width_contRight_Right, 400);
+                        Set(pos_contRight, 666);
+                        Set(back_Black_HomeAdmin, true);
+                    RadiusBottomLeft: =15
+                    RadiusBottomRight: =15
+                    RadiusTopLeft: =15
+                    RadiusTopRight: =15
+                    Text: =""
+                    Width: =236
+                    X: =399
+                    Y: =16
+                    ZIndex: =7
 
         Separator1_33 As rectangle:
             BorderColor: =RGBA(237, 237, 237, 1)
@@ -910,7 +1099,7 @@ TrangchuGD_3 As screen:
 
                 Label30_1 As label:
                     Align: =Align.Center
-                    Text: =gal_InformationProduct_cIP_IP2_3.Selected.IDOrder
+                    Text: =gal_DetailOrderNotPending.Selected.IDOrder
                     Width: =248
                     X: =67
                     Y: =88
@@ -919,7 +1108,7 @@ TrangchuGD_3 As screen:
                 Gallery1_3 As gallery.galleryVertical:
                     DelayItemLoading: =true
                     Height: =407
-                    Items: =Filter(QLK_OrderFormInformation, IDOrderForm = gal_InformationProduct_cIP_IP2_3.Selected.IDOrder)
+                    Items: =Filter(QLK_OrderFormInformation, IDOrderForm = gal_DetailOrderNotPending.Selected.IDOrder)
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     TemplateSize: =104

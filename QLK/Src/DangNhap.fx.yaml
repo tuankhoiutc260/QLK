@@ -266,23 +266,3 @@ DangNhap As screen:
         Y: =468
         ZIndex: =10
 
-    Button1 As button:
-        OnSelect: |-
-            =ClearCollect(col_ProductImported, 
-                ShowColumns(
-                    Filter(
-                        QLK_ImportFormInformation, 
-                        IDImport in ShowColumns(
-                            Filter(
-                                QLK_ImportForm, Status = 4
-                            ), "IDImport"
-                        )
-                    ),
-                    "IDProduct", "Quantity"
-                )
-            );
-        Text: ="Button"
-        X: =707
-        Y: =135
-        ZIndex: =11
-
