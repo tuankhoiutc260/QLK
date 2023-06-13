@@ -1414,7 +1414,7 @@ TrangchuGD_3 As screen:
                         Set(datasourceOrder, Filter(QLK_OrderForm, Status = 1));
                         
                         // Get IDProduct_Supplier, Quantity in OrderFormInformation
-                        ClearCollect(col_ProductOrder_Approved, ShowColumns(Filter(QLK_OrderFormInformation, IDOrderForm = ThisItem.IDOrder), "IDProduct_Supplier", "Quantity"));
+                        ClearCollect(col_ProductOrder_Approved, ShowColumns(Filter(QLK_OrderFormInformation, IDOrderForm = ThisItem.ID), "IDProduct_Supplier", "Quantity"));
                         
                         // Get IDProduct in col_ProductOrder_Approved
                         ClearCollect(col_IDProductOrder_Approved, ShowColumns(col_ProductOrder_Approved, "IDProduct_Supplier"));
@@ -1440,18 +1440,28 @@ TrangchuGD_3 As screen:
                                     "ID_Supplier", 
                                     "Describe_Pro_x002d_Supplier", 
                                     "ID_Unit"
-                                ), "Quantity"
+                                ), "Quantity", 0
                             )
                         );
-                        
+                        /*
                         ForAll(
-                            col_InformationOfProductOrdered, 
+                            col_ProductOrder_Approved, 
                             Patch(
                                 col_InformationOfProductOrdered, 
-                                LookUp(col_InformationOfProductOrdered, IDProduct_Supplier = col_ProductOrder_Approved.IDProduct_Supplier, {Quantity: col_ProductOrder_Approved.IDProduct_Supplier}
-                                )
+                                LookUp(
+                                    col_InformationOfProductOrdered, 
+                                    IDProduct_Supplier = col_ProductOrder_Approved[@IDProduct_Supplier]), 
+                                    {Quantity: 3}
+                                
                             )
                         );
+                        */
+                        ForAll(
+                            col_ProductOrder_Approved,
+                            UpdateIf(col_InformationOfProductOrdered, IDProduct_Supplier=IDProduct_Supplier,
+                                {Quantity: 3}
+                            )
+                        )
                         
                         //ClearCollect(temp23, col_InformationOfProductOrdered);
                         
