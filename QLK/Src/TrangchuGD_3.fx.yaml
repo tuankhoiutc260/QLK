@@ -154,7 +154,7 @@ TrangchuGD_3 As screen:
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =1
                 DelayItemLoading: =true
-                Height: =339
+                Height: =328
                 Items: =datasourceOrder
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
@@ -165,7 +165,7 @@ TrangchuGD_3 As screen:
                 Visible: =visibleDetailOrderNotPending
                 Width: =655
                 X: =433
-                Y: =399
+                Y: =400
                 ZIndex: =3
 
                 shadow_ImportGoods_IMPI_22 As htmlViewer:
@@ -483,7 +483,7 @@ TrangchuGD_3 As screen:
                     HoverColor: =RGBA(21, 161, 60, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
                     OnSelect: |-
-                        =Set(fontSizeApprove_HomeAdmin, 15);
+                        =Set(fontSizeApprove_HomeAdmin, 12);
                         Set(fontSizeImport_HomeAdmin, 15);
                         Set(fontSizeOrder_HomeAdmin, 12);
                         Set(fontSizeExport_HomeAdmin, 12);
@@ -577,7 +577,7 @@ TrangchuGD_3 As screen:
                 ZIndex: =29
 
             Button1 As button:
-                OnSelect: =Set(visibleDetailOrderNotPending, true);
+                OnSelect: =Refresh(QLK_OrderForm)
                 Text: ="Button"
                 X: =638
                 Y: =230
@@ -613,8 +613,9 @@ TrangchuGD_3 As screen:
                         Set(visibleDetailOrderNotPending, false);
                         Set(visibleDetailOrderPending, true);
                         
-                        ClearCollect(col_PendingOrder, Filter(QLK_OrderForm, Status = 1));
-                        Set(datasourceOrder, col_PendingOrder)
+                        //ClearCollect(col_PendingOrder, Filter(QLK_OrderForm, Status = 1));
+                        //Set(datasourceOrder, col_PendingOrder)
+                        Set(datasourceOrder, Filter(QLK_OrderForm, Status = 1))
                         
                         
                         //ClearCollect(col_PendingImport, Filter(QLK_ImportForm, Status = 1));
@@ -624,7 +625,7 @@ TrangchuGD_3 As screen:
                         
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(127, 235, 117, 1)
-                    Size: =fontSizeImport_HomeAdmin
+                    Size: =fontSizeApprove_HomeAdmin
                     Text: ="Approve"
                     Width: =127
                     X: =211
@@ -637,6 +638,7 @@ TrangchuGD_3 As screen:
                     DisabledFill: =RGBA(127, 235, 117, 1)
                     DisplayMode: =DisplayMode.Disabled
                     Height: =4
+                    Visible: =visLineApprove_HomeAdmin
                     Width: =46
                     X: =234
                     Y: =378
@@ -646,7 +648,7 @@ TrangchuGD_3 As screen:
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =1
                 DelayItemLoading: =true
-                Height: =339
+                Height: =328
                 Items: =datasourceOrder
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
@@ -654,10 +656,10 @@ TrangchuGD_3 As screen:
                 TemplatePadding: =0
                 TemplateSize: =93
                 Transition: =Transition.Pop
-                Visible: =visibleDetailOrderNotPending
+                Visible: =visibleDetailOrderPending
                 Width: =655
-                X: =40
-                Y: =40
+                X: =433
+                Y: =400
                 ZIndex: =33
 
                 shadow_ImportGoods_IMPI_24 As htmlViewer:
@@ -678,7 +680,7 @@ TrangchuGD_3 As screen:
                     RadiusTopLeft: =15
                     RadiusTopRight: =15
                     Width: =52
-                    X: =23
+                    X: =18
                     Y: =20
                     ZIndex: =2
 
@@ -686,24 +688,25 @@ TrangchuGD_3 As screen:
                     Align: =Align.Center
                     AutoHeight: =true
                     FontWeight: =FontWeight.Semibold
+                    Height: =29
                     OnSelect: =Select(Parent)
                     Text: =ThisItem.IDOrder
-                    Width: =287
+                    Width: =219
                     X: =75
-                    Y: =21
+                    Y: =17
                     ZIndex: =3
 
                 Label26_3 As label:
                     Align: =Align.Center
                     AutoHeight: =true
                     FontWeight: =FontWeight.Lighter
-                    Height: =38
+                    Height: =25
                     OnSelect: =Select(Parent)
                     Size: =10
                     Text: =ThisItem.Created
-                    Width: =287
+                    Width: =219
                     X: =75
-                    Y: =45
+                    Y: =39
                     ZIndex: =4
 
                 Label27_7 As label:
@@ -712,7 +715,8 @@ TrangchuGD_3 As screen:
                     Size: =11
                     Text: |-
                         =Text(ThisItem.TotalPrice, "#,###")
-                    X: =486
+                    Width: =120
+                    X: =409
                     Y: =26
                     ZIndex: =5
 
@@ -721,29 +725,124 @@ TrangchuGD_3 As screen:
                     OnSelect: =Select(Parent)
                     Size: =11
                     Text: =CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = ThisItem.IDOrder)) & " Products"
-                    X: =336
+                    Width: =120
+                    X: =289
                     Y: =26
                     ZIndex: =6
 
                 Button9_3 As button:
                     BorderStyle: =BorderStyle.None
                     Fill: =RGBA(0, 0, 0, 0)
-                    Height: =60
+                    Height: =55
                     HoverFill: =
                     OnSelect: |-
                         =Set(width_contRight, 700);
                         Set(width_contRight_Right, 400);
                         Set(pos_contRight, 666);
                         Set(back_Black_HomeAdmin, true);
+                        
+                        Set(width_contRight, 0);
+                        Set(width_contRight_Right, 0);
+                        Set(pos_contRight, 0);
+                        Set(back_Black_HomeAdmin, false);
                     RadiusBottomLeft: =15
                     RadiusBottomRight: =15
                     RadiusTopLeft: =15
                     RadiusTopRight: =15
                     Text: =""
-                    Width: =236
-                    X: =399
-                    Y: =16
+                    Width: =460
+                    X: =18
+                    Y: =17
                     ZIndex: =7
+
+                Icon5 As icon.CheckBadge:
+                    Color: =RGBA(63, 235, 40, 1)
+                    Height: =35
+                    Icon: =Icon.CheckBadge
+                    OnSelect: |-
+                        =Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = ThisItem.IDOrder), {Status: 2});
+                        Refresh(QLK_OrderForm);
+                        Set(datasourceOrder, Filter(QLK_OrderForm, Status = 1));
+                        
+                        // Get IDProduct_Supplier, Quantity in OrderFormInformation
+                        ClearCollect(col_ProductOrder_Approved, ShowColumns(Filter(QLK_OrderFormInformation, IDOrderForm = ThisItem.IDOrder), "IDProduct_Supplier", "Quantity"));
+                        
+                        // Get IDProduct in col_ProductOrder_Approved
+                        ClearCollect(col_IDProductOrder_Approved, ShowColumns(col_ProductOrder_Approved, "IDProduct_Supplier"));
+                        
+                        // Get information of Product with IDProduct in col_IDProductOrder_Approved
+                        /*
+                        ClearCollect(
+                            col_InformationOfProduct, 
+                            
+                                Filter(QLK_Product_Supplier, IDProduct_Supplier in col_IDProductOrder_Approved.IDProduct_Supplier))*/
+                                
+                        
+                        ClearCollect(
+                            col_InformationOfProductOrdered, 
+                            AddColumns(
+                                ShowColumns(
+                                    Filter(QLK_Product_Supplier, IDProduct_Supplier in col_IDProductOrder_Approved.IDProduct_Supplier),
+                                    "IDProduct_Supplier", 
+                                    "Name_Supplier", 
+                                    "Price_Supplier", 
+                                    "Barcode_Supplier", 
+                                    "Image_Pro_x002d_Supplier", 
+                                    "ID_Supplier", 
+                                    "Describe_Pro_x002d_Supplier", 
+                                    "ID_Unit"
+                                ), "Quantity"
+                            )
+                        );
+                        
+                        ForAll(
+                            col_InformationOfProductOrdered, 
+                            Patch(
+                                col_InformationOfProductOrdered, 
+                                LookUp(col_InformationOfProductOrdered, IDProduct_Supplier = col_ProductOrder_Approved.IDProduct_Supplier, {Quantity: col_ProductOrder_Approved.IDProduct_Supplier}
+                                )
+                            )
+                        );
+                        
+                        ClearCollect(temp23, col_InformationOfProductOrdered);
+                        
+                        /*
+                        ClearCollect(colProductSupplier, ShowColumns(Filter(QLK_Product_Supplier, true), "IDProduct_Supplier"));
+                        ClearCollect(
+                            col_InformationOfProduct, 
+                            Filter(QLK_Product_Supplier, IDProduct_Supplier in colProductSupplier.IDProduct_Supplier)
+                        )*/
+                        
+                        //Patch(QLK_Product, true)
+                    Width: =35
+                    X: =537
+                    Y: =29
+                    ZIndex: =8
+
+                Icon9 As icon.CancelBadge:
+                    Color: =RGBA(255, 0, 0, 1)
+                    Height: =35
+                    Icon: =Icon.CancelBadge
+                    OnSelect: |-
+                        =Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = ThisItem.IDOrder), {Status: 3});
+                        Refresh(QLK_OrderForm);
+                        Set(datasourceOrder, Filter(QLK_OrderForm, Status = 1))
+                    Width: =35
+                    X: =581
+                    Y: =29
+                    ZIndex: =9
+
+            Button4 As button:
+                OnSelect: |-
+                    =ClearCollect(colProductSupplier, ShowColumns(Filter(QLK_Product_Supplier, true), "IDProduct_Supplier"));
+                    ClearCollect(
+                        col_InformationOfProduct, 
+                        Filter(QLK_Product_Supplier, IDProduct_Supplier in colProductSupplier.IDProduct_Supplier)
+                    )
+                Text: ="Button"
+                X: =392
+                Y: =242
+                ZIndex: =34
 
         Separator1_33 As rectangle:
             BorderColor: =RGBA(237, 237, 237, 1)
