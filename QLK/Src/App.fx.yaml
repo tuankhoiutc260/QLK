@@ -45,6 +45,8 @@ App As appinfo:
         Set(textChart_HomeAdmin, "Top Products Imported");
         Set(datasourceImported_HomeAdmin, col_TopProductOrdered);
         Set(visibleDetailOrderNotPending, true);
+        Set(visibleDetailOrderNotPending_HomeAdmin, true);
+        Set(visibleDetailOrderPending_HomeAdmin, false);
         
         //Tạo lịch
         If(IsBlank(_userDomain),         
