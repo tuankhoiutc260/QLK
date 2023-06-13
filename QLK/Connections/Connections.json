@@ -98,7 +98,10 @@
       "QLK_ImportRequest",
       "QLK_ImportForm",
       "QLK_Product_Supplier",
-      "QLK_SetPrice"
+      "QLK_SetPrice",
+      "QLK_ExportForm",
+      "QLK_ImportFormInformation",
+      "QLK_ExportFormInformation"
     ],
     "dependencies": {},
     "dependents": [
