@@ -57,7 +57,9 @@ App As appinfo:
         ); 
         
         Set(showProductNoLocation, false);
-        Set(showSetLocation,false)   
+        Set(showSetLocation,false);
+        Set(showXacNhanLocation, false);
+        Set(showRemoveLocation, false)   
     StartScreen: =
 
     Host As hostControl.DefaultHostControlVariant:

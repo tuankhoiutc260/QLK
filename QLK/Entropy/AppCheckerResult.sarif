@@ -15066,6 +15066,162 @@
               "message": {
                 "text": "Error occurred running rule app-InefficientDelayLoading."
               }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 18
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error occurred running rule app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 18
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error occurred running rule app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 18
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error occurred running rule app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 18
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error occurred running rule app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 18
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error occurred running rule app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 18
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error occurred running rule app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 18
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error occurred running rule app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 18
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error occurred running rule app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 18
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error occurred running rule app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 18
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error occurred running rule app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 18
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error occurred running rule app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 18
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error occurred running rule app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 18
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error occurred running rule app-InefficientDelayLoading."
+              }
             }
           ]
         }
@@ -24665,19 +24821,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.ShowDialogueSuaKH"
+                  "fullyQualifiedName": "SoDoKho.TextInput1_16.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.ShowDialogueSuaKH",
+                  "fullyQualifiedName": "SoDoKho.TextInput1_16.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "ShowDialogueSuaKH",
-                "module": "App",
-                "type": "App"
+                "member": "AccessibleLabel",
+                "module": "SoDoKho",
+                "type": "SoDoKho.TextInput1_16"
               }
             }
           ],
@@ -24687,25 +24843,55 @@
           "properties": {
             "level": "Medium"
           },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 14
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 12
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.showXacNhanDatPhieu"
+                  "fullyQualifiedName": "SoDoKho.TextInput1_17.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.showXacNhanDatPhieu",
+                  "fullyQualifiedName": "SoDoKho.TextInput1_17.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "showXacNhanDatPhieu",
+                "member": "AccessibleLabel",
+                "module": "SoDoKho",
+                "type": "SoDoKho.TextInput1_17"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 12
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.datasourceImported_HomeAdmin"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.datasourceImported_HomeAdmin",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "datasourceImported_HomeAdmin",
                 "module": "App",
                 "type": "App"
               }
@@ -24755,17 +24941,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.showSuccess_DuyetDatHang"
+                  "fullyQualifiedName": "App.visible_RightHomeAdmin"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.showSuccess_DuyetDatHang",
+                  "fullyQualifiedName": "App.visible_RightHomeAdmin",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "showSuccess_DuyetDatHang",
+                "member": "visible_RightHomeAdmin",
                 "module": "App",
                 "type": "App"
               }
@@ -24815,17 +25001,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.visible_RightHomeAdmin"
+                  "fullyQualifiedName": "App.showSuccess_DuyetDatHang"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.visible_RightHomeAdmin",
+                  "fullyQualifiedName": "App.showSuccess_DuyetDatHang",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "visible_RightHomeAdmin",
+                "member": "showSuccess_DuyetDatHang",
                 "module": "App",
                 "type": "App"
               }
@@ -24845,17 +25031,47 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.datasourceImported_HomeAdmin"
+                  "fullyQualifiedName": "App.ShowDialogueSuaKH"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.datasourceImported_HomeAdmin",
+                  "fullyQualifiedName": "App.ShowDialogueSuaKH",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "datasourceImported_HomeAdmin",
+                "member": "ShowDialogueSuaKH",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 14
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.showXacNhanDatPhieu"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.showXacNhanDatPhieu",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "showXacNhanDatPhieu",
                 "module": "App",
                 "type": "App"
               }

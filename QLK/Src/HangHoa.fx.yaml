@@ -100,7 +100,8 @@ HangHoa As screen:
         OnSelect: |-
             =Navigate(HangHoa);
             Set(DSHangHoa, "DSTrongKho");
-            Set(showImportRequest, false)
+            Set(showImportRequest, false);
+            Refresh(QLK_Product)
         RadiusBottomLeft: =
         RadiusBottomRight: =
         RadiusTopLeft: =
@@ -1012,7 +1013,6 @@ HangHoa As screen:
             OnSelect: |-
                 =Set(showUpdateThongTinHangHoa,true);
                 Set(showThongTinHangHoa,false);
-                
                 Reset(AddMediaButton2)
             PressedBorderColor: =RGBA(237, 237, 237, 1)
             RadiusBottomLeft: =20
