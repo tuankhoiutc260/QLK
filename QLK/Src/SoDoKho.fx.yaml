@@ -38,7 +38,7 @@ SoDoKho As screen:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
-        OnSelect: =Navigate(TrangchuGD)
+        OnSelect: =Navigate(SoDoKho)
         RadiusBottomLeft: =
         RadiusBottomRight: =
         RadiusTopLeft: =
@@ -643,30 +643,12 @@ SoDoKho As screen:
         Y: =201
         ZIndex: =50
 
-    Rectangle11 As rectangle:
-        Height: =53
-        Width: =160
-        X: =326
-        Y: =147
-        ZIndex: =51
-
     Rectangle11_1 As rectangle:
         Height: =53
         Width: =160
         X: =1053
         Y: =149
         ZIndex: =52
-
-    Label15 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
-        Size: =15
-        Text: ="Import area"
-        X: =331
-        Y: =153
-        ZIndex: =53
 
     Label15_1 As label:
         Align: =Align.Center
@@ -1022,4 +1004,392 @@ SoDoKho As screen:
             X: =685
             Y: =404
             ZIndex: =80
+
+    Button8 As button:
+        Font: =Font.'Segoe UI'
+        Height: =50
+        OnSelect: =Set(showProductNoLocation,true)
+        Text: ="Import Area"
+        X: =326
+        Y: =155
+        ZIndex: =81
+
+    Group9 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =90
+
+        Rectangle14 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.43)
+            Height: =768
+            Visible: =showProductNoLocation
+            Width: =1366
+            ZIndex: =82
+
+        TextInput1_13 As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =590
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showProductNoLocation
+            Width: =520
+            X: =430
+            Y: =92
+            ZIndex: =83
+
+        lbl_OrderedID_DuyetDatHang_5 As label:
+            Align: =Align.Center
+            Color: =RGBA(184, 0, 0, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =52
+            OnSelect: =
+            Size: =15
+            Text: ="THE PRODUCT HAS NOT LOCATION"
+            Visible: =showProductNoLocation
+            Width: =364
+            X: =500
+            Y: =98
+            ZIndex: =84
+
+        "gal_ProductNoLocation As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            BorderColor: =RGBA(202, 202, 202, 1)
+            BorderThickness: =1
+            DelayItemLoading: =true
+            Height: =417
+            Items: =Filter(QLK_Product, Location = Blank())
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =92
+            Visible: =showProductNoLocation
+            Width: =478
+            X: =450
+            Y: =199
+            ZIndex: =85
+
+            lbl_NameProduct_2 As label:
+                Align: =Align.Center
+                Height: =71
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.Name
+                Width: =285
+                X: =14
+                Y: =10
+                ZIndex: =5
+
+            lbl_Quantity_1 As label:
+                Align: =Align.Center
+                Height: =71
+                OnSelect: =Select(Parent)
+                Text: =LookUp(QLK_Unit, ID = ThisItem.Unit, UnitName)
+                Width: =113
+                X: =326
+                Y: =10
+                ZIndex: =6
+
+            lbl_Location_1 As label:
+                Align: =Align.Center
+                Height: =71
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.Location
+                Width: =101
+                X: =790
+                Y: =10
+                ZIndex: =9
+
+            Button6_2 As button:
+                BorderColor: =RGBA(202, 202, 202, 1)
+                BorderThickness: =1
+                Color: =RGBA(202, 202, 202, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =92
+                HoverFill: =RGBA(187, 221, 140, 0.4)
+                OnSelect: |-
+                    =Select(Parent);
+                    Set(showProductNoLocation,false);
+                    Set(showSetLocation, true);
+                    Set(IdUnit_GalProductLocation, ThisItem.Unit);
+                    Set(IDProduct_GalProductLocation, ThisItem.IDProduct)
+                PressedFill: =
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Text: =""
+                Width: =478
+                ZIndex: =11
+
+        Button7_6 As button:
+            BorderColor: =RGBA(151, 0, 0, 1)
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =
+            Height: =44
+            HoverBorderColor: =
+            HoverColor: =
+            HoverFill: =
+            PaddingBottom: =50
+            PressedFill: =
+            RadiusBottomLeft: |
+                =0
+            RadiusBottomRight: |
+                =0
+            RadiusTopLeft: =20
+            RadiusTopRight: |
+                =20
+            Size: =24
+            Text: =""
+            Visible: =showProductNoLocation
+            Width: =476
+            X: =452
+            Y: =155
+            ZIndex: =86
+
+        lbl_OrderedID_DuyetDatHang_6 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =46
+            OnSelect: =
+            Size: =14
+            Text: ="Name Product"
+            Visible: =showProductNoLocation
+            Width: =289
+            X: =450
+            Y: =156
+            ZIndex: =87
+
+        lbl_OrderedID_DuyetDatHang_7 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =46
+            OnSelect: =
+            Size: =14
+            Text: ="Unit"
+            Visible: =showProductNoLocation
+            Width: =148
+            X: =754
+            Y: =157
+            ZIndex: =88
+
+        btn_RefusedList_DuyetDatHang_3 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: =Set(showProductNoLocation, false)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="Close"
+            Visible: =showProductNoLocation
+            Width: =116
+            X: =800
+            Y: =629
+            ZIndex: =89
+
+    Label23_7 As label:
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =15
+        Text: |-
+            ="ID Product:"
+        Visible: =showSetLocation
+        Width: =135
+        X: =518
+        Y: =312
+        ZIndex: =101
+
+    Group12 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =101
+
+        Rectangle15 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.43)
+            Height: =768
+            Visible: =showSetLocation
+            Width: =1366
+            ZIndex: =90
+
+        TextInput1_15 As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =284
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showSetLocation
+            Width: =584
+            X: =470
+            Y: =252
+            ZIndex: =91
+
+        Label22 As label:
+            Align: =Align.Center
+            Color: =RGBA(184, 0, 0, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =20
+            Text: ="Sort product placement"
+            Visible: =showSetLocation
+            Width: =442
+            X: =543
+            Y: =261
+            ZIndex: =92
+
+        Label23 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Name:"
+            Visible: =showSetLocation
+            Width: =81
+            X: =515
+            Y: =347
+            ZIndex: =93
+
+        Label23_3 As label:
+            Font: =Font.'Segoe UI'
+            Height: =59
+            Overflow: =Overflow.Scroll
+            Size: =15
+            Text: =gal_ProductNoLocation.Selected.Name
+            Visible: =showSetLocation
+            Width: =408
+            X: =605
+            Y: =353
+            ZIndex: =94
+
+        Label23_4 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Unit:"
+            Visible: =showSetLocation
+            Width: =72
+            X: =518
+            Y: =423
+            ZIndex: =95
+
+        Label23_5 As label:
+            Font: =Font.'Segoe UI'
+            Size: =15
+            Text: =LookUp(QLK_Unit, ID = IdUnit_GalProductLocation, UnitName)
+            Visible: =showSetLocation
+            Width: =149
+            X: =590
+            Y: =423
+            ZIndex: =96
+
+        Label23_6 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Location:"
+            Visible: =showSetLocation
+            Width: =117
+            X: =724
+            Y: =423
+            ZIndex: =97
+
+        drop_Location2 As dropdown:
+            Items: =Filter(QLK_Location, ID_Product = Blank() && Unit = txt_Unit.Text)
+            Visible: =showSetLocation
+            Width: =115
+            X: =841
+            Y: =422
+            ZIndex: =98
+
+        btn_RefusedList_DuyetDatHang_4 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: |-
+                =Set(showSetLocation,false);
+                Set(showProductNoLocation,true)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="Close"
+            Visible: =showSetLocation
+            Width: =156
+            X: =774
+            Y: =478
+            ZIndex: =99
+
+        btn_RefusedList_DuyetDatHang_5 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(54, 176, 75, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(54, 176, 75, 1)
+            OnSelect: |-
+                =Patch(QLK_Product, LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation),
+                    {
+                        Location: drop_Location2.SelectedText.Value
+                    }
+                );
+                Patch(QLK_Location, LookUp(QLK_Location, ID_Location = drop_Location2.SelectedText.Value),
+                    {
+                        ID_Product: txt_IDProductLoaction.Text
+                    }
+                );
+                Set(showSetLocation,false)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="Apply"
+            Visible: =showSetLocation
+            Width: =156
+            X: =605
+            Y: =478
+            ZIndex: =100
+
+    txt_IDProductLoaction As label:
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =15
+        Text: =gal_ProductNoLocation.Selected.IDProduct
+        Visible: =showSetLocation
+        Width: =160
+        X: =704
+        Y: =312
+        ZIndex: =102
 

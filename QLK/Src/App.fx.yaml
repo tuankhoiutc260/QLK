@@ -54,7 +54,10 @@ App As appinfo:
         	Set(_firstDayOfMonth, DateAdd(Today(), 1 - Day(Today()), TimeUnit.Days));         
         	Set(_firstDayInView, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days));         
         	Set(_lastDayOfMonth, DateAdd(DateAdd(_firstDayOfMonth, 1, TimeUnit.Months), -1, TimeUnit.Days))         
-        );     
+        ); 
+        
+        Set(showProductNoLocation, false);
+        Set(showSetLocation,false)   
     StartScreen: =
 
     Host As hostControl.DefaultHostControlVariant:

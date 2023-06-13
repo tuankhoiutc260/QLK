@@ -422,6 +422,7 @@ ThietLapGia As screen:
     Rectangle13 As rectangle:
         Fill: =RGBA(0, 0, 0, 0.43)
         Height: =768
-        Width: =1366
+        Width: =1058
+        X: =306
         ZIndex: =80
 

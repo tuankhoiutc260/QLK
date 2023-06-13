@@ -93,7 +93,8 @@
       "QLK_OrderFormInformation",
       "QLK_Location",
       "QLK_ImportRequest",
-      "QLK_ImportForm"
+      "QLK_ImportForm",
+      "QLK_Product_Supplier"
     ],
     "dependencies": {},
     "dependents": [

@@ -22,6 +22,19 @@ HangHoa As screen:
         Width: =164
         ZIndex: =2
 
+    lbl_OrderedID_DuyetDatHang_3 As label:
+        Align: =Align.Center
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =52
+        OnSelect: =
+        Size: =20
+        Text: ="LIST OF PRODUCT"
+        Width: =314
+        X: =228
+        Y: =117
+        ZIndex: =3
+
     Button2_109 As button:
         BorderThickness: =0
         Fill: =RGBA(0, 0, 0, 0)
@@ -39,7 +52,7 @@ HangHoa As screen:
             Set price"
         Width: =164
         Y: =330
-        ZIndex: =3
+        ZIndex: =4
 
     Icon2_5 As icon.Money:
         Color: =RGBA(255, 255, 255, 1)
@@ -48,7 +61,7 @@ HangHoa As screen:
         Width: =50
         X: =57
         Y: =343
-        ZIndex: =4
+        ZIndex: =5
 
     Button2_7 As button:
         BorderStyle: =BorderStyle.Dotted
@@ -65,9 +78,9 @@ HangHoa As screen:
         Text: |-
             ="
             
-            Home"
+            Warehouse"
         Width: =164
-        ZIndex: =5
+        ZIndex: =6
 
     Icon4_1 As icon.Home:
         Color: =RGBA(255, 255, 255, 1)
@@ -76,7 +89,7 @@ HangHoa As screen:
         Width: =50
         X: =57
         Y: =15
-        ZIndex: =6
+        ZIndex: =7
 
     Button2_10 As button:
         BorderThickness: =0
@@ -98,7 +111,7 @@ HangHoa As screen:
             Product"
         Width: =164
         Y: =110
-        ZIndex: =7
+        ZIndex: =8
 
     Button2_11 As button:
         BorderThickness: =0
@@ -117,7 +130,7 @@ HangHoa As screen:
             Inventory"
         Width: =164
         Y: =220
-        ZIndex: =8
+        ZIndex: =9
 
     Icon8_1 As icon.Shop:
         Color: =RGBA(255, 255, 255, 1)
@@ -126,7 +139,7 @@ HangHoa As screen:
         Width: =50
         X: =57
         Y: =122
-        ZIndex: =9
+        ZIndex: =10
 
     Icon11_2 As icon.ListWatchlistRemind:
         Color: =RGBA(255, 255, 255, 1)
@@ -135,7 +148,7 @@ HangHoa As screen:
         Width: =50
         X: =57
         Y: =232
-        ZIndex: =10
+        ZIndex: =11
 
     Button2_13 As button:
         BorderThickness: =0
@@ -155,7 +168,7 @@ HangHoa As screen:
             Logout"
         Width: =164
         Y: =651
-        ZIndex: =11
+        ZIndex: =12
 
     Icon10_1 As icon.Leave:
         Color: =RGBA(255, 255, 255, 1)
@@ -164,14 +177,14 @@ HangHoa As screen:
         Width: =50
         X: =57
         Y: =675
-        ZIndex: =12
+        ZIndex: =13
 
     Icon11_3 As icon.VerticalLine:
         Height: =110
         Icon: =Icon.VerticalLine
         X: =133
         Y: =110
-        ZIndex: =13
+        ZIndex: =14
 
     Image4_2 As image:
         Height: =56
@@ -183,7 +196,7 @@ HangHoa As screen:
         Width: =56
         X: =966
         Y: =20
-        ZIndex: =14
+        ZIndex: =15
 
     Label2_1 As label:
         Font: =Font.'Segoe UI'
@@ -193,7 +206,7 @@ HangHoa As screen:
         Width: =227
         X: =1035
         Y: =15
-        ZIndex: =15
+        ZIndex: =16
 
     Label2_28 As label:
         Color: |-
@@ -230,6 +243,7 @@ HangHoa As screen:
             )
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
         TemplatePadding: =0
         TemplateSize: =92
         Width: =1071
@@ -899,7 +913,7 @@ HangHoa As screen:
                 ="Location:"
             Visible: =showThongTinHangHoa
             Width: =183
-            X: =701
+            X: =709
             Y: =450
             ZIndex: =44
 
@@ -923,7 +937,7 @@ HangHoa As screen:
                 ="Description:"
             Visible: =showThongTinHangHoa
             Width: =183
-            X: =701
+            X: =709
             Y: =495
             ZIndex: =46
 
@@ -1593,17 +1607,4 @@ HangHoa As screen:
             X: =821
             Y: =505
             ZIndex: =99
-
-    lbl_OrderedID_DuyetDatHang_3 As label:
-        Align: =Align.Center
-        Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Bold
-        Height: =52
-        OnSelect: =
-        Size: =20
-        Text: ="LIST OF PRODUCT"
-        Width: =314
-        X: =228
-        Y: =117
-        ZIndex: =100
 
