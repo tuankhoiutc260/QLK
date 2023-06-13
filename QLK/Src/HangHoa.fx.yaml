@@ -1462,6 +1462,25 @@ HangHoa As screen:
             Y: =442
             ZIndex: =81
 
+    Button2_112 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(DanhSachOrder)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Order list"
+        Width: =164
+        Y: =442
+        ZIndex: =100
+
     Group5 As group:
         Height: =5
         Width: =5
@@ -1608,4 +1627,13 @@ HangHoa As screen:
             X: =821
             Y: =505
             ZIndex: =99
+
+    Icon3_3 As icon.ShoppingCart:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.ShoppingCart
+        Width: =50
+        X: =57
+        Y: =455
+        ZIndex: =101
 

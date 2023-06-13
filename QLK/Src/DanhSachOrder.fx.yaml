@@ -1,0 +1,398 @@
+DanhSachOrder As screen:
+    Fill: =RGBA(214, 223, 238, 1)
+
+    TextInput1_18 As text:
+        Default: =
+        DisabledBorderColor: =RGBA(219, 219, 219, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.Disabled
+        Height: =628
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Width: =1134
+        X: =196
+        Y: =110
+        ZIndex: =1
+
+    Rectangle1_23 As rectangle:
+        Fill: =RGBA(76, 133, 45, 0.77)
+        Height: =768
+        Width: =164
+        ZIndex: =2
+
+    Button2_14 As button:
+        BorderStyle: =BorderStyle.Dotted
+        BorderThickness: =1
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(SoDoKho)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Warehouse"
+        Width: =164
+        ZIndex: =3
+
+    Icon4_22 As icon.Home:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Home
+        Width: =50
+        X: =57
+        Y: =15
+        ZIndex: =4
+
+    Button2_113 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: |-
+            =Navigate(HangHoa);
+            Set(DSHangHoa, "DSTrongKho")
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Product"
+        Width: =164
+        Y: =110
+        ZIndex: =5
+
+    Button2_114 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Inventory"
+        Width: =164
+        Y: =220
+        ZIndex: =6
+
+    Icon8_10 As icon.Shop:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Shop
+        Width: =50
+        X: =57
+        Y: =122
+        ZIndex: =7
+
+    Icon11_35 As icon.ListWatchlistRemind:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.ListWatchlistRemind
+        Width: =50
+        X: =57
+        Y: =232
+        ZIndex: =8
+
+    Button2_117 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(DangNhap)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            
+            Logout"
+        Width: =164
+        Y: =651
+        ZIndex: =9
+
+    Icon10_19 As icon.Leave:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Leave
+        Width: =50
+        X: =57
+        Y: =675
+        ZIndex: =10
+
+    Icon11_36 As icon.VerticalLine:
+        Height: =110
+        Icon: =Icon.VerticalLine
+        X: =132
+        Y: =440
+        ZIndex: =11
+
+    Image4_43 As image:
+        Height: =56
+        Image: =LookUp(QLK_Account, ID = idDangNhap,' Portrait')
+        RadiusBottomLeft: =35
+        RadiusBottomRight: =35
+        RadiusTopLeft: =35
+        RadiusTopRight: =35
+        Width: =56
+        X: =966
+        Y: =20
+        ZIndex: =12
+
+    Label2_42 As label:
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =15
+        Text: =LookUp(QLK_Account, ID = idDangNhap, FullName)
+        Width: =243
+        X: =1035
+        Y: =15
+        ZIndex: =13
+
+    Label2_43 As label:
+        Color: |-
+            =If(Label2_43.Text = "Stocker", RGBA(50, 200, 0, 100),
+                If(Label2_43.Text = "Manager", RGBA(200,0,0,100),
+                    If(Label2_43.Text = "WarehouseStaff", RGBA(60,100,170,100),
+                        If(Label2_43.Text = "Accountant", RGBA(255,190,0,100))
+                    )
+                )
+            )
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =31
+        Size: =15
+        Text: =LookUp(QLK_Account, ID = idDangNhap, ' Permission'.Value)
+        Width: =196
+        X: =1035
+        Y: =45
+        ZIndex: =15
+
+    Image4_42 As image:
+        Height: =74
+        Image: =Logo
+        Width: =258
+        X: =179
+        Y: =11
+        ZIndex: =17
+
+    Button2_115 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(ThietLapGia)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Set price"
+        Width: =164
+        Y: =332
+        ZIndex: =68
+
+    Icon2_6 As icon.Money:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Money
+        Width: =50
+        X: =57
+        Y: =345
+        ZIndex: =69
+
+    "gal_ThietLapGia_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        BorderColor: =RGBA(202, 202, 202, 1)
+        BorderThickness: =1
+        DelayItemLoading: =true
+        Height: =473
+        Items: =QLK_ImportRequest
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =52
+        Width: =1072
+        X: =227
+        Y: =235
+        ZIndex: =70
+
+        Button6_3 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(202, 202, 202, 1)
+            BorderThickness: =1
+            Color: =RGBA(202, 202, 202, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =52
+            HoverFill: =RGBA(187, 221, 140, 0.4)
+            OnSelect: |
+                =Select(Parent);
+            PressedFill: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: =""
+            Width: =1071
+            ZIndex: =1
+
+        lbl_NameProduct_3 As label:
+            Align: =Align.Center
+            Height: =46
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Name
+            Width: =457
+            Y: =5
+            ZIndex: =2
+
+        lbl_InputPrice_2 As label:
+            Align: =Align.Center
+            Height: =41
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.ID_ProductRequest
+            Width: =135
+            X: =64
+            Y: =7
+            ZIndex: =3
+
+        lbl_OutputPrice_2 As label:
+            Align: =Align.Center
+            Height: =41
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.' Quantity'
+            Width: =111
+            X: =837
+            Y: =5
+            ZIndex: =4
+
+        lbl_InputPrice_3 As label:
+            Align: =Align.Center
+            Height: =41
+            OnSelect: =Select(Parent)
+            Text: =LookUp(QLK_Product, IDProduct = ThisItem.ID_ProductRequest, Name)
+            Width: =576
+            X: =213
+            Y: =5
+            ZIndex: =5
+
+    Button7_7 As button:
+        BorderColor: =RGBA(151, 0, 0, 1)
+        DisabledBorderColor: =RGBA(219, 219, 219, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.Disabled
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderColor: =
+        Height: =52
+        HoverBorderColor: =
+        HoverColor: =
+        HoverFill: =
+        PaddingBottom: =50
+        PressedFill: =
+        RadiusBottomLeft: |
+            =0
+        RadiusBottomRight: |
+            =0
+        RadiusTopLeft: =20
+        RadiusTopRight: |
+            =20
+        Size: =24
+        Text: =""
+        Width: =1072
+        X: =227
+        Y: =183
+        ZIndex: =71
+
+    lbl_OrderedID_DuyetDatHang_9 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Size: =14
+        Text: ="Name Product"
+        Width: =314
+        X: =556
+        Y: =184
+        ZIndex: =73
+
+    lbl_TotalPrice_DuyetDatHang_6 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Text: ="ID Product"
+        Width: =136
+        X: =292
+        Y: =184
+        ZIndex: =74
+
+    lbl_TotalPrice_DuyetDatHang_7 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Text: ="Order Quantity"
+        Width: =161
+        X: =1035
+        Y: =184
+        ZIndex: =76
+
+    lbl_OrderedID_DuyetDatHang_8 As label:
+        Align: =Align.Center
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =52
+        OnSelect: =
+        Size: =20
+        Text: ="ORDERED PRODUCT LIST"
+        Width: =354
+        X: =245
+        Y: =122
+        ZIndex: =77
+
+    Button2_116 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Order list"
+        Width: =164
+        Y: =440
+        ZIndex: =78
+
+    Icon3_4 As icon.ShoppingCart:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.ShoppingCart
+        Width: =50
+        X: =57
+        Y: =453
+        ZIndex: =79
+

@@ -73,6 +73,9 @@
           "QLK_Product": {
             "tableName": "7ae79b72-ebf1-474f-86a8-05dc12c689bd"
           },
+          "QLK_SetPrice": {
+            "tableName": "666ab2c4-5d05-49e1-84fd-8b0da0941834"
+          },
           "QLK_Supplier": {
             "tableName": "433aca23-8260-489e-9ed5-dadab226ba37"
           },
@@ -94,7 +97,8 @@
       "QLK_Location",
       "QLK_ImportRequest",
       "QLK_ImportForm",
-      "QLK_Product_Supplier"
+      "QLK_Product_Supplier",
+      "QLK_SetPrice"
     ],
     "dependencies": {},
     "dependents": [
