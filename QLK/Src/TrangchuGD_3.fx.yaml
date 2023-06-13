@@ -1443,7 +1443,7 @@ TrangchuGD_3 As screen:
                                 ), "Quantity", 0
                             )
                         );
-                        /*
+                        
                         ForAll(
                             col_ProductOrder_Approved, 
                             Patch(
@@ -1451,18 +1451,39 @@ TrangchuGD_3 As screen:
                                 LookUp(
                                     col_InformationOfProductOrdered, 
                                     IDProduct_Supplier = col_ProductOrder_Approved[@IDProduct_Supplier]), 
-                                    {Quantity: 3}
+                                    {Quantity: col_ProductOrder_Approved[@Quantity]}
                                 
                             )
                         );
-                        */
+                        
+                        ForAll(col_InformationOfProductOrdered As T,
+                            Patch(QLK_Product,
+                                {
+                                    IDProduct: T.IDProduct_Supplier,
+                                    Name: T.Name_Supplier,
+                                    Quantity: T.Quantity,
+                                    MinimumQuantity: If(LookUp(col_InformationOfProductOrdered, T.ID_Unit = 3, T.ID_Unit), 10, 20),
+                                    Unit: Value(T.ID_Unit),
+                                    InputPrice: T.Price_Supplier,
+                                    OutputPrice: T.Price_Supplier + T.Price_Supplier * 0.1,
+                                    Image: T.Image_Pro_x002d_Supplier,
+                                    BarCode: T.Barcode_Supplier,
+                                    IDSupplier: Value(T.ID_Supplier),
+                                    Description: T.Describe_Pro_x002d_Supplier
+                                }
+                            )
+                        );
+                        
+                        
+                        /*
                         ForAll(
                             col_ProductOrder_Approved,
                             UpdateIf(col_InformationOfProductOrdered, IDProduct_Supplier=IDProduct_Supplier,
                                 {Quantity: 3}
                             )
-                        )
-                        
+                        );
+                        */
+                        Refresh(QLK_OrderForm);
                         //ClearCollect(temp23, col_InformationOfProductOrdered);
                         
                         /*
