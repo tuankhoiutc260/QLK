@@ -1467,14 +1467,14 @@ SoDoKho As screen:
             HoverBorderColor: =RGBA(237, 237, 237, 1)
             HoverFill: =RGBA(81, 224, 105, 1)
             OnSelect: |-
-                =Patch(QLK_Product, LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation),
-                    {
-                        Location: drop_Location2.SelectedText.Value
-                    }
-                );
-                Patch(QLK_Location, LookUp(QLK_Location, ID_Location = IDNewLocation2),
+                =Patch(QLK_Location, LookUp(QLK_Location, ID_Location = IDNewLocation2),
                     {
                         ID_Product: txt_IDProductLoaction.Text
+                    }
+                );
+                Patch(QLK_Product, LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation),
+                    {
+                        Location: drop_Location2.SelectedText.Value
                     }
                 );
                 Set(showSetLocation,false);
@@ -1554,9 +1554,9 @@ SoDoKho As screen:
             Size: =20
             Text: ="Do you want to remove the product from its location?"
             Visible: =showRemoveLocation
-            Width: =345
-            X: =575
-            Y: =309
+            Width: =401
+            X: =544
+            Y: =312
             ZIndex: =109
 
         btn_RefusedList_DuyetDatHang_6 As button:
