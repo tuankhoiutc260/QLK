@@ -1447,19 +1447,6 @@ HangHoa As screen:
             Y: =442
             ZIndex: =81
 
-    lbl_OrderedID_DuyetDatHang_3 As label:
-        Align: =Align.Center
-        Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Bold
-        Height: =52
-        OnSelect: =
-        Size: =20
-        Text: ="LIST OF PRODUCT"
-        Width: =314
-        X: =228
-        Y: =117
-        ZIndex: =100
-
     Group5 As group:
         Height: =5
         Width: =5
@@ -1606,4 +1593,17 @@ HangHoa As screen:
             X: =821
             Y: =505
             ZIndex: =99
+
+    lbl_OrderedID_DuyetDatHang_3 As label:
+        Align: =Align.Center
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =52
+        OnSelect: =
+        Size: =20
+        Text: ="LIST OF PRODUCT"
+        Width: =314
+        X: =228
+        Y: =117
+        ZIndex: =100
 
