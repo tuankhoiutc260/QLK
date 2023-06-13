@@ -1297,12 +1297,12 @@ SoDoKho As screen:
             Y: =423
             ZIndex: =95
 
-        Label23_5 As label:
+        txt_UnitLocation As label:
             Font: =Font.'Segoe UI'
             Size: =15
             Text: =LookUp(QLK_Unit, ID = IdUnit_GalProductLocation, UnitName)
             Visible: =showSetLocation
-            Width: =149
+            Width: =128
             X: =590
             Y: =423
             ZIndex: =96
@@ -1320,7 +1320,7 @@ SoDoKho As screen:
             ZIndex: =97
 
         drop_Location2 As dropdown:
-            Items: =Filter(QLK_Location, ID_Product = Blank() && Unit = txt_Unit.Text)
+            Items: =Filter(QLK_Location, (ID_Product = Blank() && Unit = txt_UnitLocation.Text))
             Visible: =showSetLocation
             Width: =115
             X: =841
