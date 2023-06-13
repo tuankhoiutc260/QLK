@@ -111,11 +111,11 @@
     "DocumentType": "App",
     "EnableInstrumentation": false,
     "FileID": "c6329ac5-1721-4b64-8923-16452309f547",
-    "Id": "191af890-335f-4116-b32c-9a248da72d5d",
+    "Id": "a3ed490d-0d75-4caa-a09a-6c6a93d5243f",
     "InstrumentationKey": "",
     "LocalDatabaseReferences": "{}",
     "ManualOfflineProfileId": "",
-    "Name": "QuanLyKho",
+    "Name": "QuanLyKho.msapp",
     "OriginatingVersion": "1.331",
     "ParserErrorCount": 0
   },
