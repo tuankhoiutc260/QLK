@@ -779,8 +779,8 @@ HangHoa As screen:
             Text: |-
                 ="ID Product:"
             Visible: =showThongTinHangHoa
-            Width: =116
-            X: =370
+            Width: =148
+            X: =338
             Y: =178
             ZIndex: =33
 
@@ -805,7 +805,7 @@ HangHoa As screen:
             Text: |-
                 ="Minimun Quantity:"
             Visible: =showThongTinHangHoa
-            Width: =183
+            Width: =196
             X: =709
             Y: =267
             ZIndex: =35
@@ -1135,7 +1135,7 @@ HangHoa As screen:
             Text: =gal_Product.Selected.IDProduct
             Visible: =showUpdateThongTinHangHoa
             Width: =160
-            X: =454
+            X: =479
             Y: =163
             ZIndex: =57
 
@@ -1147,7 +1147,7 @@ HangHoa As screen:
             Text: |-
                 ="ID Product:"
             Visible: =showUpdateThongTinHangHoa
-            Width: =116
+            Width: =132
             X: =338
             Y: =163
             ZIndex: =58
@@ -1173,7 +1173,7 @@ HangHoa As screen:
             Text: |-
                 ="Minimun Quantity:"
             Visible: =showUpdateThongTinHangHoa
-            Width: =183
+            Width: =197
             X: =683
             Y: =252
             ZIndex: =60

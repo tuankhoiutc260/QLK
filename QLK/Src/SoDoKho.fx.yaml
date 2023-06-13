@@ -807,7 +807,7 @@ SoDoKho As screen:
             Text: |-
                 ="Quantity:"
             Visible: =showThongTinHangHoa_SoDo
-            Width: =95
+            Width: =111
             X: =574
             Y: =292
             ZIndex: =66
@@ -855,7 +855,7 @@ SoDoKho As screen:
             Text: |-
                 ="Input Price:"
             Visible: =showThongTinHangHoa_SoDo
-            Width: =119
+            Width: =140
             X: =574
             Y: =372
             ZIndex: =70
@@ -879,7 +879,7 @@ SoDoKho As screen:
             Text: |-
                 ="Output Price:"
             Visible: =showThongTinHangHoa_SoDo
-            Width: =133
+            Width: =171
             X: =574
             Y: =452
             ZIndex: =72
@@ -903,8 +903,8 @@ SoDoKho As screen:
             Text: |-
                 ="Location:"
             Visible: =showThongTinHangHoa_SoDo
-            Width: =97
-            X: =780
+            Width: =109
+            X: =768
             Y: =212
             ZIndex: =74
 
