@@ -1467,17 +1467,16 @@ SoDoKho As screen:
             HoverBorderColor: =RGBA(237, 237, 237, 1)
             HoverFill: =RGBA(81, 224, 105, 1)
             OnSelect: |-
-                =Patch(QLK_Location, LookUp(QLK_Location, ID_Location = IDNewLocation2),
+                =Patch(QLK_Location, LookUp(QLK_Location, ID_Location = drop_Location2.SelectedText.Value),
                     {
                         ID_Product: txt_IDProductLoaction.Text
                     }
                 );
                 Patch(QLK_Product, LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation),
                     {
-                        Location: drop_Location2.SelectedText.Value
+                        Location: IDNewLocation2
                     }
                 );
-                Set(showSetLocation,false);
                 Set(showXacNhanLocation, false)
             PressedBorderColor: =RGBA(237, 237, 237, 1)
             RadiusBottomLeft: =20
