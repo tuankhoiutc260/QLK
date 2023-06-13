@@ -239,46 +239,18 @@ ThietLapGia As screen:
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
         TemplateSize: =52
-        Width: =1071
-        X: =228
+        Width: =1072
+        X: =227
         Y: =235
         ZIndex: =70
 
-        lbl_NameProduct_1 As label:
-            Align: =Align.Center
-            Height: =46
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.Name
-            Width: =457
-            Y: =5
-            ZIndex: =5
-
-        lbl_InputPrice_1 As label:
-            Align: =Align.Center
-            Height: =41
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.InputPrice & " Vnđ"
-            Width: =111
-            X: =577
-            Y: =7
-            ZIndex: =7
-
-        lbl_OutputPrice_1 As label:
-            Align: =Align.Center
-            Height: =41
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.OutputPrice & " Vnđ"
-            Width: =111
-            X: =753
-            Y: =10
-            ZIndex: =8
-
         Button6_1 As button:
+            AutoDisableOnSelect: =false
             BorderColor: =RGBA(202, 202, 202, 1)
             BorderThickness: =1
             Color: =RGBA(202, 202, 202, 1)
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =51
+            Height: =52
             HoverFill: =RGBA(187, 221, 140, 0.4)
             OnSelect: |-
                 =Select(Parent);
@@ -293,7 +265,57 @@ ThietLapGia As screen:
             RadiusTopRight: =0
             Text: =""
             Width: =1071
-            ZIndex: =11
+            ZIndex: =1
+
+        lbl_NameProduct_1 As label:
+            Align: =Align.Center
+            Height: =46
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Name
+            Width: =457
+            Y: =5
+            ZIndex: =2
+
+        lbl_InputPrice_1 As label:
+            Align: =Align.Center
+            Height: =41
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.InputPrice & " Vnđ"
+            Width: =111
+            X: =538
+            Y: =7
+            ZIndex: =3
+
+        lbl_OutputPrice_1 As label:
+            Align: =Align.Center
+            Height: =41
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.OutputPrice & " Vnđ"
+            Width: =111
+            X: =716
+            Y: =7
+            ZIndex: =4
+
+        btn_ApprovedList_DuyetDatHang_2 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(54, 176, 75, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(81, 224, 105, 1)
+            OnSelect: =
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="Set Price"
+            Width: =156
+            X: =880
+            Y: =6
+            ZIndex: =5
 
     Button7_5 As button:
         BorderColor: =RGBA(151, 0, 0, 1)
@@ -341,7 +363,7 @@ ThietLapGia As screen:
         OnSelect: =
         Text: ="Input Price"
         Width: =136
-        X: =793
+        X: =749
         Y: =184
         ZIndex: =74
 
@@ -352,7 +374,54 @@ ThietLapGia As screen:
         OnSelect: =
         Text: ="Output Price"
         Width: =136
-        X: =966
+        X: =926
         Y: =184
         ZIndex: =76
+
+    lbl_OrderedID_DuyetDatHang_4 As label:
+        Align: =Align.Center
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =52
+        OnSelect: =
+        Size: =20
+        Text: ="PRODUCT PRICE SETTING"
+        Width: =354
+        X: =245
+        Y: =122
+        ZIndex: =77
+
+    Button2_110 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Order list"
+        Width: =164
+        Y: =440
+        ZIndex: =78
+
+    Icon3 As icon.ShoppingCart:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.ShoppingCart
+        Width: =50
+        X: =57
+        Y: =453
+        ZIndex: =79
+
+    Rectangle13 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.43)
+        Height: =768
+        Width: =1366
+        ZIndex: =80
 
