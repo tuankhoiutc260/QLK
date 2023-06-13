@@ -1008,7 +1008,9 @@ SoDoKho As screen:
     Button8 As button:
         Font: =Font.'Segoe UI'
         Height: =50
-        OnSelect: =Set(showProductNoLocation,true)
+        OnSelect: |-
+            =Set(showProductNoLocation,true);
+            Refresh(QLK_Location)
         Text: ="Import Area"
         X: =326
         Y: =155
