@@ -654,7 +654,8 @@ HangHoa As screen:
                     }
                 );
                 Set(showXacNhanXoaThongTinHangHoa, false);
-                Set(showThongTinHangHoa,false)
+                Set(showThongTinHangHoa,false);
+                Set(showImportRequest, false)
             PressedBorderColor: =RGBA(237, 237, 237, 1)
             RadiusBottomLeft: =20
             RadiusBottomRight: =20
