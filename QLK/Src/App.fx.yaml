@@ -47,6 +47,7 @@ App As appinfo:
         Set(visibleDetailOrderNotPending, true);
         Set(visibleDetailOrderNotPending_HomeAdmin, true);
         Set(visibleDetailOrderPending_HomeAdmin, false);
+        Set(vis_Approve_HomeAdmin, false);
         
         //Tạo lịch
         If(IsBlank(_userDomain),         
