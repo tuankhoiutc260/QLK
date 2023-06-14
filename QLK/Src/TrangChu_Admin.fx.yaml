@@ -822,7 +822,7 @@ TrangChu_Admin As screen:
                         
                         If(
                             numDatasource = 1 || numDatasource = 2 || numDatasource = 3,
-                            LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, 'Image')
+                            LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, Image)
                         )
                         
                     RadiusBottomLeft: =15
@@ -845,7 +845,7 @@ TrangChu_Admin As screen:
                         If(
                             numDatasource = 1,
                             LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct, 'Name_Pro-Supplier'),
-                            LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, 'Name')
+                            LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, Name)
                         )
                         
                     Width: =210

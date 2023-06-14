@@ -266,7 +266,7 @@ KhachHang As screen:
         BorderStyle: =BorderStyle.Dotted
         BorderThickness: =1
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
         OnSelect: =Navigate(TrangchuGD)
@@ -293,7 +293,7 @@ KhachHang As screen:
     Button2_58 As button:
         BorderThickness: =0
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
         OnSelect: =Navigate(NhaCungCap)
@@ -312,7 +312,7 @@ KhachHang As screen:
     Button2_59 As button:
         BorderThickness: =0
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
         OnSelect: =
@@ -331,7 +331,7 @@ KhachHang As screen:
     Button2_60 As button:
         BorderThickness: =0
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
         OnSelect: =Navigate(TaiKhoan)
@@ -350,7 +350,7 @@ KhachHang As screen:
     Button2_61 As button:
         BorderThickness: =0
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
         OnSelect: =Navigate(DangNhap)
