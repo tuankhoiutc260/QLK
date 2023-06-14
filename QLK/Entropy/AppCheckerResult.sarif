@@ -16206,6 +16206,42 @@
               "message": {
                 "text": "Error occurred running rule app-InefficientDelayLoading."
               }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 16
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error occurred running rule app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 16
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error occurred running rule app-InefficientDelayLoading."
+              }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 16
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error occurred running rule app-InefficientDelayLoading."
+              }
             }
           ]
         }
@@ -16303,7 +16339,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1090,
+                  "charOffset": 1104,
                   "snippet": {
                     "text": "in"
                   }
@@ -16343,7 +16379,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1552,
+                  "charOffset": 1580,
                   "snippet": {
                     "text": "in"
                   }
@@ -16383,7 +16419,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1041,
+                  "charOffset": 1055,
                   "snippet": {
                     "text": "in"
                   }
@@ -16423,7 +16459,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1548,
+                  "charOffset": 1576,
                   "snippet": {
                     "text": "in"
                   }
@@ -16463,7 +16499,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 994,
+                  "charOffset": 1008,
                   "snippet": {
                     "text": "in"
                   }
@@ -16503,7 +16539,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1466,
+                  "charOffset": 1494,
                   "snippet": {
                     "text": "in"
                   }
@@ -27069,6 +27105,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.TextInput5.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.TextInput5.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.TextInput5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 8
         },
         {
           "locations": [
