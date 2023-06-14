@@ -1,7 +1,7 @@
-TrangchuGD_3 As screen:
+TrangChu_Admin As screen:
     Fill: =RGBA(237, 237, 237, 0.9)
 
-    Container8_4 As groupContainer.manualLayoutContainer:
+    "'cont_HomeAdmin(HA)' As groupContainer.manualLayoutContainer":
         Height: =768
         Width: =1366
         ZIndex: =1
@@ -147,7 +147,7 @@ TrangchuGD_3 As screen:
             Width: =1366
             ZIndex: =5
 
-        Container4_3 As groupContainer.manualLayoutContainer:
+        "'cont_Right_HomaAdmin(R_HA)' As groupContainer.manualLayoutContainer":
             Height: =768
             Width: =1158
             X: =204
@@ -182,8 +182,8 @@ TrangchuGD_3 As screen:
                 Transition: =Transition.Pop
                 Visible: =visibleDetailOrderNotPending_HomeAdmin
                 Width: =476
-                X: =330
-                Y: =411
+                X: =329
+                Y: =412
                 ZIndex: =2
 
                 shadow_ImportGoods_IMPI_27 As htmlViewer:
@@ -347,7 +347,7 @@ TrangchuGD_3 As screen:
                 Y: =346
                 ZIndex: =7
 
-            "gal_DetailOrderNotPending_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            "'gal_DetailOrderPending_HA(DO_HA)' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =1
                 DelayItemLoading: =true
@@ -407,7 +407,7 @@ TrangchuGD_3 As screen:
                     FontWeight: =FontWeight.Lighter
                     Height: =23
                     OnSelect: =Select(Parent)
-                    Size: =10
+                    Size: =8
                     Text: =ThisItem.Created
                     Width: =160
                     X: =75
@@ -449,10 +449,10 @@ TrangchuGD_3 As screen:
                     Y: =20
                     ZIndex: =6
 
-                Button9_6 As button:
+                btn_Select As button:
                     BorderStyle: =BorderStyle.None
                     Fill: =RGBA(0, 0, 0, 0)
-                    Height: =60
+                    Height: =55
                     HoverFill: =
                     OnSelect: |-
                         =Set(width_contRight, 700);
@@ -464,12 +464,12 @@ TrangchuGD_3 As screen:
                     RadiusTopLeft: =15
                     RadiusTopRight: =15
                     Text: =""
-                    Width: =115
-                    X: =61
+                    Width: =443
+                    X: =14
                     Y: =14
                     ZIndex: =7
 
-                Icon5_1 As icon.CheckBadge:
+                ic_Cancel_DO_HA As icon.CheckBadge:
                     Color: =RGBA(63, 235, 40, 1)
                     Height: =25
                     Icon: =Icon.CheckBadge
@@ -559,13 +559,15 @@ TrangchuGD_3 As screen:
                         )*/
                         
                         //Patch(QLK_Product, true)
-                    Visible: =vis_Approve_HomeAdmin
-                    Width: =25
+                    Visible: |-
+                        =//vis_Approve_HomeAdmin
+                        true
+                    Width: =24
                     X: =421
-                    Y: =17
+                    Y: =15
                     ZIndex: =10
 
-                Icon9_1 As icon.CancelBadge:
+                ic_Check_DO_HA As icon.CancelBadge:
                     Color: =RGBA(255, 0, 0, 1)
                     Height: =25
                     Icon: =Icon.CancelBadge
@@ -573,20 +575,22 @@ TrangchuGD_3 As screen:
                         =Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = ThisItem.ID), {Status: 3});
                         Refresh(QLK_OrderForm);
                         Set(datasourceOrder, Filter(QLK_OrderForm, Status = 1))
-                    Visible: =vis_Approve_HomeAdmin
-                    Width: =25
+                    Visible: |-
+                        =//vis_Approve_HomeAdmin
+                        true
+                    Width: =24
                     X: =421
-                    Y: =44
+                    Y: =43
                     ZIndex: =11
 
-            Group2_1 As group:
+            grp_Chart_HomeAdmin As group:
                 Height: =5
                 Width: =5
                 X: =40
                 Y: =40
                 ZIndex: =19
 
-                TextInput5_1 As text:
+                background_Chart_HA As text:
                     Default: =""
                     DisabledBorderColor: =RGBA(237, 237, 237, 1)
                     DisabledFill: =RGBA(255, 255, 255, 1)
@@ -602,7 +606,7 @@ TrangchuGD_3 As screen:
                     Y: =412
                     ZIndex: =9
 
-                Separator1_34 As rectangle:
+                line_100_percent_HA As rectangle:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     Fill: =RGBA(237, 237, 237, 0.5)
                     Height: =1
@@ -612,7 +616,7 @@ TrangchuGD_3 As screen:
                     Y: =495
                     ZIndex: =10
 
-                Separator1_35 As rectangle:
+                line_80_percent_HA As rectangle:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     Fill: =RGBA(237, 237, 237, 0.5)
                     Height: =1
@@ -622,7 +626,7 @@ TrangchuGD_3 As screen:
                     Y: =535
                     ZIndex: =11
 
-                Separator1_36 As rectangle:
+                line_60_percent_HA As rectangle:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     Fill: =RGBA(237, 237, 237, 0.5)
                     Height: =1
@@ -632,7 +636,7 @@ TrangchuGD_3 As screen:
                     Y: =575
                     ZIndex: =12
 
-                Separator1_37 As rectangle:
+                line_40_percent_HA As rectangle:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     Fill: =RGBA(237, 237, 237, 0.5)
                     Height: =1
@@ -642,7 +646,7 @@ TrangchuGD_3 As screen:
                     Y: =615
                     ZIndex: =13
 
-                Separator1_38 As rectangle:
+                line_20_percent_HA As rectangle:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     Fill: =RGBA(237, 237, 237, 0.5)
                     Height: =1
@@ -652,7 +656,7 @@ TrangchuGD_3 As screen:
                     Y: =655
                     ZIndex: =14
 
-                Separator1_39 As rectangle:
+                line_0_percent_HA As rectangle:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     Fill: =RGBA(237, 237, 237, 0.5)
                     Height: =1
@@ -662,7 +666,7 @@ TrangchuGD_3 As screen:
                     Y: =695
                     ZIndex: =15
 
-                Label22_2 As label:
+                lbl_TitleChart_HA As label:
                     Align: =Align.Center
                     AutoHeight: =true
                     FontWeight: =FontWeight.Bold
@@ -674,7 +678,7 @@ TrangchuGD_3 As screen:
                     Y: =429
                     ZIndex: =16
 
-                Gallery4_2 As gallery.galleryHorizontal:
+                gal_Chart_HA As gallery.galleryHorizontal:
                     DelayItemLoading: =true
                     Height: =300
                     Items: =col_TopProduct_HomeAdmin
@@ -707,14 +711,14 @@ TrangchuGD_3 As screen:
                         Y: =250
                         ZIndex: =2
 
-            Group2 As group:
+            "'grp_buttonFunction(R_HA)' As group":
                 Height: =5
                 Width: =5
                 X: =40
                 Y: =40
                 ZIndex: =36
 
-                Button4_23 As button:
+                btn_Export_HA As button:
                     BorderColor: =RGBA(127, 235, 117, 1)
                     BorderStyle: =BorderStyle.None
                     Color: =RGBA(0, 0, 0, 1)
@@ -812,7 +816,7 @@ TrangchuGD_3 As screen:
                     Y: =365
                     ZIndex: =18
 
-                Button4_22 As button:
+                bn_Order_HA As button:
                     BorderColor: =RGBA(127, 235, 117, 1)
                     BorderStyle: =BorderStyle.None
                     Color: =RGBA(0, 0, 0, 1)
@@ -908,7 +912,7 @@ TrangchuGD_3 As screen:
                     Y: =365
                     ZIndex: =19
 
-                Button4_21 As button:
+                btn_Import_HA As button:
                     BorderColor: =RGBA(127, 235, 117, 1)
                     BorderStyle: =BorderStyle.None
                     Color: =RGBA(0, 0, 0, 1)
@@ -1003,7 +1007,7 @@ TrangchuGD_3 As screen:
                     Y: =365
                     ZIndex: =20
 
-                TextInput6_5 As text:
+                line_Import_HA As text:
                     BorderStyle: =BorderStyle.None
                     Default: =""
                     DisabledFill: =RGBA(127, 235, 117, 1)
@@ -1015,7 +1019,7 @@ TrangchuGD_3 As screen:
                     Y: =399
                     ZIndex: =21
 
-                TextInput6_6 As text:
+                line_Order_HA As text:
                     BorderStyle: =BorderStyle.None
                     Default: =""
                     DisabledFill: =RGBA(127, 235, 117, 1)
@@ -1027,7 +1031,7 @@ TrangchuGD_3 As screen:
                     Y: =399
                     ZIndex: =22
 
-                TextInput6_7 As text:
+                line_Export_HA As text:
                     BorderStyle: =BorderStyle.None
                     Default: =""
                     DisabledFill: =RGBA(127, 235, 117, 1)
@@ -1039,7 +1043,7 @@ TrangchuGD_3 As screen:
                     Y: =399
                     ZIndex: =23
 
-                Button4_20 As button:
+                btn_Approve_HA As button:
                     BorderColor: =RGBA(127, 235, 117, 1)
                     BorderStyle: =BorderStyle.None
                     Color: =RGBA(0, 0, 0, 1)
@@ -1095,7 +1099,7 @@ TrangchuGD_3 As screen:
                     Y: =365
                     ZIndex: =24
 
-                TextInput6_4 As text:
+                line_Approve_HA As text:
                     BorderStyle: =BorderStyle.None
                     Default: =""
                     DisabledFill: =RGBA(127, 235, 117, 1)
