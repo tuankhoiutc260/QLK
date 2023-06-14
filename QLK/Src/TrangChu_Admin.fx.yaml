@@ -269,17 +269,36 @@ TrangChu_Admin As screen:
                 Button9_5 As button:
                     BorderStyle: =BorderStyle.None
                     Fill: =RGBA(0, 0, 0, 0)
-                    Height: =50
+                    Height: =53
                     HoverFill: =
-                    OnSelect: =
+                    OnSelect: |-
+                        =Set(IDOrder_HomeAdmin,ThisItem.ID);
+                        
+                        ClearCollect(
+                            col_DetailsOrder_HomeAdmin,
+                            ShowColumns(
+                                Filter(
+                                    QLK_OrderFormInformation,
+                                    IDOrderForm = IDOrder_HomeAdmin
+                                ),
+                                "IDOrderForm",
+                                "IDProduct_Supplier",
+                                "Quantity",
+                                "Unit",
+                                "Price",
+                                "TotalPrice"
+                            )
+                        );
+                    PressedColor: =
+                    PressedFill: =
                     RadiusBottomLeft: =15
                     RadiusBottomRight: =15
                     RadiusTopLeft: =15
                     RadiusTopRight: =15
                     Text: =""
-                    Width: =138
-                    X: =158
-                    Y: =12
+                    Width: =444
+                    X: =15
+                    Y: =15
                     ZIndex: =7
 
             shadow_ProductSelected_ciFP_35 As htmlViewer:
@@ -726,6 +745,135 @@ TrangChu_Admin As screen:
                 X: =805
                 Y: =25
                 ZIndex: =26
+
+            "gal_DetailOrderNotPending_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                DelayItemLoading: =true
+                Height: =269
+                Items: =col_DetailsOrder_HomeAdmin
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                ShowScrollbar: =false
+                TemplatePadding: =0
+                TemplateSize: =74
+                Transition: =Transition.Pop
+                Visible: =visibleDetailOrderNotPending_HomeAdmin
+                Width: =312
+                X: =805
+                Y: =386
+                ZIndex: =27
+
+                img_Product_cIP_IP2_9 As image:
+                    BorderThickness: =0.5
+                    Height: =50
+                    Image: =LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct_Supplier, 'Image_Pro-Supplier')
+                    RadiusBottomLeft: =15
+                    RadiusBottomRight: =15
+                    RadiusTopLeft: =15
+                    RadiusTopRight: =15
+                    Width: =50
+                    X: =9
+                    Y: =12
+                    ZIndex: =2
+
+                Label25_8 As label:
+                    Align: =Align.Center
+                    Height: =32
+                    OnSelect: =Select(Parent)
+                    Size: =10
+                    Text: =LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct_Supplier, 'Name_Pro-Supplier')
+                    Width: =210
+                    X: =62
+                    Y: =12
+                    ZIndex: =3
+
+                Label26_8 As label:
+                    Align: =Align.Center
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Lighter
+                    Height: =38
+                    OnSelect: =Select(Parent)
+                    Size: =8
+                    Text: |-
+                        =Text(ThisItem.Price, "#,###" & " VND")
+                    Width: =160
+                    X: =82
+                    Y: =44
+                    ZIndex: =4
+
+                Label27_17 As label:
+                    Align: =Align.Center
+                    OnSelect: =Select(Parent)
+                    Size: =9
+                    Text: |-
+                        =Text(ThisItem.TotalPrice, "#,###" & " VND")
+                    Width: =122
+                    X: =334
+                    Y: =22
+                    ZIndex: =5
+
+                Label27_16 As label:
+                    Align: =Align.Center
+                    OnSelect: =Select(Parent)
+                    Size: =9
+                    Text: =ThisItem.Quantity
+                    Width: =40
+                    X: =272
+                    Y: =17
+                    ZIndex: =6
+
+                Button9_6 As button:
+                    BorderStyle: =BorderStyle.None
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =50
+                    HoverFill: =
+                    OnSelect: =
+                    RadiusBottomLeft: =15
+                    RadiusBottomRight: =15
+                    RadiusTopLeft: =15
+                    RadiusTopRight: =15
+                    Text: =""
+                    Width: =138
+                    X: =97
+                    Y: =7
+                    ZIndex: =7
+
+                Label27_18 As label:
+                    Align: =Align.Center
+                    OnSelect: =Select(Parent)
+                    Size: =7
+                    Text: ="x"
+                    Width: =40
+                    X: =259
+                    Y: =17
+                    ZIndex: =8
+
+            Label25 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Bold
+                Text: ="Details Order"
+                X: =886
+                Y: =325
+                ZIndex: =28
+
+            line_20_percent_HA_1 As rectangle:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(202, 202, 202, 1)
+                Height: =1
+                OnSelect: =
+                Width: =250
+                X: =836
+                Y: =656
+                ZIndex: =29
+
+            Label26 As label:
+                Align: =Align.Center
+                Text: |-
+                    ="Total: "
+                X: =886
+                Y: =675
+                ZIndex: =30
 
             "'grp_buttonFunction(R_HA)' As group":
                 Height: =5
