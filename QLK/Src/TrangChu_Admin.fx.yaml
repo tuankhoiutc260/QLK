@@ -164,7 +164,7 @@ TrangChu_Admin As screen:
                     box-shadow:0 5px 10px 0px  #ccc; 
                     border-radius:15px
                     '></div>" 
-                Width: =1120
+                Width: =1158
                 ZIndex: =1
 
             "gal_DetailOrderNotPending_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
@@ -710,6 +710,22 @@ TrangChu_Admin As screen:
                         Width: =44
                         Y: =250
                         ZIndex: =2
+
+            background_Chart_HA_1 As text:
+                Default: =""
+                DisabledBorderColor: =RGBA(237, 237, 237, 1)
+                DisabledFill: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.Disabled
+                Fill: =RGBA(255, 255, 255, 0.5)
+                Height: =715
+                RadiusBottomLeft: =15
+                RadiusBottomRight: =15
+                RadiusTopLeft: =15
+                RadiusTopRight: =15
+                Width: =312
+                X: =805
+                Y: =25
+                ZIndex: =26
 
             "'grp_buttonFunction(R_HA)' As group":
                 Height: =5
