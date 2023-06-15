@@ -129,6 +129,12 @@ DangNhap As screen:
                     Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Permission')),
                     If(LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, ' Permission').Value = "Manager",
                         
+                        Refresh(QLK_OrderForm);
+                        Refresh(QLK_ImportForm);
+                        Refresh(QLK_ExportForm);
+            
+                        Reset(gal_DetailOrderPending_HA_DO_HA);
+            
                         Set(fontSizeApprove_HomeAdmin, 15);
                         Set(fontSizeImport_HomeAdmin, 12);
                         Set(fontSizeOrder_HomeAdmin, 12);
@@ -139,62 +145,140 @@ DangNhap As screen:
                         Set(visLineExport_HomeAdmin, false);
                         Set(textChart_HomeAdmin, "Approve");
             
-                        // Nho Set trong App
+                                    // Nho Set trong App
                         Set(visibleDetailOrderNotPending_HomeAdmin, false);
                         Set(visibleDetailOrderPending_HomeAdmin, true);
-            
-                        //Set(datasourceTopProduct_HomeAdmin, col_TopProductOrdered);
-                        ClearCollect(
-                            col_DatasourceOrder_HomeAdmin, 
-                            RenameColumns(
-                                ShowColumns(
-                                    Filter(QLK_OrderForm, Status = 1), 
-                                    "IDOrder", "Created", "TotalPrice", "Status"
-                                    ),
-                                "IDOrder", "ID")
-                        );
+                        Set(numDatasource, 4); //4: pending
             
                         Set(IDOrder_HomeAdmin, LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID));
-                        Set(numDatasource, 4); //4: pending
-                        //Set(StatusOfOrder_HomeAdmin, ThisItem.Status);
-                        // 1: Order, 2: Import, 3: Export, 4: Pending
-                        If(
-                            numDatasource = 4,
-                            ClearCollect(
-                                col_DetailsOrder_HomeAdmin,
+            
+                        ClearCollect(
+                            col_DatasourceOrderRequest_HomeAdmin, 
+                            AddColumns(
                                 RenameColumns(
                                     ShowColumns(
-                                        Filter(
-                                            QLK_OrderFormInformation, 
-                                            IDOrderForm = IDOrder_HomeAdmin), 
-                                        "IDOrderForm",
-                                        "IDProduct_Supplier",
-                                        "Quantity",
-                                        "Unit",
-                                        "Price",
-                                        "TotalPrice"
-                                    ), 
-                                    "IDOrderForm", "IDOrder",
-                                    "IDProduct_Supplier", "IDProduct"
-                                )
+                                        Filter(QLK_OrderForm, Status = 1), 
+                                        "IDOrder", "Created", "TotalPrice", "Status"
+                                        ),
+                                    "IDOrder", "ID"
+                                ) As T, 
+                                "QuantityProduct", 
+                                CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = T.ID)) & " Products",
+                                "ProductIn", // 1: In warehouse, 2: Of Supplier
+                                2
                             )
                         );
             
-                        Set(textChart_HomeAdmin, "Top Products Imported");
-                        Set(visibleDetailOrderNotPending_HomeAdmin, true);
-                        Set(visibleDetailOrderPending_HomeAdmin, false);
-            
                         ClearCollect(
-                            col_DatasourceOrder_HomeAdmin, 
-                            RenameColumns(
-                                ShowColumns(
-                                    Filter(QLK_ImportForm, Status = 4 || Status = 5), 
-                                    "IDImport", "Created", "TotalPrice", "Status"
-                                    ),
-                                "IDImport", "ID")
+                            col_DatasourceImportRequest_HomeAdmin, 
+                            AddColumns(
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(QLK_ImportForm, Status = 1), 
+                                        "IDImport", "Created", "TotalPrice", "Status"
+                                        ),
+                                    "IDImport", "ID"
+                                ) As T, 
+                                "QuantityProduct", 
+                                CountRows(Filter(QLK_ImportFormInformation, IDImport = T.ID)) & " Products",
+                                "ProductIn", // 1: In warehouse, 2: Of Supplier
+                                1
+                            )
                         );
             
-                        Set(numDatasource, 2); // 1: Order, 2: Import, 3: Export, 4: Pending
+                        ClearCollect(
+                            col_DatasourceExportRequest_HomeAdmin, 
+                            AddColumns(
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(QLK_ExportForm, Status = 1), 
+                                        "IDExport", "Created", "TotalPrice", "Status"
+                                        ),
+                                    "IDExport", "ID"
+                                ) As T, 
+                                "QuantityProduct", 
+                                CountRows(Filter(QLK_ExportFormInformation, IDExportForm = T.ID)) & " Products",
+                                "ProductIn", // 1: In warehouse, 2: Of Supplier
+                                1
+                            )
+                        );
+            
+                        ClearCollect(
+                            col_DatasourceOrder_HomeAdmin,
+                            col_DatasourceOrderRequest_HomeAdmin,
+                            col_DatasourceImportRequest_HomeAdmin,
+                            col_DatasourceExportRequest_HomeAdmin
+                        );
+            
+                        /*
+            
+            
+                        */
+            
+            
+            
+                        // --- Reset lại thông tin đơn đầu tiên qua khung ở giữa
+            
+            ClearCollect(
+                col_DetailsOrder_HomeAdmin,
+                If(
+                    LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID) in col_DatasourceOrderRequest_HomeAdmin[@ID],
+                    RenameColumns(
+                        ShowColumns(
+                            Filter(
+                                QLK_OrderFormInformation,
+                                IDOrderForm = LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)
+                            ),
+                            "IDOrderForm",
+                            "IDProduct_Supplier",
+                            "Quantity",
+                            "Unit",
+                            "Price",
+                            "TotalPrice"
+                        ), 
+                        "IDOrderForm", "IDOrder",
+                        "IDProduct_Supplier", "IDProduct"
+                    ),
+            
+                    If(
+                        LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID) in col_DatasourceImportRequest_HomeAdmin[@ID],
+                        RenameColumns(
+                            ShowColumns(
+                                Filter(
+                                    QLK_ImportFormInformation,
+                                    IDImport = LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)
+                                ),
+                                "IDImport",
+                                "IDProduct",
+                                "Quantity",
+                                "Unit",
+                                "Price",
+                                "TotalPrice"
+                            ), 
+                            "IDImport", "IDOrder"
+                        ),
+            
+                        If(
+                            LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID) in col_DatasourceExportRequest_HomeAdmin[@ID],
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(
+                                        QLK_ExportFormInformation,
+                                        IDExportForm = LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)
+                                    ),
+                                    "IDExportForm",
+                                    "IDProduct",
+                                    "Quantity",
+                                    "Unit",
+                                    "Price",
+                                    "TotalPrice"
+                                ), 
+                                "IDExportForm", "IDOrder"
+                            )
+                        )
+                    )
+                )  
+            );
             
                         ClearCollect(
                             col_Product, 
