@@ -145,118 +145,58 @@ DangNhap As screen:
                 ),
                 Notify("Username or password is wrong!")
             );
-            /*
-            // Get Top Ordered
-            ClearCollect(col_ProductOrdered, 
-                ShowColumns(
-                    Filter(
-                        QLK_OrderFormInformation, 
-                        IDOrderForm in ShowColumns(
-                            Filter(
-                                QLK_OrderForm, Status = 4
-                            ), "IDOrder"
-                        )
-                    ),
-                    "IDProduct_Supplier", "Quantity"
-                )
-            );
             
-            ClearCollect(col_SumQuantityProductOrdered, GroupBy(col_ProductOrdered, "IDProduct_Supplier","GroupedItems"));
             
-            ClearCollect(col_Temp, ShowColumns(Filter(QLK_Product_Supplier, IDProduct_Supplier in ShowColumns(col_SumQuantityProductOrdered, "IDProduct_Supplier")), "IDProduct_Supplier", "Image_Pro_x002d_Supplier"));
+            Set(fontSizeApprove_HomeAdmin, 15);
+            Set(fontSizeImport_HomeAdmin, 12);
+            Set(fontSizeOrder_HomeAdmin, 12);
+            Set(fontSizeExport_HomeAdmin, 12);
+            Set(visLineApprove_HomeAdmin, true);
+            Set(visLineImport_HomeAdmin, false);
+            Set(visLineOrder_HomeAdmin, false);
+            Set(visLineExport_HomeAdmin, false);
+            Set(textChart_HomeAdmin, "Approve");
             
+            // Nho Set trong App
+            Set(visibleDetailOrderNotPending_HomeAdmin, false);
+            Set(visibleDetailOrderPending_HomeAdmin, true);
+            
+            //Set(datasourceTopProduct_HomeAdmin, col_TopProductOrdered);
             ClearCollect(
-                col_TopProductOrdered, 
-                SortByColumns(
-                    AddColumns(
-                        col_SumQuantityProductOrdered, 
-                        "TotalQuantity", 
-                        Sum(GroupedItems, Quantity), 
-                    "Image",
-                    LookUp(col_Temp, IDProduct_Supplier = col_SumQuantityProductOrdered[@IDProduct_Supplier], Image_Pro_x002d_Supplier)  
-                    ), "TotalQuantity",
-                    SortOrder.Descending
-                )
+                col_DatasourceOrder_HomeAdmin, 
+                RenameColumns(
+                    ShowColumns(
+                        Filter(QLK_OrderForm, Status = 1), 
+                        "IDOrder", "Created", "TotalPrice", "Status"
+                        ),
+                    "IDOrder", "ID")
             );
             
-            Set(maxQuantityOrdered, Max(col_TopProductOrdered, TotalQuantity));
-            
-            // Get Top Imported
-            ClearCollect(col_ProductImported, 
-                ShowColumns(
-                    Filter(
-                        QLK_ImportFormInformation, 
-                        IDImport in ShowColumns(
+            Set(IDOrder_HomeAdmin, LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID));
+            Set(numDatasource, 4); //4: pending
+            //Set(StatusOfOrder_HomeAdmin, ThisItem.Status);
+            // 1: Order, 2: Import, 3: Export, 4: Pending
+            If(
+                numDatasource = 4,
+                ClearCollect(
+                    col_DetailsOrder_HomeAdmin,
+                    RenameColumns(
+                        ShowColumns(
                             Filter(
-                                QLK_ImportForm, Status = 4
-                            ), "IDImport"
-                        )
-                    ),
-                    "IDProduct", "Quantity"
+                                QLK_OrderFormInformation, 
+                                IDOrderForm = IDOrder_HomeAdmin), 
+                            "IDOrderForm",
+                            "IDProduct_Supplier",
+                            "Quantity",
+                            "Unit",
+                            "Price",
+                            "TotalPrice"
+                        ), 
+                        "IDOrderForm", "IDOrder",
+                        "IDProduct_Supplier", "IDProduct"
+                    )
                 )
-            );
-            
-            ClearCollect(col_SumQuantityProductImported, GroupBy(col_ProductImported, "IDProduct","GroupedItems"));
-            
-            ClearCollect(col_Temp, ShowColumns(Filter(QLK_Product, IDProduct in ShowColumns(col_SumQuantityProductImported, "IDProduct")), "IDProduct", "Image"));
-            
-            ClearCollect(
-                col_TopProductImported, 
-                SortByColumns(
-                    AddColumns(
-                        col_SumQuantityProductImported, 
-                        "TotalQuantity", 
-                        Sum(GroupedItems, Quantity), 
-                    "Image",
-                    LookUp(col_Temp, IDProduct_Supplier = col_SumQuantityProductImported[@IDProduct], "Image")  
-                    ), "TotalQuantity",
-                    SortOrder.Descending
-                )
-            );
-            
-            Set(maxQuantityImported, Max(col_TopProductImported, TotalQuantity));
-            
-            // Get Top Exported
-            ClearCollect(col_ProductExported, 
-                ShowColumns(
-                    Filter(
-                        QLK_ExportFormInformation, 
-                        IDExportForm in ShowColumns(
-                            Filter(
-                                QLK_ExportForm, Status = 4
-                            ), "IDExport"
-                        )
-                    ),
-                    "IDProduct", "Quantity"
-                )
-            );
-            
-            ClearCollect(col_SumQuantityProductExported, GroupBy(col_ProductExported, "IDProduct","GroupedItems"));
-            
-            ClearCollect(col_Temp, ShowColumns(Filter(QLK_Product, IDProduct in ShowColumns(col_SumQuantityProductExported, "IDProduct")), "IDProduct", "Image"));
-            
-            ClearCollect(
-                col_TopProductExported, 
-                SortByColumns(
-                    AddColumns(
-                        col_SumQuantityProductExported, 
-                        "TotalQuantity", 
-                        Sum(GroupedItems, Quantity), 
-                    "Image",
-                    LookUp(col_Temp, IDProduct = col_SumQuantityProductExported[@IDProduct], "Image")  
-                    ), "TotalQuantity",
-                    SortOrder.Descending
-                )
-            );
-            
-            Set(maxQuantityExported, Max(col_TopProductExported, TotalQuantity));
-            
-            
-            //Set(width_contRight, 300);
-            //Set(width_contRight_Right, 0);
-            //Set(pos_contRight, 1066);
-            Set(back_Black_HomeAdmin, false);*/
-            
+            )
             
             
         Size: =25

@@ -533,16 +533,6 @@ TrangChu_Admin As screen:
                         // 1: Order, 2: Import, 3: Export, 4: Pending
                         If(
                             numDatasource = 4,
-                            
-                            /*
-                            ClearCollect(
-                                col_DetailOrdered_DuyetDatHang, 
-                                ShowColumns(Filter(QLK_OrderFormInformation, IDOrderForm = IDOrdered_DuyetDatHang), 
-                                "IDOrderForm", "IDProduct_Supplier", "Quantity")
-                            );
-                        */
-                        
-                        
                             ClearCollect(
                                 col_DetailsOrder_HomeAdmin,
                                 RenameColumns(
@@ -1203,6 +1193,13 @@ TrangChu_Admin As screen:
                     Y: =675
                     ZIndex: =32
 
+            Button1 As button:
+                OnSelect: =
+                Text: ="Button"
+                X: =287
+                Y: =513
+                ZIndex: =36
+
             "'grp_buttonFunction(R_HA)' As group":
                 Height: =5
                 Width: =5
@@ -1220,7 +1217,8 @@ TrangChu_Admin As screen:
                     HoverColor: =RGBA(21, 161, 60, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
                     OnSelect: |-
-                        =Set(fontSizeApprove_HomeAdmin, 12);
+                        =Reset(gal_DetailOrderNotPending_1);
+                        Set(fontSizeApprove_HomeAdmin, 12);
                         Set(fontSizeImport_HomeAdmin, 12);
                         Set(fontSizeOrder_HomeAdmin, 12);
                         Set(fontSizeExport_HomeAdmin, 15);
@@ -1298,6 +1296,25 @@ TrangChu_Admin As screen:
                         
                         Set(maxQuantity, Max(col_TopProduct_HomeAdmin, TotalQuantity));
                         
+                        ClearCollect(
+                            col_DetailsOrder_HomeAdmin,
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(
+                                        QLK_ExportFormInformation,
+                                        IDExportForm = gal_DetailOrderNotPending_1.Selected.ID
+                                    ),
+                                    "IDExportForm",
+                                    "IDProduct",
+                                    "Quantity",
+                                    "Unit",
+                                    "Price",
+                                    "TotalPrice"
+                                ), 
+                                "IDExportForm", "IDOrder"
+                            )
+                        );
+                        
                         Refresh(QLK_ExportForm);
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(127, 235, 117, 1)
@@ -1318,7 +1335,8 @@ TrangChu_Admin As screen:
                     HoverColor: =RGBA(21, 161, 60, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
                     OnSelect: |-
-                        =Set(fontSizeApprove_HomeAdmin, 12);
+                        =Reset(gal_DetailOrderNotPending_1);
+                        Set(fontSizeApprove_HomeAdmin, 12);
                         Set(fontSizeImport_HomeAdmin, 12);
                         Set(fontSizeOrder_HomeAdmin, 15);
                         Set(fontSizeExport_HomeAdmin, 12);
@@ -1395,6 +1413,27 @@ TrangChu_Admin As screen:
                         
                         Set(maxQuantity, Max(col_TopProduct_HomeAdmin, TotalQuantity));
                         
+                        ClearCollect(
+                            col_DetailsOrder_HomeAdmin,
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(
+                                        QLK_OrderFormInformation,
+                                        IDOrderForm = gal_DetailOrderNotPending_1.Selected.ID
+                                    ),
+                                    "IDOrderForm",
+                                    "IDProduct_Supplier",
+                                    "Quantity",
+                                    "Unit",
+                                    "Price",
+                                    "TotalPrice"
+                                ), 
+                                "IDOrderForm", "IDOrder",
+                                "IDProduct_Supplier", "IDProduct"
+                            )
+                        );
+                        
+                        
                         Refresh(QLK_OrderForm);
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(127, 235, 117, 1)
@@ -1415,7 +1454,8 @@ TrangChu_Admin As screen:
                     HoverColor: =RGBA(21, 161, 60, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
                     OnSelect: |-
-                        =Set(fontSizeApprove_HomeAdmin, 12);
+                        =Reset(gal_DetailOrderNotPending_1);
+                        Set(fontSizeApprove_HomeAdmin, 12);
                         Set(fontSizeImport_HomeAdmin, 15);
                         Set(fontSizeOrder_HomeAdmin, 12);
                         Set(fontSizeExport_HomeAdmin, 12);
@@ -1489,6 +1529,25 @@ TrangChu_Admin As screen:
                         );
                         
                         Set(maxQuantity, Max(col_TopProduct_HomeAdmin, TotalQuantity));
+                        
+                        ClearCollect(
+                            col_DetailsOrder_HomeAdmin,
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(
+                                        QLK_ImportFormInformation,
+                                        IDImport = gal_DetailOrderNotPending_1.Selected.ID
+                                    ),
+                                    "IDImport",
+                                    "IDProduct",
+                                    "Quantity",
+                                    "Unit",
+                                    "Price",
+                                    "TotalPrice"
+                                ), 
+                                "IDImport", "IDOrder"
+                            )
+                        );
                         
                         Refresh(QLK_ImportForm);
                     PressedColor: =RGBA(255, 255, 255, 1)
@@ -1570,7 +1629,27 @@ TrangChu_Admin As screen:
                                     ),
                                 "IDOrder", "ID")
                         );
-                        
+                        /*
+                        ClearCollect(
+                            col_DetailsOrder_HomeAdmin,
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(
+                                        QLK_OrderFormInformation,
+                                        IDOrderForm = gal_DetailOrderPending_HA(DO_HA).Selected.ID
+                                    ),
+                                    "IDOrderForm",
+                                    "IDProduct_Supplier",
+                                    "Quantity",
+                                    "Unit",
+                                    "Price",
+                                    "TotalPrice"
+                                ), 
+                                "IDOrderForm", "IDOrder",
+                                "IDProduct_Supplier", "IDProduct"
+                            )
+                        );
+                        */
                         
                         //ClearCollect(col_PendingOrder, Filter(QLK_OrderForm, Status = 1));
                         //Set(datasourceOrder, col_PendingOrder)
@@ -1603,4 +1682,10 @@ TrangChu_Admin As screen:
                     X: =198
                     Y: =71
                     ZIndex: =25
+
+            Label30 As label:
+                Text: =gal_DetailOrderNotPending_1.Selected.ID
+                X: =184
+                Y: =383
+                ZIndex: =37
 
