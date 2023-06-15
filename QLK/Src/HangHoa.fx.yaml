@@ -1581,14 +1581,14 @@ HangHoa As screen:
                     Patch(
                         QLK_ImportRequest, LookUp(QLK_ImportRequest, ID_ProductRequest = IDProductImport_GalProduct),
                         {
-                            ' Quantity': LookUp(QLK_ImportRequest, ID_ProductRequest = IDProductImport_GalProduct, ' Quantity') + Value(txt_Quantity.Text)
+                            Quantity: LookUp(QLK_ImportRequest, ID_ProductRequest = IDProductImport_GalProduct, Quantity) + Value(txt_Quantity.Text)
                         }
                     ),
                     Patch(
                         QLK_ImportRequest, 
                         {
                             ID_ProductRequest: Label9_1.Text,
-                            ' Quantity': Value(txt_Quantity.Text)
+                            Quantity: Value(txt_Quantity.Text)
                         }
                     )
                 );

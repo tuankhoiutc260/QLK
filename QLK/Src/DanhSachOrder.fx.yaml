@@ -278,7 +278,7 @@ DanhSachOrder As screen:
             Align: =Align.Center
             Height: =41
             OnSelect: =Select(Parent)
-            Text: =ThisItem.' Quantity'
+            Text: =ThisItem.Quantity
             Width: =111
             X: =837
             Y: =5

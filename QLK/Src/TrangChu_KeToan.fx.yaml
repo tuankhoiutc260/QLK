@@ -444,18 +444,11 @@ TrangChu_KeToan As screen:
                         Align: =Align.Center
                         Height: =32
                         Text: |-
-                            =
-                            "Total: " &
+                            ="Total: " &
                             Text(Sum(
-                               col_DetailsOrder_HomeAccountant,
+                               col_DetailsImport_HomeAccountant,
                                TotalPrice
                             ),  "#,###") & " VND"
-                            
-                            /*
-                            "Total: " &
-                            Sum(
-                            col_DetailsOrder_HomeAccountant, Quantity * Price
-                            )*/
                         Visible: =visible_cont_Import_HomeAccountant
                         Width: =294
                         X: =753
@@ -468,243 +461,50 @@ TrangChu_KeToan As screen:
                         DisabledBorderColor: =RGBA(166, 166, 166, 1)
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         DisabledFill: =RGBA(244, 244, 244, 1)
-                        DisplayMode: |-
-                            =Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = ThisItem.ID), {Status: 2});
-                            Refresh(QLK_OrderForm);
-                            Set(datasourceOrder, Filter(QLK_OrderForm, Status = 1));
-                            
-                            // Get IDProduct_Supplier, Quantity in OrderFormInformation
-                            ClearCollect(col_ProductOrder_Approved, ShowColumns(Filter(QLK_OrderFormInformation, IDOrderForm = ThisItem.ID), "IDProduct_Supplier", "Quantity"));
-                            
-                            // Get IDProduct in col_ProductOrder_Approved
-                            ClearCollect(col_IDProductOrder_Approved, ShowColumns(col_ProductOrder_Approved, "IDProduct_Supplier"));
-                            
-                            // Get information of Product with IDProduct in col_IDProductOrder_Approved
-                            /*
-                            ClearCollect(
-                                col_InformationOfProduct, 
-                                
-                                    Filter(QLK_Product_Supplier, IDProduct_Supplier in col_IDProductOrder_Approved.IDProduct_Supplier))*/
-                                    
-                            
-                            ClearCollect(
-                                col_InformationOfProductOrdered, 
-                                AddColumns(
-                                    ShowColumns(
-                                        Filter(QLK_Product_Supplier, IDProduct_Supplier in col_IDProductOrder_Approved.IDProduct_Supplier),
-                                        "IDProduct_Supplier", 
-                                        "Name_Supplier", 
-                                        "Price_Supplier", 
-                                        "Barcode_Supplier", 
-                                        "Image_Pro_x002d_Supplier", 
-                                        "ID_Supplier", 
-                                        "Describe_Pro_x002d_Supplier", 
-                                        "ID_Unit"
-                                    ), "Quantity", 0
-                                )
-                            );
-                            
-                            ForAll(
-                                col_ProductOrder_Approved, 
-                                Patch(
-                                    col_InformationOfProductOrdered, 
-                                    LookUp(
-                                        col_InformationOfProductOrdered, 
-                                        IDProduct_Supplier = col_ProductOrder_Approved[@IDProduct_Supplier]), 
-                                        {Quantity: col_ProductOrder_Approved[@Quantity]}
-                                    
-                                )
-                            );
-                            
-                            ForAll(col_InformationOfProductOrdered As T,
-                                Patch(QLK_Product,
-                                    {
-                                        IDProduct: T.IDProduct_Supplier,
-                                        Name: T.Name_Supplier,
-                                        Quantity: T.Quantity,
-                                        MinimumQuantity: If(LookUp(col_InformationOfProductOrdered, T.ID_Unit = 3, T.ID_Unit), 10, 20),
-                                        Unit: Value(T.ID_Unit),
-                                        InputPrice: T.Price_Supplier,
-                                        OutputPrice: T.Price_Supplier + T.Price_Supplier * 0.1,
-                                        Image: T.Image_Pro_x002d_Supplier,
-                                        BarCode: T.Barcode_Supplier,
-                                        IDSupplier: Value(T.ID_Supplier),
-                                        Description: T.Describe_Pro_x002d_Supplier
-                                    }
-                                )
-                            );
-                            
-                            
-                            /*
-                            ForAll(
-                                col_ProductOrder_Approved,
-                                UpdateIf(col_InformationOfProductOrdered, IDProduct_Supplier=IDProduct_Supplier,
-                                    {Quantity: 3}
-                                )
-                            );
-                            */
-                            Refresh(QLK_OrderForm);
-                            //ClearCollect(temp23, col_InformationOfProductOrdered);
-                            
-                            /*
-                            ClearCollect(colProductSupplier, ShowColumns(Filter(QLK_Product_Supplier, true), "IDProduct_Supplier"));
-                            ClearCollect(
-                                col_InformationOfProduct, 
-                                Filter(QLK_Product_Supplier, IDProduct_Supplier in colProductSupplier.IDProduct_Supplier)
-                            )*/
-                            
-                            //Patch(QLK_Product, true)
+                        DisplayMode: =
                         Duration: =
                         Fill: =RGBA(205, 247, 205, 1)
                         FontWeight: =FontWeight.Semibold
                         Height: =60
                         HoverBorderColor: =RGBA(237, 237, 237, 1)
                         HoverFill: =RGBA(81, 224, 105, 1)
-                        OnSelect: |-
-                            =If(
-                                IDOrder_HomeAccountant in col_DatasourceOrderRequest_HomeAccountant[@ID],
-                                Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = IDOrder_HomeAccountant), {Status: 5});
-                                Refresh(QLK_OrderForm);
-                                Reset(gal_ProductListOrdered_cOHA1),
+                        OnSelect: |
+                            =Set(NewIDImportOrder_HomeAccountant, "IP" & Text(Now(), "ddmmyyyyhhmmss"));
+                            Patch(QLK_ImportForm, 
+                                {
+                                    IDImport: NewIDImportOrder_HomeAccountant,
+                                    TotalPrice: Sum(col_DetailsImport_HomeAccountant, TotalPrice), 
+                                    Status: 1
+                                }
+                            );
                             
-                                If(
-                                    IDOrder_HomeAccountant in col_DatasourceImportRequest_HomeAccountant[@ID],
-                                    Patch(QLK_ImportForm, LookUp(QLK_ImportForm, IDImport = IDOrder_HomeAccountant), {Status: 5});
-                                    Refresh(QLK_ImportForm);
-                                    Reset(gal_ProductListOrdered_cOHA1),
-                            
-                                    If(
-                                        IDOrder_HomeAccountant in col_DatasourceExportRequest_HomeAccountant[@ID],
-                                        Patch(QLK_ExportForm, LookUp(QLK_ExportForm, IDExport = IDOrder_HomeAccountant), {Status: 5});
-                                        Refresh(QLK_ExportForm);
-                                        Reset(gal_ProductListOrdered_cOHA1)
-                                    )
+                            ForAll(col_DetailsImport_HomeAccountant, 
+                                Patch(QLK_ImportFormInformation, 
+                                    {
+                                        IDImport: NewIDImportOrder_HomeAccountant,
+                                        IDProduct: col_DetailsImport_HomeAccountant[@IDProduct],
+                                        Quantity: col_DetailsImport_HomeAccountant[@Quantity],
+                                        Unit: LookUp(QLK_Product, IDProduct = col_DetailsImport_HomeAccountant[@IDProduct], Unit),
+                                        Price: LookUp(QLK_Product, IDProduct = col_DetailsImport_HomeAccountant[@IDProduct], InputPrice),
+                                        TotalPrice: col_DetailsImport_HomeAccountant[@Quantity] * LookUp(QLK_Product, IDProduct = col_DetailsImport_HomeAccountant[@IDProduct], InputPrice)
+                                    }
                                 )
                             );
                             
-                            // --- Reset đơn yêu cầu
-                            ClearCollect(
-                                col_DatasourceOrderRequest_HomeAccountant, 
-                                AddColumns(
-                                    RenameColumns(
-                                        ShowColumns(
-                                            Filter(QLK_OrderForm, Status = 4 || Status = 5), 
-                                            "IDOrder", "Created", "TotalPrice", "Status"
-                                            ),
-                                        "IDOrder", "ID"
-                                    ) As T, 
-                                    "QuantityProduct", 
-                                    CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = T.ID)) & " Products",
-                                    "ProductIn", // 1: In warehouse, 2: Of Supplier
-                                    2
+                            ForAll(col_ImportRequest_HomeAccountant As T, 
+                                Patch(QLK_ImportRequest, LookUp(QLK_ImportRequest, ID_ProductRequest = T.IDProduct),
+                                    {
+                                        'Quantity': T.Quantity
+                                    }
                                 )
                             );
                             
-                            ClearCollect(
-                                col_DatasourceImportRequest_HomeAccountant, 
-                                AddColumns(
-                                    RenameColumns(
-                                        ShowColumns(
-                                            Filter(QLK_ImportForm, Status = 4 || Status = 5), 
-                                            "IDImport", "Created", "TotalPrice", "Status"
-                                            ),
-                                        "IDImport", "ID"
-                                    ) As T, 
-                                    "QuantityProduct", 
-                                    CountRows(Filter(QLK_ImportFormInformation, IDImport = T.ID)) & " Products",
-                                    "ProductIn", // 1: In warehouse, 2: Of Supplier
-                                    1
-                                )
-                            );
                             
-                            ClearCollect(
-                                col_DatasourceExportRequest_HomeAccountant, 
-                                AddColumns(
-                                    RenameColumns(
-                                        ShowColumns(
-                                            Filter(QLK_ExportForm, Status = 4 || Status = 5), 
-                                            "IDExport", "Created", "TotalPrice", "Status"
-                                            ),
-                                        "IDExport", "ID"
-                                    ) As T, 
-                                    "QuantityProduct", 
-                                    CountRows(Filter(QLK_ExportFormInformation, IDExportForm = T.ID)) & " Products",
-                                    "ProductIn", // 1: In warehouse, 2: Of Supplier
-                                    1
-                                )
-                            );
+                            // Xoa Product Request quantity = 0
                             
-                            ClearCollect(
-                                col_DatasourceOrder_HomeAccountant,
-                                col_DatasourceOrderRequest_HomeAccountant,
-                                col_DatasourceImportRequest_HomeAccountant,
-                                col_DatasourceExportRequest_HomeAccountant
-                            );
-                            
-                            // --- Hết Reset đơn yêu cầu
-                            
-                            // --- Reset lại thông tin đơn đầu tiên qua khung ở giữa
-                            
-                            ClearCollect(
-                                col_DetailsOrder_HomeAccountant,
-                                If(
-                                    LookUp(FirstN(col_DatasourceOrder_HomeAccountant, 1), true, ID) in col_DatasourceOrderRequest_HomeAccountant[@ID],
-                                    RenameColumns(
-                                        ShowColumns(
-                                            Filter(
-                                                QLK_OrderFormInformation,
-                                                IDOrderForm = LookUp(FirstN(col_DatasourceOrder_HomeAccountant, 1), true, ID)
-                                            ),
-                                            "IDOrderForm",
-                                            "IDProduct_Supplier",
-                                            "Quantity",
-                                            "Unit",
-                                            "Price",
-                                            "TotalPrice"
-                                        ), 
-                                        "IDOrderForm", "IDOrder",
-                                        "IDProduct_Supplier", "IDProduct"
-                                    ),
-                            
-                                    If(
-                                        LookUp(FirstN(col_DatasourceOrder_HomeAccountant, 1), true, ID) in col_DatasourceImportRequest_HomeAccountant[@ID],
-                                        RenameColumns(
-                                            ShowColumns(
-                                                Filter(
-                                                    QLK_ImportFormInformation,
-                                                    IDImport = LookUp(FirstN(col_DatasourceOrder_HomeAccountant, 1), true, ID)
-                                                ),
-                                                "IDImport",
-                                                "IDProduct",
-                                                "Quantity",
-                                                "Unit",
-                                                "Price",
-                                                "TotalPrice"
-                                            ), 
-                                            "IDImport", "IDOrder"
-                                        ),
-                            
-                                        If(
-                                            LookUp(FirstN(col_DatasourceOrder_HomeAccountant, 1), true, ID) in col_DatasourceExportRequest_HomeAccountant[@ID],
-                                            RenameColumns(
-                                                ShowColumns(
-                                                    Filter(
-                                                        QLK_ExportFormInformation,
-                                                        IDExportForm = LookUp(FirstN(col_DatasourceOrder_HomeAccountant, 1), true, ID)
-                                                    ),
-                                                    "IDExportForm",
-                                                    "IDProduct",
-                                                    "Quantity",
-                                                    "Unit",
-                                                    "Price",
-                                                    "TotalPrice"
-                                                ), 
-                                                "IDExportForm", "IDOrder"
-                                            )
-                                        )
-                                    )
-                                )  
-                            );
+                            RemoveIf(QLK_ImportRequest, Quantity = 0);
+                            Refresh(QLK_ImportRequest);
+                            ClearCollect(col_ImportRequest_HomeAccountant, RenameColumns(ShowColumns(Filter(QLK_ImportRequest, true), "ID_ProductRequest", "Quantity"), "ID_ProductRequest", "IDProduct"))
                         OnTimerEnd: |-
                             =Set(showSuccess, false) && 
                             Set(showInformationImportInvoiceForm, false)
@@ -2589,7 +2389,7 @@ TrangChu_KeToan As screen:
 
         TextInput3 As text:
             Align: =Align.Center
-            Color: =If(Value(Self.Text) >= QuantityProduct_HomeAccountant, Color.Red, Color.Black)
+            Color: =If(Value(Self.Text) > QuantityProduct_HomeAccountant, Color.Red, Color.Black)
             Default: =""
             Format: =TextFormat.Number
             Reset: =true
@@ -2611,7 +2411,7 @@ TrangChu_KeToan As screen:
             BorderColor: =RGBA(127, 235, 117, 1)
             BorderThickness: =1
             Color: =RGBA(38, 240, 95, 1)
-            DisplayMode: =If(Value(TextInput3.Text) >= QuantityProduct_HomeAccountant || Value(TextInput3.Text) <= 0, DisplayMode.Disabled, DisplayMode.Edit)
+            DisplayMode: =If(Value(TextInput3.Text) > QuantityProduct_HomeAccountant || Value(TextInput3.Text) <= 0, DisplayMode.Disabled, DisplayMode.Edit)
             Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Bold
             HoverBorderColor: =RGBA(127, 235, 117, 1)
@@ -2642,7 +2442,9 @@ TrangChu_KeToan As screen:
                     Collect(col_DetailsImport_HomeAccountant,
                     {
                         IDProduct: IDProduct_HomeAccountant,
-                        Quantity: Value(TextInput3.Text)
+                        Quantity: Value(TextInput3.Text),
+                        Price: LookUp(QLK_Product, IDProduct = IDProduct_HomeAccountant, InputPrice), 
+                        TotalPrice: Value(TextInput3.Text) * LookUp(QLK_Product, IDProduct = IDProduct_HomeAccountant, InputPrice)
                     } );
                 
                 );
