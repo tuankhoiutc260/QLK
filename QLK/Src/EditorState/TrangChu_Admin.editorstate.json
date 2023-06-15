@@ -115,7 +115,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "background_Chart_HA",
-      "ParentIndex": 17,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -427,7 +427,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "background_Chart_HA_1",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1083,7 +1083,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "bn_Order_HA",
-      "ParentIndex": 11,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1411,7 +1411,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_Approve_HA",
-      "ParentIndex": 9,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1776,7 +1776,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_CancelOrderDetailOrder_9",
-      "ParentIndex": 30,
+      "ParentIndex": 31,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2215,7 +2215,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_Create_NewOrderProduct_2",
-      "ParentIndex": 29,
+      "ParentIndex": 30,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2558,7 +2558,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_Export_HA",
-      "ParentIndex": 12,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2886,7 +2886,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_Import_HA",
-      "ParentIndex": 10,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3458,7 +3458,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Button1_2",
-      "ParentIndex": 7,
+      "ParentIndex": 27,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6311,7 +6311,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "gal_Chart_HA",
-      "ParentIndex": 21,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6537,7 +6537,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Height",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Height",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "ZIndex",
         {
           "AFDDataSourceName": "",
@@ -6583,7 +6590,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "gal_DetailOrderNotPending_1",
-      "ParentIndex": 18,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6870,7 +6877,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "gal_DetailOrderNotPending_2",
-      "ParentIndex": 8,
+      "ParentIndex": 23,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7150,7 +7157,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "gal_DetailOrderPending_HA(DO_HA)",
-      "ParentIndex": 19,
+      "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8341,7 +8348,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Image19_9",
-      "ParentIndex": 3,
+      "ParentIndex": 26,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9913,7 +9920,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label25",
-      "ParentIndex": 6,
+      "ParentIndex": 20,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11130,7 +11137,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label26",
-      "ParentIndex": 27,
+      "ParentIndex": 29,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14958,7 +14965,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label31_12",
-      "ParentIndex": 4,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15265,7 +15272,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label32_9",
-      "ParentIndex": 5,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15574,7 +15581,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_TitleChart_HA",
-      "ParentIndex": 20,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15857,7 +15864,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "line_0_percent_HA",
-      "ParentIndex": 32,
+      "ParentIndex": 24,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -16010,7 +16017,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "line_100_percent_HA",
-      "ParentIndex": 22,
+      "ParentIndex": 17,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -16163,7 +16170,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "line_20_percent_HA",
-      "ParentIndex": 28,
+      "ParentIndex": 22,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -16316,7 +16323,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "line_20_percent_HA_1",
-      "ParentIndex": 26,
+      "ParentIndex": 28,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -16469,7 +16476,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "line_40_percent_HA",
-      "ParentIndex": 25,
+      "ParentIndex": 21,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -16622,7 +16629,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "line_60_percent_HA",
-      "ParentIndex": 24,
+      "ParentIndex": 19,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -16775,7 +16782,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "line_80_percent_HA",
-      "ParentIndex": 23,
+      "ParentIndex": 18,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -16959,7 +16966,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "line_Approve_HA",
-      "ParentIndex": 13,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -17263,7 +17270,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "line_Export_HA",
-      "ParentIndex": 16,
+      "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -17567,7 +17574,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "line_Import_HA",
-      "ParentIndex": 14,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -17871,7 +17878,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "line_Order_HA",
-      "ParentIndex": 15,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -18981,7 +18988,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "shadow_ProductSelected_ciFP_35",
-      "ParentIndex": 1,
+      "ParentIndex": 25,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -19215,7 +19222,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "TextInput5",
-      "ParentIndex": 31,
+      "ParentIndex": 32,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

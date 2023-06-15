@@ -171,7 +171,7 @@ TrangChu_Admin As screen:
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =1
                 DelayItemLoading: =true
-                Height: =328
+                Height: =643
                 Items: |
                     =col_DatasourceOrder_HomeAdmin
                 Layout: =Layout.Vertical
@@ -182,8 +182,8 @@ TrangChu_Admin As screen:
                 Transition: =Transition.Pop
                 Visible: =visibleDetailOrderNotPending_HomeAdmin
                 Width: =476
-                X: =329
-                Y: =412
+                X: =20
+                Y: =85
                 ZIndex: =2
 
                 shadow_ImportGoods_IMPI_27 As htmlViewer:
@@ -351,7 +351,7 @@ TrangChu_Admin As screen:
                     ZIndex: =7
 
             shadow_ProductSelected_ciFP_35 As htmlViewer:
-                Height: =308
+                Height: =286
                 HtmlText: |+
                     ="<div style='margin:10px;
                     background: rgb(210,232,231);
@@ -364,22 +364,22 @@ TrangChu_Admin As screen:
                     
                     
                     
-                Width: =603
-                X: =19
-                Y: =25
+                Width: =265
+                X: =518
+                Y: =415
                 ZIndex: =3
 
             Image19_9 As image:
-                Height: =367
+                Height: =289
                 Image: =img_Import
                 ImagePosition: =ImagePosition.Fill
                 RadiusBottomLeft: =20
                 RadiusBottomRight: =20
                 RadiusTopLeft: =20
                 RadiusTopRight: =20
-                Width: =382
-                X: =217
-                Y: =45
+                Width: =245
+                X: =533
+                Y: =479
                 ZIndex: =4
 
             Label31_12 As label:
@@ -389,8 +389,8 @@ TrangChu_Admin As screen:
                 Size: =8
                 Text: =CountRows(Filter(QLK_OrderFormInformation, true)) 
                 Width: =91
-                X: =456
-                Y: =70
+                X: =852
+                Y: =61
                 ZIndex: =5
 
             Label32_9 As label:
@@ -399,8 +399,8 @@ TrangChu_Admin As screen:
                 Size: =8
                 Text: ="   Products Imported In Month"
                 Width: =280
-                X: =420
-                Y: =132
+                X: =816
+                Y: =123
                 ZIndex: =6
 
             Button1_2 As button:
@@ -411,15 +411,15 @@ TrangChu_Admin As screen:
                     Set(pos_contRight, 0);
                     Set(back_Black_HomeAdmin, false);
                 Text: ="Button"
-                X: =33
-                Y: =346
+                X: =533
+                Y: =526
                 ZIndex: =7
 
             "'gal_DetailOrderPending_HA(DO_HA)' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =1
                 DelayItemLoading: =true
-                Height: =328
+                Height: =643
                 Items: |
                     =col_DatasourceOrder_HomeAdmin
                 Layout: =Layout.Vertical
@@ -430,8 +430,8 @@ TrangChu_Admin As screen:
                 Transition: =Transition.Pop
                 Visible: =visibleDetailOrderPending_HomeAdmin
                 Width: =476
-                X: =329
-                Y: =412
+                X: =20
+                Y: =85
                 ZIndex: =8
 
                 shadow_ImportGoods_IMPI_28 As htmlViewer:
@@ -532,7 +532,7 @@ TrangChu_Admin As screen:
                         //Set(StatusOfOrder_HomeAdmin, ThisItem.Status);
                         // 1: Order, 2: Import, 3: Export, 4: Pending
                         If(
-                            numDatasource = 1,
+                            numDatasource = 4,
                             
                             /*
                             ClearCollect(
@@ -705,8 +705,8 @@ TrangChu_Admin As screen:
                     RadiusTopLeft: =15
                     RadiusTopRight: =15
                     Width: =297
-                    X: =33
-                    Y: =412
+                    X: =501
+                    Y: =87
                     ZIndex: =9
 
                 line_100_percent_HA As rectangle:
@@ -715,8 +715,8 @@ TrangChu_Admin As screen:
                     Height: =1
                     OnSelect: =
                     Width: =250
-                    X: =56
-                    Y: =495
+                    X: =524
+                    Y: =170
                     ZIndex: =10
 
                 line_80_percent_HA As rectangle:
@@ -725,8 +725,8 @@ TrangChu_Admin As screen:
                     Height: =1
                     OnSelect: =
                     Width: =250
-                    X: =56
-                    Y: =535
+                    X: =524
+                    Y: =210
                     ZIndex: =11
 
                 line_60_percent_HA As rectangle:
@@ -735,8 +735,8 @@ TrangChu_Admin As screen:
                     Height: =1
                     OnSelect: =
                     Width: =250
-                    X: =56
-                    Y: =575
+                    X: =524
+                    Y: =250
                     ZIndex: =12
 
                 line_40_percent_HA As rectangle:
@@ -745,8 +745,8 @@ TrangChu_Admin As screen:
                     Height: =1
                     OnSelect: =
                     Width: =250
-                    X: =56
-                    Y: =615
+                    X: =524
+                    Y: =290
                     ZIndex: =13
 
                 line_20_percent_HA As rectangle:
@@ -755,8 +755,8 @@ TrangChu_Admin As screen:
                     Height: =1
                     OnSelect: =
                     Width: =250
-                    X: =56
-                    Y: =655
+                    X: =524
+                    Y: =330
                     ZIndex: =14
 
                 line_0_percent_HA As rectangle:
@@ -765,8 +765,8 @@ TrangChu_Admin As screen:
                     Height: =1
                     OnSelect: =
                     Width: =250
-                    X: =56
-                    Y: =695
+                    X: =524
+                    Y: =370
                     ZIndex: =15
 
                 lbl_TitleChart_HA As label:
@@ -777,8 +777,8 @@ TrangChu_Admin As screen:
                     Size: =17
                     Text: =textChart_HomeAdmin
                     Width: =297
-                    X: =32
-                    Y: =429
+                    X: =500
+                    Y: =104
                     ZIndex: =16
 
                 gal_Chart_HA As gallery.galleryHorizontal:
@@ -790,8 +790,8 @@ TrangChu_Admin As screen:
                     TemplateSize: =45
                     Transition: =Transition.Pop
                     Width: =289
-                    X: =54
-                    Y: =440
+                    X: =522
+                    Y: =115
                     ZIndex: =17
 
                     Button1_6 As button:
@@ -846,22 +846,24 @@ TrangChu_Admin As screen:
                     true
                 Width: =312
                 X: =805
-                Y: =348
+                Y: =342
                 ZIndex: =27
 
                 img_Product_cIP_IP2_9 As image:
                     BorderThickness: =0.5
                     Height: =50
-                    Image: |+
+                    Image: |
                         =
                         
                         // 1: Order, 2: Import, 3: Export, 4: Pending, 
-                        
+                        /*
                         If(
                             numDatasource = 1 || numDatasource = 2 || numDatasource = 3,
-                            LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, Image)
-                        )
+                            LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, Image),
+                            LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct, 'Image_Pro-Supplier')
+                        ) */
                         
+                        LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct, 'Image_Pro-Supplier')
                     RadiusBottomLeft: =15
                     RadiusBottomRight: =15
                     RadiusTopLeft: =15
@@ -1302,8 +1304,8 @@ TrangChu_Admin As screen:
                     Size: =fontSizeExport_HomeAdmin
                     Text: ="Export"
                     Width: =127
-                    X: =686
-                    Y: =365
+                    X: =541
+                    Y: =37
                     ZIndex: =18
 
                 bn_Order_HA As button:
@@ -1320,6 +1322,7 @@ TrangChu_Admin As screen:
                         Set(fontSizeImport_HomeAdmin, 12);
                         Set(fontSizeOrder_HomeAdmin, 15);
                         Set(fontSizeExport_HomeAdmin, 12);
+                        Set(visLineApprove_HomeAdmin, false);
                         Set(visLineImport_HomeAdmin, false);
                         Set(visLineOrder_HomeAdmin, true);
                         Set(visLineExport_HomeAdmin, false);
@@ -1398,8 +1401,8 @@ TrangChu_Admin As screen:
                     Size: =fontSizeOrder_HomeAdmin
                     Text: ="Order"
                     Width: =127
-                    X: =559
-                    Y: =365
+                    X: =414
+                    Y: =37
                     ZIndex: =19
 
                 btn_Import_HA As button:
@@ -1493,8 +1496,8 @@ TrangChu_Admin As screen:
                     Size: =fontSizeImport_HomeAdmin
                     Text: ="Import"
                     Width: =127
-                    X: =433
-                    Y: =365
+                    X: =288
+                    Y: =37
                     ZIndex: =20
 
                 line_Import_HA As text:
@@ -1505,8 +1508,8 @@ TrangChu_Admin As screen:
                     Height: =4
                     Visible: =visLineImport_HomeAdmin
                     Width: =46
-                    X: =465
-                    Y: =399
+                    X: =320
+                    Y: =71
                     ZIndex: =21
 
                 line_Order_HA As text:
@@ -1517,8 +1520,8 @@ TrangChu_Admin As screen:
                     Height: =4
                     Visible: =visLineOrder_HomeAdmin
                     Width: =46
-                    X: =595
-                    Y: =399
+                    X: =450
+                    Y: =71
                     ZIndex: =22
 
                 line_Export_HA As text:
@@ -1529,8 +1532,8 @@ TrangChu_Admin As screen:
                     Height: =4
                     Visible: =visLineExport_HomeAdmin
                     Width: =46
-                    X: =721
-                    Y: =399
+                    X: =576
+                    Y: =71
                     ZIndex: =23
 
                 btn_Approve_HA As button:
@@ -1585,8 +1588,8 @@ TrangChu_Admin As screen:
                     Size: =fontSizeApprove_HomeAdmin
                     Text: ="Approve"
                     Width: =127
-                    X: =306
-                    Y: =365
+                    X: =161
+                    Y: =37
                     ZIndex: =24
 
                 line_Approve_HA As text:
@@ -1597,7 +1600,7 @@ TrangChu_Admin As screen:
                     Height: =4
                     Visible: =visLineApprove_HomeAdmin
                     Width: =46
-                    X: =343
-                    Y: =399
+                    X: =198
+                    Y: =71
                     ZIndex: =25
 
