@@ -351,7 +351,7 @@ TrangChu_Admin As screen:
                     ZIndex: =7
 
             shadow_ProductSelected_ciFP_35 As htmlViewer:
-                Height: =286
+                Height: =227
                 HtmlText: |+
                     ="<div style='margin:10px;
                     background: rgb(210,232,231);
@@ -365,8 +365,8 @@ TrangChu_Admin As screen:
                     
                     
                 Width: =265
-                X: =101
-                Y: =413
+                X: =843
+                Y: =489
                 ZIndex: =3
 
             Image19_9 As image:
@@ -378,8 +378,8 @@ TrangChu_Admin As screen:
                 RadiusTopLeft: =20
                 RadiusTopRight: =20
                 Width: =245
-                X: =116
-                Y: =477
+                X: =863
+                Y: =479
                 ZIndex: =4
 
             Button1_2 As button:
@@ -507,7 +507,7 @@ TrangChu_Admin As screen:
                         Set(pos_contRight, 666);
                         Set(back_Black_HomeAdmin, true);*/
                         
-                        Set(IDOrder_HomeAdmin,ThisItem.ID);
+                        Set(IDOrder_HomeAdmin, ThisItem.ID);
                         //Set(StatusOfOrder_HomeAdmin, ThisItem.Status);
                         // 1: Order, 2: Import, 3: Export, 4: Pending
                         If(
@@ -546,11 +546,57 @@ TrangChu_Admin As screen:
                     Height: =25
                     Icon: =Icon.CheckBadge
                     OnSelect: |-
-                        =Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = ThisItem.ID), {Status: 2});
-                        Refresh(QLK_OrderForm);
-                        Set(datasourceOrder, Filter(QLK_OrderForm, Status = 1));
+                        =If(
+                            IsEmpty(
+                                Errors(
+                                    'QLK_OrderForm', 
+                                    Patch(
+                                        QLK_OrderForm, 
+                                        LookUp(QLK_OrderForm, IDOrder = ThisItem.ID), 
+                                        {Status: 2}
+                                    )
+                                )
+                            ),
+                        
+                            Refresh(QLK_OrderForm);
+                            ClearCollect(
+                                col_DatasourceOrder_HomeAdmin, 
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(QLK_OrderForm, Status = 1), 
+                                        "IDOrder", "Created", "TotalPrice", "Status"
+                                        ),
+                                    "IDOrder", "ID"
+                                )
+                            );
+                        
+                            //Set(datasourceOrder, Filter(QLK_OrderForm, Status = 1));
+                            Reset(gal_DetailOrderPending_HA_DO_HA)
+                        );
+                        
+                        ClearCollect(
+                            col_DetailsOrder_HomeAdmin,
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(
+                                        QLK_OrderFormInformation,
+                                        IDOrderForm = LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)
+                                        //IDOrderForm = gal_DetailOrderPending_HA_DO_HA.Selected.ID
+                                    ),
+                                    "IDOrderForm",
+                                    "IDProduct_Supplier",
+                                    "Quantity",
+                                    "Unit",
+                                    "Price",
+                                    "TotalPrice"
+                                ), 
+                                "IDOrderForm", "IDOrder",
+                                "IDProduct_Supplier", "IDProduct"
+                            )
+                        );
                         
                         // Get IDProduct_Supplier, Quantity in OrderFormInformation
+                        /**
                         ClearCollect(col_ProductOrder_Approved, ShowColumns(Filter(QLK_OrderFormInformation, IDOrderForm = ThisItem.ID), "IDProduct_Supplier", "Quantity"));
                         
                         // Get IDProduct in col_ProductOrder_Approved
@@ -563,7 +609,7 @@ TrangChu_Admin As screen:
                             
                                 Filter(QLK_Product_Supplier, IDProduct_Supplier in col_IDProductOrder_Approved.IDProduct_Supplier))*/
                                 
-                        
+                        /*
                         ClearCollect(
                             col_InformationOfProductOrdered, 
                             AddColumns(
@@ -620,7 +666,7 @@ TrangChu_Admin As screen:
                             )
                         );
                         */
-                        Refresh(QLK_OrderForm);
+                        
                         //ClearCollect(temp23, col_InformationOfProductOrdered);
                         
                         /*
@@ -630,7 +676,7 @@ TrangChu_Admin As screen:
                             Filter(QLK_Product_Supplier, IDProduct_Supplier in colProductSupplier.IDProduct_Supplier)
                         )*/
                         
-                        //Patch(QLK_Product, true)
+                        //Patch(QLK_Product, true)*/
                     Visible: |-
                         =//vis_Approve_HomeAdmin
                         true
@@ -644,9 +690,53 @@ TrangChu_Admin As screen:
                     Height: =25
                     Icon: =Icon.CancelBadge
                     OnSelect: |-
-                        =Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = ThisItem.ID), {Status: 3});
-                        Refresh(QLK_OrderForm);
-                        Set(datasourceOrder, Filter(QLK_OrderForm, Status = 1))
+                        =If(
+                            IsEmpty(
+                                Errors(
+                                    'QLK_OrderForm', 
+                                    Patch(
+                                        QLK_OrderForm, 
+                                        LookUp(QLK_OrderForm, IDOrder = ThisItem.ID), 
+                                        {Status: 3}
+                                    )
+                                )
+                            ),
+                        
+                            Refresh(QLK_OrderForm);
+                            ClearCollect(
+                                col_DatasourceOrder_HomeAdmin, 
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(QLK_OrderForm, Status = 1), 
+                                        "IDOrder", "Created", "TotalPrice", "Status"
+                                        ),
+                                    "IDOrder", "ID"
+                                )
+                            );
+                        
+                            Reset(gal_DetailOrderPending_HA_DO_HA)
+                        );
+                        
+                        ClearCollect(
+                            col_DetailsOrder_HomeAdmin,
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(
+                                        QLK_OrderFormInformation,
+                                        IDOrderForm = LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)
+                                        //IDOrderForm = gal_DetailOrderPending_HA_DO_HA.Selected.ID
+                                    ),
+                                    "IDOrderForm",
+                                    "IDProduct_Supplier",
+                                    "Quantity",
+                                    "Unit",
+                                    "Price",
+                                    "TotalPrice"
+                                ), 
+                                "IDOrderForm", "IDOrder",
+                                "IDProduct_Supplier", "IDProduct"
+                            )
+                        );
                     Visible: |-
                         =//vis_Approve_HomeAdmin
                         true
@@ -782,13 +872,6 @@ TrangChu_Admin As screen:
                         Width: =44
                         Y: =250
                         ZIndex: =2
-
-            Button1 As button:
-                OnSelect: =
-                Text: ="Button"
-                X: =287
-                Y: =513
-                ZIndex: =36
 
             "'grp_buttonFunction(R_HA)' As group":
                 Height: =5
@@ -1195,7 +1278,9 @@ TrangChu_Admin As screen:
                     HoverColor: =RGBA(21, 161, 60, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
                     OnSelect: |+
-                        =Reset(gal_DetailOrderPending_HA_DO_HA);
+                        =Refresh(QLK_OrderForm);
+                        
+                        Reset(gal_DetailOrderPending_HA_DO_HA);
                         
                         Set(fontSizeApprove_HomeAdmin, 15);
                         Set(fontSizeImport_HomeAdmin, 12);
@@ -1206,6 +1291,8 @@ TrangChu_Admin As screen:
                         Set(visLineOrder_HomeAdmin, false);
                         Set(visLineExport_HomeAdmin, false);
                         Set(textChart_HomeAdmin, "Approve");
+                        
+                        Set(IDOrder_HomeAdmin, LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID));
                         
                         ClearCollect(
                             col_DatasourceOrder_HomeAdmin, 
@@ -1280,18 +1367,6 @@ TrangChu_Admin As screen:
                     Y: =67
                     ZIndex: =25
 
-            Label30 As label:
-                Text: =gal_DetailOrderNotPending_1.Selected.ID
-                X: =184
-                Y: =383
-                ZIndex: =37
-
-            Label27 As label:
-                Text: =gal_DetailOrderPending_HA_DO_HA.Selected.ID
-                X: =257
-                Y: =344
-                ZIndex: =38
-
             Group6 As group:
                 Height: =5
                 Width: =5
@@ -1336,6 +1411,7 @@ TrangChu_Admin As screen:
                     ZIndex: =27
 
                     img_Product_cIP_IP2_9 As image:
+                        BorderColor: =RGBA(219, 219, 219, 1)
                         BorderThickness: =0.5
                         Height: =50
                         Image: |
@@ -1482,13 +1558,53 @@ TrangChu_Admin As screen:
                     HoverBorderColor: =RGBA(237, 237, 237, 1)
                     HoverFill: =RGBA(255, 0, 0, 1)
                     OnSelect: |-
-                        =Set(showInformationImportInvoiceForm, false);
+                        =If(
+                            IsEmpty(
+                                Errors(
+                                    'QLK_OrderForm', 
+                                    Patch(
+                                        QLK_OrderForm, 
+                                        LookUp(QLK_OrderForm, IDOrder = IDOrder_HomeAdmin), 
+                                        {Status: 3}
+                                    )
+                                )
+                            ),
                         
-                        Clear(col_OrderedInf);
-                        Reset(txt_Search_DetailOrder);
-                        Set(showOrderProductForm, false);
-                        Set(visible_btnUpdateOrder, false);
-                        Set(showSearchProduct_DetailOrder, false);
+                            Refresh(QLK_OrderForm);
+                            ClearCollect(
+                                col_DatasourceOrder_HomeAdmin, 
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(QLK_OrderForm, Status = 1), 
+                                        "IDOrder", "Created", "TotalPrice", "Status"
+                                        ),
+                                    "IDOrder", "ID"
+                                )
+                            );
+                        
+                            Reset(gal_DetailOrderPending_HA_DO_HA)
+                        );
+                        
+                        ClearCollect(
+                            col_DetailsOrder_HomeAdmin,
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(
+                                        QLK_OrderFormInformation,
+                                        IDOrderForm = LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)
+                                        //IDOrderForm = gal_DetailOrderPending_HA_DO_HA.Selected.ID
+                                    ),
+                                    "IDOrderForm",
+                                    "IDProduct_Supplier",
+                                    "Quantity",
+                                    "Unit",
+                                    "Price",
+                                    "TotalPrice"
+                                ), 
+                                "IDOrderForm", "IDOrder",
+                                "IDProduct_Supplier", "IDProduct"
+                            )
+                        );
                     PressedBorderColor: =RGBA(237, 237, 237, 1)
                     RadiusBottomLeft: =20
                     RadiusBottomRight: =20
@@ -1594,60 +1710,60 @@ TrangChu_Admin As screen:
                         )*/
                         
                         //Patch(QLK_Product, true)
-                    Duration: =1590
+                    Duration: =
                     Fill: =RGBA(205, 247, 205, 1)
                     FontWeight: =FontWeight.Semibold
                     Height: =39
                     HoverBorderColor: =RGBA(237, 237, 237, 1)
                     HoverFill: =RGBA(81, 224, 105, 1)
-                    OnSelect: |
-                        =ForAll(
-                            Oldcol_OrderedInf,
-                            Remove(QLK_OrderFormInformation, LookUp(QLK_OrderFormInformation, IDOrderForm = ID_Ordered && IDProduct_Supplier = Oldcol_OrderedInf[@IDProduct_Supplier]))
+                    OnSelect: |-
+                        =If(
+                            IsEmpty(
+                                Errors(
+                                    'QLK_OrderForm', 
+                                    Patch(
+                                        QLK_OrderForm, 
+                                        LookUp(QLK_OrderForm, IDOrder = IDOrder_HomeAdmin), 
+                                        {Status: 2}
+                                    )
+                                )
+                            ),
+                        
+                            Refresh(QLK_OrderForm);
+                            ClearCollect(
+                                col_DatasourceOrder_HomeAdmin, 
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(QLK_OrderForm, Status = 1), 
+                                        "IDOrder", "Created", "TotalPrice", "Status"
+                                        ),
+                                    "IDOrder", "ID"
+                                )
+                            );
+                        
+                            Reset(gal_DetailOrderPending_HA_DO_HA)
                         );
                         
-                        ForAll(
-                            col_OrderedInf, 
-                            QLK_OrderInformation.Run(
-                                ID_Ordered,
-                                col_OrderedInf[@IDProduct_Supplier],
-                                Value(LookUp(gal_OrderedInfList.AllItems, IDProduct_Supplier = col_OrderedInf[@IDProduct_Supplier], txt_ValueQuantity_DetailOrder.Text)),
-                                Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_OrderedInf[@IDProduct_Supplier], ID_Unit)),
-                                Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_OrderedInf[@IDProduct_Supplier], 'Price_Pro-Supplier')),
-                                Value(LookUp(gal_OrderedInfList.AllItems, IDProduct_Supplier = col_OrderedInf[@IDProduct_Supplier], txt_ValueQuantity_DetailOrder.Text)) * 
-                                    Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_OrderedInf[@IDProduct_Supplier], 'Price_Pro-Supplier'))
+                        ClearCollect(
+                            col_DetailsOrder_HomeAdmin,
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(
+                                        QLK_OrderFormInformation,
+                                        IDOrderForm = LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)
+                                        //IDOrderForm = gal_DetailOrderPending_HA_DO_HA.Selected.ID
+                                    ),
+                                    "IDOrderForm",
+                                    "IDProduct_Supplier",
+                                    "Quantity",
+                                    "Unit",
+                                    "Price",
+                                    "TotalPrice"
+                                ), 
+                                "IDOrderForm", "IDOrder",
+                                "IDProduct_Supplier", "IDProduct"
                             )
                         );
-                        
-                        Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = ID_Ordered),
-                            {
-                                IDOrder: ID_Ordered,
-                                DateCreatedNumber: Value(NumDateNewOrderProduct),
-                                TotalPrice: Sum(gal_OrderedInfList.AllItems, lbl_ValueTotalPrice_DetailOrder),
-                                Status: 1
-                            }
-                        );
-                        Clear(col_OrderedInf);
-                        Set(visible_btnUpdateOrder, false);
-                        Set(showSearchProduct_DetailOrder, false);
-                        
-                        
-                        If(
-                            ckb_Pending_Order.Value = true,
-                            ClearCollect(col_PendingOrder, Filter(QLK_OrderForm, Status = 1))
-                        );
-                        
-                        If(
-                            ckb_Approved_Order.Value = true,
-                            ClearCollect(col_ApprovedOrder, Filter(QLK_OrderForm, Status = 2))
-                        );
-                        
-                        If(
-                            ckb_Refused_Order.Value = true,
-                            ClearCollect(col_RefusedOrder, Filter(QLK_OrderForm, Status = 3))
-                        );
-                        //Sort( IceCream, Quantity, SortOrder.Descending )
-                        ClearCollect(col_OrderedList, col_PendingOrder, col_ApprovedOrder, col_RefusedOrder);
                     OnTimerEnd: |-
                         =Set(showSuccess, false) && 
                         Set(showInformationImportInvoiceForm, false)

@@ -128,6 +128,121 @@ DangNhap As screen:
                     Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
                     Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Permission')),
                     If(LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, ' Permission').Value = "Manager",
+                        
+                        Set(fontSizeApprove_HomeAdmin, 15);
+                        Set(fontSizeImport_HomeAdmin, 12);
+                        Set(fontSizeOrder_HomeAdmin, 12);
+                        Set(fontSizeExport_HomeAdmin, 12);
+                        Set(visLineApprove_HomeAdmin, true);
+                        Set(visLineImport_HomeAdmin, false);
+                        Set(visLineOrder_HomeAdmin, false);
+                        Set(visLineExport_HomeAdmin, false);
+                        Set(textChart_HomeAdmin, "Approve");
+            
+                        // Nho Set trong App
+                        Set(visibleDetailOrderNotPending_HomeAdmin, false);
+                        Set(visibleDetailOrderPending_HomeAdmin, true);
+            
+                        //Set(datasourceTopProduct_HomeAdmin, col_TopProductOrdered);
+                        ClearCollect(
+                            col_DatasourceOrder_HomeAdmin, 
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(QLK_OrderForm, Status = 1), 
+                                    "IDOrder", "Created", "TotalPrice", "Status"
+                                    ),
+                                "IDOrder", "ID")
+                        );
+            
+                        Set(IDOrder_HomeAdmin, LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID));
+                        Set(numDatasource, 4); //4: pending
+                        //Set(StatusOfOrder_HomeAdmin, ThisItem.Status);
+                        // 1: Order, 2: Import, 3: Export, 4: Pending
+                        If(
+                            numDatasource = 4,
+                            ClearCollect(
+                                col_DetailsOrder_HomeAdmin,
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(
+                                            QLK_OrderFormInformation, 
+                                            IDOrderForm = IDOrder_HomeAdmin), 
+                                        "IDOrderForm",
+                                        "IDProduct_Supplier",
+                                        "Quantity",
+                                        "Unit",
+                                        "Price",
+                                        "TotalPrice"
+                                    ), 
+                                    "IDOrderForm", "IDOrder",
+                                    "IDProduct_Supplier", "IDProduct"
+                                )
+                            )
+                        );
+            
+                        Set(textChart_HomeAdmin, "Top Products Imported");
+                        Set(visibleDetailOrderNotPending_HomeAdmin, true);
+                        Set(visibleDetailOrderPending_HomeAdmin, false);
+            
+                        ClearCollect(
+                            col_DatasourceOrder_HomeAdmin, 
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(QLK_ImportForm, Status = 4 || Status = 5), 
+                                    "IDImport", "Created", "TotalPrice", "Status"
+                                    ),
+                                "IDImport", "ID")
+                        );
+            
+                        Set(numDatasource, 2); // 1: Order, 2: Import, 3: Export, 4: Pending
+            
+                        ClearCollect(
+                            col_Product, 
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(
+                                        QLK_ImportFormInformation, 
+                                        IDImport in ShowColumns(
+                                            Filter(
+                                                QLK_ImportForm, Status = 4 || Status = 5
+                                            ), "IDImport"
+                                        )
+                                    ),
+                                    "IDProduct", "Quantity"
+                                ), "IDProduct", "ID_Product"
+                            )
+                        ); 
+            
+                        ClearCollect(col_SumQuantityProduct, GroupBy(col_Product, "ID_Product","GroupedItems"));
+                        ClearCollect(
+                            col_Temp, 
+                            ShowColumns(
+                                Filter(
+                                    QLK_Product, 
+                                    IDProduct in 
+                                    ShowColumns(col_SumQuantityProduct, "ID_Product")
+                                ), 
+                                "IDProduct", "Image"
+                            )
+                        );
+            
+                        ClearCollect(
+                            col_TopProduct_HomeAdmin,      
+                            SortByColumns(
+                                AddColumns(
+                                    col_SumQuantityProduct, 
+                                    "TotalQuantity", 
+                                    Sum(GroupedItems, Quantity), 
+                                    "Image",
+                                    LookUp(col_Temp, IDProduct = col_SumQuantityProduct[@ID_Product], Image)  
+                                ), 
+                                "TotalQuantity",
+                            SortOrder.Descending
+                            )    
+                        );
+            
+                        Set(maxQuantity, Max(col_TopProduct_HomeAdmin, TotalQuantity));
+            
                         Navigate(TrangChu_Admin);
                         Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
                         Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Permission')),
@@ -145,59 +260,6 @@ DangNhap As screen:
                 ),
                 Notify("Username or password is wrong!")
             );
-            
-            
-            Set(fontSizeApprove_HomeAdmin, 15);
-            Set(fontSizeImport_HomeAdmin, 12);
-            Set(fontSizeOrder_HomeAdmin, 12);
-            Set(fontSizeExport_HomeAdmin, 12);
-            Set(visLineApprove_HomeAdmin, true);
-            Set(visLineImport_HomeAdmin, false);
-            Set(visLineOrder_HomeAdmin, false);
-            Set(visLineExport_HomeAdmin, false);
-            Set(textChart_HomeAdmin, "Approve");
-            
-            // Nho Set trong App
-            Set(visibleDetailOrderNotPending_HomeAdmin, false);
-            Set(visibleDetailOrderPending_HomeAdmin, true);
-            
-            //Set(datasourceTopProduct_HomeAdmin, col_TopProductOrdered);
-            ClearCollect(
-                col_DatasourceOrder_HomeAdmin, 
-                RenameColumns(
-                    ShowColumns(
-                        Filter(QLK_OrderForm, Status = 1), 
-                        "IDOrder", "Created", "TotalPrice", "Status"
-                        ),
-                    "IDOrder", "ID")
-            );
-            
-            Set(IDOrder_HomeAdmin, LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID));
-            Set(numDatasource, 4); //4: pending
-            //Set(StatusOfOrder_HomeAdmin, ThisItem.Status);
-            // 1: Order, 2: Import, 3: Export, 4: Pending
-            If(
-                numDatasource = 4,
-                ClearCollect(
-                    col_DetailsOrder_HomeAdmin,
-                    RenameColumns(
-                        ShowColumns(
-                            Filter(
-                                QLK_OrderFormInformation, 
-                                IDOrderForm = IDOrder_HomeAdmin), 
-                            "IDOrderForm",
-                            "IDProduct_Supplier",
-                            "Quantity",
-                            "Unit",
-                            "Price",
-                            "TotalPrice"
-                        ), 
-                        "IDOrderForm", "IDOrder",
-                        "IDProduct_Supplier", "IDProduct"
-                    )
-                )
-            )
-            
             
         Size: =25
         Text: ="Login"
