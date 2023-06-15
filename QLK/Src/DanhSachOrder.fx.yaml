@@ -269,9 +269,9 @@ DanhSachOrder As screen:
             Height: =41
             OnSelect: =Select(Parent)
             Text: =ThisItem.ID_ProductRequest
-            Width: =135
-            X: =64
-            Y: =7
+            Width: =162
+            X: =51
+            Y: =5
             ZIndex: =3
 
         lbl_OutputPrice_2 As label:
