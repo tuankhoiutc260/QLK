@@ -502,7 +502,8 @@ TrangChu_Admin As screen:
                                         ShowColumns(
                                             Filter(
                                                 QLK_OrderFormInformation, 
-                                                IDOrderForm = IDOrder_HomeAdmin), 
+                                                IDOrderForm = IDOrder_HomeAdmin
+                                            ), 
                                             "IDOrderForm",
                                             "IDProduct_Supplier",
                                             "Quantity",
@@ -514,26 +515,56 @@ TrangChu_Admin As screen:
                                         "IDProduct_Supplier", "IDProduct"
                                     )
                                 ),
-                                ClearCollect(
-                                    col_DetailsOrder_HomeAdmin,
-                                    RenameColumns(
-                                        ShowColumns(
-                                            Filter(
-                                                QLK_OrderFormInformation, 
-                                                IDOrderForm = IDOrder_HomeAdmin), 
-                                            "IDOrderForm",
-                                            "IDProduct_Supplier",
-                                            "Quantity",
-                                            "Unit",
-                                            "Price",
-                                            "TotalPrice"
-                                        ), 
-                                        "IDOrderForm", "IDOrder",
-                                        "IDProduct_Supplier", "IDProduct"
+                        
+                                If(ThisItem.ID in col_DatasourceImportRequest_HomeAdmin[@ID],
+                                    ClearCollect(
+                                        col_DetailsOrder_HomeAdmin,
+                                        RenameColumns(
+                                            ShowColumns(
+                                                Filter(
+                                                    QLK_ImportFormInformation, 
+                                                    IDImport = IDOrder_HomeAdmin
+                                                ), 
+                                                "IDImport",
+                                                "IDProduct",
+                                                "Quantity",
+                                                "Unit",
+                                                "Price",
+                                                "TotalPrice"
+                                            ), 
+                                            "IDImport", "IDOrder"
+                                        )
+                                    ),
+                        
+                                    If(ThisItem.ID in col_DatasourceExportRequest_HomeAdmin[@ID],
+                                        ClearCollect(
+                                            col_DetailsOrder_HomeAdmin,
+                                            RenameColumns(
+                                                ShowColumns(
+                                                    Filter(
+                                                        QLK_ExportFormInformation, 
+                                                        IDExportForm = IDOrder_HomeAdmin
+                                                    ), 
+                                                    "IDExportForm",
+                                                    "IDProduct",
+                                                    "Quantity",
+                                                    "Unit",
+                                                    "Price",
+                                                    "TotalPrice"
+                                                ), 
+                                                "IDExportForm", "IDOrder"
+                                            )
+                                        )
                                     )
                                 )
                             )
                         )
+                        
+                        /*
+                            col_DatasourceOrderRequest_HomeAdmin,
+                            col_DatasourceImportRequest_HomeAdmin,
+                            col_DatasourceExportRequest_HomeAdmin
+                            */
                     RadiusBottomLeft: =15
                     RadiusBottomRight: =15
                     RadiusTopLeft: =15
@@ -549,33 +580,129 @@ TrangChu_Admin As screen:
                     Height: =25
                     Icon: =Icon.CheckBadge
                     OnSelect: |-
-                        =If(
-                            IsEmpty(
-                                Errors(
-                                    QLK_OrderForm, 
-                                    Patch(
+                        =/*
+                            col_DatasourceOrderRequest_HomeAdmin,
+                            col_DatasourceImportRequest_HomeAdmin,
+                            col_DatasourceExportRequest_HomeAdmin
+                        */
+                        
+                        If(
+                            ThisItem.ID in col_DatasourceOrderRequest_HomeAdmin[@ID],
+                            If(
+                                IsEmpty(
+                                    Errors(
                                         QLK_OrderForm, 
-                                        LookUp(QLK_OrderForm, IDOrder = ThisItem.ID), 
-                                        {Status: 2}
+                                        Patch(
+                                            QLK_OrderForm, 
+                                            LookUp(QLK_OrderForm, IDOrder = ThisItem.ID), 
+                                            {Status: 2}
+                                        )
                                     )
-                                )
+                                ),
+                        
+                                Refresh(QLK_OrderForm);
+                                ClearCollect(
+                                    col_DatasourceOrder_HomeAdmin, 
+                                    RenameColumns(
+                                        ShowColumns(
+                                            Filter(QLK_OrderForm, Status = 1), 
+                                            "IDOrder", "Created", "TotalPrice", "Status"
+                                            ),
+                                        "IDOrder", "ID"
+                                    )
+                                );
+                        
+                                Reset(gal_DetailOrderPending_HA_DO_HA)
                             ),
                         
-                            Refresh(QLK_OrderForm);
-                            ClearCollect(
-                                col_DatasourceOrder_HomeAdmin, 
-                                RenameColumns(
-                                    ShowColumns(
-                                        Filter(QLK_OrderForm, Status = 1), 
-                                        "IDOrder", "Created", "TotalPrice", "Status"
-                                        ),
-                                    "IDOrder", "ID"
-                                )
-                            );
+                            If(
+                                ThisItem.ID in col_DatasourceImportRequest_HomeAdmin[@ID],
+                                If(
+                                    IsEmpty(
+                                        Errors(
+                                            QLK_ImportForm, 
+                                            Patch(
+                                                QLK_ImportForm, 
+                                                LookUp(QLK_ImportForm, IDImport = ThisItem.ID), 
+                                                {Status: 2}
+                                            )
+                                        )
+                                    ),
                         
-                            //Set(datasourceOrder, Filter(QLK_OrderForm, Status = 1));
-                            Reset(gal_DetailOrderPending_HA_DO_HA)
+                                    Refresh(QLK_ImportForm);
+                                    ClearCollect(
+                                        col_DatasourceOrder_HomeAdmin, 
+                                        RenameColumns(
+                                            ShowColumns(
+                                                Filter(QLK_ImportForm, Status = 1), 
+                                                "IDImport", "Created", "TotalPrice", "Status"
+                                                ),
+                                            "IDImport", "ID"
+                                        )
+                                    );
+                        
+                                    Reset(gal_DetailOrderPending_HA_DO_HA)
+                                ), 
+                        
+                                If(
+                                    ThisItem.ID in col_DatasourceExportRequest_HomeAdmin[@ID],
+                                    If(
+                                        IsEmpty(
+                                            Errors(
+                                                QLK_ExportForm, 
+                                                Patch(
+                                                    QLK_ExportForm, 
+                                                    LookUp(QLK_ExportForm, IDExport = ThisItem.ID), 
+                                                    {Status: 2}
+                                                )
+                                            )
+                                        ),
+                        
+                                        Refresh(QLK_ExportForm);
+                                        ClearCollect(
+                                            col_DatasourceExport_HomeAdmin, 
+                                            RenameColumns(
+                                                ShowColumns(
+                                                    Filter(QLK_ExportForm, Status = 1), 
+                                                    "IDExport", "Created", "TotalPrice", "Status"
+                                                    ),
+                                                "IDExport", "ID"
+                                            )
+                                        );
+                        
+                                        Reset(gal_DetailOrderPending_HA_DO_HA)
+                                    )
+                                )
+                            )
                         );
+                        
+                        ClearCollect(col_DatasourceOrder_HomeAdmin, col_DatasourceOrder_HomeAdmin);
+                        
+                        /*
+                        If(
+                            numDatasource = 4,
+                            If(ThisItem.ID in col_DatasourceOrderRequest_HomeAdmin[@ID],
+                                ClearCollect(
+                                    col_DetailsOrder_HomeAdmin,
+                                    RenameColumns(
+                                        ShowColumns(
+                                            Filter(
+                                                QLK_OrderFormInformation, 
+                                                IDOrderForm = IDOrder_HomeAdmin
+                                            ), 
+                                            "IDOrderForm",
+                                            "IDProduct_Supplier",
+                                            "Quantity",
+                                            "Unit",
+                                            "Price",
+                                            "TotalPrice"
+                                        ), 
+                                        "IDOrderForm", "IDOrder",
+                                        "IDProduct_Supplier", "IDProduct"
+                                    )
+                                ),
+                                */
+                        
                         
                         ClearCollect(
                             col_DetailsOrder_HomeAdmin,
