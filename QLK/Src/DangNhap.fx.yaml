@@ -334,8 +334,163 @@ DangNhap As screen:
                             Navigate(NhapHang_3);
                             Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
                             Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Permission')),
-                            If(LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, ' Permission').Value = "Stocker",
+                            If(LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, ' Permission').Value = "Accountant",
+                                                Navigate(TrangChu_KeToan);
                                 
+                                //-----
+            // Change Fill color button
+            Set(FillUnPaid_HomeAccountant, RGBA(127, 235, 117, 1)); Set(ColorUnPaid_HomeAccountant, RGBA(255, 255, 255, 1));
+            Set(FillPaid_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorPaid_HomeAccountant, RGBA(127, 235, 117, 1));
+            
+            Set(visible_cont_Ordered_HomeAccountant, true);
+            Set(visible_cont_Import_HomeAccountant, false);
+            Set(StatusOfAccountant, 1); // 1: Cac phieu da order, 2: Import phieu moi, 3: Order hang moi
+            Refresh(QLK_OrderForm);
+            Refresh(QLK_ImportForm);
+            Refresh(QLK_ExportForm);
+            
+            Reset(gal_ProductListOrdered_cOHA1);
+            
+            Set(fontSizeOrdered_HomeAccountant, 15);
+            Set(fontSizeImport_HomeAccountant, 12);
+            Set(fontSizeOrder_HomeAccountant, 12);
+            Set(fontSizeExport_HomeAccountant, 12);
+            Set(visLineOrdered_HomeAccountant, true);
+            Set(visLineImport_HomeAccountant, false);
+            Set(visLineOrder_HomeAccountant, false);
+            Set(visLineExport_HomeAccountant, false);
+            Set(IDOrder_HomeAccountant, LookUp(FirstN(col_DatasourceOrder_HomeAccountant, 1), true, ID));
+            
+            ClearCollect(
+                col_DatasourceOrderRequest_HomeAccountant, 
+                AddColumns(
+                    RenameColumns(
+                        ShowColumns(
+                            Filter(QLK_OrderForm, Status = 4), 
+                            "IDOrder", "Created", "TotalPrice", "Status"
+                            ),
+                        "IDOrder", "ID"
+                    ) As T, 
+                    "QuantityProduct", 
+                    CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = T.ID)) & " Products",
+                    "ProductIn", // 1: In warehouse, 2: Of Supplier
+                    2
+                )
+            );
+            
+            ClearCollect(
+                col_DatasourceImportRequest_HomeAccountant, 
+                AddColumns(
+                    RenameColumns(
+                        ShowColumns(
+                            Filter(QLK_ImportForm, Status = 4), 
+                            "IDImport", "Created", "TotalPrice", "Status"
+                            ),
+                        "IDImport", "ID"
+                    ) As T, 
+                    "QuantityProduct", 
+                    CountRows(Filter(QLK_ImportFormInformation, IDImport = T.ID)) & " Products",
+                    "ProductIn", // 1: In warehouse, 2: Of Supplier
+                    1
+                )
+            );
+            
+            ClearCollect(
+                col_DatasourceExportRequest_HomeAccountant, 
+                AddColumns(
+                    RenameColumns(
+                        ShowColumns(
+                            Filter(QLK_ExportForm, Status = 4), 
+                            "IDExport", "Created", "TotalPrice", "Status"
+                            ),
+                        "IDExport", "ID"
+                    ) As T, 
+                    "QuantityProduct", 
+                    CountRows(Filter(QLK_ExportFormInformation, IDExportForm = T.ID)) & " Products",
+                    "ProductIn", // 1: In warehouse, 2: Of Supplier
+                    1
+                )
+            );
+            
+            ClearCollect(
+                col_DatasourceOrder_HomeAccountant,
+                col_DatasourceOrderRequest_HomeAccountant,
+                col_DatasourceImportRequest_HomeAccountant,
+                col_DatasourceExportRequest_HomeAccountant
+            );
+            
+            // Nho Set trong App
+            Set(visibleDetailOrderNotPending_HomeAccountant, false);
+            Set(visibleDetailOrderPending_HomeAccountant, true);
+            Set(numDatasource, 4); //4: pending
+            
+            // --- Reset lại thông tin đơn đầu tiên qua khung ở giữa
+            ClearCollect(
+                col_DetailsOrder_HomeAccountant,
+                If(
+                    LookUp(FirstN(col_DatasourceOrder_HomeAccountant, 1), true, ID) in col_DatasourceOrderRequest_HomeAccountant[@ID],
+                    RenameColumns(
+                        ShowColumns(
+                            Filter(
+                                QLK_OrderFormInformation,
+                                IDOrderForm = LookUp(FirstN(col_DatasourceOrder_HomeAccountant, 1), true, ID)
+                            ),
+                            "IDOrderForm",
+                            "IDProduct_Supplier",
+                            "Quantity",
+                            "Unit",
+                            "Price",
+                            "TotalPrice"
+                        ), 
+                        "IDOrderForm", "IDOrder",
+                        "IDProduct_Supplier", "IDProduct"
+                    ),
+            
+                    If(
+                        LookUp(FirstN(col_DatasourceOrder_HomeAccountant, 1), true, ID) in col_DatasourceImportRequest_HomeAccountant[@ID],
+                        RenameColumns(
+                            ShowColumns(
+                                Filter(
+                                    QLK_ImportFormInformation,
+                                    IDImport = LookUp(FirstN(col_DatasourceOrder_HomeAccountant, 1), true, ID)
+                                ),
+                                "IDImport",
+                                "IDProduct",
+                                "Quantity",
+                                "Unit",
+                                "Price",
+                                "TotalPrice"
+                            ), 
+                            "IDImport", "IDOrder"
+                        ),
+            
+                        If(
+                            LookUp(FirstN(col_DatasourceOrder_HomeAccountant, 1), true, ID) in col_DatasourceExportRequest_HomeAccountant[@ID],
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(
+                                        QLK_ExportFormInformation,
+                                        IDExportForm = LookUp(FirstN(col_DatasourceOrder_HomeAccountant, 1), true, ID)
+                                    ),
+                                    "IDExportForm",
+                                    "IDProduct",
+                                    "Quantity",
+                                    "Unit",
+                                    "Price",
+                                    "TotalPrice"
+                                ), 
+                                "IDExportForm", "IDOrder"
+                            )
+                        )
+                    )
+                )  
+            );
+            
+            Set(StatusOrder_HomeAccountant, LookUp(col_DatasourceOrder_HomeAccountant, ID = LookUp(FirstN(col_DatasourceOrder_HomeAccountant, 1), true, ID), Status));
+            
+            
+            
+                                //-----                         
                                 Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
                                 Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Permission'))                   
                             )
