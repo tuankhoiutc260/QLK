@@ -630,7 +630,7 @@ TrangChu_Admin As screen:
                                     IDProduct: T.IDProduct_Supplier,
                                     Name: T.Name_Supplier,
                                     Quantity: T.Quantity,
-                                    MinimumQuantity: If(LookUp(col_InformationOfProductOrdered, T.ID_Unit = 3, T.ID_Unit), 10, 20),
+                                    MinimumQuantity: If(LookUp(col_InformationOfProductOrdered, T.ID_Unit = Text(3), T.ID_Unit), 10, 20),
                                     Unit: Value(T.ID_Unit),
                                     InputPrice: T.Price_Supplier,
                                     OutputPrice: T.Price_Supplier + T.Price_Supplier * 0.1,
@@ -990,7 +990,7 @@ TrangChu_Admin As screen:
                 BorderStyle: =BorderStyle.None
                 Default: |-
                     =If(StatusOfOrder_HomeAdmin = 4,
-                        "Chưa thanh toán", "Đã thanh toán")
+                        "Unpaid", "Paid")
                 DisabledBorderColor: =RGBA(253, 222, 207, 1)
                 DisabledColor: =RGBA(0, 0, 0, 1)
                 DisabledFill: =If(StatusOfOrder_HomeAdmin = 5, RGBA(127,235,117,1), RGBA(251, 188, 159, 1))

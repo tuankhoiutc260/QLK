@@ -17691,47 +17691,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.'gal_DetailOrderPending_HA(DO_HA)'.ic_Cancel_DO_HA.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.'gal_DetailOrderPending_HA(DO_HA)'.ic_Cancel_DO_HA.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 1919,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_Admin",
-                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.'gal_DetailOrderPending_HA(DO_HA)'.ic_Cancel_DO_HA"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Text",
-              "Number"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2.DisplayMode"
                 }
               ],
