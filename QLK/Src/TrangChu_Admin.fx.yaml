@@ -490,7 +490,49 @@ TrangChu_Admin As screen:
                                 )
                             )
                         )*/
-                        "1 products"
+                        
+                            CountRows(Filter(QLK_ImportFormInformation, IDImport = ThisItem.ID)) & " Products" ;
+                        
+                        /*
+                        ClearCollect(
+                            col_DatasourceOrder_HomeAdmin,
+                            col_DatasourceOrderRequest_HomeAdmin,
+                            col_DatasourceImportRequest_HomeAdmin,
+                            col_DatasourceExportRequest_HomeAdmin
+                        );
+                        */
+                        
+                        /*
+                        If(
+                            CountRows(
+                                ForAll(
+                                    QLK_OrderForm As T,     
+                                    Filter(col_DatasourceOrderRequest_HomeAdmin, ID = T.IDOrder)
+                                ) 
+                            ) >= 1, 
+                            //CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = ThisItem.ID)) & " Products" || 
+                            CountRows(Filter(QLK_ImportFormInformation, IDImport = ThisItem.ID)) & " Products",
+                        
+                            If(
+                                CountRows(
+                                    ForAll(
+                                        QLK_ImportForm As T,
+                                        Filter(col_DatasourceImportRequest_HomeAdmin, ID = T.IDImport)
+                                    ) 
+                                ) >= 1, 
+                                CountRows(Filter(QLK_ImportFormInformation, IDImport = ThisItem.ID)) & " Products",
+                        
+                                If(
+                                    CountRows(
+                                        ForAll(
+                                            QLK_ExportForm As T,
+                                            Filter(col_DatasourceExportRequest_HomeAdmin, ID  = T.IDExport)
+                                        ) 
+                                    ) >= 1, 
+                                    CountRows(Filter(QLK_ExportFormInformation, IDExportForm = ThisItem.ID)) & " Products"
+                                )
+                            )
+                        )*/
                     Width: =78
                     X: =235
                     Y: =20
@@ -549,7 +591,7 @@ TrangChu_Admin As screen:
                         =If(
                             IsEmpty(
                                 Errors(
-                                    'QLK_OrderForm', 
+                                    QLK_OrderForm, 
                                     Patch(
                                         QLK_OrderForm, 
                                         LookUp(QLK_OrderForm, IDOrder = ThisItem.ID), 
@@ -693,7 +735,7 @@ TrangChu_Admin As screen:
                         =If(
                             IsEmpty(
                                 Errors(
-                                    'QLK_OrderForm', 
+                                    QLK_OrderForm, 
                                     Patch(
                                         QLK_OrderForm, 
                                         LookUp(QLK_OrderForm, IDOrder = ThisItem.ID), 
@@ -1279,6 +1321,8 @@ TrangChu_Admin As screen:
                     HoverFill: =RGBA(0, 0, 0, 0)
                     OnSelect: |+
                         =Refresh(QLK_OrderForm);
+                        Refresh(QLK_ImportForm);
+                        Refresh(QLK_ExportForm);
                         
                         Reset(gal_DetailOrderPending_HA_DO_HA);
                         
@@ -1295,7 +1339,7 @@ TrangChu_Admin As screen:
                         Set(IDOrder_HomeAdmin, LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID));
                         
                         ClearCollect(
-                            col_DatasourceOrder_HomeAdmin, 
+                            col_DatasourceOrderRequest_HomeAdmin, 
                             RenameColumns(
                                 ShowColumns(
                                     Filter(QLK_OrderForm, Status = 1), 
@@ -1304,7 +1348,40 @@ TrangChu_Admin As screen:
                                 "IDOrder", "ID")
                         );
                         
+                        ClearCollect(
+                            col_DatasourceImportRequest_HomeAdmin, 
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(QLK_ImportForm, Status = 1), 
+                                    "IDImport", "Created", "TotalPrice", "Status"
+                                    ),
+                                "IDImport", "ID")
+                        );
                         
+                        ClearCollect(
+                            col_DatasourceExportRequest_HomeAdmin, 
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(QLK_ExportForm, Status = 1), 
+                                    "IDExport", "Created", "TotalPrice", "Status"
+                                    ),
+                                "IDExport", "ID")
+                        );
+                        
+                        AddColumns(col_DatasourceExportRequest_HomeAdmin, 
+                        "QuantityProduct", CountRows(ForAll(QLK_ExportForm As T, Filter(col_DatasourceExportRequest_HomeAdmin, ID = IDExport))));
+                        
+                        
+                        
+                        /*
+                        
+                        ClearCollect(
+                            col_DatasourceOrder_HomeAdmin,
+                            col_DatasourceOrderRequest_HomeAdmin,
+                            col_DatasourceImportRequest_HomeAdmin,
+                            col_DatasourceExportRequest_HomeAdmin
+                        );
+                        */
                         
                         // Nho Set trong App
                         Set(visibleDetailOrderNotPending_HomeAdmin, false);
@@ -1561,7 +1638,7 @@ TrangChu_Admin As screen:
                         =If(
                             IsEmpty(
                                 Errors(
-                                    'QLK_OrderForm', 
+                                    QLK_OrderForm, 
                                     Patch(
                                         QLK_OrderForm, 
                                         LookUp(QLK_OrderForm, IDOrder = IDOrder_HomeAdmin), 
@@ -1720,7 +1797,7 @@ TrangChu_Admin As screen:
                         =If(
                             IsEmpty(
                                 Errors(
-                                    'QLK_OrderForm', 
+                                    QLK_OrderForm, 
                                     Patch(
                                         QLK_OrderForm, 
                                         LookUp(QLK_OrderForm, IDOrder = IDOrder_HomeAdmin), 

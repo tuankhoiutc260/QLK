@@ -3,7 +3,7 @@
     "IsComponentScoped": false,
     "IsSampleData": false,
     "IsWritable": true,
-    "Name": "col_ProductOrder_Approved",
+    "Name": "col_DatasourceImportRequest_HomeAdmin",
     "Type": "CollectionDataSourceInfo"
   }
 ]

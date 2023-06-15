@@ -99,20 +99,6 @@
     "OverridableProperties": {},
     "Version": "2.1.0"
   },
-  "circle": {
-    "CustomGroupControlTemplateName": "",
-    "FirstParty": true,
-    "Id": "http://microsoft.com/appmagic/shapes/circle",
-    "IsComponentTemplate": false,
-    "IsCustomGroupControlTemplate": false,
-    "IsPcfControl": false,
-    "IsPremiumPcfControl": false,
-    "IsWidgetTemplate": true,
-    "LastModifiedTimestamp": "0",
-    "Name": "circle",
-    "OverridableProperties": {},
-    "Version": "2.3.0"
-  },
   "dataCard": {
     "CustomGroupControlTemplateName": "",
     "FirstParty": true,
@@ -126,20 +112,6 @@
     "Name": "dataCard",
     "OverridableProperties": {},
     "Version": "1.0.2"
-  },
-  "datepicker": {
-    "CustomGroupControlTemplateName": "",
-    "FirstParty": true,
-    "Id": "http://microsoft.com/appmagic/datepicker",
-    "IsComponentTemplate": false,
-    "IsCustomGroupControlTemplate": false,
-    "IsPcfControl": false,
-    "IsPremiumPcfControl": false,
-    "IsWidgetTemplate": true,
-    "LastModifiedTimestamp": "0",
-    "Name": "datepicker",
-    "OverridableProperties": {},
-    "Version": "2.6.0"
   },
   "dropdown": {
     "CustomGroupControlTemplateName": "",
