@@ -1210,7 +1210,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "06/15/2023 10:40:31",
+  "HeaderLastSavedDateTimeUTC": "06/15/2023 11:28:18",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "10afa7bd-9860-4730-ba15-0ce266cca5f1": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/3a7b23e698fe4666b44cc6adb7a19e6e-f3206ee0a99a1a4d\"",
@@ -1284,7 +1284,6 @@
   "OrderDataSource": {
     "col_AddProductScaned_Import": 26,
     "col_ApprovedOrder": 27,
-    "col_DatasourceExport_HomeAdmin": 47,
     "col_DatasourceExportRequest_HomeAdmin": 30,
     "col_DatasourceImportRequest_HomeAdmin": 37,
     "col_DatasourceOrder_HomeAdmin": 45,

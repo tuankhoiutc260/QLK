@@ -15759,8 +15759,128 @@
                   "relativeAddress": 0
                 },
                 "region": {
+                  "charLength": 63,
+                  "charOffset": 1959,
+                  "snippet": {
+                    "text": "CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = T.ID))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CountRows"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 61,
+                  "charOffset": 2469,
+                  "snippet": {
+                    "text": "CountRows(Filter(QLK_ImportFormInformation, IDImport = T.ID))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CountRows"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 65,
+                  "charOffset": 2977,
+                  "snippet": {
+                    "text": "CountRows(Filter(QLK_ExportFormInformation, IDExportForm = T.ID))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CountRows"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
                   "charLength": 58,
-                  "charOffset": 3858,
+                  "charOffset": 4572,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)"
                   }
@@ -15800,7 +15920,167 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3856,
+                  "charOffset": 4570,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 58,
+                  "charOffset": 5256,
+                  "snippet": {
+                    "text": "LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 5254,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 58,
+                  "charOffset": 5949,
+                  "snippet": {
+                    "text": "LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Cancel_DO_HA.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 5947,
                   "snippet": {
                     "text": "="
                   }
@@ -15839,8 +16119,128 @@
                   "relativeAddress": 0
                 },
                 "region": {
+                  "charLength": 63,
+                  "charOffset": 1959,
+                  "snippet": {
+                    "text": "CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = T.ID))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CountRows"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 61,
+                  "charOffset": 2469,
+                  "snippet": {
+                    "text": "CountRows(Filter(QLK_ImportFormInformation, IDImport = T.ID))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CountRows"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 65,
+                  "charOffset": 2977,
+                  "snippet": {
+                    "text": "CountRows(Filter(QLK_ExportFormInformation, IDExportForm = T.ID))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CountRows"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
                   "charLength": 58,
-                  "charOffset": 805,
+                  "charOffset": 3746,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)"
                   }
@@ -15880,7 +16280,167 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 803,
+                  "charOffset": 3744,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 58,
+                  "charOffset": 4430,
+                  "snippet": {
+                    "text": "LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 4428,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 58,
+                  "charOffset": 5123,
+                  "snippet": {
+                    "text": "LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.gal_DetailOrderPending_HA_DO_HA.ic_Check_DO_HA.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 5121,
                   "snippet": {
                     "text": "="
                   }
@@ -19398,8 +19958,128 @@
                   "relativeAddress": 0
                 },
                 "region": {
+                  "charLength": 63,
+                  "charOffset": 1995,
+                  "snippet": {
+                    "text": "CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = T.ID))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CountRows"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 61,
+                  "charOffset": 2505,
+                  "snippet": {
+                    "text": "CountRows(Filter(QLK_ImportFormInformation, IDImport = T.ID))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CountRows"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 65,
+                  "charOffset": 3013,
+                  "snippet": {
+                    "text": "CountRows(Filter(QLK_ExportFormInformation, IDExportForm = T.ID))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CountRows"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
                   "charLength": 58,
-                  "charOffset": 811,
+                  "charOffset": 3784,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)"
                   }
@@ -19439,7 +20119,167 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 809,
+                  "charOffset": 3782,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 58,
+                  "charOffset": 4468,
+                  "snippet": {
+                    "text": "LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 4466,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 58,
+                  "charOffset": 5161,
+                  "snippet": {
+                    "text": "LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_Create_NewOrderProduct_2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 5159,
                   "snippet": {
                     "text": "="
                   }
@@ -19478,8 +20318,128 @@
                   "relativeAddress": 0
                 },
                 "region": {
+                  "charLength": 63,
+                  "charOffset": 1995,
+                  "snippet": {
+                    "text": "CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = T.ID))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CountRows"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 61,
+                  "charOffset": 2505,
+                  "snippet": {
+                    "text": "CountRows(Filter(QLK_ImportFormInformation, IDImport = T.ID))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CountRows"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 65,
+                  "charOffset": 3013,
+                  "snippet": {
+                    "text": "CountRows(Filter(QLK_ExportFormInformation, IDExportForm = T.ID))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CountRows"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
                   "charLength": 58,
-                  "charOffset": 811,
+                  "charOffset": 3784,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)"
                   }
@@ -19519,7 +20479,167 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 809,
+                  "charOffset": 3782,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 58,
+                  "charOffset": 4468,
+                  "snippet": {
+                    "text": "LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 4466,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Filter"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 58,
+                  "charOffset": 5161,
+                  "snippet": {
+                    "text": "LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_Admin",
+                "type": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_Admin.'cont_HomeAdmin(HA)'.'cont_Right_HomaAdmin(R_HA)'.btn_CancelOrderDetailOrder_9.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 5159,
                   "snippet": {
                     "text": "="
                   }
