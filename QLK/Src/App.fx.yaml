@@ -43,11 +43,15 @@ App As appinfo:
         Set(visLineOrder_HomeAdmin, false);
         Set(visLineExport_HomeAdmin, false);
         Set(textChart_HomeAdmin, "Top Products Imported");
-        Set(datasourceImported_HomeAdmin, col_TopProductOrdered);
+        //Set(datasourceImported_HomeAdmin, col_TopProductOrdered);
         Set(visibleDetailOrderNotPending, true);
         Set(visibleDetailOrderNotPending_HomeAdmin, true);
         Set(visibleDetailOrderPending_HomeAdmin, false);
         Set(vis_Approve_HomeAdmin, false);
+        
+        // Home Accountant
+        Set(visible_cont_Ordered_HomeAccountant, true);
+        Set(visible_cont_Import_HomeAccountant, false);
         
         //Tạo lịch
         If(IsBlank(_userDomain),         

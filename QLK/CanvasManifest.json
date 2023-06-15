@@ -98,7 +98,7 @@
       "zeroalltabindexes": false
     },
     "Author": "",
-    "BindingErrorCount": 185,
+    "BindingErrorCount": 265,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 500,
     "DocumentAppType": "DesktopOrTablet",
@@ -117,7 +117,7 @@
     "ManualOfflineProfileId": "",
     "Name": "QuanLyKho",
     "OriginatingVersion": "1.331",
-    "ParserErrorCount": 20
+    "ParserErrorCount": 30
   },
   "PublishInfo": {
     "AppName": "QuanLyKho",
@@ -134,7 +134,7 @@
     "DangNhap",
     "TrangchuGD",
     "TrangChu_Admin",
-    "TrangChu_Admin_1",
+    "TrangChu_KeToan",
     "DatHangNhap",
     "PheDuyetDatHang",
     "PheDuyetNhapHang",

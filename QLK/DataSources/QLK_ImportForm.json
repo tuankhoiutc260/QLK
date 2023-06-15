@@ -37,6 +37,7 @@
       "Modified": "Modified",
       "OData__ColorTag": "Color Tag",
       "Status": "Status",
+      "TimePaid": "TimePaid",
       "Title": "Title",
       "TotalPrice": "TotalPrice"
     },
