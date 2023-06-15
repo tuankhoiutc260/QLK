@@ -279,7 +279,7 @@ TrangChu_KeToan As screen:
                             Collect(col_DetailsImport_HomeAccountant,
                                 {
                                     IDProduct: ThisItem.IDProduct,
-                                    Quantity: Q.Text
+                                    Quantity: 2
                                 } );
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =RGBA(127, 235, 117, 1)
@@ -911,13 +911,18 @@ TrangChu_KeToan As screen:
                         Y: =15
                         ZIndex: =7
 
-                    btn_PayListOrdered_cOHA1 As button:
-                        BorderColor: =RGBA(127, 235, 117, 1)
+                    btn_PayListOrdered_cOHA1 As timer:
+                        BorderThickness: =0
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        DisplayMode: =
+                        Duration: =1590
                         Fill: =RGBA(127, 235, 117, 1)
-                        Height: =28
-                        HoverBorderColor: =RGBA(127, 235, 117, 1)
-                        HoverColor: =RGBA(21, 161, 60, 1)
-                        HoverFill: =RGBA(0, 0, 0, 0)
+                        FontWeight: =FontWeight.Semibold
+                        Height: =34
+                        HoverBorderColor: =RGBA(237, 237, 237, 1)
+                        HoverFill: =RGBA(81, 224, 105, 1)
                         OnSelect: |-
                             =If(
                                 ThisItem.ID in col_DatasourceOrderRequest_HomeAccountant[@ID],
@@ -1063,15 +1068,93 @@ TrangChu_KeToan As screen:
                                     )
                                 )  
                             );
-                        PressedColor: =RGBA(255, 255, 255, 1)
-                        PressedFill: =RGBA(127, 235, 117, 1)
+                        OnTimerEnd: =Set(showSuccess_HomeAccountant, false);
+                        OnTimerStart: =Set(showSuccess_HomeAccountant, true)
                         Size: =12
+                        Start: =
                         Text: ="Pay"
                         Visible: =If(ThisItem.Status = 4, true, false)    
                         Width: =62
-                        X: =572
-                        Y: =32
-                        ZIndex: =8
+                        X: =561
+                        Y: =31
+                        ZIndex: =9
+
+                    btn_Create_NewOrderProduct_3 As timer:
+                        BorderThickness: =0
+                        Color: =RGBA(54, 176, 75, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        DisplayMode: |-
+                            =//If(CountRows(col_NewOrder) <= 0 || ForAll(gal_NewOrderProductList.AllItems, If(IsBlank(txt_ValueQuantity_NewOrderProduct)) , DisplayMode.Disabled, DisplayMode.Edit)
+                            If(CountIf(gal_NewOrderProductList.AllItems, IsBlank(txt_ValueQuantity_NewOrderProduct)) > 0 || CountRows(col_NewOrderList) <= 0 || 
+                            CountIf(gal_NewOrderProductList.AllItems, Value(txt_ValueQuantity_NewOrderProduct.Text) <= 0), DisplayMode.Disabled, DisplayMode.Edit)
+                        Duration: =1590
+                        Fill: =RGBA(205, 247, 205, 1)
+                        FontWeight: =FontWeight.Semibold
+                        HoverBorderColor: =RGBA(237, 237, 237, 1)
+                        HoverFill: =RGBA(81, 224, 105, 1)
+                        OnSelect: |+
+                            =ForAll(col_NewOrderList, 
+                                QLK_OrderInformation.Run(
+                                    IDNewOrderProduct,
+                                    col_NewOrderList[@IDProduct_Supplier],
+                                    Value(LookUp(gal_NewOrderProductList.AllItems, IDProduct_Supplier = col_NewOrderList[@IDProduct_Supplier], txt_ValueQuantity_NewOrderProduct.Text)),
+                                    Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_NewOrderList[@IDProduct_Supplier], ID_Unit)),
+                                    Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_NewOrderList[@IDProduct_Supplier], 'Price_Pro-Supplier')),
+                                    Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_NewOrderList[@IDProduct_Supplier], 'Price_Pro-Supplier') * 
+                                        LookUp(gal_NewOrderProductList.AllItems, IDProduct_Supplier = col_NewOrderList[@IDProduct_Supplier], txt_ValueQuantity_NewOrderProduct.Text))
+                                )
+                            );
+                            
+                            Patch(QLK_OrderForm, Defaults(QLK_OrderForm),
+                                {
+                                    IDOrder: IDNewOrderProduct,
+                                    DateCreatedNumber: Value(NumDateNewOrderProduct),
+                                    TotalPrice: Sum(gal_NewOrderProductList.AllItems, lbl_ValueTotalPrice_NewOrderProduct),
+                                    Status: 1
+                                }
+                            );
+                            
+                            If(
+                                ckb_Pending_Order.Value = true,
+                                ClearCollect(col_PendingOrder, Filter(QLK_OrderForm, Status = 1))
+                            );
+                            
+                            If(
+                                ckb_Approved_Order.Value = true,
+                                ClearCollect(col_ApprovedOrder, Filter(QLK_OrderForm, Status = 2))
+                            );
+                            
+                            If(
+                                ckb_Refused_Order.Value = true,
+                                ClearCollect(col_RefusedOrder, Filter(QLK_OrderForm, Status = 3))
+                            );
+                            //Sort( IceCream, Quantity, SortOrder.Descending )
+                            ClearCollect(col_OrderedList, col_PendingOrder, col_ApprovedOrder, col_RefusedOrder);
+                            
+                            Clear(col_NewOrderList);
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                        OnTimerEnd: |-
+                            =Set(showSuccess, false) && Set(showbgr_Black_SuccessOrder, false);
+                            Set(showNewOrderProductForm, false);
+                        OnTimerStart: =Set(showSuccess, true) && Set(showbgr_Black_SuccessOrder, true);
+                        RadiusBottomLeft: =20
+                        RadiusBottomRight: =20
+                        RadiusTopLeft: =20
+                        RadiusTopRight: =20
+                        Start: =
+                        Text: ="+  Create"
+                        Width: =182
+                        X: =40
+                        Y: =40
+                        ZIndex: =10
 
                 grp_DetailsOrdered_cOHA1 As group:
                     Height: =5
@@ -1988,4 +2071,43 @@ TrangChu_KeToan As screen:
                     X: =348
                     Y: =67
                     ZIndex: =9
+
+    Button4 As button:
+        OnSelect: =Set(showSuccess_HomeAccountant, false);
+        Text: ="Button"
+        X: =40
+        Y: =40
+        ZIndex: =4
+
+    grp_ShowSuccess_HomeAccountant As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =4
+
+        bgr_Black_Success_1 As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(128, 128, 128, 0.42)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =768
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =showSuccess_HomeAccountant
+            Width: =1366
+            ZIndex: =2
+
+        img_Success_1 As image:
+            Image: =green_success
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showSuccess_HomeAccountant
+            X: =633
+            Y: =334
+            ZIndex: =3
 

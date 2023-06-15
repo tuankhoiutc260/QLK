@@ -52,6 +52,7 @@ App As appinfo:
         // Home Accountant
         Set(visible_cont_Ordered_HomeAccountant, true);
         Set(visible_cont_Import_HomeAccountant, false);
+        Set(showSuccess_HomeAccountant, false);
         
         //Tạo lịch
         If(IsBlank(_userDomain),         
