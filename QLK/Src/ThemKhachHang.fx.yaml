@@ -246,7 +246,7 @@ ThemKhachHang As screen:
         ZIndex: =20
 
     Label4_12 As label:
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Size: =20
         Text: |-
@@ -257,7 +257,7 @@ ThemKhachHang As screen:
         ZIndex: =21
 
     Label4_13 As label:
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Size: =20
         Text: |-
@@ -268,7 +268,7 @@ ThemKhachHang As screen:
         ZIndex: =22
 
     Label4_14 As label:
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Size: =20
         Text: |-
@@ -298,7 +298,7 @@ ThemKhachHang As screen:
         Align: =Align.Center
         BorderThickness: =1
         Default: =""
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         HintText: ="Phone Number"
         RadiusBottomLeft: =20
         RadiusBottomRight: =20
@@ -314,7 +314,7 @@ ThemKhachHang As screen:
         Align: =Align.Center
         BorderThickness: =1
         Default: =""
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         HintText: ="Gmail"
         RadiusBottomLeft: =20
         RadiusBottomRight: =20
@@ -330,7 +330,7 @@ ThemKhachHang As screen:
         Align: =Align.Center
         BorderThickness: =1
         Default: =""
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         HintText: ="Address"
         RadiusBottomLeft: =20
         RadiusBottomRight: =20
@@ -345,7 +345,7 @@ ThemKhachHang As screen:
     drop_CusArea As dropdown:
         BorderThickness: =1
         Default: =
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         Items: =QLK_Area
         Size: =20
         Width: =452
@@ -377,7 +377,7 @@ ThemKhachHang As screen:
 
     drop_CusSex As dropdown:
         BorderThickness: =1
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         Items: =Choices(QLK_Customer.Sex)
         Size: =20
         Width: =202
@@ -386,7 +386,7 @@ ThemKhachHang As screen:
         ZIndex: =30
 
     Label4_15 As label:
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Size: =20
         Text: |-
@@ -397,12 +397,12 @@ ThemKhachHang As screen:
         ZIndex: =31
 
     Label4_16 As label:
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Size: =20
         Text: |-
             ="Photo:"
-        Width: =71
+        Width: =91
         X: =931
         Y: =334
         ZIndex: =32
@@ -596,7 +596,7 @@ ThemKhachHang As screen:
             ZIndex: =45
 
         AddMediaButton1 As addMedia:
-            Font: =Font.'Patrick Hand'
+            Font: =Font.'Segoe UI'
             Height: =172
             Size: =20
             Width: =186

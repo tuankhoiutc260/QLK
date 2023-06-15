@@ -1,0 +1,1498 @@
+TrangchuGD_4 As screen:
+    Fill: =RGBA(237, 237, 237, 0.9)
+
+    Container8_5 As groupContainer.manualLayoutContainer:
+        Height: =768
+        Width: =1366
+        ZIndex: =1
+
+        shadow_ImportGoods_IMPI_22 As htmlViewer:
+            Height: =768
+            HtmlText: |-
+                ="<div style='margin:0px;width:" & shadow_ImportGoods_IMPI_22.Width & "px;height:" & shadow_ImportGoods_IMPI_22.Height - 11 & "px;
+                background: rgb(255,255,255);
+                background: radial-gradient(circle, rgba(255,255,255,1) 31%, rgba(238,238,238,1) 100%);
+                '></div>" 
+            Width: =1366
+            ZIndex: =1
+
+        "'cont_FunctionButton_HomeAdmin(FB_HA)_2' As groupContainer.manualLayoutContainer":
+            Height: =768
+            Width: =204
+            ZIndex: =2
+
+            Image4_31 As image:
+                Height: =62
+                Image: =Logo
+                Width: =204
+                Y: =15
+                ZIndex: =3
+
+            Image18_4 As image:
+                Height: =55
+                RadiusBottomLeft: =45
+                RadiusBottomRight: =45
+                RadiusTopLeft: =45
+                RadiusTopRight: =45
+                Width: =55
+                X: =82
+                Y: =100
+                ZIndex: =4
+
+            Label28_8 As label:
+                Align: =Align.Center
+                AutoHeight: =true
+                Color: =RGBA(149, 149, 149, 1)
+                Size: =11
+                Text: ="Welcome back"
+                Width: =132
+                X: =43
+                Y: =155
+                ZIndex: =5
+
+            Label28_9 As label:
+                Align: =Align.Center
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =32
+                Text: ="Name"
+                Width: =204
+                Y: =183
+                ZIndex: =6
+
+            Button4_24 As button:
+                BorderColor: =RGBA(127, 235, 117, 1)
+                Fill: =RGBA(127, 235, 117, 1)
+                HoverBorderColor: =RGBA(127, 235, 117, 1)
+                HoverColor: =RGBA(21, 161, 60, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(127, 235, 117, 1)
+                Size: =12
+                Text: ="Home"
+                Width: =175
+                X: =22
+                Y: =264
+                ZIndex: =7
+
+            Button4_25 As button:
+                Color: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                HoverBorderColor: =RGBA(127, 235, 117, 1)
+                HoverColor: =RGBA(21, 161, 60, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(127, 235, 117, 1)
+                Size: =12
+                Text: ="Import"
+                Width: =175
+                X: =22
+                Y: =319
+                ZIndex: =8
+
+            Button4_26 As button:
+                Color: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                HoverBorderColor: =RGBA(127, 235, 117, 1)
+                HoverColor: =RGBA(21, 161, 60, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(127, 235, 117, 1)
+                Size: =12
+                Text: ="Export"
+                Width: =175
+                X: =22
+                Y: =374
+                ZIndex: =9
+
+            Button4_27 As button:
+                BorderColor: =RGBA(127, 235, 117, 1)
+                BorderThickness: =1
+                Color: =RGBA(38, 240, 95, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Bold
+                HoverBorderColor: =RGBA(127, 235, 117, 1)
+                HoverFill: =RGBA(127, 235, 117, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(127, 235, 117, 1)
+                Size: =12
+                Text: ="Log Out"
+                Width: =175
+                X: =21
+                Y: =691
+                ZIndex: =10
+
+        Separator1_47 As rectangle:
+            BorderColor: =RGBA(237, 237, 237, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            Height: =1
+            OnSelect: =
+            Width: =198
+            X: =33
+            Y: =242
+            ZIndex: =4
+
+        bgr_Black_NewOrderProduct_4 As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(128, 128, 128, 0.42)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =768
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =back_Black_HomeAdmin
+            Width: =1366
+            ZIndex: =5
+
+        Container2_4 As groupContainer.manualLayoutContainer:
+            Height: =768
+            Width: =width_contRight
+            X: =pos_contRight
+            ZIndex: =6
+
+            shadow_ImportGoods_IMPI_29 As htmlViewer:
+                Height: =768
+                HtmlText: |-
+                    ="<div style='
+                    margin: 10px;
+                    width:" & shadow_ImportGoods_IMPI_29.Width -32&"px;
+                    height:" & shadow_ImportGoods_IMPI_29.Height - 32 & "px;
+                    background-color:RGBA(255, 255, 255, 1);
+                    box-shadow:0 5px 10px 0.000005px  #fff; 
+                    border-radius:15px
+                    '></div>" 
+                Width: =300
+                ZIndex: =1
+
+            Image15_3 As image:
+                Height: =740
+                Image: ='8840489'
+                ImagePosition: =ImagePosition.Fill
+                RadiusBottomLeft: =20
+                RadiusBottomRight: =20
+                RadiusTopLeft: =20
+                RadiusTopRight: =20
+                Transparency: =0.7
+                Width: =300
+                Y: =15
+                ZIndex: =2
+
+            Container6_4 As groupContainer.manualLayoutContainer:
+                Height: =768
+                Width: =300
+                ZIndex: =3
+
+                Group2_4 As group:
+                    Height: =5
+                    Width: =5
+                    X: =40
+                    Y: =60
+                    ZIndex: =18
+
+                    Label29_4 As label:
+                        Align: =Align.Center
+                        FontWeight: =FontWeight.Bold
+                        Height: =65
+                        Size: =15
+                        Text: ="Statistics Of Entry Form"
+                        Width: =273
+                        X: =20
+                        Y: =30
+                        ZIndex: =2
+
+                    shadow_ProductSelected_ciFP_37 As htmlViewer:
+                        Height: =122
+                        HtmlText: |+
+                            ="<div style='margin:10px;
+                            background: rgb(214,244,211);
+                            background: linear-gradient(0deg, rgba(214,244,211,1) 26%, rgba(255,255,255,1) 100%);
+                            width:" &shadow_ProductSelected_ciFP_37.Width - 31 &"px;
+                            height:"& shadow_ProductSelected_ciFP_37.Height - 31& "px;
+                            box-shadow:0 3px 6px 4px  #ccc; 
+                            border-radius:10px'>
+                            </div>" 
+                            
+                            
+                            
+                        Width: =258
+                        X: =27
+                        Y: =213
+                        ZIndex: =3
+
+                    Image19_11 As image:
+                        Height: =112
+                        Image: =img_Home2_Admin
+                        ImagePosition: =ImagePosition.Fill
+                        RadiusBottomLeft: =20
+                        RadiusBottomRight: =20
+                        RadiusTopLeft: =20
+                        RadiusTopRight: =20
+                        Width: =117
+                        X: =149
+                        Y: =223
+                        ZIndex: =4
+
+                    Label32_11 As label:
+                        FontWeight: =FontWeight.Lighter
+                        Height: =36
+                        Size: =8
+                        Text: ="   Invoices Created In Month"
+                        Width: =95
+                        X: =54
+                        Y: =256
+                        ZIndex: =5
+
+                    shadow_ProductSelected_ciFP_36 As htmlViewer:
+                        Height: =122
+                        HtmlText: |+
+                            ="<div style='margin:10px;
+                            background: rgb(210,232,231);
+                            background: linear-gradient(190deg, rgba(210,232,231,1) 26%, rgba(255,255,255,1) 100%);
+                            width:" &shadow_ProductSelected_ciFP_36.Width - 31 &"px;
+                            height:"& shadow_ProductSelected_ciFP_36.Height - 31& "px;
+                            box-shadow:0 3px 6px 4px  #ccc; 
+                            border-radius:10px'>
+                            </div>" 
+                            
+                            
+                            
+                        Width: =258
+                        X: =27
+                        Y: =84
+                        ZIndex: =6
+
+                    Image19_10 As image:
+                        Height: =97
+                        Image: =img_Import
+                        ImagePosition: =ImagePosition.Fill
+                        RadiusBottomLeft: =20
+                        RadiusBottomRight: =20
+                        RadiusTopLeft: =20
+                        RadiusTopRight: =20
+                        Width: =135
+                        X: =131
+                        Y: =100
+                        ZIndex: =7
+
+                    Label31_13 As label:
+                        Align: =Align.Center
+                        AutoHeight: =true
+                        FontWeight: =FontWeight.Bold
+                        Height: =76
+                        Size: =8
+                        Text: =CountRows(Filter(QLK_OrderFormInformation, true)) 
+                        Width: =31
+                        X: =46
+                        Y: =125
+                        ZIndex: =8
+
+                    Label32_10 As label:
+                        FontWeight: =FontWeight.Lighter
+                        Height: =36
+                        Size: =8
+                        Text: ="   Products Imported In Month"
+                        Width: =95
+                        X: =54
+                        Y: =131
+                        ZIndex: =9
+
+                    Label31_14 As label:
+                        Align: =Align.Center
+                        AutoHeight: =true
+                        FontWeight: =FontWeight.Bold
+                        Height: =76
+                        Size: =8
+                        Text: =CountRows(Filter(QLK_OrderForm, true)) 
+                        Width: =31
+                        X: =46
+                        Y: =256
+                        ZIndex: =10
+
+                    LblMonthSelected1_6 As label:
+                        Align: =Align.Center
+                        Height: =42
+                        Size: =12
+                        Text: =Text(_firstDayOfMonth, "mmmm yyyy")
+                        Width: =252
+                        Wrap: =false
+                        X: =33
+                        Y: =467
+                        ZIndex: =11
+
+                    iconPrevMonth1_6 As icon.ChevronLeft:
+                        Height: =25
+                        Icon: =Icon.ChevronLeft
+                        OnSelect: |-
+                            =/*changes month view to previous month*/
+                            Set(_firstDayOfMonth, DateAdd(_firstDayOfMonth, -1, TimeUnit.Months));
+                            Set(_firstDayInView, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days));
+                            Set(_lastDayOfMonth, DateAdd(DateAdd(_firstDayOfMonth, 1, TimeUnit.Months), -1, TimeUnit.Days));
+                            /*collects calendar events for all days in current month view. Updates _minDate to prevent duplicate data collection if user returns to this month view*/
+                            //If(_minDate > _firstDayOfMonth, Set(_minDate, _firstDayOfMonth); Collect(MyCalendarEvents, Office365Outlook.GetEventsCalendarViewV2(_myCalendar.Name, Text(_minDate, DateTimeFormat.UTC), Text(_lastDayOfMonth, DateTimeFormat.UTC)).value))
+                        PaddingBottom: =7
+                        PaddingLeft: =7
+                        PaddingRight: =7
+                        PaddingTop: =7
+                        TabIndex: =0
+                        Tooltip: ="View previous month"
+                        Width: =25
+                        X: =79
+                        Y: =475
+                        ZIndex: =12
+
+                    iconNextMonth1_6 As icon.ChevronRight:
+                        Height: =25
+                        Icon: =Icon.ChevronRight
+                        OnSelect: |
+                            =/*changes month view to next month*/
+                            Set(_firstDayOfMonth, DateAdd(_firstDayOfMonth, 1, TimeUnit.Months));
+                            Set(_firstDayInView, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days));
+                            /*collects calendar events for all days in current month view. Updates _maxDate to prevent duplicate data collection if user returns to this month view*/
+                            Set(_lastDayOfMonth, DateAdd(DateAdd(_firstDayOfMonth, 1, TimeUnit.Months), -1, TimeUnit.Days));
+                        PaddingBottom: =7
+                        PaddingLeft: =7
+                        PaddingRight: =7
+                        PaddingTop: =7
+                        TabIndex: =0
+                        Tooltip: ="View next month"
+                        Width: =25
+                        X: =215
+                        Y: =475
+                        ZIndex: =13
+
+                    WeekdayGallery1_6 As gallery.WeekdayGallery:
+                        AccessibleLabel: ="Days of the week"
+                        Height: =36
+                        Items: =Calendar.WeekdaysShort()
+                        ShowScrollbar: =false
+                        TemplatePadding: =0
+                        TemplateSize: =36
+                        Width: =260
+                        X: =33
+                        Y: =493
+                        ZIndex: =14
+
+                        Title10_6 As label:
+                            Align: =Align.Center
+                            Height: =36
+                            OnSelect: =Select(Parent)
+                            Size: |
+                                =6
+                            Text: =ThisItem.Value
+                            Width: =36
+                            Wrap: =false
+                            ZIndex: =1
+
+                    MonthDayGallery1_6 As gallery.MonthDayGallery:
+                        AccessibleLabel: ="Days of selected month"
+                        Height: =209
+                        Items: =[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19, 20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41]
+                        Layout: =Layout.Vertical
+                        ShowScrollbar: =false
+                        TemplatePadding: =0
+                        TemplateSize: =36
+                        Width: =252
+                        WrapCount: =7
+                        X: =33
+                        Y: =529
+                        ZIndex: =15
+
+                        Subcircle1_6 As circle:
+                            Fill: =RGBA(127, 235, 117, 1)
+                            Height: |
+                                =25
+                            OnSelect: =Select(Parent)
+                            Visible: =And(DateAdd(_firstDayInView, ThisItem.Value) = _dateSelected, Title11_6.Visible)
+                            Width: |
+                                =25
+                            X: =5
+                            Y: =5
+                            ZIndex: =2
+
+                        Title11_6 As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            Color: =If(DateAdd(_firstDayInView, ThisItem.Value) = _dateSelected, RGBA(255, 255, 255, 1), DateAdd(_firstDayInView, ThisItem.Value) = Today(), RGBA(47, 41, 43, 1), LblMonthSelected1_6.Color)
+                            Fill: |-
+                                =/*Fill value changes if the gallery item day = today, or if it lies outside of the current month*/             
+                                If(
+                                    /*Date selected is today*/
+                                    DateAdd(_firstDayInView, ThisItem.Value) = Today() && DateAdd(_firstDayInView, ThisItem.Value) = _dateSelected, RGBA(0,0,0,0),
+                                    /*Today when it is not selected*/
+                                    DateAdd(_firstDayInView, ThisItem.Value) = Today(), ColorFade(Subcircle1_6.Fill, 0.67), 
+                                    /*The day is outside the range of the currently selected month*/
+                                    Abs(Self.Text - ThisItem.Value) > 10,RGBA(200, 200, 200, 0.3), RGBA(0, 0, 0, 0))
+                            FocusedBorderColor: =Self.Color
+                            FocusedBorderThickness: =2
+                            Height: =35
+                            OnSelect: =Set(_dateSelected, DateAdd(_firstDayInView, ThisItem.Value, TimeUnit.Days))
+                            Size: =17 * MonthDayGallery1_6.TemplateWidth / 91
+                            TabIndex: =0
+                            Text: =Day(DateAdd(_firstDayInView,ThisItem.Value, TimeUnit.Days))
+                            Visible: |-
+                                =/*This item is in a row containing no days of the visible month. It is in the row after the row where the last day of the month occurs*/ 
+                                 !(DateAdd(_firstDayInView,ThisItem.Value, TimeUnit.Days) - Weekday(DateAdd(_firstDayInView,ThisItem.Value, TimeUnit.Days)) + 1 > _lastDayOfMonth)
+                            Width: =35
+                            Wrap: =false
+                            ZIndex: =3
+
+                    LblResetToday1_5 As label:
+                        Align: =Align.Center
+                        AutoHeight: =true
+                        Color: =
+                        FontWeight: =FontWeight.Bold
+                        Height: =31
+                        PaddingTop: =12
+                        Size: =5
+                        Text: =DateDiff(Date(Year(Today()), Month(Today()), 1), Today(), TimeUnit.Days) + 1
+                        Width: =25
+                        X: =243
+                        Y: =475
+                        ZIndex: =16
+
+                    iconCalendar1_7 As icon.CalendarBlank:
+                        Height: =20
+                        Icon: =Icon.CalendarBlank
+                        OnSelect: |-
+                            =/*resets calendar view and date selection to today*/
+                            Set(_dateSelected, Today());
+                            Set(_firstDayOfMonth, DateAdd(Today(), 1 - Day(Today()), TimeUnit.Days));
+                            Set(_firstDayInView, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days));
+                            Set(_lastDayOfMonth, DateAdd(DateAdd(_firstDayOfMonth, 1, TimeUnit.Months), -1, TimeUnit.Days))
+                        TabIndex: =0
+                        Tooltip: ="Reset selected date to today"
+                        Width: =20
+                        X: =246
+                        Y: =478
+                        ZIndex: =17
+
+            Container7_4 As groupContainer.manualLayoutContainer:
+                Height: =768
+                Width: =width_contRight_Right
+                X: =300
+                ZIndex: =4
+
+                Label30_5 As label:
+                    Align: =Align.Center
+                    Text: =gal_DetailOrderNotPending_3.Selected.IDOrder
+                    Width: =248
+                    X: =67
+                    Y: =88
+                    ZIndex: =1
+
+                Gallery1_5 As gallery.galleryVertical:
+                    DelayItemLoading: =true
+                    Height: =407
+                    Items: =Filter(QLK_OrderFormInformation, IDOrderForm = gal_DetailOrderNotPending_3.Selected.IDOrder)
+                    Layout: =Layout.Vertical
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplateSize: =104
+                    Width: =400
+                    Y: =206
+                    ZIndex: =1
+
+                    Image12_5 As image:
+                        Height: =80
+                        Image: =LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct_Supplier, 'Image_Pro-Supplier')
+                        ImagePosition: =ImagePosition.Fill
+                        RadiusBottomLeft: =20
+                        RadiusBottomRight: =20
+                        RadiusTopLeft: =20
+                        RadiusTopRight: =20
+                        Width: =80
+                        Y: =10
+                        ZIndex: =1
+
+                    Label31_15 As label:
+                        AutoHeight: =true
+                        Height: =42
+                        OnSelect: =Select(Parent)
+                        Text: =LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct_Supplier, 'Name_Pro-Supplier')
+                        Width: =283
+                        X: =80
+                        Y: =29
+                        ZIndex: =2
+
+                Button10_3 As button:
+                    Text: ="Button"
+                    Width: =382
+                    Y: =619
+                    ZIndex: =2
+
+            Icon3_6 As icon.BackArrow:
+                Color: =RGBA(202, 202, 202, 1)
+                Height: =40
+                Icon: =Icon.CancelBadge
+                OnSelect: |-
+                    =Set(width_contRight, 300);
+                    Set(width_contRight_Right, 0);
+                    Set(pos_contRight, 1066);
+                    Set(back_Black_HomeAdmin, false);
+                Rotation: =180
+                Width: =40
+                X: =260
+                Y: =25
+                ZIndex: =5
+
+        Container4_4 As groupContainer.manualLayoutContainer:
+            Height: =768
+            Width: =1158
+            X: =204
+            ZIndex: =18
+
+            shadow_ImportGoods_IMPI_30 As htmlViewer:
+                Height: =768
+                HtmlText: |-
+                    ="<div style='
+                    margin: 10px;
+                    width:" & shadow_ImportGoods_IMPI_30.Width - 32 & "px;
+                    height:" & shadow_ImportGoods_IMPI_30.Height - 32 & "px;
+                    background-color:RGBA(255, 255, 255, 0.7);
+                    box-shadow:0 5px 10px 0px  #ccc; 
+                    border-radius:15px
+                    '></div>" 
+                Width: =1120
+                ZIndex: =1
+
+            "gal_DetailOrderNotPending_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                DelayItemLoading: =true
+                Height: =328
+                Items: |
+                    =col_DatasourceOrder_HomeAdmin
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                ShowScrollbar: =false
+                TemplatePadding: =0
+                TemplateSize: =74
+                Transition: =Transition.Pop
+                Visible: =visibleDetailOrderNotPending_HomeAdmin
+                Width: =476
+                X: =330
+                Y: =411
+                ZIndex: =2
+
+                shadow_ImportGoods_IMPI_31 As htmlViewer:
+                    Height: =74
+                    HtmlText: |-
+                        ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_31.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_31.Height - 32 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 5px 10px 0px  #ccc; border-radius:15px'></div>" 
+                    Visible: =If(ThisItem.IsSelected, true, false)
+                    Width: =476
+                    ZIndex: =1
+
+                img_Product_cIP_IP2_7 As image:
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Height: =50
+                    Image: =Logo
+                    RadiusBottomLeft: =15
+                    RadiusBottomRight: =15
+                    RadiusTopLeft: =15
+                    RadiusTopRight: =15
+                    Width: =50
+                    X: =25
+                    Y: =17
+                    ZIndex: =2
+
+                Label25_6 As label:
+                    Align: =Align.Center
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Semibold
+                    OnSelect: =Select(Parent)
+                    Size: =11
+                    Text: =ThisItem.ID
+                    Width: =160
+                    X: =75
+                    Y: =21
+                    ZIndex: =3
+
+                Label26_6 As label:
+                    Align: =Align.Center
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Lighter
+                    Height: =38
+                    OnSelect: =Select(Parent)
+                    Size: =8
+                    Text: =ThisItem.Created
+                    Width: =160
+                    X: =75
+                    Y: =36
+                    ZIndex: =4
+
+                Label27_13 As label:
+                    Align: =Align.Center
+                    OnSelect: =Select(Parent)
+                    Size: =11
+                    Text: |-
+                        =Text(ThisItem.TotalPrice, "#,###" & " VND")
+                    Width: =122
+                    X: =334
+                    Y: =22
+                    ZIndex: =5
+
+                Label27_12 As label:
+                    Align: =Align.Center
+                    OnSelect: =Select(Parent)
+                    Size: =11
+                    Text: |-
+                        =If(
+                            numDatasource = 1,
+                            CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = ThisItem.ID)) & " Products",
+                            If(
+                                numDatasource = 2, 
+                                CountRows(Filter(QLK_ImportFormInformation, IDImport = ThisItem.ID)) & " Products",
+                                If(
+                                    numDatasource = 3,
+                                    CountRows(Filter(QLK_ExportFormInformation, IDExportForm = ThisItem.ID)) & " Products"
+                                )
+                            )
+                        )
+                    Width: =99
+                    X: =235
+                    Y: =22
+                    ZIndex: =6
+
+                Button9_7 As button:
+                    BorderStyle: =BorderStyle.None
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =50
+                    HoverFill: =
+                    OnSelect: |-
+                        =Set(width_contRight, 700);
+                        Set(width_contRight_Right, 400);
+                        Set(pos_contRight, 666);
+                        Set(back_Black_HomeAdmin, true);
+                    RadiusBottomLeft: =15
+                    RadiusBottomRight: =15
+                    RadiusTopLeft: =15
+                    RadiusTopRight: =15
+                    Text: =""
+                    Width: =138
+                    X: =25
+                    Y: =17
+                    ZIndex: =7
+
+            shadow_ProductSelected_ciFP_38 As htmlViewer:
+                Height: =308
+                HtmlText: |+
+                    ="<div style='margin:10px;
+                    background: rgb(210,232,231);
+                    background: linear-gradient(190deg, rgba(210,232,231,1) 26%, rgba(255,255,255,1) 100%);
+                    width:" &shadow_ProductSelected_ciFP_38.Width - 31 &"px;
+                    height:"& shadow_ProductSelected_ciFP_38.Height - 31& "px;
+                    box-shadow:0 3px 6px 4px  #ccc; 
+                    border-radius:10px'>
+                    </div>" 
+                    
+                    
+                    
+                Width: =603
+                X: =19
+                Y: =25
+                ZIndex: =3
+
+            Image19_12 As image:
+                Height: =367
+                Image: =img_Import
+                ImagePosition: =ImagePosition.Fill
+                RadiusBottomLeft: =20
+                RadiusBottomRight: =20
+                RadiusTopLeft: =20
+                RadiusTopRight: =20
+                Width: =382
+                X: =217
+                Y: =45
+                ZIndex: =4
+
+            Label31_16 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                Size: =8
+                Text: =CountRows(Filter(QLK_OrderFormInformation, true)) 
+                Width: =91
+                X: =456
+                Y: =70
+                ZIndex: =5
+
+            Label32_12 As label:
+                FontWeight: =FontWeight.Lighter
+                Height: =77
+                Size: =8
+                Text: ="   Products Imported In Month"
+                Width: =280
+                X: =420
+                Y: =132
+                ZIndex: =6
+
+            Button1_3 As button:
+                OnSelect: |-
+                    =Refresh(QLK_OrderForm);
+                    Set(width_contRight, 0);
+                    Set(width_contRight_Right, 0);
+                    Set(pos_contRight, 0);
+                    Set(back_Black_HomeAdmin, false);
+                Text: ="Button"
+                X: =33
+                Y: =346
+                ZIndex: =7
+
+            "gal_DetailOrderNotPending_4 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                DelayItemLoading: =true
+                Height: =328
+                Items: |
+                    =col_DatasourceOrder_HomeAdmin
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                ShowScrollbar: =false
+                TemplatePadding: =0
+                TemplateSize: =93
+                Transition: =Transition.Pop
+                Visible: =visibleDetailOrderPending_HomeAdmin
+                Width: =655
+                X: =38
+                Y: =416
+                ZIndex: =8
+
+                shadow_ImportGoods_IMPI_32 As htmlViewer:
+                    Height: =93
+                    HtmlText: |-
+                        ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_32.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_32.Height - 32 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 5px 10px 0px  #ccc; border-radius:15px'></div>" 
+                    Visible: =If(ThisItem.IsSelected, true, false)
+                    Width: =655
+                    ZIndex: =1
+
+                img_Product_cIP_IP2_8 As image:
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Height: =52
+                    Image: =Logo
+                    RadiusBottomLeft: =15
+                    RadiusBottomRight: =15
+                    RadiusTopLeft: =15
+                    RadiusTopRight: =15
+                    Width: =52
+                    X: =23
+                    Y: =20
+                    ZIndex: =2
+
+                Label25_7 As label:
+                    Align: =Align.Center
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Semibold
+                    Height: =33
+                    OnSelect: =Select(Parent)
+                    Text: =ThisItem.ID
+                    Width: =211
+                    X: =75
+                    Y: =21
+                    ZIndex: =3
+
+                Label26_7 As label:
+                    Align: =Align.Center
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Lighter
+                    Height: =28
+                    OnSelect: =Select(Parent)
+                    Size: =10
+                    Text: =ThisItem.Created
+                    Width: =211
+                    X: =75
+                    Y: =45
+                    ZIndex: =4
+
+                Label27_15 As label:
+                    Align: =Align.Center
+                    OnSelect: =Select(Parent)
+                    Size: =11
+                    Text: |-
+                        =Text(ThisItem.TotalPrice, "#,###" & " VND")
+                    Width: =130
+                    X: =416
+                    Y: =26
+                    ZIndex: =5
+
+                Label27_14 As label:
+                    Align: =Align.Center
+                    OnSelect: =Select(Parent)
+                    Size: =11
+                    Text: |-
+                        =/*If(
+                            numDatasource = 1,
+                            CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = ThisItem.ID)) & " Products",
+                            If(
+                                numDatasource = 2, 
+                                CountRows(Filter(QLK_ImportFormInformation, IDImport = ThisItem.ID)) & " Products",
+                                If(
+                                    numDatasource = 3,
+                                    CountRows(Filter(QLK_ExportFormInformation, IDExportForm = ThisItem.ID)) & " Products"
+                                )
+                            )
+                        )*/
+                        "1 products"
+                    Width: =130
+                    X: =286
+                    Y: =26
+                    ZIndex: =6
+
+                Button9_8 As button:
+                    BorderStyle: =BorderStyle.None
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =60
+                    HoverFill: =
+                    OnSelect: |-
+                        =Set(width_contRight, 700);
+                        Set(width_contRight_Right, 400);
+                        Set(pos_contRight, 666);
+                        Set(back_Black_HomeAdmin, true);
+                    RadiusBottomLeft: =15
+                    RadiusBottomRight: =15
+                    RadiusTopLeft: =15
+                    RadiusTopRight: =15
+                    Text: =""
+                    Width: =624
+                    X: =14
+                    Y: =15
+                    ZIndex: =7
+
+                Icon5_2 As icon.CheckBadge:
+                    Color: =RGBA(63, 235, 40, 1)
+                    Height: =30
+                    Icon: =Icon.CheckBadge
+                    OnSelect: |-
+                        =Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = ThisItem.ID), {Status: 2});
+                        Refresh(QLK_OrderForm);
+                        Set(datasourceOrder, Filter(QLK_OrderForm, Status = 1));
+                        
+                        // Get IDProduct_Supplier, Quantity in OrderFormInformation
+                        ClearCollect(col_ProductOrder_Approved, ShowColumns(Filter(QLK_OrderFormInformation, IDOrderForm = ThisItem.ID), "IDProduct_Supplier", "Quantity"));
+                        
+                        // Get IDProduct in col_ProductOrder_Approved
+                        ClearCollect(col_IDProductOrder_Approved, ShowColumns(col_ProductOrder_Approved, "IDProduct_Supplier"));
+                        
+                        // Get information of Product with IDProduct in col_IDProductOrder_Approved
+                        /*
+                        ClearCollect(
+                            col_InformationOfProduct, 
+                            
+                                Filter(QLK_Product_Supplier, IDProduct_Supplier in col_IDProductOrder_Approved.IDProduct_Supplier))*/
+                                
+                        
+                        ClearCollect(
+                            col_InformationOfProductOrdered, 
+                            AddColumns(
+                                ShowColumns(
+                                    Filter(QLK_Product_Supplier, IDProduct_Supplier in col_IDProductOrder_Approved.IDProduct_Supplier),
+                                    "IDProduct_Supplier", 
+                                    "Name_Supplier", 
+                                    "Price_Supplier", 
+                                    "Barcode_Supplier", 
+                                    "Image_Pro_x002d_Supplier", 
+                                    "ID_Supplier", 
+                                    "Describe_Pro_x002d_Supplier", 
+                                    "ID_Unit"
+                                ), "Quantity", 0
+                            )
+                        );
+                        
+                        ForAll(
+                            col_ProductOrder_Approved, 
+                            Patch(
+                                col_InformationOfProductOrdered, 
+                                LookUp(
+                                    col_InformationOfProductOrdered, 
+                                    IDProduct_Supplier = col_ProductOrder_Approved[@IDProduct_Supplier]), 
+                                    {Quantity: col_ProductOrder_Approved[@Quantity]}
+                                
+                            )
+                        );
+                        
+                        ForAll(col_InformationOfProductOrdered As T,
+                            Patch(QLK_Product,
+                                {
+                                    IDProduct: T.IDProduct_Supplier,
+                                    Name: T.Name_Supplier,
+                                    Quantity: T.Quantity,
+                                    MinimumQuantity: If(LookUp(col_InformationOfProductOrdered, T.ID_Unit = 3, T.ID_Unit), 10, 20),
+                                    Unit: Value(T.ID_Unit),
+                                    InputPrice: T.Price_Supplier,
+                                    OutputPrice: T.Price_Supplier + T.Price_Supplier * 0.1,
+                                    Image: T.Image_Pro_x002d_Supplier,
+                                    BarCode: T.Barcode_Supplier,
+                                    IDSupplier: Value(T.ID_Supplier),
+                                    Description: T.Describe_Pro_x002d_Supplier
+                                }
+                            )
+                        );
+                        
+                        
+                        /*
+                        ForAll(
+                            col_ProductOrder_Approved,
+                            UpdateIf(col_InformationOfProductOrdered, IDProduct_Supplier=IDProduct_Supplier,
+                                {Quantity: 3}
+                            )
+                        );
+                        */
+                        Refresh(QLK_OrderForm);
+                        //ClearCollect(temp23, col_InformationOfProductOrdered);
+                        
+                        /*
+                        ClearCollect(colProductSupplier, ShowColumns(Filter(QLK_Product_Supplier, true), "IDProduct_Supplier"));
+                        ClearCollect(
+                            col_InformationOfProduct, 
+                            Filter(QLK_Product_Supplier, IDProduct_Supplier in colProductSupplier.IDProduct_Supplier)
+                        )*/
+                        
+                        //Patch(QLK_Product, true)
+                    Width: =30
+                    X: =553
+                    Y: =31
+                    ZIndex: =8
+
+                Icon9_2 As icon.CancelBadge:
+                    Color: =RGBA(255, 0, 0, 1)
+                    Height: =30
+                    Icon: =Icon.CancelBadge
+                    OnSelect: |-
+                        =Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = ThisItem.ID), {Status: 3});
+                        Refresh(QLK_OrderForm);
+                        Set(datasourceOrder, Filter(QLK_OrderForm, Status = 1))
+                    Width: =30
+                    X: =591
+                    Y: =31
+                    ZIndex: =9
+
+            Group2_5 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =19
+
+                TextInput5_2 As text:
+                    Default: =""
+                    DisabledBorderColor: =RGBA(237, 237, 237, 1)
+                    DisabledFill: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(255, 255, 255, 0.5)
+                    Height: =328
+                    RadiusBottomLeft: =15
+                    RadiusBottomRight: =15
+                    RadiusTopLeft: =15
+                    RadiusTopRight: =15
+                    Width: =297
+                    X: =33
+                    Y: =412
+                    ZIndex: =9
+
+                Separator1_41 As rectangle:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(237, 237, 237, 0.5)
+                    Height: =1
+                    OnSelect: =
+                    Width: =250
+                    X: =56
+                    Y: =495
+                    ZIndex: =10
+
+                Separator1_42 As rectangle:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(237, 237, 237, 0.5)
+                    Height: =1
+                    OnSelect: =
+                    Width: =250
+                    X: =56
+                    Y: =535
+                    ZIndex: =11
+
+                Separator1_43 As rectangle:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(237, 237, 237, 0.5)
+                    Height: =1
+                    OnSelect: =
+                    Width: =250
+                    X: =56
+                    Y: =575
+                    ZIndex: =12
+
+                Separator1_44 As rectangle:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(237, 237, 237, 0.5)
+                    Height: =1
+                    OnSelect: =
+                    Width: =250
+                    X: =56
+                    Y: =615
+                    ZIndex: =13
+
+                Separator1_45 As rectangle:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(237, 237, 237, 0.5)
+                    Height: =1
+                    OnSelect: =
+                    Width: =250
+                    X: =56
+                    Y: =655
+                    ZIndex: =14
+
+                Separator1_46 As rectangle:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(237, 237, 237, 0.5)
+                    Height: =1
+                    OnSelect: =
+                    Width: =250
+                    X: =56
+                    Y: =695
+                    ZIndex: =15
+
+                Label22_3 As label:
+                    Align: =Align.Center
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Bold
+                    Height: =161
+                    Size: =17
+                    Text: =textChart_HomeAdmin
+                    Width: =297
+                    X: =32
+                    Y: =429
+                    ZIndex: =16
+
+                Gallery4_3 As gallery.galleryHorizontal:
+                    DelayItemLoading: =true
+                    Height: =300
+                    Items: =col_TopProduct_HomeAdmin
+                    LoadingSpinner: =LoadingSpinner.Data
+                    ShowScrollbar: =false
+                    TemplateSize: =45
+                    Transition: =Transition.Pop
+                    Width: =289
+                    X: =54
+                    Y: =440
+                    ZIndex: =17
+
+                    Button1_7 As button:
+                        BorderStyle: =BorderStyle.None
+                        Fill: =RGBA(127, 235, 117, 0.7)
+                        Height: =200 * ThisItem.TotalQuantity / maxQuantity
+                        HoverFill: =RGBA(127, 235, 117, 1)
+                        PressedFill: =RGBA(118, 214, 109, 1)
+                        Text: =""
+                        Width: =44
+                        Y: |
+                            =200 - Self.Height + 50
+                        ZIndex: =1
+
+                    Label24_17 As label:
+                        Align: =Align.Center
+                        Size: =10
+                        Text: =ThisItem.TotalQuantity
+                        Width: =44
+                        Y: =250
+                        ZIndex: =2
+
+            Group2_2 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =36
+
+                Button4_31 As button:
+                    BorderColor: =RGBA(127, 235, 117, 1)
+                    BorderStyle: =BorderStyle.None
+                    Color: =RGBA(0, 0, 0, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =37
+                    HoverBorderColor: =RGBA(127, 235, 117, 1)
+                    HoverColor: =RGBA(21, 161, 60, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnSelect: |-
+                        =Set(fontSizeApprove_HomeAdmin, 12);
+                        Set(fontSizeImport_HomeAdmin, 12);
+                        Set(fontSizeOrder_HomeAdmin, 12);
+                        Set(fontSizeExport_HomeAdmin, 15);
+                        Set(visLineApprove_HomeAdmin, false);
+                        Set(visLineImport_HomeAdmin, false);
+                        Set(visLineOrder_HomeAdmin, false);
+                        Set(visLineExport_HomeAdmin, true);
+                        Set(textChart_HomeAdmin, "Top Products Exported");
+                        
+                        // Nho Set trong App
+                        Set(visibleDetailOrderNotPending_HomeAdmin, true);
+                        Set(visibleDetailOrderPending_HomeAdmin, false);
+                        
+                        
+                        //Set(datasourceTopProduct_HomeAdmin, col_TopProductExported);
+                        
+                        ClearCollect(
+                            col_DatasourceOrder_HomeAdmin, 
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(QLK_ExportForm, Status = 4), 
+                                    "IDExport", "Created", "TotalPrice", "Status"
+                                    ),
+                                "IDExport", "ID")
+                        );
+                        
+                        Set(numDatasource, 3);
+                        
+                        
+                        ClearCollect(
+                            col_Product, 
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(
+                                        QLK_ExportFormInformation, 
+                                        IDExportForm in ShowColumns(
+                                            Filter(
+                                                QLK_ExportForm, Status = 4
+                                            ), "IDExport"
+                                        )
+                                    ),
+                                    "IDProduct", "Quantity"
+                                ), 
+                                "IDProduct", "ID_Product"
+                            )
+                        ); 
+                        ClearCollect(col_SumQuantityProduct, GroupBy(col_Product, "ID_Product","GroupedItems"));
+                        
+                        ClearCollect(
+                            col_Temp, 
+                            ShowColumns(
+                                Filter(
+                                    QLK_Product, 
+                                    IDProduct in 
+                                    ShowColumns(col_SumQuantityProduct, "ID_Product")
+                                ), 
+                                "IDProduct", "Image"
+                            )
+                        );
+                        
+                        ClearCollect(
+                            col_TopProduct_HomeAdmin,      
+                                SortByColumns(
+                                    AddColumns(
+                                        col_SumQuantityProduct, 
+                                        "TotalQuantity", 
+                                        Sum(GroupedItems, Quantity), 
+                                    "Image",
+                                    LookUp(col_Temp, IDProduct = col_SumQuantityProduct[@ID_Product], Image)  
+                                    ), 
+                                "TotalQuantity",
+                                SortOrder.Descending
+                            )    
+                        );
+                        
+                        Set(maxQuantity, Max(col_TopProduct_HomeAdmin, TotalQuantity));
+                        
+                        Refresh(QLK_ExportForm);
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(127, 235, 117, 1)
+                    Size: =fontSizeExport_HomeAdmin
+                    Text: ="Export"
+                    Width: =127
+                    X: =686
+                    Y: =365
+                    ZIndex: =18
+
+                Button4_30 As button:
+                    BorderColor: =RGBA(127, 235, 117, 1)
+                    BorderStyle: =BorderStyle.None
+                    Color: =RGBA(0, 0, 0, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =37
+                    HoverBorderColor: =RGBA(127, 235, 117, 1)
+                    HoverColor: =RGBA(21, 161, 60, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnSelect: |-
+                        =Set(fontSizeApprove_HomeAdmin, 12);
+                        Set(fontSizeImport_HomeAdmin, 12);
+                        Set(fontSizeOrder_HomeAdmin, 15);
+                        Set(fontSizeExport_HomeAdmin, 12);
+                        Set(visLineImport_HomeAdmin, false);
+                        Set(visLineOrder_HomeAdmin, true);
+                        Set(visLineExport_HomeAdmin, false);
+                        Set(textChart_HomeAdmin, "Top Products Ordered");
+                        
+                        // Nho Set trong App
+                        Set(visibleDetailOrderNotPending_HomeAdmin, true);
+                        Set(visibleDetailOrderPending_HomeAdmin, false);
+                        
+                        //Set(datasourceTopProduct_HomeAdmin, col_TopProduct);
+                        ClearCollect(
+                            col_DatasourceOrder_HomeAdmin, 
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(QLK_OrderForm, Status = 4), 
+                                    "IDOrder", "Created", "TotalPrice", "Status"
+                                    ),
+                                "IDOrder", "ID")
+                        );
+                        
+                        //Set(datasourceOrder, Filter(QLK_OrderForm, Status = 4));
+                        Set(numDatasource, 1); // 1: Order, 2: Import, 3: Export, 4: Pending
+                        
+                        ClearCollect(
+                            col_Product, 
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(
+                                        QLK_OrderFormInformation, 
+                                        IDOrderForm in ShowColumns(
+                                            Filter(
+                                                QLK_OrderForm, Status = 4
+                                            ), "IDOrder"
+                                        )
+                                    ),
+                                    "IDProduct_Supplier", "Quantity"
+                                ), 
+                                "IDProduct_Supplier", "ID_Product"
+                            )
+                        );
+                        
+                        ClearCollect(col_SumQuantityProduct, GroupBy(col_Product, "ID_Product","GroupedItems"));
+                        
+                        ClearCollect(
+                            col_Temp, 
+                            ShowColumns(
+                                Filter(
+                                    QLK_Product_Supplier, 
+                                    IDProduct_Supplier in 
+                                    ShowColumns(col_SumQuantityProduct, "ID_Product")
+                                ), 
+                                "IDProduct_Supplier", "Image_Pro_x002d_Supplier"
+                            )
+                        );
+                        
+                        ClearCollect(
+                            col_TopProduct_HomeAdmin,      
+                                SortByColumns(
+                                    AddColumns(
+                                        col_SumQuantityProduct, 
+                                        "TotalQuantity", 
+                                        Sum(GroupedItems, Quantity), 
+                                        "Image",
+                                        LookUp(col_Temp, IDProduct_Supplier = col_SumQuantityProduct[@ID_Product], Image_Pro_x002d_Supplier)  
+                                    ),
+                                    "TotalQuantity",
+                                    SortOrder.Descending
+                                )    
+                        );
+                        
+                        Set(maxQuantity, Max(col_TopProduct_HomeAdmin, TotalQuantity));
+                        
+                        Refresh(QLK_OrderForm);
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(127, 235, 117, 1)
+                    Size: =fontSizeOrder_HomeAdmin
+                    Text: ="Order"
+                    Width: =127
+                    X: =559
+                    Y: =365
+                    ZIndex: =19
+
+                Button4_29 As button:
+                    BorderColor: =RGBA(127, 235, 117, 1)
+                    BorderStyle: =BorderStyle.None
+                    Color: =RGBA(0, 0, 0, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =37
+                    HoverBorderColor: =RGBA(127, 235, 117, 1)
+                    HoverColor: =RGBA(21, 161, 60, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnSelect: |-
+                        =Set(fontSizeApprove_HomeAdmin, 12);
+                        Set(fontSizeImport_HomeAdmin, 15);
+                        Set(fontSizeOrder_HomeAdmin, 12);
+                        Set(fontSizeExport_HomeAdmin, 12);
+                        Set(visLineApprove_HomeAdmin, false);
+                        Set(visLineImport_HomeAdmin, true);
+                        Set(visLineOrder_HomeAdmin, false);
+                        Set(visLineExport_HomeAdmin, false);
+                        Set(textChart_HomeAdmin, "Top Products Imported");
+                        
+                        // Nho Set trong App
+                        Set(visibleDetailOrderNotPending_HomeAdmin, true);
+                        Set(visibleDetailOrderPending_HomeAdmin, false);
+                        
+                        //Set(datasourceTopProduct_HomeAdmin, col_TopProductImported);
+                        //Set(datasourceOrder, Filter(QLK_InportForm, Status = 4))
+                        ClearCollect(
+                            col_DatasourceOrder_HomeAdmin, 
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(QLK_ImportForm, Status = 4), 
+                                    "IDImport", "Created", "TotalPrice", "Status"
+                                    ),
+                                "IDImport", "ID")
+                        );
+                        
+                        Set(numDatasource, 2); // 1: Order, 2: Import, 3: Export, 4: Pending
+                        
+                        ClearCollect(
+                            col_Product, 
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(
+                                        QLK_ImportFormInformation, 
+                                        IDImport in ShowColumns(
+                                            Filter(
+                                                QLK_ImportForm, Status = 4
+                                            ), "IDImport"
+                                        )
+                                    ),
+                                    "IDProduct", "Quantity"
+                                ), "IDProduct", "ID_Product"
+                            )
+                        ); 
+                        
+                        ClearCollect(col_SumQuantityProduct, GroupBy(col_Product, "ID_Product","GroupedItems"));
+                        ClearCollect(
+                            col_Temp, 
+                            ShowColumns(
+                                Filter(
+                                    QLK_Product, 
+                                    IDProduct in 
+                                    ShowColumns(col_SumQuantityProduct, "ID_Product")
+                                ), 
+                                "IDProduct", "Image"
+                            )
+                        );
+                        
+                        ClearCollect(
+                            col_TopProduct_HomeAdmin,      
+                            SortByColumns(
+                                AddColumns(
+                                    col_SumQuantityProduct, 
+                                    "TotalQuantity", 
+                                    Sum(GroupedItems, Quantity), 
+                                    "Image",
+                                    LookUp(col_Temp, IDProduct = col_SumQuantityProduct[@ID_Product], Image)  
+                                ), 
+                                "TotalQuantity",
+                            SortOrder.Descending
+                            )    
+                        );
+                        
+                        Set(maxQuantity, Max(col_TopProduct_HomeAdmin, TotalQuantity));
+                        
+                        Refresh(QLK_ImportForm);
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(127, 235, 117, 1)
+                    Size: =fontSizeImport_HomeAdmin
+                    Text: ="Import"
+                    Width: =127
+                    X: =433
+                    Y: =365
+                    ZIndex: =20
+
+                TextInput6_9 As text:
+                    BorderStyle: =BorderStyle.None
+                    Default: =""
+                    DisabledFill: =RGBA(127, 235, 117, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Height: =4
+                    Visible: =visLineImport_HomeAdmin
+                    Width: =46
+                    X: =465
+                    Y: =399
+                    ZIndex: =21
+
+                TextInput6_10 As text:
+                    BorderStyle: =BorderStyle.None
+                    Default: =""
+                    DisabledFill: =RGBA(127, 235, 117, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Height: =4
+                    Visible: =visLineOrder_HomeAdmin
+                    Width: =46
+                    X: =595
+                    Y: =399
+                    ZIndex: =22
+
+                TextInput6_11 As text:
+                    BorderStyle: =BorderStyle.None
+                    Default: =""
+                    DisabledFill: =RGBA(127, 235, 117, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Height: =4
+                    Visible: =visLineExport_HomeAdmin
+                    Width: =46
+                    X: =721
+                    Y: =399
+                    ZIndex: =23
+
+                Button4_28 As button:
+                    BorderColor: =RGBA(127, 235, 117, 1)
+                    BorderStyle: =BorderStyle.None
+                    Color: =RGBA(0, 0, 0, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =37
+                    HoverBorderColor: =RGBA(127, 235, 117, 1)
+                    HoverColor: =RGBA(21, 161, 60, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    OnSelect: |+
+                        =Set(fontSizeApprove_HomeAdmin, 15);
+                        Set(fontSizeImport_HomeAdmin, 12);
+                        Set(fontSizeOrder_HomeAdmin, 12);
+                        Set(fontSizeExport_HomeAdmin, 12);
+                        Set(visLineApprove_HomeAdmin, true);
+                        Set(visLineImport_HomeAdmin, false);
+                        Set(visLineOrder_HomeAdmin, false);
+                        Set(visLineExport_HomeAdmin, false);
+                        Set(textChart_HomeAdmin, "Approve");
+                        
+                        // Nho Set trong App
+                        Set(visibleDetailOrderNotPending_HomeAdmin, false);
+                        Set(visibleDetailOrderPending_HomeAdmin, true);
+                        
+                        //Set(datasourceTopProduct_HomeAdmin, col_TopProductOrdered);
+                        ClearCollect(
+                            col_DatasourceOrder_HomeAdmin, 
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(QLK_OrderForm, Status = 1), 
+                                    "IDOrder", "Created", "TotalPrice", "Status"
+                                    ),
+                                "IDOrder", "ID")
+                        );
+                        
+                        
+                        //ClearCollect(col_PendingOrder, Filter(QLK_OrderForm, Status = 1));
+                        //Set(datasourceOrder, col_PendingOrder)
+                        Set(numDatasource, 4); //4: pending
+                        //Set(datasourceOrder, Filter(QLK_OrderForm, Status = 1))
+                        
+                        
+                        //ClearCollect(col_PendingImport, Filter(QLK_ImportForm, Status = 1));
+                        //ClearCollect(col_PendingExport, Filter(QLK_ExportForm, Status = 1));
+                        
+                        //ClearCollect(col_AllPending, col_PendingOrder, col_PendingImport, col_PendingExport);
+                        
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(127, 235, 117, 1)
+                    Size: =fontSizeApprove_HomeAdmin
+                    Text: ="Approve"
+                    Width: =127
+                    X: =306
+                    Y: =365
+                    ZIndex: =24
+
+                TextInput6_8 As text:
+                    BorderStyle: =BorderStyle.None
+                    Default: =""
+                    DisabledFill: =RGBA(127, 235, 117, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Height: =4
+                    Visible: =visLineApprove_HomeAdmin
+                    Width: =46
+                    X: =343
+                    Y: =399
+                    ZIndex: =25
+

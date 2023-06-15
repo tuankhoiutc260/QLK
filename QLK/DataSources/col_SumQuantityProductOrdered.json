@@ -3,7 +3,7 @@
     "IsComponentScoped": false,
     "IsSampleData": false,
     "IsWritable": true,
-    "Name": "col_SumQuantityProductImport",
+    "Name": "col_SumQuantityProductOrdered",
     "Type": "CollectionDataSourceInfo"
   }
 ]

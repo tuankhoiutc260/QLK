@@ -3,7 +3,7 @@
     "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
     "CdpRevision": {
       "BaseUrl": "/",
-      "LastChangedTimeString": "2023-05-31T22:00:55.5250000Z",
+      "LastChangedTimeString": "2023-06-13T16:06:17.0520000Z",
       "RevisionNumber": 1
     },
     "ConnectedDataSourceInfoNameMapping": {
@@ -27,24 +27,24 @@
       "Author#Claims": "Created By Claims",
       "ComplianceAssetId": "Compliance Asset Id",
       "Created": "Created",
-      "DateCreateNumber": "DateCreateNumber",
       "Editor": "Modified By",
       "Editor#Claims": "Modified By Claims",
       "ID": "ID",
-      "IDInputForm": "IDInputForm",
-      "ImportDate": "ImportDate",
-      "Importer": "Importer",
+      "IDExportForm": "IDExportForm",
+      "IDProduct": "IDProduct",
       "Modified": "Modified",
       "OData__ColorTag": "Color Tag",
-      "Status": "Status",
+      "Price": "Price",
+      "Quantity": "Quantity",
       "Title": "Title",
-      "TotalPrice": "TotalPrice"
+      "TotalPrice": "TotalPrice",
+      "Unit": "Unit"
     },
     "DatasetName": "https://bhktechcorp.sharepoint.com/sites/Khoi",
     "EncodeDataset": true,
     "IsSampleData": false,
     "IsWritable": true,
-    "Name": "QLK_InputForm",
+    "Name": "QLK_ExportFormInformation",
     "Type": "ConnectedDataSourceInfo"
   }
 ]

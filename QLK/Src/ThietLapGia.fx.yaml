@@ -238,48 +238,20 @@ ThietLapGia As screen:
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
-        TemplateSize: =52
-        Width: =1071
-        X: =228
+        TemplateSize: =69
+        Width: =1072
+        X: =227
         Y: =235
         ZIndex: =70
 
-        lbl_NameProduct_1 As label:
-            Align: =Align.Center
-            Height: =46
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.Name
-            Width: =457
-            Y: =5
-            ZIndex: =5
-
-        lbl_InputPrice_1 As label:
-            Align: =Align.Center
-            Height: =41
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.InputPrice & " Vnđ"
-            Width: =111
-            X: =577
-            Y: =7
-            ZIndex: =7
-
-        lbl_OutputPrice_1 As label:
-            Align: =Align.Center
-            Height: =41
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.OutputPrice & " Vnđ"
-            Width: =111
-            X: =753
-            Y: =10
-            ZIndex: =8
-
         Button6_1 As button:
+            AutoDisableOnSelect: =false
             BorderColor: =RGBA(202, 202, 202, 1)
             BorderThickness: =1
             Color: =RGBA(202, 202, 202, 1)
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =51
-            HoverFill: =RGBA(187, 221, 140, 0.4)
+            Height: =69
+            HoverFill: =RGBA(0, 0, 0, 0)
             OnSelect: |-
                 =Select(Parent);
                 Set(IDProduct_GalProduct, ThisItem.IDProduct);
@@ -293,7 +265,60 @@ ThietLapGia As screen:
             RadiusTopRight: =0
             Text: =""
             Width: =1071
-            ZIndex: =11
+            ZIndex: =1
+
+        lbl_NameProduct_1 As label:
+            Align: =Align.Center
+            Height: =46
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Name
+            Width: =457
+            Y: =13
+            ZIndex: =2
+
+        lbl_InputPrice_1 As label:
+            Align: =Align.Center
+            Height: =41
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.InputPrice & " Vnđ"
+            Width: =111
+            X: =538
+            Y: =15
+            ZIndex: =3
+
+        lbl_OutputPrice_1 As label:
+            Align: =Align.Center
+            Height: =41
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.OutputPrice & " Vnđ"
+            Width: =111
+            X: =716
+            Y: =15
+            ZIndex: =4
+
+        btn_ApprovedList_DuyetDatHang_2 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(54, 176, 75, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(81, 224, 105, 1)
+            OnSelect: |-
+                =Select(Parent);
+                Set(IDProduct_GalThietLapGia, ThisItem.IDProduct);
+                Set(showSetPrice, true)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="Set Price"
+            Width: =156
+            X: =880
+            Y: =14
+            ZIndex: =5
 
     Button7_5 As button:
         BorderColor: =RGBA(151, 0, 0, 1)
@@ -341,7 +366,7 @@ ThietLapGia As screen:
         OnSelect: =
         Text: ="Input Price"
         Width: =136
-        X: =793
+        X: =749
         Y: =184
         ZIndex: =74
 
@@ -352,7 +377,275 @@ ThietLapGia As screen:
         OnSelect: =
         Text: ="Output Price"
         Width: =136
-        X: =966
+        X: =926
         Y: =184
         ZIndex: =76
+
+    lbl_OrderedID_DuyetDatHang_4 As label:
+        Align: =Align.Center
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =52
+        OnSelect: =
+        Size: =20
+        Text: ="PRODUCT PRICE SETTING"
+        Width: =354
+        X: =245
+        Y: =122
+        ZIndex: =77
+
+    Button2_110 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(DanhSachOrder)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Order list"
+        Width: =164
+        Y: =440
+        ZIndex: =78
+
+    Icon3 As icon.ShoppingCart:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.ShoppingCart
+        Width: =50
+        X: =57
+        Y: =453
+        ZIndex: =79
+
+    Group14 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =96
+
+        Rectangle13 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.43)
+            Height: =767
+            Visible: =showSetPrice
+            Width: =1366
+            ZIndex: =80
+
+        TextInput1_19 As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =267
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showSetPrice
+            Width: =790
+            X: =351
+            Y: =256
+            ZIndex: =81
+
+        drop_SelNamePrice As dropdown:
+            Font: =Font.'Segoe UI'
+            Items: =QLK_SetPrice
+            Size: =20
+            Visible: =showSetPrice
+            Width: =184
+            X: =377
+            Y: =406
+            ZIndex: =82
+
+        Button9 As button:
+            BorderThickness: =0
+            Fill: |-
+                =If(ColorOperator = "Cong",RGBA(56,96,178,100),
+                    If(ColorOperator = "Tru", RGBA(237, 237, 237, 1))
+                )
+            OnSelect: =Set(ColorOperator, "Cong")
+            Size: =30
+            Text: ="+"
+            Visible: =showSetPrice
+            Width: =39
+            X: =686
+            Y: =404
+            ZIndex: =83
+
+        Button9_4 As button:
+            BorderThickness: =0
+            Fill: |-
+                =If(ColorOperator = "Tru",RGBA(56,96,178,100),
+                    If(ColorOperator = "Cong", RGBA(237, 237, 237, 1))
+                )
+            OnSelect: =Set( ColorOperator, "Tru")
+            Size: =30
+            Text: ="-"
+            Visible: =showSetPrice
+            Width: =39
+            X: =735
+            Y: =404
+            ZIndex: =84
+
+        txt_price As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            Size: =20
+            Text: |-
+                =If(drop_SelNamePrice.SelectedText.Value = "Input Price", gal_ThietLapGia.Selected.InputPrice, 
+                    If(drop_SelNamePrice.SelectedText.Value = "Output Price",gal_ThietLapGia.Selected.OutputPrice)
+                )
+            Visible: =showSetPrice
+            Width: =103
+            X: =575
+            Y: =406
+            ZIndex: =85
+
+        txt_Percent As text:
+            Default: ="10"
+            Font: =Font.'Segoe UI'
+            Size: =20
+            Visible: =showSetPrice
+            Width: =81
+            X: =785
+            Y: =404
+            ZIndex: =86
+
+        Label28 As label:
+            Size: =30
+            Text: ="="
+            Visible: =showSetPrice
+            Width: =35
+            X: =907
+            Y: =404
+            ZIndex: =87
+
+        txt_LastPrice As label:
+            Align: =Align.Right
+            Font: =Font.'Segoe UI'
+            OnSelect: =
+            Size: =20
+            Text: |-
+                =If(ColorOperator = "Cong", Value(txt_price.Text) + Value(txt_price.Text)*(Value(txt_Percent.Text)/100),
+                    If(ColorOperator = "Tru", Value(txt_price.Text) - (txt_price.Text)*10/100)
+                )
+            Visible: =showSetPrice
+            Width: =120
+            X: =942
+            Y: =404
+            ZIndex: =88
+
+        Label30_2 As label:
+            Font: =Font.'Segoe UI'
+            Size: =20
+            Text: ="%"
+            Visible: =showSetPrice
+            Width: =26
+            X: =873
+            Y: =403
+            ZIndex: =89
+
+        Label30_3 As label:
+            Font: =Font.'Segoe UI'
+            OnSelect: =
+            Size: =20
+            Text: ="Vnđ"
+            Visible: =showSetPrice
+            Width: =79
+            X: =1062
+            Y: =402
+            ZIndex: =90
+
+        btn_RefusedList_DuyetDatHang_8 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(54, 176, 75, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(54, 176, 75, 1)
+            OnSelect: |-
+                =Patch(QLK_Product, LookUp(QLK_Product, IDProduct = IDProduct_GalThietLapGia),
+                    {   
+                        OutputPrice: Value(txt_LastPrice.Text)
+                    }
+                );
+                Set(showSetPrice,false)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="Apply"
+            Visible: =showSetPrice
+            Width: =150
+            X: =585
+            Y: =470
+            ZIndex: =91
+
+        btn_RefusedList_DuyetDatHang_9 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: =Set(showSetPrice,false)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="Close"
+            Visible: =showSetPrice
+            Width: =150
+            X: =755
+            Y: =470
+            ZIndex: =92
+
+        Label31 As label:
+            Align: =Align.Center
+            Color: =RGBA(184, 0, 0, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =20
+            Text: ="SET PRODUCT PRICE"
+            Visible: =showSetPrice
+            Width: =345
+            X: =573
+            Y: =268
+            ZIndex: =93
+
+        Label32 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =20
+            Text: |-
+                ="Product:"
+            Visible: =showSetPrice
+            Width: =130
+            X: =378
+            Y: =324
+            ZIndex: =94
+
+        Label32_1 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            Height: =79
+            Overflow: =Overflow.Scroll
+            Size: =20
+            Text: =gal_ThietLapGia.Selected.Name
+            Visible: =showSetPrice
+            Width: =606
+            X: =508
+            Y: =316
+            ZIndex: =95
 

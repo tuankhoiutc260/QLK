@@ -33,6 +33,22 @@ App As appinfo:
         Set(showYeuCauDatHang, false); 
         Set(visible_RightHomeAdmin, true);
         
+        // Home Admin
+        Set(fontSizeApprove_HomeAdmin, 15);
+        Set(fontSizeImport_HomeAdmin, 12);
+        Set(fontSizeOrder_HomeAdmin, 12);
+        Set(fontSizeExport_HomeAdmin, 12);
+        Set(visLineApprove_HomeAdmin, true);
+        Set(visLineImport_HomeAdmin, false);
+        Set(visLineOrder_HomeAdmin, false);
+        Set(visLineExport_HomeAdmin, false);
+        Set(textChart_HomeAdmin, "Top Products Imported");
+        Set(datasourceImported_HomeAdmin, col_TopProductOrdered);
+        Set(visibleDetailOrderNotPending, true);
+        Set(visibleDetailOrderNotPending_HomeAdmin, true);
+        Set(visibleDetailOrderPending_HomeAdmin, false);
+        Set(vis_Approve_HomeAdmin, false);
+        
         //Tạo lịch
         If(IsBlank(_userDomain),         
         	//UpdateContext({_showLoading: true});         
@@ -41,7 +57,13 @@ App As appinfo:
         	Set(_firstDayOfMonth, DateAdd(Today(), 1 - Day(Today()), TimeUnit.Days));         
         	Set(_firstDayInView, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days));         
         	Set(_lastDayOfMonth, DateAdd(DateAdd(_firstDayOfMonth, 1, TimeUnit.Months), -1, TimeUnit.Days))         
-        );     
+        ); 
+        
+        Set(showProductNoLocation, false);
+        Set(showSetLocation,false);
+        Set(showXacNhanLocation, false);
+        Set(showRemoveLocation, false);
+        Set(showSetPrice,false)  
     StartScreen: =
 
     Host As hostControl.DefaultHostControlVariant:

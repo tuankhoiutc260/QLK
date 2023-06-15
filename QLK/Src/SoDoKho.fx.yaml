@@ -25,11 +25,23 @@ SoDoKho As screen:
         Y: =172
         ZIndex: =2
 
+    Button8 As button:
+        Font: =Font.'Segoe UI'
+        Height: =50
+        OnSelect: |-
+            =Set(showProductNoLocation,true);
+            Refresh(QLK_Location);
+            Refresh(QLK_Product)
+        Text: ="Import Area"
+        X: =326
+        Y: =155
+        ZIndex: =3
+
     Rectangle1_20 As rectangle:
         Fill: =RGBA(76, 133, 45, 0.77)
         Height: =768
         Width: =164
-        ZIndex: =3
+        ZIndex: =4
 
     Button2_8 As button:
         BorderStyle: =BorderStyle.Dotted
@@ -38,7 +50,10 @@ SoDoKho As screen:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
-        OnSelect: =Navigate(TrangchuGD)
+        OnSelect: |-
+            =Navigate(SoDoKho);
+            Refresh(QLK_Location);
+            Refresh(QLK_Product)
         RadiusBottomLeft: =
         RadiusBottomRight: =
         RadiusTopLeft: =
@@ -48,7 +63,7 @@ SoDoKho As screen:
             
             Warehouse"
         Width: =164
-        ZIndex: =4
+        ZIndex: =5
 
     Icon4_19 As icon.Home:
         Color: =RGBA(255, 255, 255, 1)
@@ -57,7 +72,7 @@ SoDoKho As screen:
         Width: =50
         X: =57
         Y: =15
-        ZIndex: =5
+        ZIndex: =6
 
     Button2_12 As button:
         BorderThickness: =0
@@ -78,7 +93,7 @@ SoDoKho As screen:
             Product"
         Width: =164
         Y: =110
-        ZIndex: =6
+        ZIndex: =7
 
     Button2_88 As button:
         BorderThickness: =0
@@ -97,7 +112,7 @@ SoDoKho As screen:
             Inventory"
         Width: =164
         Y: =220
-        ZIndex: =7
+        ZIndex: =8
 
     Icon8_8 As icon.Shop:
         Color: =RGBA(255, 255, 255, 1)
@@ -106,7 +121,7 @@ SoDoKho As screen:
         Width: =50
         X: =57
         Y: =122
-        ZIndex: =8
+        ZIndex: =9
 
     Icon11_32 As icon.ListWatchlistRemind:
         Color: =RGBA(255, 255, 255, 1)
@@ -115,7 +130,7 @@ SoDoKho As screen:
         Width: =50
         X: =57
         Y: =232
-        ZIndex: =9
+        ZIndex: =10
 
     Button2_89 As button:
         BorderThickness: =0
@@ -135,7 +150,7 @@ SoDoKho As screen:
             Logout"
         Width: =164
         Y: =651
-        ZIndex: =10
+        ZIndex: =11
 
     Icon10_17 As icon.Leave:
         Color: =RGBA(255, 255, 255, 1)
@@ -144,13 +159,13 @@ SoDoKho As screen:
         Width: =50
         X: =57
         Y: =675
-        ZIndex: =11
+        ZIndex: =12
 
     Icon11_26 As icon.VerticalLine:
         Height: =110
         Icon: =Icon.VerticalLine
         X: =132
-        ZIndex: =12
+        ZIndex: =13
 
     Image4_39 As image:
         Height: =56
@@ -162,7 +177,7 @@ SoDoKho As screen:
         Width: =56
         X: =966
         Y: =20
-        ZIndex: =13
+        ZIndex: =14
 
     Label2_38 As label:
         Font: =Font.'Segoe UI'
@@ -172,7 +187,7 @@ SoDoKho As screen:
         Width: =243
         X: =1035
         Y: =15
-        ZIndex: =14
+        ZIndex: =15
 
     Label2_39 As label:
         Color: |-
@@ -191,7 +206,7 @@ SoDoKho As screen:
         Width: =196
         X: =1035
         Y: =45
-        ZIndex: =15
+        ZIndex: =16
 
     Image4_38 As image:
         Height: =74
@@ -199,7 +214,7 @@ SoDoKho As screen:
         Width: =258
         X: =179
         Y: =11
-        ZIndex: =16
+        ZIndex: =17
 
     btn_A1 As button:
         Fill: =RGBA(102, 182, 227, 1)
@@ -212,7 +227,7 @@ SoDoKho As screen:
         Width: =144
         X: =253
         Y: =293
-        ZIndex: =17
+        ZIndex: =18
 
     btn_A2 As button:
         Fill: =RGBA(102, 182, 227, 1)
@@ -225,7 +240,7 @@ SoDoKho As screen:
         Width: =144
         X: =413
         Y: =293
-        ZIndex: =18
+        ZIndex: =19
 
     btn_A3 As button:
         Fill: =RGBA(102, 182, 227, 1)
@@ -238,7 +253,7 @@ SoDoKho As screen:
         Width: =144
         X: =574
         Y: =293
-        ZIndex: =19
+        ZIndex: =20
 
     btn_A4 As button:
         Fill: =RGBA(102, 182, 227, 1)
@@ -251,7 +266,7 @@ SoDoKho As screen:
         Width: =144
         X: =253
         Y: =375
-        ZIndex: =20
+        ZIndex: =21
 
     btn_A5 As button:
         Fill: =RGBA(102, 182, 227, 1)
@@ -264,7 +279,7 @@ SoDoKho As screen:
         Width: =144
         X: =413
         Y: =375
-        ZIndex: =21
+        ZIndex: =22
 
     btn_A6 As button:
         Fill: =RGBA(102, 182, 227, 1)
@@ -277,7 +292,7 @@ SoDoKho As screen:
         Width: =144
         X: =574
         Y: =375
-        ZIndex: =22
+        ZIndex: =23
 
     btn_c4 As button:
         Fill: =RGBA(250, 155, 112, 1)
@@ -291,7 +306,7 @@ SoDoKho As screen:
         Width: =144
         X: =253
         Y: =616
-        ZIndex: =23
+        ZIndex: =24
 
     btn_C5 As button:
         Fill: =RGBA(250, 155, 112, 1)
@@ -305,7 +320,7 @@ SoDoKho As screen:
         Width: =144
         X: =413
         Y: =616
-        ZIndex: =24
+        ZIndex: =25
 
     btn_C6 As button:
         Fill: =RGBA(250, 155, 112, 1)
@@ -319,7 +334,7 @@ SoDoKho As screen:
         Width: =144
         X: =574
         Y: =616
-        ZIndex: =25
+        ZIndex: =26
 
     btn_C1 As button:
         Fill: =RGBA(250, 155, 112, 1)
@@ -333,7 +348,7 @@ SoDoKho As screen:
         Width: =144
         X: =253
         Y: =536
-        ZIndex: =26
+        ZIndex: =27
 
     btn_C2 As button:
         Fill: =RGBA(250, 155, 112, 1)
@@ -347,7 +362,7 @@ SoDoKho As screen:
         Width: =144
         X: =413
         Y: =536
-        ZIndex: =27
+        ZIndex: =28
 
     btn_C3 As button:
         Fill: =RGBA(250, 155, 112, 1)
@@ -361,7 +376,7 @@ SoDoKho As screen:
         Width: =144
         X: =574
         Y: =536
-        ZIndex: =28
+        ZIndex: =29
 
     btn_D6 As button:
         Fill: =RGBA(187, 221, 140, 1)
@@ -375,7 +390,7 @@ SoDoKho As screen:
         Width: =144
         X: =1134
         Y: =616
-        ZIndex: =29
+        ZIndex: =30
 
     btn_D5 As button:
         Fill: =RGBA(187, 221, 140, 1)
@@ -389,7 +404,7 @@ SoDoKho As screen:
         Width: =144
         X: =973
         Y: =616
-        ZIndex: =30
+        ZIndex: =31
 
     btn_D4 As button:
         Fill: =RGBA(187, 221, 140, 1)
@@ -403,7 +418,7 @@ SoDoKho As screen:
         Width: =144
         X: =813
         Y: =616
-        ZIndex: =31
+        ZIndex: =32
 
     btn_D1 As button:
         Fill: =RGBA(187, 221, 140, 1)
@@ -417,7 +432,7 @@ SoDoKho As screen:
         Width: =144
         X: =813
         Y: =536
-        ZIndex: =32
+        ZIndex: =33
 
     btn_D2 As button:
         Fill: =RGBA(187, 221, 140, 1)
@@ -431,7 +446,7 @@ SoDoKho As screen:
         Width: =144
         X: =973
         Y: =536
-        ZIndex: =33
+        ZIndex: =34
 
     btn_D3 As button:
         Fill: =RGBA(187, 221, 140, 1)
@@ -445,7 +460,7 @@ SoDoKho As screen:
         Width: =144
         X: =1134
         Y: =536
-        ZIndex: =34
+        ZIndex: =35
 
     Btn_B4 As button:
         Fill: =RGBA(229, 240, 113, 1)
@@ -459,7 +474,7 @@ SoDoKho As screen:
         Width: =144
         X: =813
         Y: =375
-        ZIndex: =35
+        ZIndex: =36
 
     btn_B1 As button:
         Fill: =RGBA(229, 240, 113, 1)
@@ -473,7 +488,7 @@ SoDoKho As screen:
         Width: =144
         X: =813
         Y: =293
-        ZIndex: =36
+        ZIndex: =37
 
     btn_B2 As button:
         Fill: =RGBA(229, 240, 113, 1)
@@ -487,7 +502,7 @@ SoDoKho As screen:
         Width: =144
         X: =973
         Y: =293
-        ZIndex: =37
+        ZIndex: =38
 
     Btn_B5 As button:
         Fill: =RGBA(229, 240, 113, 1)
@@ -501,7 +516,7 @@ SoDoKho As screen:
         Width: =144
         X: =973
         Y: =375
-        ZIndex: =38
+        ZIndex: =39
 
     btn_B6 As button:
         Fill: =RGBA(229, 240, 113, 1)
@@ -515,7 +530,7 @@ SoDoKho As screen:
         Width: =144
         X: =1134
         Y: =375
-        ZIndex: =39
+        ZIndex: =40
 
     btn_B3 As button:
         Fill: =RGBA(229, 240, 113, 1)
@@ -529,7 +544,7 @@ SoDoKho As screen:
         Width: =144
         X: =1134
         Y: =293
-        ZIndex: =40
+        ZIndex: =41
 
     Label11 As label:
         Align: =Align.Center
@@ -541,7 +556,7 @@ SoDoKho As screen:
         Width: =445
         X: =540
         Y: =127
-        ZIndex: =41
+        ZIndex: =42
 
     Label11_1 As label:
         Align: =Align.Center
@@ -553,7 +568,7 @@ SoDoKho As screen:
         Width: =445
         X: =262
         Y: =242
-        ZIndex: =42
+        ZIndex: =43
 
     Label11_2 As label:
         Align: =Align.Center
@@ -565,7 +580,7 @@ SoDoKho As screen:
         Width: =445
         X: =822
         Y: =242
-        ZIndex: =43
+        ZIndex: =44
 
     Label11_4 As label:
         Align: =Align.Center
@@ -577,7 +592,7 @@ SoDoKho As screen:
         Width: =445
         X: =266
         Y: =686
-        ZIndex: =44
+        ZIndex: =45
 
     Label11_5 As label:
         Align: =Align.Center
@@ -589,7 +604,7 @@ SoDoKho As screen:
         Width: =445
         X: =822
         Y: =686
-        ZIndex: =45
+        ZIndex: =46
 
     Button2_101 As button:
         BorderThickness: =0
@@ -608,7 +623,7 @@ SoDoKho As screen:
             Set price"
         Width: =164
         Y: =332
-        ZIndex: =46
+        ZIndex: =47
 
     Icon2 As icon.Money:
         Color: =RGBA(255, 255, 255, 1)
@@ -617,7 +632,7 @@ SoDoKho As screen:
         Width: =50
         X: =57
         Y: =345
-        ZIndex: =47
+        ZIndex: =48
 
     Rectangle9 As rectangle:
         Fill: =RGBA(202, 202, 202, 1)
@@ -625,7 +640,7 @@ SoDoKho As screen:
         Width: =1083
         X: =220
         Y: =460
-        ZIndex: =48
+        ZIndex: =49
 
     Rectangle9_1 As rectangle:
         Fill: =RGBA(202, 202, 202, 1)
@@ -633,7 +648,7 @@ SoDoKho As screen:
         Width: =51
         X: =739
         Y: =212
-        ZIndex: =49
+        ZIndex: =50
 
     Rectangle9_2 As rectangle:
         Fill: =RGBA(202, 202, 202, 1)
@@ -641,13 +656,6 @@ SoDoKho As screen:
         Width: =1080
         X: =220
         Y: =201
-        ZIndex: =50
-
-    Rectangle11 As rectangle:
-        Height: =53
-        Width: =160
-        X: =326
-        Y: =147
         ZIndex: =51
 
     Rectangle11_1 As rectangle:
@@ -656,17 +664,6 @@ SoDoKho As screen:
         X: =1053
         Y: =149
         ZIndex: =52
-
-    Label15 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
-        Size: =15
-        Text: ="Import area"
-        X: =331
-        Y: =153
-        ZIndex: =53
 
     Label15_1 As label:
         Align: =Align.Center
@@ -677,7 +674,7 @@ SoDoKho As screen:
         Text: ="Export area"
         X: =1058
         Y: =156
-        ZIndex: =54
+        ZIndex: =53
 
     Label15_2 As label:
         Align: =Align.Center
@@ -689,7 +686,7 @@ SoDoKho As screen:
         Width: =101
         X: =714
         Y: =700
-        ZIndex: =55
+        ZIndex: =54
 
     Icon6 As icon.ChevronUp:
         Color: =RGBA(0, 0, 0, 1)
@@ -698,7 +695,7 @@ SoDoKho As screen:
         Width: =25
         X: =752
         Y: =675
-        ZIndex: =56
+        ZIndex: =55
 
     Label15_3 As label:
         Align: =Align.Center
@@ -710,7 +707,7 @@ SoDoKho As screen:
         Width: =101
         X: =434
         Y: =477
-        ZIndex: =57
+        ZIndex: =56
 
     Label15_4 As label:
         Align: =Align.Center
@@ -722,7 +719,7 @@ SoDoKho As screen:
         Width: =101
         X: =994
         Y: =474
-        ZIndex: =58
+        ZIndex: =57
 
     Label15_5 As label:
         Align: =Align.Center
@@ -734,7 +731,7 @@ SoDoKho As screen:
         Width: =40
         X: =745
         Y: =320
-        ZIndex: =59
+        ZIndex: =58
 
     ThongTinHangHoa_SoDo As group:
         Height: =5
@@ -747,8 +744,8 @@ SoDoKho As screen:
             Fill: =RGBA(0, 0, 0, 0.44)
             Height: =768
             Visible: =showThongTinHangHoa_SoDo
-            Width: =1365
-            ZIndex: =60
+            Width: =1366
+            ZIndex: =59
 
         TextInput1_11 As text:
             Default: =
@@ -764,7 +761,7 @@ SoDoKho As screen:
             Width: =428
             X: =549
             Y: =113
-            ZIndex: =61
+            ZIndex: =60
 
         Image9 As image:
             BorderThickness: =2
@@ -778,7 +775,7 @@ SoDoKho As screen:
             Width: =168
             X: =780
             Y: =295
-            ZIndex: =62
+            ZIndex: =61
 
         Label12 As label:
             Align: =Align.Center
@@ -792,7 +789,7 @@ SoDoKho As screen:
             Width: =376
             X: =574
             Y: =115
-            ZIndex: =63
+            ZIndex: =62
 
         Label13 As label:
             Color: =RGBA(0, 13, 75, 1)
@@ -804,9 +801,9 @@ SoDoKho As screen:
             Visible: =showThongTinHangHoa_SoDo
             X: =574
             Y: =212
-            ZIndex: =64
+            ZIndex: =63
 
-        Label13_1 As label:
+        txt_IDProduct_Location As label:
             Align: =Align.Center
             Font: =Font.'Segoe UI'
             Size: =15
@@ -815,7 +812,7 @@ SoDoKho As screen:
             Width: =194
             X: =574
             Y: =252
-            ZIndex: =65
+            ZIndex: =64
 
         Label13_3 As label:
             Color: =RGBA(0, 13, 75, 1)
@@ -825,10 +822,10 @@ SoDoKho As screen:
             Text: |-
                 ="Quantity:"
             Visible: =showThongTinHangHoa_SoDo
-            Width: =95
+            Width: =111
             X: =574
             Y: =292
-            ZIndex: =66
+            ZIndex: =65
 
         Label13_4 As label:
             Align: =Align.Center
@@ -839,7 +836,7 @@ SoDoKho As screen:
             Width: =97
             X: =669
             Y: =292
-            ZIndex: =67
+            ZIndex: =66
 
         Label13_5 As label:
             Color: =RGBA(0, 13, 75, 1)
@@ -852,7 +849,7 @@ SoDoKho As screen:
             Width: =95
             X: =574
             Y: =332
-            ZIndex: =68
+            ZIndex: =67
 
         Label13_6 As label:
             Align: =Align.Center
@@ -863,7 +860,7 @@ SoDoKho As screen:
             Width: =97
             X: =671
             Y: =332
-            ZIndex: =69
+            ZIndex: =68
 
         Label13_7 As label:
             Color: =RGBA(0, 13, 75, 1)
@@ -873,10 +870,10 @@ SoDoKho As screen:
             Text: |-
                 ="Input Price:"
             Visible: =showThongTinHangHoa_SoDo
-            Width: =119
+            Width: =140
             X: =574
             Y: =372
-            ZIndex: =70
+            ZIndex: =69
 
         Label13_8 As label:
             Align: =Align.Center
@@ -887,7 +884,7 @@ SoDoKho As screen:
             Width: =187
             X: =581
             Y: =412
-            ZIndex: =71
+            ZIndex: =70
 
         Label13_9 As label:
             Color: =RGBA(0, 13, 75, 1)
@@ -897,10 +894,10 @@ SoDoKho As screen:
             Text: |-
                 ="Output Price:"
             Visible: =showThongTinHangHoa_SoDo
-            Width: =133
+            Width: =171
             X: =574
             Y: =452
-            ZIndex: =72
+            ZIndex: =71
 
         Label13_10 As label:
             Align: =Align.Center
@@ -911,7 +908,7 @@ SoDoKho As screen:
             Width: =187
             X: =581
             Y: =492
-            ZIndex: =73
+            ZIndex: =72
 
         Label13_11 As label:
             Color: =RGBA(0, 13, 75, 1)
@@ -921,12 +918,12 @@ SoDoKho As screen:
             Text: |-
                 ="Location:"
             Visible: =showThongTinHangHoa_SoDo
-            Width: =97
-            X: =780
+            Width: =109
+            X: =768
             Y: =212
-            ZIndex: =74
+            ZIndex: =73
 
-        Label13_12 As label:
+        txt_IDLocation_Location As label:
             Align: =Align.Center
             Font: =Font.'Segoe UI'
             Size: =15
@@ -935,7 +932,7 @@ SoDoKho As screen:
             Width: =71
             X: =877
             Y: =212
-            ZIndex: =75
+            ZIndex: =74
 
         btn_CloseTTHHSoDo As button:
             AutoDisableOnSelect: =false
@@ -957,7 +954,7 @@ SoDoKho As screen:
             Width: =156
             X: =772
             Y: =549
-            ZIndex: =76
+            ZIndex: =75
 
     ThongBao As group:
         Height: =5
@@ -971,7 +968,7 @@ SoDoKho As screen:
             Height: =768
             Visible: =showThongBaoKhongCoSanPham
             Width: =1366
-            ZIndex: =77
+            ZIndex: =76
 
         TextInput1_12 As text:
             Default: =
@@ -987,7 +984,7 @@ SoDoKho As screen:
             Width: =402
             X: =561
             Y: =282
-            ZIndex: =78
+            ZIndex: =77
 
         Label14 As label:
             Align: =Align.Center
@@ -999,7 +996,7 @@ SoDoKho As screen:
             Width: =293
             X: =616
             Y: =331
-            ZIndex: =79
+            ZIndex: =78
 
         btn_PendingList_DuyetDatHang_6 As button:
             AutoDisableOnSelect: =false
@@ -1021,5 +1018,626 @@ SoDoKho As screen:
             Width: =156
             X: =685
             Y: =404
+            ZIndex: =79
+
+    Group9 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =90
+
+        Rectangle14 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.43)
+            Height: =768
+            Visible: =showProductNoLocation
+            Width: =1366
             ZIndex: =80
+
+        TextInput1_13 As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =590
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showProductNoLocation
+            Width: =520
+            X: =430
+            Y: =92
+            ZIndex: =81
+
+        lbl_OrderedID_DuyetDatHang_5 As label:
+            Align: =Align.Center
+            Color: =RGBA(184, 0, 0, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =52
+            OnSelect: =
+            Size: =15
+            Text: ="THE PRODUCT HAS NOT LOCATION"
+            Visible: =showProductNoLocation
+            Width: =364
+            X: =500
+            Y: =98
+            ZIndex: =82
+
+        "gal_ProductNoLocation As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            BorderColor: =RGBA(202, 202, 202, 1)
+            BorderThickness: =1
+            DelayItemLoading: =true
+            Height: =417
+            Items: =Filter(QLK_Product, Location = Blank())
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =92
+            Visible: =showProductNoLocation
+            Width: =478
+            X: =450
+            Y: =199
+            ZIndex: =83
+
+            lbl_NameProduct_2 As label:
+                Align: =Align.Center
+                Height: =71
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.Name
+                Width: =285
+                X: =14
+                Y: =10
+                ZIndex: =5
+
+            lbl_Quantity_1 As label:
+                Align: =Align.Center
+                Height: =71
+                OnSelect: =Select(Parent)
+                Text: =LookUp(QLK_Unit, ID = ThisItem.Unit, UnitName)
+                Width: =113
+                X: =326
+                Y: =10
+                ZIndex: =6
+
+            lbl_Location_1 As label:
+                Align: =Align.Center
+                Height: =71
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.Location
+                Width: =101
+                X: =790
+                Y: =10
+                ZIndex: =9
+
+            Button6_2 As button:
+                BorderColor: =RGBA(202, 202, 202, 1)
+                BorderThickness: =1
+                Color: =RGBA(202, 202, 202, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =92
+                HoverFill: =RGBA(187, 221, 140, 0.4)
+                OnSelect: |-
+                    =Select(Parent);
+                    Set(showProductNoLocation,false);
+                    Set(showSetLocation, true);
+                    Set(IdUnit_GalProductLocation, ThisItem.Unit);
+                    Set(IDProduct_GalProductLocation, ThisItem.IDProduct)
+                PressedFill: =
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Text: =""
+                Width: =478
+                ZIndex: =11
+
+        Button7_6 As button:
+            BorderColor: =RGBA(151, 0, 0, 1)
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =
+            Height: =44
+            HoverBorderColor: =
+            HoverColor: =
+            HoverFill: =
+            PaddingBottom: =50
+            PressedFill: =
+            RadiusBottomLeft: |
+                =0
+            RadiusBottomRight: |
+                =0
+            RadiusTopLeft: =20
+            RadiusTopRight: |
+                =20
+            Size: =24
+            Text: =""
+            Visible: =showProductNoLocation
+            Width: =476
+            X: =452
+            Y: =155
+            ZIndex: =84
+
+        lbl_OrderedID_DuyetDatHang_6 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =46
+            OnSelect: =
+            Size: =14
+            Text: ="Name Product"
+            Visible: =showProductNoLocation
+            Width: =289
+            X: =450
+            Y: =156
+            ZIndex: =85
+
+        lbl_OrderedID_DuyetDatHang_7 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =46
+            OnSelect: =
+            Size: =14
+            Text: ="Unit"
+            Visible: =showProductNoLocation
+            Width: =148
+            X: =754
+            Y: =157
+            ZIndex: =86
+
+        btn_RefusedList_DuyetDatHang_3 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: =Set(showProductNoLocation, false)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="Close"
+            Visible: =showProductNoLocation
+            Width: =116
+            X: =800
+            Y: =629
+            ZIndex: =87
+
+    Label23_7 As label:
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =15
+        Text: |-
+            ="ID Product:"
+        Visible: =showSetLocation
+        Width: =135
+        X: =518
+        Y: =312
+        ZIndex: =99
+
+    txt_IDProductLoaction As label:
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =15
+        Text: =gal_ProductNoLocation.Selected.IDProduct
+        Visible: =showSetLocation
+        Width: =160
+        X: =704
+        Y: =312
+        ZIndex: =100
+
+    Group12 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =101
+
+        Rectangle15 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.43)
+            Height: =768
+            Visible: =showSetLocation
+            Width: =1366
+            ZIndex: =88
+
+        TextInput1_15 As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =284
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showSetLocation
+            Width: =584
+            X: =472
+            Y: =252
+            ZIndex: =89
+
+        Label22 As label:
+            Align: =Align.Center
+            Color: =RGBA(184, 0, 0, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =20
+            Text: ="Sort product placement"
+            Visible: =showSetLocation
+            Width: =442
+            X: =545
+            Y: =261
+            ZIndex: =90
+
+        Label23 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Name:"
+            Visible: =showSetLocation
+            Width: =81
+            X: =516
+            Y: =347
+            ZIndex: =91
+
+        Label23_3 As label:
+            Font: =Font.'Segoe UI'
+            Height: =59
+            Overflow: =Overflow.Scroll
+            Size: =15
+            Text: =gal_ProductNoLocation.Selected.Name
+            Visible: =showSetLocation
+            Width: =409
+            X: =606
+            Y: =353
+            ZIndex: =92
+
+        Label23_4 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Unit:"
+            Visible: =showSetLocation
+            Width: =71
+            X: =519
+            Y: =423
+            ZIndex: =93
+
+        txt_UnitLocation As label:
+            Font: =Font.'Segoe UI'
+            Size: =15
+            Text: =LookUp(QLK_Unit, ID = IdUnit_GalProductLocation, UnitName)
+            Visible: =showSetLocation
+            Width: =128
+            X: =591
+            Y: =423
+            ZIndex: =94
+
+        Label23_6 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Location:"
+            Visible: =showSetLocation
+            Width: =117
+            X: =724
+            Y: =423
+            ZIndex: =95
+
+        drop_Location2 As dropdown:
+            Items: =Filter(QLK_Location, (ID_Product = Blank() && Unit = txt_UnitLocation.Text))
+            Visible: =showSetLocation
+            Width: =116
+            X: =842
+            Y: =422
+            ZIndex: =96
+
+        btn_RefusedList_DuyetDatHang_4 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: |-
+                =Set(showSetLocation,false);
+                Set(showProductNoLocation,true)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="Close"
+            Visible: =showSetLocation
+            Width: =157
+            X: =774
+            Y: =478
+            ZIndex: =97
+
+        btn_RefusedList_DuyetDatHang_5 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(54, 176, 75, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(54, 176, 75, 1)
+            OnSelect: |-
+                =Set(showXacNhanLocation,true);
+                Set(showSetLocation,false);
+                Set(IDNewLocation2, drop_Location2.SelectedText.Value)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="Apply"
+            Visible: =showSetLocation
+            Width: =157
+            X: =606
+            Y: =478
+            ZIndex: =98
+
+    btn_CloseTTHHSoDo_1 As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =RGBA(237, 237, 237, 1)
+        BorderThickness: =0
+        Color: =RGBA(39, 113, 194, 1)
+        Fill: =RGBA(237, 237, 237, 1)
+        HoverBorderColor: =RGBA(237, 237, 237, 1)
+        HoverFill: =RGBA(39, 113, 194, 1)
+        OnSelect: |
+            =Set(showRemoveLocation, true);
+            Set(showThongTinHangHoa_SoDo,false)
+        PressedBorderColor: =RGBA(237, 237, 237, 1)
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =13
+        Text: ="Remove"
+        Visible: =showThongTinHangHoa_SoDo
+        Width: =156
+        X: =607
+        Y: =550
+        ZIndex: =106
+
+    Group8 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =108
+
+        Rectangle11 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.45)
+            Height: =768
+            Visible: =showXacNhanLocation
+            Width: =1366
+            ZIndex: =101
+
+        TextInput1_16 As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =198
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showXacNhanLocation
+            Width: =597
+            X: =472
+            Y: =278
+            ZIndex: =102
+
+        Label15 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =80
+            Size: =20
+            Text: ="Do you agree to arrange products in this area?"
+            Visible: =showXacNhanLocation
+            Width: =437
+            X: =546
+            Y: =302
+            ZIndex: =103
+
+        btn_ApprovedList_DuyetDatHang_3 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(54, 176, 75, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(81, 224, 105, 1)
+            OnSelect: |-
+                =Patch(QLK_Location, LookUp(QLK_Location, ID_Location = drop_Location2.SelectedText.Value),
+                    {
+                        ID_Product: txt_IDProductLoaction.Text
+                    }
+                );
+                Patch(QLK_Product, LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation),
+                    {
+                        Location: IDNewLocation2
+                    }
+                );
+                Set(showXacNhanLocation, false)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="Yes"
+            Visible: =showXacNhanLocation
+            Width: =156
+            X: =618
+            Y: =410
+            ZIndex: =104
+
+        btn_ApprovedList_DuyetDatHang_4 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: |-
+                =Set(showXacNhanLocation,false);
+                Set(showSetLocation,true)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="No"
+            Visible: =showXacNhanLocation
+            Width: =156
+            X: =783
+            Y: =410
+            ZIndex: =105
+
+    Button2_111 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(DanhSachOrder)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Order list"
+        Width: =164
+        Y: =444
+        ZIndex: =112
+
+    Group13 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =112
+
+        Rectangle16 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.44)
+            Height: =768
+            Visible: =showRemoveLocation
+            Width: =1366
+            ZIndex: =107
+
+        TextInput1_17 As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =228
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showRemoveLocation
+            Width: =488
+            X: =501
+            Y: =254
+            ZIndex: =108
+
+        Label24 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =63
+            Size: =20
+            Text: ="Do you want to remove the product from its location?"
+            Visible: =showRemoveLocation
+            Width: =401
+            X: =544
+            Y: =312
+            ZIndex: =109
+
+        btn_RefusedList_DuyetDatHang_6 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: =Set(showRemoveLocation, false)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="No"
+            Visible: =showRemoveLocation
+            Width: =156
+            X: =751
+            Y: =414
+            ZIndex: =110
+
+        btn_RefusedList_DuyetDatHang_7 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(54, 176, 75, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(54, 176, 75, 1)
+            OnSelect: |-
+                =Set(showRemoveLocation, false);
+                Patch(QLK_Product, LookUp(QLK_Product, IDProduct = txt_IDProduct_Location.Text),
+                    {
+                        Location: Blank()
+                    }
+                );
+                Patch(QLK_Location, LookUp(QLK_Location, ID_Location = txt_IDLocation_Location.Text),
+                    {
+                        ID_Product: Blank()
+                    }
+                );
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="Yes"
+            Visible: =showRemoveLocation
+            Width: =156
+            X: =571
+            Y: =412
+            ZIndex: =111
+
+    Icon3_2 As icon.ShoppingCart:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.ShoppingCart
+        Width: =50
+        X: =57
+        Y: =457
+        ZIndex: =113
 
