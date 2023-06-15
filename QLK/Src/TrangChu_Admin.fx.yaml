@@ -394,7 +394,7 @@ TrangChu_Admin As screen:
                 Y: =526
                 ZIndex: =7
 
-            "'gal_DetailOrderPending_HA(DO_HA)' As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            "gal_DetailOrderPending_HA_DO_HA As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =1
                 DelayItemLoading: =true
@@ -1195,7 +1195,9 @@ TrangChu_Admin As screen:
                     HoverColor: =RGBA(21, 161, 60, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
                     OnSelect: |+
-                        =Set(fontSizeApprove_HomeAdmin, 15);
+                        =Reset(gal_DetailOrderPending_HA_DO_HA);
+                        
+                        Set(fontSizeApprove_HomeAdmin, 15);
                         Set(fontSizeImport_HomeAdmin, 12);
                         Set(fontSizeOrder_HomeAdmin, 12);
                         Set(fontSizeExport_HomeAdmin, 12);
@@ -1205,11 +1207,6 @@ TrangChu_Admin As screen:
                         Set(visLineExport_HomeAdmin, false);
                         Set(textChart_HomeAdmin, "Approve");
                         
-                        // Nho Set trong App
-                        Set(visibleDetailOrderNotPending_HomeAdmin, false);
-                        Set(visibleDetailOrderPending_HomeAdmin, true);
-                        
-                        //Set(datasourceTopProduct_HomeAdmin, col_TopProductOrdered);
                         ClearCollect(
                             col_DatasourceOrder_HomeAdmin, 
                             RenameColumns(
@@ -1220,13 +1217,35 @@ TrangChu_Admin As screen:
                                 "IDOrder", "ID")
                         );
                         
+                        
+                        
+                        // Nho Set trong App
+                        Set(visibleDetailOrderNotPending_HomeAdmin, false);
+                        Set(visibleDetailOrderPending_HomeAdmin, true);
+                        
+                        //Set(datasourceTopProduct_HomeAdmin, col_TopProductOrdered);
+                        
+                        
+                        
+                        
+                        //ClearCollect(col_PendingOrder, Filter(QLK_OrderForm, Status = 1));
+                        //Set(datasourceOrder, col_PendingOrder)
+                        Set(numDatasource, 4); //4: pending
+                        //Set(datasourceOrder, Filter(QLK_OrderForm, Status = 1))
+                        
+                        
+                        //ClearCollect(col_PendingImport, Filter(QLK_ImportForm, Status = 1));
+                        //ClearCollect(col_PendingExport, Filter(QLK_ExportForm, Status = 1));
+                        
+                        //ClearCollect(col_AllPending, col_PendingOrder, col_PendingImport, col_PendingExport);
+                        
                         ClearCollect(
                             col_DetailsOrder_HomeAdmin,
                             RenameColumns(
                                 ShowColumns(
                                     Filter(
                                         QLK_OrderFormInformation,
-                                        IDOrderForm = gal_DetailOrderPending_HA(DO_HA).Selected.ID
+                                        IDOrderForm = LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)
                                     ),
                                     "IDOrderForm",
                                     "IDProduct_Supplier",
@@ -1239,17 +1258,6 @@ TrangChu_Admin As screen:
                                 "IDProduct_Supplier", "IDProduct"
                             )
                         );
-                        
-                        //ClearCollect(col_PendingOrder, Filter(QLK_OrderForm, Status = 1));
-                        //Set(datasourceOrder, col_PendingOrder)
-                        Set(numDatasource, 4); //4: pending
-                        //Set(datasourceOrder, Filter(QLK_OrderForm, Status = 1))
-                        
-                        
-                        //ClearCollect(col_PendingImport, Filter(QLK_ImportForm, Status = 1));
-                        //ClearCollect(col_PendingExport, Filter(QLK_ExportForm, Status = 1));
-                        
-                        //ClearCollect(col_AllPending, col_PendingOrder, col_PendingImport, col_PendingExport);
                         
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(127, 235, 117, 1)
@@ -1268,7 +1276,7 @@ TrangChu_Admin As screen:
                     Height: =4
                     Visible: =visLineApprove_HomeAdmin
                     Width: =46
-                    X: =362
+                    X: =348
                     Y: =67
                     ZIndex: =25
 
@@ -1277,6 +1285,12 @@ TrangChu_Admin As screen:
                 X: =184
                 Y: =383
                 ZIndex: =37
+
+            Label27 As label:
+                Text: =gal_DetailOrderPending_HA_DO_HA.Selected.ID
+                X: =257
+                Y: =344
+                ZIndex: =38
 
             Group6 As group:
                 Height: =5
