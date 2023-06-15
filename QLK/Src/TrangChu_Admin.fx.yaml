@@ -523,10 +523,45 @@ TrangChu_Admin As screen:
                     Height: =55
                     HoverFill: =
                     OnSelect: |-
-                        =Set(width_contRight, 700);
+                        =/*Set(width_contRight, 700);
                         Set(width_contRight_Right, 400);
                         Set(pos_contRight, 666);
-                        Set(back_Black_HomeAdmin, true);
+                        Set(back_Black_HomeAdmin, true);*/
+                        
+                        Set(IDOrder_HomeAdmin,ThisItem.ID);
+                        //Set(StatusOfOrder_HomeAdmin, ThisItem.Status);
+                        // 1: Order, 2: Import, 3: Export, 4: Pending
+                        If(
+                            numDatasource = 1,
+                            
+                            /*
+                            ClearCollect(
+                                col_DetailOrdered_DuyetDatHang, 
+                                ShowColumns(Filter(QLK_OrderFormInformation, IDOrderForm = IDOrdered_DuyetDatHang), 
+                                "IDOrderForm", "IDProduct_Supplier", "Quantity")
+                            );
+                        */
+                        
+                        
+                            ClearCollect(
+                                col_DetailsOrder_HomeAdmin,
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(
+                                            QLK_OrderFormInformation, 
+                                            IDOrderForm = IDOrder_HomeAdmin), 
+                                        "IDOrderForm",
+                                        "IDProduct_Supplier",
+                                        "Quantity",
+                                        "Unit",
+                                        "Price",
+                                        "TotalPrice"
+                                    ), 
+                                    "IDOrderForm", "IDOrder",
+                                    "IDProduct_Supplier", "IDProduct"
+                                )
+                            )
+                        )
                     RadiusBottomLeft: =15
                     RadiusBottomRight: =15
                     RadiusTopLeft: =15
@@ -806,7 +841,9 @@ TrangChu_Admin As screen:
                 TemplatePadding: =0
                 TemplateSize: =74
                 Transition: =Transition.Pop
-                Visible: =visibleDetailOrderNotPending_HomeAdmin
+                Visible: |-
+                    =//visibleDetailOrderNotPending_HomeAdmin
+                    true
                 Width: =312
                 X: =805
                 Y: =348
@@ -1010,12 +1047,91 @@ TrangChu_Admin As screen:
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: |-
-                        =If(
-                            CountIf(gal_OrderedInfList.AllItems, IsBlank(txt_ValueQuantity_DetailOrder)) > 0 || 
-                            CountRows(col_OrderedInf) <= 0 || 
-                            CountIf(gal_OrderedInfList.AllItems, Value(txt_ValueQuantity_DetailOrder.Text) <= 0),
-                            DisplayMode.Disabled, DisplayMode.Edit
-                        )
+                        =Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = ThisItem.ID), {Status: 2});
+                        Refresh(QLK_OrderForm);
+                        Set(datasourceOrder, Filter(QLK_OrderForm, Status = 1));
+                        
+                        // Get IDProduct_Supplier, Quantity in OrderFormInformation
+                        ClearCollect(col_ProductOrder_Approved, ShowColumns(Filter(QLK_OrderFormInformation, IDOrderForm = ThisItem.ID), "IDProduct_Supplier", "Quantity"));
+                        
+                        // Get IDProduct in col_ProductOrder_Approved
+                        ClearCollect(col_IDProductOrder_Approved, ShowColumns(col_ProductOrder_Approved, "IDProduct_Supplier"));
+                        
+                        // Get information of Product with IDProduct in col_IDProductOrder_Approved
+                        /*
+                        ClearCollect(
+                            col_InformationOfProduct, 
+                            
+                                Filter(QLK_Product_Supplier, IDProduct_Supplier in col_IDProductOrder_Approved.IDProduct_Supplier))*/
+                                
+                        
+                        ClearCollect(
+                            col_InformationOfProductOrdered, 
+                            AddColumns(
+                                ShowColumns(
+                                    Filter(QLK_Product_Supplier, IDProduct_Supplier in col_IDProductOrder_Approved.IDProduct_Supplier),
+                                    "IDProduct_Supplier", 
+                                    "Name_Supplier", 
+                                    "Price_Supplier", 
+                                    "Barcode_Supplier", 
+                                    "Image_Pro_x002d_Supplier", 
+                                    "ID_Supplier", 
+                                    "Describe_Pro_x002d_Supplier", 
+                                    "ID_Unit"
+                                ), "Quantity", 0
+                            )
+                        );
+                        
+                        ForAll(
+                            col_ProductOrder_Approved, 
+                            Patch(
+                                col_InformationOfProductOrdered, 
+                                LookUp(
+                                    col_InformationOfProductOrdered, 
+                                    IDProduct_Supplier = col_ProductOrder_Approved[@IDProduct_Supplier]), 
+                                    {Quantity: col_ProductOrder_Approved[@Quantity]}
+                                
+                            )
+                        );
+                        
+                        ForAll(col_InformationOfProductOrdered As T,
+                            Patch(QLK_Product,
+                                {
+                                    IDProduct: T.IDProduct_Supplier,
+                                    Name: T.Name_Supplier,
+                                    Quantity: T.Quantity,
+                                    MinimumQuantity: If(LookUp(col_InformationOfProductOrdered, T.ID_Unit = 3, T.ID_Unit), 10, 20),
+                                    Unit: Value(T.ID_Unit),
+                                    InputPrice: T.Price_Supplier,
+                                    OutputPrice: T.Price_Supplier + T.Price_Supplier * 0.1,
+                                    Image: T.Image_Pro_x002d_Supplier,
+                                    BarCode: T.Barcode_Supplier,
+                                    IDSupplier: Value(T.ID_Supplier),
+                                    Description: T.Describe_Pro_x002d_Supplier
+                                }
+                            )
+                        );
+                        
+                        
+                        /*
+                        ForAll(
+                            col_ProductOrder_Approved,
+                            UpdateIf(col_InformationOfProductOrdered, IDProduct_Supplier=IDProduct_Supplier,
+                                {Quantity: 3}
+                            )
+                        );
+                        */
+                        Refresh(QLK_OrderForm);
+                        //ClearCollect(temp23, col_InformationOfProductOrdered);
+                        
+                        /*
+                        ClearCollect(colProductSupplier, ShowColumns(Filter(QLK_Product_Supplier, true), "IDProduct_Supplier"));
+                        ClearCollect(
+                            col_InformationOfProduct, 
+                            Filter(QLK_Product_Supplier, IDProduct_Supplier in colProductSupplier.IDProduct_Supplier)
+                        )*/
+                        
+                        //Patch(QLK_Product, true)
                     Duration: =1590
                     Fill: =RGBA(205, 247, 205, 1)
                     FontWeight: =FontWeight.Semibold

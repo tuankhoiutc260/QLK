@@ -502,7 +502,7 @@ PheDuyetDatHang As screen:
             RadiusTopLeft: =0
             RadiusTopRight: =0
             Text: =""
-            Width: =1072
+            Width: =837
             ZIndex: =12
 
     btn_Approve_DetailOrdered_DuyetDatHang_1 As timer:
@@ -624,7 +624,7 @@ PheDuyetDatHang As screen:
         "gal_OrderedList_DetailOrdered_DuyetDatHang As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
             DelayItemLoading: =true
             Height: =345
-            Items: |-
+            Items: |
                 =ShowColumns(col_DetailOrdered_DuyetDatHang, "IDOrderForm" ,"IDProduct_Supplier", "Quantity")
                 //col_OrderedInf
             Layout: =Layout.Vertical
