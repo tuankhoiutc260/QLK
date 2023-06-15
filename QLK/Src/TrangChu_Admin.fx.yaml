@@ -1367,20 +1367,22 @@ TrangChu_Admin As screen:
                                     ),
                                 "IDExport", "ID")
                         );
-                        
-                        AddColumns(col_DatasourceExportRequest_HomeAdmin, 
-                        "QuantityProduct", CountRows(ForAll(QLK_ExportForm As T, Filter(col_DatasourceExportRequest_HomeAdmin, ID = IDExport))));
-                        
-                        
-                        
                         /*
-                        
                         ClearCollect(
                             col_DatasourceOrder_HomeAdmin,
                             col_DatasourceOrderRequest_HomeAdmin,
                             col_DatasourceImportRequest_HomeAdmin,
                             col_DatasourceExportRequest_HomeAdmin
                         );
+                        */
+                        AddColumns(col_DatasourceExportRequest_HomeAdmin, 
+                        "QuantityProduct", 3);
+                        
+                        
+                        //CountRows(ForAll(QLK_ExportForm As T, Filter(col_DatasourceExportRequest_HomeAdmin, ID = IDExport))));
+                        /*
+                        
+                        
                         */
                         
                         // Nho Set trong App
