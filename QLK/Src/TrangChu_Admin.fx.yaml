@@ -179,7 +179,7 @@ TrangChu_Admin As screen:
                 LoadingSpinner: =LoadingSpinner.Data
                 ShowScrollbar: =false
                 TemplatePadding: =0
-                TemplateSize: =74
+                TemplateSize: =76
                 Transition: =Transition.Pop
                 Visible: =visibleDetailOrderNotPending_HomeAdmin
                 Width: =476
@@ -188,7 +188,7 @@ TrangChu_Admin As screen:
                 ZIndex: =2
 
                 shadow_ImportGoods_IMPI_27 As htmlViewer:
-                    Height: =85
+                    Height: =100
                     HtmlText: |-
                         ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_27.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_27.Height - 32 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 5px 10px 0px  #ccc; border-radius:15px'></div>" 
                     Visible: =If(ThisItem.IsSelected, true, false)
@@ -205,8 +205,8 @@ TrangChu_Admin As screen:
                     RadiusTopLeft: =15
                     RadiusTopRight: =15
                     Width: =50
-                    X: =25
-                    Y: =17
+                    X: =28
+                    Y: =25
                     ZIndex: =2
 
                 Label25_4 As label:
@@ -217,8 +217,8 @@ TrangChu_Admin As screen:
                     Size: =11
                     Text: =ThisItem.ID
                     Width: =160
-                    X: =75
-                    Y: =21
+                    X: =78
+                    Y: =29
                     ZIndex: =3
 
                 Label26_4 As label:
@@ -230,8 +230,8 @@ TrangChu_Admin As screen:
                     Size: =8
                     Text: =ThisItem.Created
                     Width: =160
-                    X: =75
-                    Y: =40
+                    X: =78
+                    Y: =48
                     ZIndex: =4
 
                 Label27_9 As label:
@@ -241,8 +241,8 @@ TrangChu_Admin As screen:
                     Text: |-
                         =Text(ThisItem.TotalPrice, "#,###" & " VND")
                     Width: =122
-                    X: =334
-                    Y: =22
+                    X: =337
+                    Y: =30
                     ZIndex: =5
 
                 Label27_8 As label:
@@ -263,14 +263,14 @@ TrangChu_Admin As screen:
                             )
                         )
                     Width: =99
-                    X: =235
-                    Y: =22
+                    X: =238
+                    Y: =30
                     ZIndex: =6
 
                 Button9_5 As button:
                     BorderStyle: =BorderStyle.None
                     Fill: =RGBA(0, 0, 0, 0)
-                    Height: =53
+                    Height: =68
                     HoverFill: =
                     OnSelect: |-
                         =Set(IDOrder_HomeAdmin,ThisItem.ID);
@@ -347,7 +347,7 @@ TrangChu_Admin As screen:
                     RadiusTopRight: =15
                     Text: =""
                     Width: =444
-                    X: =15
+                    X: =16
                     Y: =15
                     ZIndex: =7
 
@@ -406,7 +406,7 @@ TrangChu_Admin As screen:
                 LoadingSpinner: =LoadingSpinner.Data
                 ShowScrollbar: =false
                 TemplatePadding: =0
-                TemplateSize: =93
+                TemplateSize: =96
                 Transition: =Transition.Pop
                 Visible: =visibleDetailOrderPending_HomeAdmin
                 Width: =476
@@ -415,7 +415,7 @@ TrangChu_Admin As screen:
                 ZIndex: =8
 
                 shadow_ImportGoods_IMPI_28 As htmlViewer:
-                    Height: =85
+                    Height: =100
                     HtmlText: |-
                         ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_28.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_28.Height - 32 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 5px 10px 0px  #ccc; border-radius:15px'></div>" 
                     Visible: =If(ThisItem.IsSelected, true, false)
@@ -432,8 +432,8 @@ TrangChu_Admin As screen:
                     RadiusTopLeft: =15
                     RadiusTopRight: =15
                     Width: =50
-                    X: =25
-                    Y: =17
+                    X: =27
+                    Y: =24
                     ZIndex: =2
 
                 Label25_5 As label:
@@ -445,8 +445,8 @@ TrangChu_Admin As screen:
                     Size: =11
                     Text: =ThisItem.ID
                     Width: =160
-                    X: =75
-                    Y: =21
+                    X: =77
+                    Y: =28
                     ZIndex: =3
 
                 Label26_5 As label:
@@ -458,8 +458,8 @@ TrangChu_Admin As screen:
                     Size: =8
                     Text: =ThisItem.Created
                     Width: =160
-                    X: =75
-                    Y: =40
+                    X: =77
+                    Y: =47
                     ZIndex: =4
 
                 Label27_11 As label:
@@ -469,8 +469,8 @@ TrangChu_Admin As screen:
                     Text: |-
                         =Text(ThisItem.TotalPrice, "#,###" & " VND")
                     Width: =108
-                    X: =313
-                    Y: =23
+                    X: =315
+                    Y: =30
                     ZIndex: =5
 
                 Label27_10 As label:
@@ -480,14 +480,16 @@ TrangChu_Admin As screen:
                     Size: =9
                     Text: =ThisItem.QuantityProduct
                     Width: =78
-                    X: =235
-                    Y: =20
+                    X: =237
+                    Y: =27
                     ZIndex: =6
 
                 btn_Select As button:
+                    BorderColor: =RGBA(237, 237, 237, 1)
                     BorderStyle: =BorderStyle.None
+                    BorderThickness: =0.5
                     Fill: =RGBA(0, 0, 0, 0)
-                    Height: =55
+                    Height: =68
                     HoverFill: =
                     OnSelect: |-
                         =
@@ -572,8 +574,8 @@ TrangChu_Admin As screen:
                     RadiusTopRight: =15
                     Text: =""
                     Width: =443
-                    X: =14
-                    Y: =14
+                    X: =16
+                    Y: =15
                     ZIndex: =7
 
                 ic_Cancel_DO_HA As icon.CheckBadge:
@@ -956,8 +958,8 @@ TrangChu_Admin As screen:
                         =//vis_Approve_HomeAdmin
                         true
                     Width: =24
-                    X: =421
-                    Y: =15
+                    X: =423
+                    Y: =22
                     ZIndex: =10
 
                 ic_Check_DO_HA As icon.CancelBadge:
@@ -1155,8 +1157,8 @@ TrangChu_Admin As screen:
                         =//vis_Approve_HomeAdmin
                         true
                     Width: =24
-                    X: =421
-                    Y: =43
+                    X: =423
+                    Y: =50
                     ZIndex: =11
 
             grp_Chart_HomeAdmin As group:
