@@ -128,7 +128,7 @@ DangNhap As screen:
                     Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
                     Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Permission')),
                     If(LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, ' Permission').Value = "Manager",
-                        Navigate(TrangchuGD);
+                        Navigate(TrangChu_Admin);
                         Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
                         Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Permission')),
                         If(LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, ' Permission').Value = "WarehouseStaff",
@@ -145,7 +145,7 @@ DangNhap As screen:
                 ),
                 Notify("Username or password is wrong!")
             );
-            
+            /*
             // Get Top Ordered
             ClearCollect(col_ProductOrdered, 
                 ShowColumns(
@@ -255,7 +255,7 @@ DangNhap As screen:
             //Set(width_contRight, 300);
             //Set(width_contRight_Right, 0);
             //Set(pos_contRight, 1066);
-            Set(back_Black_HomeAdmin, false);
+            Set(back_Black_HomeAdmin, false);*/
             
             
             
