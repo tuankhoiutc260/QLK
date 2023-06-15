@@ -491,7 +491,7 @@ TrangChu_Admin As screen:
                             )
                         )*/
                         
-                            CountRows(Filter(QLK_ImportFormInformation, IDImport = ThisItem.ID)) & " Products" ;
+                            CountRows(Filter(QLK_ImportFormInformation, IDImport = ThisItem.ID)) & " Products" 
                         
                         /*
                         ClearCollect(
@@ -914,6 +914,138 @@ TrangChu_Admin As screen:
                         Width: =44
                         Y: =250
                         ZIndex: =2
+
+            Button1 As button:
+                ContentLanguage: =
+                OnSelect: =
+                Text: ="Button"
+                X: =40
+                Y: =40
+                ZIndex: =34
+
+            Button4 As button:
+                OnSelect: |-
+                    =ClearCollect(
+                        col_DatasourceImportRequest_HomeAdmin, 
+                        AddColumns(
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(QLK_ImportForm, Status = 1), 
+                                    "IDImport", "Created", "TotalPrice", "Status"
+                                    ),
+                                "IDImport", "ID"
+                            ) As T, 
+                            "QuantityProduct", 
+                            //CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = ThisItem.ID)) & " Products"
+                            
+                            //CountRows(ForAll(Table(T),Filter(QLK_ImportFormInformation, T.ID = IDImport))) & " Products"
+                            CountRows(ForAll(Table(T),Filter(QLK_ImportFormInformation, T.ID = IDImport))) & " Products"
+                    
+                        )
+                    );
+                Text: ="Button"
+                X: =81
+                Y: =191
+                ZIndex: =35
+
+            "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                DelayItemLoading: =true
+                Items: |
+                    =/*
+                    ShowColumns(
+                                    Filter(QLK_ImportForm, Status = 1), 
+                                    "IDImport", "Created", "TotalPrice", "Status"
+                                    ),
+                                "IDImport", "ID"
+                                */
+                    
+                    AddColumns(
+                        ShowColumns(
+                            Filter(QLK_ImportForm, Status = 1), 
+                            "IDImport", "Created", "TotalPrice", "Status"
+                        ) As T, 
+                        "Quantity", 
+                        CountRows(Filter(QLK_ImportFormInformation, IDImport = T.IDImport))
+                    )
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =104
+                X: =518
+                Y: =193
+                ZIndex: =36
+
+                Image12 As image:
+                    Height: =72
+                    OnSelect: =Select(Parent)
+                    RadiusBottomLeft: =8
+                    RadiusBottomRight: =8
+                    RadiusTopLeft: =8
+                    RadiusTopRight: =8
+                    Width: =72
+                    X: =16
+                    Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                    ZIndex: =1
+
+                Title6 As label:
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =Self.Size * 1.8
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =ThisItem.IDImport
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =Parent.TemplateWidth - 173
+                    X: =103
+                    Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle5.Size * 1.8)) / 2
+                    ZIndex: =2
+
+                Subtitle5 As label:
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =Self.Size * 1.8
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =ThisItem.Created
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =Title6.Width
+                    X: =Title6.X
+                    Y: =Title6.Y + Title6.Height
+                    ZIndex: =3
+
+                NextArrow2 As icon.ChevronRight:
+                    AccessibleLabel: =Self.Tooltip
+                    Color: =RGBA(166, 166, 166, 1)
+                    Height: =50
+                    Icon: =Icon.ChevronRight
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =16
+                    PaddingLeft: =16
+                    PaddingRight: =16
+                    PaddingTop: =16
+                    Tooltip: ="View item details"
+                    Width: =50
+                    X: =Parent.TemplateWidth - Self.Width - 12
+                    Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                    ZIndex: =4
+
+                Separator2 As rectangle:
+                    Height: =8
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    Y: =96
+                    ZIndex: =5
+
+                Rectangle18 As rectangle:
+                    Height: =Parent.TemplateHeight - Separator2.Height
+                    OnSelect: =Select(Parent)
+                    Visible: =If(ThisItem.IsSelected, true, false)
+                    Width: =4
+                    ZIndex: =6
 
             "'grp_buttonFunction(R_HA)' As group":
                 Height: =5
@@ -1340,43 +1472,57 @@ TrangChu_Admin As screen:
                         
                         ClearCollect(
                             col_DatasourceOrderRequest_HomeAdmin, 
-                            RenameColumns(
-                                ShowColumns(
-                                    Filter(QLK_OrderForm, Status = 1), 
-                                    "IDOrder", "Created", "TotalPrice", "Status"
-                                    ),
-                                "IDOrder", "ID")
+                            AddColumns(
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(QLK_OrderForm, Status = 1), 
+                                        "IDOrder", "Created", "TotalPrice", "Status"
+                                        ),
+                                    "IDOrder", "ID"
+                                ) As T, 
+                                "QuantityProduct", 
+                                CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = T.ID)) & " Products"
+                            )
                         );
                         
                         ClearCollect(
                             col_DatasourceImportRequest_HomeAdmin, 
-                            RenameColumns(
-                                ShowColumns(
-                                    Filter(QLK_ImportForm, Status = 1), 
-                                    "IDImport", "Created", "TotalPrice", "Status"
-                                    ),
-                                "IDImport", "ID")
+                            AddColumns(
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(QLK_ImportForm, Status = 1), 
+                                        "IDImport", "Created", "TotalPrice", "Status"
+                                        ),
+                                    "IDImport", "ID"
+                                ) As T, 
+                                "QuantityProduct", 
+                                CountRows(Filter(QLK_ImportFormInformation, IDImport = T.ID)) & " Products"
+                            )
                         );
                         
                         ClearCollect(
                             col_DatasourceExportRequest_HomeAdmin, 
-                            RenameColumns(
-                                ShowColumns(
-                                    Filter(QLK_ExportForm, Status = 1), 
-                                    "IDExport", "Created", "TotalPrice", "Status"
-                                    ),
-                                "IDExport", "ID")
+                            AddColumns(
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(QLK_ExportForm, Status = 1), 
+                                        "IDExport", "Created", "TotalPrice", "Status"
+                                        ),
+                                    "IDExport", "ID"
+                                ) As T, 
+                                "QuantityProduct", 
+                                CountRows(Filter(QLK_ExportFormInformation, IDExportForm = T.ID)) & " Products"
+                            )
                         );
-                        /*
+                        
                         ClearCollect(
                             col_DatasourceOrder_HomeAdmin,
                             col_DatasourceOrderRequest_HomeAdmin,
                             col_DatasourceImportRequest_HomeAdmin,
                             col_DatasourceExportRequest_HomeAdmin
                         );
-                        */
-                        AddColumns(col_DatasourceExportRequest_HomeAdmin, 
-                        "QuantityProduct", 3);
+                        
+                        AddColumns(col_DatasourceExportRequest_HomeAdmin, "QuantityProduct", 3);
                         
                         
                         //CountRows(ForAll(QLK_ExportForm As T, Filter(col_DatasourceExportRequest_HomeAdmin, ID = IDExport))));
