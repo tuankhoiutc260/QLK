@@ -217,6 +217,7 @@ SoDoKho As screen:
         ZIndex: =17
 
     btn_A1 As button:
+        BorderThickness: =0
         Fill: =RGBA(102, 182, 227, 1)
         Height: =66
         OnSelect: |-
@@ -230,6 +231,7 @@ SoDoKho As screen:
         ZIndex: =18
 
     btn_A2 As button:
+        BorderThickness: =0
         Fill: =RGBA(102, 182, 227, 1)
         Height: =66
         OnSelect: |-
@@ -243,6 +245,7 @@ SoDoKho As screen:
         ZIndex: =19
 
     btn_A3 As button:
+        BorderThickness: =0
         Fill: =RGBA(102, 182, 227, 1)
         Height: =66
         OnSelect: |-
@@ -256,6 +259,7 @@ SoDoKho As screen:
         ZIndex: =20
 
     btn_A4 As button:
+        BorderThickness: =0
         Fill: =RGBA(102, 182, 227, 1)
         Height: =66
         OnSelect: |-
@@ -269,6 +273,7 @@ SoDoKho As screen:
         ZIndex: =21
 
     btn_A5 As button:
+        BorderThickness: =0
         Fill: =RGBA(102, 182, 227, 1)
         Height: =66
         OnSelect: |-
@@ -282,6 +287,7 @@ SoDoKho As screen:
         ZIndex: =22
 
     btn_A6 As button:
+        BorderThickness: =0
         Fill: =RGBA(102, 182, 227, 1)
         Height: =66
         OnSelect: |-
@@ -295,6 +301,7 @@ SoDoKho As screen:
         ZIndex: =23
 
     btn_c4 As button:
+        BorderThickness: =0
         Fill: =RGBA(250, 155, 112, 1)
         Height: =66
         HoverFill: =RGBA(221, 79, 14, 1)
@@ -309,6 +316,7 @@ SoDoKho As screen:
         ZIndex: =24
 
     btn_C5 As button:
+        BorderThickness: =0
         Fill: =RGBA(250, 155, 112, 1)
         Height: =66
         HoverFill: =RGBA(221, 79, 14, 1)
@@ -323,6 +331,7 @@ SoDoKho As screen:
         ZIndex: =25
 
     btn_C6 As button:
+        BorderThickness: =0
         Fill: =RGBA(250, 155, 112, 1)
         Height: =66
         HoverFill: =RGBA(221, 79, 14, 1)
@@ -337,6 +346,7 @@ SoDoKho As screen:
         ZIndex: =26
 
     btn_C1 As button:
+        BorderThickness: =0
         Fill: =RGBA(250, 155, 112, 1)
         Height: =66
         HoverFill: =RGBA(221, 79, 14, 1)
@@ -351,6 +361,7 @@ SoDoKho As screen:
         ZIndex: =27
 
     btn_C2 As button:
+        BorderThickness: =0
         Fill: =RGBA(250, 155, 112, 1)
         Height: =66
         HoverFill: =RGBA(221, 79, 14, 1)
@@ -365,6 +376,7 @@ SoDoKho As screen:
         ZIndex: =28
 
     btn_C3 As button:
+        BorderThickness: =0
         Fill: =RGBA(250, 155, 112, 1)
         Height: =66
         HoverFill: =RGBA(221, 79, 14, 1)
@@ -379,6 +391,7 @@ SoDoKho As screen:
         ZIndex: =29
 
     btn_D6 As button:
+        BorderThickness: =0
         Fill: =RGBA(187, 221, 140, 1)
         Height: =66
         HoverFill: =RGBA(99, 139, 44, 1)
@@ -393,6 +406,7 @@ SoDoKho As screen:
         ZIndex: =30
 
     btn_D5 As button:
+        BorderThickness: =0
         Fill: =RGBA(187, 221, 140, 1)
         Height: =66
         HoverFill: =RGBA(99, 139, 44, 1)
@@ -407,6 +421,7 @@ SoDoKho As screen:
         ZIndex: =31
 
     btn_D4 As button:
+        BorderThickness: =0
         Fill: =RGBA(187, 221, 140, 1)
         Height: =66
         HoverFill: =RGBA(99, 139, 44, 1)
@@ -421,6 +436,7 @@ SoDoKho As screen:
         ZIndex: =32
 
     btn_D1 As button:
+        BorderThickness: =0
         Fill: =RGBA(187, 221, 140, 1)
         Height: =66
         HoverFill: =RGBA(99, 139, 44, 1)
@@ -435,6 +451,7 @@ SoDoKho As screen:
         ZIndex: =33
 
     btn_D2 As button:
+        BorderThickness: =0
         Fill: =RGBA(187, 221, 140, 1)
         Height: =66
         HoverFill: =RGBA(99, 139, 44, 1)
@@ -449,6 +466,7 @@ SoDoKho As screen:
         ZIndex: =34
 
     btn_D3 As button:
+        BorderThickness: =0
         Fill: =RGBA(187, 221, 140, 1)
         Height: =66
         HoverFill: =RGBA(99, 139, 44, 1)
@@ -463,6 +481,7 @@ SoDoKho As screen:
         ZIndex: =35
 
     Btn_B4 As button:
+        BorderThickness: =0
         Fill: =RGBA(229, 240, 113, 1)
         Height: =66
         HoverFill: =RGBA(186, 186, 0, 1)
@@ -477,6 +496,7 @@ SoDoKho As screen:
         ZIndex: =36
 
     btn_B1 As button:
+        BorderThickness: =0
         Fill: =RGBA(229, 240, 113, 1)
         Height: =66
         HoverFill: =RGBA(186, 186, 0, 1)
@@ -491,6 +511,7 @@ SoDoKho As screen:
         ZIndex: =37
 
     btn_B2 As button:
+        BorderThickness: =0
         Fill: =RGBA(229, 240, 113, 1)
         Height: =66
         HoverFill: =RGBA(186, 186, 0, 1)
@@ -505,6 +526,7 @@ SoDoKho As screen:
         ZIndex: =38
 
     Btn_B5 As button:
+        BorderThickness: =0
         Fill: =RGBA(229, 240, 113, 1)
         Height: =66
         HoverFill: =RGBA(186, 186, 0, 1)
@@ -519,6 +541,7 @@ SoDoKho As screen:
         ZIndex: =39
 
     btn_B6 As button:
+        BorderThickness: =0
         Fill: =RGBA(229, 240, 113, 1)
         Height: =66
         HoverFill: =RGBA(186, 186, 0, 1)
@@ -533,6 +556,7 @@ SoDoKho As screen:
         ZIndex: =40
 
     btn_B3 As button:
+        BorderThickness: =0
         Fill: =RGBA(229, 240, 113, 1)
         Height: =66
         HoverFill: =RGBA(186, 186, 0, 1)

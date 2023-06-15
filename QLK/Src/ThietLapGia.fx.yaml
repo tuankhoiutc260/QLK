@@ -509,6 +509,7 @@ ThietLapGia As screen:
         txt_Percent As text:
             Default: ="10"
             Font: =Font.'Segoe UI'
+            Format: =TextFormat.Number
             Size: =20
             Visible: =showSetPrice
             Width: =81
