@@ -1602,27 +1602,11 @@ HangHoa As screen:
                         }
                     );
                     Office365Outlook.SendEmailV2(
-                            "devil09032001@gmail.com",                  
-                            "Thông báo đặt xe", 
-                            "<table>
-                  <tr>
-                    <th>Company</th>
-                    <th>Contact</th>
-                    <th>Country</th>
-                  </tr>
-                  <tr>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                    <td>Germany</td>
-                  </tr>
-                  <tr>
-                    <td>Centro comercial Moctezuma</td>
-                    <td>Francisco Chang</td>
-                    <td>Mexico</td>
-                  </tr>
-                </table>"
-                        )
-                    );
+                            "devil09032001@gmail.com",
+                            "Thông báo yêu cầu đặt hàng",
+                            "Nguyễn Thanh Dương"
+                    )
+                );
                 Set(showYeuCauDatHang, false)
             PressedBorderColor: =RGBA(237, 237, 237, 1)
             RadiusBottomLeft: =20
