@@ -94,7 +94,7 @@ NhaCungCap As screen:
 
         Subtitle2_1 As label:
             Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Semibold
+            FontWeight: =FontWeight.Bold
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
             PaddingBottom: =0
@@ -112,7 +112,7 @@ NhaCungCap As screen:
 
         Subtitle2_2 As label:
             Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Semibold
+            FontWeight: =FontWeight.Bold
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
             PaddingBottom: =0
@@ -130,7 +130,7 @@ NhaCungCap As screen:
 
         Subtitle2_3 As label:
             Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Semibold
+            FontWeight: =FontWeight.Bold
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
             PaddingBottom: =0
@@ -157,14 +157,14 @@ NhaCungCap As screen:
             Size: =15
             Text: =ThisItem.Gmail
             VerticalAlign: =VerticalAlign.Top
-            Width: =311
-            X: =203
+            Width: =287
+            X: =227
             Y: =87
             ZIndex: =9
 
         Subtitle2_4 As label:
             Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Semibold
+            FontWeight: =FontWeight.Bold
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
             PaddingBottom: =0
@@ -175,6 +175,7 @@ NhaCungCap As screen:
             Text: |-
                 ="Phone number:"
             VerticalAlign: =VerticalAlign.Top
+            Width: =174
             X: =53
             Y: =123
             ZIndex: =10
@@ -191,8 +192,8 @@ NhaCungCap As screen:
             Size: =15
             Text: =ThisItem.PhoneNumber
             VerticalAlign: =VerticalAlign.Top
-            Width: =263
-            X: =203
+            Width: =239
+            X: =227
             Y: =123
             ZIndex: =11
 
@@ -236,7 +237,7 @@ NhaCungCap As screen:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
-        OnSelect: =Navigate(TrangchuGD)
+        OnSelect: =Navigate(TrangChu_Admin)
         RadiusBottomLeft: =
         RadiusBottomRight: =
         RadiusTopLeft: =
@@ -373,7 +374,7 @@ NhaCungCap As screen:
 
     Label2_7 As label:
         Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
+        FontWeight: =FontWeight.Bold
         Size: =15
         Text: =LookUp(QLK_Account, ID = idDangNhap, FullName)
         Width: =244

@@ -60,7 +60,7 @@ TaiKhoan As screen:
             ZIndex: =2
 
         Title3 As label:
-            Font: =Font.'Patrick Hand'
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
@@ -70,13 +70,13 @@ TaiKhoan As screen:
             PaddingTop: =0
             Text: =ThisItem.Password
             VerticalAlign: =VerticalAlign.Top
-            Width: =253
-            X: =806
+            Width: =201
+            X: =858
             Y: =121
             ZIndex: =3
 
         Subtitle3 As label:
-            Font: =Font.'Patrick Hand'
+            Font: =Font.'Segoe UI'
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
             PaddingBottom: =0
@@ -87,13 +87,13 @@ TaiKhoan As screen:
             Text: =ThisItem.PhoneNumber
             VerticalAlign: =VerticalAlign.Top
             Width: =180
-            X: =806
+            X: =858
             Y: =74
             ZIndex: =4
 
         Body3 As label:
             Color: =RGBA(184, 0, 0, 1)
-            Font: =Font.'Patrick Hand'
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Semibold
             Height: =53
             OnSelect: =Select(Parent)
@@ -110,7 +110,7 @@ TaiKhoan As screen:
             ZIndex: =5
 
         Title3_1 As label:
-            Font: =Font.'Patrick Hand'
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
@@ -126,7 +126,7 @@ TaiKhoan As screen:
             ZIndex: =7
 
         Title3_2 As label:
-            Font: =Font.'Patrick Hand'
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
@@ -136,7 +136,7 @@ TaiKhoan As screen:
             PaddingTop: =0
             Text: =ThisItem.Gmail
             VerticalAlign: =VerticalAlign.Top
-            Width: =255
+            Width: =345
             X: =267
             Y: =121
             ZIndex: =8
@@ -150,7 +150,7 @@ TaiKhoan As screen:
                         )
                     )
                 )
-            Font: =Font.'Patrick Hand'
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
@@ -160,13 +160,14 @@ TaiKhoan As screen:
             PaddingTop: =0
             Text: =ThisItem.' Permission'.Value
             VerticalAlign: =VerticalAlign.Top
-            Width: =124
-            X: =806
+            Width: =230
+            X: =858
             Y: =27
             ZIndex: =9
 
         Title3_3 As label:
-            Font: =Font.'Patrick Hand'
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
             PaddingBottom: =0
@@ -182,7 +183,8 @@ TaiKhoan As screen:
             ZIndex: =10
 
         Title3_4 As label:
-            Font: =Font.'Patrick Hand'
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
             PaddingBottom: =0
@@ -198,7 +200,8 @@ TaiKhoan As screen:
             ZIndex: =11
 
         Title3_5 As label:
-            Font: =Font.'Patrick Hand'
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
             PaddingBottom: =0
@@ -214,7 +217,8 @@ TaiKhoan As screen:
             ZIndex: =12
 
         Title3_6 As label:
-            Font: =Font.'Patrick Hand'
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
             PaddingBottom: =0
@@ -224,13 +228,14 @@ TaiKhoan As screen:
             Text: |-
                 ="Permission:"
             VerticalAlign: =VerticalAlign.Top
-            Width: =133
+            Width: =174
             X: =632
             Y: =27
             ZIndex: =13
 
         Title3_7 As label:
-            Font: =Font.'Patrick Hand'
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
             PaddingBottom: =0
@@ -240,13 +245,14 @@ TaiKhoan As screen:
             Text: |-
                 ="Phone Number:"
             VerticalAlign: =VerticalAlign.Top
-            Width: =152
+            Width: =226
             X: =632
             Y: =74
             ZIndex: =14
 
         Title3_8 As label:
-            Font: =Font.'Patrick Hand'
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
             PaddingBottom: =0
@@ -293,10 +299,10 @@ TaiKhoan As screen:
         BorderStyle: =BorderStyle.Dotted
         BorderThickness: =1
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
-        OnSelect: =Navigate(TrangchuGD)
+        OnSelect: =Navigate(TrangChu_Admin)
         RadiusBottomLeft: =
         RadiusBottomRight: =
         RadiusTopLeft: =
@@ -320,7 +326,7 @@ TaiKhoan As screen:
     Button2_73 As button:
         BorderThickness: =0
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
         OnSelect: =Navigate(NhaCungCap)
@@ -339,7 +345,7 @@ TaiKhoan As screen:
     Button2_74 As button:
         BorderThickness: =0
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
         OnSelect: =Navigate(KhachHang)
@@ -358,7 +364,7 @@ TaiKhoan As screen:
     Button2_75 As button:
         BorderThickness: =0
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
         OnSelect: =
@@ -377,7 +383,7 @@ TaiKhoan As screen:
     Button2_76 As button:
         BorderThickness: =0
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
         OnSelect: =Navigate(DangNhap)
@@ -432,9 +438,9 @@ TaiKhoan As screen:
         ZIndex: =11
 
     Label2_16 As label:
-        Font: =Font.'Patrick Hand'
-        FontWeight: =FontWeight.Semibold
-        Size: =20
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Size: =15
         Text: =LookUp(QLK_Account, ID = idDangNhap, FullName)
         Width: =196
         X: =1035
@@ -489,7 +495,7 @@ TaiKhoan As screen:
     TextSearchBox1_2 As text:
         Default: =""
         DelayOutput: =true
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         Height: =68
         HintText: ="Search items"
         PaddingLeft: =70
@@ -518,6 +524,7 @@ TaiKhoan As screen:
         ZIndex: =20
 
     Button3_22 As button:
+        Font: =Font.'Segoe UI'
         Height: =47
         OnSelect: |-
             =Navigate(ThemTaiKhoan, ScreenTransition.None);
@@ -564,7 +571,7 @@ TaiKhoan As screen:
                     )
                 )
             )
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =31
         Size: =15

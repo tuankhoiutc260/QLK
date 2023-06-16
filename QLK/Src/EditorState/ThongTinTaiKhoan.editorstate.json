@@ -234,7 +234,7 @@
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "\"Button\"",
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "Text",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
@@ -4989,7 +4989,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Icon17_8",
-      "ParentIndex": 17,
+      "ParentIndex": 16,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11082,7 +11082,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Nen_26",
-      "ParentIndex": 15,
+      "ParentIndex": 17,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11484,7 +11484,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Nen_27",
-      "ParentIndex": 16,
+      "ParentIndex": 15,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

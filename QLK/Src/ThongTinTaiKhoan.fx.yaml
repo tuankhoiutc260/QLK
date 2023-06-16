@@ -35,10 +35,10 @@ ThongTinTaiKhoan As screen:
         BorderStyle: =BorderStyle.Dotted
         BorderThickness: =1
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
-        OnSelect: =Navigate(TrangchuGD)
+        OnSelect: =Navigate(TrangChu_Admin)
         RadiusBottomLeft: =
         RadiusBottomRight: =
         RadiusTopLeft: =
@@ -62,7 +62,7 @@ ThongTinTaiKhoan As screen:
     Button2_83 As button:
         BorderThickness: =0
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
         OnSelect: =Navigate(NhaCungCap)
@@ -81,7 +81,7 @@ ThongTinTaiKhoan As screen:
     Button2_84 As button:
         BorderThickness: =0
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
         OnSelect: =Navigate(KhachHang)
@@ -100,7 +100,7 @@ ThongTinTaiKhoan As screen:
     Button2_85 As button:
         BorderThickness: =0
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
         OnSelect: =Navigate(TaiKhoan)
@@ -119,7 +119,7 @@ ThongTinTaiKhoan As screen:
     Button2_86 As button:
         BorderThickness: =0
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
         OnSelect: =Navigate(DangNhap)
@@ -174,9 +174,9 @@ ThongTinTaiKhoan As screen:
         ZIndex: =12
 
     Label2_18 As label:
-        Font: =Font.'Patrick Hand'
-        FontWeight: =FontWeight.Semibold
-        Size: =20
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Size: =15
         Text: =LookUp(QLK_Account, ID = idDangNhap, FullName)
         Width: =196
         X: =1035
@@ -213,68 +213,68 @@ ThongTinTaiKhoan As screen:
     Label3_5 As label:
         Align: =Align.Center
         Color: =RGBA(184, 0, 0, 1)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =65
         Size: =30
         Text: ="Fill in account information"
-        Width: =476
+        Width: =496
         X: =526
         Y: =177
         ZIndex: =18
 
     Label4_31 As label:
-        Font: =Font.'Patrick Hand'
-        FontWeight: =FontWeight.Semibold
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
         Size: =20
         Text: |-
             ="Name:"
-        Width: =189
-        X: =258
+        Width: =213
+        X: =234
         Y: =276
         ZIndex: =19
 
     Label4_33 As label:
-        Font: =Font.'Patrick Hand'
-        FontWeight: =FontWeight.Semibold
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
         Size: =20
         Text: |-
             ="Phone Number:"
-        Width: =189
-        X: =258
+        Width: =227
+        X: =234
         Y: =334
         ZIndex: =20
 
     Label4_35 As label:
-        Font: =Font.'Patrick Hand'
-        FontWeight: =FontWeight.Semibold
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
         Size: =20
         Text: |-
             ="Gmail:"
-        Width: =100
-        X: =266
+        Width: =132
+        X: =234
         Y: =392
         ZIndex: =21
 
     Label4_36 As label:
-        Font: =Font.'Patrick Hand'
-        FontWeight: =FontWeight.Semibold
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
         Size: =20
         Text: |-
             ="Password:"
-        Width: =183
-        X: =262
+        Width: =211
+        X: =234
         Y: =458
         ZIndex: =22
 
     Label4_37 As label:
-        Font: =Font.'Patrick Hand'
-        FontWeight: =FontWeight.Semibold
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
         Size: =20
         Text: |-
             ="Permission:"
-        Width: =180
-        X: =262
+        Width: =208
+        X: =234
         Y: =521
         ZIndex: =23
 
@@ -282,7 +282,7 @@ ThongTinTaiKhoan As screen:
         Align: =Align.Center
         BorderThickness: =1
         Default: =gal_TaiKhoan.Selected.FullName
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         HintText: ="Customer Name"
         RadiusBottomLeft: =20
         RadiusBottomRight: =20
@@ -298,7 +298,7 @@ ThongTinTaiKhoan As screen:
         Align: =Align.Center
         BorderThickness: =1
         Default: =gal_TaiKhoan.Selected.PhoneNumber
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         HintText: ="Phone Number"
         RadiusBottomLeft: =20
         RadiusBottomRight: =20
@@ -314,7 +314,7 @@ ThongTinTaiKhoan As screen:
         Align: =Align.Center
         BorderThickness: =1
         Default: =gal_TaiKhoan.Selected.Gmail
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         HintText: ="Gmail"
         RadiusBottomLeft: =20
         RadiusBottomRight: =20
@@ -330,7 +330,7 @@ ThongTinTaiKhoan As screen:
         Align: =Align.Center
         BorderThickness: =1
         Default: =gal_TaiKhoan.Selected.Password
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         HintText: ="Address"
         RadiusBottomLeft: =20
         RadiusBottomRight: =20
@@ -345,7 +345,7 @@ ThongTinTaiKhoan As screen:
     drop_CusArea_2 As dropdown:
         BorderThickness: =1
         Default: =gal_TaiKhoan.Selected.' Permission'.Value
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         Items: =Choices(QLK_Account.' Permission')
         Size: =20
         Width: =322
@@ -356,7 +356,7 @@ ThongTinTaiKhoan As screen:
     drop_CusSex_2 As dropdown:
         BorderThickness: =1
         Default: =gal_TaiKhoan.Selected.Sex.Value
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         Items: =Choices(QLK_Customer.Sex)
         Size: =20
         Width: =202
@@ -365,8 +365,8 @@ ThongTinTaiKhoan As screen:
         ZIndex: =29
 
     Label4_32 As label:
-        Font: =Font.'Patrick Hand'
-        FontWeight: =FontWeight.Semibold
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
         Size: =20
         Text: |-
             ="Sex:"
@@ -376,12 +376,12 @@ ThongTinTaiKhoan As screen:
         ZIndex: =30
 
     Label4_34 As label:
-        Font: =Font.'Patrick Hand'
-        FontWeight: =FontWeight.Semibold
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
         Size: =20
         Text: |-
             ="Photo:"
-        Width: =71
+        Width: =104
         X: =931
         Y: =334
         ZIndex: =31
@@ -406,7 +406,7 @@ ThongTinTaiKhoan As screen:
             DisplayMode: =DisplayMode.View
             Fill: =RGBA(255, 255, 255, 1)
             FocusedBorderColor: =
-            Height: =289
+            Height: =280
             HoverBorderColor: =
             HoverColor: =
             HoverFill: =
@@ -422,15 +422,15 @@ ThongTinTaiKhoan As screen:
             Visible: =showDialogueSuaKH
             Width: =473
             X: =446
-            Y: =240
+            Y: =249
             ZIndex: =35
 
         Label5_14 As label:
             Align: =Align.Center
-            Font: =Font.'Patrick Hand'
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Semibold
             Height: =101
-            Size: =30
+            Size: =20
             Text: ="Do you want to edit account information?"
             Visible: =showDialogueSuaKH
             Width: =408
@@ -565,10 +565,10 @@ ThongTinTaiKhoan As screen:
         Label5_12 As label:
             Align: =Align.Center
             Color: =RGBA(127, 178, 57, 1)
-            Font: =Font.'Patrick Hand'
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Semibold
             Height: =67
-            Size: =30
+            Size: =20
             Text: ="Successfully added supplier"
             Visible: =showThemNCCThanhCong
             Width: =408
@@ -595,7 +595,6 @@ ThongTinTaiKhoan As screen:
         ZIndex: =40
 
     Label2_27 As label:
-        Align: =Align.Center
         Color: |-
             =If(Label2_27.Text = "Stocker", RGBA(50, 200, 0, 100),
                 If(Label2_27.Text = "Manager", RGBA(200,0,0,100),
@@ -604,7 +603,7 @@ ThongTinTaiKhoan As screen:
                     )
                 )
             )
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =31
         Size: =15
@@ -715,7 +714,7 @@ ThongTinTaiKhoan As screen:
             ZIndex: =32
 
         AddMediaButton3_2 As addMedia:
-            Font: =Font.'Patrick Hand'
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Normal
             Height: =169
             Size: =20

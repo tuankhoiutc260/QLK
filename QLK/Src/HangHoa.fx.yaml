@@ -22,6 +22,34 @@ HangHoa As screen:
         Width: =164
         ZIndex: =2
 
+    Button2_112 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(DanhSachOrder)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Order list"
+        Width: =164
+        Y: =442
+        ZIndex: =3
+
+    Icon3_3 As icon.ShoppingCart:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.ShoppingCart
+        Width: =50
+        X: =57
+        Y: =455
+        ZIndex: =4
+
     lbl_OrderedID_DuyetDatHang_3 As label:
         Align: =Align.Center
         Font: =Font.'Segoe UI'
@@ -33,7 +61,7 @@ HangHoa As screen:
         Width: =314
         X: =228
         Y: =117
-        ZIndex: =3
+        ZIndex: =5
 
     Button2_109 As button:
         BorderThickness: =0
@@ -52,7 +80,7 @@ HangHoa As screen:
             Set price"
         Width: =164
         Y: =330
-        ZIndex: =4
+        ZIndex: =6
 
     Icon2_5 As icon.Money:
         Color: =RGBA(255, 255, 255, 1)
@@ -61,7 +89,7 @@ HangHoa As screen:
         Width: =50
         X: =57
         Y: =343
-        ZIndex: =5
+        ZIndex: =7
 
     Button2_7 As button:
         BorderStyle: =BorderStyle.Dotted
@@ -80,7 +108,7 @@ HangHoa As screen:
             
             Warehouse"
         Width: =164
-        ZIndex: =6
+        ZIndex: =8
 
     Icon4_1 As icon.Home:
         Color: =RGBA(255, 255, 255, 1)
@@ -89,7 +117,7 @@ HangHoa As screen:
         Width: =50
         X: =57
         Y: =15
-        ZIndex: =7
+        ZIndex: =9
 
     Button2_10 As button:
         BorderThickness: =0
@@ -112,7 +140,7 @@ HangHoa As screen:
             Product"
         Width: =164
         Y: =110
-        ZIndex: =8
+        ZIndex: =10
 
     Button2_11 As button:
         BorderThickness: =0
@@ -131,7 +159,7 @@ HangHoa As screen:
             Inventory"
         Width: =164
         Y: =220
-        ZIndex: =9
+        ZIndex: =11
 
     Icon8_1 As icon.Shop:
         Color: =RGBA(255, 255, 255, 1)
@@ -140,7 +168,7 @@ HangHoa As screen:
         Width: =50
         X: =57
         Y: =122
-        ZIndex: =10
+        ZIndex: =12
 
     Icon11_2 As icon.ListWatchlistRemind:
         Color: =RGBA(255, 255, 255, 1)
@@ -149,7 +177,7 @@ HangHoa As screen:
         Width: =50
         X: =57
         Y: =232
-        ZIndex: =11
+        ZIndex: =13
 
     Button2_13 As button:
         BorderThickness: =0
@@ -169,7 +197,7 @@ HangHoa As screen:
             Logout"
         Width: =164
         Y: =651
-        ZIndex: =12
+        ZIndex: =14
 
     Icon10_1 As icon.Leave:
         Color: =RGBA(255, 255, 255, 1)
@@ -178,14 +206,14 @@ HangHoa As screen:
         Width: =50
         X: =57
         Y: =675
-        ZIndex: =13
+        ZIndex: =15
 
     Icon11_3 As icon.VerticalLine:
         Height: =110
         Icon: =Icon.VerticalLine
         X: =133
         Y: =110
-        ZIndex: =14
+        ZIndex: =16
 
     Image4_2 As image:
         Height: =56
@@ -197,7 +225,7 @@ HangHoa As screen:
         Width: =56
         X: =966
         Y: =20
-        ZIndex: =15
+        ZIndex: =17
 
     Label2_1 As label:
         Font: =Font.'Segoe UI'
@@ -207,7 +235,7 @@ HangHoa As screen:
         Width: =227
         X: =1035
         Y: =15
-        ZIndex: =16
+        ZIndex: =18
 
     Label2_28 As label:
         Color: |-
@@ -226,7 +254,7 @@ HangHoa As screen:
         Width: =196
         X: =1035
         Y: =45
-        ZIndex: =17
+        ZIndex: =19
 
     "gal_Product As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         BorderColor: =RGBA(202, 202, 202, 1)
@@ -250,7 +278,7 @@ HangHoa As screen:
         Width: =1071
         X: =228
         Y: =235
-        ZIndex: =18
+        ZIndex: =20
 
         lbl_NameProduct As label:
             Align: =Align.Center
@@ -342,7 +370,7 @@ HangHoa As screen:
         Width: =258
         X: =179
         Y: =11
-        ZIndex: =19
+        ZIndex: =21
 
     Button7_4 As button:
         BorderColor: =RGBA(151, 0, 0, 1)
@@ -369,7 +397,7 @@ HangHoa As screen:
         Width: =1072
         X: =227
         Y: =183
-        ZIndex: =20
+        ZIndex: =22
 
     btn_PendingList_DuyetDatHang_1 As button:
         AutoDisableOnSelect: =false
@@ -390,7 +418,7 @@ HangHoa As screen:
         Width: =192
         X: =1107
         Y: =123
-        ZIndex: =21
+        ZIndex: =23
 
     lbl_DateCreated_DuyetDatHang_1 As label:
         Align: =Align.Center
@@ -401,7 +429,7 @@ HangHoa As screen:
         Width: =99
         X: =566
         Y: =183
-        ZIndex: =22
+        ZIndex: =24
 
     lbl_OrderedID_DuyetDatHang_1 As label:
         Align: =Align.Center
@@ -413,7 +441,7 @@ HangHoa As screen:
         Width: =314
         X: =228
         Y: =183
-        ZIndex: =23
+        ZIndex: =25
 
     lbl_TotalPrice_DuyetDatHang_1 As label:
         Align: =Align.Center
@@ -424,7 +452,7 @@ HangHoa As screen:
         Width: =136
         X: =683
         Y: =183
-        ZIndex: =24
+        ZIndex: =26
 
     lbl_Status_DuyetDatHang_1 As label:
         Align: =Align.Center
@@ -434,7 +462,7 @@ HangHoa As screen:
         Text: ="Image"
         X: =1133
         Y: =183
-        ZIndex: =25
+        ZIndex: =27
 
     lbl_TotalPrice_DuyetDatHang_2 As label:
         Align: =Align.Center
@@ -445,7 +473,7 @@ HangHoa As screen:
         Width: =136
         X: =848
         Y: =183
-        ZIndex: =26
+        ZIndex: =28
 
     lbl_TotalPrice_DuyetDatHang_3 As label:
         Align: =Align.Center
@@ -456,7 +484,7 @@ HangHoa As screen:
         Width: =99
         X: =1012
         Y: =183
-        ZIndex: =27
+        ZIndex: =29
 
     UploadedImage2 As image:
         Height: =AddMediaButton2.Height
@@ -466,7 +494,7 @@ HangHoa As screen:
         Width: =AddMediaButton2.Width
         X: =AddMediaButton2.X
         Y: =AddMediaButton2.Y
-        ZIndex: =79
+        ZIndex: =81
 
     Group10 As group:
         Height: =5
@@ -480,7 +508,7 @@ HangHoa As screen:
             Height: =768
             Visible: =showXacNhatUpDateThongTinHangHoa
             Width: =1366
-            ZIndex: =82
+            ZIndex: =84
 
         Nen_30 As button:
             BorderColor: =RGBA(255, 255, 255, 1)
@@ -505,7 +533,7 @@ HangHoa As screen:
             Width: =432
             X: =470
             Y: =289
-            ZIndex: =83
+            ZIndex: =85
 
         Label8 As label:
             Align: =Align.Center
@@ -518,7 +546,7 @@ HangHoa As screen:
             Width: =375
             X: =492
             Y: =316
-            ZIndex: =84
+            ZIndex: =86
 
         btn_PendingList_DuyetDatHang_2 As button:
             AutoDisableOnSelect: =false
@@ -564,7 +592,7 @@ HangHoa As screen:
             Width: =156
             X: =521
             Y: =435
-            ZIndex: =85
+            ZIndex: =87
 
         btn_PendingList_DuyetDatHang_3 As button:
             AutoDisableOnSelect: =false
@@ -586,7 +614,7 @@ HangHoa As screen:
             Width: =156
             X: =698
             Y: =437
-            ZIndex: =86
+            ZIndex: =88
 
     Group11 As group:
         Height: =5
@@ -600,7 +628,7 @@ HangHoa As screen:
             Height: =768
             Visible: =showXacNhanXoaThongTinHangHoa
             Width: =1366
-            ZIndex: =87
+            ZIndex: =89
 
         Nen_31 As button:
             BorderColor: =RGBA(255, 255, 255, 1)
@@ -625,7 +653,7 @@ HangHoa As screen:
             Width: =416
             X: =475
             Y: =268
-            ZIndex: =88
+            ZIndex: =90
 
         Label10 As label:
             Align: =Align.Center
@@ -636,7 +664,7 @@ HangHoa As screen:
             Width: =303
             X: =534
             Y: =328
-            ZIndex: =89
+            ZIndex: =91
 
         btn_PendingList_DuyetDatHang_4 As button:
             AutoDisableOnSelect: =false
@@ -667,7 +695,7 @@ HangHoa As screen:
             Width: =156
             X: =526
             Y: =413
-            ZIndex: =90
+            ZIndex: =92
 
         btn_PendingList_DuyetDatHang_5 As button:
             AutoDisableOnSelect: =false
@@ -690,7 +718,7 @@ HangHoa As screen:
             Width: =156
             X: =692
             Y: =413
-            ZIndex: =91
+            ZIndex: =93
 
     Group3 As group:
         Height: =5
@@ -705,7 +733,7 @@ HangHoa As screen:
             Height: =768
             Visible: =showThongTinHangHoa
             Width: =1366
-            ZIndex: =28
+            ZIndex: =30
 
         Nen_28 As button:
             BorderColor: =RGBA(255, 255, 255, 1)
@@ -730,7 +758,7 @@ HangHoa As screen:
             Width: =971
             X: =265
             Y: =66
-            ZIndex: =29
+            ZIndex: =31
 
         Label9 As label:
             Align: =Align.Center
@@ -744,7 +772,7 @@ HangHoa As screen:
             Width: =656
             X: =430
             Y: =85
-            ZIndex: =30
+            ZIndex: =32
 
         Label9_1 As label:
             Color: =RGBA(39, 67, 125, 1)
@@ -757,7 +785,7 @@ HangHoa As screen:
             Width: =160
             X: =486
             Y: =178
-            ZIndex: =31
+            ZIndex: =33
 
         Image13 As image:
             BorderThickness: =2
@@ -771,7 +799,7 @@ HangHoa As screen:
             Width: =323
             X: =338
             Y: =235
-            ZIndex: =32
+            ZIndex: =34
 
         Label9_2 As label:
             Font: =Font.'Segoe UI'
@@ -784,7 +812,7 @@ HangHoa As screen:
             Width: =148
             X: =338
             Y: =178
-            ZIndex: =33
+            ZIndex: =35
 
         Label9_3 As label:
             Font: =Font.'Segoe UI'
@@ -797,7 +825,7 @@ HangHoa As screen:
             Width: =116
             X: =711
             Y: =223
-            ZIndex: =34
+            ZIndex: =36
 
         Label9_4 As label:
             Font: =Font.'Segoe UI'
@@ -810,7 +838,7 @@ HangHoa As screen:
             Width: =196
             X: =709
             Y: =267
-            ZIndex: =35
+            ZIndex: =37
 
         Label9_5 As label:
             Font: =Font.'Segoe UI'
@@ -823,7 +851,7 @@ HangHoa As screen:
             Width: =183
             X: =709
             Y: =312
-            ZIndex: =36
+            ZIndex: =38
 
         Label9_6 As label:
             Font: =Font.'Segoe UI'
@@ -834,7 +862,7 @@ HangHoa As screen:
             Width: =183
             X: =928
             Y: =312
-            ZIndex: =37
+            ZIndex: =39
 
         Label9_7 As label:
             Font: =Font.'Segoe UI'
@@ -847,7 +875,7 @@ HangHoa As screen:
             Width: =183
             X: =711
             Y: =357
-            ZIndex: =38
+            ZIndex: =40
 
         Label9_8 As label:
             Font: =Font.'Segoe UI'
@@ -860,7 +888,7 @@ HangHoa As screen:
             Width: =183
             X: =709
             Y: =402
-            ZIndex: =39
+            ZIndex: =41
 
         Label9_9 As label:
             Font: =Font.'Segoe UI'
@@ -871,7 +899,7 @@ HangHoa As screen:
             Width: =183
             X: =928
             Y: =355
-            ZIndex: =40
+            ZIndex: =42
 
         Label9_10 As label:
             Font: =Font.'Segoe UI'
@@ -882,7 +910,7 @@ HangHoa As screen:
             Width: =183
             X: =920
             Y: =402
-            ZIndex: =41
+            ZIndex: =43
 
         Label9_11 As label:
             Font: =Font.'Segoe UI'
@@ -893,7 +921,7 @@ HangHoa As screen:
             Width: =183
             X: =928
             Y: =223
-            ZIndex: =42
+            ZIndex: =44
 
         Label9_12 As label:
             Font: =Font.'Segoe UI'
@@ -904,7 +932,7 @@ HangHoa As screen:
             Width: =183
             X: =928
             Y: =267
-            ZIndex: =43
+            ZIndex: =45
 
         Label9_13 As label:
             Font: =Font.'Segoe UI'
@@ -917,7 +945,7 @@ HangHoa As screen:
             Width: =183
             X: =709
             Y: =450
-            ZIndex: =44
+            ZIndex: =46
 
         Label9_14 As label:
             Font: =Font.'Segoe UI'
@@ -928,7 +956,7 @@ HangHoa As screen:
             Width: =183
             X: =920
             Y: =450
-            ZIndex: =45
+            ZIndex: =47
 
         Label9_15 As label:
             Font: =Font.'Segoe UI'
@@ -941,7 +969,7 @@ HangHoa As screen:
             Width: =183
             X: =709
             Y: =495
-            ZIndex: =46
+            ZIndex: =48
 
         Label9_16 As label:
             Font: =Font.'Segoe UI'
@@ -953,7 +981,7 @@ HangHoa As screen:
             Width: =272
             X: =920
             Y: =500
-            ZIndex: =47
+            ZIndex: =49
 
         Label9_17 As label:
             Font: =Font.'Segoe UI'
@@ -966,7 +994,7 @@ HangHoa As screen:
             Width: =183
             X: =709
             Y: =178
-            ZIndex: =48
+            ZIndex: =50
 
         Label9_18 As label:
             Font: =Font.'Segoe UI'
@@ -977,7 +1005,7 @@ HangHoa As screen:
             Width: =183
             X: =928
             Y: =178
-            ZIndex: =49
+            ZIndex: =51
 
         btn_CancelOrderDetailOrder_1 As button:
             AutoDisableOnSelect: =false
@@ -1001,7 +1029,7 @@ HangHoa As screen:
             Width: =150
             X: =1035
             Y: =642
-            ZIndex: =50
+            ZIndex: =52
 
         btn_CancelOrderDetailOrder_4 As button:
             AutoDisableOnSelect: =false
@@ -1026,7 +1054,7 @@ HangHoa As screen:
             Width: =150
             X: =724
             Y: =642
-            ZIndex: =51
+            ZIndex: =53
 
         btn_CancelOrderDetailOrder_5 As button:
             AutoDisableOnSelect: =false
@@ -1048,7 +1076,7 @@ HangHoa As screen:
             Width: =150
             X: =880
             Y: =642
-            ZIndex: =52
+            ZIndex: =54
 
         btn_CancelOrderDetailOrder_8 As button:
             AutoDisableOnSelect: =false
@@ -1072,7 +1100,7 @@ HangHoa As screen:
             Width: =212
             X: =393
             Y: =642
-            ZIndex: =53
+            ZIndex: =55
 
     Group4 As group:
         Height: =5
@@ -1086,7 +1114,7 @@ HangHoa As screen:
             Height: =768
             Visible: =showUpdateThongTinHangHoa
             Width: =1366
-            ZIndex: =54
+            ZIndex: =56
 
         Nen_29 As button:
             BorderColor: =RGBA(255, 255, 255, 1)
@@ -1111,7 +1139,7 @@ HangHoa As screen:
             Width: =971
             X: =265
             Y: =66
-            ZIndex: =55
+            ZIndex: =57
 
         Label9_19 As label:
             Align: =Align.Center
@@ -1125,7 +1153,7 @@ HangHoa As screen:
             Width: =656
             X: =435
             Y: =94
-            ZIndex: =56
+            ZIndex: =58
 
         txt_UpID As label:
             Color: =RGBA(39, 67, 125, 1)
@@ -1138,7 +1166,7 @@ HangHoa As screen:
             Width: =160
             X: =479
             Y: =163
-            ZIndex: =57
+            ZIndex: =59
 
         Label9_21 As label:
             Font: =Font.'Segoe UI'
@@ -1151,7 +1179,7 @@ HangHoa As screen:
             Width: =132
             X: =338
             Y: =163
-            ZIndex: =58
+            ZIndex: =60
 
         Label9_22 As label:
             Font: =Font.'Segoe UI'
@@ -1164,7 +1192,7 @@ HangHoa As screen:
             Width: =116
             X: =685
             Y: =208
-            ZIndex: =59
+            ZIndex: =61
 
         Label9_23 As label:
             Font: =Font.'Segoe UI'
@@ -1177,7 +1205,7 @@ HangHoa As screen:
             Width: =197
             X: =683
             Y: =252
-            ZIndex: =60
+            ZIndex: =62
 
         Label9_24 As label:
             Font: =Font.'Segoe UI'
@@ -1190,7 +1218,7 @@ HangHoa As screen:
             Width: =183
             X: =683
             Y: =297
-            ZIndex: =61
+            ZIndex: =63
 
         txt_Unit As label:
             Font: =Font.'Segoe UI'
@@ -1201,7 +1229,7 @@ HangHoa As screen:
             Width: =183
             X: =902
             Y: =297
-            ZIndex: =62
+            ZIndex: =64
 
         Label9_26 As label:
             Font: =Font.'Segoe UI'
@@ -1214,7 +1242,7 @@ HangHoa As screen:
             Width: =183
             X: =685
             Y: =342
-            ZIndex: =63
+            ZIndex: =65
 
         Label9_27 As label:
             Font: =Font.'Segoe UI'
@@ -1227,7 +1255,7 @@ HangHoa As screen:
             Width: =183
             X: =683
             Y: =387
-            ZIndex: =64
+            ZIndex: =66
 
         Label9_32 As label:
             Font: =Font.'Segoe UI'
@@ -1240,7 +1268,7 @@ HangHoa As screen:
             Width: =183
             X: =683
             Y: =435
-            ZIndex: =65
+            ZIndex: =67
 
         Label9_34 As label:
             Font: =Font.'Segoe UI'
@@ -1253,7 +1281,7 @@ HangHoa As screen:
             Width: =183
             X: =683
             Y: =480
-            ZIndex: =66
+            ZIndex: =68
 
         Label9_36 As label:
             Font: =Font.'Segoe UI'
@@ -1266,7 +1294,7 @@ HangHoa As screen:
             Width: =183
             X: =683
             Y: =163
-            ZIndex: =67
+            ZIndex: =69
 
         Label9_37 As label:
             Font: =Font.'Segoe UI'
@@ -1277,7 +1305,7 @@ HangHoa As screen:
             Width: =183
             X: =902
             Y: =163
-            ZIndex: =68
+            ZIndex: =70
 
         btn_CancelOrderDetailOrder_6 As button:
             AutoDisableOnSelect: =false
@@ -1312,7 +1340,7 @@ HangHoa As screen:
             Width: =150
             X: =905
             Y: =658
-            ZIndex: =69
+            ZIndex: =71
 
         btn_CancelOrderDetailOrder_7 As button:
             AutoDisableOnSelect: =false
@@ -1336,7 +1364,7 @@ HangHoa As screen:
             Width: =150
             X: =1065
             Y: =658
-            ZIndex: =70
+            ZIndex: =72
 
         txt_UpDescription As text:
             BorderColor: =RGBA(149, 149, 149, 1)
@@ -1350,7 +1378,7 @@ HangHoa As screen:
             Width: =272
             X: =902
             Y: =496
-            ZIndex: =71
+            ZIndex: =73
 
         txt_UpOutputPrice As text:
             BorderColor: =RGBA(149, 149, 149, 1)
@@ -1363,7 +1391,7 @@ HangHoa As screen:
             Width: =110
             X: =902
             Y: =393
-            ZIndex: =72
+            ZIndex: =74
 
         Label9_29 As label:
             Font: =Font.'Segoe UI'
@@ -1374,7 +1402,7 @@ HangHoa As screen:
             Width: =69
             X: =1012
             Y: =393
-            ZIndex: =73
+            ZIndex: =75
 
         txt_UpInputPrice As text:
             BorderColor: =RGBA(149, 149, 149, 1)
@@ -1387,7 +1415,7 @@ HangHoa As screen:
             Width: =110
             X: =902
             Y: =348
-            ZIndex: =74
+            ZIndex: =76
 
         Label9_33 As label:
             Font: =Font.'Segoe UI'
@@ -1398,7 +1426,7 @@ HangHoa As screen:
             Width: =69
             X: =1014
             Y: =348
-            ZIndex: =75
+            ZIndex: =77
 
         txt_UpMinQuantity As text:
             BorderColor: =RGBA(149, 149, 149, 1)
@@ -1411,7 +1439,7 @@ HangHoa As screen:
             Width: =110
             X: =902
             Y: =258
-            ZIndex: =76
+            ZIndex: =78
 
         txt_UpQuantity As text:
             BorderColor: =RGBA(149, 149, 149, 1)
@@ -1424,7 +1452,7 @@ HangHoa As screen:
             Width: =110
             X: =902
             Y: =215
-            ZIndex: =77
+            ZIndex: =79
 
         Label9_28 As label:
             Font: =Font.'Segoe UI'
@@ -1437,7 +1465,7 @@ HangHoa As screen:
             Width: =116
             X: =338
             Y: =208
-            ZIndex: =78
+            ZIndex: =80
 
         AddMediaButton2 As addMedia:
             Font: =Font.'Segoe UI'
@@ -1448,7 +1476,7 @@ HangHoa As screen:
             Width: =295
             X: =338
             Y: =268
-            ZIndex: =80
+            ZIndex: =82
 
         Drop_Location As dropdown:
             ChevronBackground: =RGBA(149, 149, 149, 1)
@@ -1460,26 +1488,7 @@ HangHoa As screen:
             Width: =109
             X: =903
             Y: =442
-            ZIndex: =81
-
-    Button2_112 As button:
-        BorderThickness: =0
-        Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Normal
-        Height: =110
-        OnSelect: =Navigate(DanhSachOrder)
-        RadiusBottomLeft: =
-        RadiusBottomRight: =
-        RadiusTopLeft: =
-        RadiusTopRight: =
-        Text: |-
-            ="
-            
-            Order list"
-        Width: =164
-        Y: =442
-        ZIndex: =100
+            ZIndex: =83
 
     Group5 As group:
         Height: =5
@@ -1494,7 +1503,7 @@ HangHoa As screen:
             Height: =768
             Visible: =showYeuCauDatHang
             Width: =1366
-            ZIndex: =92
+            ZIndex: =94
 
         Nen_32 As button:
             BorderColor: =RGBA(255, 255, 255, 1)
@@ -1519,7 +1528,7 @@ HangHoa As screen:
             Width: =584
             X: =510
             Y: =284
-            ZIndex: =93
+            ZIndex: =95
 
         Label18 As label:
             Align: =Align.Center
@@ -1531,7 +1540,7 @@ HangHoa As screen:
             Width: =547
             X: =534
             Y: =303
-            ZIndex: =94
+            ZIndex: =96
 
         Label18_1 As label:
             Align: =Align.Center
@@ -1545,7 +1554,7 @@ HangHoa As screen:
             Width: =547
             X: =538
             Y: =352
-            ZIndex: =95
+            ZIndex: =97
 
         Label18_2 As label:
             Align: =Align.Right
@@ -1558,15 +1567,16 @@ HangHoa As screen:
             Width: =163
             X: =645
             Y: =444
-            ZIndex: =96
+            ZIndex: =98
 
         txt_Quantity As text:
             Default: ="0"
+            Format: =TextFormat.Number
             Visible: =showYeuCauDatHang
             Width: =79
             X: =834
             Y: =445
-            ZIndex: =97
+            ZIndex: =99
 
         btn_PendingList_DuyetDatHang_7 As button:
             AutoDisableOnSelect: =false
@@ -1590,8 +1600,29 @@ HangHoa As screen:
                             ID_ProductRequest: Label9_1.Text,
                             Quantity: Value(txt_Quantity.Text)
                         }
-                    )
-                );
+                    );
+                    Office365Outlook.SendEmailV2(
+                            "devil09032001@gmail.com",                  
+                            "Thông báo đặt xe", 
+                            "<table>
+                  <tr>
+                    <th>Company</th>
+                    <th>Contact</th>
+                    <th>Country</th>
+                  </tr>
+                  <tr>
+                    <td>Alfreds Futterkiste</td>
+                    <td>Maria Anders</td>
+                    <td>Germany</td>
+                  </tr>
+                  <tr>
+                    <td>Centro comercial Moctezuma</td>
+                    <td>Francisco Chang</td>
+                    <td>Mexico</td>
+                  </tr>
+                </table>"
+                        )
+                    );
                 Set(showYeuCauDatHang, false)
             PressedBorderColor: =RGBA(237, 237, 237, 1)
             RadiusBottomLeft: =20
@@ -1604,7 +1635,7 @@ HangHoa As screen:
             Width: =156
             X: =645
             Y: =505
-            ZIndex: =98
+            ZIndex: =100
 
         btn_PendingList_DuyetDatHang_8 As button:
             AutoDisableOnSelect: =false
@@ -1626,14 +1657,5 @@ HangHoa As screen:
             Width: =156
             X: =821
             Y: =505
-            ZIndex: =99
-
-    Icon3_3 As icon.ShoppingCart:
-        Color: =RGBA(255, 255, 255, 1)
-        Height: =50
-        Icon: =Icon.ShoppingCart
-        Width: =50
-        X: =57
-        Y: =455
-        ZIndex: =101
+            ZIndex: =101
 

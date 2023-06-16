@@ -236,6 +236,45 @@ DanhSachOrder As screen:
         Y: =235
         ZIndex: =70
 
+        lbl_NameProduct_3 As label:
+            Align: =Align.Center
+            Height: =46
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Name
+            Width: =457
+            Y: =5
+            ZIndex: =1
+
+        lbl_InputPrice_2 As label:
+            Align: =Align.Center
+            Height: =41
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.ID_ProductRequest
+            Width: =162
+            X: =51
+            Y: =5
+            ZIndex: =2
+
+        lbl_OutputPrice_2 As label:
+            Align: =Align.Center
+            Height: =41
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Quantity
+            Width: =111
+            X: =837
+            Y: =5
+            ZIndex: =3
+
+        lbl_InputPrice_3 As label:
+            Align: =Align.Center
+            Height: =41
+            OnSelect: =Select(Parent)
+            Text: =LookUp(QLK_Product, IDProduct = ThisItem.ID_ProductRequest, Name)
+            Width: =576
+            X: =213
+            Y: =5
+            ZIndex: =4
+
         Button6_3 As button:
             AutoDisableOnSelect: =false
             BorderColor: =RGBA(202, 202, 202, 1)
@@ -253,45 +292,6 @@ DanhSachOrder As screen:
             RadiusTopRight: =0
             Text: =""
             Width: =1071
-            ZIndex: =1
-
-        lbl_NameProduct_3 As label:
-            Align: =Align.Center
-            Height: =46
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.Name
-            Width: =457
-            Y: =5
-            ZIndex: =2
-
-        lbl_InputPrice_2 As label:
-            Align: =Align.Center
-            Height: =41
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.ID_ProductRequest
-            Width: =162
-            X: =51
-            Y: =5
-            ZIndex: =3
-
-        lbl_OutputPrice_2 As label:
-            Align: =Align.Center
-            Height: =41
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.Quantity
-            Width: =111
-            X: =837
-            Y: =5
-            ZIndex: =4
-
-        lbl_InputPrice_3 As label:
-            Align: =Align.Center
-            Height: =41
-            OnSelect: =Select(Parent)
-            Text: =LookUp(QLK_Product, IDProduct = ThisItem.ID_ProductRequest, Name)
-            Width: =576
-            X: =213
-            Y: =5
             ZIndex: =5
 
     Button7_7 As button:

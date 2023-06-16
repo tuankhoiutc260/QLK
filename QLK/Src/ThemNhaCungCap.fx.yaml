@@ -38,7 +38,7 @@ ThemNhaCungCap As screen:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
-        OnSelect: =Navigate(TrangchuGD)
+        OnSelect: =Navigate(TrangChu_Admin)
         RadiusBottomLeft: =
         RadiusBottomRight: =
         RadiusTopLeft: =
@@ -546,7 +546,6 @@ ThemNhaCungCap As screen:
             ZIndex: =50
 
     Label2_20 As label:
-        Align: =Align.Center
         Color: |-
             =If(Label2_20.Text = "Stocker", RGBA(50, 200, 0, 100),
                 If(Label2_20.Text = "Manager", RGBA(200,0,0,100),

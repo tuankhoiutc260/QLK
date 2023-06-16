@@ -2630,3 +2630,13 @@ TrangChu_Admin As screen:
                     Y: =677
                     ZIndex: =33
 
+    Icon5 As icon.Hamburger:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =39
+        Icon: =Icon.Hamburger
+        OnSelect: =Navigate(NhaCungCap)
+        Width: =39
+        X: =1276
+        Y: =36
+        ZIndex: =2
+

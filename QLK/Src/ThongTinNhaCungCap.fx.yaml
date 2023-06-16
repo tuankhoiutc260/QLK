@@ -35,10 +35,10 @@ ThongTinNhaCungCap As screen:
         BorderStyle: =BorderStyle.Dotted
         BorderThickness: =1
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
-        OnSelect: =Navigate(TrangchuGD)
+        OnSelect: =Navigate(TrangChu_Admin)
         RadiusBottomLeft: =
         RadiusBottomRight: =
         RadiusTopLeft: =
@@ -62,7 +62,7 @@ ThongTinNhaCungCap As screen:
     Button2_53 As button:
         BorderThickness: =0
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
         OnSelect: =Navigate(NhaCungCap)
@@ -81,7 +81,7 @@ ThongTinNhaCungCap As screen:
     Button2_54 As button:
         BorderThickness: =0
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
         OnSelect: =Navigate(KhachHang)
@@ -100,7 +100,7 @@ ThongTinNhaCungCap As screen:
     Button2_55 As button:
         BorderThickness: =0
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
         OnSelect: =Navigate(TaiKhoan)
@@ -119,7 +119,7 @@ ThongTinNhaCungCap As screen:
     Button2_56 As button:
         BorderThickness: =0
         Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
         OnSelect: =Navigate(DangNhap)
@@ -444,14 +444,14 @@ ThongTinNhaCungCap As screen:
         Label5_4 As label:
             Align: =Align.Center
             Color: =RGBA(127, 178, 57, 1)
-            Font: =Font.'Patrick Hand'
+            Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Semibold
             Height: =67
-            Size: =30
+            Size: =20
             Text: ="Successfully added supplier"
             Visible: =showThemNCCThanhCong
-            Width: =408
-            X: =477
+            Width: =405
+            X: =479
             Y: =249
             ZIndex: =49
 
