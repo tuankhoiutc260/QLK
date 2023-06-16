@@ -78,7 +78,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_A1",
-      "ParentIndex": 45,
+      "ParentIndex": 47,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -343,7 +343,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_A2",
-      "ParentIndex": 46,
+      "ParentIndex": 48,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -608,7 +608,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_A3",
-      "ParentIndex": 47,
+      "ParentIndex": 49,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -873,7 +873,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_A4",
-      "ParentIndex": 65,
+      "ParentIndex": 67,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1138,7 +1138,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_A5",
-      "ParentIndex": 66,
+      "ParentIndex": 68,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1403,7 +1403,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_A6",
-      "ParentIndex": 67,
+      "ParentIndex": 69,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1761,7 +1761,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_ApprovedList_DuyetDatHang_3",
-      "ParentIndex": 72,
+      "ParentIndex": 74,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2129,7 +2129,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_ApprovedList_DuyetDatHang_4",
-      "ParentIndex": 73,
+      "ParentIndex": 75,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2411,7 +2411,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_B1",
-      "ParentIndex": 48,
+      "ParentIndex": 50,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2683,7 +2683,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_B2",
-      "ParentIndex": 49,
+      "ParentIndex": 51,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2955,7 +2955,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_B3",
-      "ParentIndex": 50,
+      "ParentIndex": 52,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3227,7 +3227,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Btn_B4",
-      "ParentIndex": 68,
+      "ParentIndex": 70,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3499,7 +3499,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Btn_B5",
-      "ParentIndex": 69,
+      "ParentIndex": 71,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3771,7 +3771,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_B6",
-      "ParentIndex": 70,
+      "ParentIndex": 72,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4043,7 +4043,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_C1",
-      "ParentIndex": 90,
+      "ParentIndex": 92,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4315,7 +4315,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_C2",
-      "ParentIndex": 91,
+      "ParentIndex": 93,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4587,7 +4587,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_C3",
-      "ParentIndex": 92,
+      "ParentIndex": 94,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4859,7 +4859,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_c4",
-      "ParentIndex": 98,
+      "ParentIndex": 100,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5131,7 +5131,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_C5",
-      "ParentIndex": 99,
+      "ParentIndex": 101,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5403,7 +5403,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_C6",
-      "ParentIndex": 100,
+      "ParentIndex": 102,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5761,7 +5761,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_CloseTTHHSoDo",
-      "ParentIndex": 96,
+      "ParentIndex": 98,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6129,7 +6129,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_CloseTTHHSoDo_1",
-      "ParentIndex": 97,
+      "ParentIndex": 99,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6411,7 +6411,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_D1",
-      "ParentIndex": 93,
+      "ParentIndex": 95,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6683,7 +6683,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_D2",
-      "ParentIndex": 94,
+      "ParentIndex": 96,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6955,7 +6955,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_D3",
-      "ParentIndex": 95,
+      "ParentIndex": 97,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7227,7 +7227,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_D4",
-      "ParentIndex": 101,
+      "ParentIndex": 103,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7499,7 +7499,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_D5",
-      "ParentIndex": 102,
+      "ParentIndex": 104,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7771,7 +7771,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_D6",
-      "ParentIndex": 103,
+      "ParentIndex": 105,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8129,7 +8129,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_PendingList_DuyetDatHang_6",
-      "ParentIndex": 71,
+      "ParentIndex": 73,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8497,7 +8497,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_RefusedList_DuyetDatHang_3",
-      "ParentIndex": 104,
+      "ParentIndex": 106,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8865,7 +8865,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_RefusedList_DuyetDatHang_4",
-      "ParentIndex": 88,
+      "ParentIndex": 90,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9233,7 +9233,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_RefusedList_DuyetDatHang_5",
-      "ParentIndex": 87,
+      "ParentIndex": 89,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9601,7 +9601,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_RefusedList_DuyetDatHang_6",
-      "ParentIndex": 76,
+      "ParentIndex": 78,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9969,7 +9969,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_RefusedList_DuyetDatHang_7",
-      "ParentIndex": 74,
+      "ParentIndex": 76,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10300,7 +10300,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Button2_101",
-      "ParentIndex": 58,
+      "ParentIndex": 60,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10621,7 +10621,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Button2_111",
-      "ParentIndex": 81,
+      "ParentIndex": 83,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11591,7 +11591,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Button2_88",
-      "ParentIndex": 33,
+      "ParentIndex": 35,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11912,7 +11912,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Button2_89",
-      "ParentIndex": 105,
+      "ParentIndex": 107,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12620,7 +12620,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Button7_6",
-      "ParentIndex": 23,
+      "ParentIndex": 24,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12893,7 +12893,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Button8",
-      "ParentIndex": 22,
+      "ParentIndex": 23,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13150,7 +13150,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "drop_Location2",
-      "ParentIndex": 77,
+      "ParentIndex": 79,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13446,7 +13446,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "gal_ProductNoLocation",
-      "ParentIndex": 27,
+      "ParentIndex": 29,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13639,7 +13639,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Group12",
-      "ParentIndex": 114,
+      "ParentIndex": 116,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13690,7 +13690,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Group13",
-      "ParentIndex": 116,
+      "ParentIndex": 118,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13741,7 +13741,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Group8",
-      "ParentIndex": 115,
+      "ParentIndex": 117,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13792,7 +13792,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Group9",
-      "ParentIndex": 113,
+      "ParentIndex": 115,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13882,7 +13882,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Icon10_17",
-      "ParentIndex": 106,
+      "ParentIndex": 108,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14221,7 +14221,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Icon11_32",
-      "ParentIndex": 34,
+      "ParentIndex": 36,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14401,7 +14401,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Icon2",
-      "ParentIndex": 61,
+      "ParentIndex": 63,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14581,7 +14581,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Icon3_2",
-      "ParentIndex": 83,
+      "ParentIndex": 85,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -14913,7 +14913,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Icon6",
-      "ParentIndex": 107,
+      "ParentIndex": 109,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15754,7 +15754,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Image9",
-      "ParentIndex": 51,
+      "ParentIndex": 53,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -16303,7 +16303,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label11_1",
-      "ParentIndex": 35,
+      "ParentIndex": 37,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -16600,7 +16600,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label11_2",
-      "ParentIndex": 36,
+      "ParentIndex": 38,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -16897,7 +16897,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label11_4",
-      "ParentIndex": 108,
+      "ParentIndex": 110,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -17194,7 +17194,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label11_5",
-      "ParentIndex": 109,
+      "ParentIndex": 111,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -17802,7 +17802,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label13",
-      "ParentIndex": 29,
+      "ParentIndex": 31,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -18112,7 +18112,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label13_10",
-      "ParentIndex": 89,
+      "ParentIndex": 91,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -18415,7 +18415,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label13_11",
-      "ParentIndex": 31,
+      "ParentIndex": 33,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -18718,7 +18718,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label13_3",
-      "ParentIndex": 43,
+      "ParentIndex": 45,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -19028,7 +19028,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label13_4",
-      "ParentIndex": 44,
+      "ParentIndex": 46,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -19331,7 +19331,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label13_5",
-      "ParentIndex": 59,
+      "ParentIndex": 61,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -19641,7 +19641,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label13_6",
-      "ParentIndex": 60,
+      "ParentIndex": 62,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -19944,7 +19944,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label13_7",
-      "ParentIndex": 64,
+      "ParentIndex": 66,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -20254,7 +20254,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label13_8",
-      "ParentIndex": 75,
+      "ParentIndex": 77,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -20557,7 +20557,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label13_9",
-      "ParentIndex": 82,
+      "ParentIndex": 84,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -20860,7 +20860,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label14",
-      "ParentIndex": 57,
+      "ParentIndex": 59,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -21163,7 +21163,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label15",
-      "ParentIndex": 52,
+      "ParentIndex": 54,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -21465,7 +21465,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label15_2",
-      "ParentIndex": 110,
+      "ParentIndex": 112,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -21762,7 +21762,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label15_3",
-      "ParentIndex": 86,
+      "ParentIndex": 88,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -22059,7 +22059,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label15_4",
-      "ParentIndex": 85,
+      "ParentIndex": 87,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -22356,7 +22356,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label15_5",
-      "ParentIndex": 56,
+      "ParentIndex": 58,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -23248,7 +23248,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label22",
-      "ParentIndex": 40,
+      "ParentIndex": 42,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -23544,7 +23544,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label23",
-      "ParentIndex": 62,
+      "ParentIndex": 64,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -23840,7 +23840,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label23_3",
-      "ParentIndex": 63,
+      "ParentIndex": 65,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -24136,7 +24136,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label23_4",
-      "ParentIndex": 78,
+      "ParentIndex": 80,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -24432,7 +24432,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label23_6",
-      "ParentIndex": 80,
+      "ParentIndex": 82,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -24728,7 +24728,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label23_7",
-      "ParentIndex": 53,
+      "ParentIndex": 55,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -25031,7 +25031,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label24",
-      "ParentIndex": 54,
+      "ParentIndex": 56,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -26208,7 +26208,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_OrderedID_DuyetDatHang_6",
-      "ParentIndex": 24,
+      "ParentIndex": 25,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -26517,7 +26517,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_OrderedID_DuyetDatHang_7",
-      "ParentIndex": 25,
+      "ParentIndex": 27,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -27165,7 +27165,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Rectangle10",
-      "ParentIndex": 26,
+      "ParentIndex": 28,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -28069,7 +28069,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Rectangle9",
-      "ParentIndex": 84,
+      "ParentIndex": 86,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -28187,7 +28187,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Rectangle9_1",
-      "ParentIndex": 30,
+      "ParentIndex": 32,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -28305,7 +28305,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Rectangle9_2",
-      "ParentIndex": 28,
+      "ParentIndex": 30,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -29201,7 +29201,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "TextInput1_12",
-      "ParentIndex": 42,
+      "ParentIndex": 44,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -29837,7 +29837,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "TextInput1_15",
-      "ParentIndex": 37,
+      "ParentIndex": 39,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -30155,7 +30155,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "TextInput1_16",
-      "ParentIndex": 41,
+      "ParentIndex": 43,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -30473,7 +30473,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "TextInput1_17",
-      "ParentIndex": 39,
+      "ParentIndex": 41,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -30694,7 +30694,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "ThongBao",
-      "ParentIndex": 111,
+      "ParentIndex": 113,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -30745,7 +30745,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "ThongTinHangHoa_SoDo",
-      "ParentIndex": 112,
+      "ParentIndex": 114,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -30880,7 +30880,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "txt_IDLocation_Location",
-      "ParentIndex": 32,
+      "ParentIndex": 34,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -31190,7 +31190,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "txt_IDProduct_Location",
-      "ParentIndex": 38,
+      "ParentIndex": 40,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -31486,7 +31486,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "txt_IDProductLoaction",
-      "ParentIndex": 55,
+      "ParentIndex": 57,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -31775,7 +31775,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "txt_UnitLocation",
-      "ParentIndex": 79,
+      "ParentIndex": 81,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

@@ -2367,7 +2367,7 @@ TrangChu_KeToan As screen:
                         BorderThickness: =1
                         DelayItemLoading: =true
                         Height: =477
-                        Items: =col_DetailsImport_HomeAccountant
+                        Items: =col_DetailsNewOrder_HomeAccountant
                         Layout: =Layout.Vertical
                         LoadingSpinner: =LoadingSpinner.Data
                         ShowScrollbar: =false
@@ -2410,15 +2410,7 @@ TrangChu_KeToan As screen:
                             Height: =32
                             OnSelect: =Select(Parent)
                             Size: =10
-                            Text: |+
-                                =// 1: Order, 2: Import, 3: Export, 4: Pending
-                                
-                                If(
-                                    numDatasource = 1,
-                                    LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct, 'Name_Pro-Supplier'),
-                                    LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, Name)
-                                )
-                                
+                            Text: =LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct, 'Name_Pro-Supplier')
                             Width: =210
                             X: =62
                             Y: =12
@@ -2431,21 +2423,11 @@ TrangChu_KeToan As screen:
                             OnSelect: =Select(Parent)
                             Size: =8
                             Text: |-
-                                =Text(LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, InputPrice), "#,###" & " VND")
+                                =Text(LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct, 'Price_Pro-Supplier'), "#,###" & " VND")
                             Width: =160
                             X: =82
                             Y: =36
                             ZIndex: =4
-
-                        lbl_QuantityDetailsOrdered_cOHA1_2 As label:
-                            Align: =Align.Center
-                            OnSelect: =Select(Parent)
-                            Size: =9
-                            Text: =ThisItem.Quantity
-                            Width: =40
-                            X: =306
-                            Y: =17
-                            ZIndex: =6
 
                         lbl_xDetailsOrdered_cOHA1_2 As label:
                             Align: =Align.Center
@@ -2453,7 +2435,7 @@ TrangChu_KeToan As screen:
                             Size: =7
                             Text: ="x"
                             Width: =40
-                            X: =289
+                            X: =280
                             Y: =17
                             ZIndex: =8
 
@@ -2461,30 +2443,32 @@ TrangChu_KeToan As screen:
                             Color: =RGBA(149, 149, 149, 1)
                             Height: =30
                             Icon: =Icon.Cancel
-                            OnSelect: |-
-                                =UpdateIf(
-                                    col_ImportRequest_HomeAccountant, 
-                                    IDProduct = ThisItem.IDProduct, 
-                                    {
-                                        Quantity: LookUp(col_ImportRequest_HomeAccountant, IDProduct = ThisItem.IDProduct, Quantity) + ThisItem.Quantity
-                                    }
-                                );
-                                
-                                UpdateIf(
-                                    col_DetailsImport_HomeAccountant, 
-                                    IDProduct = ThisItem.IDProduct, 
-                                    {
-                                        Quantity: 0
-                                    }
-                                );
-                                
-                                
-                                
-                                RemoveIf(col_DetailsImport_HomeAccountant, Quantity = 0);
+                            OnSelect: =RemoveIf(col_DetailsNewOrder_HomeAccountant, IDProduct = ThisItem.IDProduct)
                             Width: =30
                             X: =359
                             Y: =22
                             ZIndex: =9
+
+                        TextInput7 As text:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(202, 202, 202, 1)
+                            BorderThickness: =0.5
+                            Default: =ThisItem.Quantity
+                            Format: =TextFormat.Number
+                            Height: =35
+                            HoverBorderColor: =RGBA(127, 235, 117, 0.5)
+                            HoverFill: =RGBA(127, 235, 117, 0.5)
+                            OnSelect: =Select(Parent)
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            PressedBorderColor: =RGBA(127, 235, 117, 0.5)
+                            Size: =9
+                            Width: =35
+                            X: =306
+                            Y: =17
+                            ZIndex: =10
 
                     lbl_TitleDetailsOrdered_cOHA1_2 As label:
                         Align: =Align.Center
@@ -2537,43 +2521,30 @@ TrangChu_KeToan As screen:
                         HoverBorderColor: =RGBA(237, 237, 237, 1)
                         HoverFill: =RGBA(81, 224, 105, 1)
                         OnSelect: |
-                            =Set(NewIDImportOrder_HomeAccountant, "IP" & Text(Now(), "ddmmyyyyhhmmss"));
-                            Patch(QLK_ImportForm, 
+                            =Set(NewIDImportOrder_HomeAccountant, "OD" & Text(Now(), "ddmmyyyyhhmmss"));
+                            
+                            ForAll(col_DetailsNewOrder_HomeAccountant, 
+                                QLK_OrderInformation.Run(
+                                    NewIDImportOrder_HomeAccountant,
+                                    col_DetailsNewOrder_HomeAccountant[@IDProduct],
+                                    Value(LookUp(gal_DetailsOrdered_cOHA1_2.AllItems, IDProduct = col_DetailsNewOrder_HomeAccountant[@IDProduct], TextInput7.Text)),
+                                    Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_DetailsNewOrder_HomeAccountant[@IDProduct], ID_Unit)),
+                                    Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_DetailsNewOrder_HomeAccountant[@IDProduct], 'Price_Pro-Supplier')),
+                                    Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_DetailsNewOrder_HomeAccountant[@IDProduct], 'Price_Pro-Supplier') * 
+                                        LookUp(gal_DetailsOrdered_cOHA1_2.AllItems, IDProduct = col_DetailsNewOrder_HomeAccountant[@IDProduct], TextInput7.Text))
+                                )
+                            );
+                            
+                            Patch(QLK_OrderForm, Defaults(QLK_OrderForm),
                                 {
-                                    IDImport: NewIDImportOrder_HomeAccountant,
-                                    TotalPrice: Sum(col_DetailsImport_HomeAccountant, TotalPrice), 
+                                    IDOrder: NewIDImportOrder_HomeAccountant,
+                                    //DateCreatedNumber: Value(NumDateNewOrderProduct),
+                                    TotalPrice: Sum(col_DetailsNewOrder_HomeAccountant, TotalPrice),
                                     Status: 1
                                 }
                             );
                             
-                            ForAll(col_DetailsImport_HomeAccountant, 
-                                Patch(QLK_ImportFormInformation, 
-                                    {
-                                        IDImport: NewIDImportOrder_HomeAccountant,
-                                        IDProduct: col_DetailsImport_HomeAccountant[@IDProduct],
-                                        Quantity: col_DetailsImport_HomeAccountant[@Quantity],
-                                        Unit: LookUp(QLK_Product, IDProduct = col_DetailsImport_HomeAccountant[@IDProduct], Unit),
-                                        Price: LookUp(QLK_Product, IDProduct = col_DetailsImport_HomeAccountant[@IDProduct], InputPrice),
-                                        TotalPrice: col_DetailsImport_HomeAccountant[@Quantity] * LookUp(QLK_Product, IDProduct = col_DetailsImport_HomeAccountant[@IDProduct], InputPrice)
-                                    }
-                                )
-                            );
-                            
-                            ForAll(col_ImportRequest_HomeAccountant As T, 
-                                Patch(QLK_ImportRequest, LookUp(QLK_ImportRequest, ID_ProductRequest = T.IDProduct),
-                                    {
-                                        Quantity: T.Quantity
-                                    }
-                                )
-                            );
-                            
-                            
-                            // Xoa Product Request quantity = 0
-                            
-                            RemoveIf(QLK_ImportRequest, Quantity = 0);
-                            Refresh(QLK_ImportRequest);
-                            ClearCollect(col_ImportRequest_HomeAccountant, RenameColumns(ShowColumns(Filter(QLK_ImportRequest, true), "ID_ProductRequest", "Quantity"), "ID_ProductRequest", "IDProduct"));
-                            Clear(col_DetailsImport_HomeAccountant);
+                            Clear(col_DetailsNewOrder_HomeAccountant);
                         OnTimerEnd: |-
                             =Set(showSuccess, false) && 
                             Set(showInformationImportInvoiceForm, false)
@@ -2583,7 +2554,7 @@ TrangChu_KeToan As screen:
                         RadiusTopLeft: =20
                         RadiusTopRight: =20
                         Start: =
-                        Text: ="Create Import Order"
+                        Text: ="Order"
                         Visible: =visible_cont_NewOrder_HomeAccountant
                         Width: =232
                         X: =765
@@ -3034,7 +3005,7 @@ TrangChu_KeToan As screen:
                     ZIndex: =9
 
     Button4 As button:
-        OnSelect: =Clear(col_ImportRequest_HomeAccountant);
+        OnSelect: =Clear(col_DetailsNewOrder_HomeAccountant);
         Text: ="Button"
         X: =44
         Y: =88
@@ -3264,7 +3235,7 @@ TrangChu_KeToan As screen:
 
         TextInput3_2 As text:
             Align: =Align.Center
-            Color: =If(Value(Self.Text) > QuantityProduct_HomeAccountant, Color.Red, Color.Black)
+            Color: =Color.Black
             Default: =""
             Format: =TextFormat.Number
             Reset: =true
@@ -3274,51 +3245,43 @@ TrangChu_KeToan As screen:
             Y: =334
             ZIndex: =15
 
-        Label27_2 As label:
-            Text: =" / " & QuantityProduct_HomeAccountant
-            Visible: =visible_grp_InputNewOrderQuantity_HomeAccoutant
-            Width: =94
-            X: =791
-            Y: =334
-            ZIndex: =16
-
         Button4_30 As button:
             BorderColor: =RGBA(127, 235, 117, 1)
             BorderThickness: =1
             Color: =RGBA(38, 240, 95, 1)
-            DisplayMode: =If(Value(TextInput3_2.Text) > QuantityProduct_HomeAccountant || Value(TextInput3_2.Text) <= 0, DisplayMode.Disabled, DisplayMode.Edit)
+            DisplayMode: =If(Value(TextInput3_2.Text) <=0 || Value(TextInput3_2.Text) <= 0, DisplayMode.Disabled, DisplayMode.Edit)
             Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Bold
             HoverBorderColor: =RGBA(127, 235, 117, 1)
             HoverFill: =RGBA(127, 235, 117, 1)
             OnSelect: |-
                 =Set(visible_grp_InputNewOrderQuantity_HomeAccoutant, false);
-                
+                /*
                 UpdateIf(
                     col_ImportRequest_HomeAccountant, 
-                    IDProduct = IDProduct_HomeAccountant, 
+                    IDProduct = IDProductNewOrder_HomeAccountant, 
                     {
-                        Quantity: LookUp(col_ImportRequest_HomeAccountant, IDProduct = IDProduct_HomeAccountant, Quantity) - Value(TextInput3_2.Text)
+                        Quantity: LookUp(col_ImportRequest_HomeAccountant, IDProduct = IDProductNewOrder_HomeAccountant, Quantity) - Value(TextInput3_2.Text)
                     }
                 );
-                
+                */
                 If(
-                    IDProduct_HomeAccountant in col_DetailsImport_HomeAccountant[@IDProduct],
+                    IDProductNewOrder_HomeAccountant in col_DetailsNewOrder_HomeAccountant[@IDProduct],
                     UpdateIf(
-                        col_DetailsImport_HomeAccountant, 
-                        IDProduct = IDProduct_HomeAccountant, 
+                        col_DetailsNewOrder_HomeAccountant, 
+                        IDProduct = IDProductNewOrder_HomeAccountant, 
                         {
-                            Quantity: LookUp(col_DetailsImport_HomeAccountant, IDProduct = IDProduct_HomeAccountant, Quantity) + Value(TextInput3_2.Text)
+                            Quantity: Value(TextInput7.Text) + Value(TextInput3_2.Text)
                         }
                     ),
-                    Collect(col_DetailsImport_HomeAccountant,
-                    {
-                        IDProduct: IDProduct_HomeAccountant,
-                        Quantity: Value(TextInput3_2.Text),
-                        Price: LookUp(QLK_Product, IDProduct = IDProduct_HomeAccountant, InputPrice), 
-                        TotalPrice: Value(TextInput3_2.Text) * LookUp(QLK_Product, IDProduct = IDProduct_HomeAccountant, InputPrice)
-                    } );
-                
+                    Collect(col_DetailsNewOrder_HomeAccountant,
+                        {
+                            IDProduct: IDProductNewOrder_HomeAccountant,
+                            Quantity: Value(TextInput3_2.Text),
+                            Price: LookUp(QLK_Product_Supplier, IDProduct_Supplier = IDProductNewOrder_HomeAccountant, 'Price_Pro-Supplier'), 
+                            TotalPrice: Value(TextInput3_2.Text) * LookUp(QLK_Product_Supplier, IDProduct_Supplier = IDProductNewOrder_HomeAccountant, 'Price_Pro-Supplier')
+                        } 
+                    );
                 );
                 
                     
