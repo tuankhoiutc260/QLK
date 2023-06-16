@@ -336,6 +336,19 @@ DangNhap As screen:
                             Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Permission')),
                             If(LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, ' Permission').Value = "Accountant",
                                                 Navigate(TrangChu_KeToan);
+                                                //Create collection Import Request
+                                                ClearCollect(
+                                                    col_ImportRequest_HomeAccountant, 
+                                                    RenameColumns(
+                                                        ShowColumns(
+                                                            Filter(
+                                                                QLK_ImportRequest, true
+                                                            ), 
+                                                            "ID_ProductRequest", "Quantity"
+                                                        ), 
+                                                        "ID_ProductRequest", "IDProduct"
+                                                    )
+                                                );
                                 
                                 //-----
             // Change Fill color button
