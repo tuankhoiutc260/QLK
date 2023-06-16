@@ -483,7 +483,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "cont_InformationProduct_ImportProduct(IMIP)_1",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3605,7 +3605,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label29",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
