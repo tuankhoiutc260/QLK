@@ -2338,12 +2338,6 @@ TrangChu_KeToan As screen:
                         Y: =25
                         ZIndex: =9
 
-                TextInput9 As text:
-                    Default: ="Text input"
-                    X: =220
-                    Y: =400
-                    ZIndex: =8
-
                 grp_DetailsOrdered_cOHA1_2 As group:
                     Height: =5
                     Width: =5
@@ -2566,6 +2560,12 @@ TrangChu_KeToan As screen:
                         X: =765
                         Y: =583
                         ZIndex: =7
+
+                TextInput9 As text:
+                    Default: ="Text input"
+                    X: =220
+                    Y: =400
+                    ZIndex: =8
 
             "'grp_buttonFunction(R_HA)_1' As group":
                 Height: =5

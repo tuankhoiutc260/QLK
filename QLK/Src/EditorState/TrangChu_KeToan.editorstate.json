@@ -767,7 +767,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "background_DetailsOrdered_cOHA1_2",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4251,7 +4251,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_PayDetailsOrdered_cOHA1_2",
-      "ParentIndex": 7,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11589,7 +11589,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "gal_DetailOrderPending_HA_DO_HA_3",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12436,7 +12436,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "gal_DetailsOrdered_cOHA1_2",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13226,7 +13226,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "grp_DetailsOrdered_cOHA1_2",
-      "ParentIndex": 8,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -24097,7 +24097,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_TitleDetailsOrdered_cOHA1_2",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -25231,7 +25231,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_TotalPriceDetailsOrdered_cOHA1_2",
-      "ParentIndex": 6,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -27151,7 +27151,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "line_DetailsOrdered_cOHA1_2",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

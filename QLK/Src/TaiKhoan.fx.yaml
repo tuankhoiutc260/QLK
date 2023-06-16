@@ -96,18 +96,18 @@ TaiKhoan As screen:
             Color: =RGBA(184, 0, 0, 1)
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Semibold
-            Height: =53
+            Height: =34
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Size: =30
+            Size: =20
             Text: =ThisItem.FullName
             VerticalAlign: =VerticalAlign.Top
             Width: =365
             X: =267
-            Y: =10
+            Y: =20
             ZIndex: =5
 
         Title3_1 As label:

@@ -710,24 +710,6 @@ SoDoKho As screen:
         Y: =201
         ZIndex: =53
 
-    Rectangle11_1 As rectangle:
-        Height: =53
-        Width: =160
-        X: =1053
-        Y: =149
-        ZIndex: =54
-
-    Label15_1 As label:
-        Align: =Align.Center
-        Color: =RGBA(255, 255, 255, 1)
-        Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
-        Size: =15
-        Text: ="Export area"
-        X: =1058
-        Y: =156
-        ZIndex: =55
-
     Label15_2 As label:
         Align: =Align.Center
         Font: =Font.'Segoe UI'
