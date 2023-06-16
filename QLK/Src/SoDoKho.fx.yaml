@@ -43,6 +43,34 @@ SoDoKho As screen:
         Width: =164
         ZIndex: =4
 
+    Button2_111 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(DanhSachOrder)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Order list"
+        Width: =164
+        Y: =444
+        ZIndex: =5
+
+    Icon3_2 As icon.ShoppingCart:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.ShoppingCart
+        Width: =50
+        X: =57
+        Y: =457
+        ZIndex: =6
+
     Button2_8 As button:
         BorderStyle: =BorderStyle.Dotted
         BorderThickness: =1
@@ -63,7 +91,7 @@ SoDoKho As screen:
             
             Warehouse"
         Width: =164
-        ZIndex: =5
+        ZIndex: =7
 
     Icon4_19 As icon.Home:
         Color: =RGBA(255, 255, 255, 1)
@@ -72,7 +100,7 @@ SoDoKho As screen:
         Width: =50
         X: =57
         Y: =15
-        ZIndex: =6
+        ZIndex: =8
 
     Button2_12 As button:
         BorderThickness: =0
@@ -93,7 +121,7 @@ SoDoKho As screen:
             Product"
         Width: =164
         Y: =110
-        ZIndex: =7
+        ZIndex: =9
 
     Button2_88 As button:
         BorderThickness: =0
@@ -112,7 +140,7 @@ SoDoKho As screen:
             Inventory"
         Width: =164
         Y: =220
-        ZIndex: =8
+        ZIndex: =10
 
     Icon8_8 As icon.Shop:
         Color: =RGBA(255, 255, 255, 1)
@@ -121,7 +149,7 @@ SoDoKho As screen:
         Width: =50
         X: =57
         Y: =122
-        ZIndex: =9
+        ZIndex: =11
 
     Icon11_32 As icon.ListWatchlistRemind:
         Color: =RGBA(255, 255, 255, 1)
@@ -130,7 +158,7 @@ SoDoKho As screen:
         Width: =50
         X: =57
         Y: =232
-        ZIndex: =10
+        ZIndex: =12
 
     Button2_89 As button:
         BorderThickness: =0
@@ -150,7 +178,7 @@ SoDoKho As screen:
             Logout"
         Width: =164
         Y: =651
-        ZIndex: =11
+        ZIndex: =13
 
     Icon10_17 As icon.Leave:
         Color: =RGBA(255, 255, 255, 1)
@@ -159,13 +187,13 @@ SoDoKho As screen:
         Width: =50
         X: =57
         Y: =675
-        ZIndex: =12
+        ZIndex: =14
 
     Icon11_26 As icon.VerticalLine:
         Height: =110
         Icon: =Icon.VerticalLine
         X: =132
-        ZIndex: =13
+        ZIndex: =15
 
     Image4_39 As image:
         Height: =56
@@ -177,7 +205,7 @@ SoDoKho As screen:
         Width: =56
         X: =966
         Y: =20
-        ZIndex: =14
+        ZIndex: =16
 
     Label2_38 As label:
         Font: =Font.'Segoe UI'
@@ -187,7 +215,7 @@ SoDoKho As screen:
         Width: =243
         X: =1035
         Y: =15
-        ZIndex: =15
+        ZIndex: =17
 
     Label2_39 As label:
         Color: |-
@@ -206,7 +234,7 @@ SoDoKho As screen:
         Width: =196
         X: =1035
         Y: =45
-        ZIndex: =16
+        ZIndex: =18
 
     Image4_38 As image:
         Height: =74
@@ -214,7 +242,7 @@ SoDoKho As screen:
         Width: =258
         X: =179
         Y: =11
-        ZIndex: =17
+        ZIndex: =19
 
     btn_A1 As button:
         BorderThickness: =0
@@ -228,7 +256,7 @@ SoDoKho As screen:
         Width: =144
         X: =253
         Y: =293
-        ZIndex: =18
+        ZIndex: =20
 
     btn_A2 As button:
         BorderThickness: =0
@@ -242,7 +270,7 @@ SoDoKho As screen:
         Width: =144
         X: =413
         Y: =293
-        ZIndex: =19
+        ZIndex: =21
 
     btn_A3 As button:
         BorderThickness: =0
@@ -256,7 +284,7 @@ SoDoKho As screen:
         Width: =144
         X: =574
         Y: =293
-        ZIndex: =20
+        ZIndex: =22
 
     btn_A4 As button:
         BorderThickness: =0
@@ -270,7 +298,7 @@ SoDoKho As screen:
         Width: =144
         X: =253
         Y: =375
-        ZIndex: =21
+        ZIndex: =23
 
     btn_A5 As button:
         BorderThickness: =0
@@ -284,7 +312,7 @@ SoDoKho As screen:
         Width: =144
         X: =413
         Y: =375
-        ZIndex: =22
+        ZIndex: =24
 
     btn_A6 As button:
         BorderThickness: =0
@@ -298,7 +326,7 @@ SoDoKho As screen:
         Width: =144
         X: =574
         Y: =375
-        ZIndex: =23
+        ZIndex: =25
 
     btn_c4 As button:
         BorderThickness: =0
@@ -313,7 +341,7 @@ SoDoKho As screen:
         Width: =144
         X: =253
         Y: =616
-        ZIndex: =24
+        ZIndex: =26
 
     btn_C5 As button:
         BorderThickness: =0
@@ -328,7 +356,7 @@ SoDoKho As screen:
         Width: =144
         X: =413
         Y: =616
-        ZIndex: =25
+        ZIndex: =27
 
     btn_C6 As button:
         BorderThickness: =0
@@ -343,7 +371,7 @@ SoDoKho As screen:
         Width: =144
         X: =574
         Y: =616
-        ZIndex: =26
+        ZIndex: =28
 
     btn_C1 As button:
         BorderThickness: =0
@@ -358,7 +386,7 @@ SoDoKho As screen:
         Width: =144
         X: =253
         Y: =536
-        ZIndex: =27
+        ZIndex: =29
 
     btn_C2 As button:
         BorderThickness: =0
@@ -373,7 +401,7 @@ SoDoKho As screen:
         Width: =144
         X: =413
         Y: =536
-        ZIndex: =28
+        ZIndex: =30
 
     btn_C3 As button:
         BorderThickness: =0
@@ -388,7 +416,7 @@ SoDoKho As screen:
         Width: =144
         X: =574
         Y: =536
-        ZIndex: =29
+        ZIndex: =31
 
     btn_D6 As button:
         BorderThickness: =0
@@ -403,7 +431,7 @@ SoDoKho As screen:
         Width: =144
         X: =1134
         Y: =616
-        ZIndex: =30
+        ZIndex: =32
 
     btn_D5 As button:
         BorderThickness: =0
@@ -418,7 +446,7 @@ SoDoKho As screen:
         Width: =144
         X: =973
         Y: =616
-        ZIndex: =31
+        ZIndex: =33
 
     btn_D4 As button:
         BorderThickness: =0
@@ -433,7 +461,7 @@ SoDoKho As screen:
         Width: =144
         X: =813
         Y: =616
-        ZIndex: =32
+        ZIndex: =34
 
     btn_D1 As button:
         BorderThickness: =0
@@ -448,7 +476,7 @@ SoDoKho As screen:
         Width: =144
         X: =813
         Y: =536
-        ZIndex: =33
+        ZIndex: =35
 
     btn_D2 As button:
         BorderThickness: =0
@@ -463,7 +491,7 @@ SoDoKho As screen:
         Width: =144
         X: =973
         Y: =536
-        ZIndex: =34
+        ZIndex: =36
 
     btn_D3 As button:
         BorderThickness: =0
@@ -478,7 +506,7 @@ SoDoKho As screen:
         Width: =144
         X: =1134
         Y: =536
-        ZIndex: =35
+        ZIndex: =37
 
     Btn_B4 As button:
         BorderThickness: =0
@@ -493,7 +521,7 @@ SoDoKho As screen:
         Width: =144
         X: =813
         Y: =375
-        ZIndex: =36
+        ZIndex: =38
 
     btn_B1 As button:
         BorderThickness: =0
@@ -508,7 +536,7 @@ SoDoKho As screen:
         Width: =144
         X: =813
         Y: =293
-        ZIndex: =37
+        ZIndex: =39
 
     btn_B2 As button:
         BorderThickness: =0
@@ -523,7 +551,7 @@ SoDoKho As screen:
         Width: =144
         X: =973
         Y: =293
-        ZIndex: =38
+        ZIndex: =40
 
     Btn_B5 As button:
         BorderThickness: =0
@@ -538,7 +566,7 @@ SoDoKho As screen:
         Width: =144
         X: =973
         Y: =375
-        ZIndex: =39
+        ZIndex: =41
 
     btn_B6 As button:
         BorderThickness: =0
@@ -553,7 +581,7 @@ SoDoKho As screen:
         Width: =144
         X: =1134
         Y: =375
-        ZIndex: =40
+        ZIndex: =42
 
     btn_B3 As button:
         BorderThickness: =0
@@ -568,7 +596,7 @@ SoDoKho As screen:
         Width: =144
         X: =1134
         Y: =293
-        ZIndex: =41
+        ZIndex: =43
 
     Label11 As label:
         Align: =Align.Center
@@ -580,7 +608,7 @@ SoDoKho As screen:
         Width: =445
         X: =540
         Y: =127
-        ZIndex: =42
+        ZIndex: =44
 
     Label11_1 As label:
         Align: =Align.Center
@@ -592,7 +620,7 @@ SoDoKho As screen:
         Width: =445
         X: =262
         Y: =242
-        ZIndex: =43
+        ZIndex: =45
 
     Label11_2 As label:
         Align: =Align.Center
@@ -604,7 +632,7 @@ SoDoKho As screen:
         Width: =445
         X: =822
         Y: =242
-        ZIndex: =44
+        ZIndex: =46
 
     Label11_4 As label:
         Align: =Align.Center
@@ -616,7 +644,7 @@ SoDoKho As screen:
         Width: =445
         X: =266
         Y: =686
-        ZIndex: =45
+        ZIndex: =47
 
     Label11_5 As label:
         Align: =Align.Center
@@ -628,7 +656,7 @@ SoDoKho As screen:
         Width: =445
         X: =822
         Y: =686
-        ZIndex: =46
+        ZIndex: =48
 
     Button2_101 As button:
         BorderThickness: =0
@@ -647,7 +675,7 @@ SoDoKho As screen:
             Set price"
         Width: =164
         Y: =332
-        ZIndex: =47
+        ZIndex: =49
 
     Icon2 As icon.Money:
         Color: =RGBA(255, 255, 255, 1)
@@ -656,7 +684,7 @@ SoDoKho As screen:
         Width: =50
         X: =57
         Y: =345
-        ZIndex: =48
+        ZIndex: =50
 
     Rectangle9 As rectangle:
         Fill: =RGBA(202, 202, 202, 1)
@@ -664,7 +692,7 @@ SoDoKho As screen:
         Width: =1083
         X: =220
         Y: =460
-        ZIndex: =49
+        ZIndex: =51
 
     Rectangle9_1 As rectangle:
         Fill: =RGBA(202, 202, 202, 1)
@@ -672,7 +700,7 @@ SoDoKho As screen:
         Width: =51
         X: =739
         Y: =212
-        ZIndex: =50
+        ZIndex: =52
 
     Rectangle9_2 As rectangle:
         Fill: =RGBA(202, 202, 202, 1)
@@ -680,14 +708,14 @@ SoDoKho As screen:
         Width: =1080
         X: =220
         Y: =201
-        ZIndex: =51
+        ZIndex: =53
 
     Rectangle11_1 As rectangle:
         Height: =53
         Width: =160
         X: =1053
         Y: =149
-        ZIndex: =52
+        ZIndex: =54
 
     Label15_1 As label:
         Align: =Align.Center
@@ -698,7 +726,7 @@ SoDoKho As screen:
         Text: ="Export area"
         X: =1058
         Y: =156
-        ZIndex: =53
+        ZIndex: =55
 
     Label15_2 As label:
         Align: =Align.Center
@@ -710,7 +738,7 @@ SoDoKho As screen:
         Width: =101
         X: =714
         Y: =700
-        ZIndex: =54
+        ZIndex: =56
 
     Icon6 As icon.ChevronUp:
         Color: =RGBA(0, 0, 0, 1)
@@ -719,7 +747,7 @@ SoDoKho As screen:
         Width: =25
         X: =752
         Y: =675
-        ZIndex: =55
+        ZIndex: =57
 
     Label15_3 As label:
         Align: =Align.Center
@@ -731,7 +759,7 @@ SoDoKho As screen:
         Width: =101
         X: =434
         Y: =477
-        ZIndex: =56
+        ZIndex: =58
 
     Label15_4 As label:
         Align: =Align.Center
@@ -743,7 +771,7 @@ SoDoKho As screen:
         Width: =101
         X: =994
         Y: =474
-        ZIndex: =57
+        ZIndex: =59
 
     Label15_5 As label:
         Align: =Align.Center
@@ -755,7 +783,7 @@ SoDoKho As screen:
         Width: =40
         X: =745
         Y: =320
-        ZIndex: =58
+        ZIndex: =60
 
     ThongTinHangHoa_SoDo As group:
         Height: =5
@@ -769,7 +797,7 @@ SoDoKho As screen:
             Height: =768
             Visible: =showThongTinHangHoa_SoDo
             Width: =1366
-            ZIndex: =59
+            ZIndex: =61
 
         TextInput1_11 As text:
             Default: =
@@ -785,7 +813,7 @@ SoDoKho As screen:
             Width: =428
             X: =549
             Y: =113
-            ZIndex: =60
+            ZIndex: =62
 
         Image9 As image:
             BorderThickness: =2
@@ -799,7 +827,7 @@ SoDoKho As screen:
             Width: =168
             X: =780
             Y: =295
-            ZIndex: =61
+            ZIndex: =63
 
         Label12 As label:
             Align: =Align.Center
@@ -813,7 +841,7 @@ SoDoKho As screen:
             Width: =376
             X: =574
             Y: =115
-            ZIndex: =62
+            ZIndex: =64
 
         Label13 As label:
             Color: =RGBA(0, 13, 75, 1)
@@ -825,7 +853,7 @@ SoDoKho As screen:
             Visible: =showThongTinHangHoa_SoDo
             X: =574
             Y: =212
-            ZIndex: =63
+            ZIndex: =65
 
         txt_IDProduct_Location As label:
             Align: =Align.Center
@@ -836,7 +864,7 @@ SoDoKho As screen:
             Width: =194
             X: =574
             Y: =252
-            ZIndex: =64
+            ZIndex: =66
 
         Label13_3 As label:
             Color: =RGBA(0, 13, 75, 1)
@@ -849,7 +877,7 @@ SoDoKho As screen:
             Width: =111
             X: =574
             Y: =292
-            ZIndex: =65
+            ZIndex: =67
 
         Label13_4 As label:
             Align: =Align.Center
@@ -860,7 +888,7 @@ SoDoKho As screen:
             Width: =97
             X: =669
             Y: =292
-            ZIndex: =66
+            ZIndex: =68
 
         Label13_5 As label:
             Color: =RGBA(0, 13, 75, 1)
@@ -873,7 +901,7 @@ SoDoKho As screen:
             Width: =95
             X: =574
             Y: =332
-            ZIndex: =67
+            ZIndex: =69
 
         Label13_6 As label:
             Align: =Align.Center
@@ -884,7 +912,7 @@ SoDoKho As screen:
             Width: =97
             X: =671
             Y: =332
-            ZIndex: =68
+            ZIndex: =70
 
         Label13_7 As label:
             Color: =RGBA(0, 13, 75, 1)
@@ -897,7 +925,7 @@ SoDoKho As screen:
             Width: =140
             X: =574
             Y: =372
-            ZIndex: =69
+            ZIndex: =71
 
         Label13_8 As label:
             Align: =Align.Center
@@ -908,7 +936,7 @@ SoDoKho As screen:
             Width: =187
             X: =581
             Y: =412
-            ZIndex: =70
+            ZIndex: =72
 
         Label13_9 As label:
             Color: =RGBA(0, 13, 75, 1)
@@ -921,7 +949,7 @@ SoDoKho As screen:
             Width: =171
             X: =574
             Y: =452
-            ZIndex: =71
+            ZIndex: =73
 
         Label13_10 As label:
             Align: =Align.Center
@@ -932,7 +960,7 @@ SoDoKho As screen:
             Width: =187
             X: =581
             Y: =492
-            ZIndex: =72
+            ZIndex: =74
 
         Label13_11 As label:
             Color: =RGBA(0, 13, 75, 1)
@@ -945,7 +973,7 @@ SoDoKho As screen:
             Width: =109
             X: =768
             Y: =212
-            ZIndex: =73
+            ZIndex: =75
 
         txt_IDLocation_Location As label:
             Align: =Align.Center
@@ -956,7 +984,7 @@ SoDoKho As screen:
             Width: =71
             X: =877
             Y: =212
-            ZIndex: =74
+            ZIndex: =76
 
         btn_CloseTTHHSoDo As button:
             AutoDisableOnSelect: =false
@@ -978,7 +1006,7 @@ SoDoKho As screen:
             Width: =156
             X: =772
             Y: =549
-            ZIndex: =75
+            ZIndex: =77
 
     ThongBao As group:
         Height: =5
@@ -992,7 +1020,7 @@ SoDoKho As screen:
             Height: =768
             Visible: =showThongBaoKhongCoSanPham
             Width: =1366
-            ZIndex: =76
+            ZIndex: =78
 
         TextInput1_12 As text:
             Default: =
@@ -1008,7 +1036,7 @@ SoDoKho As screen:
             Width: =402
             X: =561
             Y: =282
-            ZIndex: =77
+            ZIndex: =79
 
         Label14 As label:
             Align: =Align.Center
@@ -1020,7 +1048,7 @@ SoDoKho As screen:
             Width: =293
             X: =616
             Y: =331
-            ZIndex: =78
+            ZIndex: =80
 
         btn_PendingList_DuyetDatHang_6 As button:
             AutoDisableOnSelect: =false
@@ -1042,7 +1070,7 @@ SoDoKho As screen:
             Width: =156
             X: =685
             Y: =404
-            ZIndex: =79
+            ZIndex: =81
 
     Group9 As group:
         Height: =5
@@ -1056,7 +1084,7 @@ SoDoKho As screen:
             Height: =768
             Visible: =showProductNoLocation
             Width: =1366
-            ZIndex: =80
+            ZIndex: =82
 
         TextInput1_13 As text:
             Default: =
@@ -1072,7 +1100,7 @@ SoDoKho As screen:
             Width: =520
             X: =430
             Y: =92
-            ZIndex: =81
+            ZIndex: =83
 
         lbl_OrderedID_DuyetDatHang_5 As label:
             Align: =Align.Center
@@ -1087,7 +1115,7 @@ SoDoKho As screen:
             Width: =364
             X: =500
             Y: =98
-            ZIndex: =82
+            ZIndex: =84
 
         "gal_ProductNoLocation As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             BorderColor: =RGBA(202, 202, 202, 1)
@@ -1104,7 +1132,7 @@ SoDoKho As screen:
             Width: =478
             X: =450
             Y: =199
-            ZIndex: =83
+            ZIndex: =85
 
             lbl_NameProduct_2 As label:
                 Align: =Align.Center
@@ -1184,7 +1212,7 @@ SoDoKho As screen:
             Width: =476
             X: =452
             Y: =155
-            ZIndex: =84
+            ZIndex: =86
 
         lbl_OrderedID_DuyetDatHang_6 As label:
             Align: =Align.Center
@@ -1197,7 +1225,7 @@ SoDoKho As screen:
             Width: =289
             X: =450
             Y: =156
-            ZIndex: =85
+            ZIndex: =87
 
         lbl_OrderedID_DuyetDatHang_7 As label:
             Align: =Align.Center
@@ -1210,7 +1238,7 @@ SoDoKho As screen:
             Width: =148
             X: =754
             Y: =157
-            ZIndex: =86
+            ZIndex: =88
 
         btn_RefusedList_DuyetDatHang_3 As button:
             AutoDisableOnSelect: =false
@@ -1232,7 +1260,7 @@ SoDoKho As screen:
             Width: =116
             X: =800
             Y: =629
-            ZIndex: =87
+            ZIndex: =89
 
     Label23_7 As label:
         Font: =Font.'Segoe UI'
@@ -1244,18 +1272,7 @@ SoDoKho As screen:
         Width: =135
         X: =518
         Y: =312
-        ZIndex: =99
-
-    txt_IDProductLoaction As label:
-        Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Semibold
-        Size: =15
-        Text: =gal_ProductNoLocation.Selected.IDProduct
-        Visible: =showSetLocation
-        Width: =160
-        X: =704
-        Y: =312
-        ZIndex: =100
+        ZIndex: =101
 
     Group12 As group:
         Height: =5
@@ -1269,7 +1286,7 @@ SoDoKho As screen:
             Height: =768
             Visible: =showSetLocation
             Width: =1366
-            ZIndex: =88
+            ZIndex: =90
 
         TextInput1_15 As text:
             Default: =
@@ -1285,7 +1302,7 @@ SoDoKho As screen:
             Width: =584
             X: =472
             Y: =252
-            ZIndex: =89
+            ZIndex: =91
 
         Label22 As label:
             Align: =Align.Center
@@ -1298,7 +1315,7 @@ SoDoKho As screen:
             Width: =442
             X: =545
             Y: =261
-            ZIndex: =90
+            ZIndex: =92
 
         Label23 As label:
             Font: =Font.'Segoe UI'
@@ -1310,7 +1327,7 @@ SoDoKho As screen:
             Width: =81
             X: =516
             Y: =347
-            ZIndex: =91
+            ZIndex: =93
 
         Label23_3 As label:
             Font: =Font.'Segoe UI'
@@ -1322,7 +1339,7 @@ SoDoKho As screen:
             Width: =409
             X: =606
             Y: =353
-            ZIndex: =92
+            ZIndex: =94
 
         Label23_4 As label:
             Font: =Font.'Segoe UI'
@@ -1334,7 +1351,7 @@ SoDoKho As screen:
             Width: =71
             X: =519
             Y: =423
-            ZIndex: =93
+            ZIndex: =95
 
         txt_UnitLocation As label:
             Font: =Font.'Segoe UI'
@@ -1344,7 +1361,7 @@ SoDoKho As screen:
             Width: =128
             X: =591
             Y: =423
-            ZIndex: =94
+            ZIndex: =96
 
         Label23_6 As label:
             Font: =Font.'Segoe UI'
@@ -1356,7 +1373,7 @@ SoDoKho As screen:
             Width: =117
             X: =724
             Y: =423
-            ZIndex: =95
+            ZIndex: =97
 
         drop_Location2 As dropdown:
             Items: =Filter(QLK_Location, (ID_Product = Blank() && Unit = txt_UnitLocation.Text))
@@ -1364,7 +1381,7 @@ SoDoKho As screen:
             Width: =116
             X: =842
             Y: =422
-            ZIndex: =96
+            ZIndex: =98
 
         btn_RefusedList_DuyetDatHang_4 As button:
             AutoDisableOnSelect: =false
@@ -1388,7 +1405,7 @@ SoDoKho As screen:
             Width: =157
             X: =774
             Y: =478
-            ZIndex: =97
+            ZIndex: =99
 
         btn_RefusedList_DuyetDatHang_5 As button:
             AutoDisableOnSelect: =false
@@ -1413,7 +1430,18 @@ SoDoKho As screen:
             Width: =157
             X: =606
             Y: =478
-            ZIndex: =98
+            ZIndex: =100
+
+    txt_IDProductLoaction As label:
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =15
+        Text: =gal_ProductNoLocation.Selected.IDProduct
+        Visible: =showSetLocation
+        Width: =160
+        X: =704
+        Y: =312
+        ZIndex: =102
 
     btn_CloseTTHHSoDo_1 As button:
         AutoDisableOnSelect: =false
@@ -1437,7 +1465,7 @@ SoDoKho As screen:
         Width: =156
         X: =607
         Y: =550
-        ZIndex: =106
+        ZIndex: =108
 
     Group8 As group:
         Height: =5
@@ -1451,7 +1479,7 @@ SoDoKho As screen:
             Height: =768
             Visible: =showXacNhanLocation
             Width: =1366
-            ZIndex: =101
+            ZIndex: =103
 
         TextInput1_16 As text:
             Default: =
@@ -1467,7 +1495,7 @@ SoDoKho As screen:
             Width: =597
             X: =472
             Y: =278
-            ZIndex: =102
+            ZIndex: =104
 
         Label15 As label:
             Align: =Align.Center
@@ -1480,7 +1508,7 @@ SoDoKho As screen:
             Width: =437
             X: =546
             Y: =302
-            ZIndex: =103
+            ZIndex: =105
 
         btn_ApprovedList_DuyetDatHang_3 As button:
             AutoDisableOnSelect: =false
@@ -1513,7 +1541,7 @@ SoDoKho As screen:
             Width: =156
             X: =618
             Y: =410
-            ZIndex: =104
+            ZIndex: =106
 
         btn_ApprovedList_DuyetDatHang_4 As button:
             AutoDisableOnSelect: =false
@@ -1537,26 +1565,7 @@ SoDoKho As screen:
             Width: =156
             X: =783
             Y: =410
-            ZIndex: =105
-
-    Button2_111 As button:
-        BorderThickness: =0
-        Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Normal
-        Height: =110
-        OnSelect: =Navigate(DanhSachOrder)
-        RadiusBottomLeft: =
-        RadiusBottomRight: =
-        RadiusTopLeft: =
-        RadiusTopRight: =
-        Text: |-
-            ="
-            
-            Order list"
-        Width: =164
-        Y: =444
-        ZIndex: =112
+            ZIndex: =107
 
     Group13 As group:
         Height: =5
@@ -1570,7 +1579,7 @@ SoDoKho As screen:
             Height: =768
             Visible: =showRemoveLocation
             Width: =1366
-            ZIndex: =107
+            ZIndex: =109
 
         TextInput1_17 As text:
             Default: =
@@ -1586,7 +1595,7 @@ SoDoKho As screen:
             Width: =488
             X: =501
             Y: =254
-            ZIndex: =108
+            ZIndex: =110
 
         Label24 As label:
             Align: =Align.Center
@@ -1599,7 +1608,7 @@ SoDoKho As screen:
             Width: =401
             X: =544
             Y: =312
-            ZIndex: =109
+            ZIndex: =111
 
         btn_RefusedList_DuyetDatHang_6 As button:
             AutoDisableOnSelect: =false
@@ -1621,7 +1630,7 @@ SoDoKho As screen:
             Width: =156
             X: =751
             Y: =414
-            ZIndex: =110
+            ZIndex: =112
 
         btn_RefusedList_DuyetDatHang_7 As button:
             AutoDisableOnSelect: =false
@@ -1654,14 +1663,5 @@ SoDoKho As screen:
             Width: =156
             X: =571
             Y: =412
-            ZIndex: =111
-
-    Icon3_2 As icon.ShoppingCart:
-        Color: =RGBA(255, 255, 255, 1)
-        Height: =50
-        Icon: =Icon.ShoppingCart
-        Width: =50
-        X: =57
-        Y: =457
-        ZIndex: =113
+            ZIndex: =113
 

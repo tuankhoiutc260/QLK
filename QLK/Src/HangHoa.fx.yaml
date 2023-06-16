@@ -563,19 +563,8 @@ HangHoa As screen:
                         MinimumQuantity: Value(txt_UpMinQuantity.Text),
                         InputPrice: Value(txt_UpInputPrice.Text),
                         OutputPrice: Value(txt_UpOutputPrice.Text),
-                        Location: Drop_Location.SelectedText.Value,
                         Description: txt_UpDescription.Text,
                         Image: {Value: UploadedImage2.Image}
-                    }
-                );
-                Patch(QLK_Location, LookUp(QLK_Location, ID_Location = IDNewLocation),
-                    {
-                        ID_Product: txt_UpID.Text
-                    }
-                );
-                Patch(QLK_Location, LookUp(QLK_Location, ID_Location = IDLocation_GalProduct),
-                    {
-                        ID_Product: Blank()
                     }
                 );
                 Set(showUpdateThongTinHangHoa,false);
@@ -908,7 +897,7 @@ HangHoa As screen:
             Text: =gal_Product.Selected.OutputPrice & " Vnđ"
             Visible: =showThongTinHangHoa
             Width: =183
-            X: =920
+            X: =927
             Y: =402
             ZIndex: =43
 
@@ -1327,8 +1316,7 @@ HangHoa As screen:
                             )
                         )
                     )
-                );
-                Set(IDNewLocation, Drop_Location.SelectedText.Value)
+                )
             PressedBorderColor: =RGBA(237, 237, 237, 1)
             RadiusBottomLeft: =20
             RadiusBottomRight: =20
@@ -1478,18 +1466,6 @@ HangHoa As screen:
             Y: =268
             ZIndex: =82
 
-        Drop_Location As dropdown:
-            ChevronBackground: =RGBA(149, 149, 149, 1)
-            Default: =gal_Product.Selected.Location
-            Height: =35
-            Items: =Filter(QLK_Location, (ID_Product = Blank() && Unit = txt_Unit.Text) || ID_Location = IDLocation_GalProduct)
-            SelectionFill: =RGBA(149, 149, 149, 1)
-            Visible: =showUpdateThongTinHangHoa
-            Width: =109
-            X: =903
-            Y: =442
-            ZIndex: =83
-
     Group5 As group:
         Height: =5
         Width: =5
@@ -1588,12 +1564,23 @@ HangHoa As screen:
             HoverFill: =RGBA(54, 176, 75, 1)
             OnSelect: |-
                 =If(LookUp(QLK_ImportRequest, ID_ProductRequest = IDProductImport_GalProduct, ID_ProductRequest),
+                    Office365Outlook.SendEmailV2(
+                            LookUp(QLK_Account, Text(' Permission'.Value) = "Accountant", Gmail),
+                            "Request to order more in stock",
+                            "Requester's name: " & LookUp(QLK_Account, ID = idDangNhap, FullName) & "<br>" &
+                            "Product code: " & LookUp(QLK_Product, IDProduct = Label9_1.Text, IDProduct) & "<br>" &
+                            "Product name: " & LookUp(QLK_Product, IDProduct = Label9_1.Text, Name) & "<br>" &
+                            "Quantity in stock: "  & LookUp(QLK_Product, IDProduct = Label9_1.Text, Quantity) & "<br>" &
+                            "Number of products requested to order: " & LookUp(QLK_ImportRequest, ID_ProductRequest = Label9_1.Text, Quantity) & "<br>" & 
+                            "Order quantity required: " & txt_Quantity.Text & "<br>" &
+                            "Request date: " & Now() & "<br>" & "Please order the product, thanks for watching!");
                     Patch(
                         QLK_ImportRequest, LookUp(QLK_ImportRequest, ID_ProductRequest = IDProductImport_GalProduct),
                         {
                             Quantity: LookUp(QLK_ImportRequest, ID_ProductRequest = IDProductImport_GalProduct, Quantity) + Value(txt_Quantity.Text)
                         }
-                    ),
+                    )
+                    ,
                     Patch(
                         QLK_ImportRequest, 
                         {
@@ -1607,8 +1594,8 @@ HangHoa As screen:
                             "Requester's name: " & LookUp(QLK_Account, ID = idDangNhap, FullName) & "<br>" &
                             "Product code: " & LookUp(QLK_Product, IDProduct = Label9_1.Text, IDProduct) & "<br>" &
                             "Product name: " & LookUp(QLK_Product, IDProduct = Label9_1.Text, Name) & "<br>" &
-                            "Quantity in stock: "  & LookUp(QLK_Product, IDProduct = Label9_1.Text, Quantity) & "<br>" &
-                            "Number of products requested to order: " & LookUp(QLK_ImportRequest, ID_ProductRequest = Label9_1.Text, Quantity) & "<br>" & 
+                            "Quantity in stock: " & LookUp(QLK_Product, IDProduct = Label9_1.Text, Quantity) & "<br>" &
+                            "Number of products requested to order: 0" & "<br>" & 
                             "Order quantity required: " & txt_Quantity.Text & "<br>" &
                             "Request date: " & Now() & "<br>" & "Please order the product, thanks for watching!")
                 );
@@ -1647,4 +1634,15 @@ HangHoa As screen:
             X: =821
             Y: =505
             ZIndex: =101
+
+    txt_Unit_1 As label:
+        Font: =Font.'Segoe UI'
+        Height: =45
+        Size: =15
+        Text: =gal_Product.Selected.Location
+        Visible: =showUpdateThongTinHangHoa
+        Width: =183
+        X: =903
+        Y: =435
+        ZIndex: =102
 

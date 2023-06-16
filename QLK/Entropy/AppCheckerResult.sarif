@@ -20070,7 +20070,7 @@
                 },
                 "region": {
                   "charLength": 25,
-                  "charOffset": 610,
+                  "charOffset": 165,
                   "snippet": {
                     "text": "Text(' Permission'.Value)"
                   }
@@ -20110,7 +20110,87 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 636,
+                  "charOffset": 191,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "HangHoa",
+                "type": "HangHoa.btn_PendingList_DuyetDatHang_7"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HangHoa.btn_PendingList_DuyetDatHang_7.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HangHoa.btn_PendingList_DuyetDatHang_7.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 25,
+                  "charOffset": 1490,
+                  "snippet": {
+                    "text": "Text(' Permission'.Value)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "HangHoa",
+                "type": "HangHoa.btn_PendingList_DuyetDatHang_7"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Text"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "HangHoa.btn_PendingList_DuyetDatHang_7.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "HangHoa.btn_PendingList_DuyetDatHang_7.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 1516,
                   "snippet": {
                     "text": "="
                   }
@@ -30131,36 +30211,6 @@
                 "member": "AccessibleLabel",
                 "module": "HangHoa",
                 "type": "HangHoa.txt_UpOutputPrice"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 15
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HangHoa.Drop_Location.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HangHoa.Drop_Location.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "HangHoa",
-                "type": "HangHoa.Drop_Location"
               }
             }
           ],

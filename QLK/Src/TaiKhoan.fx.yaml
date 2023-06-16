@@ -47,6 +47,7 @@ TaiKhoan As screen:
             ZIndex: =1
 
         Image6 As image:
+            Fill: =RGBA(202, 202, 202, 1)
             Height: =137
             Image: =ThisItem.' Portrait'
             OnSelect: =Select(Parent)
@@ -442,7 +443,7 @@ TaiKhoan As screen:
         FontWeight: =FontWeight.Bold
         Size: =15
         Text: =LookUp(QLK_Account, ID = idDangNhap, FullName)
-        Width: =196
+        Width: =242
         X: =1035
         Y: =16
         ZIndex: =12

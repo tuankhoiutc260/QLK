@@ -178,7 +178,7 @@ ThemTaiKhoan As screen:
         FontWeight: =FontWeight.Bold
         Size: =15
         Text: =LookUp(QLK_Account, ID = idDangNhap, FullName)
-        Width: =196
+        Width: =238
         X: =1035
         Y: =16
         ZIndex: =13
@@ -213,12 +213,12 @@ ThemTaiKhoan As screen:
     Label3_4 As label:
         Align: =Align.Center
         Color: =RGBA(184, 0, 0, 1)
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =65
         Size: =30
         Text: ="Fill in account information"
-        Width: =476
+        Width: =542
         X: =526
         Y: =177
         ZIndex: =18
