@@ -1938,12 +1938,31 @@ TrangChu_Admin As screen:
                         OnSelect: =Select(Parent)
                         Size: =10
                         Text: |+
-                            =// 1: Order, 2: Import, 3: Export, 4: Pending
+                            =If(
+                                ThisItem.IDOrder in QLK_OrderFormInformation.IDOrderForm,
+                                LookUp(
+                                    QLK_Product_Supplier, 
+                                    IDProduct_Supplier = ThisItem.IDProduct, 
+                                    'Name_Pro-Supplier'
+                                ),
                             
-                            If(
-                                numDatasource = 1,
-                                LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct, 'Name_Pro-Supplier'),
-                                LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, Name)
+                                If(
+                                    ThisItem.IDOrder in QLK_ImportFormInformation.IDImport,
+                                    LookUp(
+                                        QLK_Product, 
+                                        IDProduct = ThisItem.IDProduct, 
+                                        'Name'
+                                    ),
+                            
+                                    If(
+                                        ThisItem.IDOrder in QLK_ExportFormInformation.IDExportForm,
+                                        LookUp(
+                                            QLK_Product, 
+                                            IDProduct = ThisItem.IDProduct, 
+                                            'Name'
+                                        )
+                                    )
+                                )
                             )
                             
                         Width: =210
