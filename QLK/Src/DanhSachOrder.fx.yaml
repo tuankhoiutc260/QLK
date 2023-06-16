@@ -374,7 +374,7 @@ DanhSachOrder As screen:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
-        OnSelect: =
+        OnSelect: =Refresh(QLK_ImportRequest)
         RadiusBottomLeft: =
         RadiusBottomRight: =
         RadiusTopLeft: =

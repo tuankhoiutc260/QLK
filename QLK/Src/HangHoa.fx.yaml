@@ -1598,18 +1598,17 @@ HangHoa As screen:
                             Quantity: Value(txt_Quantity.Text)
                         }
                     );
-                    Office365Outlook.SendEmailV2(
-                            LookUp(QLK_Account, Text(Permission.Value) = "Accountant", Gmail),
+                    LookUp(QLK_Account, Text(Permission.Value) = "Accountant", Gmail),
                             "Request to order more in stock",
                             "Requester's name: " & LookUp(QLK_Account, ID = idDangNhap, FullName) & "<br>" &
                             "Product code: " & LookUp(QLK_Product, IDProduct = Label9_1.Text, IDProduct) & "<br>" &
                             "Product name: " & LookUp(QLK_Product, IDProduct = Label9_1.Text, Name) & "<br>" &
-                            "Quantity in stock: " & LookUp(QLK_Product, IDProduct = Label9_1.Text, Quantity) & "<br>" &
-                            "Number of products requested to order: 0" & "<br>" & 
+                            "Quantity in stock: "  & LookUp(QLK_Product, IDProduct = Label9_1.Text, Quantity) & "<br>" &
+                            "Number of products requested to order: " & LookUp(QLK_ImportRequest, ID_ProductRequest = Label9_1.Text, Quantity) & "<br>" & 
                             "Order quantity required: " & txt_Quantity.Text & "<br>" &
-                            "Request date: " & Now() & "<br>" & "Please order the product, thanks for watching!")
+                            "Request date: " & Now() & "<br>" & "Please order the product, thanks for watching!");
                 );
-                Set(showYeuCauDatHang, false)
+                Set(showYeuCauDatHang,false)
             PressedBorderColor: =RGBA(237, 237, 237, 1)
             RadiusBottomLeft: =20
             RadiusBottomRight: =20
