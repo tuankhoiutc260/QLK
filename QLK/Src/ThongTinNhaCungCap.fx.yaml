@@ -573,7 +573,7 @@ ThongTinNhaCungCap As screen:
         FontWeight: =FontWeight.Semibold
         Height: =31
         Size: =15
-        Text: =LookUp(QLK_Account, ID = idDangNhap, ' Permission'.Value)
+        Text: =LookUp(QLK_Account, ID = idDangNhap, Permission.Value)
         Width: =196
         X: =1035
         Y: =45

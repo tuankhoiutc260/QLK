@@ -399,7 +399,7 @@ ThemTaiKhoan As screen:
     drop_AccPer As dropdown:
         BorderThickness: =1
         Font: =Font.'Segoe UI'
-        Items: =Choices(QLK_Account.' Permission')
+        Items: =Choices(QLK_Account.Permission)
         Size: =20
         Width: =278
         X: =542
@@ -470,7 +470,7 @@ ThemTaiKhoan As screen:
                         Password: txt_AccPass.Text,
                         Sex: drop_AccSex.Selected,
                         ' Portrait': {Value: UploadedImage1_1.Image},
-                        ' Permission': drop_AccPer.Selected
+                        Permission: drop_AccPer.Selected
                     }
                 );
                 Set(showThemNCCThanhCong, true);
@@ -590,7 +590,7 @@ ThemTaiKhoan As screen:
         FontWeight: =FontWeight.Semibold
         Height: =31
         Size: =15
-        Text: =LookUp(QLK_Account, ID = idDangNhap, ' Permission'.Value)
+        Text: =LookUp(QLK_Account, ID = idDangNhap, Permission.Value)
         Width: =196
         X: =1035
         Y: =45

@@ -34,14 +34,9 @@ App As appinfo:
         Set(visible_RightHomeAdmin, true);
         
         // Home Admin
-        Set(fontSizeApprove_HomeAdmin, 15);
-        Set(fontSizeImport_HomeAdmin, 12);
-        Set(fontSizeOrder_HomeAdmin, 12);
-        Set(fontSizeExport_HomeAdmin, 12);
-        Set(visLineApprove_HomeAdmin, true);
-        Set(visLineImport_HomeAdmin, false);
-        Set(visLineOrder_HomeAdmin, false);
-        Set(visLineExport_HomeAdmin, false);
+        
+        
+        
         Set(textChart_HomeAdmin, "Top Products Imported");
         //Set(datasourceImported_HomeAdmin, col_TopProductOrdered);
         Set(visibleDetailOrderNotPending, true);

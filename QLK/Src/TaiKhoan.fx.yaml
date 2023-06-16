@@ -159,7 +159,7 @@ TaiKhoan As screen:
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.' Permission'.Value
+            Text: =ThisItem.Permission.Value
             VerticalAlign: =VerticalAlign.Top
             Width: =230
             X: =858
@@ -576,7 +576,7 @@ TaiKhoan As screen:
         FontWeight: =FontWeight.Semibold
         Height: =31
         Size: =15
-        Text: =LookUp(QLK_Account, ID = idDangNhap, ' Permission'.Value)
+        Text: =LookUp(QLK_Account, ID = idDangNhap, Permission.Value)
         Width: =196
         X: =1035
         Y: =45

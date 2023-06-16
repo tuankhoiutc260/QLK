@@ -250,7 +250,7 @@ HangHoa As screen:
         FontWeight: =FontWeight.Semibold
         Height: =31
         Size: =15
-        Text: =LookUp(QLK_Account, ID = idDangNhap, ' Permission'.Value)
+        Text: =LookUp(QLK_Account, ID = idDangNhap, Permission.Value)
         Width: =196
         X: =1035
         Y: =45
@@ -1565,7 +1565,7 @@ HangHoa As screen:
             OnSelect: |-
                 =If(LookUp(QLK_ImportRequest, ID_ProductRequest = IDProductImport_GalProduct, ID_ProductRequest),
                     Office365Outlook.SendEmailV2(
-                            LookUp(QLK_Account, Text(' Permission'.Value) = "Accountant", Gmail),
+                            LookUp(QLK_Account, Text(Permission.Value) = "Accountant", Gmail),
                             "Request to order more in stock",
                             "Requester's name: " & LookUp(QLK_Account, ID = idDangNhap, FullName) & "<br>" &
                             "Product code: " & LookUp(QLK_Product, IDProduct = Label9_1.Text, IDProduct) & "<br>" &
@@ -1589,7 +1589,7 @@ HangHoa As screen:
                         }
                     );
                     Office365Outlook.SendEmailV2(
-                            LookUp(QLK_Account, Text(' Permission'.Value) = "Accountant", Gmail),
+                            LookUp(QLK_Account, Text(Permission.Value) = "Accountant", Gmail),
                             "Request to order more in stock",
                             "Requester's name: " & LookUp(QLK_Account, ID = idDangNhap, FullName) & "<br>" &
                             "Product code: " & LookUp(QLK_Product, IDProduct = Label9_1.Text, IDProduct) & "<br>" &

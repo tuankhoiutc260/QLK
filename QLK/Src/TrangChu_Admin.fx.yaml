@@ -400,8 +400,9 @@ TrangChu_Admin As screen:
                 BorderThickness: =1
                 DelayItemLoading: =true
                 Height: =643
-                Items: |
-                    =SortByColumns(col_DatasourceOrder_HomeAdmin, "Created", SortOrder.Descending)
+                Items: |+
+                    =col_DatasourceOrder_HomeAdmin
+                    
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 ShowScrollbar: =false
@@ -1951,7 +1952,7 @@ TrangChu_Admin As screen:
                                     LookUp(
                                         QLK_Product, 
                                         IDProduct = ThisItem.IDProduct, 
-                                        'Name'
+                                        Name
                                     ),
                             
                                     If(
@@ -1959,7 +1960,7 @@ TrangChu_Admin As screen:
                                         LookUp(
                                             QLK_Product, 
                                             IDProduct = ThisItem.IDProduct, 
-                                            'Name'
+                                            Name
                                         )
                                     )
                                 )

@@ -122,19 +122,50 @@ DangNhap As screen:
         Height: =63
         HoverFill: =RGBA(99, 139, 44, 1)
         OnSelect: |+
-            =If(!IsBlank(LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text)), 
-                If(LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, ' Permission').Value = "Stocker",
+            =If(
+                !IsBlank(
+                    LookUp(
+                        QLK_Account, 
+                        Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text
+                    )
+                ), 
+                If(
+                    LookUp(
+                        QLK_Account, 
+                        Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, 
+                        Permission
+                    ).Value = "Stocker",
                     Navigate(SoDoKho);
-                    Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
-                    Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Permission')),
-                    If(LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, ' Permission').Value = "Manager",
+                    Set(
+                        idDangNhap, 
+                        LookUp(
+                            QLK_Account, 
+                            Gmail = txt_Email_Login.Text, 
+                            ID
+                        )
+                    );
+                    Set(
+                        userPermision, 
+                        LookUp(
+                            QLK_Account, Gmail = txt_Email_Login.Text, 
+                            Permission
+                        )
+                    ),
+                    If(
+                        LookUp(
+                            QLK_Account, 
+                            Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, 
+                            Permission
+                        ).Value = "Manager",
                         
                         Refresh(QLK_OrderForm);
+                        Refresh(QLK_OrderFormInformation);
                         Refresh(QLK_ImportForm);
+                        Refresh(QLK_ImportFormInformation);
                         Refresh(QLK_ExportForm);
+                        Refresh(QLK_ExportFormInformation);
             
-                        Reset(gal_DetailOrderPending_HA_DO_HA);
-            
+                       // Reset(gal_DetailOrderPending_HA_DO_HA);
                         Set(fontSizeApprove_HomeAdmin, 15);
                         Set(fontSizeImport_HomeAdmin, 12);
                         Set(fontSizeOrder_HomeAdmin, 12);
@@ -143,14 +174,16 @@ DangNhap As screen:
                         Set(visLineImport_HomeAdmin, false);
                         Set(visLineOrder_HomeAdmin, false);
                         Set(visLineExport_HomeAdmin, false);
-                        Set(textChart_HomeAdmin, "Approve");
-            
-                                    // Nho Set trong App
                         Set(visibleDetailOrderNotPending_HomeAdmin, false);
                         Set(visibleDetailOrderPending_HomeAdmin, true);
                         Set(numDatasource, 4); //4: pending
             
-                        Set(IDOrder_HomeAdmin, LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID));
+                        //Set(textChart_HomeAdmin, "Approve");
+            
+                        Set(
+                            IDOrder_HomeAdmin, 
+                            LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)
+                        );
             
                         ClearCollect(
                             col_DatasourceOrderRequest_HomeAdmin, 
@@ -203,82 +236,76 @@ DangNhap As screen:
                             )
                         );
             
-                        ClearCollect(
+                        ClearCollect(                
                             col_DatasourceOrder_HomeAdmin,
                             col_DatasourceOrderRequest_HomeAdmin,
                             col_DatasourceImportRequest_HomeAdmin,
                             col_DatasourceExportRequest_HomeAdmin
                         );
             
-                        /*
-            
-            
-                        */
-            
-            
-            
+                        SortByColumns(col_DatasourceOrder_HomeAdmin, "Created", SortOrder.Descending);
+                        
                         // --- Reset lại thông tin đơn đầu tiên qua khung ở giữa
-            
-            ClearCollect(
-                col_DetailsOrder_HomeAdmin,
-                If(
-                    LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID) in col_DatasourceOrderRequest_HomeAdmin[@ID],
-                    RenameColumns(
-                        ShowColumns(
-                            Filter(
-                                QLK_OrderFormInformation,
-                                IDOrderForm = LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)
-                            ),
-                            "IDOrderForm",
-                            "IDProduct_Supplier",
-                            "Quantity",
-                            "Unit",
-                            "Price",
-                            "TotalPrice"
-                        ), 
-                        "IDOrderForm", "IDOrder",
-                        "IDProduct_Supplier", "IDProduct"
-                    ),
-            
-                    If(
-                        LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID) in col_DatasourceImportRequest_HomeAdmin[@ID],
-                        RenameColumns(
-                            ShowColumns(
-                                Filter(
-                                    QLK_ImportFormInformation,
-                                    IDImport = LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)
+                        ClearCollect(
+                            col_DetailsOrder_HomeAdmin,
+                            If(
+                                LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID) in col_DatasourceOrderRequest_HomeAdmin[@ID],
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(
+                                            QLK_OrderFormInformation,
+                                            IDOrderForm = LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)
+                                        ),
+                                        "IDOrderForm",
+                                        "IDProduct_Supplier",
+                                        "Quantity",
+                                        "Unit",
+                                        "Price",
+                                        "TotalPrice"
+                                    ), 
+                                    "IDOrderForm", "IDOrder",
+                                    "IDProduct_Supplier", "IDProduct"
                                 ),
-                                "IDImport",
-                                "IDProduct",
-                                "Quantity",
-                                "Unit",
-                                "Price",
-                                "TotalPrice"
-                            ), 
-                            "IDImport", "IDOrder"
-                        ),
             
-                        If(
-                            LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID) in col_DatasourceExportRequest_HomeAdmin[@ID],
-                            RenameColumns(
-                                ShowColumns(
-                                    Filter(
-                                        QLK_ExportFormInformation,
-                                        IDExportForm = LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)
+                                If(
+                                    LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID) in col_DatasourceImportRequest_HomeAdmin[@ID],
+                                    RenameColumns(
+                                        ShowColumns(
+                                            Filter(
+                                                QLK_ImportFormInformation,
+                                                IDImport = LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)
+                                            ),
+                                            "IDImport",
+                                            "IDProduct",
+                                            "Quantity",
+                                            "Unit",
+                                            "Price",
+                                            "TotalPrice"
+                                        ), 
+                                        "IDImport", "IDOrder"
                                     ),
-                                    "IDExportForm",
-                                    "IDProduct",
-                                    "Quantity",
-                                    "Unit",
-                                    "Price",
-                                    "TotalPrice"
-                                ), 
-                                "IDExportForm", "IDOrder"
-                            )
-                        )
-                    )
-                )  
-            );
+            
+                                    If(
+                                        LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID) in col_DatasourceExportRequest_HomeAdmin[@ID],
+                                        RenameColumns(
+                                            ShowColumns(
+                                                Filter(
+                                                    QLK_ExportFormInformation,
+                                                    IDExportForm = LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID)
+                                                ),
+                                                "IDExportForm",
+                                                "IDProduct",
+                                                "Quantity",
+                                                "Unit",
+                                                "Price",
+                                                "TotalPrice"
+                                            ), 
+                                            "IDExportForm", "IDOrder"
+                                        )
+                                    )
+                                )
+                            )  
+                        );
             
                         ClearCollect(
                             col_Product, 
@@ -329,12 +356,12 @@ DangNhap As screen:
             
                         Navigate(TrangChu_Admin);
                         Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
-                        Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Permission')),
-                        If(LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, ' Permission').Value = "WarehouseStaff",
+                        Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, Permission)),
+                        If(LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, Permission).Value = "WarehouseStaff",
                             Navigate(NhapHang_3);
                             Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
-                            Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Permission')),
-                            If(LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, ' Permission').Value = "Accountant",
+                            Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, Permission)),
+                            If(LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, Permission).Value = "Accountant",
                                                 Navigate(TrangChu_KeToan);
                                                 //Create collection Import Request
                                                 ClearCollect(
@@ -505,7 +532,7 @@ DangNhap As screen:
             
                                 //-----                         
                                 Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
-                                Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Permission'))                   
+                                Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, Permission))                   
                             )
                         )
                     )
