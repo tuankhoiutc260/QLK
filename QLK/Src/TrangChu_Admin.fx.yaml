@@ -401,7 +401,7 @@ TrangChu_Admin As screen:
                 DelayItemLoading: =true
                 Height: =643
                 Items: |
-                    =col_DatasourceOrder_HomeAdmin
+                    =SortByColumns(col_DatasourceOrder_HomeAdmin, "Created", SortOrder.Descending)
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 ShowScrollbar: =false
