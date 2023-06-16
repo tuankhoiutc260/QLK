@@ -284,3 +284,14 @@ Screen4 As screen:
         Y: =57
         ZIndex: =2
 
+    Button1 As button:
+        OnSelect: |-
+            =Office365Outlook.SendEmailV2(
+                "devil09032001@gmail.com",
+                "NguyenThanhDuong",
+                "NguyenThanhDuong")
+        Text: ="Button"
+        X: =308
+        Y: =97
+        ZIndex: =3
+

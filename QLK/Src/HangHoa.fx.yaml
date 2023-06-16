@@ -1572,18 +1572,8 @@ HangHoa As screen:
             Fill: =RGBA(237, 237, 237, 1)
             HoverBorderColor: =RGBA(237, 237, 237, 1)
             HoverFill: =RGBA(54, 176, 75, 1)
-            OnSelect: |-
+            OnSelect: |
                 =If(LookUp(QLK_ImportRequest, ID_ProductRequest = IDProductImport_GalProduct, ID_ProductRequest),
-                    Office365Outlook.SendEmailV2(
-                            LookUp(QLK_Account, Text(Permission.Value) = "Accountant", Gmail),
-                            "Request to order more in stock",
-                            "Requester's name: " & LookUp(QLK_Account, ID = idDangNhap, FullName) & "<br>" &
-                            "Product code: " & LookUp(QLK_Product, IDProduct = Label9_1.Text, IDProduct) & "<br>" &
-                            "Product name: " & LookUp(QLK_Product, IDProduct = Label9_1.Text, Name) & "<br>" &
-                            "Quantity in stock: "  & LookUp(QLK_Product, IDProduct = Label9_1.Text, Quantity) & "<br>" &
-                            "Number of products requested to order: " & LookUp(QLK_ImportRequest, ID_ProductRequest = Label9_1.Text, Quantity) & "<br>" & 
-                            "Order quantity required: " & txt_Quantity.Text & "<br>" &
-                            "Request date: " & Now() & "<br>" & "Please order the product, thanks for watching!");
                     Patch(
                         QLK_ImportRequest, LookUp(QLK_ImportRequest, ID_ProductRequest = IDProductImport_GalProduct),
                         {
@@ -1592,21 +1582,25 @@ HangHoa As screen:
                     )
                     ,
                     Patch(
-                        QLK_ImportRequest, 
+                        QLK_ImportRequest,
                         {
                             ID_ProductRequest: Label9_1.Text,
                             Quantity: Value(txt_Quantity.Text)
                         }
                     );
-                    LookUp(QLK_Account, Text(Permission.Value) = "Accountant", Gmail),
-                            "Request to order more in stock",
-                            "Requester's name: " & LookUp(QLK_Account, ID = idDangNhap, FullName) & "<br>" &
-                            "Product code: " & LookUp(QLK_Product, IDProduct = Label9_1.Text, IDProduct) & "<br>" &
-                            "Product name: " & LookUp(QLK_Product, IDProduct = Label9_1.Text, Name) & "<br>" &
-                            "Quantity in stock: "  & LookUp(QLK_Product, IDProduct = Label9_1.Text, Quantity) & "<br>" &
-                            "Number of products requested to order: " & LookUp(QLK_ImportRequest, ID_ProductRequest = Label9_1.Text, Quantity) & "<br>" & 
-                            "Order quantity required: " & txt_Quantity.Text & "<br>" &
-                            "Request date: " & Now() & "<br>" & "Please order the product, thanks for watching!");
+                    Office365Outlook.SendEmailV2(
+                        LookUp(QLK_Account, Text(Permission.Value) = "Accountant", Gmail),
+                        "Request to order products",
+                        "Requester's name: " & LookUp(QLK_Account, ID = idDangNhap, FullName) & "<br>" & 
+                        "Product code: " & Label9_1.Text & "<br>" &
+                        "Product name: " & LookUp(QLK_Product, IDProduct = Label9_1.Text, Name) & "<br>" &
+                        "Order quantity required: " & txt_Quantity.Text
+                        /*Quantity in stock: 5
+                        Number of products requested to order: 50
+                        
+                        Request date: June 16, 2023 4:15 PM
+                        Please order the product, thanks for watching!"*/
+                    )
                 );
                 Set(showYeuCauDatHang,false)
             PressedBorderColor: =RGBA(237, 237, 237, 1)
