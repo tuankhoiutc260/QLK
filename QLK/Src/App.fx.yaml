@@ -34,14 +34,9 @@ App As appinfo:
         Set(visible_RightHomeAdmin, true);
         
         // Home Admin
-        Set(fontSizeApprove_HomeAdmin, 15);
-        Set(fontSizeImport_HomeAdmin, 12);
-        Set(fontSizeOrder_HomeAdmin, 12);
-        Set(fontSizeExport_HomeAdmin, 12);
-        Set(visLineApprove_HomeAdmin, true);
-        Set(visLineImport_HomeAdmin, false);
-        Set(visLineOrder_HomeAdmin, false);
-        Set(visLineExport_HomeAdmin, false);
+        
+        
+        
         Set(textChart_HomeAdmin, "Top Products Imported");
         //Set(datasourceImported_HomeAdmin, col_TopProductOrdered);
         Set(visibleDetailOrderNotPending, true);
@@ -54,8 +49,6 @@ App As appinfo:
         Set(visible_cont_Import_HomeAccountant, false);
         Set(showSuccess_HomeAccountant, false);
         Set(visible_grp_InputImportQuantity_HomeAccoutant, false);
-        Set(FillUnPaid_HomeAccountant, RGBA(127, 235, 117, 1)); Set(ColorUnPaid_HomeAccountant, RGBA(255, 255, 255, 1));
-        Set(FillPaid_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorPaid_HomeAccountant, RGBA(127, 235, 117, 1));
         
         //Tạo lịch
         If(IsBlank(_userDomain),         

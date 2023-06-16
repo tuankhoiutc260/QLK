@@ -344,9 +344,9 @@ ThongTinTaiKhoan As screen:
 
     drop_CusArea_2 As dropdown:
         BorderThickness: =1
-        Default: =gal_TaiKhoan.Selected.' Permission'.Value
+        Default: =gal_TaiKhoan.Selected.Permission.Value
         Font: =Font.'Segoe UI'
-        Items: =Choices(QLK_Account.' Permission')
+        Items: =Choices(QLK_Account.Permission)
         Size: =20
         Width: =322
         X: =502
@@ -450,7 +450,7 @@ ThongTinTaiKhoan As screen:
                         Password: txt_CusAdd_2.Text,
                         Sex: drop_CusSex_2.Selected,
                         ' Portrait': {Value: pho_Cus_2.Image},
-                        ' Permission': drop_CusArea_2.Selected
+                        Permission: drop_CusArea_2.Selected
                     }
                 );
                 
@@ -607,7 +607,7 @@ ThongTinTaiKhoan As screen:
         FontWeight: =FontWeight.Semibold
         Height: =31
         Size: =15
-        Text: =LookUp(QLK_Account, ID = idDangNhap, ' Permission'.Value)
+        Text: =LookUp(QLK_Account, ID = idDangNhap, Permission.Value)
         Width: =196
         X: =1035
         Y: =45
