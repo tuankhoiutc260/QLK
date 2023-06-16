@@ -278,3 +278,9 @@ Screen4 As screen:
             Y: =540
             ZIndex: =6
 
+    Label29 As label:
+        Text: =LookUp(QLK_ExportFormInformation, IDProduct = IDProduct_GalProduct && (DateValue(Now()) - DateValue(Created)) <= 10, Quantity)
+        X: =639
+        Y: =57
+        ZIndex: =2
+

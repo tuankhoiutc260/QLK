@@ -296,8 +296,8 @@ HangHoa As screen:
             OnSelect: =Select(Parent)
             Text: =ThisItem.Quantity & " " & LookUp(QLK_Unit, ID = ThisItem.Unit, UnitName)
             Width: =113
-            X: =326
-            Y: =10
+            X: =292
+            Y: =7
             ZIndex: =6
 
         lbl_InputPrice As label:
@@ -306,8 +306,8 @@ HangHoa As screen:
             OnSelect: =Select(Parent)
             Text: =ThisItem.InputPrice & " Vnđ"
             Width: =111
-            X: =469
-            Y: =10
+            X: =410
+            Y: =7
             ZIndex: =7
 
         lbl_OutputPrice As label:
@@ -316,8 +316,8 @@ HangHoa As screen:
             OnSelect: =Select(Parent)
             Text: =ThisItem.OutputPrice & " Vnđ"
             Width: =111
-            X: =634
-            Y: =10
+            X: =540
+            Y: =7
             ZIndex: =8
 
         lbl_Location As label:
@@ -326,8 +326,8 @@ HangHoa As screen:
             OnSelect: =Select(Parent)
             Text: =ThisItem.Location
             Width: =101
-            X: =790
-            Y: =10
+            X: =828
+            Y: =13
             ZIndex: =9
 
         Img_Product As image:
@@ -363,6 +363,16 @@ HangHoa As screen:
             Text: =""
             Width: =1071
             ZIndex: =11
+
+        lbl_Location_2 As label:
+            Align: =Align.Center
+            Height: =71
+            OnSelect: =Select(Parent)
+            Text: =Round((Sum(Filter(QLK_ExportFormInformation, IDProduct = ThisItem.IDProduct && (DateValue(Now()) - DateValue(Created)) <= 10), Quantity)/10)/ThisItem.Quantity,0)
+            Width: =101
+            X: =689
+            Y: =13
+            ZIndex: =12
 
     Image4_37 As image:
         Height: =74
@@ -427,8 +437,8 @@ HangHoa As screen:
         OnSelect: =
         Text: ="Quantity"
         Width: =99
-        X: =566
-        Y: =183
+        X: =531
+        Y: =184
         ZIndex: =24
 
     lbl_OrderedID_DuyetDatHang_1 As label:
@@ -449,8 +459,8 @@ HangHoa As screen:
         Height: =52
         OnSelect: =
         Text: ="Input Price"
-        Width: =136
-        X: =683
+        Width: =125
+        X: =627
         Y: =183
         ZIndex: =26
 
@@ -471,7 +481,7 @@ HangHoa As screen:
         OnSelect: =
         Text: ="Output Price"
         Width: =136
-        X: =848
+        X: =753
         Y: =183
         ZIndex: =28
 
@@ -482,7 +492,7 @@ HangHoa As screen:
         OnSelect: =
         Text: ="Location"
         Width: =99
-        X: =1012
+        X: =1056
         Y: =183
         ZIndex: =29
 
@@ -508,7 +518,7 @@ HangHoa As screen:
             Height: =768
             Visible: =showXacNhatUpDateThongTinHangHoa
             Width: =1366
-            ZIndex: =84
+            ZIndex: =83
 
         Nen_30 As button:
             BorderColor: =RGBA(255, 255, 255, 1)
@@ -533,7 +543,7 @@ HangHoa As screen:
             Width: =432
             X: =470
             Y: =289
-            ZIndex: =85
+            ZIndex: =84
 
         Label8 As label:
             Align: =Align.Center
@@ -546,7 +556,7 @@ HangHoa As screen:
             Width: =375
             X: =492
             Y: =316
-            ZIndex: =86
+            ZIndex: =85
 
         btn_PendingList_DuyetDatHang_2 As button:
             AutoDisableOnSelect: =false
@@ -581,7 +591,7 @@ HangHoa As screen:
             Width: =156
             X: =521
             Y: =435
-            ZIndex: =87
+            ZIndex: =86
 
         btn_PendingList_DuyetDatHang_3 As button:
             AutoDisableOnSelect: =false
@@ -603,7 +613,7 @@ HangHoa As screen:
             Width: =156
             X: =698
             Y: =437
-            ZIndex: =88
+            ZIndex: =87
 
     Group11 As group:
         Height: =5
@@ -617,7 +627,7 @@ HangHoa As screen:
             Height: =768
             Visible: =showXacNhanXoaThongTinHangHoa
             Width: =1366
-            ZIndex: =89
+            ZIndex: =88
 
         Nen_31 As button:
             BorderColor: =RGBA(255, 255, 255, 1)
@@ -642,7 +652,7 @@ HangHoa As screen:
             Width: =416
             X: =475
             Y: =268
-            ZIndex: =90
+            ZIndex: =89
 
         Label10 As label:
             Align: =Align.Center
@@ -653,7 +663,7 @@ HangHoa As screen:
             Width: =303
             X: =534
             Y: =328
-            ZIndex: =91
+            ZIndex: =90
 
         btn_PendingList_DuyetDatHang_4 As button:
             AutoDisableOnSelect: =false
@@ -684,7 +694,7 @@ HangHoa As screen:
             Width: =156
             X: =526
             Y: =413
-            ZIndex: =92
+            ZIndex: =91
 
         btn_PendingList_DuyetDatHang_5 As button:
             AutoDisableOnSelect: =false
@@ -707,7 +717,7 @@ HangHoa As screen:
             Width: =156
             X: =692
             Y: =413
-            ZIndex: =93
+            ZIndex: =92
 
     Group3 As group:
         Height: =5
@@ -1479,7 +1489,7 @@ HangHoa As screen:
             Height: =768
             Visible: =showYeuCauDatHang
             Width: =1366
-            ZIndex: =94
+            ZIndex: =93
 
         Nen_32 As button:
             BorderColor: =RGBA(255, 255, 255, 1)
@@ -1504,7 +1514,7 @@ HangHoa As screen:
             Width: =584
             X: =510
             Y: =284
-            ZIndex: =95
+            ZIndex: =94
 
         Label18 As label:
             Align: =Align.Center
@@ -1516,7 +1526,7 @@ HangHoa As screen:
             Width: =547
             X: =534
             Y: =303
-            ZIndex: =96
+            ZIndex: =95
 
         Label18_1 As label:
             Align: =Align.Center
@@ -1530,7 +1540,7 @@ HangHoa As screen:
             Width: =547
             X: =538
             Y: =352
-            ZIndex: =97
+            ZIndex: =96
 
         Label18_2 As label:
             Align: =Align.Right
@@ -1543,7 +1553,7 @@ HangHoa As screen:
             Width: =163
             X: =645
             Y: =444
-            ZIndex: =98
+            ZIndex: =97
 
         txt_Quantity As text:
             Default: ="0"
@@ -1552,7 +1562,7 @@ HangHoa As screen:
             Width: =79
             X: =834
             Y: =445
-            ZIndex: =99
+            ZIndex: =98
 
         btn_PendingList_DuyetDatHang_7 As button:
             AutoDisableOnSelect: =false
@@ -1611,7 +1621,7 @@ HangHoa As screen:
             Width: =156
             X: =645
             Y: =505
-            ZIndex: =100
+            ZIndex: =99
 
         btn_PendingList_DuyetDatHang_8 As button:
             AutoDisableOnSelect: =false
@@ -1633,7 +1643,18 @@ HangHoa As screen:
             Width: =156
             X: =821
             Y: =505
-            ZIndex: =101
+            ZIndex: =100
+
+    lbl_TotalPrice_DuyetDatHang_8 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Text: ="The number of days is over"
+        Width: =136
+        X: =905
+        Y: =183
+        ZIndex: =101
 
     txt_Unit_1 As label:
         Font: =Font.'Segoe UI'
