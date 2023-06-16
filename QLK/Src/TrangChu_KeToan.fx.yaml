@@ -2050,7 +2050,7 @@ TrangChu_KeToan As screen:
                             =
                             "Total: " &
                             Text(Sum(
-                               col_DetailsOrder_HomeAccountant,
+                               col_DetailsOrdered_HomeAccountant,
                                TotalPrice
                             ),  "#,###") & " VND"
                             
