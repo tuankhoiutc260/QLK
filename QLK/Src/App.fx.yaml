@@ -49,8 +49,6 @@ App As appinfo:
         Set(visible_cont_Import_HomeAccountant, false);
         Set(showSuccess_HomeAccountant, false);
         Set(visible_grp_InputImportQuantity_HomeAccoutant, false);
-        Set(FillUnPaid_HomeAccountant, RGBA(127, 235, 117, 1)); Set(ColorUnPaid_HomeAccountant, RGBA(255, 255, 255, 1));
-        Set(FillPaid_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorPaid_HomeAccountant, RGBA(127, 235, 117, 1));
         
         //Tạo lịch
         If(IsBlank(_userDomain),         
