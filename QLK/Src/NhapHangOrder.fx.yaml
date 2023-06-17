@@ -1,4 +1,4 @@
-NhapHang As screen:
+NhapHangOrder As screen:
     Fill: =RGBA(255, 255, 255, 1)
 
     "'cont_ImportProduct(cIP)' As groupContainer.manualLayoutContainer":
@@ -423,7 +423,10 @@ NhapHang As screen:
                 FontWeight: =FontWeight.Semibold
                 HoverBorderColor: =RGBA(237, 237, 237, 1)
                 HoverFill: =RGBA(81, 224, 105, 1)
-                OnSelect: =Set(showNotification_ImportPrroduct, true);
+                OnSelect: |-
+                    =ForAll(col_OrderInf_Import As T, If(
+                    
+                    Set(showNotification_ImportPrroduct, true);
                 OnTimerEnd: |-
                     =Set(showSuccess, false) && Set(showbgr_Black_SuccessOrder, false);
                     Set(showNewOrderProductForm, false);

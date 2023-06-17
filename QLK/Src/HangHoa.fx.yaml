@@ -368,7 +368,7 @@ HangHoa As screen:
             Align: =Align.Center
             Height: =71
             OnSelect: =Select(Parent)
-            Text: =Round((Sum(Filter(QLK_ExportFormInformation, IDProduct = ThisItem.IDProduct && (DateValue(Now()) - DateValue(Created)) <= 10), Quantity)/10)/ThisItem.Quantity,0) & " Day"
+            Text: =Round(ThisItem.Quantity/(Sum(Filter(QLK_ExportFormInformation, IDProduct = ThisItem.IDProduct && (DateValue(Now()) - DateValue(Created)) <= 10), Quantity)/10),0) & " Day"
             Width: =101
             X: =689
             Y: =13

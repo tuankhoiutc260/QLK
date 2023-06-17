@@ -98,7 +98,7 @@ TrangChuNhapHang As screen:
                             ShowColumns(Filter(QLK_OrderFormInformation, IDOrderForm = IDOrder_Import), "IDOrderForm", "IDProduct_Supplier", "Quantity", "Unit", "Price", "TotalPrice")
                                  
                     );
-                    Navigate(NhapHang);
+                    Navigate(NhapHangOrder);
                     
                     
                     

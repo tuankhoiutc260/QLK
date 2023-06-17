@@ -426,21 +426,33 @@ NhapHang_3 As screen:
             OnScan: |+
                 =ClearCollect(col_ScanOrder_ScanImport, barcode_Import.Barcodes);
                 
-                
                 ClearCollect(col_OrderList_ScanImport, 
                     ShowColumns(Filter(QLK_OrderForm, true), "IDOrder"));
+                
+                ClearCollect(col_Import_ScanImport, 
+                    ShowColumns(Filter(QLK_ImportForm, true), "IDImport"));
                 
                 ForAll(
                     col_ScanOrder_ScanImport,
                     If(
                         ThisRecord.Value in col_OrderList_ScanImport.IDOrder,
-                        Notify("ko loi"); Navigate(NhapHang),
-                        Notify("loi")
+                        Notify("dathangmoi"); Navigate(NhapHangOrder),
+                        If(ThisRecord.Value in col_Import_ScanImport.IDImport,
+                            Notify("nhaphangcu"); Navigate(NhapHangOrder)
+                        )
                     )
                 );
                 
-                ClearCollect(col_OrderInf_Import, 
-                        ShowColumns(Filter(QLK_OrderFormInformation, IDOrderForm = (LookUp(col_ScanOrder_ScanImport, true, Value))), "IDOrderForm", "IDProduct_Supplier", "Quantity", "Unit", "Price", "TotalPrice")             
+                ClearCollect(
+                    col_OrderInf_Import, 
+                    
+                    ShowColumns(
+                        Filter(
+                            QLK_OrderFormInformation, 
+                            IDOrderForm = (LookUp(col_ScanOrder_ScanImport, true, Value))
+                        ), 
+                        "IDOrderForm", "IDProduct_Supplier", "Quantity", "Unit", "Price", "TotalPrice"
+                    )             
                 );
                 
             PaddingBottom: =0
@@ -462,7 +474,7 @@ NhapHang_3 As screen:
             Y: =304
             ZIndex: =33
 
-        "BarcodeReader4_1 As 'Barcode Reader'":
+        "barcode_export As 'Barcode Reader'":
             BarcodeType: ='BarcodeReader.BarcodeType'.Auto
             BorderFillColor: =RGBA(47, 81, 151, 1)
             BorderStyle: =BorderStyle.None
@@ -477,6 +489,25 @@ NhapHang_3 As screen:
             HoverBorderColor: =RGBA(198, 250, 195, 1)
             HoverContentColor: =RGBA(255, 255, 255, 1)
             HoverFillColor: =RGBA(154, 245, 149, 1)
+            OnScan: |-
+                =ClearCollect(col_ScanOrder_ScanExport, barcode_export.Barcodes);
+                
+                
+                ClearCollect(col_OrderList_ScanExport, 
+                    ShowColumns(Filter(QLK_OrderForm, true), "IDOrder"));
+                
+                ForAll(
+                    col_ScanOrder_ScanExport,
+                    If(
+                        ThisRecord.Value in col_OrderList_ScanImport.IDOrder,
+                        Notify("ko loi"); Navigate(NhapHangOrder),
+                        Notify("loi")
+                    )
+                );
+                
+                ClearCollect(col_OrderInf_Import, 
+                        ShowColumns(Filter(QLK_OrderFormInformation, IDOrderForm = (LookUp(col_ScanOrder_ScanImport, true, Value))), "IDOrderForm", "IDProduct_Supplier", "Quantity", "Unit", "Price", "TotalPrice")             
+                );
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
