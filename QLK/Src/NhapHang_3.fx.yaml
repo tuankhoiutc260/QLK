@@ -423,7 +423,7 @@ NhapHang_3 As screen:
             HoverBorderColor: =RGBA(198, 250, 195, 1)
             HoverContentColor: =RGBA(255, 255, 255, 1)
             HoverFillColor: =RGBA(154, 245, 149, 1)
-            OnScan: |+
+            OnScan: |
                 =ClearCollect(col_ScanOrder_ScanImport, barcode_Import.Barcodes);
                 
                 ClearCollect(col_OrderList_ScanImport, 
@@ -455,6 +455,7 @@ NhapHang_3 As screen:
                     )             
                 );
                 
+                Set(IDImportScan, LookUp(col_ScanOrder_ScanImport, true, Value))
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
