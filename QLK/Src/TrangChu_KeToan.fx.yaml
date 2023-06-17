@@ -181,7 +181,29 @@ TrangChu_KeToan As screen:
                     BorderThickness: =1
                     DelayItemLoading: =true
                     Height: =590
-                    Items: =col_ImportRequest_HomeAccountant
+                    Items: |-
+                        =//col_ImportRequest_HomeAccountant
+                        
+                        Search(
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(
+                                        QLK_Product,
+                                        Not(IDProduct exactin ShowColumns(Filter(col_DetailsImport_HomeAccountant, IDProduct), "IDProduct"))
+                                    ), 
+                                    "IDProduct", 
+                                    "Name", 
+                                    "Quantity",
+                                    "OutputPrice",
+                                    "Image", 
+                                    "IDSupplier", 
+                                    "Description",
+                                    "Unit"
+                                ),
+                                "OutputPrice", "Price"
+                            ),
+                            TextInput6_2.Text, "Name" 
+                        )
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     ShowScrollbar: =false
@@ -287,8 +309,8 @@ TrangChu_KeToan As screen:
                         Size: =12
                         Text: =""
                         Width: =627
-                        X: =15
-                        Y: =15
+                        X: =16
+                        Y: =22
                         ZIndex: =8
 
                     Label27_23 As label:
@@ -2638,11 +2660,12 @@ TrangChu_KeToan As screen:
                     Height: =590
                     Items: |-
                         =//col_ProductInWarehouse_HomeAccountant
+                        If(StatusSearchProduct_HomeAccountant = 1,
                         Search(
                             RenameColumns(
                                 ShowColumns(
                                     Filter(
-                                        QLK_Product,
+                                        QLK_Product, Quantity = 0 &&
                                         Not(IDProduct exactin ShowColumns(Filter(col_DetailsExport_HomeAccountant, IDProduct), "IDProduct"))
                                     ), 
                                     "IDProduct", 
@@ -2658,6 +2681,7 @@ TrangChu_KeToan As screen:
                                 "OutputPrice", "Price"
                             ),
                             TextInput6_1.Text, "Name" 
+                        ), col_ProductInWarehouse_HomeAccountant
                         )
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
@@ -2755,6 +2779,31 @@ TrangChu_KeToan As screen:
                             Set(QuantityProductExport_HomeAccountant, ThisItem.Quantity);
                             Set(visible_grp_InputExportQuantity_HomeAccoutant, true);
                             
+                            ClearCollect(
+                                col_ProductInWarehouse_HomeAccountant, 
+                                Search(
+                                    RenameColumns(
+                                        ShowColumns(
+                                            Filter(
+                                                QLK_Product,Quantity = 0 &&
+                                                Not(IDProduct exactin ShowColumns(Filter(col_DetailsExport_HomeAccountant, IDProduct), "IDProduct"))
+                                            ), 
+                                            "IDProduct", 
+                                            "Name", 
+                                            "Quantity",
+                                            "OutputPrice",
+                                            "Image", 
+                                            "IDSupplier", 
+                                            "Description",
+                                            "Unit"
+                                        )       ,
+                                        "IDProduct", "ID",
+                                        "OutputPrice", "Price"
+                                    ),
+                                    TextInput6_1.Text, "Name" 
+                                )
+                            )
+                            
                             
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =RGBA(0, 0, 0, 0)
@@ -2774,6 +2823,9 @@ TrangChu_KeToan As screen:
                     Fill: =RGBA(0, 0, 0, 0)
                     FocusedBorderThickness: =1
                     HintText: ="Search Product"
+                    OnChange: |-
+                        =If(IsBlank(Self.Text), Set(StatusSearchProduct_HomeAccountant, 0), Set(StatusSearchProduct_HomeAccountant, 1)) 
+                        //0: không có chữ, 1: có chữ
                     RadiusBottomLeft: =20
                     RadiusBottomRight: =20
                     RadiusTopLeft: =20
@@ -3064,6 +3116,13 @@ TrangChu_KeToan As screen:
                         Y: =75
                         ZIndex: =9
 
+            Button4 As button:
+                OnSelect: =Clear(col_ImportRequest_HomeAccountant);
+                Text: ="Button"
+                X: =40
+                Y: =40
+                ZIndex: =16
+
             "'grp_buttonFunction(R_HA)_1' As group":
                 Height: =5
                 Width: =5
@@ -3103,7 +3162,7 @@ TrangChu_KeToan As screen:
                         */
                         
                         // Create collection Product Order not Warehouse
-                        /*
+                        
                         ClearCollect(
                             col_ProductInWarehouse_HomeAccountant, 
                             RenameColumns(
@@ -3126,8 +3185,9 @@ TrangChu_KeToan As screen:
                                 "OutputPrice", "Price"
                             )
                         );
-                        */
+                        
                         Reset(TextInput6_1);
+                        /*
                         ClearCollect(
                             col_ProductInWarehouse_HomeAccountant, 
                             Search(
@@ -3151,7 +3211,7 @@ TrangChu_KeToan As screen:
                                 ),
                                 TextInput6_1.Text, "Name" 
                             )
-                        )
+                        )*/
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(127, 235, 117, 1)
                     Size: =fontSizeExport_HomeAccountant
@@ -3600,8 +3660,6 @@ TrangChu_KeToan As screen:
                 =Set(visible_grp_InputImportQuantity_HomeAccoutant, false);
                 
                 
-                
-                
                 UpdateIf(
                     col_ImportRequest_HomeAccountant, 
                     IDProduct = IDProduct_HomeAccountant, 
@@ -3627,9 +3685,7 @@ TrangChu_KeToan As screen:
                         TotalPrice: Value(TextInput3.Text) * LookUp(QLK_Product, IDProduct = IDProduct_HomeAccountant, InputPrice)
                     } );
                 
-                );
-                
-                    
+                );    
                 
                 Reset(TextInput3);
             PressedColor: =RGBA(255, 255, 255, 1)
