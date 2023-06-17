@@ -67,7 +67,7 @@ DangNhap As screen:
         Fill: =RGBA(241, 244, 249, 1)
         Font: =Font.'Segoe UI'
         Height: =57
-        HintText: ="Gmail"
+        HintText: ="Email"
         HoverBorderColor: =RGBA(99, 139, 44, 1)
         HoverFill: =RGBA(209, 232, 178, 1)
         PressedBorderColor: =RGBA(99, 139, 44, 1)
@@ -392,6 +392,11 @@ DangNhap As screen:
                                 Set(visLineImport_HomeAccountant, false);
                                 Set(visLineNewOrder_HomeAccountant, false);
                                 Set(visLineExport_HomeAccountant, false);
+            
+                                Set(visible_cont_Ordered_HomeAccountant, true);
+                                Set(visible_cont_Import_HomeAccountant, false);
+                                Set(visible_cont_NewOrder_HomeAccountant, false);
+                                Set(visible_cont_Export_HomeAccountant, false);
                                 
                                 //Set(IDOrder_HomeAccountant, LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID));
             
@@ -533,7 +538,9 @@ DangNhap As screen:
             
                                 //-----                         
                                 Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
-                                Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, Permission))                   
+                                Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, Permission));
+                                Set(fullName, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, FullName));  
+                                Set(imageLogin, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Portrait'));                 
                             )
                         )
                     )
