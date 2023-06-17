@@ -174,9 +174,9 @@ ThongTinNhaCungCap As screen:
         ZIndex: =12
 
     Label2_12 As label:
-        Font: =Font.'Patrick Hand'
-        FontWeight: =FontWeight.Semibold
-        Size: =20
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Size: =15
         Text: =LookUp(QLK_Account, ID = idDangNhap, FullName)
         Width: =196
         X: =1035
@@ -560,7 +560,6 @@ ThongTinNhaCungCap As screen:
             ZIndex: =41
 
     Label2_21 As label:
-        Align: =Align.Center
         Color: |-
             =If(Label2_21.Text = "Stocker", RGBA(50, 200, 0, 100),
                 If(Label2_21.Text = "Manager", RGBA(200,0,0,100),
@@ -569,7 +568,7 @@ ThongTinNhaCungCap As screen:
                     )
                 )
             )
-        Font: =Font.'Patrick Hand'
+        Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Semibold
         Height: =31
         Size: =15

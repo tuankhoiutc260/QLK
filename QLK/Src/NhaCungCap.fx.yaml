@@ -139,7 +139,7 @@ NhaCungCap As screen:
             PaddingTop: =0
             Size: =15
             Text: |-
-                ="Address:"
+                ="Gmail:"
             VerticalAlign: =VerticalAlign.Top
             X: =53
             Y: =87
