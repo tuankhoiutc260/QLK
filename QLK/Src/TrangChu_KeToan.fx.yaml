@@ -180,7 +180,7 @@ TrangChu_KeToan As screen:
                     BorderStyle: =BorderStyle.None
                     BorderThickness: =1
                     DelayItemLoading: =true
-                    Height: =643
+                    Height: =590
                     Items: =col_ImportRequest_HomeAccountant
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
@@ -190,6 +190,7 @@ TrangChu_KeToan As screen:
                     Transition: =Transition.Pop
                     Width: =659
                     X: =20
+                    Y: =53
                     ZIndex: =1
 
                     shadow_ImportGoods_IMPI_32 As htmlViewer:
@@ -210,8 +211,8 @@ TrangChu_KeToan As screen:
                         RadiusTopLeft: =15
                         RadiusTopRight: =15
                         Width: =50
-                        X: =27
-                        Y: =24
+                        X: =23
+                        Y: =22
                         ZIndex: =2
 
                     Label25_10 As label:
@@ -223,8 +224,8 @@ TrangChu_KeToan As screen:
                         Size: =11
                         Text: =LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, Name)
                         Width: =196
-                        X: =102
-                        Y: =14
+                        X: =98
+                        Y: =16
                         ZIndex: =3
 
                     Label27_22 As label:
@@ -234,7 +235,7 @@ TrangChu_KeToan As screen:
                         Text: |-
                             =Text(LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, InputPrice), "#,###" & " VND")
                         Width: =108
-                        X: =422
+                        X: =418
                         Y: =28
                         ZIndex: =5
 
@@ -245,7 +246,7 @@ TrangChu_KeToan As screen:
                         Size: =9
                         Text: =LookUp(QLK_Unit, ID = LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, Unit), UnitName)
                         Width: =95
-                        X: =311
+                        X: =307
                         Y: =25
                         ZIndex: =6
 
@@ -296,9 +297,27 @@ TrangChu_KeToan As screen:
                         Size: =9
                         Text: =ThisItem.Quantity
                         Width: =108
-                        X: =530
+                        X: =526
                         Y: =28
                         ZIndex: =9
+
+                TextInput6_2 As text:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(219, 219, 219, 1)
+                    BorderThickness: =0.5
+                    Color: =RGBA(219, 219, 219, 1)
+                    Default: =""
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =1
+                    HintText: ="Search Product"
+                    RadiusBottomLeft: =20
+                    RadiusBottomRight: =20
+                    RadiusTopLeft: =20
+                    RadiusTopRight: =20
+                    Width: =295
+                    X: =202
+                    Y: =13
+                    ZIndex: =8
 
                 grp_DetailsOrdered_cOHA1_1 As group:
                     Height: =5
@@ -2617,40 +2636,28 @@ TrangChu_KeToan As screen:
                     BorderThickness: =1
                     DelayItemLoading: =true
                     Height: =590
-                    Items: |
+                    Items: |-
                         =//col_ProductInWarehouse_HomeAccountant
-                        
                         Search(
                             RenameColumns(
                                 ShowColumns(
                                     Filter(
-                                        QLK_Product, 
-                                        Not(
-                                            IDProduct exactin 
-                                            ShowColumns(
-                                                Filter(
-                                                    col_DetailsExport_HomeAccountant,
-                                                    IDProduct
-                                                ), 
-                                                IDProduct
-                                            )
-                                        )
-                                    )
-                                , 
-                                "IDProduct", 
-                                "Name", 
-                                "Quantity",
-                                "OutputPrice",
-                                "Image", 
-                                "IDSupplier", 
-                                "Description",
-                                "Unit"
-                            ), 
-                            "IDProduct", "ID",
-                            "Name", "Name",
-                            "OutputPrice", "Price"
-                                    ), TextInput6_1.Text, "Name"
-                         
+                                        QLK_Product,
+                                        Not(IDProduct exactin ShowColumns(Filter(col_DetailsExport_HomeAccountant, IDProduct), "IDProduct"))
+                                    ), 
+                                    "IDProduct", 
+                                    "Name", 
+                                    "Quantity",
+                                    "OutputPrice",
+                                    "Image", 
+                                    "IDSupplier", 
+                                    "Description",
+                                    "Unit"
+                                )       ,
+                                "IDProduct", "ID",
+                                "OutputPrice", "Price"
+                            ),
+                            TextInput6_1.Text, "Name" 
                         )
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
@@ -2681,8 +2688,8 @@ TrangChu_KeToan As screen:
                         RadiusTopLeft: =15
                         RadiusTopRight: =15
                         Width: =50
-                        X: =27
-                        Y: =24
+                        X: =29
+                        Y: =22
                         ZIndex: =2
 
                     Label25_12 As label:
@@ -2694,8 +2701,8 @@ TrangChu_KeToan As screen:
                         Size: =11
                         Text: =ThisItem.Name
                         Width: =196
-                        X: =102
-                        Y: =25
+                        X: =104
+                        Y: =26
                         ZIndex: =3
 
                     Label27_29 As label:
@@ -2705,8 +2712,8 @@ TrangChu_KeToan As screen:
                         Text: |-
                             =Text(ThisItem.Price, "#,###" & " VND")
                         Width: =108
-                        X: =422
-                        Y: =27
+                        X: =424
+                        Y: =28
                         ZIndex: =4
 
                     Label27_28 As label:
@@ -2716,8 +2723,8 @@ TrangChu_KeToan As screen:
                         Size: =9
                         Text: =LookUp(QLK_Unit, ID = ThisItem.Unit, UnitName)
                         Width: =95
-                        X: =331
-                        Y: =24
+                        X: =333
+                        Y: =25
                         ZIndex: =6
 
                     Label27_30 As label:
@@ -2727,8 +2734,8 @@ TrangChu_KeToan As screen:
                         Size: =9
                         Text: =ThisItem.Quantity
                         Width: =95
-                        X: =530
-                        Y: =24
+                        X: =532
+                        Y: =25
                         ZIndex: =7
 
                     Button4_32 As button:
@@ -2765,6 +2772,7 @@ TrangChu_KeToan As screen:
                     Color: =RGBA(219, 219, 219, 1)
                     Default: =""
                     Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =1
                     HintText: ="Search Product"
                     RadiusBottomLeft: =20
                     RadiusBottomRight: =20
@@ -3056,102 +3064,6 @@ TrangChu_KeToan As screen:
                         Y: =75
                         ZIndex: =9
 
-                "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
-                    DelayItemLoading: =true
-                    Items: |-
-                        =         Filter(
-                                        QLK_Product, 
-                                        Not(
-                                            IDProduct exactin 
-                                            ShowColumns(
-                                                Filter(
-                                                    col_DetailsExport_HomeAccountant,
-                                                    IDProduct
-                                                ), 
-                                                IDProduct
-                                            )
-                                        )
-                                    )
-                    Layout: =Layout.Vertical
-                    LoadingSpinner: =LoadingSpinner.Data
-                    TemplatePadding: =0
-                    TemplateSize: =104
-                    X: =175
-                    Y: =81
-                    ZIndex: =11
-
-                    Image12 As image:
-                        Height: =72
-                        OnSelect: =Select(Parent)
-                        RadiusBottomLeft: =8
-                        RadiusBottomRight: =8
-                        RadiusTopLeft: =8
-                        RadiusTopRight: =8
-                        Width: =72
-                        X: =16
-                        Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-                        ZIndex: =1
-
-                    Title6 As label:
-                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                        Height: =Self.Size * 1.8
-                        OnSelect: =Select(Parent)
-                        PaddingBottom: =0
-                        PaddingLeft: =0
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Text: =ThisItem.SampleHeading
-                        VerticalAlign: =VerticalAlign.Top
-                        Width: =Parent.TemplateWidth - 173
-                        X: =103
-                        Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle5.Size * 1.8)) / 2
-                        ZIndex: =2
-
-                    Subtitle5 As label:
-                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-                        Height: =Self.Size * 1.8
-                        OnSelect: =Select(Parent)
-                        PaddingBottom: =0
-                        PaddingLeft: =0
-                        PaddingRight: =0
-                        PaddingTop: =0
-                        Text: =ThisItem.SampleText
-                        VerticalAlign: =VerticalAlign.Top
-                        Width: =Title6.Width
-                        X: =Title6.X
-                        Y: =Title6.Y + Title6.Height
-                        ZIndex: =3
-
-                    NextArrow2 As icon.ChevronRight:
-                        AccessibleLabel: =Self.Tooltip
-                        Color: =RGBA(166, 166, 166, 1)
-                        Height: =50
-                        Icon: =Icon.ChevronRight
-                        OnSelect: =Select(Parent)
-                        PaddingBottom: =16
-                        PaddingLeft: =16
-                        PaddingRight: =16
-                        PaddingTop: =16
-                        Tooltip: ="View item details"
-                        Width: =50
-                        X: =Parent.TemplateWidth - Self.Width - 12
-                        Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-                        ZIndex: =4
-
-                    Separator2 As rectangle:
-                        Height: =8
-                        OnSelect: =Select(Parent)
-                        Width: =Parent.TemplateWidth
-                        Y: =96
-                        ZIndex: =5
-
-                    Rectangle18 As rectangle:
-                        Height: =Parent.TemplateHeight - Separator2.Height
-                        OnSelect: =Select(Parent)
-                        Visible: =If(ThisItem.IsSelected, true, false)
-                        Width: =4
-                        ZIndex: =6
-
             "'grp_buttonFunction(R_HA)_1' As group":
                 Height: =5
                 Width: =5
@@ -3168,7 +3080,7 @@ TrangChu_KeToan As screen:
                     HoverBorderColor: =RGBA(127, 235, 117, 1)
                     HoverColor: =RGBA(21, 161, 60, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
-                    OnSelect: |+
+                    OnSelect: |-
                         =//Reset(gal_DetailOrderNotPending_3);
                         Set(visible_cont_Ordered_HomeAccountant, false);
                         Set(visible_cont_Import_HomeAccountant, false);
@@ -3191,6 +3103,7 @@ TrangChu_KeToan As screen:
                         */
                         
                         // Create collection Product Order not Warehouse
+                        /*
                         ClearCollect(
                             col_ProductInWarehouse_HomeAccountant, 
                             RenameColumns(
@@ -3213,7 +3126,32 @@ TrangChu_KeToan As screen:
                                 "OutputPrice", "Price"
                             )
                         );
-                        
+                        */
+                        Reset(TextInput6_1);
+                        ClearCollect(
+                            col_ProductInWarehouse_HomeAccountant, 
+                            Search(
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(
+                                            QLK_Product,
+                                            Not(IDProduct exactin ShowColumns(Filter(col_DetailsExport_HomeAccountant, IDProduct), "IDProduct"))
+                                        ), 
+                                        "IDProduct", 
+                                        "Name", 
+                                        "Quantity",
+                                        "OutputPrice",
+                                        "Image", 
+                                        "IDSupplier", 
+                                        "Description",
+                                        "Unit"
+                                    )       ,
+                                    "IDProduct", "ID",
+                                    "OutputPrice", "Price"
+                                ),
+                                TextInput6_1.Text, "Name" 
+                            )
+                        )
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(127, 235, 117, 1)
                     Size: =fontSizeExport_HomeAccountant
