@@ -30,6 +30,7 @@
       "Editor": "Modified By",
       "Editor#Claims": "Modified By Claims",
       "ID": "ID",
+      "IDCustomer": "IDCustomer",
       "IDExport": "IDExport",
       "Modified": "Modified",
       "OData__ColorTag": "Color Tag",
