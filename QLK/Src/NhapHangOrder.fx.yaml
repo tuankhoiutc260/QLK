@@ -445,6 +445,7 @@ NhapHangOrder As screen:
                         )
                     )
                     */
+                    Clear(col_AddProductScaned_Import);
                     Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = IDImportScan), {Status: 4});
                     Navigate(NhapHang_3);
                 OnTimerEnd: |-
