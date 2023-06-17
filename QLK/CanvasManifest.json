@@ -98,7 +98,7 @@
       "zeroalltabindexes": false
     },
     "Author": "",
-    "BindingErrorCount": 99,
+    "BindingErrorCount": 100,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 500,
     "DocumentAppType": "DesktopOrTablet",
@@ -117,7 +117,7 @@
     "ManualOfflineProfileId": "",
     "Name": "QuanLyKho",
     "OriginatingVersion": "1.331",
-    "ParserErrorCount": 12
+    "ParserErrorCount": 14
   },
   "PublishInfo": {
     "AppName": "QuanLyKho",
