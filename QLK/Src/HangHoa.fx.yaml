@@ -267,7 +267,12 @@ HangHoa As screen:
                     QLK_Product,
                 If(
                     DSHangHoa = "DSCanDatHang",
-                    Filter(QLK_Product, Value(Quantity) <= Value(MinimumQuantity))           
+                    Filter(QLK_Product, Value(Quantity) <= Value(MinimumQuantity))
+                    /*,
+                    If(
+                        DSHangHoa = "DSDayOver",
+                        Filter(QLK_Product, Round(Quantity/(Sum(Filter(QLK_ExportFormInformation, IDProduct = IDProduct && (DateValue(Now()) - DateValue(Created)) <= 10), Quantity)/10),0) <= 7)
+                    )*/           
                 )
             )
         Layout: =Layout.Vertical
@@ -364,11 +369,11 @@ HangHoa As screen:
             Width: =1071
             ZIndex: =11
 
-        lbl_Location_2 As label:
+        lbl_DayOver As label:
             Align: =Align.Center
             Height: =71
             OnSelect: =Select(Parent)
-            Text: =Round(ThisItem.Quantity/(Sum(Filter(QLK_ExportFormInformation, IDProduct = ThisItem.IDProduct && (DateValue(Now()) - DateValue(Created)) <= 10), Quantity)/10),0) & " Day"
+            Text: =Round(ThisItem.Quantity/(Sum(Filter(QLK_ExportFormInformation, IDProduct = ThisItem.IDProduct && (DateValue(Now()) - DateValue(Created)) <= 10), Quantity)/10),0)
             Width: =101
             X: =689
             Y: =13
@@ -1601,6 +1606,16 @@ HangHoa As screen:
                         {
                             Quantity: LookUp(QLK_ImportRequest, ID_ProductRequest = IDProductImport_GalProduct, Quantity) + Value(txt_Quantity.Text)
                         }
+                    );
+                    Office365Outlook.SendEmailV2(
+                        LookUp(QLK_Account, Text(Permission.Value) = "Accountant", Gmail),
+                        "Request to order products",
+                        "Requester's name: " & LookUp(QLK_Account, ID = idDangNhap, FullName) & "<br>" & 
+                        "Product code: " & Label9_1.Text & "<br>" &
+                        "Product name: " & LookUp(QLK_Product, IDProduct = Label9_1.Text, Name) & "<br>" &
+                        "Order quantity required: " & txt_Quantity.Text & "<br>" &
+                        "Request date: " & Now() & "<br>" &
+                        "Please order the product, thanks for watching!"
                     )
                     ,
                     Patch(
@@ -1616,12 +1631,9 @@ HangHoa As screen:
                         "Requester's name: " & LookUp(QLK_Account, ID = idDangNhap, FullName) & "<br>" & 
                         "Product code: " & Label9_1.Text & "<br>" &
                         "Product name: " & LookUp(QLK_Product, IDProduct = Label9_1.Text, Name) & "<br>" &
-                        "Order quantity required: " & txt_Quantity.Text
-                        /*Quantity in stock: 5
-                        Number of products requested to order: 50
-                        
-                        Request date: June 16, 2023 4:15 PM
-                        Please order the product, thanks for watching!"*/
+                        "Order quantity required: " & txt_Quantity.Text & "<br>" &
+                        "Request date: " & Now() & "<br>" &
+                        "Please order the product, thanks for watching!"
                     )
                 );
                 Set(showYeuCauDatHang,false)
@@ -1659,4 +1671,25 @@ HangHoa As screen:
             X: =821
             Y: =505
             ZIndex: =102
+
+    btn_PendingList_DuyetDatHang_9 As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =RGBA(237, 237, 237, 1)
+        BorderThickness: =0
+        Color: =RGBA(255, 0, 0, 1)
+        Fill: =RGBA(237, 237, 237, 1)
+        HoverBorderColor: =RGBA(237, 237, 237, 1)
+        HoverFill: =RGBA(255, 191, 0, 1)
+        OnSelect: =Set(DSHangHoa, "DSDayOver")
+        PressedBorderColor: =RGBA(237, 237, 237, 1)
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =13
+        Text: ="Days is over"
+        Width: =192
+        X: =902
+        Y: =123
+        ZIndex: =103
 
