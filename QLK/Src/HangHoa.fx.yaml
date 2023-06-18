@@ -57,7 +57,7 @@ HangHoa As screen:
         OnChange: =ClearCollect(ColScanSP, BarcodeReader1.Barcodes)
         OnScan: |-
             =Set(IDScanSP, LookUp(ColScanSP, true, Value));
-            If(LookUp(QLK_Product, IDProduct = lbl_ScanSP.Text, IDProduct) = Blank(),Set(showGrpScanSP, true))
+            If(LookUp(QLK_Product, IDProduct = lbl_ScanSP.Text, IDProduct) = Blank(),Set(showGrpScanSP, false),Set(showGrpScanSP, true))
         PressedBorderColor: =RGBA(56, 96, 178, 1)
         PressedContentColor: =RGBA(56, 96, 178, 1)
         PressedFillColor: =RGBA(255, 255, 255, 1)
