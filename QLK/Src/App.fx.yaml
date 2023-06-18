@@ -8,6 +8,9 @@ App As appinfo:
         Set(showDialogueXoaKH, false);
         Set(ShowDialogueSuaKH, false);
         Set(showXacNhanDatPhieu, true);
+        Set(showGrpScanSP, false);
+        Set(showGrpDelete, false);
+        Set(showGrpUpdate, false);
         
         Set(showInformationImportInvoiceForm, false);
         Set(showOrderProductForm, false);
