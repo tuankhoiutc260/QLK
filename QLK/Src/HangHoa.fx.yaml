@@ -57,7 +57,7 @@ HangHoa As screen:
         OnChange: =ClearCollect(ColScanSP, BarcodeReader1.Barcodes)
         OnScan: |-
             =Set(IDScanSP, LookUp(ColScanSP, true, Value));
-            If(LookUp(QLK_Product, IDProduct = lbl_ScanSP.Text, IDProduct) = Blank(),Set(showGrpScanSP, false),Set(showGrpScanSP, true))
+            If(LookUp(QLK_Product, IDProduct = Label43.Text, IDProduct) <> Blank(),Set(showGrpScanSP, true), Notify("The code is not correct"))
         PressedBorderColor: =RGBA(56, 96, 178, 1)
         PressedContentColor: =RGBA(56, 96, 178, 1)
         PressedFillColor: =RGBA(255, 255, 255, 1)
@@ -2149,6 +2149,13 @@ HangHoa As screen:
             X: =778
             Y: =425
             ZIndex: =135
+
+    Label43 As label:
+        Color: =RGBA(0, 0, 0, 0)
+        Text: =LookUp(ColScanSP, true, Value)
+        X: =523
+        Y: =124
+        ZIndex: =141
 
     grpUpdate As group:
         Height: =5
