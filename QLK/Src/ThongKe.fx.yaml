@@ -1,0 +1,403 @@
+ThongKe As screen:
+    Fill: =RGBA(214, 223, 238, 1)
+
+    TextInput1_23 As text:
+        Default: =
+        DisabledBorderColor: =RGBA(219, 219, 219, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.Disabled
+        Height: =628
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Width: =1134
+        X: =196
+        Y: =110
+        ZIndex: =1
+
+    Rectangle1_24 As rectangle:
+        Fill: =RGBA(76, 133, 45, 0.77)
+        Height: =768
+        Width: =164
+        ZIndex: =2
+
+    Button2_15 As button:
+        BorderStyle: =BorderStyle.Dotted
+        BorderThickness: =1
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(SoDoKho)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Warehouse"
+        Width: =164
+        ZIndex: =3
+
+    Icon4_23 As icon.Home:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Home
+        Width: =50
+        X: =57
+        Y: =15
+        ZIndex: =4
+
+    Button2_118 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: |-
+            =Navigate(HangHoa);
+            Set(DSHangHoa, "DSTrongKho")
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Product"
+        Width: =164
+        Y: =110
+        ZIndex: =5
+
+    Button2_119 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Inventory"
+        Width: =164
+        Y: =220
+        ZIndex: =6
+
+    Icon8_11 As icon.Shop:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Shop
+        Width: =50
+        X: =57
+        Y: =122
+        ZIndex: =7
+
+    Icon11_37 As icon.ListWatchlistRemind:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.ListWatchlistRemind
+        Width: =50
+        X: =57
+        Y: =232
+        ZIndex: =8
+
+    Button2_122 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(DangNhap)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            
+            Logout"
+        Width: =164
+        Y: =651
+        ZIndex: =9
+
+    Icon10_20 As icon.Leave:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Leave
+        Width: =50
+        X: =57
+        Y: =675
+        ZIndex: =10
+
+    Image4_45 As image:
+        Height: =56
+        Image: =LookUp(QLK_Account, ID = idDangNhap,' Portrait')
+        RadiusBottomLeft: =35
+        RadiusBottomRight: =35
+        RadiusTopLeft: =35
+        RadiusTopRight: =35
+        Width: =56
+        X: =966
+        Y: =20
+        ZIndex: =11
+
+    Label2_44 As label:
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =15
+        Text: =LookUp(QLK_Account, ID = idDangNhap, FullName)
+        Width: =243
+        X: =1035
+        Y: =15
+        ZIndex: =12
+
+    Label2_45 As label:
+        Color: |-
+            =If(Label2_45.Text = "Stocker", RGBA(50, 200, 0, 100),
+                If(Label2_45.Text = "Manager", RGBA(200,0,0,100),
+                    If(Label2_45.Text = "WarehouseStaff", RGBA(60,100,170,100),
+                        If(Label2_45.Text = "Accountant", RGBA(255,190,0,100))
+                    )
+                )
+            )
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =31
+        Size: =15
+        Text: =LookUp(QLK_Account, ID = idDangNhap, Permission.Value)
+        Width: =196
+        X: =1035
+        Y: =45
+        ZIndex: =13
+
+    Image4_44 As image:
+        Height: =74
+        Image: =Logo
+        Width: =258
+        X: =179
+        Y: =11
+        ZIndex: =14
+
+    Button2_120 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(ThietLapGia)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Set price"
+        Width: =164
+        Y: =332
+        ZIndex: =15
+
+    Icon2_7 As icon.Money:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Money
+        Width: =50
+        X: =57
+        Y: =345
+        ZIndex: =16
+
+    lbl_OrderedID_DuyetDatHang_10 As label:
+        Align: =Align.Center
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =52
+        OnSelect: =
+        Size: =20
+        Text: ="ORDERED PRODUCT LIST"
+        Width: =354
+        X: =245
+        Y: =122
+        ZIndex: =17
+
+    Button2_121 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Refresh(QLK_ImportRequest)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Order list"
+        Width: =164
+        Y: =440
+        ZIndex: =18
+
+    Icon3_5 As icon.ShoppingCart:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.ShoppingCart
+        Width: =50
+        X: =57
+        Y: =453
+        ZIndex: =19
+
+    Button2_123 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Refresh(QLK_ImportRequest)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Statistical"
+        Width: =164
+        Y: =550
+        ZIndex: =20
+
+    Icon15 As icon.TrendingUpwards:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.TrendingUpwards
+        Width: =50
+        X: =57
+        Y: =564
+        ZIndex: =21
+
+    Icon11_38 As icon.VerticalLine:
+        Height: =110
+        Icon: =Icon.VerticalLine
+        X: =132
+        Y: =550
+        ZIndex: =22
+
+    Canvas4_1 As fluidGrid.fluidGridWithBlankCard:
+        AcceptsFocus: =false
+        BorderThickness: =0
+        Height: =545
+        Width: =1117
+        X: =212
+        Y: =176
+        ZIndex: =23
+
+        DataCard10_1 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =434
+            Visible: =true
+            Width: =1117
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            CompositePieChart2_1 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =1
+
+                PieChart2_1 As pieChart:
+                    Font: =Font.'Patrick Hand'
+                    Height: =524
+                    ItemBorderThickness: =1
+                    Items: =QLK_Product
+                    LabelPosition: =LabelPosition.Inside
+                    Width: =570
+                    ZIndex: =1
+
+                Title5_1 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(184, 0, 0, 1)
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =55
+                    Size: =20
+                    Text: ="Quantity product in stock"
+                    Width: =451
+                    X: =320
+                    Y: =15
+                    ZIndex: =2
+
+                Legend2_1 As legend:
+                    Font: =Font.'Patrick Hand'
+                    Height: =408
+                    ItemColorSet: =PieChart2_1.ItemColorSet
+                    Items: =PieChart2_1.SeriesLabels
+                    Size: =16
+                    Width: =496
+                    X: =596
+                    Y: =116
+                    ZIndex: =3
+
+        DataCard2 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =100
+            Width: =1117
+            X: =0
+            Y: =1
+            ZIndex: =2
+
+            CompositeColumnChart2 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =1
+
+                Title6 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(184, 0, 0, 1)
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =25
+                    Size: =20
+                    Text: ="Price Product in Stock"
+                    Width: =1061
+                    X: =40
+                    Y: =40
+                    ZIndex: =2
+
+                ColumnChart2 As barChart:
+                    GridStyle: =GridStyle.All
+                    Items: =QLK_Product
+                    NumberOfSeries: =2
+                    Width: =645
+                    X: =40
+                    Y: =70
+                    ZIndex: =3
+
+                Legend3 As legend:
+                    Height: =80
+                    ItemColorSet: =ColumnChart2.ItemColorSet
+                    Items: =ColumnChart2.SeriesLabels
+                    Width: =362
+                    X: =715
+                    Y: =125
+                    ZIndex: =4
+

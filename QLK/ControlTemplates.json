@@ -27,6 +27,20 @@
     "OverridableProperties": {},
     "Version": "1.0"
   },
+  "barChart": {
+    "CustomGroupControlTemplateName": "",
+    "FirstParty": true,
+    "Id": "http://microsoft.com/appmagic/barChart",
+    "IsComponentTemplate": false,
+    "IsCustomGroupControlTemplate": false,
+    "IsPcfControl": false,
+    "IsPremiumPcfControl": false,
+    "IsWidgetTemplate": true,
+    "LastModifiedTimestamp": "0",
+    "Name": "barChart",
+    "OverridableProperties": {},
+    "Version": "2.3.0"
+  },
   "Barcode Reader": {
     "CustomGroupControlTemplateName": "",
     "FirstParty": true,
