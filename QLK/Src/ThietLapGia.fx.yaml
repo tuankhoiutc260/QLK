@@ -22,6 +22,34 @@ ThietLapGia As screen:
         Width: =164
         ZIndex: =2
 
+    Button2_125 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(ThongKe)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Statistical"
+        Width: =164
+        Y: =550
+        ZIndex: =3
+
+    Icon15_2 As icon.TrendingUpwards:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.TrendingUpwards
+        Width: =50
+        X: =57
+        Y: =564
+        ZIndex: =4
+
     Button2_9 As button:
         BorderStyle: =BorderStyle.Dotted
         BorderThickness: =1
@@ -39,7 +67,7 @@ ThietLapGia As screen:
             
             Warehouse"
         Width: =164
-        ZIndex: =3
+        ZIndex: =5
 
     Icon4_21 As icon.Home:
         Color: =RGBA(255, 255, 255, 1)
@@ -48,7 +76,7 @@ ThietLapGia As screen:
         Width: =50
         X: =57
         Y: =15
-        ZIndex: =4
+        ZIndex: =6
 
     Button2_102 As button:
         BorderThickness: =0
@@ -69,7 +97,7 @@ ThietLapGia As screen:
             Product"
         Width: =164
         Y: =110
-        ZIndex: =5
+        ZIndex: =7
 
     Button2_103 As button:
         BorderThickness: =0
@@ -88,7 +116,7 @@ ThietLapGia As screen:
             Inventory"
         Width: =164
         Y: =220
-        ZIndex: =6
+        ZIndex: =8
 
     Icon8_9 As icon.Shop:
         Color: =RGBA(255, 255, 255, 1)
@@ -97,7 +125,7 @@ ThietLapGia As screen:
         Width: =50
         X: =57
         Y: =122
-        ZIndex: =7
+        ZIndex: =9
 
     Icon11_34 As icon.ListWatchlistRemind:
         Color: =RGBA(255, 255, 255, 1)
@@ -106,7 +134,7 @@ ThietLapGia As screen:
         Width: =50
         X: =57
         Y: =232
-        ZIndex: =8
+        ZIndex: =10
 
     Button2_104 As button:
         BorderThickness: =0
@@ -126,7 +154,7 @@ ThietLapGia As screen:
             Logout"
         Width: =164
         Y: =651
-        ZIndex: =9
+        ZIndex: =11
 
     Icon10_18 As icon.Leave:
         Color: =RGBA(255, 255, 255, 1)
@@ -135,14 +163,14 @@ ThietLapGia As screen:
         Width: =50
         X: =57
         Y: =675
-        ZIndex: =10
+        ZIndex: =12
 
     Icon11_33 As icon.VerticalLine:
         Height: =110
         Icon: =Icon.VerticalLine
         X: =132
         Y: =330
-        ZIndex: =11
+        ZIndex: =13
 
     Image4_41 As image:
         Height: =56
@@ -154,7 +182,7 @@ ThietLapGia As screen:
         Width: =56
         X: =966
         Y: =20
-        ZIndex: =12
+        ZIndex: =14
 
     Label2_40 As label:
         Font: =Font.'Segoe UI'
@@ -164,7 +192,7 @@ ThietLapGia As screen:
         Width: =243
         X: =1035
         Y: =15
-        ZIndex: =13
+        ZIndex: =15
 
     Label2_41 As label:
         Color: |-
@@ -183,7 +211,7 @@ ThietLapGia As screen:
         Width: =196
         X: =1035
         Y: =45
-        ZIndex: =15
+        ZIndex: =16
 
     Image4_40 As image:
         Height: =74
@@ -210,7 +238,7 @@ ThietLapGia As screen:
             Set price"
         Width: =164
         Y: =332
-        ZIndex: =68
+        ZIndex: =18
 
     Icon2_4 As icon.Money:
         Color: =RGBA(255, 255, 255, 1)
@@ -219,7 +247,7 @@ ThietLapGia As screen:
         Width: =50
         X: =57
         Y: =345
-        ZIndex: =69
+        ZIndex: =19
 
     "gal_ThietLapGia As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         BorderColor: =RGBA(202, 202, 202, 1)
@@ -242,7 +270,7 @@ ThietLapGia As screen:
         Width: =1072
         X: =227
         Y: =235
-        ZIndex: =70
+        ZIndex: =20
 
         Button6_1 As button:
             AutoDisableOnSelect: =false
@@ -345,7 +373,7 @@ ThietLapGia As screen:
         Width: =1072
         X: =227
         Y: =183
-        ZIndex: =71
+        ZIndex: =21
 
     lbl_OrderedID_DuyetDatHang_2 As label:
         Align: =Align.Center
@@ -357,7 +385,7 @@ ThietLapGia As screen:
         Width: =314
         X: =318
         Y: =184
-        ZIndex: =73
+        ZIndex: =22
 
     lbl_TotalPrice_DuyetDatHang_4 As label:
         Align: =Align.Center
@@ -368,7 +396,7 @@ ThietLapGia As screen:
         Width: =136
         X: =749
         Y: =184
-        ZIndex: =74
+        ZIndex: =23
 
     lbl_TotalPrice_DuyetDatHang_5 As label:
         Align: =Align.Center
@@ -379,7 +407,7 @@ ThietLapGia As screen:
         Width: =136
         X: =926
         Y: =184
-        ZIndex: =76
+        ZIndex: =24
 
     lbl_OrderedID_DuyetDatHang_4 As label:
         Align: =Align.Center
@@ -392,7 +420,7 @@ ThietLapGia As screen:
         Width: =354
         X: =245
         Y: =122
-        ZIndex: =77
+        ZIndex: =25
 
     Button2_110 As button:
         BorderThickness: =0
@@ -411,7 +439,7 @@ ThietLapGia As screen:
             Order list"
         Width: =164
         Y: =440
-        ZIndex: =78
+        ZIndex: =26
 
     Icon3 As icon.ShoppingCart:
         Color: =RGBA(255, 255, 255, 1)
@@ -420,26 +448,7 @@ ThietLapGia As screen:
         Width: =50
         X: =57
         Y: =453
-        ZIndex: =79
-
-    Button2_125 As button:
-        BorderThickness: =0
-        Fill: =RGBA(0, 0, 0, 0)
-        Font: =Font.'Segoe UI'
-        FontWeight: =FontWeight.Normal
-        Height: =110
-        OnSelect: =Navigate(ThongKe)
-        RadiusBottomLeft: =
-        RadiusBottomRight: =
-        RadiusTopLeft: =
-        RadiusTopRight: =
-        Text: |-
-            ="
-            
-            Statistical"
-        Width: =164
-        Y: =550
-        ZIndex: =96
+        ZIndex: =27
 
     Group14 As group:
         Height: =5
@@ -453,7 +462,7 @@ ThietLapGia As screen:
             Height: =767
             Visible: =showSetPrice
             Width: =1366
-            ZIndex: =80
+            ZIndex: =28
 
         TextInput1_19 As text:
             Default: =
@@ -469,7 +478,7 @@ ThietLapGia As screen:
             Width: =790
             X: =351
             Y: =256
-            ZIndex: =81
+            ZIndex: =29
 
         drop_SelNamePrice As dropdown:
             Font: =Font.'Segoe UI'
@@ -479,7 +488,7 @@ ThietLapGia As screen:
             Width: =184
             X: =377
             Y: =406
-            ZIndex: =82
+            ZIndex: =30
 
         Button9 As button:
             BorderThickness: =0
@@ -494,7 +503,7 @@ ThietLapGia As screen:
             Width: =39
             X: =686
             Y: =404
-            ZIndex: =83
+            ZIndex: =31
 
         Button9_4 As button:
             BorderThickness: =0
@@ -509,7 +518,7 @@ ThietLapGia As screen:
             Width: =39
             X: =735
             Y: =404
-            ZIndex: =84
+            ZIndex: =32
 
         txt_price As label:
             Align: =Align.Center
@@ -523,7 +532,7 @@ ThietLapGia As screen:
             Width: =103
             X: =575
             Y: =406
-            ZIndex: =85
+            ZIndex: =33
 
         txt_Percent As text:
             Default: ="10"
@@ -534,7 +543,7 @@ ThietLapGia As screen:
             Width: =81
             X: =785
             Y: =404
-            ZIndex: =86
+            ZIndex: =34
 
         Label28 As label:
             Size: =30
@@ -543,7 +552,7 @@ ThietLapGia As screen:
             Width: =35
             X: =907
             Y: =404
-            ZIndex: =87
+            ZIndex: =35
 
         txt_LastPrice As label:
             Align: =Align.Right
@@ -558,7 +567,7 @@ ThietLapGia As screen:
             Width: =120
             X: =942
             Y: =404
-            ZIndex: =88
+            ZIndex: =36
 
         Label30_2 As label:
             Font: =Font.'Segoe UI'
@@ -568,7 +577,7 @@ ThietLapGia As screen:
             Width: =26
             X: =873
             Y: =403
-            ZIndex: =89
+            ZIndex: =37
 
         Label30_3 As label:
             Font: =Font.'Segoe UI'
@@ -579,7 +588,7 @@ ThietLapGia As screen:
             Width: =79
             X: =1062
             Y: =402
-            ZIndex: =90
+            ZIndex: =38
 
         btn_RefusedList_DuyetDatHang_8 As button:
             AutoDisableOnSelect: =false
@@ -607,7 +616,7 @@ ThietLapGia As screen:
             Width: =150
             X: =585
             Y: =470
-            ZIndex: =91
+            ZIndex: =39
 
         btn_RefusedList_DuyetDatHang_9 As button:
             AutoDisableOnSelect: =false
@@ -629,7 +638,7 @@ ThietLapGia As screen:
             Width: =150
             X: =755
             Y: =470
-            ZIndex: =92
+            ZIndex: =40
 
         Label31 As label:
             Align: =Align.Center
@@ -642,7 +651,7 @@ ThietLapGia As screen:
             Width: =345
             X: =573
             Y: =268
-            ZIndex: =93
+            ZIndex: =41
 
         Label32 As label:
             Font: =Font.'Segoe UI'
@@ -654,7 +663,7 @@ ThietLapGia As screen:
             Width: =130
             X: =378
             Y: =324
-            ZIndex: =94
+            ZIndex: =42
 
         Label32_1 As label:
             Align: =Align.Center
@@ -667,14 +676,5 @@ ThietLapGia As screen:
             Width: =606
             X: =508
             Y: =316
-            ZIndex: =95
-
-    Icon15_2 As icon.TrendingUpwards:
-        Color: =RGBA(255, 255, 255, 1)
-        Height: =50
-        Icon: =Icon.TrendingUpwards
-        Width: =50
-        X: =57
-        Y: =564
-        ZIndex: =97
+            ZIndex: =43
 

@@ -323,13 +323,13 @@ ThongKe As screen:
 
                 PieChart2_1 As pieChart:
                     Font: =Font.'Segoe UI'
-                    Height: =524
+                    Height: =452
                     ItemBorderThickness: =1
                     Items: =QLK_Product
                     LabelPosition: =LabelPosition.Inside
-                    ShowLabels: =false
                     Size: =15
-                    Width: =570
+                    Width: =518
+                    Y: =70
                     ZIndex: =1
 
                 Title5_1 As label:
@@ -347,7 +347,7 @@ ThongKe As screen:
 
                 Legend2_1 As legend:
                     Font: =Font.'Segoe UI'
-                    Height: =363
+                    Height: =400
                     ItemColorSet: =PieChart2_1.ItemColorSet
                     Items: =PieChart2_1.SeriesLabels
                     Size: =15
