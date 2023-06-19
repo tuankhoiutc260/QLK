@@ -88,7 +88,7 @@ DangNhap As screen:
         HintText: ="Password"
         HoverBorderColor: =RGBA(99, 139, 44, 1)
         HoverFill: =RGBA(209, 232, 178, 1)
-        Mode: =If(showPassword = false, TextMode.Password, TextMode.SingleLine)
+        Mode: =TextMode.Password
         PressedBorderColor: =RGBA(99, 139, 44, 1)
         Size: =15
         Width: =346

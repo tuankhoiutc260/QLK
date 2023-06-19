@@ -98,7 +98,7 @@
       "zeroalltabindexes": false
     },
     "Author": "",
-    "BindingErrorCount": 96,
+    "BindingErrorCount": 88,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 500,
     "DocumentAppType": "DesktopOrTablet",
@@ -155,11 +155,7 @@
     "ThietLapGia",
     "DanhSachOrder",
     "ThongKe",
-    "Screen5",
-    "Trangchu_1",
-    "Screen1",
-    "Screen6",
-    "Screen2",
+    "KiemKho",
     "Screen4"
   ]
 }

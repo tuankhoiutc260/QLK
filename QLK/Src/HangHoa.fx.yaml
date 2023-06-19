@@ -207,7 +207,7 @@ HangHoa As screen:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
-        OnSelect: =
+        OnSelect: =Navigate(KiemKho)
         RadiusBottomLeft: =
         RadiusBottomRight: =
         RadiusTopLeft: =
@@ -2257,4 +2257,32 @@ HangHoa As screen:
             X: =784
             Y: =441
             ZIndex: =140
+
+    Button2_126 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(ThongKe)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Statistical"
+        Width: =164
+        Y: =552
+        ZIndex: =142
+
+    Icon15_3 As icon.TrendingUpwards:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.TrendingUpwards
+        Width: =50
+        X: =57
+        Y: =566
+        ZIndex: =143
 

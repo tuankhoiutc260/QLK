@@ -52,6 +52,9 @@
           "QLK_Area": {
             "tableName": "b765d257-a22f-4491-bb93-6b4eeb06bac8"
           },
+          "QLK_CheckStock": {
+            "tableName": "d122f8f1-2973-411e-bbbb-61317bb20078"
+          },
           "QLK_Customer": {
             "tableName": "104fd451-2786-4669-80e5-264470a7f9f2"
           },
@@ -101,7 +104,8 @@
       "QLK_SetPrice",
       "QLK_ExportForm",
       "QLK_ImportFormInformation",
-      "QLK_ExportFormInformation"
+      "QLK_ExportFormInformation",
+      "QLK_CheckStock"
     ],
     "dependencies": {},
     "dependents": [

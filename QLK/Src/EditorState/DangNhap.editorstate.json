@@ -2284,7 +2284,14 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "Mode",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Mode",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Format",
         "VirtualKeyboardMode",
         "DelayOutput",

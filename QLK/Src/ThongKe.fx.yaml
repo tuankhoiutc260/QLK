@@ -221,7 +221,7 @@ ThongKe As screen:
         Height: =52
         OnSelect: =
         Size: =20
-        Text: ="ORDERED PRODUCT LIST"
+        Text: ="STATICTICAL PRODUCT"
         Width: =354
         X: =245
         Y: =122
@@ -233,7 +233,9 @@ ThongKe As screen:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
-        OnSelect: =Refresh(QLK_ImportRequest)
+        OnSelect: |-
+            =Refresh(QLK_ImportRequest);
+            Navigate(DanhSachOrder)
         RadiusBottomLeft: =
         RadiusBottomRight: =
         RadiusTopLeft: =
@@ -320,11 +322,13 @@ ThongKe As screen:
                 ZIndex: =1
 
                 PieChart2_1 As pieChart:
-                    Font: =Font.'Patrick Hand'
+                    Font: =Font.'Segoe UI'
                     Height: =524
                     ItemBorderThickness: =1
                     Items: =QLK_Product
                     LabelPosition: =LabelPosition.Inside
+                    ShowLabels: =false
+                    Size: =15
                     Width: =570
                     ZIndex: =1
 
@@ -342,14 +346,14 @@ ThongKe As screen:
                     ZIndex: =2
 
                 Legend2_1 As legend:
-                    Font: =Font.'Patrick Hand'
-                    Height: =408
+                    Font: =Font.'Segoe UI'
+                    Height: =363
                     ItemColorSet: =PieChart2_1.ItemColorSet
                     Items: =PieChart2_1.SeriesLabels
-                    Size: =16
-                    Width: =496
-                    X: =596
-                    Y: =116
+                    Size: =15
+                    Width: =540
+                    X: =532
+                    Y: =112
                     ZIndex: =3
 
         DataCard2 As dataCard.blankCard:

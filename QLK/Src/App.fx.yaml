@@ -11,6 +11,9 @@ App As appinfo:
         Set(showGrpScanSP, false);
         Set(showGrpDelete, false);
         Set(showGrpUpdate, false);
+        Set(showChamDo, false);
+        Set(showgrpProCS, false);
+        Set(showgrpCS, false);
         
         Set(showInformationImportInvoiceForm, false);
         Set(showOrderProductForm, false);

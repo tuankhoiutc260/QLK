@@ -1,0 +1,953 @@
+KiemKho As screen:
+    Fill: =RGBA(214, 223, 238, 1)
+
+    TextInput1_24 As text:
+        Default: =
+        DisabledBorderColor: =RGBA(219, 219, 219, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.Disabled
+        Height: =628
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Width: =1134
+        X: =196
+        Y: =110
+        ZIndex: =1
+
+    Rectangle1_25 As rectangle:
+        Fill: =RGBA(76, 133, 45, 0.77)
+        Height: =768
+        Width: =164
+        ZIndex: =2
+
+    Button2_16 As button:
+        BorderStyle: =BorderStyle.Dotted
+        BorderThickness: =1
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(SoDoKho)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Warehouse"
+        Width: =164
+        ZIndex: =3
+
+    Icon4_24 As icon.Home:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Home
+        Width: =50
+        X: =57
+        Y: =15
+        ZIndex: =4
+
+    Button2_128 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: |-
+            =Navigate(HangHoa);
+            Set(DSHangHoa, "DSTrongKho")
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Product"
+        Width: =164
+        Y: =110
+        ZIndex: =5
+
+    Button2_129 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Refresh(QLK_CheckStock)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Inventory"
+        Width: =164
+        Y: =220
+        ZIndex: =6
+
+    Icon8_12 As icon.Shop:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Shop
+        Width: =50
+        X: =57
+        Y: =122
+        ZIndex: =7
+
+    Icon11_39 As icon.ListWatchlistRemind:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.ListWatchlistRemind
+        Width: =50
+        X: =57
+        Y: =232
+        ZIndex: =8
+
+    Button2_133 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(DangNhap)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            
+            Logout"
+        Width: =164
+        Y: =651
+        ZIndex: =9
+
+    Icon10_21 As icon.Leave:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Leave
+        Width: =50
+        X: =57
+        Y: =675
+        ZIndex: =10
+
+    Image4_47 As image:
+        Height: =56
+        Image: =LookUp(QLK_Account, ID = idDangNhap,' Portrait')
+        RadiusBottomLeft: =35
+        RadiusBottomRight: =35
+        RadiusTopLeft: =35
+        RadiusTopRight: =35
+        Width: =56
+        X: =966
+        Y: =20
+        ZIndex: =11
+
+    Label2_46 As label:
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =15
+        Text: =LookUp(QLK_Account, ID = idDangNhap, FullName)
+        Width: =243
+        X: =1035
+        Y: =15
+        ZIndex: =12
+
+    Label2_47 As label:
+        Color: |-
+            =If(Label2_47.Text = "Stocker", RGBA(50, 200, 0, 100),
+                If(Label2_47.Text = "Manager", RGBA(200,0,0,100),
+                    If(Label2_47.Text = "WarehouseStaff", RGBA(60,100,170,100),
+                        If(Label2_47.Text = "Accountant", RGBA(255,190,0,100))
+                    )
+                )
+            )
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =31
+        Size: =15
+        Text: =LookUp(QLK_Account, ID = idDangNhap, Permission.Value)
+        Width: =196
+        X: =1035
+        Y: =45
+        ZIndex: =13
+
+    Image4_46 As image:
+        Height: =74
+        Image: =Logo
+        Width: =258
+        X: =179
+        Y: =11
+        ZIndex: =14
+
+    Button2_130 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(ThietLapGia)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Set price"
+        Width: =164
+        Y: =332
+        ZIndex: =15
+
+    Icon2_8 As icon.Money:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Money
+        Width: =50
+        X: =57
+        Y: =345
+        ZIndex: =16
+
+    lbl_OrderedID_DuyetDatHang_11 As label:
+        Align: =Align.Center
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =52
+        OnSelect: =
+        Size: =20
+        Text: ="IVENTORY PRODUCT"
+        Width: =354
+        X: =245
+        Y: =122
+        ZIndex: =17
+
+    Button2_131 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: |-
+            =Refresh(QLK_ImportRequest);
+            Navigate(DanhSachOrder)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Order list"
+        Width: =164
+        Y: =440
+        ZIndex: =18
+
+    Icon3_6 As icon.ShoppingCart:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.ShoppingCart
+        Width: =50
+        X: =57
+        Y: =453
+        ZIndex: =19
+
+    Button2_132 As button:
+        BorderThickness: =0
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Normal
+        Height: =110
+        OnSelect: =Navigate(ThongKe)
+        RadiusBottomLeft: =
+        RadiusBottomRight: =
+        RadiusTopLeft: =
+        RadiusTopRight: =
+        Text: |-
+            ="
+            
+            Statistical"
+        Width: =164
+        Y: =550
+        ZIndex: =20
+
+    Icon15_5 As icon.TrendingUpwards:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.TrendingUpwards
+        Width: =50
+        X: =57
+        Y: =564
+        ZIndex: =21
+
+    Icon11_40 As icon.VerticalLine:
+        Height: =110
+        Icon: =Icon.VerticalLine
+        X: =132
+        Y: =220
+        ZIndex: =22
+
+    "gal_ThietLapGia_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        BorderColor: =RGBA(202, 202, 202, 1)
+        BorderThickness: =1
+        ContentLanguage: =
+        DelayItemLoading: =true
+        Height: =473
+        Items: =QLK_CheckStock
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =52
+        Width: =1072
+        X: =227
+        Y: =235
+        ZIndex: =23
+
+        lbl_NameProduct_4 As label:
+            Align: =Align.Center
+            Height: =46
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Name
+            Width: =457
+            Y: =5
+            ZIndex: =1
+
+        lbl_InputPrice_4 As label:
+            Align: =Align.Center
+            Height: =41
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.ID_CheckStock
+            Width: =203
+            X: =13
+            Y: =5
+            ZIndex: =2
+
+        lbl_OutputPrice_3 As label:
+            Align: =Align.Center
+            Height: =41
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.OscillateQuantity
+            Width: =111
+            X: =698
+            Y: =5
+            ZIndex: =3
+
+        lbl_InputPrice_5 As label:
+            Align: =Align.Center
+            Height: =41
+            OnSelect: =Select(Parent)
+            Text: =LookUp(QLK_Product, IDProduct = ThisItem.ID_ProductCS, Name)
+            Width: =482
+            X: =216
+            Y: =5
+            ZIndex: =4
+
+        Button6_4 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(202, 202, 202, 1)
+            BorderThickness: =1
+            Color: =RGBA(202, 202, 202, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =52
+            HoverFill: =RGBA(187, 221, 140, 0.4)
+            OnSelect: |
+                =Select(Parent);
+            PressedFill: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: =""
+            Width: =1071
+            ZIndex: =5
+
+        lbl_OutputPrice_4 As label:
+            Align: =Align.Center
+            Height: =41
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.OscillatePrice
+            Width: =111
+            X: =897
+            Y: =7
+            ZIndex: =6
+
+    Button7_8 As button:
+        BorderColor: =RGBA(151, 0, 0, 1)
+        DisabledBorderColor: =RGBA(219, 219, 219, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.Disabled
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderColor: =
+        Height: =52
+        HoverBorderColor: =
+        HoverColor: =
+        HoverFill: =
+        PaddingBottom: =50
+        PressedFill: =
+        RadiusBottomLeft: |
+            =0
+        RadiusBottomRight: |
+            =0
+        RadiusTopLeft: =20
+        RadiusTopRight: |
+            =20
+        Size: =24
+        Text: =""
+        Width: =1072
+        X: =227
+        Y: =183
+        ZIndex: =24
+
+    lbl_TotalPrice_DuyetDatHang_9 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Text: ="ID Chech Stock"
+        Width: =136
+        X: =272
+        Y: =184
+        ZIndex: =25
+
+    btn_PendingList_DuyetDatHang_18 As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =RGBA(237, 237, 237, 1)
+        BorderThickness: =0
+        Color: =RGBA(255, 191, 0, 1)
+        Fill: =RGBA(237, 237, 237, 1)
+        HoverBorderColor: =RGBA(237, 237, 237, 1)
+        HoverFill: =RGBA(255, 191, 0, 1)
+        OnSelect: =Set(showgrpProCS, true)
+        PressedBorderColor: =RGBA(237, 237, 237, 1)
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =13
+        Text: ="Choose product"
+        Width: =156
+        X: =1143
+        Y: =130
+        ZIndex: =26
+
+    lbl_TotalPrice_DuyetDatHang_11 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Text: ="Product"
+        Width: =136
+        X: =615
+        Y: =185
+        ZIndex: =27
+
+    lbl_TotalPrice_DuyetDatHang_13 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Text: ="Oscillate Price"
+        Width: =160
+        X: =1096
+        Y: =185
+        ZIndex: =28
+
+    lbl_TotalPrice_DuyetDatHang_12 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Text: ="Oscillate Quantity"
+        Width: =160
+        X: =896
+        Y: =185
+        ZIndex: =29
+
+    grpProCS As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =38
+
+        TextInput1_25 As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =628
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showgrpProCS
+            Width: =1134
+            X: =196
+            Y: =110
+            ZIndex: =30
+
+        "gal_ProductCS As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            BorderColor: =RGBA(202, 202, 202, 1)
+            BorderThickness: =1
+            DelayItemLoading: =true
+            Height: =473
+            Items: |-
+                =If(
+                    DSHangHoa = "DSTrongKho",    
+                        QLK_Product,
+                    If(
+                        DSHangHoa = "DSCanDatHang",
+                        Filter(QLK_Product, Value(Quantity) <= Value(MinimumQuantity))
+                                   
+                    )
+                )
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =92
+            Visible: =showgrpProCS
+            Width: =1071
+            X: =228
+            Y: =235
+            ZIndex: =31
+
+            lbl_NameProduct_5 As label:
+                Align: =Align.Center
+                Height: =82
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.Name
+                Width: =442
+                X: =14
+                Y: =10
+                ZIndex: =5
+
+            lbl_Quantity_2 As label:
+                Align: =Align.Center
+                Height: =71
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.Quantity & " " & LookUp(QLK_Unit, ID = ThisItem.Unit, UnitName)
+                Width: =113
+                X: =499
+                Y: =10
+                ZIndex: =6
+
+            lbl_InputPrice_6 As label:
+                Align: =Align.Center
+                Height: =71
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.InputPrice & " Vnđ"
+                Width: =111
+                X: =713
+                Y: =10
+                ZIndex: =7
+
+            Img_Product_1 As image:
+                Height: =65
+                Image: =ThisItem.Image
+                OnSelect: =Select(Parent)
+                Width: =71
+                X: =948
+                Y: =13
+                ZIndex: =10
+
+            Button6_5 As button:
+                BorderColor: =RGBA(202, 202, 202, 1)
+                BorderThickness: =1
+                Color: =RGBA(202, 202, 202, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =92
+                HoverFill: =RGBA(187, 221, 140, 0.4)
+                OnSelect: |-
+                    =Select(Parent);
+                    Set(IDNewCSProduct, "CS" & Text(Now(), "ddmmyyyyhhmmss"));
+                    Set(DateTimeCSProduct, Text(Now(), "dd/mm/yyyy hh:mm:ss"));
+                    Set(ID_ProCS, ThisItem.IDProduct);
+                    Set(showgrpCS, true);
+                    Reset(txt_RealQuantity)
+                PressedFill: =
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Text: =""
+                Width: =1071
+                ZIndex: =11
+
+        Button7_9 As button:
+            BorderColor: =RGBA(151, 0, 0, 1)
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =
+            Height: =52
+            HoverBorderColor: =
+            HoverColor: =
+            HoverFill: =
+            PaddingBottom: =50
+            PressedFill: =
+            RadiusBottomLeft: |
+                =0
+            RadiusBottomRight: |
+                =0
+            RadiusTopLeft: =20
+            RadiusTopRight: |
+                =20
+            Size: =24
+            Text: =""
+            Visible: =showgrpProCS
+            Width: =1072
+            X: =227
+            Y: =183
+            ZIndex: =32
+
+        lbl_DateCreated_DuyetDatHang_2 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =52
+            OnSelect: =
+            Text: ="Quantity"
+            Visible: =showgrpProCS
+            Width: =99
+            X: =736
+            Y: =184
+            ZIndex: =33
+
+        lbl_OrderedID_DuyetDatHang_12 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =52
+            OnSelect: =
+            Size: =14
+            Text: ="Name Product"
+            Visible: =showgrpProCS
+            Width: =314
+            X: =292
+            Y: =184
+            ZIndex: =34
+
+        lbl_TotalPrice_DuyetDatHang_10 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =52
+            OnSelect: =
+            Text: ="Input Price"
+            Visible: =showgrpProCS
+            Width: =125
+            X: =931
+            Y: =184
+            ZIndex: =35
+
+        lbl_Status_DuyetDatHang_2 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =52
+            OnSelect: =
+            Text: ="Image"
+            Visible: =showgrpProCS
+            X: =1133
+            Y: =183
+            ZIndex: =36
+
+        lbl_OrderedID_DuyetDatHang_13 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Height: =52
+            OnSelect: =
+            Size: =20
+            Text: ="CHOOSE PRODUCT"
+            Visible: =showgrpProCS
+            Width: =354
+            X: =245
+            Y: =119
+            ZIndex: =37
+
+        btn_RefusedList_DuyetDatHang_1 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: =Set(showgrpProCS, false)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="Cancel"
+            Visible: =showgrpProCS
+            Width: =89
+            X: =1209
+            Y: =131
+            ZIndex: =38
+
+    grpCS As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =57
+
+        Rectangle22 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.43)
+            Height: =768
+            Visible: =showgrpCS
+            Width: =1366
+            ZIndex: =39
+
+        TextInput1_26 As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =366
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showgrpCS
+            Width: =715
+            X: =428
+            Y: =248
+            ZIndex: =40
+
+        Label30 As label:
+            Align: =Align.Center
+            Color: =RGBA(184, 0, 0, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =20
+            Text: ="Check product quantity"
+            Visible: =showgrpCS
+            Width: =362
+            X: =628
+            Y: =264
+            ZIndex: =41
+
+        Label33 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="ID Check:"
+            Visible: =showgrpCS
+            Width: =124
+            X: =457
+            Y: =316
+            ZIndex: =42
+
+        Label37 As label:
+            Font: =Font.'Segoe UI'
+            Size: =15
+            Text: =IDNewCSProduct
+            Visible: =showgrpCS
+            Width: =210
+            X: =553
+            Y: =316
+            ZIndex: =43
+
+        Label33_1 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Time Check:"
+            Visible: =showgrpCS
+            Width: =134
+            X: =799
+            Y: =316
+            ZIndex: =44
+
+        Label37_1 As label:
+            Font: =Font.'Segoe UI'
+            Size: =15
+            Text: =DateTimeCSProduct
+            Visible: =showgrpCS
+            Width: =225
+            X: =933
+            Y: =316
+            ZIndex: =45
+
+        Label33_2 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Product:"
+            Visible: =showgrpCS
+            Width: =124
+            X: =458
+            Y: =365
+            ZIndex: =46
+
+        Label37_2 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            Size: =15
+            Text: =gal_ProductCS.Selected.Name
+            Visible: =showgrpCS
+            Width: =540
+            X: =574
+            Y: =364
+            ZIndex: =47
+
+        Label33_3 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Price:"
+            Visible: =showgrpCS
+            Width: =95
+            X: =458
+            Y: =413
+            ZIndex: =48
+
+        Label37_3 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            Size: =15
+            Text: =gal_ProductCS.Selected.InputPrice & " Vnđ"
+            Visible: =showgrpCS
+            Width: =166
+            X: =553
+            Y: =412
+            ZIndex: =49
+
+        Label33_4 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Quantity in stock:"
+            Visible: =showgrpCS
+            Width: =191
+            X: =815
+            Y: =413
+            ZIndex: =50
+
+        txt_QuanStock As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            Size: =15
+            Text: =gal_ProductCS.Selected.Quantity
+            Visible: =showgrpCS
+            Width: =90
+            X: =1006
+            Y: =413
+            ZIndex: =51
+
+        Label33_5 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Real quantity:"
+            Visible: =showgrpCS
+            Width: =191
+            X: =815
+            Y: =463
+            ZIndex: =52
+
+        txt_RealQuantity As text:
+            Align: =Align.Center
+            Default: =
+            Visible: =showgrpCS
+            Width: =57
+            X: =1022
+            Y: =463
+            ZIndex: =53
+
+        Label33_6 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Oscillate price:"
+            Visible: =showgrpCS
+            Width: =160
+            X: =457
+            Y: =463
+            ZIndex: =54
+
+        Label37_5 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            Size: =15
+            Text: =-gal_ProductCS.Selected.InputPrice * (txt_QuanStock.Text - txt_RealQuantity.Text) & " Vnđ"
+            Visible: =showgrpCS
+            Width: =154
+            X: =613
+            Y: =463
+            ZIndex: =55
+
+        btn_RefusedList_DuyetDatHang_2 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: =Set(showgrpCS, false)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="Cancel"
+            Visible: =showgrpCS
+            Width: =156
+            X: =842
+            Y: =532
+            ZIndex: =56
+
+        btn_RefusedList_DuyetDatHang_10 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(54, 176, 75, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(54, 176, 75, 1)
+            OnSelect: |-
+                =Collect(QLK_CheckStock,
+                {
+                    ID_CheckStock: IDNewCSProduct,
+                    ID_ProductCS: ID_ProCS,
+                    QuantityInStock: txt_QuanStock.Text,
+                    RealQuantity: txt_RealQuantity.Text,
+                    OscillateQuantity: -(txt_QuanStock.Text - txt_RealQuantity.Text),
+                    OscillatePrice: -gal_ProductCS.Selected.InputPrice * (txt_QuanStock.Text - txt_RealQuantity.Text)
+                }
+                );
+                Patch(QLK_Product, LookUp(QLK_Product, IDProduct = ID_ProCS),
+                {
+                    Quantity: Value(txt_RealQuantity.Text)
+                }
+                );
+                Set(showgrpCS, false)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="Update"
+            Visible: =showgrpCS
+            Width: =156
+            X: =653
+            Y: =532
+            ZIndex: =57
+
