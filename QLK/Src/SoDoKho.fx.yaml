@@ -280,7 +280,7 @@ SoDoKho As screen:
         OnSelect: |-
             =Set(IDViTriKho, btn_MB01.Text);
             Set(IDProductZone, LookUp(QLK_Zone, ID_Zone = IDViTriKho, ID_ProductZone));
-            If(IDProductZone = LookUp(QLK_Product, IDProduct = IDProductZone, IDProduct), 
+            If(IDProductZone = LookUp(QLK_Product, IDProduct = IDProductZone, IDProduct)&& LookUp(QLK_Zone, ID_Zone = IDViTriKho, ID_ProductZone) <> Blank(), 
                 Set(showThongTinHangHoa_SoDo, true),
                 Set(showThongBaoKhongCoSanPham, true))
         Text: ="MB01"
