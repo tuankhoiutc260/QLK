@@ -140,16 +140,14 @@ DangNhap As screen:
                         Refresh(QLK_ExportFormInformation);
             
                        // Reset(gal_DetailOrderPending_HA_DO_HA);
-                        Set(fontSizeApprove_HomeAdmin, 15);
-                        Set(fontSizeImport_HomeAdmin, 12);
-                        Set(fontSizeOrder_HomeAdmin, 12);
-                        Set(fontSizeExport_HomeAdmin, 12);
-                        Set(visLineApprove_HomeAdmin, true);
-                        Set(visLineImport_HomeAdmin, false);
-                        Set(visLineOrder_HomeAdmin, false);
-                        Set(visLineExport_HomeAdmin, false);
-                        Set(visibleDetailOrderNotPending_HomeAdmin, false);
-                        Set(visibleDetailOrderPending_HomeAdmin, true);
+                        Set(colorBtnApprove, Color.White);
+                        Set(fillBtnApprove, RGBA(127, 235, 117, 1));
+                        Set(colorBtnImport, Color.Black);
+                        Set(fillBtnImport, RGBA(0, 0, 0, 0));
+                        Set(colorBtnOrder, Color.Black);
+                        Set(fillBtnOrder, RGBA(0, 0, 0, 0));
+                        Set(colorBtnExport, Color.Black);
+                        Set(fillBtnExport, RGBA(0, 0, 0, 0));
                         Set(numDatasource, 4); //4: pending
             
                         //Set(textChart_HomeAdmin, "Approve");
@@ -339,7 +337,7 @@ DangNhap As screen:
                             )    
                         );
                         Set(maxQuantity, Max(col_TopProduct_HomeAdmin, TotalQuantity));
-                        Navigate(Approve_Admin);
+                        Navigate(TrangChu_Admin);
             
                         Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
                         Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, Permission)),

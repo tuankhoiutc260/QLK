@@ -62,54 +62,6 @@ TrangChu_KeToan As screen:
                 Y: =229
                 ZIndex: =6
 
-            Button4_20 As button:
-                BorderColor: =RGBA(127, 235, 117, 1)
-                Fill: =RGBA(127, 235, 117, 1)
-                HoverBorderColor: =RGBA(127, 235, 117, 1)
-                HoverColor: =RGBA(21, 161, 60, 1)
-                HoverFill: =RGBA(0, 0, 0, 0)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =RGBA(127, 235, 117, 1)
-                Size: =12
-                Text: ="Home"
-                Visible: =false
-                Width: =175
-                X: =15
-                Y: =304
-                ZIndex: =7
-
-            Button4_21 As button:
-                Color: =RGBA(0, 0, 0, 1)
-                Fill: =RGBA(0, 0, 0, 0)
-                HoverBorderColor: =RGBA(127, 235, 117, 1)
-                HoverColor: =RGBA(21, 161, 60, 1)
-                HoverFill: =RGBA(0, 0, 0, 0)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =RGBA(127, 235, 117, 1)
-                Size: =12
-                Text: ="Import"
-                Visible: =false
-                Width: =175
-                X: =15
-                Y: =359
-                ZIndex: =8
-
-            Button4_22 As button:
-                Color: =RGBA(0, 0, 0, 1)
-                Fill: =RGBA(0, 0, 0, 0)
-                HoverBorderColor: =RGBA(127, 235, 117, 1)
-                HoverColor: =RGBA(21, 161, 60, 1)
-                HoverFill: =RGBA(0, 0, 0, 0)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =RGBA(127, 235, 117, 1)
-                Size: =12
-                Text: ="Export"
-                Visible: =false
-                Width: =175
-                X: =15
-                Y: =414
-                ZIndex: =9
-
             Button4_23 As button:
                 BorderColor: =RGBA(127, 235, 117, 1)
                 BorderThickness: =1
@@ -136,6 +88,360 @@ TrangChu_KeToan As screen:
                 Width: =198
                 Y: =270
                 ZIndex: =11
+
+            Button4_51 As button:
+                BorderColor: =RGBA(127, 235, 117, 1)
+                BorderThickness: =1
+                Color: =colorBtnOrdered_Accountant
+                Fill: =fillBtnOrdered_Accountant
+                HoverBorderColor: =RGBA(127, 235, 117, 1)
+                HoverColor: =RGBA(21, 161, 60, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                OnSelect: |
+                    =Refresh(QLK_OrderForm);
+                    Refresh(QLK_ImportForm);
+                    Refresh(QLK_ExportForm);
+                    
+                    Reset(gal_DetailOrderPending_HA_DO_HA_6);
+                    
+                    Set(colorBtnOrdered_Accountant, Color.White);
+                    Set(fillBtnOrdered_Accountant, RGBA(127, 235, 117, 1));
+                    Set(colorBtnImport_Accoutant, Color.Black);
+                    Set(fillBtnImport_Accountant, RGBA(0, 0, 0, 0));
+                    Set(colorBtnNewOrder_Accountant, Color.Black);
+                    Set(fillBtnNewOrder_Accountant, RGBA(0, 0, 0, 0));
+                    Set(colorBtnExport_Accountant, Color.Black);
+                    Set(fillBtnExport_Accountant, RGBA(0, 0, 0, 0));
+                    
+                    Set(visible_cont_Ordered_HomeAccountant, true);
+                    Set(visible_cont_Import_HomeAccountant, false);
+                    Set(visible_cont_NewOrder_HomeAccountant, false);
+                    Set(visible_cont_Export_HomeAccountant, false);
+                    Refresh(QLK_OrderForm);
+                    Refresh(QLK_ImportForm);
+                    Refresh(QLK_ExportForm);
+                    
+                    Reset(gal_ProductListOrdered_cOHA1);
+                    Reset(gal_DetailsOrdered_cOHA1);
+                    
+                    // Change Fill color button
+                    Set(FillUnPaid_HomeAccountant, RGBA(127, 235, 117, 1)); Set(ColorUnPaid_HomeAccountant, RGBA(255, 255, 255, 1));
+                    Set(FillPaid_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorPaid_HomeAccountant, RGBA(127, 235, 117, 1));
+                    
+                    
+                    Set(IDOrder_HomeAccountant, LookUp(FirstN(col_DatasourceOrder_HomeAccountant, 1), true, ID));
+                    
+                    ClearCollect(
+                        col_DatasourceOrderRequest_HomeAccountant, 
+                        AddColumns(
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(QLK_OrderForm, Status = 4), 
+                                    "IDOrder", "Created", "TotalPrice", "Status"
+                                    ),
+                                "IDOrder", "ID"
+                            ) As T, 
+                            "QuantityProduct", 
+                            CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = T.ID)) & " Products",
+                            "ProductIn", // 1: In warehouse, 2: Of Supplier
+                            2
+                        )
+                    );
+                    
+                    ClearCollect(
+                        col_DatasourceImportRequest_HomeAccountant, 
+                        AddColumns(
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(QLK_ImportForm, Status = 4), 
+                                    "IDImport", "Created", "TotalPrice", "Status"
+                                    ),
+                                "IDImport", "ID"
+                            ) As T, 
+                            "QuantityProduct", 
+                            CountRows(Filter(QLK_ImportFormInformation, IDImport = T.ID)) & " Products",
+                            "ProductIn", // 1: In warehouse, 2: Of Supplier
+                            1
+                        )
+                    );
+                    
+                    ClearCollect(
+                        col_DatasourceExportRequest_HomeAccountant, 
+                        AddColumns(
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(QLK_ExportForm, Status = 4), 
+                                    "IDExport", "Created", "TotalPrice", "Status"
+                                    ),
+                                "IDExport", "ID"
+                            ) As T, 
+                            "QuantityProduct", 
+                            CountRows(Filter(QLK_ExportFormInformation, IDExportForm = T.ID)) & " Products",
+                            "ProductIn", // 1: In warehouse, 2: Of Supplier
+                            1
+                        )
+                    );
+                    
+                    
+                    ClearCollect(                
+                        temp,
+                        col_DatasourceOrderRequest_HomeAccountant,
+                        col_DatasourceImportRequest_HomeAccountant,
+                        col_DatasourceExportRequest_HomeAccountant
+                    );
+                    
+                    ClearCollect(
+                        col_DatasourceOrdered_HomeAccountant,
+                        SortByColumns(temp, "Created", SortOrder.Descending)
+                    );
+                    
+                    
+                    // --- Reset lại Details Ordered
+                    ClearCollect(
+                        col_DetailsOrdered_HomeAccountant,
+                        If(
+                            LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID) in col_DatasourceOrderRequest_HomeAccountant[@ID],
+                            RenameColumns(
+                                ShowColumns(
+                                    Filter(
+                                        QLK_OrderFormInformation,
+                                        IDOrderForm = LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)
+                                    ),
+                                    "IDOrderForm",
+                                    "IDProduct_Supplier",
+                                    "Quantity",
+                                    "Unit",
+                                    "Price",
+                                    "TotalPrice"
+                                ), 
+                                "IDOrderForm", "IDOrder",
+                                "IDProduct_Supplier", "IDProduct"
+                            ),
+                    
+                            If(
+                                LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID) in col_DatasourceImportRequest_HomeAccountant[@ID],
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(
+                                            QLK_ImportFormInformation,
+                                            IDImport = LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)
+                                        ),
+                                        "IDImport",
+                                        "IDProduct",
+                                        "Quantity",
+                                        "Unit",
+                                        "Price",
+                                        "TotalPrice"
+                                    ), 
+                                    "IDImport", "IDOrder"
+                                ),
+                    
+                                If(
+                                    LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID) in col_DatasourceExportRequest_HomeAccountant[@ID],
+                                    RenameColumns(
+                                        ShowColumns(
+                                            Filter(
+                                                QLK_ExportFormInformation,
+                                                IDExportForm = LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)
+                                            ),
+                                            "IDExportForm",
+                                            "IDProduct",
+                                            "Quantity",
+                                            "Unit",
+                                            "Price",
+                                            "TotalPrice"
+                                        ), 
+                                        "IDExportForm", "IDOrder"
+                                    )
+                                )
+                            )
+                        )  
+                    );
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(127, 235, 117, 1)
+                Size: =12
+                Text: ="Ordered"
+                Width: =175
+                X: =15
+                Y: =279
+                ZIndex: =12
+
+            Button4_52 As button:
+                BorderColor: =RGBA(127, 235, 117, 1)
+                BorderThickness: =1
+                Color: =colorBtnImport_Accountant
+                Fill: =fillBtnImport_Accountant
+                HoverBorderColor: =RGBA(127, 235, 117, 1)
+                HoverColor: =RGBA(21, 161, 60, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                OnSelect: |-
+                    =Reset(gal_ImportProduct_Accoutant);
+                    
+                    Refresh(QLK_ImportForm);
+                    Refresh(QLK_ImportFormInformation);
+                    Refresh(QLK_ImportRequest);
+                    
+                    Set(colorBtnOrdered_Accountant, Color.Black);
+                    Set(fillBtnOrdered_Accountant, RGBA(0, 0, 0, 0));
+                    Set(colorBtnImport_Accoutant, Color.White);
+                    Set(fillBtnImport_Accountant, RGBA(127, 235, 117, 1));
+                    Set(colorBtnNewOrder_Accountant, Color.Black);
+                    Set(fillBtnNewOrder_Accountant, RGBA(0, 0, 0, 0));
+                    Set(colorBtnExport_Accountant, Color.Black);
+                    Set(fillBtnExport_Accountant, RGBA(0, 0, 0, 0));
+                    
+                    
+                    //Set(StatusUpdateImport_HomeAccountant, 0);
+                    Set(visible_cont_Ordered_HomeAccountant, false);
+                    Set(visible_cont_Import_HomeAccountant, true);
+                    Set(visible_cont_NewOrder_HomeAccountant, false);
+                    Set(visible_cont_Export_HomeAccountant, false);
+                    //Set(StatusOfAccountant, 2); // 1: Cac phieu da order, 2: Import phieu moi, 3: Order hang moi
+                    
+                    
+                    // Nho Set trong App
+                    /*
+                    Set(visibleDetailOrderNotPending_HomeAccountant, true);
+                    Set(visibleDetailOrderPending_HomeAccountant, false);
+                    
+                    */
+                    
+                    ClearCollect(col_ImportRequest_HomeAccountant, RenameColumns(ShowColumns(Filter(QLK_ImportRequest, true), "ID_ProductRequest", "Quantity"), "ID_ProductRequest", "IDProduct"))
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(127, 235, 117, 1)
+                Size: =12
+                Text: ="Import"
+                Width: =175
+                X: =15
+                Y: =334
+                ZIndex: =13
+
+            Button4_53 As button:
+                BorderColor: =RGBA(127, 235, 117, 1)
+                BorderThickness: =1
+                Color: =colorBtnNewOrder_Accountant
+                Fill: =fillBtnNewOrder_Accountant
+                HoverBorderColor: =RGBA(127, 235, 117, 1)
+                HoverColor: =RGBA(21, 161, 60, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                OnSelect: |-
+                    =Reset(gal_NewOrderProduct_Accoutant);
+                    Refresh(QLK_Product_Supplier);
+                    Refresh(QLK_Product);
+                    
+                    Set(colorBtnOrdered_Accountant, Color.Black);
+                    Set(fillBtnOrdered_Accountant, RGBA(0, 0, 0, 0));
+                    Set(colorBtnImport_Accoutant, Color.Black);
+                    Set(fillBtnImport_Accountant, RGBA(0, 0, 0, 0));
+                    Set(colorBtnNewOrder_Accountant, Color.White);
+                    Set(fillBtnNewOrder_Accountant, RGBA(127, 235, 117, 1));
+                    Set(colorBtnExport_Accountant, Color.Black);
+                    Set(fillBtnExport_Accountant, RGBA(0, 0, 0, 0));
+                    
+                    Set(visible_cont_Ordered_HomeAccountant, false);
+                    Set(visible_cont_Import_HomeAccountant, false);
+                    Set(visible_cont_NewOrder_HomeAccountant, true);
+                    Set(visible_cont_Export_HomeAccountant, false);
+                    Set(StatusOfAccountant, 3); // 1: Cac phieu da order, 2: Import phieu moi, 3: Order hang moi
+                    
+                    
+                    // Create collection Product Order not in Warehouse
+                    ClearCollect(
+                        col_ProductNewOrder_HomeAccountant, 
+                        RenameColumns(
+                            ShowColumns(
+                                Filter(
+                                    QLK_Product_Supplier, 
+                                    !(IDProduct_Supplier in QLK_Product.IDProduct))
+                                , 
+                                "IDProduct_Supplier", 
+                                "Name_Supplier", 
+                                "Price_Supplier",
+                                "Image_Pro_x002d_Supplier", 
+                                "ID_Supplier", 
+                                "Describe_Pro_x002d_Supplier",
+                                "ID_Unit"
+                            ), 
+                            "IDProduct_Supplier", "ID",
+                            "Name_Supplier", "Name",
+                            "Price_Supplier", "Price",
+                            "Image_Pro_x002d_Supplier", "Image",
+                            "Describe_Pro_x002d_Supplier", "Description"
+                        )
+                    );
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(127, 235, 117, 1)
+                Size: =12
+                Text: |-
+                    ="New Order
+                    "
+                Width: =175
+                X: =15
+                Y: =389
+                ZIndex: =14
+
+            Button4_54 As button:
+                BorderColor: =RGBA(127, 235, 117, 1)
+                BorderThickness: =1
+                Color: =colorBtnExport_Accountant
+                Fill: =fillBtnExport_Accountant
+                HoverBorderColor: =RGBA(127, 235, 117, 1)
+                HoverColor: =RGBA(21, 161, 60, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                OnSelect: |-
+                    =Reset(gal_ExportProduct_Accoutant);
+                    Refresh(QLK_Product);
+                    
+                    Set(colorBtnOrdered_Accountant, Color.Black);
+                    Set(fillBtnOrdered_Accountant, RGBA(0, 0, 0, 0));
+                    Set(colorBtnImport_Accoutant, Color.Black);
+                    Set(fillBtnImport_Accountant, RGBA(0, 0, 0, 0));
+                    Set(colorBtnNewOrder_Accountant, Color.Black);
+                    Set(fillBtnNewOrder_Accountant, RGBA(0, 0, 0, 0));
+                    Set(colorBtnExport_Accountant, Color.White);
+                    Set(fillBtnExport_Accountant, RGBA(127, 235, 117, 1));
+                    
+                    Set(visible_cont_Ordered_HomeAccountant, false);
+                    Set(visible_cont_Import_HomeAccountant, false);
+                    Set(visible_cont_NewOrder_HomeAccountant, false);
+                    Set(visible_cont_Export_HomeAccountant, true);
+                    Set(StatusOfAccountant, 3); // 1: Cac phieu da order, 2: Import phieu moi, 3: Order hang moi
+                    
+                    // Create collection Product Order not Warehouse
+                    ClearCollect(
+                        col_ProductInWarehouse_HomeAccountant, 
+                        RenameColumns(
+                            ShowColumns(
+                                Filter(
+                                    QLK_Product, 
+                                    true)
+                                , 
+                                "IDProduct", 
+                                "Name", 
+                                "Quantity",
+                                "OutputPrice",
+                                "Image", 
+                                "IDSupplier", 
+                                "Description",
+                                "Unit"
+                            ), 
+                            "IDProduct", "ID",
+                            "Name", "Name",
+                            "OutputPrice", "Price"
+                        )
+                    );
+                    
+                    //Reset(TextInput6_1);
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(127, 235, 117, 1)
+                Size: =12
+                Text: |-
+                    ="Export
+                    "
+                Width: =175
+                X: =14
+                Y: =448
+                ZIndex: =15
 
         bgr_Black_NewOrderProduct_4 As text:
             Default: =
@@ -179,7 +485,7 @@ TrangChu_KeToan As screen:
                 Y: =85
                 ZIndex: =10
 
-                "gal_DetailOrderPending_HA_DO_HA_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                "gal_ImportProduct_Accoutant As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                     BorderStyle: =BorderStyle.None
                     BorderThickness: =1
                     DelayItemLoading: =true
@@ -583,12 +889,24 @@ TrangChu_KeToan As screen:
                             );
                             
                             
+                            Set(varAppID, "https://apps.powerapps.com/play/e/default-84f36815-d159-4eb1-b192-f72c4f3e5b81/a/d4d6e758-0046-4961-b95f-a6fb8f1a0760?tenantId=84f36815-d159-4eb1-b192-f72c4f3e5b81&source=portal");
                             // Xoa Product Request quantity = 0
-                            
                             RemoveIf(QLK_ImportRequest, Quantity = 0);
                             Refresh(QLK_ImportRequest);
                             ClearCollect(col_ImportRequest_HomeAccountant, RenameColumns(ShowColumns(Filter(QLK_ImportRequest, true), "ID_ProductRequest", "Quantity"), "ID_ProductRequest", "IDProduct"));
                             Clear(col_DetailsImport_HomeAccountant);
+                            
+                            ForAll(
+                                col_DetailsImport_HomeAccountant,
+                                Office365Outlook.SendEmailV2(
+                                    LookUp(QLK_Account, Permission.Value = "Manager", Gmail),
+                                    "Subject",
+                                    "Body",
+                                    {Importance: "High"}
+                                )
+                            );
+                            
+                            //Office365Outlook.SendEmailV2(LookUp(QLK_Account, Permission.Value = "Manager", Gmail), "Đã thanh toán", col_DetailsImport_HomeAccountant)
                         OnTimerEnd: |-
                             =Set(showSuccess, false) && 
                             Set(showInformationImportInvoiceForm, false)
@@ -2327,7 +2645,7 @@ TrangChu_KeToan As screen:
                 Y: =85
                 ZIndex: =14
 
-                "gal_DetailOrderPending_HA_DO_HA_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                "gal_NewOrderProduct_Accoutant As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                     BorderStyle: =BorderStyle.None
                     BorderThickness: =1
                     DelayItemLoading: =true
@@ -2665,7 +2983,7 @@ TrangChu_KeToan As screen:
                 Y: =85
                 ZIndex: =15
 
-                "gal_DetailOrderPending_HA_DO_HA_4 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                "gal_ExportProduct_Accoutant As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                     BorderStyle: =BorderStyle.None
                     BorderThickness: =1
                     DelayItemLoading: =true
@@ -3145,6 +3463,14 @@ TrangChu_KeToan As screen:
                 X: =40
                 Y: =40
                 ZIndex: =16
+
+            Label25 As label:
+                Height: =193
+                Text: =LookUp(QLK_Account, Permission.Value = "Manager", Gmail)
+                Width: =228
+                X: =362
+                Y: =421
+                ZIndex: =17
 
             "'grp_buttonFunction(R_HA)_1' As group":
                 Height: =5

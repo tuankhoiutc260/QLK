@@ -740,9 +740,10 @@ TrangChu_Admin As screen:
                     ZIndex: =4
 
                 Button9_11 As button:
-                    BorderStyle: =BorderStyle.None
                     Fill: =RGBA(0, 0, 0, 0)
-                    Height: =10
+                    FocusedBorderThickness: =1
+                    Height: =89
+                    HoverBorderColor: =RGBA(219, 219, 219, 1)
                     HoverFill: =
                     OnSelect: |-
                         =Set(IDOrder_HomeAdmin,ThisItem.ID);
@@ -818,9 +819,9 @@ TrangChu_Admin As screen:
                     RadiusTopLeft: =15
                     RadiusTopRight: =15
                     Text: =""
-                    Width: =444
+                    Width: =625
                     X: =16
-                    Y: =15
+                    Y: =16
                     ZIndex: =7
 
                 Label27_50 As label:
@@ -1024,8 +1025,8 @@ TrangChu_Admin As screen:
                     RadiusTopLeft: =15
                     RadiusTopRight: =15
                     Text: =""
-                    Width: =82
-                    X: =559
+                    Width: =625
+                    X: =16
                     Y: =16
                     ZIndex: =7
 
