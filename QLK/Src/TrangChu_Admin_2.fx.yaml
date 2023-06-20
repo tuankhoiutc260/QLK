@@ -1,27 +1,27 @@
-TrangChu_Admin As screen:
+TrangChu_Admin_2 As screen:
     Fill: =RGBA(237, 237, 237, 0.9)
 
-    "'cont_HomeAdmin(HA)' As groupContainer.manualLayoutContainer":
+    "'cont_HomeAdmin(HA)_3' As groupContainer.manualLayoutContainer":
         Height: =768
         Width: =1366
         ZIndex: =1
 
-        shadow_ImportGoods_IMPI_21 As htmlViewer:
+        shadow_ImportGoods_IMPI_24 As htmlViewer:
             Height: =768
             HtmlText: |-
-                ="<div style='margin:0px;width:" & shadow_ImportGoods_IMPI_21.Width & "px;height:" & shadow_ImportGoods_IMPI_21.Height - 11 & "px;
+                ="<div style='margin:0px;width:" & shadow_ImportGoods_IMPI_24.Width & "px;height:" & shadow_ImportGoods_IMPI_24.Height - 11 & "px;
                 background: rgb(255,255,255);
                 background: radial-gradient(circle, rgba(255,255,255,1) 31%, rgba(238,238,238,1) 100%);
                 '></div>" 
             Width: =1366
             ZIndex: =1
 
-        "'cont_FunctionButton_HomeAdmin(FB_HA)_1' As groupContainer.manualLayoutContainer":
+        "'cont_FunctionButton_HomeAdmin(FB_HA)_4' As groupContainer.manualLayoutContainer":
             Height: =768
             Width: =204
             ZIndex: =2
 
-            Image18_3 As image:
+            Image18_6 As image:
                 Height: =55
                 RadiusBottomLeft: =45
                 RadiusBottomRight: =45
@@ -32,7 +32,7 @@ TrangChu_Admin As screen:
                 Y: =100
                 ZIndex: =4
 
-            Label28_6 As label:
+            Label28_12 As label:
                 Align: =Align.Center
                 AutoHeight: =true
                 Color: =RGBA(149, 149, 149, 1)
@@ -43,18 +43,17 @@ TrangChu_Admin As screen:
                 Y: =155
                 ZIndex: =5
 
-            Label28_7 As label:
+            Label28_13 As label:
                 Align: =Align.Center
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =32
                 Text: ="Name"
                 Width: =204
-                X: =7
                 Y: =183
                 ZIndex: =6
 
-            Button4_16 As button:
+            Button4_41 As button:
                 BorderColor: =RGBA(127, 235, 117, 1)
                 Fill: =RGBA(127, 235, 117, 1)
                 HoverBorderColor: =RGBA(127, 235, 117, 1)
@@ -65,9 +64,16 @@ TrangChu_Admin As screen:
                     Refresh(QLK_ImportForm);
                     Refresh(QLK_ExportForm);
                     
-                    Reset(gal_DetailOrderPending_HA_DO_HA);
+                    Reset(gal_DetailOrderPending_HA_DO_HA_5);
                     
-                    
+                    Set(fontSizeApprove_HomeAdmin, 15);
+                    Set(fontSizeImport_HomeAdmin, 12);
+                    Set(fontSizeOrder_HomeAdmin, 12);
+                    Set(fontSizeExport_HomeAdmin, 12);
+                    Set(visLineApprove_HomeAdmin, true);
+                    Set(visLineImport_HomeAdmin, false);
+                    Set(visLineOrder_HomeAdmin, false);
+                    Set(visLineExport_HomeAdmin, false);
                     Set(textChart_HomeAdmin, "Approve");
                     
                     Set(IDOrder_HomeAdmin, LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID));
@@ -130,6 +136,14 @@ TrangChu_Admin As screen:
                         col_DatasourceExportRequest_HomeAdmin
                     );
                     
+                    /*
+                    
+                    
+                    */
+                    
+                    // Nho Set trong App
+                    Set(visibleDetailOrderNotPending_HomeAdmin, false);
+                    Set(visibleDetailOrderPending_HomeAdmin, true);
                     Set(numDatasource, 4); //4: pending
                     
                     // --- Reset lại thông tin đơn đầu tiên qua khung ở giữa
@@ -204,14 +218,14 @@ TrangChu_Admin As screen:
                 Y: =264
                 ZIndex: =7
 
-            Button4_17 As button:
+            Button4_42 As button:
                 Color: =RGBA(0, 0, 0, 1)
                 Fill: =RGBA(0, 0, 0, 0)
                 HoverBorderColor: =RGBA(127, 235, 117, 1)
                 HoverColor: =RGBA(21, 161, 60, 1)
                 HoverFill: =RGBA(0, 0, 0, 0)
                 OnSelect: |-
-                    =Reset(gal_DetailOrderNotPending_1);
+                    =Reset(gal_DetailOrderNotPending_5);
                     Set(fontSizeApprove_HomeAdmin, 12);
                     Set(fontSizeImport_HomeAdmin, 15);
                     Set(fontSizeOrder_HomeAdmin, 12);
@@ -293,7 +307,7 @@ TrangChu_Admin As screen:
                             ShowColumns(
                                 Filter(
                                     QLK_ImportFormInformation,
-                                    IDImport = gal_DetailOrderNotPending_1.Selected.ID
+                                    IDImport = gal_DetailOrderNotPending_5.Selected.ID
                                 ),
                                 "IDImport",
                                 "IDProduct",
@@ -316,14 +330,14 @@ TrangChu_Admin As screen:
                 Y: =319
                 ZIndex: =8
 
-            Button4_18 As button:
+            Button4_43 As button:
                 Color: =RGBA(0, 0, 0, 1)
                 Fill: =RGBA(0, 0, 0, 0)
                 HoverBorderColor: =RGBA(127, 235, 117, 1)
                 HoverColor: =RGBA(21, 161, 60, 1)
                 HoverFill: =RGBA(0, 0, 0, 0)
                 OnSelect: |-
-                    =Reset(gal_DetailOrderNotPending_1);
+                    =Reset(gal_DetailOrderNotPending_5);
                     Set(fontSizeApprove_HomeAdmin, 12);
                     Set(fontSizeImport_HomeAdmin, 12);
                     Set(fontSizeOrder_HomeAdmin, 15);
@@ -407,7 +421,7 @@ TrangChu_Admin As screen:
                             ShowColumns(
                                 Filter(
                                     QLK_OrderFormInformation,
-                                    IDOrderForm = gal_DetailOrderNotPending_1.Selected.ID
+                                    IDOrderForm = gal_DetailOrderNotPending_5.Selected.ID
                                 ),
                                 "IDOrderForm",
                                 "IDProduct_Supplier",
@@ -434,7 +448,7 @@ TrangChu_Admin As screen:
                 Y: =374
                 ZIndex: =9
 
-            Button4_19 As button:
+            Button4_44 As button:
                 BorderColor: =RGBA(127, 235, 117, 1)
                 BorderThickness: =1
                 Color: =RGBA(38, 240, 95, 1)
@@ -452,14 +466,14 @@ TrangChu_Admin As screen:
                 Y: =691
                 ZIndex: =10
 
-            Button4_35 As button:
+            Button4_45 As button:
                 Color: =RGBA(0, 0, 0, 1)
                 Fill: =RGBA(0, 0, 0, 0)
                 HoverBorderColor: =RGBA(127, 235, 117, 1)
                 HoverColor: =RGBA(21, 161, 60, 1)
                 HoverFill: =RGBA(0, 0, 0, 0)
                 OnSelect: |-
-                    =Reset(gal_DetailOrderNotPending_1);
+                    =Reset(gal_DetailOrderNotPending_5);
                     Set(fontSizeApprove_HomeAdmin, 12);
                     Set(fontSizeImport_HomeAdmin, 12);
                     Set(fontSizeOrder_HomeAdmin, 12);
@@ -544,7 +558,7 @@ TrangChu_Admin As screen:
                             ShowColumns(
                                 Filter(
                                     QLK_ExportFormInformation,
-                                    IDExportForm = gal_DetailOrderNotPending_1.Selected.ID
+                                    IDExportForm = gal_DetailOrderNotPending_5.Selected.ID
                                 ),
                                 "IDExportForm",
                                 "IDProduct",
@@ -569,7 +583,7 @@ TrangChu_Admin As screen:
                 Y: =433
                 ZIndex: =11
 
-        Separator1_40 As rectangle:
+        Separator1_43 As rectangle:
             BorderColor: =RGBA(237, 237, 237, 1)
             Fill: =RGBA(237, 237, 237, 1)
             Height: =1
@@ -579,7 +593,7 @@ TrangChu_Admin As screen:
             Y: =242
             ZIndex: =4
 
-        bgr_Black_NewOrderProduct_3 As text:
+        bgr_Black_NewOrderProduct_6 As text:
             Default: =
             DisabledBorderColor: =RGBA(219, 219, 219, 1)
             DisabledFill: =RGBA(128, 128, 128, 0.42)
@@ -593,19 +607,19 @@ TrangChu_Admin As screen:
             Width: =1366
             ZIndex: =5
 
-        "'cont_Right_HomaAdmin(R_HA)' As groupContainer.manualLayoutContainer":
+        "'cont_Right_HomaAdmin(R_HA)_3' As groupContainer.manualLayoutContainer":
             Height: =768
             Width: =1158
             X: =204
             ZIndex: =18
 
-            shadow_ImportGoods_IMPI_26 As htmlViewer:
+            shadow_ImportGoods_IMPI_39 As htmlViewer:
                 Height: =768
                 HtmlText: |-
                     ="<div style='
                     margin: 10px;
-                    width:" & shadow_ImportGoods_IMPI_26.Width - 32 & "px;
-                    height:" & shadow_ImportGoods_IMPI_26.Height - 32 & "px;
+                    width:" & shadow_ImportGoods_IMPI_39.Width - 32 & "px;
+                    height:" & shadow_ImportGoods_IMPI_39.Height - 32 & "px;
                     background-color:RGBA(255, 255, 255, 0.7);
                     box-shadow:0 5px 10px 0px  #ccc; 
                     border-radius:15px
@@ -613,12 +627,197 @@ TrangChu_Admin As screen:
                 Width: =1158
                 ZIndex: =1
 
-            "gal_DetailOrderPending_HA_DO_HA As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            "gal_DetailOrderNotPending_5 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =1
                 DelayItemLoading: =true
                 Height: =643
-                Items: =col_DatasourceOrder_HomeAdmin
+                Items: |
+                    =col_DatasourceOrder_HomeAdmin
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                ShowScrollbar: =false
+                TemplatePadding: =0
+                TemplateSize: =76
+                Transition: =Transition.Pop
+                Visible: =visibleDetailOrderNotPending_HomeAdmin
+                Width: =476
+                X: =20
+                Y: =85
+                ZIndex: =2
+
+                shadow_ImportGoods_IMPI_40 As htmlViewer:
+                    Height: =76
+                    HtmlText: |-
+                        ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_40.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_40.Height - 32 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 5px 10px 0px  #ccc; border-radius:15px'></div>" 
+                    Visible: =If(ThisItem.IsSelected, true, false)
+                    Width: =476
+                    ZIndex: =1
+
+                img_Product_cIP_IP2_14 As image:
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Height: =50
+                    Image: =Logo
+                    RadiusBottomLeft: =15
+                    RadiusBottomRight: =15
+                    RadiusTopLeft: =15
+                    RadiusTopRight: =15
+                    Width: =50
+                    X: =28
+                    Y: =25
+                    ZIndex: =2
+
+                Label25_13 As label:
+                    Align: =Align.Center
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Semibold
+                    OnSelect: =Select(Parent)
+                    Size: =11
+                    Text: =ThisItem.ID
+                    Width: =160
+                    X: =78
+                    Y: =29
+                    ZIndex: =3
+
+                Label26_10 As label:
+                    Align: =Align.Center
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Lighter
+                    Height: =38
+                    OnSelect: =Select(Parent)
+                    Size: =8
+                    Text: =ThisItem.Created
+                    Width: =160
+                    X: =78
+                    Y: =38
+                    ZIndex: =4
+
+                Label27_31 As label:
+                    Align: =Align.Center
+                    OnSelect: =Select(Parent)
+                    Size: =9
+                    Text: |-
+                        =Text(ThisItem.TotalPrice, "#,###" & " VND")
+                    Width: =122
+                    X: =337
+                    Y: =30
+                    ZIndex: =5
+
+                Label27_17 As label:
+                    Align: =Align.Center
+                    OnSelect: =Select(Parent)
+                    Size: =9
+                    Text: |-
+                        =If(
+                            numDatasource = 1,
+                            CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = ThisItem.ID)) & " Products",
+                            If(
+                                numDatasource = 2, 
+                                CountRows(Filter(QLK_ImportFormInformation, IDImport = ThisItem.ID)) & " Products",
+                                If(
+                                    numDatasource = 3,
+                                    CountRows(Filter(QLK_ExportFormInformation, IDExportForm = ThisItem.ID)) & " Products"
+                                )
+                            )
+                        )
+                    Width: =99
+                    X: =238
+                    Y: =30
+                    ZIndex: =6
+
+                Button9_9 As button:
+                    BorderStyle: =BorderStyle.None
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =68
+                    HoverFill: =
+                    OnSelect: |-
+                        =Set(IDOrder_HomeAdmin,ThisItem.ID);
+                        Set(StatusOfOrder_HomeAdmin, ThisItem.Status);
+                        // 1: Order, 2: Import, 3: Export, 4: Pending
+                        If(
+                            numDatasource = 1,
+                            ClearCollect(
+                                col_DetailsOrder_HomeAdmin,
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(
+                                            QLK_OrderFormInformation,
+                                            IDOrderForm = IDOrder_HomeAdmin
+                                        ),
+                                        "IDOrderForm",
+                                        "IDProduct_Supplier",
+                                        "Quantity",
+                                        "Unit",
+                                        "Price",
+                                        "TotalPrice"
+                                    ), 
+                                    "IDOrderForm", "IDOrder",
+                                    "IDProduct_Supplier", "IDProduct"
+                                )
+                            ), 
+                            If(
+                                numDatasource = 2,
+                                ClearCollect(
+                                    col_DetailsOrder_HomeAdmin,
+                                    RenameColumns(
+                                        ShowColumns(
+                                            Filter(
+                                                QLK_ImportFormInformation,
+                                                IDImport = IDOrder_HomeAdmin
+                                            ),
+                                            "IDImport",
+                                            "IDProduct",
+                                            "Quantity",
+                                            "Unit",
+                                            "Price",
+                                            "TotalPrice"
+                                        ), 
+                                        "IDImport", "IDOrder"
+                                    )
+                                ),
+                                 If(
+                                    numDatasource = 3,
+                                    
+                                    ClearCollect(
+                                        col_DetailsOrder_HomeAdmin,
+                                        RenameColumns(
+                                        ShowColumns(
+                                            Filter(
+                                                QLK_ExportFormInformation,
+                                                IDExportForm = IDOrder_HomeAdmin
+                                            ),
+                                            "IDExportForm",
+                                            "IDProduct",
+                                            "Quantity",
+                                            "Unit",
+                                            "Price",
+                                            "TotalPrice"
+                                        ), "IDExportForm", "IDOrder")
+                                    )
+                                )
+                            )
+                        )
+                    PressedColor: =
+                    PressedFill: =
+                    RadiusBottomLeft: =15
+                    RadiusBottomRight: =15
+                    RadiusTopLeft: =15
+                    RadiusTopRight: =15
+                    Text: =""
+                    Width: =444
+                    X: =16
+                    Y: =8
+                    ZIndex: =7
+
+            "gal_DetailOrderPending_HA_DO_HA_5 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                DelayItemLoading: =true
+                Height: =643
+                Items: |+
+                    =col_DatasourceOrder_HomeAdmin
+                    
                 Layout: =Layout.Vertical
                 LoadingSpinner: =LoadingSpinner.Data
                 ShowScrollbar: =false
@@ -631,15 +830,15 @@ TrangChu_Admin As screen:
                 Y: =85
                 ZIndex: =8
 
-                shadow_ImportGoods_IMPI_28 As htmlViewer:
+                shadow_ImportGoods_IMPI_41 As htmlViewer:
                     Height: =122
                     HtmlText: |-
-                        ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_28.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_28.Height - 32 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 5px 10px 0px  #ccc; border-radius:15px'></div>" 
+                        ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_41.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_41.Height - 32 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 5px 10px 0px  #ccc; border-radius:15px'></div>" 
                     Visible: =If(ThisItem.IsSelected, true, false)
                     Width: =658
                     ZIndex: =1
 
-                img_Product_cIP_IP2_6 As image:
+                img_Product_cIP_IP2_15 As image:
                     BorderStyle: =BorderStyle.None
                     BorderThickness: =2
                     Height: =75
@@ -653,7 +852,7 @@ TrangChu_Admin As screen:
                     Y: =25
                     ZIndex: =2
 
-                Label25_5 As label:
+                Label25_14 As label:
                     Align: =Align.Center
                     AutoHeight: =true
                     FontWeight: =FontWeight.Semibold
@@ -665,7 +864,7 @@ TrangChu_Admin As screen:
                     Y: =38
                     ZIndex: =3
 
-                Label26_5 As label:
+                Label26_11 As label:
                     Align: =Align.Center
                     AutoHeight: =true
                     FontWeight: =FontWeight.Lighter
@@ -678,7 +877,7 @@ TrangChu_Admin As screen:
                     Y: =64
                     ZIndex: =4
 
-                Label27_11 As label:
+                Label27_33 As label:
                     Align: =Align.Center
                     OnSelect: =Select(Parent)
                     Size: =11
@@ -689,7 +888,7 @@ TrangChu_Admin As screen:
                     Y: =43
                     ZIndex: =5
 
-                Label27_10 As label:
+                Label27_32 As label:
                     Align: =Align.Center
                     Height: =46
                     OnSelect: =Select(Parent)
@@ -700,7 +899,7 @@ TrangChu_Admin As screen:
                     Y: =40
                     ZIndex: =6
 
-                btn_Select As button:
+                btn_Select_3 As button:
                     BorderColor: =RGBA(255, 255, 255, 1)
                     BorderThickness: =0.5
                     Fill: =RGBA(0, 0, 0, 0)
@@ -795,7 +994,7 @@ TrangChu_Admin As screen:
                     Y: =16
                     ZIndex: =7
 
-                ic_Cancel_DO_HA As icon.CheckBadge:
+                ic_Cancel_DO_HA_2 As icon.CheckBadge:
                     Color: =RGBA(63, 235, 40, 1)
                     Height: =27
                     Icon: =Icon.CheckBadge
@@ -817,7 +1016,7 @@ TrangChu_Admin As screen:
                         
                         
                                 Refresh(QLK_OrderForm);
-                                Reset(gal_DetailOrderPending_HA_DO_HA)
+                                Reset(gal_DetailOrderPending_HA_DO_HA_5)
                             ),
                         
                             If(
@@ -837,7 +1036,7 @@ TrangChu_Admin As screen:
                         
                         
                                     Refresh(QLK_ImportForm);
-                                    Reset(gal_DetailOrderPending_HA_DO_HA)
+                                    Reset(gal_DetailOrderPending_HA_DO_HA_5)
                                 ), 
                         
                                 If(
@@ -857,7 +1056,7 @@ TrangChu_Admin As screen:
                         
                         
                                         Refresh(QLK_ExportForm);
-                                        Reset(gal_DetailOrderPending_HA_DO_HA)
+                                        Reset(gal_DetailOrderPending_HA_DO_HA_5)
                                     )
                                 )
                             )
@@ -1177,7 +1376,7 @@ TrangChu_Admin As screen:
                     Y: =25
                     ZIndex: =10
 
-                ic_Check_DO_HA As icon.CancelBadge:
+                ic_Check_DO_HA_2 As icon.CancelBadge:
                     Color: =RGBA(255, 0, 0, 1)
                     Height: =27
                     Icon: =Icon.CancelBadge
@@ -1199,7 +1398,7 @@ TrangChu_Admin As screen:
                         
                         
                                 Refresh(QLK_OrderForm);
-                                Reset(gal_DetailOrderPending_HA_DO_HA)
+                                Reset(gal_DetailOrderPending_HA_DO_HA_5)
                             ),
                         
                             If(
@@ -1219,7 +1418,7 @@ TrangChu_Admin As screen:
                         
                         
                                     Refresh(QLK_ImportForm);
-                                    Reset(gal_DetailOrderPending_HA_DO_HA)
+                                    Reset(gal_DetailOrderPending_HA_DO_HA_5)
                                 ), 
                         
                                 If(
@@ -1239,7 +1438,7 @@ TrangChu_Admin As screen:
                         
                         
                                         Refresh(QLK_ExportForm);
-                                        Reset(gal_DetailOrderPending_HA_DO_HA)
+                                        Reset(gal_DetailOrderPending_HA_DO_HA_5)
                                     )
                                 )
                             )
@@ -1374,7 +1573,7 @@ TrangChu_Admin As screen:
                     Y: =70
                     ZIndex: =11
 
-            Image4_8 As image:
+            Image4_28 As image:
                 Height: =62
                 Image: =Logo
                 Width: =218
@@ -1382,14 +1581,14 @@ TrangChu_Admin As screen:
                 Y: =23
                 ZIndex: =34
 
-            Group6 As group:
+            Group6_2 As group:
                 Height: =5
                 Width: =5
                 X: =40
                 Y: =40
                 ZIndex: =38
 
-                background_Chart_HA_1 As text:
+                background_Chart_HA_4 As text:
                     Default: =""
                     DisabledBorderColor: =RGBA(237, 237, 237, 1)
                     DisabledFill: =RGBA(255, 255, 255, 1)
@@ -1405,7 +1604,140 @@ TrangChu_Admin As screen:
                     Y: =99
                     ZIndex: =26
 
-                Label25 As label:
+                "gal_DetailOrderNotPending_6 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    DelayItemLoading: =true
+                    Height: =477
+                    Items: =col_DetailsOrder_HomeAdmin
+                    Layout: =Layout.Vertical
+                    LoadingSpinner: =LoadingSpinner.Data
+                    ShowScrollbar: =false
+                    TemplatePadding: =0
+                    TemplateSize: =74
+                    Transition: =Transition.Pop
+                    Visible: |-
+                        =//visibleDetailOrderNotPending_HomeAdmin
+                        true
+                    Width: =442
+                    X: =678
+                    Y: =142
+                    ZIndex: =27
+
+                    img_Product_cIP_IP2_16 As image:
+                        BorderColor: =RGBA(219, 219, 219, 1)
+                        BorderThickness: =0.5
+                        Height: =50
+                        Image: |
+                            =
+                            
+                            // 1: Order, 2: Import, 3: Export, 4: Pending, 
+                            /*
+                            If(
+                                numDatasource = 1 || numDatasource = 2 || numDatasource = 3,
+                                LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, Image),
+                                LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct, 'Image_Pro-Supplier')
+                            ) */
+                            
+                            LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct, 'Image_Pro-Supplier')
+                        RadiusBottomLeft: =15
+                        RadiusBottomRight: =15
+                        RadiusTopLeft: =15
+                        RadiusTopRight: =15
+                        Width: =50
+                        X: =9
+                        Y: =12
+                        ZIndex: =2
+
+                    Label25_15 As label:
+                        Align: =Align.Center
+                        Height: =32
+                        OnSelect: =Select(Parent)
+                        Size: =11
+                        Text: |+
+                            =If(
+                                ThisItem.IDOrder in QLK_OrderFormInformation.IDOrderForm,
+                                LookUp(
+                                    QLK_Product_Supplier, 
+                                    IDProduct_Supplier = ThisItem.IDProduct, 
+                                    'Name_Pro-Supplier'
+                                ),
+                            
+                                If(
+                                    ThisItem.IDOrder in QLK_ImportFormInformation.IDImport,
+                                    LookUp(
+                                        QLK_Product, 
+                                        IDProduct = ThisItem.IDProduct, 
+                                        Name
+                                    ),
+                            
+                                    If(
+                                        ThisItem.IDOrder in QLK_ExportFormInformation.IDExportForm,
+                                        LookUp(
+                                            QLK_Product, 
+                                            IDProduct = ThisItem.IDProduct, 
+                                            Name
+                                        )
+                                    )
+                                )
+                            )
+                            
+                        Width: =294
+                        X: =75
+                        Y: =12
+                        ZIndex: =3
+
+                    Label26_12 As label:
+                        Align: =Align.Center
+                        AutoHeight: =true
+                        FontWeight: =FontWeight.Lighter
+                        Height: =38
+                        OnSelect: =Select(Parent)
+                        Size: =8
+                        Text: |-
+                            =Text(ThisItem.Price, "#,###" & " VND")
+                        Width: =160
+                        X: =142
+                        Y: =36
+                        ZIndex: =4
+
+                    Label27_35 As label:
+                        Align: =Align.Center
+                        OnSelect: =Select(Parent)
+                        Size: =11
+                        Text: =ThisItem.Quantity
+                        Width: =40
+                        X: =397
+                        Y: =17
+                        ZIndex: =6
+
+                    Button9_10 As button:
+                        BorderStyle: =BorderStyle.None
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        HoverFill: =
+                        OnSelect: =
+                        RadiusBottomLeft: =15
+                        RadiusBottomRight: =15
+                        RadiusTopLeft: =15
+                        RadiusTopRight: =15
+                        Text: =""
+                        Width: =94
+                        X: =41
+                        Y: =12
+                        ZIndex: =7
+
+                    Label27_34 As label:
+                        Align: =Align.Center
+                        OnSelect: =Select(Parent)
+                        Size: =11
+                        Text: ="x"
+                        Width: =40
+                        X: =370
+                        Y: =17
+                        ZIndex: =8
+
+                Label25_2 As label:
                     Align: =Align.Center
                     FontWeight: =FontWeight.Bold
                     Height: =39
@@ -1415,7 +1747,7 @@ TrangChu_Admin As screen:
                     Y: =106
                     ZIndex: =28
 
-                line_20_percent_HA_1 As rectangle:
+                line_20_percent_HA_5 As rectangle:
                     BorderColor: =RGBA(166, 166, 166, 1)
                     Fill: =RGBA(202, 202, 202, 1)
                     Height: =1
@@ -1425,7 +1757,7 @@ TrangChu_Admin As screen:
                     Y: =630
                     ZIndex: =29
 
-                Label26 As label:
+                Label26_2 As label:
                     Align: =Align.Center
                     Height: =32
                     Text: |-
@@ -1439,7 +1771,7 @@ TrangChu_Admin As screen:
                     Y: =636
                     ZIndex: =30
 
-                btn_CancelOrderDetailOrder_9 As button:
+                btn_CancelOrderDetailOrder_11 As button:
                     AutoDisableOnSelect: =false
                     BorderColor: =RGBA(237, 237, 237, 1)
                     BorderThickness: =0
@@ -1466,7 +1798,7 @@ TrangChu_Admin As screen:
                         
                         
                                 Refresh(QLK_OrderForm);
-                                Reset(gal_DetailOrderPending_HA_DO_HA)
+                                Reset(gal_DetailOrderPending_HA_DO_HA_5)
                             ),
                         
                             If(
@@ -1486,7 +1818,7 @@ TrangChu_Admin As screen:
                         
                         
                                     Refresh(QLK_ImportForm);
-                                    Reset(gal_DetailOrderPending_HA_DO_HA)
+                                    Reset(gal_DetailOrderPending_HA_DO_HA_5)
                                 ), 
                         
                                 If(
@@ -1506,7 +1838,7 @@ TrangChu_Admin As screen:
                         
                         
                                         Refresh(QLK_ExportForm);
-                                        Reset(gal_DetailOrderPending_HA_DO_HA)
+                                        Reset(gal_DetailOrderPending_HA_DO_HA_5)
                                     )
                                 )
                             )
@@ -1649,7 +1981,7 @@ TrangChu_Admin As screen:
                     Y: =677
                     ZIndex: =31
 
-                btn_Create_NewOrderProduct_2 As timer:
+                btn_Create_NewOrderProduct_4 As timer:
                     BorderThickness: =0
                     Color: =RGBA(54, 176, 75, 1)
                     DisabledBorderColor: =RGBA(166, 166, 166, 1)
@@ -1765,7 +2097,7 @@ TrangChu_Admin As screen:
                         
                         
                                 Refresh(QLK_OrderForm);
-                                Reset(gal_DetailOrderPending_HA_DO_HA)
+                                Reset(gal_DetailOrderPending_HA_DO_HA_5)
                             ),
                         
                             If(
@@ -1785,7 +2117,7 @@ TrangChu_Admin As screen:
                         
                         
                                     Refresh(QLK_ImportForm);
-                                    Reset(gal_DetailOrderPending_HA_DO_HA)
+                                    Reset(gal_DetailOrderPending_HA_DO_HA_5)
                                 ), 
                         
                                 If(
@@ -1805,7 +2137,7 @@ TrangChu_Admin As screen:
                         
                         
                                         Refresh(QLK_ExportForm);
-                                        Reset(gal_DetailOrderPending_HA_DO_HA)
+                                        Reset(gal_DetailOrderPending_HA_DO_HA_5)
                                     )
                                 )
                             )
@@ -2003,7 +2335,7 @@ TrangChu_Admin As screen:
                     Y: =677
                     ZIndex: =32
 
-                TextInput5 As text:
+                TextInput5_2 As text:
                     Align: =Align.Center
                     BorderStyle: =BorderStyle.None
                     Default: |-
@@ -2024,7 +2356,7 @@ TrangChu_Admin As screen:
                     Y: =677
                     ZIndex: =33
 
-    Icon5 As icon.Hamburger:
+    Icon5_2 As icon.Hamburger:
         Color: =RGBA(0, 0, 0, 1)
         Height: =39
         Icon: =Icon.Hamburger
