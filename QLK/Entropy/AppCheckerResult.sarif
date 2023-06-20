@@ -18594,18 +18594,6 @@
               "message": {
                 "text": "Error occurred running rule app-InefficientDelayLoading."
               }
-            },
-            {
-              "associatedRule": {
-                "id": "app-InefficientDelayLoading",
-                "index": 23
-              },
-              "descriptor": {
-                "id": "app-InefficientDelayLoading"
-              },
-              "message": {
-                "text": "Error occurred running rule app-InefficientDelayLoading."
-              }
             }
           ]
         }
@@ -18905,10 +18893,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 2,
+                  "charLength": 65,
                   "charOffset": 30,
                   "snippet": {
-                    "text": "Id"
+                    "text": "LookUp(QLK_Product, IDProduct = lbl_ScanSP.Text, ID_TypeOfDevice)"
                   }
                 }
               },
@@ -18921,15 +18909,15 @@
           ],
           "message": {
             "arguments": [
-              "Id"
+              "LookUp"
             ],
             "id": "issue"
           },
           "properties": {
-            "level": "High"
+            "level": "Medium"
           },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -18961,16 +18949,15 @@
           ],
           "message": {
             "arguments": [
-              "Number",
-              "Error"
+              "LookUp"
             ],
             "id": "issue"
           },
           "properties": {
-            "level": "High"
+            "level": "Medium"
           },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 0
         },
         {
           "locations": [
@@ -37166,36 +37153,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HangHoa.txt_QuantityScan.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HangHoa.txt_QuantityScan.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "HangHoa",
-                "type": "HangHoa.txt_QuantityScan"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 14
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "HangHoa.gal_Product.AccessibleLabel"
                 }
               ],
@@ -37316,36 +37273,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "HangHoa.txt_MiniMunQuanScan.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HangHoa.txt_MiniMunQuanScan.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "HangHoa",
-                "type": "HangHoa.txt_MiniMunQuanScan"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 14
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "HangHoa.TextInput1_22.AccessibleLabel"
                 }
               ],
@@ -37359,36 +37286,6 @@
                 "member": "AccessibleLabel",
                 "module": "HangHoa",
                 "type": "HangHoa.TextInput1_22"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 14
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "HangHoa.txt_InputPriceScan.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "HangHoa.txt_InputPriceScan.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "HangHoa",
-                "type": "HangHoa.txt_InputPriceScan"
               }
             }
           ],
@@ -46353,7 +46250,7 @@
                   "You might need to convert the value to be the same type, such as converting a date string (e.g., \"12/31/2018\") to a date value.",
                   "If you’re comparing records or tables, the field or column types must match exactly."
                 ],
-                "level": "High",
+                "level": "Medium",
                 "primaryCategory": "formula",
                 "whyFix": ""
               }
