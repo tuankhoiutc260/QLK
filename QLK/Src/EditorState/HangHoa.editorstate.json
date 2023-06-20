@@ -27676,7 +27676,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_InputPrice",
-      "ParentIndex": 3,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -28226,7 +28226,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_NameProduct",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -29100,7 +29100,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_OutputPrice",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

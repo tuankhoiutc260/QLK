@@ -1332,7 +1332,7 @@ SoDoKho As screen:
         Font: =Font.'Segoe UI'
         Size: =15
         Text: |-
-            =If(LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation, Quantity) < 2000,
+            =If(LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation, Quantity) < Value(txt_MaxQuantity.Text),
                LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation, Quantity), txt_MaxQuantity.Text)
         Visible: =showSetLocation
         Width: =152
