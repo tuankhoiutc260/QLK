@@ -4808,7 +4808,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_PendingList_DuyetDatHang_15",
-      "ParentIndex": 105,
+      "ParentIndex": 107,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5181,7 +5181,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_PendingList_DuyetDatHang_16",
-      "ParentIndex": 106,
+      "ParentIndex": 108,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5549,7 +5549,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_PendingList_DuyetDatHang_2",
-      "ParentIndex": 102,
+      "ParentIndex": 104,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5917,7 +5917,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "btn_PendingList_DuyetDatHang_3",
-      "ParentIndex": 104,
+      "ParentIndex": 106,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9413,7 +9413,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Button2_112",
-      "ParentIndex": 107,
+      "ParentIndex": 109,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15157,7 +15157,14 @@
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Live",
-        "Overflow",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Overflow",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
@@ -15559,7 +15566,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label18_2",
-      "ParentIndex": 108,
+      "ParentIndex": 102,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -22015,7 +22022,14 @@
           "NameMapSourceSchema": "?"
         },
         "FontWeight",
-        "Align",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Align",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "VerticalAlign",
         "X",
         "Y",
@@ -22023,7 +22037,14 @@
         "Height",
         "DisplayMode",
         "ZIndex",
-        "LineHeight",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "LineHeight",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "BorderThickness",
         "FocusedBorderThickness",
         {
@@ -22046,6 +22067,14 @@
           "AutoRuleBindingEnabled": false,
           "AutoRuleBindingString": "true",
           "InvariantPropertyName": "Visible",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "AutoHeight",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         }
@@ -22261,6 +22290,11 @@
         {
           "Category": "Design",
           "PropertyName": "Visible",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "AutoHeight",
           "RuleProviderType": "Unknown"
         }
       ],
@@ -35458,7 +35492,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Nen_32",
-      "ParentIndex": 73,
+      "ParentIndex": 72,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -37592,7 +37626,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "TextInput1_22",
-      "ParentIndex": 72,
+      "ParentIndex": 73,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -38477,7 +38511,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "txt_Quantity",
-      "ParentIndex": 109,
+      "ParentIndex": 103,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -39050,7 +39084,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "txt_Unit_1",
-      "ParentIndex": 103,
+      "ParentIndex": 105,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

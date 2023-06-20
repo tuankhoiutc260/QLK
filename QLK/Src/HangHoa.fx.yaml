@@ -453,7 +453,7 @@ HangHoa As screen:
                 Set(IDDevice_GalProduct,ThisItem.ID_TypeOfDevice);
                 Set(IDSupplier_GalProduct, ThisItem.IDSupplier);
                 Set(showThongTinHangHoa, true);
-                If(gal_Product.Selected.Quantity + gal_Product.Selected.QuantityInStock <= gal_Product.Selected.MinimumQuantity, Set(showImportRequest, true),Set(showImportRequest, false));
+                If(gal_Product.Selected.Quantity + gal_Product.Selected.QuantityInStock <= gal_Product.Selected.MinimumQuantity || Value(lbl_DayOver.Text) <= 10, Set(showImportRequest, true),Set(showImportRequest, false));
                 Set(IDLocation_GalProduct, ThisItem.Location);
                 Set(IDProductImport_GalProduct, ThisItem.IDProduct)
             PressedFill: =
@@ -1058,10 +1058,11 @@ HangHoa As screen:
         Label9_14 As label:
             Font: =Font.'Segoe UI'
             Height: =94
+            LineHeight: =1.5
             Size: =15
             Text: =gal_Product.Selected.Location
             Visible: =showThongTinHangHoa
-            Width: =82
+            Width: =89
             X: =1103
             Y: =290
             ZIndex: =54
@@ -1444,7 +1445,7 @@ HangHoa As screen:
             Visible: =showYeuCauDatHang
             Width: =584
             X: =510
-            Y: =284
+            Y: =278
             ZIndex: =86
 
         Label18 As label:
@@ -1464,13 +1465,13 @@ HangHoa As screen:
             Color: =RGBA(184, 0, 0, 1)
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Semibold
-            Height: =73
+            Height: =65
             Size: =20
             Text: =gal_Product.Selected.Name
             Visible: =showYeuCauDatHang
             Width: =547
             X: =538
-            Y: =352
+            Y: =348
             ZIndex: =88
 
         Label18_2 As label:
@@ -1483,7 +1484,7 @@ HangHoa As screen:
             Visible: =showYeuCauDatHang
             Width: =163
             X: =645
-            Y: =444
+            Y: =426
             ZIndex: =89
 
         txt_Quantity As text:
@@ -1492,7 +1493,7 @@ HangHoa As screen:
             Visible: =showYeuCauDatHang
             Width: =79
             X: =834
-            Y: =445
+            Y: =427
             ZIndex: =90
 
         btn_PendingList_DuyetDatHang_7 As button:
@@ -1551,7 +1552,7 @@ HangHoa As screen:
             Visible: =showYeuCauDatHang
             Width: =156
             X: =645
-            Y: =505
+            Y: =481
             ZIndex: =91
 
         btn_PendingList_DuyetDatHang_8 As button:
@@ -1573,7 +1574,7 @@ HangHoa As screen:
             Visible: =showYeuCauDatHang
             Width: =156
             X: =821
-            Y: =505
+            Y: =481
             ZIndex: =92
 
     Label43 As label:
