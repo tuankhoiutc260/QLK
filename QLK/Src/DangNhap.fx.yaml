@@ -339,7 +339,7 @@ DangNhap As screen:
                             )    
                         );
                         Set(maxQuantity, Max(col_TopProduct_HomeAdmin, TotalQuantity));
-                        Navigate(TrangChu_Admin);
+                        Navigate(Approve_Admin);
             
                         Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
                         Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, Permission)),

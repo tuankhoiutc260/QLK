@@ -237,7 +237,7 @@ NhaCungCap As screen:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
-        OnSelect: =Navigate(TrangChu_Admin)
+        OnSelect: =Navigate(Approve_Admin)
         RadiusBottomLeft: =
         RadiusBottomRight: =
         RadiusTopLeft: =
