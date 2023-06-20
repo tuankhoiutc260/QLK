@@ -1033,13 +1033,13 @@ HangHoa As screen:
 
         Label9_12 As label:
             Font: =Font.'Segoe UI'
-            Height: =45
+            Height: =42
             Size: =15
             Text: =gal_Product.Selected.MinimumQuantity
             Visible: =showThongTinHangHoa
             Width: =84
             X: =1133
-            Y: =220
+            Y: =223
             ZIndex: =52
 
         Label9_13 As label:
