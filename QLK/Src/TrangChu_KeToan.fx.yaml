@@ -269,7 +269,7 @@ TrangChu_KeToan As screen:
             Button4_52 As button:
                 BorderColor: =RGBA(127, 235, 117, 1)
                 BorderThickness: =1
-                Color: =colorBtnImport_Accountant
+                Color: =colorBtnImport_Accoutant
                 Fill: =fillBtnImport_Accountant
                 HoverBorderColor: =RGBA(127, 235, 117, 1)
                 HoverColor: =RGBA(21, 161, 60, 1)
@@ -856,7 +856,7 @@ TrangChu_KeToan As screen:
                         Height: =60
                         HoverBorderColor: =RGBA(237, 237, 237, 1)
                         HoverFill: =RGBA(81, 224, 105, 1)
-                        OnSelect: |
+                        OnSelect: |+
                             =Set(StatusUpdateImport_HomeAccountant, 1);
                             Set(NewIDImportOrder_HomeAccountant, "IP" & Text(Now(), "ddmmyyyyhhmmss"));
                             Patch(QLK_ImportForm, 
@@ -906,7 +906,6 @@ TrangChu_KeToan As screen:
                                 )
                             );
                             
-                            //Office365Outlook.SendEmailV2(LookUp(QLK_Account, Permission.Value = "Manager", Gmail), "Đã thanh toán", col_DetailsImport_HomeAccountant)
                         OnTimerEnd: |-
                             =Set(showSuccess, false) && 
                             Set(showInformationImportInvoiceForm, false)
@@ -2959,6 +2958,16 @@ TrangChu_KeToan As screen:
                             );
                             
                             Clear(col_DetailsNewOrder_HomeAccountant);
+                            
+                            ForAll(
+                                col_DetailsNewOrder_HomeAccountant,
+                                Office365Outlook.SendEmailV2(
+                                    "ngtkhoi05@gmail.com",
+                                    "Subject",
+                                    "Body",
+                                    {Importance: "High"}
+                                )
+                            );
                         OnTimerEnd: |-
                             =Set(showSuccess, false) && 
                             Set(showInformationImportInvoiceForm, false)
@@ -3458,10 +3467,10 @@ TrangChu_KeToan As screen:
                         ZIndex: =9
 
             Button4 As button:
-                OnSelect: =Clear(col_ImportRequest_HomeAccountant);
+                OnSelect: =SendEmailApprove.Run(JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), LookUp(QLK_Account, Permission.Value = "Manager", Gmail))
                 Text: ="Button"
-                X: =40
-                Y: =40
+                X: =202
+                Y: =239
                 ZIndex: =16
 
             Label25 As label:

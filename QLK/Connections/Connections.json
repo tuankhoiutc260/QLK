@@ -127,8 +127,38 @@
       "Office365Outlook"
     ],
     "dependencies": {},
-    "dependents": [],
+    "dependents": [
+      "6b545a37-3d94-4652-8383-56b7a9c58ada"
+    ],
     "id": "6163a375-9043-4469-818a-cba8353da2be"
+  },
+  "6b545a37-3d94-4652-8383-56b7a9c58ada": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "e2259ae2-cccc-48e4-9c3e-5c8fee625602"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "e2259ae2-cccc-48e4-9c3e-5c8fee625602"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "SendEmailApprove"
+    ],
+    "dependencies": {
+      "shared_office365": "6163a375-9043-4469-818a-cba8353da2be"
+    },
+    "dependents": [],
+    "id": "6b545a37-3d94-4652-8383-56b7a9c58ada"
   },
   "a2bb899c-405e-4866-bf49-96e20ff92ba2": {
     "connectionRef": {
