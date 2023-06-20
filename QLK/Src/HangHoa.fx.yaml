@@ -364,8 +364,8 @@ HangHoa As screen:
         TemplatePadding: =0
         TemplateSize: =92
         Width: =1071
-        X: =228
-        Y: =235
+        X: =227
+        Y: =236
         ZIndex: =24
 
         lbl_NameProduct As label:
@@ -376,7 +376,7 @@ HangHoa As screen:
             Width: =285
             X: =14
             Y: =10
-            ZIndex: =5
+            ZIndex: =1
 
         lbl_Quantity As label:
             Align: =Align.Center
@@ -386,7 +386,7 @@ HangHoa As screen:
             Width: =113
             X: =292
             Y: =7
-            ZIndex: =6
+            ZIndex: =2
 
         lbl_InputPrice As label:
             Align: =Align.Center
@@ -396,7 +396,7 @@ HangHoa As screen:
             Width: =111
             X: =410
             Y: =7
-            ZIndex: =7
+            ZIndex: =3
 
         lbl_OutputPrice As label:
             Align: =Align.Center
@@ -406,17 +406,7 @@ HangHoa As screen:
             Width: =111
             X: =540
             Y: =7
-            ZIndex: =8
-
-        lbl_Location As label:
-            Align: =Align.Center
-            Height: =71
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.Location
-            Width: =101
-            X: =828
-            Y: =13
-            ZIndex: =9
+            ZIndex: =4
 
         Img_Product As image:
             Height: =65
@@ -425,7 +415,37 @@ HangHoa As screen:
             Width: =71
             X: =948
             Y: =13
-            ZIndex: =10
+            ZIndex: =5
+
+        lbl_DayOver As label:
+            Align: =Align.Center
+            Height: =71
+            OnSelect: =Select(Parent)
+            Text: =Round(ThisItem.Quantity/(Sum(Filter(QLK_ExportFormInformation, IDProduct = ThisItem.IDProduct && (DateValue(Now()) - DateValue(Created)) <= 10), Quantity)/10),0)
+            Width: =101
+            X: =689
+            Y: =13
+            ZIndex: =6
+
+        "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            DelayItemLoading: =true
+            Height: =79
+            Items: =Filter(QLK_Zone, ID_ProductZone = ThisItem.IDProduct)
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =22
+            Width: =64
+            X: =848
+            Y: =13
+            ZIndex: =7
+
+            Label26 As label:
+                Height: =22
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.ID_Zone
+                Width: =64
+                ZIndex: =1
 
         Button6 As button:
             BorderColor: =RGBA(202, 202, 202, 1)
@@ -450,17 +470,7 @@ HangHoa As screen:
             RadiusTopRight: =0
             Text: =""
             Width: =1071
-            ZIndex: =11
-
-        lbl_DayOver As label:
-            Align: =Align.Center
-            Height: =71
-            OnSelect: =Select(Parent)
-            Text: =Round(ThisItem.Quantity/(Sum(Filter(QLK_ExportFormInformation, IDProduct = ThisItem.IDProduct && (DateValue(Now()) - DateValue(Created)) <= 10), Quantity)/10),0)
-            Width: =101
-            X: =689
-            Y: =13
-            ZIndex: =12
+            ZIndex: =8
 
     Image4_37 As image:
         Height: =74

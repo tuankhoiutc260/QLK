@@ -309,8 +309,8 @@ ThietLapGia As screen:
             Height: =41
             OnSelect: =Select(Parent)
             Text: =ThisItem.InputPrice & " Vnđ"
-            Width: =111
-            X: =538
+            Width: =153
+            X: =494
             Y: =15
             ZIndex: =3
 
@@ -319,8 +319,8 @@ ThietLapGia As screen:
             Height: =41
             OnSelect: =Select(Parent)
             Text: =ThisItem.OutputPrice & " Vnđ"
-            Width: =111
-            X: =716
+            Width: =148
+            X: =678
             Y: =15
             ZIndex: =4
 
@@ -394,8 +394,8 @@ ThietLapGia As screen:
         OnSelect: =
         Text: ="Input Price"
         Width: =136
-        X: =749
-        Y: =184
+        X: =725
+        Y: =183
         ZIndex: =23
 
     lbl_TotalPrice_DuyetDatHang_5 As label:
@@ -405,7 +405,7 @@ ThietLapGia As screen:
         OnSelect: =
         Text: ="Output Price"
         Width: =136
-        X: =926
+        X: =907
         Y: =184
         ZIndex: =24
 
@@ -475,9 +475,9 @@ ThietLapGia As screen:
             RadiusTopLeft: =20
             RadiusTopRight: =20
             Visible: =showSetPrice
-            Width: =790
-            X: =351
-            Y: =256
+            Width: =886
+            X: =320
+            Y: =258
             ZIndex: =29
 
         drop_SelNamePrice As dropdown:
@@ -486,8 +486,8 @@ ThietLapGia As screen:
             Size: =20
             Visible: =showSetPrice
             Width: =184
-            X: =377
-            Y: =406
+            X: =346
+            Y: =408
             ZIndex: =30
 
         Button9 As button:
@@ -501,8 +501,8 @@ ThietLapGia As screen:
             Text: ="+"
             Visible: =showSetPrice
             Width: =39
-            X: =686
-            Y: =404
+            X: =717
+            Y: =408
             ZIndex: =31
 
         Button9_4 As button:
@@ -516,12 +516,11 @@ ThietLapGia As screen:
             Text: ="-"
             Visible: =showSetPrice
             Width: =39
-            X: =735
-            Y: =404
+            X: =763
+            Y: =408
             ZIndex: =32
 
         txt_price As label:
-            Align: =Align.Center
             Font: =Font.'Segoe UI'
             Size: =20
             Text: |-
@@ -529,9 +528,9 @@ ThietLapGia As screen:
                     If(drop_SelNamePrice.SelectedText.Value = "Output Price",gal_ThietLapGia.Selected.OutputPrice)
                 )
             Visible: =showSetPrice
-            Width: =103
-            X: =575
-            Y: =406
+            Width: =156
+            X: =548
+            Y: =408
             ZIndex: =33
 
         txt_Percent As text:
@@ -541,8 +540,8 @@ ThietLapGia As screen:
             Size: =20
             Visible: =showSetPrice
             Width: =81
-            X: =785
-            Y: =404
+            X: =813
+            Y: =406
             ZIndex: =34
 
         Label28 As label:
@@ -550,8 +549,8 @@ ThietLapGia As screen:
             Text: ="="
             Visible: =showSetPrice
             Width: =35
-            X: =907
-            Y: =404
+            X: =942
+            Y: =408
             ZIndex: =35
 
         txt_LastPrice As label:
@@ -564,9 +563,8 @@ ThietLapGia As screen:
                     If(ColorOperator = "Tru", Value(txt_price.Text) - (txt_price.Text)*10/100)
                 )
             Visible: =showSetPrice
-            Width: =120
-            X: =942
-            Y: =404
+            X: =977
+            Y: =408
             ZIndex: =36
 
         Label30_2 As label:
@@ -575,8 +573,8 @@ ThietLapGia As screen:
             Text: ="%"
             Visible: =showSetPrice
             Width: =26
-            X: =873
-            Y: =403
+            X: =901
+            Y: =406
             ZIndex: =37
 
         Label30_3 As label:
@@ -586,8 +584,8 @@ ThietLapGia As screen:
             Text: ="Vnđ"
             Visible: =showSetPrice
             Width: =79
-            X: =1062
-            Y: =402
+            X: =1127
+            Y: =408
             ZIndex: =38
 
         btn_RefusedList_DuyetDatHang_8 As button:
@@ -614,8 +612,8 @@ ThietLapGia As screen:
             Text: ="Apply"
             Visible: =showSetPrice
             Width: =150
-            X: =585
-            Y: =470
+            X: =635
+            Y: =472
             ZIndex: =39
 
         btn_RefusedList_DuyetDatHang_9 As button:
@@ -636,8 +634,8 @@ ThietLapGia As screen:
             Text: ="Close"
             Visible: =showSetPrice
             Width: =150
-            X: =755
-            Y: =470
+            X: =814
+            Y: =472
             ZIndex: =40
 
         Label31 As label:
@@ -649,8 +647,8 @@ ThietLapGia As screen:
             Text: ="SET PRODUCT PRICE"
             Visible: =showSetPrice
             Width: =345
-            X: =573
-            Y: =268
+            X: =619
+            Y: =284
             ZIndex: =41
 
         Label32 As label:
@@ -661,20 +659,19 @@ ThietLapGia As screen:
                 ="Product:"
             Visible: =showSetPrice
             Width: =130
-            X: =378
-            Y: =324
+            X: =348
+            Y: =348
             ZIndex: =42
 
         Label32_1 As label:
-            Align: =Align.Center
             Font: =Font.'Segoe UI'
-            Height: =79
+            Height: =51
             Overflow: =Overflow.Scroll
             Size: =20
-            Text: =gal_ThietLapGia.Selected.Name
+            Text: = gal_ThietLapGia.Selected.Name
             Visible: =showSetPrice
-            Width: =606
-            X: =508
-            Y: =316
+            Width: =683
+            X: =486
+            Y: =346
             ZIndex: =43
 

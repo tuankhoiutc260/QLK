@@ -2188,7 +2188,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Button2_105",
-      "ParentIndex": 24,
+      "ParentIndex": 22,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4161,7 +4161,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Button9",
-      "ParentIndex": 28,
+      "ParentIndex": 30,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4446,7 +4446,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Button9_4",
-      "ParentIndex": 29,
+      "ParentIndex": 31,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4722,7 +4722,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "drop_SelNamePrice",
-      "ParentIndex": 33,
+      "ParentIndex": 28,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5434,7 +5434,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Icon11_33",
-      "ParentIndex": 23,
+      "ParentIndex": 21,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5974,7 +5974,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Icon2_4",
-      "ParentIndex": 25,
+      "ParentIndex": 23,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7730,7 +7730,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label28",
-      "ParentIndex": 31,
+      "ParentIndex": 32,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8323,7 +8323,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label30_3",
-      "ParentIndex": 26,
+      "ParentIndex": 34,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8934,7 +8934,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label32",
-      "ParentIndex": 22,
+      "ParentIndex": 25,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9244,7 +9244,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label32_1",
-      "ParentIndex": 21,
+      "ParentIndex": 24,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10090,7 +10090,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_OrderedID_DuyetDatHang_2",
-      "ParentIndex": 13,
+      "ParentIndex": 14,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10957,7 +10957,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_TotalPrice_DuyetDatHang_4",
-      "ParentIndex": 14,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12497,7 +12497,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "txt_LastPrice",
-      "ParentIndex": 32,
+      "ParentIndex": 33,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12797,7 +12797,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "txt_Percent",
-      "ParentIndex": 30,
+      "ParentIndex": 26,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -13095,7 +13095,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "txt_price",
-      "ParentIndex": 34,
+      "ParentIndex": 29,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
