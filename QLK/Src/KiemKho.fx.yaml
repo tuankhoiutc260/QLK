@@ -302,20 +302,11 @@ KiemKho As screen:
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
-        TemplateSize: =52
+        TemplateSize: =69
         Width: =1072
         X: =227
         Y: =235
         ZIndex: =23
-
-        lbl_NameProduct_4 As label:
-            Align: =Align.Center
-            Height: =46
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.Name
-            Width: =457
-            Y: =5
-            ZIndex: =1
 
         lbl_InputPrice_4 As label:
             Align: =Align.Center
@@ -324,28 +315,48 @@ KiemKho As screen:
             Text: =ThisItem.ID_CheckStock
             Width: =203
             X: =13
-            Y: =5
-            ZIndex: =2
+            Y: =14
+            ZIndex: =1
 
         lbl_OutputPrice_3 As label:
             Align: =Align.Center
-            Height: =41
+            Height: =64
             OnSelect: =Select(Parent)
             Text: =ThisItem.OscillateQuantity
             Width: =111
-            X: =698
+            X: =529
             Y: =5
-            ZIndex: =3
+            ZIndex: =2
 
         lbl_InputPrice_5 As label:
             Align: =Align.Center
-            Height: =41
+            Height: =64
             OnSelect: =Select(Parent)
             Text: =LookUp(QLK_Product, IDProduct = ThisItem.ID_ProductCS, Name)
-            Width: =482
+            Width: =285
             X: =216
             Y: =5
+            ZIndex: =3
+
+        lbl_OutputPrice_4 As label:
+            Align: =Align.Center
+            Height: =62
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.OscillatePrice
+            Width: =111
+            X: =697
+            Y: =5
             ZIndex: =4
+
+        lbl_OutputPrice_5 As label:
+            Align: =Align.Center
+            Height: =62
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Created
+            Width: =245
+            X: =826
+            Y: =5
+            ZIndex: =5
 
         Button6_4 As button:
             AutoDisableOnSelect: =false
@@ -353,7 +364,7 @@ KiemKho As screen:
             BorderThickness: =1
             Color: =RGBA(202, 202, 202, 1)
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =52
+            Height: =69
             HoverFill: =RGBA(187, 221, 140, 0.4)
             OnSelect: |
                 =Select(Parent);
@@ -364,16 +375,6 @@ KiemKho As screen:
             RadiusTopRight: =0
             Text: =""
             Width: =1071
-            ZIndex: =5
-
-        lbl_OutputPrice_4 As label:
-            Align: =Align.Center
-            Height: =41
-            OnSelect: =Select(Parent)
-            Text: =ThisItem.OscillatePrice
-            Width: =111
-            X: =897
-            Y: =7
             ZIndex: =6
 
     Button7_8 As button:
@@ -442,8 +443,8 @@ KiemKho As screen:
         OnSelect: =
         Text: ="Product"
         Width: =136
-        X: =615
-        Y: =185
+        X: =504
+        Y: =183
         ZIndex: =27
 
     lbl_TotalPrice_DuyetDatHang_13 As label:
@@ -453,8 +454,8 @@ KiemKho As screen:
         OnSelect: =
         Text: ="Oscillate Price"
         Width: =160
-        X: =1096
-        Y: =185
+        X: =896
+        Y: =184
         ZIndex: =28
 
     lbl_TotalPrice_DuyetDatHang_12 As label:
@@ -463,10 +464,21 @@ KiemKho As screen:
         Height: =52
         OnSelect: =
         Text: ="Oscillate Quantity"
-        Width: =160
-        X: =896
-        Y: =185
+        Width: =138
+        X: =741
+        Y: =183
         ZIndex: =29
+
+    lbl_TotalPrice_DuyetDatHang_14 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Text: ="Checking time"
+        Width: =160
+        X: =1096
+        Y: =182
+        ZIndex: =30
 
     grpProCS As group:
         Height: =5
@@ -489,7 +501,7 @@ KiemKho As screen:
             Width: =1134
             X: =196
             Y: =110
-            ZIndex: =30
+            ZIndex: =31
 
         "gal_ProductCS As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             BorderColor: =RGBA(202, 202, 202, 1)
@@ -515,7 +527,7 @@ KiemKho As screen:
             Width: =1071
             X: =228
             Y: =235
-            ZIndex: =31
+            ZIndex: =32
 
             lbl_NameProduct_5 As label:
                 Align: =Align.Center
@@ -531,7 +543,7 @@ KiemKho As screen:
                 Align: =Align.Center
                 Height: =71
                 OnSelect: =Select(Parent)
-                Text: =ThisItem.Quantity & " " & LookUp(QLK_Unit, ID = ThisItem.Unit, UnitName)
+                Text: =ThisItem.QuantityInStock
                 Width: =113
                 X: =499
                 Y: =10
@@ -542,8 +554,8 @@ KiemKho As screen:
                 Height: =71
                 OnSelect: =Select(Parent)
                 Text: =ThisItem.InputPrice & " Vnđ"
-                Width: =111
-                X: =713
+                Width: =192
+                X: =684
                 Y: =10
                 ZIndex: =7
 
@@ -605,7 +617,7 @@ KiemKho As screen:
             Width: =1072
             X: =227
             Y: =183
-            ZIndex: =32
+            ZIndex: =33
 
         lbl_DateCreated_DuyetDatHang_2 As label:
             Align: =Align.Center
@@ -617,7 +629,7 @@ KiemKho As screen:
             Width: =99
             X: =736
             Y: =184
-            ZIndex: =33
+            ZIndex: =34
 
         lbl_OrderedID_DuyetDatHang_12 As label:
             Align: =Align.Center
@@ -630,7 +642,7 @@ KiemKho As screen:
             Width: =314
             X: =292
             Y: =184
-            ZIndex: =34
+            ZIndex: =35
 
         lbl_TotalPrice_DuyetDatHang_10 As label:
             Align: =Align.Center
@@ -642,7 +654,7 @@ KiemKho As screen:
             Width: =125
             X: =931
             Y: =184
-            ZIndex: =35
+            ZIndex: =36
 
         lbl_Status_DuyetDatHang_2 As label:
             Align: =Align.Center
@@ -653,7 +665,7 @@ KiemKho As screen:
             Visible: =showgrpProCS
             X: =1133
             Y: =183
-            ZIndex: =36
+            ZIndex: =37
 
         lbl_OrderedID_DuyetDatHang_13 As label:
             Align: =Align.Center
@@ -667,7 +679,7 @@ KiemKho As screen:
             Width: =354
             X: =245
             Y: =119
-            ZIndex: =37
+            ZIndex: =38
 
         btn_RefusedList_DuyetDatHang_1 As button:
             AutoDisableOnSelect: =false
@@ -689,7 +701,7 @@ KiemKho As screen:
             Width: =89
             X: =1209
             Y: =131
-            ZIndex: =38
+            ZIndex: =39
 
     grpCS As group:
         Height: =5
@@ -703,7 +715,7 @@ KiemKho As screen:
             Height: =768
             Visible: =showgrpCS
             Width: =1366
-            ZIndex: =39
+            ZIndex: =40
 
         TextInput1_26 As text:
             Default: =
@@ -719,7 +731,7 @@ KiemKho As screen:
             Width: =715
             X: =428
             Y: =248
-            ZIndex: =40
+            ZIndex: =41
 
         Label30 As label:
             Align: =Align.Center
@@ -732,7 +744,7 @@ KiemKho As screen:
             Width: =362
             X: =628
             Y: =264
-            ZIndex: =41
+            ZIndex: =42
 
         Label33 As label:
             Font: =Font.'Segoe UI'
@@ -744,7 +756,7 @@ KiemKho As screen:
             Width: =124
             X: =457
             Y: =316
-            ZIndex: =42
+            ZIndex: =43
 
         Label37 As label:
             Font: =Font.'Segoe UI'
@@ -754,7 +766,7 @@ KiemKho As screen:
             Width: =210
             X: =553
             Y: =316
-            ZIndex: =43
+            ZIndex: =44
 
         Label33_1 As label:
             Font: =Font.'Segoe UI'
@@ -766,7 +778,7 @@ KiemKho As screen:
             Width: =134
             X: =799
             Y: =316
-            ZIndex: =44
+            ZIndex: =45
 
         Label37_1 As label:
             Font: =Font.'Segoe UI'
@@ -776,7 +788,7 @@ KiemKho As screen:
             Width: =225
             X: =933
             Y: =316
-            ZIndex: =45
+            ZIndex: =46
 
         Label33_2 As label:
             Font: =Font.'Segoe UI'
@@ -788,7 +800,7 @@ KiemKho As screen:
             Width: =124
             X: =458
             Y: =365
-            ZIndex: =46
+            ZIndex: =47
 
         Label37_2 As label:
             Align: =Align.Center
@@ -799,7 +811,7 @@ KiemKho As screen:
             Width: =540
             X: =574
             Y: =364
-            ZIndex: =47
+            ZIndex: =48
 
         Label33_3 As label:
             Font: =Font.'Segoe UI'
@@ -811,7 +823,7 @@ KiemKho As screen:
             Width: =95
             X: =458
             Y: =413
-            ZIndex: =48
+            ZIndex: =49
 
         Label37_3 As label:
             Align: =Align.Center
@@ -822,7 +834,7 @@ KiemKho As screen:
             Width: =166
             X: =553
             Y: =412
-            ZIndex: =49
+            ZIndex: =50
 
         Label33_4 As label:
             Font: =Font.'Segoe UI'
@@ -834,7 +846,7 @@ KiemKho As screen:
             Width: =191
             X: =815
             Y: =413
-            ZIndex: =50
+            ZIndex: =51
 
         txt_QuanStock As label:
             Align: =Align.Center
@@ -845,7 +857,7 @@ KiemKho As screen:
             Width: =90
             X: =1006
             Y: =413
-            ZIndex: =51
+            ZIndex: =52
 
         Label33_5 As label:
             Font: =Font.'Segoe UI'
@@ -857,7 +869,7 @@ KiemKho As screen:
             Width: =191
             X: =815
             Y: =463
-            ZIndex: =52
+            ZIndex: =53
 
         txt_RealQuantity As text:
             Align: =Align.Center
@@ -866,7 +878,7 @@ KiemKho As screen:
             Width: =57
             X: =1022
             Y: =463
-            ZIndex: =53
+            ZIndex: =54
 
         Label33_6 As label:
             Font: =Font.'Segoe UI'
@@ -878,7 +890,7 @@ KiemKho As screen:
             Width: =160
             X: =457
             Y: =463
-            ZIndex: =54
+            ZIndex: =55
 
         Label37_5 As label:
             Align: =Align.Center
@@ -889,7 +901,7 @@ KiemKho As screen:
             Width: =154
             X: =613
             Y: =463
-            ZIndex: =55
+            ZIndex: =56
 
         btn_RefusedList_DuyetDatHang_2 As button:
             AutoDisableOnSelect: =false
@@ -911,7 +923,7 @@ KiemKho As screen:
             Width: =156
             X: =842
             Y: =532
-            ZIndex: =56
+            ZIndex: =57
 
         btn_RefusedList_DuyetDatHang_10 As button:
             AutoDisableOnSelect: =false
@@ -949,5 +961,5 @@ KiemKho As screen:
             Width: =156
             X: =653
             Y: =532
-            ZIndex: =57
+            ZIndex: =58
 

@@ -165,13 +165,6 @@ ThietLapGia As screen:
         Y: =675
         ZIndex: =12
 
-    Icon11_33 As icon.VerticalLine:
-        Height: =110
-        Icon: =Icon.VerticalLine
-        X: =132
-        Y: =330
-        ZIndex: =13
-
     Image4_41 As image:
         Height: =56
         Image: =LookUp(QLK_Account, ID = idDangNhap,' Portrait')
@@ -182,7 +175,7 @@ ThietLapGia As screen:
         Width: =56
         X: =966
         Y: =20
-        ZIndex: =14
+        ZIndex: =13
 
     Label2_40 As label:
         Font: =Font.'Segoe UI'
@@ -192,6 +185,13 @@ ThietLapGia As screen:
         Width: =243
         X: =1035
         Y: =15
+        ZIndex: =14
+
+    Icon11_33 As icon.VerticalLine:
+        Height: =110
+        Icon: =Icon.VerticalLine
+        X: =132
+        Y: =330
         ZIndex: =15
 
     Label2_41 As label:
@@ -237,7 +237,7 @@ ThietLapGia As screen:
             
             Set price"
         Width: =164
-        Y: =332
+        Y: =333
         ZIndex: =18
 
     Icon2_4 As icon.Money:
