@@ -1876,7 +1876,6 @@ SoDoKho As screen:
             HoverFill: =RGBA(54, 176, 75, 1)
             OnSelect: |-
                 =Set(showRemoveLocation, false);
-                
                 Patch(QLK_Product, LookUp(QLK_Product, IDProduct = txt_IDProduct_Location.Text),
                     {
                         Location: Substitute(LookUp(QLK_Product, IDProduct = txt_IDProduct_Location.Text, Location), ", " & txt_IDZone_Zone, ""),
@@ -1890,6 +1889,13 @@ SoDoKho As screen:
                         QuantityIsContained: Blank()
                     }
                 );
+                If(LookUp(QLK_Product, IDProduct = txt_IDProduct_Location.Text, QuantityInStock) = 0,
+                    Patch(QLK_Product,LookUp(QLK_Product, IDProduct = txt_IDProduct_Location.Text),
+                        {
+                            Location: Blank()
+                        }
+                    )
+                )
             PressedBorderColor: =RGBA(237, 237, 237, 1)
             RadiusBottomLeft: =20
             RadiusBottomRight: =20
