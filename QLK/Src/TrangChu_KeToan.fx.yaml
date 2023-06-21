@@ -904,7 +904,15 @@ TrangChu_KeToan As screen:
                             
                             QLK_ApproveOrder.Run(
                                 JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), 
-                                "devapps@bhk.vn", 2, "Khoi", 0, 0, "Import", 2, LookUp(QLK_ImportForm, IDImport = NewIDImportOrder_HomeAccountant, ID), 2);
+                                "devapps@bhk.vn", 0, 
+                                LookUp(QLK_Account, Gmail = emailLogin, FullName), 
+                                0,
+                                0, 
+                                "Import", 
+                                2, 
+                                LookUp(QLK_ImportForm, IDImport = NewIDImportOrder_HomeAccountant, ID), 
+                                2
+                            );
                             
                             Clear(col_DetailsImport_HomeAccountant);
                         OnTimerEnd: |-
