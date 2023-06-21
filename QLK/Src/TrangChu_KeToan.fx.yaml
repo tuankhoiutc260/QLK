@@ -470,16 +470,6 @@ TrangChu_KeToan As screen:
                 Width: =1158
                 ZIndex: =1
 
-            Gallery1 As gallery.galleryVertical:
-                DelayItemLoading: =true
-                Items: =GroupBy(col_result, "ID_ProductZone", "group")
-                Layout: =Layout.Vertical
-                LoadingSpinner: =LoadingSpinner.Data
-                TemplateSize: =If(Self.Layout = Layout.Horizontal, Min(280, Self.Width - 60), Min(280, Self.Height - 60))
-                X: =100
-                Y: =42
-                ZIndex: =1
-
             cont_Import_HomeAccountant As groupContainer.manualLayoutContainer:
                 Height: =656
                 Visible: =visible_cont_Import_HomeAccountant
@@ -841,55 +831,74 @@ TrangChu_KeToan As screen:
                         HoverBorderColor: =RGBA(237, 237, 237, 1)
                         HoverFill: =RGBA(81, 224, 105, 1)
                         OnSelect: |
-                            =Set(StatusUpdateImport_HomeAccountant, 1);
-                            Set(NoRow_colDetailsImport_HomeAccountant, 0);
-                            Set(NewIDImportOrder_HomeAccountant, "IP" & Text(Now(), "ddmmyyyyhhmmss"));
-                            Patch(QLK_ImportForm, 
+                            =//Set(StatusUpdateImport_HomeAccountant, 1);
+                            Set(NewIDExport_HomeAccountant, "EX" & Text(Now(), "ddmmyyyyhhmmss"));
+                            Patch(QLK_ExportForm, 
                                 {
-                                    IDImport: NewIDImportOrder_HomeAccountant,
-                                    TotalPrice: Sum(col_DetailsImport_HomeAccountant, TotalPrice), 
+                                    IDExport: NewIDExport_HomeAccountant,
+                                    TotalPrice: Sum(col_DetailsExport_HomeAccountant, TotalPrice), 
                                     Status: 1,
-                                    UserCreated: emailLogin
-                                    //ImportDate: Now()
+                                    IDCustomer: Dropdown1.Selected.ID
                                 }
                             );
                             
-                            ForAll(col_DetailsImport_HomeAccountant, 
-                                Patch(QLK_ImportFormInformation, 
+                            ForAll(col_DetailsExport_HomeAccountant, 
+                                Patch(QLK_ExportFormInformation, 
                                     {
-                                        IDImport: NewIDImportOrder_HomeAccountant,
-                                        IDProduct: col_DetailsImport_HomeAccountant[@IDProduct],
-                                        Quantity: col_DetailsImport_HomeAccountant[@Quantity],
-                                        ID_TypeOfDevice: LookUp(QLK_Product, IDProduct = col_DetailsImport_HomeAccountant[@IDProduct], ID_TypeOfDevice),
-                                        Price: LookUp(QLK_Product, IDProduct = col_DetailsImport_HomeAccountant[@IDProduct], InputPrice),
-                                        TotalPrice: col_DetailsImport_HomeAccountant[@Quantity] * LookUp(QLK_Product, IDProduct = col_DetailsImport_HomeAccountant[@IDProduct], InputPrice)
+                                        IDExportForm: NewIDExport_HomeAccountant,
+                                        IDProduct: col_DetailsExport_HomeAccountant[@IDProduct],
+                                        Quantity: col_DetailsExport_HomeAccountant[@Quantity],
+                                        ID_TypeOfDevice: LookUp(QLK_Product, IDProduct = col_DetailsExport_HomeAccountant[@IDProduct], ID_TypeOfDevice),
+                                        Price: col_DetailsExport_HomeAccountant[@Price],
+                                        TotalPrice: col_DetailsExport_HomeAccountant[@Quantity] * col_DetailsExport_HomeAccountant[@Price]
                                     }
                                 )
                             );
                             
-                            ForAll(col_ImportRequest_HomeAccountant As T, 
-                                Patch(QLK_ImportRequest, LookUp(QLK_ImportRequest, ID_ProductRequest = T.IDProduct),
+                            ForAll(col_DetailsExport_HomeAccountant, 
+                                Patch(QLK_Product, LookUp(QLK_Product, IDProduct = col_DetailsExport_HomeAccountant[@IDProduct]),
                                     {
-                                        Quantity: T.Quantity
+                                        QuantityInStock: LookUp(QLK_Product, IDProduct = col_DetailsExport_HomeAccountant[@IDProduct], QuantityInStock) - col_DetailsExport_HomeAccountant[@Quantity]
                                     }
                                 )
                             );
                             
+                            ClearCollect(
+                                col_getQuantityProducttoExport,
+                                DropColumns(
+                                    AddColumns(
+                                        GroupBy(
+                                            Filter(
+                                                ShowColumns(QLK_Zone, "ID_Zone", "ID_ProductZone", "QuantityIsContained"), ID_ProductZone in 
+                                                ShowColumns(col_DetailsExport_HomeAccountant, "IDProduct").IDProduct
+                                            ), 
+                                            "ID_ProductZone","GroupedItems"
+                                        ),
+                                        "ID_Zone", LookUp(GroupedItems, QuantityIsContained = Min(GroupedItems, QuantityIsContained), ID_Zone),
+                                        "Min_Value", Min(GroupedItems, QuantityIsContained)
+                                    ),
+                                "GroupedItems"
+                                )
+                            );
+                            /*
+                            ForAll(
+                                col_DetailsExport_HomeAccountant As T,
+                                UpdateIf(
+                                    getQuantityProducttoExport, 
+                                    ID_ProductZone = T.IDProduct, 
+                                    {
+                                        'in_Value: getQuantityProducttoExport[@'Min Value'] - col_DetailsExport_HomeAccountant[@Quantity
+                                    }
+                                )
+                            );
+                            */
                             
-                            Set(varAppID, "https://apps.powerapps.com/play/e/default-84f36815-d159-4eb1-b192-f72c4f3e5b81/a/d4d6e758-0046-4961-b95f-a6fb8f1a0760?tenantId=84f36815-d159-4eb1-b192-f72c4f3e5b81&source=portal");
-                            // Xoa Product Request quantity = 0
-                            RemoveIf(QLK_ImportRequest, Quantity = 0);
-                            Refresh(QLK_ImportRequest);
-                            ClearCollect(col_ImportRequest_HomeAccountant, RenameColumns(ShowColumns(Filter(QLK_ImportRequest, true), "ID_ProductRequest", "Quantity"), "ID_ProductRequest", "IDProduct"));
+                            QLK_Approve_Export_Orders.Run(JSON(col_DetailsExport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), "devapps@bhk.vn", 
+                                LookUp(QLK_Account, Gmail = emailLogin, FullName), Sum(col_DetailsExport_HomeAccountant, TotalPrice), 
+                                LookUp(QLK_ExportForm, IDExport = NewIDExport_HomeAccountant, ID), LookUp(QLK_ExportForm, IDExport = NewIDExport_HomeAccountant, ID)
+                            );
                             
-                            
-                            
-                            QLK_Approve_Import_Orders.Run(JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), "devapps@bhk.vn",
-                                LookUp(QLK_Account, Gmail = emailLogin, FullName), Sum(col_DetailsImport_HomeAccountant, TotalPrice), 0, LookUp(QLK_ImportForm, IDImport = NewIDImportOrder_HomeAccountant, ID), LookUp(QLK_ImportForm, IDImport = NewIDImportOrder_HomeAccountant, ID));
-                            
-                            
-                            
-                            Clear(col_DetailsImport_HomeAccountant);
+                            Clear(col_DetailsExport_HomeAccountant);
                         OnTimerEnd: |-
                             =Set(showSuccess, false) && 
                             Set(showInformationImportInvoiceForm, false)
@@ -3522,8 +3531,8 @@ TrangChu_KeToan As screen:
                                             ), 
                                             "ID_ProductZone","GroupedItems"
                                         ),
-                                        "ID_Zone", LookUp(GroupedItems, QuantityIsContained = Min(GroupedItems, QuantityIsContained), ID_Zone),
-                                        "Min_Value", Min(GroupedItems, QuantityIsContained)
+                                        "ID_Zone", LookUp(GroupedItems, QuantityIsContained = Max(GroupedItems, QuantityIsContained), ID_Zone),
+                                        "Max_Value", Max(GroupedItems, QuantityIsContained)
                                     ),
                                 "GroupedItems"
                                 )
@@ -3532,13 +3541,21 @@ TrangChu_KeToan As screen:
                             ForAll(
                                 col_DetailsExport_HomeAccountant As T,
                                 UpdateIf(
-                                    getQuantityProducttoExport, 
+                                    col_getQuantityProducttoExport, 
                                     ID_ProductZone = T.IDProduct, 
                                     {
-                                        'in_Value: getQuantityProducttoExport[@'Min Value'] - col_DetailsExport_HomeAccountant[@Quantity
+                                        Max_Value: 
+                                            If(
+                                                (col_getQuantityProducttoExport[@Max_Value] - T.Quantity) > 0, 
+                                                col_getQuantityProducttoExport[@Max_Value] - T.Quantity, 0                    
+                                            )
                                     }
                                 )
                             );
+                            
+                            ForAll(
+                                col_getQuantityProducttoExport As T, 
+                                UpdateIf(QLK_Zone, ID_Zone = T.ID_Zone, {QuantityIsContained: T.Min_Value}));
                             
                             
                             QLK_Approve_Export_Orders.Run(JSON(col_DetailsExport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), "devapps@bhk.vn", 
@@ -3626,75 +3643,11 @@ TrangChu_KeToan As screen:
                 Y: =21
                 ZIndex: =18
 
-            Button10 As button:
-                OnSelect: =ClearCollect(col_ProductInZone, ShowColumns(QLK_Zone, "ID_Zone", "ID_ProductZone", "QuantityIsContained"))
-                Text: ="Button"
-                X: =56
-                Y: =572
-                ZIndex: =19
-
-            Button11 As button:
-                OnSelect: =ClearCollect(col_IDInDetails_Export_HomeAccountant, ShowColumns(col_DetailsExport_HomeAccountant, "IDProduct"))
-                Text: ="ID In Detail"
-                X: =56
-                Y: =506
-                ZIndex: =21
-
-            Button12 As button:
-                OnSelect: =ClearCollect(col_result, Filter( ShowColumns(QLK_Zone, "ID_Zone", "ID_ProductZone", "QuantityIsContained"), ID_ProductZone in ShowColumns(col_DetailsExport_HomeAccountant, "IDProduct").IDProduct))
-                Text: ="Button"
-                X: =79
-                Y: =405
-                ZIndex: =22
-
-            Button13 As button:
-                OnSelect: |-
-                    =//ClearCollect(tessst, GroupBy(col_result, "ID_ProductZone", "group"))
-                    
-                    ClearCollect(
-                        getQuantityProducttoExport,
-                        DropColumns(
-                            AddColumns(
-                                GroupBy(
-                                    Filter(
-                                        ShowColumns(QLK_Zone, "ID_Zone", "ID_ProductZone", "QuantityIsContained"), ID_ProductZone in 
-                                        ShowColumns(col_DetailsExport_HomeAccountant, "IDProduct").IDProduct
-                                    ), 
-                                    "ID_ProductZone","GroupedItems"
-                                ),
-                                "ID_Zone", LookUp(GroupedItems, QuantityIsContained = Min(GroupedItems, QuantityIsContained), ID_Zone),
-                                "Min Value", Min(GroupedItems, QuantityIsContained)
-                            ),
-                        "GroupedItems"
-                        )
-                    );
-                Text: ="Button"
-                X: =326
-                Y: =548
-                ZIndex: =23
-
             Label25 As label:
                 Text: =
                 X: =475
                 Y: =364
                 ZIndex: =24
-
-            Button14 As button:
-                OnSelect: |-
-                    =ClearCollect(
-                        testne,
-                                GroupBy(
-                                    Filter(
-                                        ShowColumns(QLK_Zone, "ID_Zone", "ID_ProductZone", "QuantityIsContained"), ID_ProductZone in 
-                                        ShowColumns(col_DetailsExport_HomeAccountant, "IDProduct").IDProduct
-                                    ), 
-                                    "ID_ProductZone","GroupedItems"
-                                )
-                    );
-                Text: ="Button"
-                X: =332
-                Y: =652
-                ZIndex: =25
 
             "'grp_buttonFunction(R_HA)_1' As group":
                 Height: =5
@@ -3933,7 +3886,7 @@ TrangChu_KeToan As screen:
 
                 line_Export_HA_1 As text:
                     BorderStyle: =BorderStyle.None
-                    Default: =Filter(FirstN(IDProduct, 1))
+                    Default: =
                     DisabledFill: =RGBA(127, 235, 117, 1)
                     DisplayMode: =DisplayMode.Disabled
                     Height: =4
