@@ -216,8 +216,9 @@ NhapHangOrder As screen:
                     Fill: =RGBA(255, 255, 255, 0.68)
                     Height: =306
                     Items: |-
-                        =col_AddProductScaned_Import
+                        =//col_AddProductScaned_Import
                         //col_OrderInf_Import
+                        //Filter(QLK_OrderFormInformation
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     TemplatePadding: =0

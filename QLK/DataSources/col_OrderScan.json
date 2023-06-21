@@ -3,7 +3,7 @@
     "IsComponentScoped": false,
     "IsSampleData": false,
     "IsWritable": true,
-    "Name": "col_Import_ScanImport",
+    "Name": "col_OrderScan",
     "Type": "CollectionDataSourceInfo"
   }
 ]

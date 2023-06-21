@@ -423,9 +423,44 @@ NhapHang_3 As screen:
             HoverBorderColor: =RGBA(198, 250, 195, 1)
             HoverContentColor: =RGBA(255, 255, 255, 1)
             HoverFillColor: =RGBA(154, 245, 149, 1)
-            OnScan: |
+            OnScan: |-
                 =ClearCollect(col_ScanOrder_ScanImport, barcode_Import.Barcodes);
+                If(
+                    LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_OrderForm.IDOrder, 
+                    ClearCollect(
+                        col_OrderScan, 
+                        RenameColumns(
+                            ShowColumns(
+                                Filter(QLK_OrderFormInformation, IDOrderForm = LookUp(col_ScanOrder_ScanImport, true, Value)), 
+                                "IDProduct_Supplier", "Quantity", "Price", "TotalPrice"
+                            ),
+                            "IDProduct_Supplier", "IDProduct"
+                        )
+                    ), 
+                    If(
+                        LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ImportForm.IDImport, 
+                        ClearCollect(
+                            col_OrderScan, 
+                            ShowColumns(
+                                Filter(QLK_ImportFormInformation, IDImport = LookUp(col_ScanOrder_ScanImport, true, Value)), 
+                                "IDProduct", "Quantity", "Price", "TotalPrice"
+                            )            
+                        ),
+                        If(
+                            LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ExportForm.IDExport, 
+                            ClearCollect(
+                                col_OrderScan, 
+                                ShowColumns(
+                                    Filter(QLK_ExportFormInformation, IDExportForm = LookUp(col_ScanOrder_ScanImport, true, Value)), 
+                                    "IDProduct", "Quantity", "Price", "TotalPrice"   
+                                )
+                            ), 
+                            Notify("Error", NotificationType.Error)
+                        )
+                    )
+                );
                 
+                /*
                 ClearCollect(col_OrderList_ScanImport, 
                     ShowColumns(Filter(QLK_OrderForm, true), "IDOrder"));
                 
@@ -451,11 +486,12 @@ NhapHang_3 As screen:
                             QLK_OrderFormInformation, 
                             IDOrderForm = (LookUp(col_ScanOrder_ScanImport, true, Value))
                         ), 
-                        "IDOrderForm", "IDProduct_Supplier", "Quantity", "Unit", "Price", "TotalPrice"
+                        "IDOrderForm", "IDProduct_Supplier", "Quantity", "ID_TypeOfDevice", "Price", "TotalPrice"
                     )             
                 );
                 
                 Set(IDImportScan, LookUp(col_ScanOrder_ScanImport, true, Value))
+                */
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
