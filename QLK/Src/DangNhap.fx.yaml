@@ -234,7 +234,7 @@ DangNhap As screen:
                                         "IDOrderForm",
                                         "IDProduct_Supplier",
                                         "Quantity",
-                                        "Unit",
+                                        "ID_TypeOfDevice",
                                         "Price",
                                         "TotalPrice"
                                     ), 
@@ -253,7 +253,7 @@ DangNhap As screen:
                                             "IDImport",
                                             "IDProduct",
                                             "Quantity",
-                                            "Unit",
+                                            "ID_TypeOfDevice",
                                             "Price",
                                             "TotalPrice"
                                         ), 
@@ -271,7 +271,7 @@ DangNhap As screen:
                                                 "IDExportForm",
                                                 "IDProduct",
                                                 "Quantity",
-                                                "Unit",
+                                                "ID_TypeOfDevice",
                                                 "Price",
                                                 "TotalPrice"
                                             ), 
@@ -481,7 +481,7 @@ DangNhap As screen:
                                                 "IDOrderForm",
                                                 "IDProduct_Supplier",
                                                 "Quantity",
-                                                "Unit",
+                                                "ID_TypeOfDevice",
                                                 "Price",
                                                 "TotalPrice"
                                             ), 
@@ -500,7 +500,7 @@ DangNhap As screen:
                                                     "IDImport",
                                                     "IDProduct",
                                                     "Quantity",
-                                                    "Unit",
+                                                    "ID_TypeOfDevice",
                                                     "Price",
                                                     "TotalPrice"
                                                 ), 
@@ -518,7 +518,7 @@ DangNhap As screen:
                                                         "IDExportForm",
                                                         "IDProduct",
                                                         "Quantity",
-                                                        "Unit",
+                                                        "ID_TypeOfDevice",
                                                         "Price",
                                                         "TotalPrice"
                                                     ), 
@@ -538,7 +538,8 @@ DangNhap As screen:
                                 Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
                                 Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, Permission));
                                 Set(fullName, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, FullName));  
-                                Set(imageLogin, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Portrait'));                 
+                                Set(imageLogin, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Portrait'));    
+                                Set(emailLogin, txt_Email_Login.Text);              
                             )
                         )
                     )

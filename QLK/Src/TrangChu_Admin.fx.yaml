@@ -63,8 +63,13 @@ TrangChu_Admin As screen:
                 HoverFill: =RGBA(0, 0, 0, 0)
                 OnSelect: |+
                     =Refresh(QLK_OrderForm);
+                    Refresh(QLK_OrderFormInformation);
                     Refresh(QLK_ImportForm);
+                    Refresh(QLK_ImportFormInformation);
                     Refresh(QLK_ExportForm);
+                    Refresh(QLK_ExportFormInformation);
+                    Refresh(QLK_Product);
+                    Refresh(QLK_Product_Supplier);
                     
                     Reset(gal_DetailOrderPending_HA_DO_HA_6);
                     
@@ -164,7 +169,7 @@ TrangChu_Admin As screen:
                                     "IDOrderForm",
                                     "IDProduct_Supplier",
                                     "Quantity",
-                                    "Unit",
+                                    "ID_TypeOfDevice",
                                     "Price",
                                     "TotalPrice"
                                 ), 
@@ -183,7 +188,7 @@ TrangChu_Admin As screen:
                                         "IDImport",
                                         "IDProduct",
                                         "Quantity",
-                                        "Unit",
+                                        "ID_TypeOfDevice",
                                         "Price",
                                         "TotalPrice"
                                     ), 
@@ -201,7 +206,7 @@ TrangChu_Admin As screen:
                                             "IDExportForm",
                                             "IDProduct",
                                             "Quantity",
-                                            "Unit",
+                                            "ID_TypeOfDevice",
                                             "Price",
                                             "TotalPrice"
                                         ), 
@@ -336,7 +341,7 @@ TrangChu_Admin As screen:
                                 "IDImport",
                                 "IDProduct",
                                 "Quantity",
-                                "Unit",
+                                "ID_TypeOfDevice",
                                 "Price",
                                 "TotalPrice"
                             ), 
@@ -461,7 +466,7 @@ TrangChu_Admin As screen:
                                 "IDOrderForm",
                                 "IDProduct_Supplier",
                                 "Quantity",
-                                "Unit",
+                                "ID_TypeOfDevice",
                                 "Price",
                                 "TotalPrice"
                             ), 
@@ -609,7 +614,7 @@ TrangChu_Admin As screen:
                                 "IDExportForm",
                                 "IDProduct",
                                 "Quantity",
-                                "Unit",
+                                "ID_TypeOfDevice",
                                 "Price",
                                 "TotalPrice"
                             ), 
@@ -1677,7 +1682,7 @@ TrangChu_Admin As screen:
                                         "IDOrderForm",
                                         "IDProduct_Supplier",
                                         "Quantity",
-                                        "Unit",
+                                        "ID_TypeOfDevice",
                                         "Price",
                                         "TotalPrice"
                                     ), 
@@ -1696,7 +1701,7 @@ TrangChu_Admin As screen:
                                             "IDImport",
                                             "IDProduct",
                                             "Quantity",
-                                            "Unit",
+                                            "ID_TypeOfDevice",
                                             "Price",
                                             "TotalPrice"
                                         ), 
@@ -1714,7 +1719,7 @@ TrangChu_Admin As screen:
                                                 "IDExportForm",
                                                 "IDProduct",
                                                 "Quantity",
-                                                "Unit",
+                                                "ID_TypeOfDevice",
                                                 "Price",
                                                 "TotalPrice"
                                             ), 
@@ -1788,7 +1793,7 @@ TrangChu_Admin As screen:
                     Text: ="Approve"
                     Visible: =If(numDatasource = 4, true, false)
                     Width: =184
-                    X: =814
+                    X: =711
                     Y: =677
                     ZIndex: =32
 

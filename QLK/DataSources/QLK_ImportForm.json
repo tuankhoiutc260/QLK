@@ -23,11 +23,11 @@
       "{TriggerWindowEndToken}": "Trigger Window End Token",
       "{TriggerWindowStartToken}": "Trigger Window Start Token",
       "{VersionNumber}": "Version number",
+      "ApprovalDate": "ApprovalDate",
       "Author": "Created By",
       "Author#Claims": "Created By Claims",
       "ComplianceAssetId": "Compliance Asset Id",
       "Created": "Created",
-      "DateCreateNumber": "DateCreateNumber",
       "Editor": "Modified By",
       "Editor#Claims": "Modified By Claims",
       "ID": "ID",
@@ -39,7 +39,9 @@
       "Status": "Status",
       "TimePaid": "TimePaid",
       "Title": "Title",
-      "TotalPrice": "TotalPrice"
+      "TotalPrice": "TotalPrice",
+      "UserCreated": "UserCreated",
+      "UserPaid": "UserPaid"
     },
     "DatasetName": "https://bhktechcorp.sharepoint.com/sites/Khoi",
     "EncodeDataset": true,

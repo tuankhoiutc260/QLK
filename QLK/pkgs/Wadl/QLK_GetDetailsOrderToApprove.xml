@@ -1,0 +1,71 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://asia-001.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="QLK_GetDetailsOrderToApprove" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="QLK_GetDetailsOrderToApprove" />
+  <grammars>
+    <jsonTypes targetNamespace="https://asia-001.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="ManualTriggerInput_GetDetailsFromCollection_Inputs_def" />
+      <string name="ManualTriggerInput_EmailOfManager_Inputs_def" />
+      <integer name="ManualTriggerInput_Updateitem2_Id_def" />
+      <string name="ManualTriggerInput_Compose_Inputs_def" />
+      <string name="ManualTriggerInput_InWhatOrder_Inputs_def" />
+      <integer name="ManualTriggerInput_Updateitem_Id_def" />
+      <string name="ManualTriggerInput_InInpurorNewOrder_Inputs_def" />
+      <integer name="ManualTriggerInput_Updateitem3_Id_def" />
+      <integer name="ManualTriggerInput_Updateitem3_Id_1_def" />
+      <integer name="ManualTriggerInput_Updateitem3_Id_2_def" />
+      <integer name="ManualTriggerInput_UpdatewithExport_Id_def" />
+      <integer name="ManualTriggerInput_ApprovewithExport_Id_def" />
+      <string name="ManualTriggerInput_IDOrder_Inputs_def" />
+      <object name="ManualTriggerInput">
+        <property name="GetDetailsFromCollection_Inputs" type="string" />
+        <property name="EmailOfManager_Inputs" type="string" />
+        <property name="Updateitem2_Id" type="integer" />
+        <property name="Compose_Inputs" type="string" />
+        <property name="InWhatOrder_Inputs" type="string" />
+        <property name="Updateitem_Id" type="integer" />
+        <property name="InInpurorNewOrder_Inputs" type="string" />
+        <property name="Updateitem3_Id" type="integer" />
+        <property name="Updateitem3_Id_1" type="integer" />
+        <property name="Updateitem3_Id_2" type="integer" />
+        <property name="UpdatewithExport_Id" type="integer" />
+        <property name="ApprovewithExport_Id" type="integer" />
+        <property name="IDOrder_Inputs" type="string" />
+      </object>
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://asia-001.azure-apim.net/apim/logicflows">
+    <resource path="/{connectionId}/triggers/manual/run">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="Run">
+        <doc title="Runs a logic flow trigger." />
+        <request>
+          <param style="query" name="api-version" type="xs:string" required="true" fixed="2015-02-01-preview">
+            <doc title="The api version" />
+          </param>
+          <representation mediaType="application/json">
+            <param style="plain" name="GetDetailsFromCollection_Inputs" path="/GetDetailsFromCollection_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="EmailOfManager_Inputs" path="/EmailOfManager_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="Updateitem2_Id" path="/Updateitem2_Id" type="xs:long" required="true" />
+            <param style="plain" name="Compose_Inputs" path="/Compose_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="InWhatOrder_Inputs" path="/InWhatOrder_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="Updateitem_Id" path="/Updateitem_Id" type="xs:long" required="true" />
+            <param style="plain" name="InInpurorNewOrder_Inputs" path="/InInpurorNewOrder_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="Updateitem3_Id" path="/Updateitem3_Id" type="xs:long" required="true" />
+            <param style="plain" name="Updateitem3_Id_1" path="/Updateitem3_Id_1" type="xs:long" required="true" />
+            <param style="plain" name="Updateitem3_Id_2" path="/Updateitem3_Id_2" type="xs:long" required="true" />
+            <param style="plain" name="UpdatewithExport_Id" path="/UpdatewithExport_Id" type="xs:long" required="true" />
+            <param style="plain" name="ApprovewithExport_Id" path="/ApprovewithExport_Id" type="xs:long" required="true" />
+            <param style="plain" name="IDOrder_Inputs" path="/IDOrder_Inputs" type="xs:string" required="true" />
+          </representation>
+        </request>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="logicflows" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>
