@@ -436,7 +436,8 @@ NhapHang_3 As screen:
                             ),
                             "IDProduct_Supplier", "IDProduct"
                         )
-                    ), 
+                    );
+                    Navigate(NhapHangOrder), 
                     If(
                         LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ImportForm.IDImport, 
                         ClearCollect(
@@ -445,7 +446,8 @@ NhapHang_3 As screen:
                                 Filter(QLK_ImportFormInformation, IDImport = LookUp(col_ScanOrder_ScanImport, true, Value)), 
                                 "IDProduct", "Quantity", "Price", "TotalPrice"
                             )            
-                        ),
+                        );
+                        Navigate(NhapHangOrder),
                         If(
                             LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ExportForm.IDExport, 
                             ClearCollect(
@@ -454,7 +456,8 @@ NhapHang_3 As screen:
                                     Filter(QLK_ExportFormInformation, IDExportForm = LookUp(col_ScanOrder_ScanImport, true, Value)), 
                                     "IDProduct", "Quantity", "Price", "TotalPrice"   
                                 )
-                            ), 
+                            );
+                            Navigate(NhapHangOrder), 
                             Notify("Error", NotificationType.Error)
                         )
                     )

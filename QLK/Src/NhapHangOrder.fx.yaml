@@ -219,6 +219,7 @@ NhapHangOrder As screen:
                         =//col_AddProductScaned_Import
                         //col_OrderInf_Import
                         //Filter(QLK_OrderFormInformation
+                        col_OrderScan
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     TemplatePadding: =0

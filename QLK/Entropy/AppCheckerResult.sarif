@@ -28281,7 +28281,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 744,
+                  "charOffset": 774,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -28321,7 +28321,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 742,
+                  "charOffset": 772,
                   "snippet": {
                     "text": "="
                   }
@@ -28361,7 +28361,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 1157,
+                  "charOffset": 1221,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -28401,7 +28401,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1155,
+                  "charOffset": 1219,
                   "snippet": {
                     "text": "="
                   }
@@ -32419,46 +32419,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "NhapHangOrder.'cont_ImportProduct(cIP)'.'cont_InformationProduct_ImportProduct(cIP_IP)'.'cont_InformationProduct_ImportProduct(cIP_IP2)'.gal_InformationProduct_cIP_IP2.lbl_ValueQuantityOrder_cIP_IP2.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NhapHangOrder.'cont_ImportProduct(cIP)'.'cont_InformationProduct_ImportProduct(cIP_IP)'.'cont_InformationProduct_ImportProduct(cIP_IP2)'.gal_InformationProduct_cIP_IP2.lbl_ValueQuantityOrder_cIP_IP2.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 9,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".Quantity"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "NhapHangOrder",
-                "type": "NhapHangOrder.'cont_ImportProduct(cIP)'.'cont_InformationProduct_ImportProduct(cIP_IP)'.'cont_InformationProduct_ImportProduct(cIP_IP2)'.gal_InformationProduct_cIP_IP2.lbl_ValueQuantityOrder_cIP_IP2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Quantity"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "NhapHangOrder.'cont_ImportProduct(cIP)'.'cont_InformationProduct_ImportProduct(cIP_IP)'.'cont_InformationProduct_ImportProduct(cIP_IP2)'.gal_InformationProduct_cIP_IP2.lbl_ValuePrice_cIP_IP2.Text"
                 }
               ],
@@ -32615,46 +32575,6 @@
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
           "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NhapHangOrder.'cont_ImportProduct(cIP)'.'cont_InformationProduct_ImportProduct(cIP_IP)'.'cont_InformationProduct_ImportProduct(cIP_IP2)'.gal_InformationProduct_cIP_IP2.txt_ValueQuantity_cIP_IP2.Color"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NhapHangOrder.'cont_ImportProduct(cIP)'.'cont_InformationProduct_ImportProduct(cIP_IP)'.'cont_InformationProduct_ImportProduct(cIP_IP2)'.gal_InformationProduct_cIP_IP2.txt_ValueQuantity_cIP_IP2.Color",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 9,
-                  "charOffset": 51,
-                  "snippet": {
-                    "text": ".Quantity"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Color",
-                "module": "NhapHangOrder",
-                "type": "NhapHangOrder.'cont_ImportProduct(cIP)'.'cont_InformationProduct_ImportProduct(cIP_IP)'.'cont_InformationProduct_ImportProduct(cIP_IP2)'.gal_InformationProduct_cIP_IP2.txt_ValueQuantity_cIP_IP2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Quantity"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 1
         },
         {
           "locations": [
@@ -32857,86 +32777,6 @@
           },
           "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
           "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NhapHangOrder.'cont_InformationProduct_IP(cIFP)'.lbl_PriceProduct_cIFP.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NhapHangOrder.'cont_InformationProduct_IP(cIFP)'.lbl_PriceProduct_cIFP.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 6,
-                  "charOffset": 44,
-                  "snippet": {
-                    "text": ".Price"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "NhapHangOrder",
-                "type": "NhapHangOrder.'cont_InformationProduct_IP(cIFP)'.lbl_PriceProduct_cIFP"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Price"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "NhapHangOrder.'cont_InformationProduct_IP(cIFP)'.lbl_PriceProduct_cIFP.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "NhapHangOrder.'cont_InformationProduct_IP(cIFP)'.lbl_PriceProduct_cIFP.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 69,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "Text(gal_InformationProduct_cIP_IP2.Selected.Price, \"#,###\" & \" VND\")"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "NhapHangOrder",
-                "type": "NhapHangOrder.'cont_InformationProduct_IP(cIFP)'.lbl_PriceProduct_cIFP"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Text"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidArgs-Func",
-          "ruleIndex": 4
         },
         {
           "locations": [
