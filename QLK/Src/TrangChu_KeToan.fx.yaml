@@ -902,11 +902,8 @@ TrangChu_KeToan As screen:
                                 )
                             );
                             
-                            QLK_ApproveImportOrder.Run(
-                                JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), 
-                                "devapps@bhk.vn", 0, 
-                                LookUp(QLK_Account, Gmail = emailLogin, FullName), 
-                            );
+                            QLK_Approve_Import_Orders.Run(JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), "devapps@bhk.vn",
+                                LookUp(QLK_Account, Gmail = emailLogin, FullName), Sum(col_DetailsImport_HomeAccountant, TotalPrice), 0, LookUp(QLK_ImportForm, IDImport = NewIDImportOrder_HomeAccountant, ID), LookUp(QLK_ImportForm, IDImport = NewIDImportOrder_HomeAccountant, ID));
                             
                             Clear(col_DetailsImport_HomeAccountant);
                         OnTimerEnd: |-
@@ -3544,9 +3541,7 @@ TrangChu_KeToan As screen:
                 ZIndex: =19
 
             Button4 As button:
-                OnSelect: |-
-                    =//QLK_GetDetailsOrderToApprove.Run(JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes),  "devapps@bhk.vn")
-                    QLK_ApproveImportOrder.Run(JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), "devapps@bhk.vn", 2, "Khoi", "Import", 0, 0, "Input",  NewIDImportOrder_HomeAccountant, "Ko co")
+                OnSelect: =
                 Text: ="Button"
                 X: =179
                 Y: =534
