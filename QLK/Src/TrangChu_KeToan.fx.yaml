@@ -3536,7 +3536,7 @@ TrangChu_KeToan As screen:
                 ZIndex: =19
 
             Button4 As button:
-                OnSelect: =QLK_GetDetailsOrderToApprove.Run(JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes),  "devapps@bhk.vn")
+                OnSelect: =
                 Text: ="Button"
                 X: =179
                 Y: =534
