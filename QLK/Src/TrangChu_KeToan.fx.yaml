@@ -2965,6 +2965,25 @@ TrangChu_KeToan As screen:
                         OnSelect: |+
                             =Set(NewIDImportOrder_HomeAccountant, "OD" & Text(Now(), "ddmmyyyyhhmmss"));
                             
+                            /*
+                            
+                            ForAll(col_DetailsNewOrder_HomeAccountant, 
+                                QLK_OrderInformation.Run(
+                                    NewIDImportOrder_HomeAccountant,
+                                    col_DetailsNewOrder_HomeAccountant[@IDProduct],
+                                    Value(LookUp(gal_DetailsOrdered_cOHA1_2.AllItems, IDProduct = col_DetailsNewOrder_HomeAccountant[@IDProduct], TextInput7.Text)),
+                                    Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_DetailsNewOrder_HomeAccountant[@IDProduct], ID_Unit)),
+                                    Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_DetailsNewOrder_HomeAccountant[@IDProduct], 'Price_Pro-Supplier')),
+                                    Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_DetailsNewOrder_HomeAccountant[@IDProduct], 'Price_Pro-Supplier') * 
+                                        LookUp(gal_DetailsOrdered_cOHA1_2.AllItems, IDProduct = col_DetailsNewOrder_HomeAccountant[@IDProduct], TextInput7.Text))
+                                )
+                            );
+                            
+                            */
+                            
+                            
+                            
+                            
                             
                             
                             Patch(QLK_OrderForm, Defaults(QLK_OrderForm),

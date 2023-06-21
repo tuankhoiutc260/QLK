@@ -1,38 +1,4 @@
 {
-  "18fe63c4-e077-4915-b35b-f14a37f074ba": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "276c7d45-bfe7-4b38-b653-48308dff6f77": {
-          "value": "shared_sharepointonline"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "3a7b23e6-98fe-4666-b44c-c6adb7a19e6e"
-        }
-      },
-      "parameterHintsV2": {
-        "shared_sharepointonline": {
-          "value": "276c7d45-bfe7-4b38-b653-48308dff6f77"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "3a7b23e6-98fe-4666-b44c-c6adb7a19e6e"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "QLK_OrderInformation"
-    ],
-    "dependencies": {
-      "shared_sharepointonline": "276c7d45-bfe7-4b38-b653-48308dff6f77"
-    },
-    "dependents": [],
-    "id": "18fe63c4-e077-4915-b35b-f14a37f074ba"
-  },
   "276c7d45-bfe7-4b38-b653-48308dff6f77": {
     "connectionRef": {
       "apiTier": "Standard",
@@ -113,7 +79,7 @@
     "dependencies": {},
     "dependents": [
       "7c1d17ea-3347-4837-b9cb-339554c01667",
-      "18fe63c4-e077-4915-b35b-f14a37f074ba"
+      "d6a9de7e-93ac-40b2-9189-8f0a772e025e"
     ],
     "id": "276c7d45-bfe7-4b38-b653-48308dff6f77"
   },
