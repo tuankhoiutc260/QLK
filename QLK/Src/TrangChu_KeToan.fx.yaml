@@ -709,7 +709,7 @@ TrangChu_KeToan As screen:
                                 ) */
                                 
                                 //LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct, 'Image_Pro-Supplier')
-                                LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, 'Image')
+                                LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, Image)
                             RadiusBottomLeft: =15
                             RadiusBottomRight: =15
                             RadiusTopLeft: =15
@@ -3514,23 +3514,6 @@ TrangChu_KeToan As screen:
                         Y: =75
                         ZIndex: =9
 
-            Button4 As button:
-                OnSelect: |-
-                    =//SendEmailApprove.Run(JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), LookUp(QLK_Account, Permission.Value = "Manager", Gmail))
-                    Clear(col_DetailsExport_HomeAccountant);
-                Text: ="Button"
-                X: =202
-                Y: =497
-                ZIndex: =16
-
-            Label25 As label:
-                Height: =193
-                Text: =LookUp(QLK_Account, Permission.Value = "Manager", Gmail)
-                Width: =228
-                X: =362
-                Y: =421
-                ZIndex: =17
-
             Image4_31 As image:
                 Height: =62
                 Image: =Logo
@@ -3540,11 +3523,24 @@ TrangChu_KeToan As screen:
                 ZIndex: =18
 
             Button11 As button:
-                OnSelect: =QLK_GetDetailsOrderToApprove.Run(JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), "devapps@bhk.vn", 
+                OnSelect: |-
+                    =//QLK_GetDetailsOrderToApprove.Run(JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), "devapps@bhk.vn", 
+                    
+                    QLK_ApproveOrder.Run(
+                        JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), 
+                        "devapps@bhk.vn"
+                    )
                 Text: ="Button"
-                X: =462
-                Y: =616
+                X: =406
+                Y: =672
                 ZIndex: =19
+
+            Button4 As button:
+                OnSelect: =QLK_GetDetailsOrderToApprove.Run(JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes),  "devapps@bhk.vn")
+                Text: ="Button"
+                X: =179
+                Y: =534
+                ZIndex: =20
 
             "'grp_buttonFunction(R_HA)_1' As group":
                 Height: =5

@@ -14,7 +14,6 @@
       <integer name="ManualTriggerInput_Updateitem3_Id_2_def" />
       <integer name="ManualTriggerInput_UpdatewithExport_Id_def" />
       <integer name="ManualTriggerInput_ApprovewithExport_Id_def" />
-      <string name="ManualTriggerInput_IDOrder_Inputs_def" />
       <object name="ManualTriggerInput">
         <property name="GetDetailsFromCollection_Inputs" type="string" />
         <property name="EmailOfManager_Inputs" type="string" />
@@ -28,7 +27,6 @@
         <property name="Updateitem3_Id_2" type="integer" />
         <property name="UpdatewithExport_Id" type="integer" />
         <property name="ApprovewithExport_Id" type="integer" />
-        <property name="IDOrder_Inputs" type="string" />
       </object>
     </jsonTypes>
   </grammars>
@@ -54,7 +52,6 @@
             <param style="plain" name="Updateitem3_Id_2" path="/Updateitem3_Id_2" type="xs:long" required="true" />
             <param style="plain" name="UpdatewithExport_Id" path="/UpdatewithExport_Id" type="xs:long" required="true" />
             <param style="plain" name="ApprovewithExport_Id" path="/ApprovewithExport_Id" type="xs:long" required="true" />
-            <param style="plain" name="IDOrder_Inputs" path="/IDOrder_Inputs" type="xs:string" required="true" />
           </representation>
         </request>
       </method>
