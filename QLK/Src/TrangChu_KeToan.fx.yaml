@@ -542,7 +542,7 @@ TrangChu_KeToan As screen:
                         Y: =26
                         ZIndex: =2
 
-                    Label25_10 As label:
+                    lbl_NameProduct_Import_HomeAccoutant As label:
                         Align: =Align.Center
                         AutoHeight: =true
                         FontWeight: =FontWeight.Semibold
@@ -587,8 +587,9 @@ TrangChu_KeToan As screen:
                         HoverBorderColor: =RGBA(219, 219, 219, 1)
                         HoverFill: =
                         OnSelect: |+
-                            =Set(IDProduct_HomeAccountant, ThisItem.IDProduct);
-                            Set(QuantityProduct_HomeAccountant, ThisItem.Quantity);
+                            =Set(IDProduct_Import_HomeAccountant, ThisItem.IDProduct);
+                            Set(QuantityProduct_Import_HomeAccountant, ThisItem.Quantity);
+                            Set(NameProduct_Import_HomeAccountant, gal_ImportProduct_Accoutant.Selected.lbl_NameProduct_Import_HomeAccoutant.Text);
                             Set(visible_grp_InputImportQuantity_HomeAccoutant, true);
                             
                             
@@ -3536,7 +3537,9 @@ TrangChu_KeToan As screen:
                 ZIndex: =19
 
             Button4 As button:
-                OnSelect: =
+                OnSelect: |-
+                    =//QLK_GetDetailsOrderToApprove.Run(JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes),  "devapps@bhk.vn")
+                    QLK_GetDetailsOrderToApprove.Run(
                 Text: ="Button"
                 X: =179
                 Y: =534
@@ -4053,7 +4056,7 @@ TrangChu_KeToan As screen:
 
         TextInput3 As text:
             Align: =Align.Center
-            Color: =If(Value(Self.Text) > QuantityProduct_HomeAccountant, Color.Red, Color.Black)
+            Color: =If(Value(Self.Text) > QuantityProduct_Import_HomeAccountant, Color.Red, Color.Black)
             Default: =""
             Format: =TextFormat.Number
             Reset: =true
@@ -4064,7 +4067,7 @@ TrangChu_KeToan As screen:
             ZIndex: =8
 
         Label27_1 As label:
-            Text: =" / " & QuantityProduct_HomeAccountant
+            Text: =" / " & QuantityProduct_Import_HomeAccountant
             Visible: =visible_grp_InputImportQuantity_HomeAccoutant
             Width: =94
             X: =791
@@ -4075,7 +4078,7 @@ TrangChu_KeToan As screen:
             BorderColor: =RGBA(127, 235, 117, 1)
             BorderThickness: =1
             Color: =RGBA(38, 240, 95, 1)
-            DisplayMode: =If(Value(TextInput3.Text) > QuantityProduct_HomeAccountant || Value(TextInput3.Text) <= 0, DisplayMode.Disabled, DisplayMode.Edit)
+            DisplayMode: =If(Value(TextInput3.Text) > QuantityProduct_Import_HomeAccountant || Value(TextInput3.Text) <= 0, DisplayMode.Disabled, DisplayMode.Edit)
             Fill: =RGBA(255, 255, 255, 1)
             FontWeight: =FontWeight.Bold
             HoverBorderColor: =RGBA(127, 235, 117, 1)
@@ -4086,27 +4089,28 @@ TrangChu_KeToan As screen:
                 
                 UpdateIf(
                     col_ImportRequest_HomeAccountant, 
-                    IDProduct = IDProduct_HomeAccountant, 
+                    IDProduct = IDProduct_Import_HomeAccountant, 
                     {
-                        Quantity: LookUp(col_ImportRequest_HomeAccountant, IDProduct = IDProduct_HomeAccountant, Quantity) - Value(TextInput3.Text)
+                        Quantity: LookUp(col_ImportRequest_HomeAccountant, IDProduct = IDProduct_Import_HomeAccountant, Quantity) - Value(TextInput3.Text)
                     }
                 );
                 
                 If(
-                    IDProduct_HomeAccountant in col_DetailsImport_HomeAccountant[@IDProduct],
+                    IDProduct_Import_HomeAccountant in col_DetailsImport_HomeAccountant[@IDProduct],
                     UpdateIf(
                         col_DetailsImport_HomeAccountant, 
-                        IDProduct = IDProduct_HomeAccountant, 
+                        IDProduct = IDProduct_Import_HomeAccountant, 
                         {
-                            Quantity: LookUp(col_DetailsImport_HomeAccountant, IDProduct = IDProduct_HomeAccountant, Quantity) + Value(TextInput3.Text)
+                            Quantity: LookUp(col_DetailsImport_HomeAccountant, IDProduct = IDProduct_Import_HomeAccountant, Quantity) + Value(TextInput3.Text)
                         }
                     ),
                     Collect(col_DetailsImport_HomeAccountant,
                     {
-                        IDProduct: IDProduct_HomeAccountant,
+                        IDProduct: IDProduct_Import_HomeAccountant,
+                        Name: NameProduct_Import_HomeAccountant,
                         Quantity: Value(TextInput3.Text),
-                        Price: LookUp(QLK_Product, IDProduct = IDProduct_HomeAccountant, InputPrice), 
-                        TotalPrice: Value(TextInput3.Text) * LookUp(QLK_Product, IDProduct = IDProduct_HomeAccountant, InputPrice)
+                        Price: LookUp(QLK_Product, IDProduct = IDProduct_Import_HomeAccountant, InputPrice), 
+                        TotalPrice: Value(TextInput3.Text) * LookUp(QLK_Product, IDProduct = IDProduct_Import_HomeAccountant, InputPrice)
                     } );
                 
                 );    
