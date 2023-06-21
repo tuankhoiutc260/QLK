@@ -80,9 +80,51 @@
     "dependents": [
       "7c1d17ea-3347-4837-b9cb-339554c01667",
       "6a2b44ed-a442-49e7-9f16-fe86d7ee5099",
-      "bb893d7c-c407-44f9-bfd5-7b8f66c27807"
+      "bb893d7c-c407-44f9-bfd5-7b8f66c27807",
+      "3fa0a56f-7e03-42a5-9f70-ca60821ffaef"
     ],
     "id": "276c7d45-bfe7-4b38-b653-48308dff6f77"
+  },
+  "3fa0a56f-7e03-42a5-9f70-ca60821ffaef": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "276c7d45-bfe7-4b38-b653-48308dff6f77": {
+          "value": "shared_sharepointonline"
+        },
+        "6163a375-9043-4469-818a-cba8353da2be": {
+          "value": "shared_office365"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "fcc75421-535a-4870-bc5b-b5c623527e58"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365": {
+          "value": "6163a375-9043-4469-818a-cba8353da2be"
+        },
+        "shared_sharepointonline": {
+          "value": "276c7d45-bfe7-4b38-b653-48308dff6f77"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "fcc75421-535a-4870-bc5b-b5c623527e58"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "QLK_Approve_Export_Orders"
+    ],
+    "dependencies": {
+      "shared_office365": "6163a375-9043-4469-818a-cba8353da2be",
+      "shared_sharepointonline": "276c7d45-bfe7-4b38-b653-48308dff6f77"
+    },
+    "dependents": [],
+    "id": "3fa0a56f-7e03-42a5-9f70-ca60821ffaef"
   },
   "6163a375-9043-4469-818a-cba8353da2be": {
     "connectionRef": {
@@ -100,7 +142,8 @@
     "dependencies": {},
     "dependents": [
       "7c1d17ea-3347-4837-b9cb-339554c01667",
-      "bb893d7c-c407-44f9-bfd5-7b8f66c27807"
+      "bb893d7c-c407-44f9-bfd5-7b8f66c27807",
+      "3fa0a56f-7e03-42a5-9f70-ca60821ffaef"
     ],
     "id": "6163a375-9043-4469-818a-cba8353da2be"
   },

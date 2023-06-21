@@ -383,7 +383,7 @@ TrangChu_KeToan As screen:
                 OnSelect: |-
                     =Reset(gal_ExportProduct_Accoutant);
                     Refresh(QLK_Product);
-                    
+                    If(CountRows(col_DetailsExport_HomeAccountant) = 0, Set(NoRow_col_DetailsExport_HomeAccountant, 0));
                     Set(colorBtnOrdered_Accountant, Color.Black);
                     Set(fillBtnOrdered_Accountant, RGBA(0, 0, 0, 0));
                     Set(colorBtnImport_Accoutant, Color.Black);
@@ -468,6 +468,16 @@ TrangChu_KeToan As screen:
                     border-radius:15px
                     '></div>" 
                 Width: =1158
+                ZIndex: =1
+
+            Gallery1 As gallery.galleryVertical:
+                DelayItemLoading: =true
+                Items: =GroupBy(col_result, "ID_ProductZone", "group")
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplateSize: =If(Self.Layout = Layout.Horizontal, Min(280, Self.Width - 60), Min(280, Self.Height - 60))
+                X: =100
+                Y: =42
                 ZIndex: =1
 
             cont_Import_HomeAccountant As groupContainer.manualLayoutContainer:
@@ -3142,7 +3152,7 @@ TrangChu_KeToan As screen:
                         Y: =26
                         ZIndex: =2
 
-                    Label25_12 As label:
+                    lbl_NameProductExport_HomeAccountant As label:
                         Align: =Align.Center
                         AutoHeight: =true
                         FontWeight: =FontWeight.Semibold
@@ -3205,7 +3215,7 @@ TrangChu_KeToan As screen:
                             Set(PriceProductExport_HomeAccountant, ThisItem.Price);
                             Set(QuantityProductExport_HomeAccountant, ThisItem.QuantityInStock);
                             Set(visible_grp_InputExportQuantity_HomeAccoutant, true);
-                            
+                            Set(NameProductExport_HomeAccountant, gal_ExportProduct_Accoutant.Selected.lbl_NameProductExport_HomeAccountant.Text);
                             /*
                             ClearCollect(
                                 RenameColumns(
@@ -3360,6 +3370,7 @@ TrangChu_KeToan As screen:
                             Icon: =Icon.Cancel
                             OnSelect: |+
                                 =RemoveIf(col_DetailsExport_HomeAccountant, IDProduct = ThisItem.IDProduct);
+                                Set(NoRow_col_DetailsExport_HomeAccountant, NoRow_col_DetailsExport_HomeAccountant - 1);
                                 UpdateIf(
                                     col_ProductInWarehouse_HomeAccountant, 
                                     ID = ThisItem.IDProduct, 
@@ -3460,7 +3471,7 @@ TrangChu_KeToan As screen:
                         DisabledBorderColor: =RGBA(166, 166, 166, 1)
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         DisabledFill: =RGBA(244, 244, 244, 1)
-                        DisplayMode: =
+                        DisplayMode: =If(CountRows(col_DetailsExport_HomeAccountant) = 0, DisplayMode.Disabled, DisplayMode.Edit)
                         Duration: =2000
                         Fill: =RGBA(205, 247, 205, 1)
                         FontWeight: =FontWeight.Semibold
@@ -3500,6 +3511,41 @@ TrangChu_KeToan As screen:
                                 )
                             );
                             
+                            ClearCollect(
+                                col_getQuantityProducttoExport,
+                                DropColumns(
+                                    AddColumns(
+                                        GroupBy(
+                                            Filter(
+                                                ShowColumns(QLK_Zone, "ID_Zone", "ID_ProductZone", "QuantityIsContained"), ID_ProductZone in 
+                                                ShowColumns(col_DetailsExport_HomeAccountant, "IDProduct").IDProduct
+                                            ), 
+                                            "ID_ProductZone","GroupedItems"
+                                        ),
+                                        "ID_Zone", LookUp(GroupedItems, QuantityIsContained = Min(GroupedItems, QuantityIsContained), ID_Zone),
+                                        "Min_Value", Min(GroupedItems, QuantityIsContained)
+                                    ),
+                                "GroupedItems"
+                                )
+                            );
+                            
+                            ForAll(
+                                col_DetailsExport_HomeAccountant As T,
+                                UpdateIf(
+                                    getQuantityProducttoExport, 
+                                    ID_ProductZone = T.IDProduct, 
+                                    {
+                                        'in_Value: getQuantityProducttoExport[@'Min Value'] - col_DetailsExport_HomeAccountant[@Quantity
+                                    }
+                                )
+                            );
+                            
+                            
+                            QLK_Approve_Export_Orders.Run(JSON(col_DetailsExport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), "devapps@bhk.vn", 
+                                LookUp(QLK_Account, Gmail = emailLogin, FullName), Sum(col_DetailsExport_HomeAccountant, TotalPrice), 
+                                LookUp(QLK_ExportForm, IDExport = NewIDExport_HomeAccountant, ID), LookUp(QLK_ExportForm, IDExport = NewIDExport_HomeAccountant, ID)
+                            );
+                            
                             Clear(col_DetailsExport_HomeAccountant);
                         OnTimerEnd: |-
                             =Set(showSuccess, false) && 
@@ -3510,7 +3556,7 @@ TrangChu_KeToan As screen:
                         RadiusTopLeft: =20
                         RadiusTopRight: =20
                         Start: =
-                        Text: ="Order"
+                        Text: ="Create Export Order"
                         Visible: =visible_cont_Export_HomeAccountant
                         Width: =232
                         X: =797
@@ -3579,6 +3625,76 @@ TrangChu_KeToan As screen:
                 X: =475
                 Y: =21
                 ZIndex: =18
+
+            Button10 As button:
+                OnSelect: =ClearCollect(col_ProductInZone, ShowColumns(QLK_Zone, "ID_Zone", "ID_ProductZone", "QuantityIsContained"))
+                Text: ="Button"
+                X: =56
+                Y: =572
+                ZIndex: =19
+
+            Button11 As button:
+                OnSelect: =ClearCollect(col_IDInDetails_Export_HomeAccountant, ShowColumns(col_DetailsExport_HomeAccountant, "IDProduct"))
+                Text: ="ID In Detail"
+                X: =56
+                Y: =506
+                ZIndex: =21
+
+            Button12 As button:
+                OnSelect: =ClearCollect(col_result, Filter( ShowColumns(QLK_Zone, "ID_Zone", "ID_ProductZone", "QuantityIsContained"), ID_ProductZone in ShowColumns(col_DetailsExport_HomeAccountant, "IDProduct").IDProduct))
+                Text: ="Button"
+                X: =79
+                Y: =405
+                ZIndex: =22
+
+            Button13 As button:
+                OnSelect: |-
+                    =//ClearCollect(tessst, GroupBy(col_result, "ID_ProductZone", "group"))
+                    
+                    ClearCollect(
+                        getQuantityProducttoExport,
+                        DropColumns(
+                            AddColumns(
+                                GroupBy(
+                                    Filter(
+                                        ShowColumns(QLK_Zone, "ID_Zone", "ID_ProductZone", "QuantityIsContained"), ID_ProductZone in 
+                                        ShowColumns(col_DetailsExport_HomeAccountant, "IDProduct").IDProduct
+                                    ), 
+                                    "ID_ProductZone","GroupedItems"
+                                ),
+                                "ID_Zone", LookUp(GroupedItems, QuantityIsContained = Min(GroupedItems, QuantityIsContained), ID_Zone),
+                                "Min Value", Min(GroupedItems, QuantityIsContained)
+                            ),
+                        "GroupedItems"
+                        )
+                    );
+                Text: ="Button"
+                X: =326
+                Y: =548
+                ZIndex: =23
+
+            Label25 As label:
+                Text: =
+                X: =475
+                Y: =364
+                ZIndex: =24
+
+            Button14 As button:
+                OnSelect: |-
+                    =ClearCollect(
+                        testne,
+                                GroupBy(
+                                    Filter(
+                                        ShowColumns(QLK_Zone, "ID_Zone", "ID_ProductZone", "QuantityIsContained"), ID_ProductZone in 
+                                        ShowColumns(col_DetailsExport_HomeAccountant, "IDProduct").IDProduct
+                                    ), 
+                                    "ID_ProductZone","GroupedItems"
+                                )
+                    );
+                Text: ="Button"
+                X: =332
+                Y: =652
+                ZIndex: =25
 
             "'grp_buttonFunction(R_HA)_1' As group":
                 Height: =5
@@ -3817,7 +3933,7 @@ TrangChu_KeToan As screen:
 
                 line_Export_HA_1 As text:
                     BorderStyle: =BorderStyle.None
-                    Default: =""
+                    Default: =Filter(FirstN(IDProduct, 1))
                     DisabledFill: =RGBA(127, 235, 117, 1)
                     DisplayMode: =DisplayMode.Disabled
                     Height: =4
@@ -4389,6 +4505,8 @@ TrangChu_KeToan As screen:
             OnSelect: |-
                 =Set(visible_grp_InputExportQuantity_HomeAccoutant, false);
                 
+                Set(NoRow_col_DetailsExport_HomeAccountant, NoRow_col_DetailsExport_HomeAccountant + 1);
+                
                 UpdateIf(
                     col_ProductInWarehouse_HomeAccountant, 
                     ID = IDProductExport_HomeAccountant, 
@@ -4408,6 +4526,8 @@ TrangChu_KeToan As screen:
                     ),
                     Collect(col_DetailsExport_HomeAccountant,
                         {
+                            No: NoRow_col_DetailsExport_HomeAccountant,
+                            Name: NameProductExport_HomeAccountant,
                             IDProduct: IDProductExport_HomeAccountant,
                             Quantity: Value(TextInput3_2.Text),
                             Price: PriceProductExport_HomeAccountant,
