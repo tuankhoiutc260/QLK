@@ -400,6 +400,7 @@ TrangChu_KeToan As screen:
                     Set(StatusOfAccountant, 3); // 1: Cac phieu da order, 2: Import phieu moi, 3: Order hang moi
                     
                     // Create collection Product Order not Warehouse
+                    If(CountRows(col_DetailsExport_HomeAccountant) = 0,
                     ClearCollect(
                         col_ProductInWarehouse_HomeAccountant, 
                         RenameColumns(
@@ -421,7 +422,7 @@ TrangChu_KeToan As screen:
                             "Name", "Name",
                             "OutputPrice", "Price"
                         )
-                    );
+                    ));
                     
                     //Reset(TextInput6_1);
                 PressedColor: =RGBA(255, 255, 255, 1)
@@ -562,7 +563,7 @@ TrangChu_KeToan As screen:
                             =Text(LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, InputPrice), "#,###" & " VND")
                         Width: =108
                         X: =426
-                        Y: =49
+                        Y: =41
                         ZIndex: =5
 
                     Label27_21 As label:
@@ -3245,7 +3246,7 @@ TrangChu_KeToan As screen:
                     Height: =46
                     OnSelect: =
                     Size: =9
-                    Text: ="Quantity of Request"
+                    Text: ="Quantity in stock"
                     Width: =133
                     X: =548
                     Y: =36
@@ -3363,7 +3364,7 @@ TrangChu_KeToan As screen:
                                     col_ProductInWarehouse_HomeAccountant, 
                                     ID = ThisItem.IDProduct, 
                                     {
-                                        Quantity: LookUp(col_ProductInWarehouse_HomeAccountant, ID = ThisItem.IDProduct, Quantity) + ThisItem.QuantityInStock
+                                        QuantityInStock: LookUp(col_ProductInWarehouse_HomeAccountant, ID = ThisItem.IDProduct, QuantityInStock) + ThisItem.Quantity
                                     }
                                 );
                                 
@@ -3392,7 +3393,7 @@ TrangChu_KeToan As screen:
                             HoverFill: =RGBA(127, 235, 117, 0.5)
                             OnChange: |+
                                 =//Set(newQuantityProductExport_HomeAccountant, LookUp(col_DetailsExport_HomeAccountant, IDProduct = ThisItem.IDProduct, QuantityInStock));
-                                ThisItem.QuantityInStock;
+                                ThisItem.Quantity;
                                 /*
                                 UpdateIf(
                                     col_ProductInWarehouse_HomeAccountant, 
@@ -3460,7 +3461,7 @@ TrangChu_KeToan As screen:
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         DisabledFill: =RGBA(244, 244, 244, 1)
                         DisplayMode: =
-                        Duration: =
+                        Duration: =2000
                         Fill: =RGBA(205, 247, 205, 1)
                         FontWeight: =FontWeight.Semibold
                         Height: =60
@@ -3483,10 +3484,10 @@ TrangChu_KeToan As screen:
                                     {
                                         IDExportForm: NewIDExport_HomeAccountant,
                                         IDProduct: col_DetailsExport_HomeAccountant[@IDProduct],
-                                        Quantity: col_DetailsExport_HomeAccountant[@QuantityInStock],
+                                        Quantity: col_DetailsExport_HomeAccountant[@Quantity],
                                         ID_TypeOfDevice: LookUp(QLK_Product, IDProduct = col_DetailsExport_HomeAccountant[@IDProduct], ID_TypeOfDevice),
                                         Price: col_DetailsExport_HomeAccountant[@Price],
-                                        TotalPrice: col_DetailsExport_HomeAccountant[@QuantityInStock] * col_DetailsExport_HomeAccountant[@Price]
+                                        TotalPrice: col_DetailsExport_HomeAccountant[@Quantity] * col_DetailsExport_HomeAccountant[@Price]
                                     }
                                 )
                             );
@@ -3494,7 +3495,7 @@ TrangChu_KeToan As screen:
                             ForAll(col_DetailsExport_HomeAccountant, 
                                 Patch(QLK_Product, LookUp(QLK_Product, IDProduct = col_DetailsExport_HomeAccountant[@IDProduct]),
                                     {
-                                        Quantity: LookUp(QLK_Product, IDProduct = col_DetailsExport_HomeAccountant[@IDProduct], Quantity) - col_DetailsExport_HomeAccountant[@Quantity]
+                                        QuantityInStock: LookUp(QLK_Product, IDProduct = col_DetailsExport_HomeAccountant[@IDProduct], QuantityInStock) - col_DetailsExport_HomeAccountant[@Quantity]
                                     }
                                 )
                             );
@@ -4392,7 +4393,7 @@ TrangChu_KeToan As screen:
                     col_ProductInWarehouse_HomeAccountant, 
                     ID = IDProductExport_HomeAccountant, 
                     {
-                        Quantity: LookUp(col_ProductInWarehouse_HomeAccountant, ID = IDProductExport_HomeAccountant, QuantityInStock) - Value(TextInput3_2.Text)
+                        QuantityInStock: LookUp(col_ProductInWarehouse_HomeAccountant, ID = IDProductExport_HomeAccountant, QuantityInStock) - Value(TextInput3_2.Text)
                     }
                 );
                 
@@ -4402,7 +4403,7 @@ TrangChu_KeToan As screen:
                         col_DetailsExport_HomeAccountant, 
                         IDProduct = IDProductExport_HomeAccountant, 
                         {
-                            Quantity Value(TextInput7_1.Text) + Value(TextInput3_2.Text)
+                            Quantity: Value(TextInput7_1.Text) + Value(TextInput3_2.Text)
                         }
                     ),
                     Collect(col_DetailsExport_HomeAccountant,
