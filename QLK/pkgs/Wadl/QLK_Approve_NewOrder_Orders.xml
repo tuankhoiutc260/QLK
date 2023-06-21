@@ -4,9 +4,17 @@
     <jsonTypes targetNamespace="https://asia-001.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
       <string name="ManualTriggerInput_GetDetailOrder_Inputs_def" />
       <string name="ManualTriggerInput_GetEmailManager_Inputs_def" />
+      <string name="ManualTriggerInput_AccountantName_Inputs_def" />
+      <string name="ManualTriggerInput_TotalPriceOfOrder_Inputs_def" />
+      <integer name="ManualTriggerInput_ApproveNewOrder_Id_def" />
+      <integer name="ManualTriggerInput_RefuseNewOrder_Id_def" />
       <object name="ManualTriggerInput">
         <property name="GetDetailOrder_Inputs" type="string" />
         <property name="GetEmailManager_Inputs" type="string" />
+        <property name="AccountantName_Inputs" type="string" />
+        <property name="TotalPriceOfOrder_Inputs" type="string" />
+        <property name="ApproveNewOrder_Id" type="integer" />
+        <property name="RefuseNewOrder_Id" type="integer" />
       </object>
     </jsonTypes>
   </grammars>
@@ -22,6 +30,10 @@
           <representation mediaType="application/json">
             <param style="plain" name="GetDetailOrder_Inputs" path="/GetDetailOrder_Inputs" type="xs:string" required="true" />
             <param style="plain" name="GetEmailManager_Inputs" path="/GetEmailManager_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="AccountantName_Inputs" path="/AccountantName_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="TotalPriceOfOrder_Inputs" path="/TotalPriceOfOrder_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="ApproveNewOrder_Id" path="/ApproveNewOrder_Id" type="xs:long" required="true" />
+            <param style="plain" name="RefuseNewOrder_Id" path="/RefuseNewOrder_Id" type="xs:long" required="true" />
           </representation>
         </request>
       </method>
