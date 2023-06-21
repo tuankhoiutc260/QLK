@@ -270,6 +270,7 @@ TrangChu_KeToan As screen:
                 OnSelect: |-
                     =Reset(gal_ImportProduct_Accoutant);
                     
+                    Set(NoRow_col_DetailsNewOrder_HomeAccountant, 0);
                     Refresh(QLK_ImportForm);
                     Refresh(QLK_ImportFormInformation);
                     Refresh(QLK_ImportRequest);
@@ -321,6 +322,7 @@ TrangChu_KeToan As screen:
                     Refresh(QLK_Product_Supplier);
                     Refresh(QLK_Product);
                     
+                    Set(NoRow_colDetailsImport_HomeAccountant, 0);
                     Set(colorBtnOrdered_Accountant, Color.Black);
                     Set(fillBtnOrdered_Accountant, RGBA(0, 0, 0, 0));
                     Set(colorBtnImport_Accoutant, Color.Black);
@@ -831,6 +833,7 @@ TrangChu_KeToan As screen:
                         HoverFill: =RGBA(81, 224, 105, 1)
                         OnSelect: |
                             =Set(StatusUpdateImport_HomeAccountant, 1);
+                            Set(NoRow_colDetailsImport_HomeAccountant, 0);
                             Set(NewIDImportOrder_HomeAccountant, "IP" & Text(Now(), "ddmmyyyyhhmmss"));
                             Patch(QLK_ImportForm, 
                                 {
@@ -3532,6 +3535,15 @@ TrangChu_KeToan As screen:
                 Y: =21
                 ZIndex: =18
 
+            Button4 As button:
+                OnSelect: |-
+                    =
+                    QLK_Approve_NewOrder_Orders.Run(JSON(col_DetailsNewOrder_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), "devapps@bhk.vn")
+                Text: ="Button"
+                X: =413
+                Y: =631
+                ZIndex: =19
+
             "'grp_buttonFunction(R_HA)_1' As group":
                 Height: =5
                 Width: =5
@@ -4205,6 +4217,7 @@ TrangChu_KeToan As screen:
             HoverFill: =RGBA(127, 235, 117, 1)
             OnSelect: |-
                 =Set(visible_grp_InputNewOrderQuantity_HomeAccoutant, false);
+                Set(NoRow_col_DetailsNewOrder_HomeAccountant, NoRow_col_DetailsNewOrder_HomeAccountant + 1);
                 /*
                 UpdateIf(
                     col_ImportRequest_HomeAccountant, 
@@ -4225,6 +4238,7 @@ TrangChu_KeToan As screen:
                     ),
                     Collect(col_DetailsNewOrder_HomeAccountant,
                         {
+                            No: NoRow_col_DetailsNewOrder_HomeAccountant;
                             IDProduct: IDProductNewOrder_HomeAccountant,
                             Name: NameProduct_NewOrder_HomeAccountant,
                             Quantity: Value(TextInput3_3.Text),

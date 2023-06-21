@@ -1,8 +1,8 @@
 [
   {
     "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
-    "FlowNameId": "e2259ae2-cccc-48e4-9c3e-5c8fee625602",
-    "Name": "SendEmailApprove",
+    "FlowNameId": "519e011f-90c3-476c-ae0b-560a87551563",
+    "Name": "QLK_Approve_NewOrder_Orders",
     "ServiceKind": "ConnectedWadl",
     "Type": "ServiceInfo",
     "WorkflowEntityId": null

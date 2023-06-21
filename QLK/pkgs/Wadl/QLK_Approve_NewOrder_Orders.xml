@@ -1,12 +1,12 @@
-<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://asia-001.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="SendEmailApprove" xmlns="http://wadl.dev.java.net/2009/02">
-  <doc title="SendEmailApprove" />
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://asia-001.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="QLK_Approve_NewOrder_Orders" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="QLK_Approve_NewOrder_Orders" />
   <grammars>
     <jsonTypes targetNamespace="https://asia-001.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
-      <string name="ManualTriggerInput_CollectionProduct_Inputs_def" />
-      <string name="ManualTriggerInput_Email_Inputs_def" />
+      <string name="ManualTriggerInput_GetDetailOrder_Inputs_def" />
+      <string name="ManualTriggerInput_GetEmailManager_Inputs_def" />
       <object name="ManualTriggerInput">
-        <property name="CollectionProduct_Inputs" type="string" />
-        <property name="Email_Inputs" type="string" />
+        <property name="GetDetailOrder_Inputs" type="string" />
+        <property name="GetEmailManager_Inputs" type="string" />
       </object>
     </jsonTypes>
   </grammars>
@@ -20,8 +20,8 @@
             <doc title="The api version" />
           </param>
           <representation mediaType="application/json">
-            <param style="plain" name="CollectionProduct_Inputs" path="/CollectionProduct_Inputs" type="xs:string" required="true" />
-            <param style="plain" name="Email_Inputs" path="/Email_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="GetDetailOrder_Inputs" path="/GetDetailOrder_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="GetEmailManager_Inputs" path="/GetEmailManager_Inputs" type="xs:string" required="true" />
           </representation>
         </request>
       </method>
