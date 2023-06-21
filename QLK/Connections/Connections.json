@@ -1,7 +1,6 @@
 {
-  "10afa7bd-9860-4730-ba15-0ce266cca5f1": {
+  "18fe63c4-e077-4915-b35b-f14a37f074ba": {
     "connectionRef": {
-      "apiTier": "Standard",
       "displayName": "Logic flows",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
@@ -32,7 +31,7 @@
       "shared_sharepointonline": "276c7d45-bfe7-4b38-b653-48308dff6f77"
     },
     "dependents": [],
-    "id": "10afa7bd-9860-4730-ba15-0ce266cca5f1"
+    "id": "18fe63c4-e077-4915-b35b-f14a37f074ba"
   },
   "276c7d45-bfe7-4b38-b653-48308dff6f77": {
     "connectionRef": {
@@ -113,8 +112,8 @@
     ],
     "dependencies": {},
     "dependents": [
-      "10afa7bd-9860-4730-ba15-0ce266cca5f1",
-      "7c1d17ea-3347-4837-b9cb-339554c01667"
+      "7c1d17ea-3347-4837-b9cb-339554c01667",
+      "18fe63c4-e077-4915-b35b-f14a37f074ba"
     ],
     "id": "276c7d45-bfe7-4b38-b653-48308dff6f77"
   },

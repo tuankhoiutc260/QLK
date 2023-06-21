@@ -269,8 +269,7 @@ TrangChu_KeToan As screen:
                 HoverFill: =RGBA(0, 0, 0, 0)
                 OnSelect: |-
                     =Reset(gal_ImportProduct_Accoutant);
-                    
-                    Set(NoRow_col_DetailsNewOrder_HomeAccountant, 0);
+                    If(CountRows(col_DetailsImport_HomeAccountant) = 0, Set(NoRow_colDetailsImport_HomeAccountant, 0));
                     Refresh(QLK_ImportForm);
                     Refresh(QLK_ImportFormInformation);
                     Refresh(QLK_ImportRequest);
@@ -321,8 +320,7 @@ TrangChu_KeToan As screen:
                     =Reset(gal_NewOrderProduct_Accoutant);
                     Refresh(QLK_Product_Supplier);
                     Refresh(QLK_Product);
-                    
-                    Set(NoRow_colDetailsImport_HomeAccountant, 0);
+                    If(CountRows(col_DetailsNewOrder_HomeAccountant) = 0, Set(NoRow_col_DetailsNewOrder_HomeAccountant, 0));
                     Set(colorBtnOrdered_Accountant, Color.Black);
                     Set(fillBtnOrdered_Accountant, RGBA(0, 0, 0, 0));
                     Set(colorBtnImport_Accoutant, Color.Black);
@@ -764,7 +762,7 @@ TrangChu_KeToan As screen:
                                         Quantity: LookUp(col_ImportRequest_HomeAccountant, IDProduct = ThisItem.IDProduct, Quantity) + ThisItem.Quantity
                                     }
                                 );
-                                
+                                Set(NoRow_colDetailsImport_HomeAccountant, NoRow_colDetailsImport_HomeAccountant - 1);
                                 UpdateIf(
                                     col_DetailsImport_HomeAccountant, 
                                     IDProduct = ThisItem.IDProduct, 
@@ -2885,7 +2883,9 @@ TrangChu_KeToan As screen:
                             Color: =RGBA(149, 149, 149, 1)
                             Height: =30
                             Icon: =Icon.Cancel
-                            OnSelect: =RemoveIf(col_DetailsNewOrder_HomeAccountant, IDProduct = ThisItem.IDProduct)
+                            OnSelect: |-
+                                =RemoveIf(col_DetailsNewOrder_HomeAccountant, IDProduct = ThisItem.IDProduct);
+                                Set(NoRow_col_DetailsNewOrder_HomeAccountant, NoRow_col_DetailsNewOrder_HomeAccountant - 1)
                             Width: =30
                             X: =359
                             Y: =22
@@ -2965,17 +2965,7 @@ TrangChu_KeToan As screen:
                         OnSelect: |+
                             =Set(NewIDImportOrder_HomeAccountant, "OD" & Text(Now(), "ddmmyyyyhhmmss"));
                             
-                            ForAll(col_DetailsNewOrder_HomeAccountant, 
-                                QLK_OrderInformation.Run(
-                                    NewIDImportOrder_HomeAccountant,
-                                    col_DetailsNewOrder_HomeAccountant[@IDProduct],
-                                    Value(LookUp(gal_DetailsOrdered_cOHA1_2.AllItems, IDProduct = col_DetailsNewOrder_HomeAccountant[@IDProduct], TextInput7.Text)),
-                                    Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_DetailsNewOrder_HomeAccountant[@IDProduct], ID_Unit)),
-                                    Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_DetailsNewOrder_HomeAccountant[@IDProduct], 'Price_Pro-Supplier')),
-                                    Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_DetailsNewOrder_HomeAccountant[@IDProduct], 'Price_Pro-Supplier') * 
-                                        LookUp(gal_DetailsOrdered_cOHA1_2.AllItems, IDProduct = col_DetailsNewOrder_HomeAccountant[@IDProduct], TextInput7.Text))
-                                )
-                            );
+                            
                             
                             Patch(QLK_OrderForm, Defaults(QLK_OrderForm),
                                 {
@@ -2983,7 +2973,7 @@ TrangChu_KeToan As screen:
                                     //DateCreatedNumber: Value(NumDateNewOrderProduct),
                                     TotalPrice: Sum(col_DetailsNewOrder_HomeAccountant, TotalPrice),
                                     Status: 1,
-                                    UserCreated:emailLogin
+                                    UserCreated: emailLogin
                                 }
                             );
                             
@@ -4238,7 +4228,7 @@ TrangChu_KeToan As screen:
                     ),
                     Collect(col_DetailsNewOrder_HomeAccountant,
                         {
-                            No: NoRow_col_DetailsNewOrder_HomeAccountant;
+                            No: NoRow_col_DetailsNewOrder_HomeAccountant,
                             IDProduct: IDProductNewOrder_HomeAccountant,
                             Name: NameProduct_NewOrder_HomeAccountant,
                             Quantity: Value(TextInput3_3.Text),

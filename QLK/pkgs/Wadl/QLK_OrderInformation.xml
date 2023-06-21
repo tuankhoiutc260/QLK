@@ -3,18 +3,10 @@
   <grammars>
     <jsonTypes targetNamespace="https://asia-001.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
       <string name="ManualTriggerInput_Createitem_IDOrderForm_def" />
-      <string name="ManualTriggerInput_Createitem_IDProduct_Supplier_def" />
       <number name="ManualTriggerInput_Createitem_Quantity_def" />
-      <number name="ManualTriggerInput_Createitem_Unit_def" />
-      <number name="ManualTriggerInput_Createitem_Price_def" />
-      <number name="ManualTriggerInput_Createitem_TotalPrice_def" />
       <object name="ManualTriggerInput">
         <property name="Createitem_IDOrderForm" type="string" />
-        <property name="Createitem_IDProduct_Supplier" type="string" />
         <property name="Createitem_Quantity" type="number" />
-        <property name="Createitem_Unit" type="number" />
-        <property name="Createitem_Price" type="number" />
-        <property name="Createitem_TotalPrice" type="number" />
       </object>
     </jsonTypes>
   </grammars>
@@ -29,11 +21,7 @@
           </param>
           <representation mediaType="application/json">
             <param style="plain" name="Createitem_IDOrderForm" path="/Createitem_IDOrderForm" type="xs:string" required="true" />
-            <param style="plain" name="Createitem_IDProduct_Supplier" path="/Createitem_IDProduct_Supplier" type="xs:string" required="true" />
             <param style="plain" name="Createitem_Quantity" path="/Createitem_Quantity" type="xs:double" required="true" />
-            <param style="plain" name="Createitem_Unit" path="/Createitem_Unit" type="xs:double" required="true" />
-            <param style="plain" name="Createitem_Price" path="/Createitem_Price" type="xs:double" required="true" />
-            <param style="plain" name="Createitem_TotalPrice" path="/Createitem_TotalPrice" type="xs:double" required="true" />
           </representation>
         </request>
       </method>
