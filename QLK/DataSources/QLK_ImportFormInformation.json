@@ -30,6 +30,7 @@
       "Editor": "Modified By",
       "Editor#Claims": "Modified By Claims",
       "ID": "ID",
+      "ID_TypeOfDevice": "ID_TypeOfDevice",
       "IDImport": "IDImport",
       "IDProduct": "IDProduct",
       "Modified": "Modified",
@@ -37,8 +38,7 @@
       "Price": "Price",
       "Quantity": "Quantity",
       "Title": "Title",
-      "TotalPrice": "TotalPrice",
-      "Unit": "Unit"
+      "TotalPrice": "TotalPrice"
     },
     "DatasetName": "https://bhktechcorp.sharepoint.com/sites/Khoi",
     "EncodeDataset": true,
