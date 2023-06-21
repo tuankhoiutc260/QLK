@@ -4,9 +4,25 @@
     <jsonTypes targetNamespace="https://asia-001.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
       <string name="ManualTriggerInput_GetDetailsProductFromOrder_Inputs_def" />
       <string name="ManualTriggerInput_EmailofManager_Inputs_def" />
+      <string name="ManualTriggerInput_Compose_Inputs_def" />
+      <string name="ManualTriggerInput_NameAccountant_Inputs_def" />
+      <string name="ManualTriggerInput_OrderImportorNewOrder_Inputs_def" />
+      <string name="ManualTriggerInput_OrderInorOut_Inputs_def" />
+      <string name="ManualTriggerInput_TypeofOrder_Inputs_def" />
+      <integer name="ManualTriggerInput_Updateitem_Id_def" />
+      <integer name="ManualTriggerInput_ApproveImportOrder_Id_def" />
+      <integer name="ManualTriggerInput_ApproveNewOrder_Id_def" />
       <object name="ManualTriggerInput">
         <property name="GetDetailsProductFromOrder_Inputs" type="string" />
         <property name="EmailofManager_Inputs" type="string" />
+        <property name="Compose_Inputs" type="string" />
+        <property name="NameAccountant_Inputs" type="string" />
+        <property name="OrderImportorNewOrder_Inputs" type="string" />
+        <property name="OrderInorOut_Inputs" type="string" />
+        <property name="TypeofOrder_Inputs" type="string" />
+        <property name="Updateitem_Id" type="integer" />
+        <property name="ApproveImportOrder_Id" type="integer" />
+        <property name="ApproveNewOrder_Id" type="integer" />
       </object>
     </jsonTypes>
   </grammars>
@@ -22,6 +38,14 @@
           <representation mediaType="application/json">
             <param style="plain" name="GetDetailsProductFromOrder_Inputs" path="/GetDetailsProductFromOrder_Inputs" type="xs:string" required="true" />
             <param style="plain" name="EmailofManager_Inputs" path="/EmailofManager_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="Compose_Inputs" path="/Compose_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="NameAccountant_Inputs" path="/NameAccountant_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="OrderImportorNewOrder_Inputs" path="/OrderImportorNewOrder_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="OrderInorOut_Inputs" path="/OrderInorOut_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="TypeofOrder_Inputs" path="/TypeofOrder_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="Updateitem_Id" path="/Updateitem_Id" type="xs:long" required="true" />
+            <param style="plain" name="ApproveImportOrder_Id" path="/ApproveImportOrder_Id" type="xs:long" required="true" />
+            <param style="plain" name="ApproveNewOrder_Id" path="/ApproveNewOrder_Id" type="xs:long" required="true" />
           </representation>
         </request>
       </method>
