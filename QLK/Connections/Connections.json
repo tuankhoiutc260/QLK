@@ -85,9 +85,6 @@
           "QLK_TypeOfDevice": {
             "tableName": "62de0bed-f3d2-4739-bacd-bae48af6d86a"
           },
-          "QLK_Unit": {
-            "tableName": "b3f0f76e-068f-4b41-b170-249de916086e"
-          },
           "QLK_Zone": {
             "tableName": "98bf103d-f581-4665-878a-60bf70d111f8"
           }
@@ -101,7 +98,6 @@
       "QLK_Area",
       "QLK_Customer",
       "QLK_OrderForm",
-      "QLK_Unit",
       "QLK_OrderFormInformation",
       "QLK_Location",
       "QLK_ImportRequest",

@@ -418,12 +418,12 @@ TrangChu_KeToan As screen:
                                 , 
                                 "IDProduct", 
                                 "Name", 
-                                "Quantity",
+                                "QuantityInStock",
                                 "OutputPrice",
                                 "Image", 
                                 "IDSupplier", 
                                 "Description",
-                                "Unit"
+                                "ID_TypeOfDevice"
                             ), 
                             "IDProduct", "ID",
                             "Name", "Name",
@@ -3085,7 +3085,7 @@ TrangChu_KeToan As screen:
                         Height: =46
                         OnSelect: =Select(Parent)
                         Size: =9
-                        Text: =LookUp(QLK_Unit, ID = ThisItem.Unit, UnitName)
+                        Text: =LookUp(QLK_TypeOfDevice, ID = ThisItem.ID_TypeOfDevice, DeviceTypeName)
                         Width: =95
                         X: =333
                         Y: =25
@@ -3096,7 +3096,8 @@ TrangChu_KeToan As screen:
                         Height: =46
                         OnSelect: =Select(Parent)
                         Size: =9
-                        Text: =ThisItem.Quantity
+                        Text: |-
+                            =Text(ThisItem.QuantityInStock, "#,###")
                         Width: =95
                         X: =532
                         Y: =25
@@ -3116,7 +3117,7 @@ TrangChu_KeToan As screen:
                             =Reset(TextInput3_2);
                             Set(IDProductExport_HomeAccountant, ThisItem.ID);
                             Set(PriceProductExport_HomeAccountant, ThisItem.Price);
-                            Set(QuantityProductExport_HomeAccountant, ThisItem.Quantity);
+                            Set(QuantityProductExport_HomeAccountant, ThisItem.QuantityInStock);
                             Set(visible_grp_InputExportQuantity_HomeAccoutant, true);
                             
                             ClearCollect(
@@ -3130,12 +3131,12 @@ TrangChu_KeToan As screen:
                                             ), 
                                             "IDProduct", 
                                             "Name", 
-                                            "Quantity",
+                                            "QuantityInStock",
                                             "OutputPrice",
                                             "Image", 
                                             "IDSupplier", 
                                             "Description",
-                                            "Unit"
+                                            "ID_TypeOfDevice"
                                         )       ,
                                         "IDProduct", "ID",
                                         "OutputPrice", "Price"
@@ -3287,7 +3288,7 @@ TrangChu_KeToan As screen:
                                     col_ProductInWarehouse_HomeAccountant, 
                                     ID = ThisItem.IDProduct, 
                                     {
-                                        Quantity: LookUp(col_ProductInWarehouse_HomeAccountant, ID = ThisItem.IDProduct, Quantity) + ThisItem.Quantity
+                                        Quantity: LookUp(col_ProductInWarehouse_HomeAccountant, ID = ThisItem.IDProduct, Quantity) + ThisItem.QuantityInStock
                                     }
                                 );
                                 
@@ -3315,12 +3316,12 @@ TrangChu_KeToan As screen:
                             HoverBorderColor: =RGBA(127, 235, 117, 0.5)
                             HoverFill: =RGBA(127, 235, 117, 0.5)
                             OnChange: |+
-                                =Set(newQuantityProductExport_HomeAccountant, LookUp(col_DetailsExport_HomeAccountant, IDProduct = ThisItem.IDProduct, Quantity));
+                                =Set(newQuantityProductExport_HomeAccountant, LookUp(col_DetailsExport_HomeAccountant, IDProduct = ThisItem.IDProduct, QuantityInStock));
                                 UpdateIf(
                                     col_ProductInWarehouse_HomeAccountant, 
                                     ID = ThisItem.IDProduct, 
                                     {
-                                        Quantity: LookUp(col_ProductInWarehouse_HomeAccountant, ID = ThisItem.IDProduct, Quantity) + oldQuantityProductExport_HomeAccountant - newQuantityProductExport_HomeAccountant
+                                        QuantityInStock: LookUp(col_ProductInWarehouse_HomeAccountant, ID = ThisItem.IDProduct, Quantity) + oldQuantityProductExport_HomeAccountant - newQuantityProductExport_HomeAccountant
                                     }
                                 );
                                 
@@ -3404,10 +3405,10 @@ TrangChu_KeToan As screen:
                                     {
                                         IDExportForm: NewIDExport_HomeAccountant,
                                         IDProduct: col_DetailsExport_HomeAccountant[@IDProduct],
-                                        Quantity: col_DetailsExport_HomeAccountant[@Quantity],
-                                        Unit: LookUp(QLK_Product, IDProduct = col_DetailsExport_HomeAccountant[@IDProduct], Unit),
+                                        Quantity: col_DetailsExport_HomeAccountant[@QuantityInStock],
+                                        ID_TypeOfDevice: LookUp(QLK_Product, IDProduct = col_DetailsExport_HomeAccountant[@IDProduct], ID_TypeOfDevice),
                                         Price: col_DetailsExport_HomeAccountant[@Price],
-                                        TotalPrice: col_DetailsExport_HomeAccountant[@Quantity] * col_DetailsExport_HomeAccountant[@Price]
+                                        TotalPrice: col_DetailsExport_HomeAccountant[@QuantityInStock] * col_DetailsExport_HomeAccountant[@Price]
                                     }
                                 )
                             );
@@ -3467,10 +3468,12 @@ TrangChu_KeToan As screen:
                         ZIndex: =9
 
             Button4 As button:
-                OnSelect: =SendEmailApprove.Run(JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), LookUp(QLK_Account, Permission.Value = "Manager", Gmail))
+                OnSelect: |-
+                    =//SendEmailApprove.Run(JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), LookUp(QLK_Account, Permission.Value = "Manager", Gmail))
+                    Clear(col_DetailsExport_HomeAccountant);
                 Text: ="Button"
                 X: =202
-                Y: =239
+                Y: =497
                 ZIndex: =16
 
             Label25 As label:
@@ -4285,7 +4288,7 @@ TrangChu_KeToan As screen:
                     col_ProductInWarehouse_HomeAccountant, 
                     ID = IDProductExport_HomeAccountant, 
                     {
-                        Quantity: LookUp(col_ProductInWarehouse_HomeAccountant, ID = IDProductExport_HomeAccountant, Quantity) - Value(TextInput3_2.Text)
+                        QuantityInStock: LookUp(col_ProductInWarehouse_HomeAccountant, ID = IDProductExport_HomeAccountant, QuantityInStock) - Value(TextInput3_2.Text)
                     }
                 );
                 
@@ -4295,13 +4298,13 @@ TrangChu_KeToan As screen:
                         col_DetailsExport_HomeAccountant, 
                         IDProduct = IDProductExport_HomeAccountant, 
                         {
-                            Quantity: Value(TextInput7_1.Text) + Value(TextInput3_2.Text)
+                            QuantityInStock: Value(TextInput7_1.Text) + Value(TextInput3_2.Text)
                         }
                     ),
                     Collect(col_DetailsExport_HomeAccountant,
                         {
                             IDProduct: IDProductExport_HomeAccountant,
-                            Quantity: Value(TextInput3_2.Text),
+                            QuantityInStock: Value(TextInput3_2.Text),
                             Price: PriceProductExport_HomeAccountant,
                             TotalPrice: Value(TextInput3_2.Text) * PriceProductExport_HomeAccountant
                         } 
