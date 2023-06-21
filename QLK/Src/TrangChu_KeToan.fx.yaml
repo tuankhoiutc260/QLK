@@ -3555,7 +3555,7 @@ TrangChu_KeToan As screen:
                             
                             ForAll(
                                 col_getQuantityProducttoExport As T, 
-                                UpdateIf(QLK_Zone, ID_Zone = T.ID_Zone, {QuantityIsContained: T.Min_Value}));
+                                UpdateIf(QLK_Zone, ID_Zone = T.ID_Zone, {QuantityIsContained: T.Max_Value}));
                             
                             
                             QLK_Approve_Export_Orders.Run(JSON(col_DetailsExport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), "devapps@bhk.vn", 

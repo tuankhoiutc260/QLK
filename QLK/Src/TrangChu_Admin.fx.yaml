@@ -767,7 +767,7 @@ TrangChu_Admin As screen:
                                         "IDOrderForm",
                                         "IDProduct_Supplier",
                                         "Quantity",
-                                        "Unit",
+                                        "ID_TypeOfDevice",
                                         "Price",
                                         "TotalPrice"
                                     ), 
@@ -788,7 +788,7 @@ TrangChu_Admin As screen:
                                             "IDImport",
                                             "IDProduct",
                                             "Quantity",
-                                            "Unit",
+                                            "ID_TypeOfDevice",
                                             "Price",
                                             "TotalPrice"
                                         ), 
@@ -809,7 +809,7 @@ TrangChu_Admin As screen:
                                             "IDExportForm",
                                             "IDProduct",
                                             "Quantity",
-                                            "Unit",
+                                            "ID_TypeOfDevice",
                                             "Price",
                                             "TotalPrice"
                                         ), "IDExportForm", "IDOrder")
@@ -967,7 +967,7 @@ TrangChu_Admin As screen:
                                             "IDOrderForm",
                                             "IDProduct_Supplier",
                                             "Quantity",
-                                            "Unit",
+                                            "ID_TypeOfDevice",
                                             "Price",
                                             "TotalPrice"
                                         ), 
@@ -988,7 +988,7 @@ TrangChu_Admin As screen:
                                                 "IDImport",
                                                 "IDProduct",
                                                 "Quantity",
-                                                "Unit",
+                                                "ID_TypeOfDevice",
                                                 "Price",
                                                 "TotalPrice"
                                             ), 
@@ -1008,7 +1008,7 @@ TrangChu_Admin As screen:
                                                     "IDExportForm",
                                                     "IDProduct",
                                                     "Quantity",
-                                                    "Unit",
+                                                    "ID_TypeOfDevice",
                                                     "Price",
                                                     "TotalPrice"
                                                 ), 
@@ -1383,7 +1383,7 @@ TrangChu_Admin As screen:
                                         "IDOrderForm",
                                         "IDProduct_Supplier",
                                         "Quantity",
-                                        "Unit",
+                                        "ID_TypeOfDevice",
                                         "Price",
                                         "TotalPrice"
                                     ), 
@@ -1402,7 +1402,7 @@ TrangChu_Admin As screen:
                                             "IDImport",
                                             "IDProduct",
                                             "Quantity",
-                                            "Unit",
+                                            "ID_TypeOfDevice",
                                             "Price",
                                             "TotalPrice"
                                         ), 
@@ -1420,7 +1420,7 @@ TrangChu_Admin As screen:
                                                 "IDExportForm",
                                                 "IDProduct",
                                                 "Quantity",
-                                                "Unit",
+                                                "ID_TypeOfDevice",
                                                 "Price",
                                                 "TotalPrice"
                                             ), 
@@ -1436,7 +1436,7 @@ TrangChu_Admin As screen:
                     RadiusTopLeft: =20
                     RadiusTopRight: =20
                     Size: =13
-                    Text: ="DisApprove"
+                    Text: ="Refuse"
                     Visible: =If(numDatasource = 4, true, false)
                     Width: =184
                     X: =918
@@ -1455,10 +1455,10 @@ TrangChu_Admin As screen:
                         Set(datasourceOrder, Filter(QLK_OrderForm, Status = 1));
                         
                         // Get IDProduct_Supplier, Quantity in OrderFormInformation
-                        ClearCollect(col_ProductOrder_Approved, ShowColumns(Filter(QLK_OrderFormInformation, IDOrderForm = ThisItem.ID), "IDProduct_Supplier", "Quantity"));
+                        //ClearCollect(col_ProductOrder_Approved, ShowColumns(Filter(QLK_OrderFormInformation, IDOrderForm = ThisItem.ID), "IDProduct_Supplier", "Quantity"));
                         
                         // Get IDProduct in col_ProductOrder_Approved
-                        ClearCollect(col_IDProductOrder_Approved, ShowColumns(col_ProductOrder_Approved, "IDProduct_Supplier"));
+                        //ClearCollect(col_IDProductOrder_Approved, ShowColumns(col_ProductOrder_Approved, "IDProduct_Supplier"));
                         
                         // Get information of Product with IDProduct in col_IDProductOrder_Approved
                         /*
@@ -1467,7 +1467,7 @@ TrangChu_Admin As screen:
                             
                                 Filter(QLK_Product_Supplier, IDProduct_Supplier in col_IDProductOrder_Approved.IDProduct_Supplier))*/
                                 
-                        
+                        /*
                         ClearCollect(
                             col_InformationOfProductOrdered, 
                             AddColumns(
@@ -1480,7 +1480,7 @@ TrangChu_Admin As screen:
                                     "Image_Pro_x002d_Supplier", 
                                     "ID_Supplier", 
                                     "Describe_Pro_x002d_Supplier", 
-                                    "ID_Unit"
+                                    "ID_TypeOfDevice"
                                 ), "Quantity", 0
                             )
                         );
@@ -1503,8 +1503,8 @@ TrangChu_Admin As screen:
                                     IDProduct: T.IDProduct_Supplier,
                                     Name: T.Name_Supplier,
                                     Quantity: T.Quantity,
-                                    MinimumQuantity: If(LookUp(col_InformationOfProductOrdered, T.ID_Unit = 3, T.ID_Unit), 10, 20),
-                                    Unit: Value(T.ID_Unit),
+                                    MinimumQuantity: If(LookUp(col_InformationOfProductOrdered, T.ID_TypeOfDevice = 3, T.ID_TypeOfDevice), 10, 20),
+                                    ID_TypeOfDevice: Value(T.ID_TypeOfDevice),
                                     InputPrice: T.Price_Supplier,
                                     OutputPrice: T.Price_Supplier + T.Price_Supplier * 0.1,
                                     Image: T.Image_Pro_x002d_Supplier,
@@ -1516,25 +1516,9 @@ TrangChu_Admin As screen:
                         );
                         
                         
-                        /*
-                        ForAll(
-                            col_ProductOrder_Approved,
-                            UpdateIf(col_InformationOfProductOrdered, IDProduct_Supplier=IDProduct_Supplier,
-                                {Quantity: 3}
-                            )
-                        );
-                        */
+                        
                         Refresh(QLK_OrderForm);
-                        //ClearCollect(temp23, col_InformationOfProductOrdered);
-                        
-                        /*
-                        ClearCollect(colProductSupplier, ShowColumns(Filter(QLK_Product_Supplier, true), "IDProduct_Supplier"));
-                        ClearCollect(
-                            col_InformationOfProduct, 
-                            Filter(QLK_Product_Supplier, IDProduct_Supplier in colProductSupplier.IDProduct_Supplier)
-                        )*/
-                        
-                        //Patch(QLK_Product, true)
+                        */
                     Duration: =
                     Fill: =RGBA(205, 247, 205, 1)
                     FontWeight: =FontWeight.Semibold
