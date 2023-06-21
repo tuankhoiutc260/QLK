@@ -1238,6 +1238,7 @@ TrangChu_Admin As screen:
                     BorderColor: =RGBA(237, 237, 237, 1)
                     BorderThickness: =0
                     Color: =RGBA(255, 0, 0, 1)
+                    DisplayMode: =If(CountRows(col_DetailsOrder_HomeAdmin) = 0, DisplayMode.Disabled, DisplayMode.Edit)
                     Fill: =RGBA(237, 237, 237, 1)
                     Height: =39
                     HoverBorderColor: =RGBA(237, 237, 237, 1)
@@ -1323,6 +1324,7 @@ TrangChu_Admin As screen:
                                 2
                             )
                         );
+                        Set(IDOrder_HomeAdmin, LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID));
                         
                         ClearCollect(
                             col_DatasourceImportRequest_HomeAdmin, 
@@ -1449,79 +1451,10 @@ TrangChu_Admin As screen:
                     DisabledBorderColor: =RGBA(166, 166, 166, 1)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
-                    DisplayMode: |-
-                        =Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = ThisItem.ID), {Status: 2});
-                        Refresh(QLK_OrderForm);
-                        Set(datasourceOrder, Filter(QLK_OrderForm, Status = 1));
-                        
-                        // Get IDProduct_Supplier, Quantity in OrderFormInformation
-                        //ClearCollect(col_ProductOrder_Approved, ShowColumns(Filter(QLK_OrderFormInformation, IDOrderForm = ThisItem.ID), "IDProduct_Supplier", "Quantity"));
-                        
-                        // Get IDProduct in col_ProductOrder_Approved
-                        //ClearCollect(col_IDProductOrder_Approved, ShowColumns(col_ProductOrder_Approved, "IDProduct_Supplier"));
-                        
-                        // Get information of Product with IDProduct in col_IDProductOrder_Approved
-                        /*
-                        ClearCollect(
-                            col_InformationOfProduct, 
-                            
-                                Filter(QLK_Product_Supplier, IDProduct_Supplier in col_IDProductOrder_Approved.IDProduct_Supplier))*/
-                                
-                        /*
-                        ClearCollect(
-                            col_InformationOfProductOrdered, 
-                            AddColumns(
-                                ShowColumns(
-                                    Filter(QLK_Product_Supplier, IDProduct_Supplier in col_IDProductOrder_Approved.IDProduct_Supplier),
-                                    "IDProduct_Supplier", 
-                                    "Name_Supplier", 
-                                    "Price_Supplier", 
-                                    "Barcode_Supplier", 
-                                    "Image_Pro_x002d_Supplier", 
-                                    "ID_Supplier", 
-                                    "Describe_Pro_x002d_Supplier", 
-                                    "ID_TypeOfDevice"
-                                ), "Quantity", 0
-                            )
-                        );
-                        
-                        ForAll(
-                            col_ProductOrder_Approved, 
-                            Patch(
-                                col_InformationOfProductOrdered, 
-                                LookUp(
-                                    col_InformationOfProductOrdered, 
-                                    IDProduct_Supplier = col_ProductOrder_Approved[@IDProduct_Supplier]), 
-                                    {Quantity: col_ProductOrder_Approved[@Quantity]}
-                                
-                            )
-                        );
-                        
-                        ForAll(col_InformationOfProductOrdered As T,
-                            Patch(QLK_Product,
-                                {
-                                    IDProduct: T.IDProduct_Supplier,
-                                    Name: T.Name_Supplier,
-                                    Quantity: T.Quantity,
-                                    MinimumQuantity: If(LookUp(col_InformationOfProductOrdered, T.ID_TypeOfDevice = 3, T.ID_TypeOfDevice), 10, 20),
-                                    ID_TypeOfDevice: Value(T.ID_TypeOfDevice),
-                                    InputPrice: T.Price_Supplier,
-                                    OutputPrice: T.Price_Supplier + T.Price_Supplier * 0.1,
-                                    Image: T.Image_Pro_x002d_Supplier,
-                                    BarCode: T.Barcode_Supplier,
-                                    IDSupplier: Value(T.ID_Supplier),
-                                    Description: T.Describe_Pro_x002d_Supplier
-                                }
-                            )
-                        );
-                        
-                        
-                        
-                        Refresh(QLK_OrderForm);
-                        */
+                    DisplayMode: =If(CountRows(col_DetailsOrder_HomeAdmin) = 0, DisplayMode.Disabled, DisplayMode.Edit)
                     Duration: =
                     Fill: =RGBA(205, 247, 205, 1)
-                    FontWeight: =FontWeight.Semibold
+                    FontWeight: =FontWeight.Bold
                     Height: =39
                     HoverBorderColor: =RGBA(237, 237, 237, 1)
                     HoverFill: =RGBA(81, 224, 105, 1)
@@ -1539,8 +1472,6 @@ TrangChu_Admin As screen:
                                         )
                                     )
                                 ),
-                        
-                        
                         
                                 Refresh(QLK_OrderForm);
                                 Reset(gal_DetailOrderPending_HA_DO_HA_6)
@@ -1652,7 +1583,7 @@ TrangChu_Admin As screen:
                         
                         
                         // --- Reset lại thông tin đơn đầu tiên qua khung ở giữa
-                        
+                        Set(IDOrder_HomeAdmin, LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID));
                         ClearCollect(
                             col_DetailsOrder_HomeAdmin,
                             If(

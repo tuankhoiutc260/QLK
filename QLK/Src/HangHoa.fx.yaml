@@ -54,14 +54,14 @@ HangHoa As screen:
         HoverBorderColor: =RGBA(88, 115, 171, 1)
         HoverContentColor: =RGBA(255, 255, 255, 1)
         HoverFillColor: =RGBA(54, 176, 75, 1)
-        OnChange: |-
-            =ClearCollect(ColScanSP, BarcodeReader1.Barcodes);
-            Set(IDScanSP, Blank())
+        OnChange: =
         OnScan: |+
-            =Set(IDScanSP, LookUp(ColScanSP, true, Value));
+            =ClearCollect(ColScanSP, BarcodeReader1.Barcodes);
+            Set(IDScanSP, Blank());
+            Set(IDScanSP, LookUp(ColScanSP, true, Value));
             If(LookUp(QLK_Product, IDProduct = Label43.Text, IDProduct) <> Blank(),Set(showGrpScanSP, true), 
-                /*Notify("The code is not correct");*/
-                Set(showGrpScanSP, true)
+                Notify("The code is not correct");
+                Set(showGrpScanSP, false)
             )
             
         PressedBorderColor: =RGBA(56, 96, 178, 1)
