@@ -3537,13 +3537,19 @@ TrangChu_KeToan As screen:
                 ZIndex: =19
 
             Button4 As button:
-                OnSelect: |-
+                OnSelect: |
                     =//QLK_GetDetailsOrderToApprove.Run(JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes),  "devapps@bhk.vn")
-                    QLK_GetDetailsOrderToApprove.Run(
                 Text: ="Button"
                 X: =179
                 Y: =534
                 ZIndex: =20
+
+            Button10 As button:
+                OnSelect: =Set(NoRow_colDetailsImport_HomeAccountant, 0)
+                Text: ="Button"
+                X: =440
+                Y: =490
+                ZIndex: =21
 
             "'grp_buttonFunction(R_HA)_1' As group":
                 Height: =5
@@ -4085,7 +4091,7 @@ TrangChu_KeToan As screen:
             HoverFill: =RGBA(127, 235, 117, 1)
             OnSelect: |-
                 =Set(visible_grp_InputImportQuantity_HomeAccoutant, false);
-                
+                Set(NoRow_colDetailsImport_HomeAccountant, NoRow_colDetailsImport_HomeAccountant + 1);
                 
                 UpdateIf(
                     col_ImportRequest_HomeAccountant, 
@@ -4106,6 +4112,7 @@ TrangChu_KeToan As screen:
                     ),
                     Collect(col_DetailsImport_HomeAccountant,
                     {
+                        No: NoRow_colDetailsImport_HomeAccountant,
                         IDProduct: IDProduct_Import_HomeAccountant,
                         Name: NameProduct_Import_HomeAccountant,
                         Quantity: Value(TextInput3.Text),
