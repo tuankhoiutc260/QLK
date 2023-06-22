@@ -278,6 +278,27 @@ Screen4 As screen:
             Y: =540
             ZIndex: =6
 
+    Gallery2 As gallery.galleryVertical:
+        BorderThickness: =1
+        DelayItemLoading: =true
+        Height: =223
+        Items: =ShowColumns(Search(QLK_Customer, TextInput11.Text, "FullName"), "FullName")
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =47
+        Visible: =visibleNameCutomer
+        Width: =214
+        X: =996
+        Y: =169
+        ZIndex: =1
+
+        Label44 As label:
+            Height: =47
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.FullName
+            Width: =204
+            ZIndex: =1
+
     Label29 As label:
         Text: =LookUp(QLK_ExportFormInformation, IDProduct = IDProduct_GalProduct && (DateValue(Now()) - DateValue(Created)) <= 10, Quantity)
         X: =639
@@ -294,4 +315,11 @@ Screen4 As screen:
         X: =308
         Y: =97
         ZIndex: =3
+
+    TextInput11 As text:
+        Default: ="Text input"
+        OnChange: =If(Len(TextInput11.Text) >= 2, Set(visibleNameCutomer, true), Set(visibleNameCutomer, false))
+        X: =997
+        Y: =95
+        ZIndex: =4
 
