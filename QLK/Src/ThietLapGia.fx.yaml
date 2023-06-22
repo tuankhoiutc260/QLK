@@ -227,7 +227,9 @@ ThietLapGia As screen:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
-        OnSelect: =Navigate(ThietLapGia)
+        OnSelect: |-
+            =Navigate(ThietLapGia);
+            ClearCollect(colPriceProduct,ShowColumns(QLK_Product, "IDProduct", "Name", "InputPrice", "OutputPrice"))  
         RadiusBottomLeft: =
         RadiusBottomRight: =
         RadiusTopLeft: =
@@ -300,8 +302,8 @@ ThietLapGia As screen:
             Height: =46
             OnSelect: =Select(Parent)
             Text: =ThisItem.Name
-            Width: =457
-            X: =25
+            Width: =337
+            X: =233
             Y: =12
             ZIndex: =2
 
@@ -311,7 +313,7 @@ ThietLapGia As screen:
             OnSelect: =Select(Parent)
             Text: =ThisItem.InputPrice & " Vnđ"
             Width: =153
-            X: =494
+            X: =571
             Y: =15
             ZIndex: =3
 
@@ -321,7 +323,7 @@ ThietLapGia As screen:
             OnSelect: =Select(Parent)
             Text: =ThisItem.OutputPrice & " Vnđ"
             Width: =148
-            X: =678
+            X: =720
             Y: =15
             ZIndex: =4
 
@@ -348,6 +350,15 @@ ThietLapGia As screen:
             X: =880
             Y: =14
             ZIndex: =5
+
+        lbl_NameProduct_4 As label:
+            Align: =Align.Center
+            Height: =46
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.IDProduct
+            Width: =257
+            Y: =12
+            ZIndex: =6
 
     Button7_5 As button:
         BorderColor: =RGBA(151, 0, 0, 1)
@@ -384,7 +395,7 @@ ThietLapGia As screen:
         Size: =14
         Text: ="Name Product"
         Width: =314
-        X: =331
+        X: =464
         Y: =183
         ZIndex: =22
 
@@ -395,7 +406,7 @@ ThietLapGia As screen:
         OnSelect: =
         Text: ="Input Price"
         Width: =136
-        X: =725
+        X: =802
         Y: =183
         ZIndex: =23
 
@@ -406,7 +417,7 @@ ThietLapGia As screen:
         OnSelect: =
         Text: ="Output Price"
         Width: =136
-        X: =907
+        X: =956
         Y: =184
         ZIndex: =24
 
@@ -450,6 +461,41 @@ ThietLapGia As screen:
         X: =57
         Y: =453
         ZIndex: =27
+
+    lbl_OrderedID_DuyetDatHang_17 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Size: =14
+        Text: ="ID Product"
+        Width: =246
+        X: =231
+        Y: =184
+        ZIndex: =44
+
+    btn_ExProduct_1 As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =RGBA(237, 237, 237, 1)
+        BorderThickness: =0
+        Color: =RGBA(0, 94, 146, 1)
+        Fill: =RGBA(237, 237, 237, 1)
+        HoverBorderColor: =RGBA(237, 237, 237, 1)
+        HoverFill: =RGBA(0, 94, 146, 1)
+        OnSelect: |-
+            =ClearCollect(colPriceProduct,ShowColumns(QLK_Product, "IDProduct", "Name", "InputPrice", "OutputPrice")); 
+            Set(varExPriceProduct, ExPriceProduct.Run(JSON(colPriceProduct,JSONFormat.IncludeBinaryData)).priceproduct); Launch(varExPriceProduct)
+        PressedBorderColor: =RGBA(237, 237, 237, 1)
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =13
+        Text: ="Export to Excel"
+        Width: =192
+        X: =1107
+        Y: =128
+        ZIndex: =45
 
     Group14 As group:
         Height: =5

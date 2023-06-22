@@ -534,9 +534,9 @@ KiemKho As screen:
                 Height: =82
                 OnSelect: =Select(Parent)
                 Text: =ThisItem.Name
-                Width: =442
-                X: =14
-                Y: =10
+                Width: =359
+                X: =256
+                Y: =5
                 ZIndex: =5
 
             lbl_Quantity_2 As label:
@@ -545,8 +545,8 @@ KiemKho As screen:
                 OnSelect: =Select(Parent)
                 Text: =ThisItem.QuantityInStock
                 Width: =113
-                X: =499
-                Y: =10
+                X: =616
+                Y: =7
                 ZIndex: =6
 
             lbl_InputPrice_6 As label:
@@ -555,8 +555,8 @@ KiemKho As screen:
                 OnSelect: =Select(Parent)
                 Text: =ThisItem.InputPrice & " Vnđ"
                 Width: =192
-                X: =684
-                Y: =10
+                X: =729
+                Y: =7
                 ZIndex: =7
 
             Img_Product_1 As image:
@@ -590,6 +590,15 @@ KiemKho As screen:
                 Text: =""
                 Width: =1071
                 ZIndex: =11
+
+            lbl_NameProduct_6 As label:
+                Align: =Align.Center
+                Height: =82
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.IDProduct
+                Width: =271
+                Y: =7
+                ZIndex: =12
 
         Button7_9 As button:
             BorderColor: =RGBA(151, 0, 0, 1)
@@ -627,7 +636,7 @@ KiemKho As screen:
             Text: ="Quantity"
             Visible: =showgrpProCS
             Width: =99
-            X: =736
+            X: =855
             Y: =184
             ZIndex: =34
 
@@ -640,7 +649,7 @@ KiemKho As screen:
             Text: ="Name Product"
             Visible: =showgrpProCS
             Width: =314
-            X: =292
+            X: =495
             Y: =184
             ZIndex: =35
 
@@ -652,8 +661,8 @@ KiemKho As screen:
             Text: ="Input Price"
             Visible: =showgrpProCS
             Width: =125
-            X: =931
-            Y: =184
+            X: =983
+            Y: =182
             ZIndex: =36
 
         lbl_Status_DuyetDatHang_2 As label:
@@ -722,7 +731,7 @@ KiemKho As screen:
             DisabledBorderColor: =RGBA(219, 219, 219, 1)
             DisabledFill: =RGBA(255, 255, 255, 1)
             DisplayMode: =DisplayMode.Disabled
-            Height: =366
+            Height: =343
             RadiusBottomLeft: =20
             RadiusBottomRight: =20
             RadiusTopLeft: =20
@@ -920,7 +929,7 @@ KiemKho As screen:
             Text: ="Cancel"
             Visible: =showgrpCS
             Width: =156
-            X: =842
+            X: =817
             Y: =532
             ZIndex: =57
 
@@ -958,7 +967,20 @@ KiemKho As screen:
             Text: ="Update"
             Visible: =showgrpCS
             Width: =156
-            X: =653
+            X: =641
             Y: =532
             ZIndex: =58
+
+    lbl_OrderedID_DuyetDatHang_16 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Size: =14
+        Text: ="Name Product"
+        Visible: =showgrpProCS
+        Width: =314
+        X: =199
+        Y: =182
+        ZIndex: =59
 

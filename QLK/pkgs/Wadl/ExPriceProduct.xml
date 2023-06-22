@@ -1,14 +1,14 @@
-<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://asia-001.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="ExProduct" xmlns="http://wadl.dev.java.net/2009/02">
-  <doc title="ExProduct" />
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://asia-001.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="ExPriceProduct" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="ExPriceProduct" />
   <grammars>
     <jsonTypes targetNamespace="https://asia-001.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
       <string name="ManualTriggerInput_Compose_Inputs_def" />
       <object name="ManualTriggerInput">
         <property name="Compose_Inputs" type="string" />
       </object>
-      <string name="ResponseActionOutput_filelink_def" />
+      <string name="ResponseActionOutput_priceproduct_def" />
       <object name="ResponseActionOutput">
-        <property name="filelink" type="string" />
+        <property name="priceproduct" type="string" />
       </object>
       <object name="Run_responses_default_def" />
     </jsonTypes>

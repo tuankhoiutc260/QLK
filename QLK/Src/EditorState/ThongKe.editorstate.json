@@ -2441,7 +2441,7 @@
       "Properties": [
         {
           "Category": "Data",
-          "NameMap": "{\"Labels\":\"BarCode\",\"Series1\":\"Height\",\"Series2\":\"ID\",\"Series3\":\"IDSupplier\",\"Series4\":\"ID_TypeOfDevice\",\"Series5\":\"InputPrice\",\"Series6\":\"Length\",\"Series7\":\"MinimumQuantity\",\"Series8\":\"OutputPrice\",\"Series9\":\"Quantity\"}",
+          "NameMap": "{\"Labels\":\"IDProduct\",\"Series1\":\"InputPrice\",\"Series2\":\"OutputPrice\",\"Series3\":\"IDSupplier\",\"Series4\":\"ID_TypeOfDevice\",\"Series5\":\"InputPrice\",\"Series6\":\"Length\",\"Series7\":\"MinimumQuantity\",\"Series8\":\"OutputPrice\",\"Series9\":\"Quantity\"}",
           "PropertyName": "Items",
           "RuleProviderType": "Unknown"
         },
