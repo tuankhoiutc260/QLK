@@ -294,7 +294,7 @@ TrangChu_KeToan As screen:
                             col_ImportRequest_HomeAccountant, 
                             RenameColumns(
                                 ShowColumns(
-                                    Filter(QLK_ImportRequest, true), 
+                                    QLK_ImportRequest,
                                     "ID_ProductRequest", 
                                     "Quantity"
                                 ), 
@@ -324,7 +324,7 @@ TrangChu_KeToan As screen:
                     =Reset(gal_NewOrderProduct_Accoutant);
                     Refresh(QLK_Product_Supplier);
                     Refresh(QLK_Product);
-                    If(CountRows(col_DetailsNewOrder_HomeAccountant) = 0, Set(NoRow_col_DetailsNewOrder_HomeAccountant, 0));
+                    
                     Set(colorBtnOrdered_Accountant, Color.Black);
                     Set(fillBtnOrdered_Accountant, RGBA(0, 0, 0, 0));
                     Set(colorBtnImport_Accoutant, Color.Black);
@@ -387,7 +387,6 @@ TrangChu_KeToan As screen:
                 OnSelect: |-
                     =Reset(gal_ExportProduct_Accoutant);
                     Refresh(QLK_Product);
-                    If(CountRows(col_DetailsExport_HomeAccountant) = 0, Set(NoRow_col_DetailsExport_HomeAccountant, 0));
                     Set(colorBtnOrdered_Accountant, Color.Black);
                     Set(fillBtnOrdered_Accountant, RGBA(0, 0, 0, 0));
                     Set(colorBtnImport_Accoutant, Color.Black);
@@ -401,7 +400,6 @@ TrangChu_KeToan As screen:
                     Set(visible_cont_Import_HomeAccountant, false);
                     Set(visible_cont_NewOrder_HomeAccountant, false);
                     Set(visible_cont_Export_HomeAccountant, true);
-                    Set(StatusOfAccountant, 3); // 1: Cac phieu da order, 2: Import phieu moi, 3: Order hang moi
                     
                     // Create collection Product Order not Warehouse
                     If(CountRows(col_DetailsExport_HomeAccountant) = 0,
@@ -409,10 +407,7 @@ TrangChu_KeToan As screen:
                         col_ProductInWarehouse_HomeAccountant, 
                         RenameColumns(
                             ShowColumns(
-                                Filter(
-                                    QLK_Product, 
-                                    true)
-                                , 
+                                QLK_Product, 
                                 "IDProduct", 
                                 "Name", 
                                 "QuantityInStock",
@@ -423,12 +418,9 @@ TrangChu_KeToan As screen:
                                 "ID_TypeOfDevice"
                             ), 
                             "IDProduct", "ID",
-                            "Name", "Name",
                             "OutputPrice", "Price"
                         )
                     ));
-                    
-                    //Reset(TextInput6_1);
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(127, 235, 117, 1)
                 Size: =12
@@ -551,8 +543,8 @@ TrangChu_KeToan As screen:
                         OnSelect: =Select(Parent)
                         Size: =9
                         Text: =LookUp(QLK_TypeOfDevice, ID = LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, ID_TypeOfDevice), DeviceTypeName)
-                        Width: =95
-                        X: =217
+                        Width: =120
+                        X: =198
                         Y: =64
                         ZIndex: =6
 
@@ -834,15 +826,14 @@ TrangChu_KeToan As screen:
                                 )
                             );
                             
-                            QLK_Approve_Import_Orders.Run(JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), "devapps@bhk.vn", 
-                                LookUp(QLK_Account, Gmail = emailLogin, FullName), Sum(col_DetailsImport_HomeAccountant, TotalPrice), 
-                                LookUp(QLK_ExportForm, IDExport = NewIDExport_HomeAccountant, ID), LookUp(QLK_ExportForm, IDExport = NewIDImport_HomeAccountant, ID), 2);
-                            
-                            /*
-                            QLK_Approve_Import_Orders.Run(JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), "devapps@bhk.vn", 
-                                LookUp(QLK_Account, Gmail = emailLogin, FullName), Sum(col_DetailsImport_HomeAccountant, TotalPrice), 
-                                LookUp(QLK_ExportForm, IDExport = NewIDExport_HomeAccountant, ID), LookUp(QLK_ExportForm, IDExport = NewIDExport_HomeAccountant, ID)
-                            );*/
+                            QLK_Approve_Import_Orders.Run(
+                                JSON(col_DetailsImport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), 
+                                "devapps@bhk.vn", 
+                                LookUp(QLK_Account, Gmail = emailLogin, FullName), 
+                                Sum(col_DetailsImport_HomeAccountant, TotalPrice), 
+                                LookUp(QLK_ImportForm, IDImport = NewIDImport_HomeAccountant, ID), 
+                                LookUp(QLK_ImportForm, IDImport = NewIDImport_HomeAccountant, ID)
+                            );
                             
                             Clear(col_DetailsImport_HomeAccountant);
                         OnTimerEnd: |-
@@ -2931,21 +2922,6 @@ TrangChu_KeToan As screen:
                         OnSelect: |+
                             =Set(NewIDNewOrder_HomeAccoutant, "OD" & Text(Now(), "ddmmyyyyhhmmss"));
                             
-                            
-                            /*
-                            ForAll(col_DetailsNewOrder_HomeAccountant, 
-                                QLK_OrderInformation.Run(
-                                    NewIDNewOrder_HomeAccoutant,
-                                    col_DetailsNewOrder_HomeAccountant[@IDProduct],
-                                    Value(LookUp(gal_DetailsOrdered_cOHA1_2.AllItems, IDProduct = col_DetailsNewOrder_HomeAccountant[@IDProduct], TextInput7.Text)),
-                                    Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_DetailsNewOrder_HomeAccountant[@IDProduct], ID_TypeOfDevice)),
-                                    Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_DetailsNewOrder_HomeAccountant[@IDProduct], 'Price_Pro-Supplier')),
-                                    Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = col_DetailsNewOrder_HomeAccountant[@IDProduct], 'Price_Pro-Supplier') * 
-                                        LookUp(gal_DetailsOrdered_cOHA1_2.AllItems, IDProduct = col_DetailsNewOrder_HomeAccountant[@IDProduct], TextInput7.Text))
-                                )
-                            );
-                            */
-                            
                             ForAll(col_DetailsNewOrder_HomeAccountant,
                                 QLK_PatchtoOrderInformation.Run(
                                     NewIDNewOrder_HomeAccoutant,
@@ -3436,8 +3412,7 @@ TrangChu_KeToan As screen:
                         HoverBorderColor: =RGBA(237, 237, 237, 1)
                         HoverFill: =RGBA(81, 224, 105, 1)
                         OnSelect: |
-                            =//Set(StatusUpdateImport_HomeAccountant, 1);
-                            Set(NewIDExport_HomeAccountant, "EX" & Text(Now(), "ddmmyyyyhhmmss"));
+                            =Set(NewIDExport_HomeAccountant, "EX" & Text(Now(), "ddmmyyyyhhmmss"));
                             Patch(QLK_ExportForm, 
                                 {
                                     IDExport: NewIDExport_HomeAccountant,
@@ -3505,6 +3480,16 @@ TrangChu_KeToan As screen:
                                 col_getQuantityProducttoExport As T, 
                                 UpdateIf(QLK_Zone, ID_Zone = T.ID_Zone, {QuantityIsContained: T.Max_Value}));
                             
+                            ClearCollect(
+                                col_DetailsNewOrder_HomeAccountant,
+                                ForAll(
+                                    Sequence(CountRows(col_DetailsNewOrder_HomeAccountant)),
+                                    Patch(
+                                        Last(FirstN(col_DetailsNewOrder_HomeAccountant, Value)),
+                                        {RowNumber: Value}
+                                    )
+                                )
+                            );
                             
                             QLK_Approve_Export_Orders.Run(JSON(col_DetailsExport_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), "devapps@bhk.vn", 
                                 LookUp(QLK_Account, Gmail = emailLogin, FullName), Sum(col_DetailsExport_HomeAccountant, TotalPrice), 
@@ -4137,7 +4122,6 @@ TrangChu_KeToan As screen:
             HoverFill: =RGBA(127, 235, 117, 1)
             OnSelect: |-
                 =Set(visible_grp_InputImportQuantity_HomeAccoutant, false);
-                //Set(NoRow_colDetailsImport_HomeAccountant, NoRow_colDetailsImport_HomeAccountant + 1);
                 
                 UpdateIf(
                     col_ImportRequest_HomeAccountant, 
@@ -4270,16 +4254,7 @@ TrangChu_KeToan As screen:
             HoverFill: =RGBA(127, 235, 117, 1)
             OnSelect: |-
                 =Set(visible_grp_InputNewOrderQuantity_HomeAccoutant, false);
-                //Set(NoRow_col_DetailsNewOrder_HomeAccountant, NoRow_col_DetailsNewOrder_HomeAccountant + 1);
-                /*
-                UpdateIf(
-                    col_ImportRequest_HomeAccountant, 
-                    IDProduct = IDProductNewOrder_HomeAccountant, 
-                    {
-                        Quantity: LookUp(col_ImportRequest_HomeAccountant, IDProduct = IDProductNewOrder_HomeAccountant, Quantity) - Value(TextInput3_2.Text)
-                    }
-                );
-                */
+                
                 If(
                     IDProductNewOrder_HomeAccountant in col_DetailsNewOrder_HomeAccountant[@IDProduct],
                     UpdateIf(
@@ -4299,9 +4274,7 @@ TrangChu_KeToan As screen:
                             TotalPrice: Value(TextInput3_3.Text) * PriceProductNewOrder_HomeAccountant
                         } 
                     );
-                );
-                
-                    
+                );   
                 
                 Reset(TextInput3_3);
             PressedColor: =RGBA(255, 255, 255, 1)
@@ -4406,8 +4379,6 @@ TrangChu_KeToan As screen:
             OnSelect: |-
                 =Set(visible_grp_InputExportQuantity_HomeAccoutant, false);
                 
-                Set(NoRow_col_DetailsExport_HomeAccountant, NoRow_col_DetailsExport_HomeAccountant + 1);
-                
                 UpdateIf(
                     col_ProductInWarehouse_HomeAccountant, 
                     ID = IDProductExport_HomeAccountant, 
@@ -4427,7 +4398,7 @@ TrangChu_KeToan As screen:
                     ),
                     Collect(col_DetailsExport_HomeAccountant,
                         {
-                            No: NoRow_col_DetailsExport_HomeAccountant,
+                            //No: NoRow_col_DetailsExport_HomeAccountant,
                             Name: NameProductExport_HomeAccountant,
                             IDProduct: IDProductExport_HomeAccountant,
                             Quantity: Value(TextInput3_2.Text),
@@ -4435,9 +4406,7 @@ TrangChu_KeToan As screen:
                             TotalPrice: Value(TextInput3_2.Text) * PriceProductExport_HomeAccountant
                         } 
                     );
-                );
-                
-                    
+                );    
                 
                 Reset(TextInput3_2);
             PressedColor: =RGBA(255, 255, 255, 1)

@@ -80,7 +80,8 @@
     "dependents": [
       "6a2b44ed-a442-49e7-9f16-fe86d7ee5099",
       "3fa0a56f-7e03-42a5-9f70-ca60821ffaef",
-      "dfe2cbcb-a67f-4f96-93ff-bb530f03b867"
+      "dfe2cbcb-a67f-4f96-93ff-bb530f03b867",
+      "90858449-243c-47f9-9670-41b4923c35e9"
     ],
     "id": "276c7d45-bfe7-4b38-b653-48308dff6f77"
   },
@@ -142,7 +143,7 @@
     "dependents": [
       "3fa0a56f-7e03-42a5-9f70-ca60821ffaef",
       "dfe2cbcb-a67f-4f96-93ff-bb530f03b867",
-      "bb027078-e15b-4a5e-a439-039ba157cfed"
+      "90858449-243c-47f9-9670-41b4923c35e9"
     ],
     "id": "6163a375-9043-4469-818a-cba8353da2be"
   },
@@ -213,6 +214,47 @@
     },
     "dependents": [],
     "id": "6d65953e-ad5a-4e70-8f9c-cda0bab33e46"
+  },
+  "90858449-243c-47f9-9670-41b4923c35e9": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "276c7d45-bfe7-4b38-b653-48308dff6f77": {
+          "value": "shared_sharepointonline"
+        },
+        "6163a375-9043-4469-818a-cba8353da2be": {
+          "value": "shared_office365"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "4a250302-8929-406b-a64c-bcbe9a907f35"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365": {
+          "value": "6163a375-9043-4469-818a-cba8353da2be"
+        },
+        "shared_sharepointonline": {
+          "value": "276c7d45-bfe7-4b38-b653-48308dff6f77"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "4a250302-8929-406b-a64c-bcbe9a907f35"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "QLK_Approve_Import_Orders"
+    ],
+    "dependencies": {
+      "shared_office365": "6163a375-9043-4469-818a-cba8353da2be",
+      "shared_sharepointonline": "276c7d45-bfe7-4b38-b653-48308dff6f77"
+    },
+    "dependents": [],
+    "id": "90858449-243c-47f9-9670-41b4923c35e9"
   },
   "a242a407-a391-4941-a958-9776306d31f8": {
     "connectionRef": {

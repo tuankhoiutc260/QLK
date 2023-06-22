@@ -1,0 +1,50 @@
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://asia-001.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="QLK_Approve_Import_Orders" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="QLK_Approve_Import_Orders" />
+  <grammars>
+    <jsonTypes targetNamespace="https://asia-001.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+      <string name="ManualTriggerInput_GetDetailsOrder_Inputs_def" />
+      <string name="ManualTriggerInput_GetEmailofManager_Inputs_def" />
+      <string name="ManualTriggerInput_AccountantName_Inputs_def" />
+      <string name="ManualTriggerInput_TotalPriceofOrder_Inputs_def" />
+      <integer name="ManualTriggerInput_ApproveImport_Id_def" />
+      <integer name="ManualTriggerInput_RefuseImport_Id_def" />
+      <object name="ManualTriggerInput">
+        <property name="GetDetailsOrder_Inputs" type="string" />
+        <property name="GetEmailofManager_Inputs" type="string" />
+        <property name="AccountantName_Inputs" type="string" />
+        <property name="TotalPriceofOrder_Inputs" type="string" />
+        <property name="ApproveImport_Id" type="integer" />
+        <property name="RefuseImport_Id" type="integer" />
+      </object>
+    </jsonTypes>
+  </grammars>
+  <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://asia-001.azure-apim.net/apim/logicflows">
+    <resource path="/{connectionId}/triggers/manual/run">
+      <param style="template" name="connectionId" type="xs:string" required="true" />
+      <method siena:requiresAuthentication="true" name="POST" id="Run">
+        <doc title="Runs a logic flow trigger." />
+        <request>
+          <param style="query" name="api-version" type="xs:string" required="true" fixed="2015-02-01-preview">
+            <doc title="The api version" />
+          </param>
+          <representation mediaType="application/json">
+            <param style="plain" name="GetDetailsOrder_Inputs" path="/GetDetailsOrder_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="GetEmailofManager_Inputs" path="/GetEmailofManager_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="AccountantName_Inputs" path="/AccountantName_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="TotalPriceofOrder_Inputs" path="/TotalPriceofOrder_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="ApproveImport_Id" path="/ApproveImport_Id" type="xs:long" required="true" />
+            <param style="plain" name="RefuseImport_Id" path="/RefuseImport_Id" type="xs:long" required="true" />
+          </representation>
+        </request>
+      </method>
+    </resource>
+  </resources>
+  <authenticationProviders xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <connectionProvider id="PowerAppAuth" siena:connectionProviderId="logicflows" />
+  </authenticationProviders>
+  <template xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
+    <variable name="connectionId">
+      <modifyParams style="template" name="connectionId" attribute="fixed" />
+    </variable>
+  </template>
+</application>
