@@ -1168,8 +1168,8 @@ TrangChu_Admin As screen:
                         OnSelect: =Select(Parent)
                         Size: =11
                         Text: =ThisItem.Quantity
-                        Width: =40
-                        X: =397
+                        Width: =55
+                        X: =387
                         Y: =17
                         ZIndex: =6
 
@@ -1195,7 +1195,7 @@ TrangChu_Admin As screen:
                         Size: =11
                         Text: ="x"
                         Width: =40
-                        X: =370
+                        X: =360
                         Y: =17
                         ZIndex: =8
 

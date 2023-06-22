@@ -382,14 +382,14 @@ DangNhap As screen:
             
                                 //Reset(gal_ProductListOrdered_cOHA1);
             
-                                Set(fontSizeOrdered_HomeAccountant, 15);
-                                Set(fontSizeImport_HomeAccountant, 12);
-                                Set(fontSizeNewOrder_HomeAccountant, 12);
-                                Set(fontSizeExport_HomeAccountant, 12);
-                                Set(visLineOrdered_HomeAccountant, true);
-                                Set(visLineImport_HomeAccountant, false);
-                                Set(visLineNewOrder_HomeAccountant, false);
-                                Set(visLineExport_HomeAccountant, false);
+                                Set(colorBtnOrdered_Accountant, Color.White);
+                                Set(fillBtnOrdered_Accountant, RGBA(127, 235, 117, 1));
+                                Set(colorBtnImport_Accoutant, Color.Black);
+                                Set(fillBtnImport_Accountant, RGBA(0, 0, 0, 0));
+                                Set(colorBtnNewOrder_Accountant, Color.Black);
+                                Set(fillBtnNewOrder_Accountant, RGBA(0, 0, 0, 0));
+                                Set(colorBtnExport_Accountant, Color.Black);
+                                Set(fillBtnExport_Accountant, RGBA(0, 0, 0, 0));
             
                                 Set(visible_cont_Ordered_HomeAccountant, true);
                                 Set(visible_cont_Import_HomeAccountant, false);
