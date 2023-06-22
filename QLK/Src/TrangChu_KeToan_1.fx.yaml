@@ -2445,6 +2445,7 @@ TrangChu_KeToan_1 As screen:
                             BorderColor: =RGBA(202, 202, 202, 1)
                             BorderThickness: =0.5
                             Default: =ThisItem.Quantity
+                            DisplayMode: =DisplayMode.View
                             Format: =TextFormat.Number
                             Height: =35
                             HoverBorderColor: =RGBA(127, 235, 117, 0.5)
