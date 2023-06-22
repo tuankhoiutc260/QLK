@@ -1309,7 +1309,7 @@ SoDoKho As screen:
             LookUp(QLK_Zone, ID_Zone = drop_Location2.SelectedText.Value, HeightZone))/
             (LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation, Length)*
             LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation, Width)*
-            LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation, Height)),0)
+            LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation, Height)),0) - LookUp(QLK_Zone, ID_Zone = drop_Location2.SelectedText.Value, QuantityIsContained)
         Visible: =showSetLocation
         Width: =152
         X: =809
@@ -1634,7 +1634,18 @@ SoDoKho As screen:
         drop_Location2 As dropdown:
             BorderColor: =RGBA(149, 149, 149, 1)
             ChevronBackground: =RGBA(116, 116, 116, 1)
-            Items: =Filter(QLK_Zone, (ID_ProductZone = Blank() && TypeOfDevice = txt_UnitLocation.Text))
+            Items: |-
+                =Filter(QLK_Zone, (ID_ProductZone = Blank() && TypeOfDevice = txt_UnitLocation.Text) || 
+                        (ID_ProductZone = IDProduct_GalProductLocation &&
+                            (QuantityIsContained < Round(LookUp(QLK_Zone, ID_ProductZone = IDProduct_GalProductLocation, LengthZone)*
+                                                LookUp(QLK_Zone, ID_ProductZone = IDProduct_GalProductLocation, WidthZone)*
+                                                LookUp(QLK_Zone, ID_ProductZone = IDProduct_GalProductLocation, HeightZone)/
+                                                (LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation, Length)*
+                                                LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation, Width)*
+                                                LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation, Height)),0)
+                            )
+                        )
+                    )
             SelectionFill: =RGBA(149, 149, 149, 1)
             Visible: =showSetLocation
             Width: =101
@@ -1743,7 +1754,8 @@ SoDoKho As screen:
             HoverBorderColor: =RGBA(237, 237, 237, 1)
             HoverFill: =RGBA(81, 224, 105, 1)
             OnSelect: |-
-                =Patch(QLK_Zone, LookUp(QLK_Zone, ID_Zone = drop_Location2.SelectedText.Value),
+                =If(LookUp(QLK_Zone, ID_Zone = drop_Location2.SelectedText.Value, QuantityIsContained) = Blank(),
+                Patch(QLK_Zone, LookUp(QLK_Zone, ID_Zone = drop_Location2.SelectedText.Value),
                     {
                         ID_ProductZone: IDProduct_GalProductLocation,
                         QuantityIsContained: Value(txt_QuantitySortable.Text)
@@ -1762,7 +1774,19 @@ SoDoKho As screen:
                         Quantity: LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation, Quantity) - txt_QuantitySortable,
                         QuantityInStock: LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation, QuantityInStock) + txt_QuantitySortable
                     }
-                ));
+                )),
+                Patch(QLK_Product, LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation),
+                    {   
+                        Quantity: LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation, Quantity) - txt_QuantitySortable,
+                        QuantityInStock: LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation, QuantityInStock) + txt_QuantitySortable
+                    }
+                );
+                Patch(QLK_Zone, LookUp(QLK_Zone, ID_Zone = drop_Location2.SelectedText.Value),
+                    {
+                        QuantityIsContained: LookUp(QLK_Zone, ID_Zone = drop_Location2.SelectedText.Value, QuantityIsContained) + Value(txt_QuantitySortable.Text)
+                    }
+                )
+                );
                 Set(showXacNhanLocation, false)
             PressedBorderColor: =RGBA(237, 237, 237, 1)
             RadiusBottomLeft: =20

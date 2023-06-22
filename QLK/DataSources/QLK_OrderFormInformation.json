@@ -37,8 +37,10 @@
       "OData__ColorTag": "Color Tag",
       "Price": "Price",
       "Quantity": "Quantity",
+      "QuantityImport": "QuantityImport",
       "Title": "Title",
-      "TotalPrice": "TotalPrice"
+      "TotalPrice": "TotalPrice",
+      "TotalPriceAfterImport": "TotalPriceAfterImport"
     },
     "DatasetName": "https://bhktechcorp.sharepoint.com/sites/Khoi",
     "EncodeDataset": true,

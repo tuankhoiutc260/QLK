@@ -126,6 +126,20 @@
     "dependents": [],
     "id": "3fa0a56f-7e03-42a5-9f70-ca60821ffaef"
   },
+  "41f42a69-d3f8-44dc-a4e5-164aac490a3a": {
+    "connectionRef": {
+      "displayName": "OneDrive for Business",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/shgogna/globalperconnector-train1/1.0.1639.3310/onedriveforbusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_onedriveforbusiness"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "7b52d8c8-7072-4574-a3a2-8db2de6645d7"
+    ],
+    "id": "41f42a69-d3f8-44dc-a4e5-164aac490a3a"
+  },
   "6163a375-9043-4469-818a-cba8353da2be": {
     "connectionRef": {
       "apiTier": "Standard",
@@ -180,6 +194,34 @@
     },
     "dependents": [],
     "id": "6a2b44ed-a442-49e7-9f16-fe86d7ee5099"
+  },
+  "7b52d8c8-7072-4574-a3a2-8db2de6645d7": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "2a7de229-0a0f-47a7-aa65-e16ce7f94382"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "2a7de229-0a0f-47a7-aa65-e16ce7f94382"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "ExProfuctTT"
+    ],
+    "dependencies": {
+      "shared_onedriveforbusiness": "41f42a69-d3f8-44dc-a4e5-164aac490a3a"
+    },
+    "dependents": [],
+    "id": "7b52d8c8-7072-4574-a3a2-8db2de6645d7"
   },
   "7c1d17ea-3347-4837-b9cb-339554c01667": {
     "connectionRef": {

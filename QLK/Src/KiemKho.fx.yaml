@@ -803,7 +803,6 @@ KiemKho As screen:
             ZIndex: =47
 
         Label37_2 As label:
-            Align: =Align.Center
             Font: =Font.'Segoe UI'
             Size: =15
             Text: =gal_ProductCS.Selected.Name
@@ -852,7 +851,7 @@ KiemKho As screen:
             Align: =Align.Center
             Font: =Font.'Segoe UI'
             Size: =15
-            Text: =gal_ProductCS.Selected.Quantity
+            Text: =gal_ProductCS.Selected.Quantity + gal_ProductCS.Selected.QuantityInStock
             Visible: =showgrpCS
             Width: =90
             X: =1006
@@ -873,7 +872,7 @@ KiemKho As screen:
 
         txt_RealQuantity As text:
             Align: =Align.Center
-            Default: =
+            Default: =gal_ProductCS.Selected.Quantity + gal_ProductCS.Selected.QuantityInStock
             Visible: =showgrpCS
             Width: =57
             X: =1022

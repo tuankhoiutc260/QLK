@@ -74,8 +74,8 @@ HangHoa As screen:
         TextColor: =RGBA(54, 176, 75, 1)
         VerticalAlign: =VerticalAlign.Middle
         Width: =70
-        X: =1022
-        Y: =122
+        X: =826
+        Y: =123
         ZIndex: =3
 
     Rectangle1_2 As rectangle:
@@ -219,7 +219,8 @@ HangHoa As screen:
             =Navigate(HangHoa);
             Set(DSHangHoa, "DSTrongKho");
             Set(showImportRequest, false);
-            Refresh(QLK_Product)
+            Refresh(QLK_Product);
+            ClearCollect(col_ProductTT, ShowColumns(QLK_Product, "IDProduct", "Name", "Quantity", "QuantityInStock", "MinimumQuantity", "InputPrice", "OutputPrice", "Location"))
         RadiusBottomLeft: =
         RadiusBottomRight: =
         RadiusTopLeft: =
@@ -500,7 +501,7 @@ HangHoa As screen:
         Y: =183
         ZIndex: =26
 
-    btn_PendingList_DuyetDatHang_1 As button:
+    btn_BelowStockLevel As button:
         AutoDisableOnSelect: =false
         BorderColor: =RGBA(237, 237, 237, 1)
         BorderThickness: =0
@@ -1291,17 +1292,6 @@ HangHoa As screen:
             Y: =165
             ZIndex: =67
 
-        txt_Unit As label:
-            Font: =Font.'Segoe UI'
-            Height: =45
-            Size: =15
-            Text: =LookUp(QLK_Unit, ID = IDUnit_GalProduct, UnitName)
-            Visible: =showUpdateThongTinHangHoa
-            Width: =183
-            X: =902
-            Y: =297
-            ZIndex: =68
-
         Label9_34 As label:
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Semibold
@@ -1639,6 +1629,27 @@ HangHoa As screen:
         X: =889
         Y: =418
         ZIndex: =123
+
+    btn_ExProduct As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =RGBA(237, 237, 237, 1)
+        BorderThickness: =0
+        Color: =RGBA(0, 94, 146, 1)
+        Fill: =RGBA(237, 237, 237, 1)
+        HoverBorderColor: =RGBA(237, 237, 237, 1)
+        HoverFill: =RGBA(0, 94, 146, 1)
+        OnSelect: =ExProfuctTT.Run(col_ProductTT,JSONFormat.IncludeBinaryData)
+        PressedBorderColor: =RGBA(237, 237, 237, 1)
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =13
+        Text: ="Below stock level"
+        Width: =192
+        X: =905
+        Y: =123
+        ZIndex: =129
 
     grp_ScanSP As group:
         Height: =5
