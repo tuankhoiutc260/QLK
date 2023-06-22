@@ -78,10 +78,9 @@
     ],
     "dependencies": {},
     "dependents": [
-      "7c1d17ea-3347-4837-b9cb-339554c01667",
       "6a2b44ed-a442-49e7-9f16-fe86d7ee5099",
-      "bb893d7c-c407-44f9-bfd5-7b8f66c27807",
-      "3fa0a56f-7e03-42a5-9f70-ca60821ffaef"
+      "3fa0a56f-7e03-42a5-9f70-ca60821ffaef",
+      "dfe2cbcb-a67f-4f96-93ff-bb530f03b867"
     ],
     "id": "276c7d45-bfe7-4b38-b653-48308dff6f77"
   },
@@ -141,9 +140,9 @@
     ],
     "dependencies": {},
     "dependents": [
-      "7c1d17ea-3347-4837-b9cb-339554c01667",
-      "bb893d7c-c407-44f9-bfd5-7b8f66c27807",
-      "3fa0a56f-7e03-42a5-9f70-ca60821ffaef"
+      "3fa0a56f-7e03-42a5-9f70-ca60821ffaef",
+      "dfe2cbcb-a67f-4f96-93ff-bb530f03b867",
+      "bb027078-e15b-4a5e-a439-039ba157cfed"
     ],
     "id": "6163a375-9043-4469-818a-cba8353da2be"
   },
@@ -214,47 +213,6 @@
     },
     "dependents": [],
     "id": "6d65953e-ad5a-4e70-8f9c-cda0bab33e46"
-  },
-  "7c1d17ea-3347-4837-b9cb-339554c01667": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "276c7d45-bfe7-4b38-b653-48308dff6f77": {
-          "value": "shared_sharepointonline"
-        },
-        "6163a375-9043-4469-818a-cba8353da2be": {
-          "value": "shared_office365"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "d36d6bab-f4b0-454c-952d-f1b804b02206"
-        }
-      },
-      "parameterHintsV2": {
-        "shared_office365": {
-          "value": "6163a375-9043-4469-818a-cba8353da2be"
-        },
-        "shared_sharepointonline": {
-          "value": "276c7d45-bfe7-4b38-b653-48308dff6f77"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "d36d6bab-f4b0-454c-952d-f1b804b02206"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "QLK_Approve_Import_Orders"
-    ],
-    "dependencies": {
-      "shared_office365": "6163a375-9043-4469-818a-cba8353da2be",
-      "shared_sharepointonline": "276c7d45-bfe7-4b38-b653-48308dff6f77"
-    },
-    "dependents": [],
-    "id": "7c1d17ea-3347-4837-b9cb-339554c01667"
   },
   "a242a407-a391-4941-a958-9776306d31f8": {
     "connectionRef": {
@@ -342,7 +300,7 @@
     "dependents": [],
     "id": "b246e8f9-3e33-454f-966e-f2360cdfaf27"
   },
-  "bb893d7c-c407-44f9-bfd5-7b8f66c27807": {
+  "dfe2cbcb-a67f-4f96-93ff-bb530f03b867": {
     "connectionRef": {
       "displayName": "Logic flows",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
@@ -381,6 +339,6 @@
       "shared_sharepointonline": "276c7d45-bfe7-4b38-b653-48308dff6f77"
     },
     "dependents": [],
-    "id": "bb893d7c-c407-44f9-bfd5-7b8f66c27807"
+    "id": "dfe2cbcb-a67f-4f96-93ff-bb530f03b867"
   }
 }
