@@ -314,7 +314,6 @@ KiemKho As screen:
             OnSelect: =Select(Parent)
             Text: =ThisItem.ID_CheckStock
             Width: =203
-            X: =13
             Y: =14
             ZIndex: =1
 
@@ -324,7 +323,7 @@ KiemKho As screen:
             OnSelect: =Select(Parent)
             Text: =ThisItem.OscillateQuantity
             Width: =111
-            X: =529
+            X: =637
             Y: =5
             ZIndex: =2
 
@@ -334,8 +333,7 @@ KiemKho As screen:
             OnSelect: =Select(Parent)
             Text: =LookUp(QLK_Product, IDProduct = ThisItem.ID_ProductCS, Name)
             Width: =285
-            X: =216
-            Y: =5
+            X: =186
             ZIndex: =3
 
         lbl_OutputPrice_4 As label:
@@ -344,7 +342,7 @@ KiemKho As screen:
             OnSelect: =Select(Parent)
             Text: =ThisItem.OscillatePrice
             Width: =111
-            X: =697
+            X: =763
             Y: =5
             ZIndex: =4
 
@@ -353,10 +351,20 @@ KiemKho As screen:
             Height: =62
             OnSelect: =Select(Parent)
             Text: =ThisItem.Created
-            Width: =245
-            X: =826
+            Width: =158
+            X: =896
             Y: =5
             ZIndex: =5
+
+        lbl_OutputPrice_6 As label:
+            Align: =Align.Center
+            Height: =64
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.IDZoneCS
+            Width: =111
+            X: =494
+            Y: =5
+            ZIndex: =6
 
         Button6_4 As button:
             AutoDisableOnSelect: =false
@@ -375,7 +383,7 @@ KiemKho As screen:
             RadiusTopRight: =0
             Text: =""
             Width: =1071
-            ZIndex: =6
+            ZIndex: =7
 
     Button7_8 As button:
         BorderColor: =RGBA(151, 0, 0, 1)
@@ -411,7 +419,7 @@ KiemKho As screen:
         OnSelect: =
         Text: ="ID Chech Stock"
         Width: =136
-        X: =272
+        X: =260
         Y: =184
         ZIndex: =25
 
@@ -443,7 +451,7 @@ KiemKho As screen:
         OnSelect: =
         Text: ="Product"
         Width: =136
-        X: =504
+        X: =480
         Y: =183
         ZIndex: =27
 
@@ -453,8 +461,8 @@ KiemKho As screen:
         Height: =52
         OnSelect: =
         Text: ="Oscillate Price"
-        Width: =160
-        X: =896
+        Width: =126
+        X: =986
         Y: =184
         ZIndex: =28
 
@@ -465,7 +473,7 @@ KiemKho As screen:
         OnSelect: =
         Text: ="Oscillate Quantity"
         Width: =138
-        X: =741
+        X: =849
         Y: =183
         ZIndex: =29
 
@@ -476,7 +484,7 @@ KiemKho As screen:
         OnSelect: =
         Text: ="Checking time"
         Width: =160
-        X: =1096
+        X: =1114
         Y: =182
         ZIndex: =30
 
@@ -731,7 +739,7 @@ KiemKho As screen:
             DisabledBorderColor: =RGBA(219, 219, 219, 1)
             DisabledFill: =RGBA(255, 255, 255, 1)
             DisplayMode: =DisplayMode.Disabled
-            Height: =343
+            Height: =379
             RadiusBottomLeft: =20
             RadiusBottomRight: =20
             RadiusTopLeft: =20
@@ -816,7 +824,7 @@ KiemKho As screen:
             Size: =15
             Text: =gal_ProductCS.Selected.Name
             Visible: =showgrpCS
-            Width: =540
+            Width: =505
             X: =574
             Y: =364
             ZIndex: =48
@@ -852,19 +860,19 @@ KiemKho As screen:
                 ="Quantity in stock:"
             Visible: =showgrpCS
             Width: =191
-            X: =815
-            Y: =413
+            X: =453
+            Y: =464
             ZIndex: =51
 
         txt_QuanStock As label:
             Align: =Align.Center
             Font: =Font.'Segoe UI'
             Size: =15
-            Text: =gal_ProductCS.Selected.Quantity + gal_ProductCS.Selected.QuantityInStock
+            Text: =LookUp(QLK_Zone, ID_Zone = drop_LocationCS.SelectedText.Value && ID_ProductZone = ID_ProCS, QuantityIsContained)
             Visible: =showgrpCS
             Width: =90
-            X: =1006
-            Y: =413
+            X: =649
+            Y: =464
             ZIndex: =52
 
         Label33_5 As label:
@@ -875,16 +883,16 @@ KiemKho As screen:
                 ="Real quantity:"
             Visible: =showgrpCS
             Width: =191
-            X: =815
+            X: =787
             Y: =463
             ZIndex: =53
 
         txt_RealQuantity As text:
             Align: =Align.Center
-            Default: =gal_ProductCS.Selected.Quantity + gal_ProductCS.Selected.QuantityInStock
+            Default: =LookUp(QLK_Zone, ID_Zone = drop_LocationCS.SelectedText.Value && ID_ProductZone = ID_ProCS, QuantityIsContained)
             Visible: =showgrpCS
             Width: =57
-            X: =1022
+            X: =973
             Y: =463
             ZIndex: =54
 
@@ -897,7 +905,7 @@ KiemKho As screen:
             Visible: =showgrpCS
             Width: =160
             X: =457
-            Y: =463
+            Y: =516
             ZIndex: =55
 
         Label37_5 As label:
@@ -906,9 +914,9 @@ KiemKho As screen:
             Size: =15
             Text: =-gal_ProductCS.Selected.InputPrice * (txt_QuanStock.Text - txt_RealQuantity.Text) & " Vnđ"
             Visible: =showgrpCS
-            Width: =154
+            Width: =242
             X: =613
-            Y: =463
+            Y: =513
             ZIndex: =56
 
         btn_RefusedList_DuyetDatHang_2 As button:
@@ -929,8 +937,8 @@ KiemKho As screen:
             Text: ="Cancel"
             Visible: =showgrpCS
             Width: =156
-            X: =817
-            Y: =532
+            X: =866
+            Y: =569
             ZIndex: =57
 
         btn_RefusedList_DuyetDatHang_10 As button:
@@ -946,16 +954,22 @@ KiemKho As screen:
                 {
                     ID_CheckStock: IDNewCSProduct,
                     ID_ProductCS: ID_ProCS,
-                    QuantityInStock: txt_QuanStock.Text,
+                    QuantityInZone: txt_QuanStock.Text,
                     RealQuantity: txt_RealQuantity.Text,
                     OscillateQuantity: -(txt_QuanStock.Text - txt_RealQuantity.Text),
-                    OscillatePrice: -gal_ProductCS.Selected.InputPrice * (txt_QuanStock.Text - txt_RealQuantity.Text)
+                    OscillatePrice: -gal_ProductCS.Selected.InputPrice * (txt_QuanStock.Text - txt_RealQuantity.Text),
+                    IDZoneCS: drop_LocationCS.SelectedText.Value
                 }
                 );
                 Patch(QLK_Product, LookUp(QLK_Product, IDProduct = ID_ProCS),
                 {
-                    Quantity: Value(txt_RealQuantity.Text)
+                    QuantityInStock: LookUp(QLK_Product, IDProduct = ID_ProCS, QuantityInStock) - (Value(txt_QuanStock.Text) - Value(txt_RealQuantity.Text))
                 }
+                );
+                Patch(QLK_Zone, LookUp(QLK_Zone, ID_Zone = drop_LocationCS.SelectedText.Value),
+                    {
+                        QuantityIsContained: LookUp(QLK_Zone, ID_Zone = drop_LocationCS.SelectedText.Value, QuantityIsContained) - (Value(txt_QuanStock.Text) - Value(txt_RealQuantity.Text))
+                    }
                 );
                 Set(showgrpCS, false)
             PressedBorderColor: =RGBA(237, 237, 237, 1)
@@ -967,8 +981,8 @@ KiemKho As screen:
             Text: ="Update"
             Visible: =showgrpCS
             Width: =156
-            X: =641
-            Y: =532
+            X: =674
+            Y: =569
             ZIndex: =58
 
     lbl_OrderedID_DuyetDatHang_16 As label:
@@ -983,4 +997,35 @@ KiemKho As screen:
         X: =199
         Y: =182
         ZIndex: =59
+
+    drop_LocationCS As dropdown:
+        Items: =Filter(QLK_Zone, ID_ProductZone = ID_ProCS)
+        Visible: =showgrpCS
+        Width: =99
+        X: =975
+        Y: =412
+        ZIndex: =60
+
+    Label33_7 As label:
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Size: =15
+        Text: |-
+            ="Location to check:"
+        Visible: =showgrpCS
+        Width: =185
+        X: =759
+        Y: =412
+        ZIndex: =61
+
+    lbl_TotalPrice_DuyetDatHang_15 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        OnSelect: =
+        Text: ="Location to check"
+        Width: =96
+        X: =731
+        Y: =184
+        ZIndex: =62
 

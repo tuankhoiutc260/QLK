@@ -32,11 +32,12 @@
       "ID": "ID",
       "ID_CheckStock": "ID_CheckStock",
       "ID_ProductCS": "ID_ProductCS",
+      "IDZoneCS": "IDZoneCS",
       "Modified": "Modified",
       "OData__ColorTag": "Color Tag",
       "OscillatePrice": "OscillatePrice",
       "OscillateQuantity": "OscillateQuantity",
-      "QuantityInStock": "QuantityInStock",
+      "QuantityInStock": "QuantityInZone",
       "RealQuantity": "RealQuantity",
       "Title": "Title"
     },
