@@ -1,8 +1,8 @@
 [
   {
     "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
-    "FlowNameId": "2a7de229-0a0f-47a7-aa65-e16ce7f94382",
-    "Name": "ExProfuctTT",
+    "FlowNameId": "aa3b44e2-81ba-424c-b86a-dfb377b310cf",
+    "Name": "ExProduct",
     "ServiceKind": "ConnectedWadl",
     "Type": "ServiceInfo",
     "WorkflowEntityId": null
