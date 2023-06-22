@@ -1,0 +1,641 @@
+NhapHang_4 As screen:
+    Fill: =RGBA(255, 255, 255, 1)
+
+    Container5_1 As groupContainer.manualLayoutContainer:
+        Height: =768
+        Width: =1366
+        ZIndex: =1
+
+        Label16_1 As label:
+            Align: =Align.Center
+            AutoHeight: =true
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Bold
+            Height: =147
+            Size: =45
+            Text: |-
+                ="Management of 
+                Import - Export"
+            Width: =1366
+            ZIndex: =1
+
+        Image4_48 As image:
+            Height: =95
+            Image: =Logo
+            Width: =157
+            ZIndex: =2
+
+        shadow_ProductSelected_ciFP_11 As htmlViewer:
+            Height: =79
+            HtmlText: |+
+                ="<div style='margin:10px;
+                background: rgb(255,255,255);
+                background: linear-gradient(0deg, rgba(255,255,255,1) 10%, rgba(191,255,194,1) 97%);
+                width:" &shadow_ProductSelected_ciFP_11.Width - 31 &"px;
+                height:"& shadow_ProductSelected_ciFP_11.Height - 31& "px;
+                box-shadow:0 3px 6px 4px  #ccc; 
+                border-radius:35px'>
+                </div>" 
+                
+                
+                
+            Width: =143
+            X: =1194
+            Y: =16
+            ZIndex: =3
+
+        Button7_1 As button:
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =51
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(154, 245, 149, 0.75)
+            OnSelect: =Navigate(DangNhap)
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =RGBA(154, 245, 149, 1)
+            RadiusBottomLeft: =35
+            RadiusBottomRight: =35
+            RadiusTopLeft: =35
+            RadiusTopRight: =35
+            Text: ="LogOut"
+            Width: =113
+            X: =1206
+            Y: =31
+            ZIndex: =4
+
+        shadow_ProductSelected_ciFP_12 As htmlViewer:
+            Height: =150
+            HtmlText: |+
+                ="<div style='margin:10px;
+                background: rgb(255,255,255);
+                background: linear-gradient(0deg, rgba(255,255,255,1) 10%, rgba(191,255,194,1) 97%);
+                width:" &shadow_ProductSelected_ciFP_12.Width - 31 &"px;
+                height:"& shadow_ProductSelected_ciFP_12.Height - 31& "px;
+                box-shadow:0 3px 6px 4px  #ccc; 
+                border-radius:10px'>
+                </div>" 
+                
+                
+                
+            Width: =150
+            X: =608
+            Y: =180
+            ZIndex: =5
+
+        TextInput1_1 As text:
+            BorderThickness: =4
+            Default: =""
+            DisabledBorderColor: =RGBA(209, 232, 178, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =50
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Width: =50
+            X: =371
+            Y: =239
+            ZIndex: =6
+
+        Icon7_1 As icon.ArrowDown:
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(187, 221, 140, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =30
+            Rotation: =-45
+            Width: =30
+            X: =928
+            Y: =319
+            ZIndex: =7
+
+        Image14_5 As image:
+            BorderColor: =RGBA(209, 232, 178, 1)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =4
+            Fill: =RGBA(232, 244, 217, 1)
+            Height: =50
+            Image: =ic_Sparkle
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Width: =50
+            X: =211
+            Y: =149
+            ZIndex: =8
+
+        Separator1_13 As rectangle:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(166, 166, 166, 1)
+            Height: =1
+            OnSelect: =
+            Width: =139
+            X: =1002
+            Y: =213
+            ZIndex: =9
+
+        Image14_6 As image:
+            BorderColor: =RGBA(209, 232, 178, 1)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =4
+            Fill: =RGBA(232, 244, 217, 1)
+            Height: =45
+            Image: =ic_Resize
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Width: =45
+            X: =1141
+            Y: =91
+            ZIndex: =10
+
+        Image14_7 As image:
+            BorderColor: =RGBA(209, 232, 178, 1)
+            BorderThickness: =4
+            Height: =50
+            Image: =ic_Candlesticks
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Width: =50
+            X: =1046
+            Y: =124
+            ZIndex: =11
+
+        Image14_9 As image:
+            BorderColor: =RGBA(209, 232, 178, 1)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =4
+            Fill: =RGBA(232, 244, 217, 1)
+            Height: =50
+            Image: =ic_ArrowChart
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Width: =50
+            X: =1119
+            Y: =248
+            ZIndex: =12
+
+        Label21_1 As label:
+            Align: =Align.Center
+            AutoHeight: =true
+            Color: =RGBA(149, 149, 149, 1)
+            Height: =67
+            Text: ="Manage your inventory effectively"
+            Width: =307
+            X: =530
+            Y: =148
+            ZIndex: =13
+
+        "barcode_Import_1 As 'Barcode Reader'":
+            BarcodeType: ='BarcodeReader.BarcodeType'.Auto
+            BorderFillColor: =RGBA(47, 81, 151, 1)
+            BorderStyle: =BorderStyle.None
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledContentColor: =RGBA(166, 166, 166, 1)
+            DisabledFillColor: =RGBA(244, 244, 244, 1)
+            DisplayMode: =DisplayMode.Edit
+            FillColor: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =121
+            HoverBorderColor: =RGBA(198, 250, 195, 1)
+            HoverContentColor: =RGBA(255, 255, 255, 1)
+            HoverFillColor: =RGBA(154, 245, 149, 1)
+            OnScan: |-
+                =If(
+                    LookUp(barcode_Import_1.Barcodes, true, Value) in col_OrderScan.IDProduct,
+                    If(
+                        LookUp(barcode_Import_1.Barcodes, true, Value) in col_ProductScaned, Notify("San pham da check"),
+                        Collect(col_ProductScaned, LookUp(barcode_Import_1.Barcodes, true, Value));
+                        Notify("Check san pham thanh cong")
+                    ),
+                    Notify("Don hang khong co san pham nay!")
+                )
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            PressedBorderColor: =RGBA(56, 96, 178, 1)
+            PressedContentColor: =RGBA(56, 96, 178, 1)
+            PressedFillColor: =RGBA(255, 255, 255, 1)
+            ScanningMode: ='BarcodeReader.ScanningMode'.AutomaticallyScan
+            ScanningQuality: ='BarcodeReader.ScanningQuality'.Automatic
+            Strikethrough: =false
+            Text: ="Import"
+            TextAlignment: =Align.Center
+            TextColor: =RGBA(0, 0, 0, 1)
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =121
+            X: =624
+            Y: =197
+            ZIndex: =14
+
+        shadow_Quantity_cIO_IP_1 As htmlViewer:
+            Height: =180
+            HtmlText: |-
+                ="<div style='margin:10px;width:" & shadow_Quantity_cIO_IP_1.Width - 32 & "px;height:" & shadow_Quantity_cIO_IP_1.Height - 32 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 3px 6px 5px  #ccc; border-radius:20px'></div>" 
+            Width: =274
+            X: =1007
+            Y: =305
+            ZIndex: =15
+
+        shadow_Total_cIO_IP_1 As htmlViewer:
+            Height: =180
+            HtmlText: |-
+                ="<div style='margin:10px;width:" & shadow_Total_cIO_IP_1.Width - 32 & "px;height:" & shadow_Total_cIO_IP_1.Height - 32 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 3px 6px 5px  #ccc; border-radius:20px'></div>" 
+            Width: =274
+            X: =1007
+            Y: =485
+            ZIndex: =16
+
+        img_Quantity_cIO_IP_1 As image:
+            BorderColor: =RGBA(219, 219, 219, 1)
+            BorderThickness: =3
+            Height: =70
+            Image: =ic_Quantity
+            ImagePosition: =ImagePosition.Center
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Width: =70
+            X: =1033
+            Y: =360
+            ZIndex: =17
+
+        img_Total_cIO_IP_1 As image:
+            BorderColor: =RGBA(219, 219, 219, 1)
+            BorderThickness: =3
+            Height: =70
+            Image: =ic_Total
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Width: =70
+            X: =1032
+            Y: =540
+            ZIndex: =18
+
+        lbl_Total_cIO_IP_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(149, 149, 149, 1)
+            Height: =51
+            Text: ="Total"
+            Width: =163
+            X: =1102
+            Y: =505
+            ZIndex: =19
+
+        lbl_Quantity_cIO_IP_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(149, 149, 149, 1)
+            Height: =51
+            Text: ="Quantity"
+            Width: =160
+            X: =1103
+            Y: =325
+            ZIndex: =20
+
+        lbl_ValueQuantity_cIO_IP_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(149, 149, 149, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =51
+            Size: =25
+            Text: = CountRows(col_ProductScaned) & "/" & CountRows(col_OrderScan)
+            Width: =160
+            X: =1103
+            Y: =376
+            ZIndex: =21
+
+        lbl_ValueTotalPrice_cIO_IP_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(149, 149, 149, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =51
+            Text: |-
+                =Text(Sum(
+                   gal_InformationProduct_cIP_IP2_1.AllItems,
+                   lbl_ValueTotalPrice_cIP_IP2_1
+                ),  "#,###") & " VND"
+            Width: =163
+            X: =1102
+            Y: =556
+            ZIndex: =22
+
+        shadow_ImportGoods_IMPI_8 As htmlViewer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =396
+            HtmlText: |-
+                ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_8.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_8.Height - 32 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 3px 6px 5px  #ccc; border-radius:15px'></div>" 
+            Width: =863
+            X: =55
+            Y: =337
+            ZIndex: =23
+
+        "gal_InformationProduct_cIP_IP2_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =1
+            DelayItemLoading: =true
+            Fill: =RGBA(255, 255, 255, 0.68)
+            Height: =301
+            Items: |
+                =col_OrderScan
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =104
+            Width: =830
+            X: =70
+            Y: =393
+            ZIndex: =24
+
+            lbl_ValueProductName__cIP_IP2_1 As label:
+                Align: =Align.Center
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                FontWeight: =FontWeight.Semibold
+                Height: =104
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: |
+                    =LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct, 'Name_Pro-Supplier')
+                Width: =309
+                X: =114
+                ZIndex: =2
+
+            lbl_ValuePrice_cIP_IP2_1 As label:
+                Align: =Align.Center
+                Height: =104
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: |
+                    =LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct, Text('Price_Pro-Supplier', "#,###"))
+                Width: =135
+                X: =547
+                ZIndex: =3
+
+            Rectangle2_12 As rectangle:
+                Fill: =RGBA(127, 235, 117, 1)
+                Height: |
+                    =Parent.TemplateHeight - 20
+                OnSelect: =Select(Parent)
+                Visible: =If(ThisItem.IsSelected, true, false)
+                Width: =4
+                Y: =10
+                ZIndex: =6
+
+            txt_ValueQuantity_cIP_IP2_1 As text:
+                Align: =Align.Center
+                BorderColor: =RGBA(219, 219, 219, 1)
+                Color: =If(Value(txt_ValueQuantity_cIP_IP2_1.Text) > ThisItem.Quantity, Color.Red, RGBA(0, 0, 0, 1))
+                Default: =
+                FontWeight: =FontWeight.Bold
+                Format: =TextFormat.Number
+                Height: =52
+                HoverBorderColor: =RGBA(202, 202, 202, 1)
+                HoverFill: =RGBA(237, 237, 237, 1)
+                OnChange: =
+                OnSelect: =Select(Parent)
+                Width: =57
+                X: =438
+                Y: =26
+                ZIndex: =7
+
+            lbl_ValueTotalPrice_cIP_IP2_1 As label:
+                Align: =Align.Center
+                Height: =104
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: |
+                    =Text(lbl_ValuePrice_cIP_IP2_1.Text * txt_ValueQuantity_cIP_IP2_1.Text, "#,###")
+                Width: =135
+                X: =695
+                ZIndex: =8
+
+            lbl_ValueQuantityOrder_cIP_IP2_1 As label:
+                Align: =Align.Center
+                Height: =104
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =ThisItem.Quantity
+                Width: =26
+                X: =509
+                ZIndex: =13
+
+            grp_ImageProduct_cIP_IP2_1 As group:
+                Height: =5
+                Width: =5
+                X: =-4
+                Y: =-37
+                ZIndex: =13
+
+                shadow_imgProduct_cIP_IP2_1 As htmlViewer:
+                    Height: =104
+                    HtmlText: |-
+                        ="<div style='margin:10px;width:" & shadow_imgProduct_cIP_IP2_1.Width - 31 & "px;height:" & shadow_imgProduct_cIP_IP2_1.Height - 31 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 3px 6px 5px  #ccc; border-radius:15px'></div>" 
+                    Width: =104
+                    ZIndex: =11
+
+                img_Product_cIP_IP2_1 As image:
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Height: =73
+                    Image: |
+                        =LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct, 'Image_Pro-Supplier')
+                    ImagePosition: =ImagePosition.Fill
+                    RadiusBottomLeft: =15
+                    RadiusBottomRight: =15
+                    RadiusTopLeft: =15
+                    RadiusTopRight: =15
+                    Width: =73
+                    X: =15
+                    Y: =15
+                    ZIndex: =12
+
+            "'lbl_/_cIP_IP2_1' As label":
+                Align: =Align.Center
+                Height: =104
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: ="/"
+                Width: =26
+                X: =495
+                ZIndex: =14
+
+            Separator1_14 As rectangle:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(219, 219, 219, 1)
+                Height: =1
+                OnSelect: =Select(Parent)
+                Width: =753
+                X: =38
+                ZIndex: =15
+
+            TextInput5_2 As text:
+                Default: =""
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(219, 219, 219, 0.5)
+                DisplayMode: =DisplayMode.Disabled
+                Height: =104
+                OnSelect: =Select(Parent)
+                Visible: |-
+                    =If(ThisItem.IDProduct in col_ProductScaned, false, true)
+                    //If(ThisItem.ID in col_ProductScaned, false, true)
+                Width: =104
+                ZIndex: =16
+
+        lbl_ProductName_cIP_IP2_1 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Height: =44
+            Text: ="Product Name"
+            Width: =309
+            X: =184
+            Y: =350
+            ZIndex: =25
+
+        lbl_Quantity_cIP_IP2_1 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Height: =44
+            Text: ="Quantity"
+            Width: =142
+            X: =487
+            Y: =349
+            ZIndex: =26
+
+        lbl_Price_cIP_IP2_1 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Height: =44
+            Text: ="Price"
+            Width: =135
+            X: =617
+            Y: =349
+            ZIndex: =27
+
+        lbl_TotalPrice_cIP_IP2_1 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Height: =44
+            Text: ="Total"
+            Width: =135
+            X: =759
+            Y: =350
+            ZIndex: =28
+
+        HtmlText2_1 As htmlViewer:
+            Height: =137
+            HtmlText: |-
+                ="<p style=""transform: rotate(45deg);color: RGBA(166, 166, 166, 1); font-size:16px"">________________________________</p>"
+            Width: =256
+            X: =913
+            Y: =209
+            ZIndex: =29
+
+        Image14_8 As image:
+            BorderColor: =RGBA(209, 232, 178, 1)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =4
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(221, 245, 191, 1)
+            Height: =50
+            Image: =ic_Email
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Width: =50
+            X: =964
+            Y: =160
+            ZIndex: =30
+
+        btn_ImportGoods_cIP_IP_1 As timer:
+            BorderThickness: =0
+            Color: =RGBA(54, 176, 75, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            DisplayMode: |-
+                =If(
+                    CountRows(col_ProductScaned) <> CountRows(col_OrderScan) || 
+                    !IsBlank(gal_InformationProduct_cIP_IP2_1.AllItems.txt_ValueQuantity_cIP_IP2_1), DisplayMode.Disabled, DisplayMode.Edit)
+                
+                
+                
+                
+                        /*
+                ForAll(
+                    gal_InformationProduct_cIP_IP2.AllItems As T, 
+                    If(
+                        Value(T[@txt_ValueQuantity_cIP_IP2].Text) < T[@Quantity] || Value(T[@txt_ValueQuantity_cIP_IP2].Text) <= 0, 
+                        false, true
+                    )
+                )
+                
+                */
+            Duration: =1590
+            Fill: =RGBA(205, 247, 205, 1)
+            FontWeight: =FontWeight.Semibold
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(81, 224, 105, 1)
+            OnSelect: |-
+                =
+                ForAll(
+                    gal_InformationProduct_cIP_IP2.AllItems As T, 
+                    If(
+                        Value(T[@txt_ValueQuantity_cIP_IP2].Text) < T[@Quantity] || Value(T[@txt_ValueQuantity_cIP_IP2].Text) <= 0, 
+                        Notify("No"), Notify("OK")
+                    )
+                );
+                
+                /*
+                Clear(col_AddProductScaned_Import);
+                Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = IDImportScan), {Status: 4});
+                Navigate(NhapHang_3);
+                */
+                col_OrderScan
+            OnTimerEnd: |-
+                =Set(showSuccess, false) && Set(showbgr_Black_SuccessOrder, false);
+                Set(showNewOrderProductForm, false);
+            OnTimerStart: =Set(showSuccess, true) && Set(showbgr_Black_SuccessOrder, true);
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Start: =
+            Text: ="+  Import Goods"
+            Width: =212
+            X: =1038
+            Y: =679
+            ZIndex: =31
+

@@ -149,33 +149,35 @@ NhapHangOrder As screen:
                 HoverBorderColor: =RGBA(241, 244, 249, 0.5)
                 HoverContentColor: =RGBA(255, 255, 255, 1)
                 HoverFillColor: =RGBA(241, 244, 249, 0.5)
-                OnScan: |-
-                    =ClearCollect(col_ScanOrderProduct, bcr_cIO_IP.Barcodes);
+                OnScan: |+
+                    =/*
+                    Collect(col_ScanOrderProduct, bcr_cIO_IP.Barcodes);
                     
-                    Collect(col_AddProductScaned_Import, Filter(col_OrderInf_Import, IDProduct_Supplier = Text(0)));
+                    //Collect(col_AddProductScaned_Import, Filter(col_OrderInf_Import, IDProduct_Supplier = Text(0)));
                     
-                    ForAll(
-                        col_ScanOrderProduct,
+                    If(
+                        LookUp(col_ScanOrderProduct, true, Value) in col_OrderScan.IDProduct,
+                        Notify("Check san pham thanh cong"),
+                        Notify("Don hang khong co san pham nay!")
+                    )
+                    */
+                    
+                    If(
+                        LookUp(bcr_cIO_IP.Barcodes, true, Value) in col_OrderScan.IDProduct,
                         If(
-                            ThisRecord.Value in col_OrderInf_Import.IDProduct_Supplier,
-                            If(ThisRecord.Value in col_AddProductScaned_Import.IDProduct_Supplier, 
-                                Notify("Already have a product!");
-                                Collect(col_Temp, Table({})),
-                                Notify("Scan successful!");
-                                Collect(col_AddProductScaned_Import, Filter(col_OrderInf_Import, IDProduct_Supplier = LookUp(col_ScanOrderProduct, true, Value)))
-                            ),
-                                Notify("Wrong product code!");            
-                                Collect(col_Temp, Table({}))
+                            LookUp(bcr_cIO_IP.Barcodes, true, Value) in col_ProductScaned, Notify("San pham da check"),
+                            Collect(col_ProductScaned, LookUp(bcr_cIO_IP.Barcodes, true, Value));
+                            Notify("Check san pham thanh cong")
+                        ),
+                        Notify("Don hang khong co san pham nay!")
+                    )
                     
-                        );
-                    );
                     
-                    Clear(col_Temp)
                 PressedBorderColor: =RGBA(227, 234, 243, 0.5)
                 PressedContentColor: =RGBA(56, 96, 178, 1)
                 PressedFillColor: =RGBA(241, 244, 249, 0.5)
                 ScanningMode: ='BarcodeReader.ScanningMode'.AutomaticallyScan
-                ScanningQuality: ='BarcodeReader.ScanningQuality'.VeryHigh
+                ScanningQuality: ='BarcodeReader.ScanningQuality'.Automatic
                 Text: =""
                 TextColor: =RGBA(255, 255, 255, 1)
                 Width: =151
@@ -215,11 +217,7 @@ NhapHangOrder As screen:
                     DelayItemLoading: =true
                     Fill: =RGBA(255, 255, 255, 0.68)
                     Height: =306
-                    Items: |-
-                        =//col_AddProductScaned_Import
-                        //col_OrderInf_Import
-                        //Filter(QLK_OrderFormInformation
-                        col_OrderScan
+                    Items: =col_OrderScan
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     TemplatePadding: =0
@@ -239,7 +237,7 @@ NhapHangOrder As screen:
                         PaddingLeft: =0
                         PaddingRight: =0
                         PaddingTop: =0
-                        Text: =LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct_Supplier, 'Name_Pro-Supplier')
+                        Text: =LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct, 'Name_Pro-Supplier')
                         Width: =306
                         X: =104
                         ZIndex: =2
@@ -253,7 +251,7 @@ NhapHangOrder As screen:
                         PaddingRight: =0
                         PaddingTop: =0
                         Text: |-
-                            =LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct_Supplier, Text('Price_Pro-Supplier', "#,###"))
+                            =LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct, Text('Price_Pro-Supplier', "#,###"))
                         Width: =135
                         X: =560
                         ZIndex: =3
@@ -331,7 +329,7 @@ NhapHangOrder As screen:
                             BorderStyle: =BorderStyle.None
                             BorderThickness: =2
                             Height: =73
-                            Image: =LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct_Supplier, 'Image_Pro-Supplier')
+                            Image: =LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct, 'Image_Pro-Supplier')
                             ImagePosition: =ImagePosition.Fill
                             RadiusBottomLeft: =15
                             RadiusBottomRight: =15
@@ -362,6 +360,17 @@ NhapHangOrder As screen:
                         OnSelect: =Select(Parent)
                         Width: =Parent.TemplateWidth
                         ZIndex: =15
+
+                    TextInput5 As text:
+                        Default: =""
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(219, 219, 219, 0.5)
+                        DisplayMode: =DisplayMode.Disabled
+                        Height: =104
+                        OnSelect: =Select(Parent)
+                        Visible: =If(ThisItem.IDProduct in col_ProductScaned, false, true)
+                        Width: =830
+                        ZIndex: =16
 
                 lbl_ProductName_cIP_IP2 As label:
                     FontWeight: =FontWeight.Bold
@@ -437,19 +446,22 @@ NhapHangOrder As screen:
                 FontWeight: =FontWeight.Semibold
                 HoverBorderColor: =RGBA(237, 237, 237, 1)
                 HoverFill: =RGBA(81, 224, 105, 1)
-                OnSelect: |
-                    =/*
+                OnSelect: |-
+                    =
                     ForAll(
                         gal_InformationProduct_cIP_IP2.AllItems As T, 
                         If(
                             Value(T[@txt_ValueQuantity_cIP_IP2].Text) < T[@Quantity] || Value(T[@txt_ValueQuantity_cIP_IP2].Text) <= 0, 
-                            false, true
+                            Notify("No"), Notify("OK")
                         )
-                    )
-                    */
+                    );
+                    
+                    /*
                     Clear(col_AddProductScaned_Import);
                     Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = IDImportScan), {Status: 4});
                     Navigate(NhapHang_3);
+                    */
+                    col_OrderScan
                 OnTimerEnd: |-
                     =Set(showSuccess, false) && Set(showbgr_Black_SuccessOrder, false);
                     Set(showNewOrderProductForm, false);
