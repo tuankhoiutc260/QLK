@@ -403,7 +403,7 @@ TrangChu_NhapHang As screen:
                             "IDProduct_Supplier", "IDProduct"
                         )
                     );
-                    Navigate(NhapHang_4), 
+                    Navigate(TrangChu_NhapHang_1), 
                     If(
                         LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ImportForm.IDImport, 
                         ClearCollect(
@@ -413,7 +413,7 @@ TrangChu_NhapHang As screen:
                                 "IDProduct", "Quantity", "Price", "TotalPrice"
                             )            
                         );
-                        Navigate(NhapHang_4),
+                        Navigate(TrangChu_NhapHang_1),
                         If(
                             LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ExportForm.IDExport, 
                             ClearCollect(
@@ -423,7 +423,7 @@ TrangChu_NhapHang As screen:
                                     "IDProduct", "Quantity", "Price", "TotalPrice"   
                                 )
                             );
-                            Navigate(NhapHang_4), 
+                            Navigate(TrangChu_NhapHang_1), 
                             Notify("Error", NotificationType.Error)
                         )
                     )

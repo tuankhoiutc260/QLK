@@ -292,9 +292,10 @@ TrangChu_NhapHang_1 As screen:
             DelayItemLoading: =true
             Fill: =RGBA(255, 255, 255, 0.68)
             Height: =301
-            Items: |
+            Items: |-
                 =//col_OrderScan
-                RenameColumns(col_ProductInWarehouse_HomeAccountant, "ID", "IDProduct")
+                //RenameColumns(col_ProductInWarehouse_HomeAccountant, "ID", "IDProduct")
+                col_ImportRequest_HomeAccountant
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
@@ -544,23 +545,49 @@ TrangChu_NhapHang_1 As screen:
             HoverFill: =RGBA(81, 224, 105, 1)
             OnSelect: |-
                 =ForAll(
-                    gal_InformationProduct_cIP_IP2.AllItems As T, 
+                    gal_InformationProduct_cIP_IP2_2.AllItems As T, 
                     If(
-                        Value(T[@txt_ValueQuantity_cIP_IP2].Text) < T[@Quantity], 
-                        Notify("SL Be Hon"), Notify("SL Lon Hon")
+                        Value(T.txt_ValueQuantity_cIP_IP2_2.Text) > T.Quantity,
+                        Collect(col_ProductLargerQuantity, T.IDProduct);
+                        Notify("Lon hon"),
+                        If(Value(T.txt_ValueQuantity_cIP_IP2_2.Text) < T.Quantity,
+                        Collect(col_ProductSmallerQuantity, T.IDProduct);
+                        //Clear(col_ProductSmallerQuantity);   
+                        Notify("Be hon")
+                        )
                     )
                 );
                 
-                /*
-                Clear(col_AddProductScaned_Import);
-                Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = IDImportScan), {Status: 4});
-                Navigate(NhapHang_3);
-                */
-                col_OrderScan
+                If(CountRows(col_ProductLargerQuantity) > 0, Set(showNotice, true));
+                
+                If(CountRows(col_ProductSmallerQuantity) > 0, Set(showNotice2, true));
+                
+                
+                If(
+                    CountRows(col_ProductLargerQuantity) = 0 && CountRows(col_ProductSmallerQuantity) = 0,
+                    If(
+                        LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_OrderForm.IDOrder, 
+                        Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 4});
+                        Navigate(TrangChu_NhapHang),
+                        If(
+                            LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ImportForm.IDImport, 
+                            Patch(QLK_ImportForm, LookUp(QLK_ImportForm, IDImport = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 4});
+                            Navigate(TrangChu_NhapHang), 
+                            If(
+                                LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ExportForm.IDExport, 
+                                Patch(QLK_ExportForm, LookUp(QLK_ExportForm, IDExport = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 5}),
+                                Navigate(TrangChu_NhapHang)   
+                            )
+                        )
+                    )
+                )    
+                
+                 
+                //col_OrderScan
             OnTimerEnd: |-
-                =Set(showSuccess, false) && Set(showbgr_Black_SuccessOrder, false);
+                =//Set(showNotice, false) && Set(showbgr_Black_SuccessOrder, false);
                 Set(showNewOrderProductForm, false);
-            OnTimerStart: =Set(showSuccess, true) && Set(showbgr_Black_SuccessOrder, true);
+            OnTimerStart: =//Set(showNotice, true) && Set(showbgr_Black_SuccessOrder, true);
             Start: =
             Text: ="+  Import Goods"
             Width: =212
@@ -685,6 +712,35 @@ TrangChu_NhapHang_1 As screen:
             Y: =35
             ZIndex: =35
 
+        Button10 As button:
+            OnSelect: =Clear(col_ProductLargerQuantity); Clear(col_ProductSmallerQuantity);
+            Text: ="Button"
+            X: =441
+            Y: =238
+            ZIndex: =36
+
+    Button7 As button:
+        OnSelect: |
+            =Patch(QLK_OrderForm,  = LookUp(col_ScanOrder_ScanImport, true, Value), {Status: 4})
+        Text: ="Button"
+        X: =40
+        Y: =40
+        ZIndex: =27
+
+    bgr_Black_Success_5 As text:
+        Default: =
+        DisabledBorderColor: =RGBA(219, 219, 219, 1)
+        DisabledFill: =RGBA(128, 128, 128, 0.42)
+        DisplayMode: =DisplayMode.Disabled
+        Height: =768
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Visible: =showNotice
+        Width: =1366
+        ZIndex: =28
+
     grp_Success_4 As group:
         Height: =5
         Width: =5
@@ -716,4 +772,109 @@ TrangChu_NhapHang_1 As screen:
             X: =713
             Y: =344
             ZIndex: =26
+
+    Button11 As button:
+        OnSelect: =Set(showNotice, false)
+        Text: ="Button"
+        X: =76
+        Y: =172
+        ZIndex: =30
+
+    shadow_ImportGoods_IMPI_61 As htmlViewer:
+        Height: =205
+        HtmlText: |-
+            ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_61.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_61.Height - 32 & "px;background-color:RGBA(255, 255, 255, 1);box-shadow:0 5px 10px 0px  #7FEB75; border-radius:15px'></div>" 
+        Visible: =showNotice
+        Width: =340
+        X: =536
+        Y: =239
+        ZIndex: =31
+
+    Label16 As label:
+        Align: =Align.Center
+        AutoHeight: =true
+        FontWeight: =FontWeight.Semibold
+        Text: ="You have entered too many"
+        Visible: =showNotice
+        Width: =265
+        X: =573
+        Y: =283
+        ZIndex: =32
+
+    Button4_64 As button:
+        BorderColor: =RGBA(127, 235, 117, 1)
+        BorderThickness: =1
+        Color: =RGBA(38, 240, 95, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        HoverBorderColor: =RGBA(127, 235, 117, 1)
+        HoverFill: =RGBA(127, 235, 117, 1)
+        OnSelect: |-
+            =Set(showNotice, false);
+            Clear(col_ProductLargerQuantity); Clear(col_ProductSmallerQuantity);
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(127, 235, 117, 1)
+        Size: =12
+        Text: ="OK"
+        Visible: =showNotice
+        Width: =175
+        X: =618
+        Y: =374
+        ZIndex: =33
+
+    bgr_Black_Success_8 As text:
+        Default: =
+        DisabledBorderColor: =RGBA(219, 219, 219, 1)
+        DisabledFill: =RGBA(128, 128, 128, 0.42)
+        DisplayMode: =DisplayMode.Disabled
+        Height: =768
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Visible: =showNotice2
+        Width: =1366
+        ZIndex: =34
+
+    shadow_ImportGoods_IMPI_62 As htmlViewer:
+        Height: =205
+        HtmlText: |-
+            ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_62.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_62.Height - 32 & "px;background-color:RGBA(255, 255, 255, 1);box-shadow:0 5px 10px 0px  #7FEB75; border-radius:15px'></div>" 
+        Visible: =showNotice2
+        Width: =340
+        X: =536
+        Y: =239
+        ZIndex: =35
+
+    Label16_4 As label:
+        Align: =Align.Center
+        AutoHeight: =true
+        FontWeight: =FontWeight.Semibold
+        Text: ="The amount of input is not enough!"
+        Visible: =showNotice2
+        Width: =265
+        X: =573
+        Y: =283
+        ZIndex: =36
+
+    Button4_65 As button:
+        BorderColor: =RGBA(127, 235, 117, 1)
+        BorderThickness: =1
+        Color: =RGBA(38, 240, 95, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        HoverBorderColor: =RGBA(127, 235, 117, 1)
+        HoverFill: =RGBA(127, 235, 117, 1)
+        OnSelect: |-
+            =Set(showNotice2, false);
+            Clear(col_ProductLargerQuantity); Clear(col_ProductSmallerQuantity);
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(127, 235, 117, 1)
+        Size: =12
+        Text: ="OK"
+        Visible: =showNotice2
+        Width: =175
+        X: =618
+        Y: =374
+        ZIndex: =37
 
