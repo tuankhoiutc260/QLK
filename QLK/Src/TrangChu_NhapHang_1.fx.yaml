@@ -293,9 +293,9 @@ TrangChu_NhapHang_1 As screen:
             Fill: =RGBA(255, 255, 255, 0.68)
             Height: =301
             Items: |-
-                =col_OrderScan
+                =//col_OrderScan
                 //RenameColumns(col_ProductInWarehouse_HomeAccountant, "ID", "IDProduct")
-                //col_ImportRequest_HomeAccountant
+                col_ImportRequest_HomeAccountant
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
@@ -451,7 +451,7 @@ TrangChu_NhapHang_1 As screen:
                 Visible: |-
                     =If(ThisItem.IDProduct in col_ProductScaned, false, true)
                     //If(ThisItem.ID in col_ProductScaned, false, true)
-                Width: =830
+                Width: =254
                 ZIndex: =16
 
         lbl_ProductName_cIP_IP2_2 As label:
@@ -544,43 +544,67 @@ TrangChu_NhapHang_1 As screen:
             HoverBorderColor: =RGBA(237, 237, 237, 1)
             HoverFill: =RGBA(81, 224, 105, 1)
             OnSelect: |-
-                =ForAll(
+                =
+                ForAll(
                     gal_InformationProduct_cIP_IP2_2.AllItems As T, 
                     If(
                         Value(T.txt_ValueQuantity_cIP_IP2_2.Text) > T.Quantity,
-                        Collect(col_ProductLargerQuantity, T.IDProduct);
-                        //Notify("Lon hon"),
-                        If(Value(T.txt_ValueQuantity_cIP_IP2_2.Text) < T.Quantity,
-                        Collect(col_ProductSmallerQuantity, T.IDProduct);
-                        //Clear(col_ProductSmallerQuantity);   
-                        //Notify("Be hon")
+                        Collect(col_ProductLargerQuantity, T.IDProduct),
+                        
+                        If(
+                            Value(T.txt_ValueQuantity_cIP_IP2_2.Text) < T.Quantity,
+                            Collect(col_ProductSmallerQuantity, ShowColumns(Filter(Table(T), T.IDProduct, T.Quantity), "IDProduct", "txt_ValueQuantity_cIP_IP2_2")),
+                            If(
+                                Value(T.txt_ValueQuantity_cIP_IP2_2.Text) = T.Quantity,
+                                Collect(col_ProductEqualQuantity, ShowColumns(Filter(Table(T), T.IDProduct, T.Quantity), "IDProduct", "txt_ValueQuantity_cIP_IP2_2"))
+                            )
                         )
                     )
                 );
                 
                 If(CountRows(col_ProductLargerQuantity) > 0, Set(showNotice, true));
                 
-                If(CountRows(col_ProductSmallerQuantity) > 0, Set(showNotice2, true));
+                //If(CountRows(col_ProductSmallerQuantity) > 0, Set(showNotice2, true));
                 
                 
                 If(
-                    CountRows(col_ProductLargerQuantity) = 0 && CountRows(col_ProductSmallerQuantity) = 0,
+                    CountRows(col_ProductLargerQuantity) = 0,
                     If(
-                        LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_OrderForm.IDOrder, 
-                        Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 4, Importer:emailLogin, ImportDate:Now()});
-                        Navigate(TrangChu_NhapHang),
+                        CountRows(col_ProductSmallerQuantity) = 0,
                         If(
-                            LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ImportForm.IDImport, 
-                            Patch(QLK_ImportForm, LookUp(QLK_ImportForm, IDImport = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 4, Importer:emailLogin, ImportDate:Now()});
-                            Navigate(TrangChu_NhapHang), 
+                            LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_OrderForm.IDOrder, 
+                            Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 4, Importer:emailLogin, ImportDate:Now()});
+                            ClearCollect(col_ProductImportScaned, col_ProductSmallerQuantity, col_ProductEqualQuantity);
+                            ForAll(
+                                Patch(QLK_OrderFormInformation, 
+                                LookUp(QLK_OrderFormInformation, IDOrderForm = LookUp(col_ScanOrder_ScanImport, true, Value)),
+                                {
+                                    Quantity:
+                            Navigate(TrangChu_NhapHang),
                             If(
-                                LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ExportForm.IDExport, 
-                                Patch(QLK_ExportForm, LookUp(QLK_ExportForm, IDExport = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 5, Exporter:emailLogin, ExportDate:Now()}),
-                                Navigate(TrangChu_NhapHang)   
+                                LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ImportForm.IDImport, 
+                                Patch(QLK_ImportForm, LookUp(QLK_ImportForm, IDImport = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 4, Importer:emailLogin, ImportDate:Now()});
+                                //Navigate(TrangChu_NhapHang), 
+                                If(
+                                    LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ExportForm.IDExport, 
+                                    Patch(
+                                        QLK_ExportForm, 
+                                        LookUp(
+                                            QLK_ExportForm, 
+                                            IDExport = LookUp(col_ScanOrder_ScanImport, true, Value)
+                                        ), 
+                                        {
+                                            Status: 5, 
+                                            Exporter: emailLogin, 
+                                            ExportDate:Now()
+                                        }
+                                    )
+                                
+                                )
                             )
                         )
-                    )
-                )    
+                )  
+                
                 
                  
                 //col_OrderScan
@@ -711,6 +735,100 @@ TrangChu_NhapHang_1 As screen:
             X: =1152
             Y: =35
             ZIndex: =35
+
+        Button11 As button:
+            OnSelect: |-
+                =ForAll(
+                    gal_InformationProduct_cIP_IP2_2.AllItems As T, 
+                    If(
+                        Value(T.txt_ValueQuantity_cIP_IP2_2.Text) > T.Quantity,
+                        Collect(col_ProductLargerQuantity, T.IDProduct);
+                        Notify("Lon hon"),
+                        If(Value(T.txt_ValueQuantity_cIP_IP2_2.Text) < T.Quantity,
+                        Collect(col_ProductSmallerQuantity, T.IDProduct);
+                        //Clear(col_ProductSmallerQuantity);   
+                        Notify("Be hon")
+                        )
+                    )
+                );
+                
+                If(CountRows(col_ProductLargerQuantity) > 0, Set(showNotice, true));
+                
+                If(CountRows(col_ProductSmallerQuantity) > 0, Set(showNotice2, true));
+                
+                
+                If(
+                    CountRows(col_ProductLargerQuantity) = 0 && CountRows(col_ProductSmallerQuantity) = 0,
+                    If(
+                        LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_OrderForm.IDOrder, 
+                        Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 4, Importer:emailLogin, ImportDate:Now()});
+                        //Navigate(TrangChu_NhapHang),
+                        If(
+                            LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ImportForm.IDImport, 
+                            Patch(QLK_ImportForm, LookUp(QLK_ImportForm, IDImport = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 4, Importer:emailLogin, ImportDate:Now()});
+                            //Navigate(TrangChu_NhapHang), 
+                            If(
+                                LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ExportForm.IDExport, 
+                                Patch(QLK_ExportForm, LookUp(QLK_ExportForm, IDExport = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 5, Exporter:emailLogin, ExportDate:Now()}),
+                              
+                            )
+                        )
+                    )
+                )    
+                
+                 
+                //col_OrderScan
+            Text: ="Button"
+            X: =182
+            Y: =598
+            ZIndex: =36
+
+        Button12 As button:
+            OnSelect: |-
+                =Clear(col_ProductLargerQuantity);
+                Clear(col_ProductSmallerQuantity)
+            Text: ="Button"
+            X: =302
+            Y: =190
+            ZIndex: =37
+
+        Button13 As button:
+            OnSelect: |
+                =
+                ClearCollect(col_ProductImportScaned, col_ProductSmallerQuantity, col_ProductEqualQuantity);
+                //RenameColumns(col_ProductImportScaned, "Value", "IDProduct")
+                //AddColumns(col_ProductImportScaned, "Quantity", 0);
+                //ClearCollect(col_ProductImportScanedd, col_ProductImportScaned);
+                
+                //ForAll(gal_InformationProduct_cIP_IP2_2.AllItems As T, 
+            Text: ="Button"
+            X: =66
+            Y: =230
+            ZIndex: =38
+
+        Button14 As button:
+            OnSelect: |-
+                =
+                ForAll(
+                    gal_InformationProduct_cIP_IP2_2.AllItems As T, 
+                    If(
+                        Value(T.txt_ValueQuantity_cIP_IP2_2.Text) > T.Quantity,
+                        Collect(col_ProductLargerQuantity, T.IDProduct),
+                        
+                        If(
+                            Value(T.txt_ValueQuantity_cIP_IP2_2.Text) < T.Quantity,
+                            Collect(col_ProductSmallerQuantity, ShowColumns(Filter(Table(T), T.IDProduct, T.Quantity), "IDProduct", "txt_ValueQuantity_cIP_IP2_2")),
+                            If(
+                                Value(T.txt_ValueQuantity_cIP_IP2_2.Text) = T.Quantity,
+                                Collect(col_ProductEqualQuantity, ShowColumns(Filter(Table(T), T.IDProduct, T.Quantity), "IDProduct", "txt_ValueQuantity_cIP_IP2_2"))
+                            )
+                        )
+                    )
+                );
+            Text: ="Button"
+            X: =190
+            Y: =297
+            ZIndex: =39
 
     bgr_Black_Success_5 As text:
         Default: =
@@ -846,6 +964,7 @@ TrangChu_NhapHang_1 As screen:
         OnSelect: |-
             =Set(showNotice2, false);
             Clear(col_ProductLargerQuantity); Clear(col_ProductSmallerQuantity);
+            Clear(col_ProductEqualQuantity)
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =RGBA(127, 235, 117, 1)
         Size: =12

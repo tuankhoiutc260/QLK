@@ -390,7 +390,9 @@ TrangChu_NhapHang As screen:
             HoverContentColor: =RGBA(255, 255, 255, 1)
             HoverFillColor: =RGBA(154, 245, 149, 1)
             OnScan: |-
-                =ClearCollect(col_ScanOrder_ScanImport, barcode_Import_2.Barcodes);
+                =Clear(col_ProductScaned);
+                
+                ClearCollect(col_ScanOrder_ScanImport, barcode_Import_2.Barcodes);
                 If(
                     LookUp(col_ScanOrder_ScanImport, true, Value) in ShowColumns(Filter(QLK_OrderForm, Status = 2), "IDOrder"), 
                     ClearCollect(
@@ -428,7 +430,6 @@ TrangChu_NhapHang As screen:
                         )
                     )
                 );
-                Clear(col_OrderScan);
                 /*
                 ClearCollect(col_OrderList_ScanImport, 
                     ShowColumns(Filter(QLK_OrderForm, true), "IDOrder"));
