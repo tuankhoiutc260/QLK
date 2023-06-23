@@ -55,6 +55,7 @@ App As appinfo:
         Set(visible_cont_Import_HomeAccountant, false);
         Set(showSuccess_HomeAccountant, false);
         Set(visible_grp_InputImportQuantity_HomeAccoutant, false);
+        Set(showNoticeDeleteOrdered, false);
         
         //Tạo lịch
         If(IsBlank(_userDomain),         

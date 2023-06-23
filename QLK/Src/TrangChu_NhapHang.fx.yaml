@@ -392,7 +392,7 @@ TrangChu_NhapHang As screen:
             OnScan: |-
                 =ClearCollect(col_ScanOrder_ScanImport, barcode_Import_2.Barcodes);
                 If(
-                    LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_OrderForm.IDOrder, 
+                    LookUp(col_ScanOrder_ScanImport, true, Value) in ShowColumns(Filter(QLK_OrderForm, Status = 2), "IDOrder"), 
                     ClearCollect(
                         col_OrderScan, 
                         RenameColumns(
@@ -405,7 +405,7 @@ TrangChu_NhapHang As screen:
                     );
                     Navigate(TrangChu_NhapHang_1), 
                     If(
-                        LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ImportForm.IDImport, 
+                        LookUp(col_ScanOrder_ScanImport, true, Value) in ShowColumns(Filter(QLK_ImportForm, Status = 2), "IDImport"), 
                         ClearCollect(
                             col_OrderScan, 
                             ShowColumns(
@@ -415,7 +415,7 @@ TrangChu_NhapHang As screen:
                         );
                         Navigate(TrangChu_NhapHang_1),
                         If(
-                            LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ExportForm.IDExport, 
+                            LookUp(col_ScanOrder_ScanImport, true, Value) in ShowColumns(Filter(QLK_ExportForm, Status = 2), "IDExport"),
                             ClearCollect(
                                 col_OrderScan, 
                                 ShowColumns(

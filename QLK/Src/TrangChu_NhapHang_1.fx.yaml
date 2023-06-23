@@ -293,9 +293,9 @@ TrangChu_NhapHang_1 As screen:
             Fill: =RGBA(255, 255, 255, 0.68)
             Height: =301
             Items: |-
-                =//col_OrderScan
+                =col_OrderScan
                 //RenameColumns(col_ProductInWarehouse_HomeAccountant, "ID", "IDProduct")
-                col_ImportRequest_HomeAccountant
+                //col_ImportRequest_HomeAccountant
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
@@ -451,7 +451,7 @@ TrangChu_NhapHang_1 As screen:
                 Visible: |-
                     =If(ThisItem.IDProduct in col_ProductScaned, false, true)
                     //If(ThisItem.ID in col_ProductScaned, false, true)
-                Width: =370
+                Width: =830
                 ZIndex: =16
 
         lbl_ProductName_cIP_IP2_2 As label:
@@ -549,11 +549,11 @@ TrangChu_NhapHang_1 As screen:
                     If(
                         Value(T.txt_ValueQuantity_cIP_IP2_2.Text) > T.Quantity,
                         Collect(col_ProductLargerQuantity, T.IDProduct);
-                        Notify("Lon hon"),
+                        //Notify("Lon hon"),
                         If(Value(T.txt_ValueQuantity_cIP_IP2_2.Text) < T.Quantity,
                         Collect(col_ProductSmallerQuantity, T.IDProduct);
                         //Clear(col_ProductSmallerQuantity);   
-                        Notify("Be hon")
+                        //Notify("Be hon")
                         )
                     )
                 );
@@ -567,15 +567,15 @@ TrangChu_NhapHang_1 As screen:
                     CountRows(col_ProductLargerQuantity) = 0 && CountRows(col_ProductSmallerQuantity) = 0,
                     If(
                         LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_OrderForm.IDOrder, 
-                        Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 4});
+                        Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 4, Importer:emailLogin, ImportDate:Now()});
                         Navigate(TrangChu_NhapHang),
                         If(
                             LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ImportForm.IDImport, 
-                            Patch(QLK_ImportForm, LookUp(QLK_ImportForm, IDImport = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 4});
+                            Patch(QLK_ImportForm, LookUp(QLK_ImportForm, IDImport = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 4, Importer:emailLogin, ImportDate:Now()});
                             Navigate(TrangChu_NhapHang), 
                             If(
                                 LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ExportForm.IDExport, 
-                                Patch(QLK_ExportForm, LookUp(QLK_ExportForm, IDExport = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 5}),
+                                Patch(QLK_ExportForm, LookUp(QLK_ExportForm, IDExport = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 5, Exporter:emailLogin, ExportDate:Now()}),
                                 Navigate(TrangChu_NhapHang)   
                             )
                         )
@@ -712,21 +712,6 @@ TrangChu_NhapHang_1 As screen:
             Y: =35
             ZIndex: =35
 
-        Button10 As button:
-            OnSelect: =Clear(col_ProductLargerQuantity); Clear(col_ProductSmallerQuantity);
-            Text: ="Button"
-            X: =441
-            Y: =238
-            ZIndex: =36
-
-    Button7 As button:
-        OnSelect: |
-            =Patch(QLK_OrderForm,  = LookUp(col_ScanOrder_ScanImport, true, Value), {Status: 4})
-        Text: ="Button"
-        X: =40
-        Y: =40
-        ZIndex: =27
-
     bgr_Black_Success_5 As text:
         Default: =
         DisabledBorderColor: =RGBA(219, 219, 219, 1)
@@ -772,13 +757,6 @@ TrangChu_NhapHang_1 As screen:
             X: =713
             Y: =344
             ZIndex: =26
-
-    Button11 As button:
-        OnSelect: =Set(showNotice, false)
-        Text: ="Button"
-        X: =76
-        Y: =172
-        ZIndex: =30
 
     shadow_ImportGoods_IMPI_61 As htmlViewer:
         Height: =205
