@@ -451,7 +451,7 @@ TrangChu_NhapHang_1 As screen:
                 Visible: |-
                     =If(ThisItem.IDProduct in col_ProductScaned, false, true)
                     //If(ThisItem.ID in col_ProductScaned, false, true)
-                Width: =254
+                Width: =830
                 ZIndex: =16
 
         lbl_ProductName_cIP_IP2_2 As label:
@@ -553,19 +553,30 @@ TrangChu_NhapHang_1 As screen:
                         
                         If(
                             Value(T.txt_ValueQuantity_cIP_IP2_2.Text) < T.Quantity,
-                            Collect(col_ProductSmallerQuantity, ShowColumns(Filter(Table(T), T.IDProduct, T.Quantity), "IDProduct", "txt_ValueQuantity_cIP_IP2_2")),
+                            Collect(
+                                col_ProductSmallerQuantity, 
+                                ShowColumns(Filter(Table(T), T.IDProduct, T.Quantity), "IDProduct", "lbl_ValueProductName__cIP_IP2_2", "txt_ValueQuantity_cIP_IP2_2")),
                             If(
                                 Value(T.txt_ValueQuantity_cIP_IP2_2.Text) = T.Quantity,
-                                Collect(col_ProductEqualQuantity, ShowColumns(Filter(Table(T), T.IDProduct, T.Quantity), "IDProduct", "txt_ValueQuantity_cIP_IP2_2"))
+                                Collect(
+                                    col_ProductEqualQuantity, 
+                                    ShowColumns(Filter(Table(T), T.IDProduct, T.Quantity), "IDProduct", "lbl_ValueProductName__cIP_IP2_2", "txt_ValueQuantity_cIP_IP2_2"))
                             )
                         )
                     )
                 );
                 
+                Set(temps, ShowColumns(col_ProductSmallerQuantity, "IDProduct"));
+                With(
+                    {wString: Concat(col_ProductSmallerQuantity, lbl_ValueProductName__cIP_IP2_2, ", ")},
+                    Set(IDSPThieu, Left(wString, Len(wString)-1));
+                );
+                
+                
                 If(CountRows(col_ProductLargerQuantity) > 0, Set(showNotice, true));
                 
-                //If(CountRows(col_ProductSmallerQuantity) > 0, Set(showNotice2, true));
-                
+                If(CountRows(col_ProductSmallerQuantity) > 0, Set(showNotice2, true));
+                /*
                 
                 If(
                     CountRows(col_ProductLargerQuantity) = 0,
@@ -605,7 +616,7 @@ TrangChu_NhapHang_1 As screen:
                         )
                 )  
                 
-                
+                */
                  
                 //col_OrderScan
             OnTimerEnd: |-
@@ -736,100 +747,6 @@ TrangChu_NhapHang_1 As screen:
             Y: =35
             ZIndex: =35
 
-        Button11 As button:
-            OnSelect: |-
-                =ForAll(
-                    gal_InformationProduct_cIP_IP2_2.AllItems As T, 
-                    If(
-                        Value(T.txt_ValueQuantity_cIP_IP2_2.Text) > T.Quantity,
-                        Collect(col_ProductLargerQuantity, T.IDProduct);
-                        Notify("Lon hon"),
-                        If(Value(T.txt_ValueQuantity_cIP_IP2_2.Text) < T.Quantity,
-                        Collect(col_ProductSmallerQuantity, T.IDProduct);
-                        //Clear(col_ProductSmallerQuantity);   
-                        Notify("Be hon")
-                        )
-                    )
-                );
-                
-                If(CountRows(col_ProductLargerQuantity) > 0, Set(showNotice, true));
-                
-                If(CountRows(col_ProductSmallerQuantity) > 0, Set(showNotice2, true));
-                
-                
-                If(
-                    CountRows(col_ProductLargerQuantity) = 0 && CountRows(col_ProductSmallerQuantity) = 0,
-                    If(
-                        LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_OrderForm.IDOrder, 
-                        Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 4, Importer:emailLogin, ImportDate:Now()});
-                        //Navigate(TrangChu_NhapHang),
-                        If(
-                            LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ImportForm.IDImport, 
-                            Patch(QLK_ImportForm, LookUp(QLK_ImportForm, IDImport = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 4, Importer:emailLogin, ImportDate:Now()});
-                            //Navigate(TrangChu_NhapHang), 
-                            If(
-                                LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ExportForm.IDExport, 
-                                Patch(QLK_ExportForm, LookUp(QLK_ExportForm, IDExport = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 5, Exporter:emailLogin, ExportDate:Now()}),
-                              
-                            )
-                        )
-                    )
-                )    
-                
-                 
-                //col_OrderScan
-            Text: ="Button"
-            X: =182
-            Y: =598
-            ZIndex: =36
-
-        Button12 As button:
-            OnSelect: |-
-                =Clear(col_ProductLargerQuantity);
-                Clear(col_ProductSmallerQuantity)
-            Text: ="Button"
-            X: =302
-            Y: =190
-            ZIndex: =37
-
-        Button13 As button:
-            OnSelect: |
-                =
-                ClearCollect(col_ProductImportScaned, col_ProductSmallerQuantity, col_ProductEqualQuantity);
-                //RenameColumns(col_ProductImportScaned, "Value", "IDProduct")
-                //AddColumns(col_ProductImportScaned, "Quantity", 0);
-                //ClearCollect(col_ProductImportScanedd, col_ProductImportScaned);
-                
-                //ForAll(gal_InformationProduct_cIP_IP2_2.AllItems As T, 
-            Text: ="Button"
-            X: =66
-            Y: =230
-            ZIndex: =38
-
-        Button14 As button:
-            OnSelect: |-
-                =
-                ForAll(
-                    gal_InformationProduct_cIP_IP2_2.AllItems As T, 
-                    If(
-                        Value(T.txt_ValueQuantity_cIP_IP2_2.Text) > T.Quantity,
-                        Collect(col_ProductLargerQuantity, T.IDProduct),
-                        
-                        If(
-                            Value(T.txt_ValueQuantity_cIP_IP2_2.Text) < T.Quantity,
-                            Collect(col_ProductSmallerQuantity, ShowColumns(Filter(Table(T), T.IDProduct, T.Quantity), "IDProduct", "txt_ValueQuantity_cIP_IP2_2")),
-                            If(
-                                Value(T.txt_ValueQuantity_cIP_IP2_2.Text) = T.Quantity,
-                                Collect(col_ProductEqualQuantity, ShowColumns(Filter(Table(T), T.IDProduct, T.Quantity), "IDProduct", "txt_ValueQuantity_cIP_IP2_2"))
-                            )
-                        )
-                    )
-                );
-            Text: ="Button"
-            X: =190
-            Y: =297
-            ZIndex: =39
-
     bgr_Black_Success_5 As text:
         Default: =
         DisabledBorderColor: =RGBA(219, 219, 219, 1)
@@ -933,24 +850,25 @@ TrangChu_NhapHang_1 As screen:
         ZIndex: =34
 
     shadow_ImportGoods_IMPI_62 As htmlViewer:
-        Height: =205
+        Height: =236
         HtmlText: |-
             ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_62.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_62.Height - 32 & "px;background-color:RGBA(255, 255, 255, 1);box-shadow:0 5px 10px 0px  #7FEB75; border-radius:15px'></div>" 
         Visible: =showNotice2
-        Width: =340
-        X: =513
-        Y: =281
+        Width: =440
+        X: =463
+        Y: =266
         ZIndex: =35
 
     Label16_4 As label:
         Align: =Align.Center
         AutoHeight: =true
         FontWeight: =FontWeight.Semibold
-        Text: ="The amount of input is not enough!"
+        Text: |-
+            ="Enter the missing quantity for the item: " & Char(10) & IDSPThieu & Char(10) & "Do you want to continue?"
         Visible: =showNotice2
-        Width: =265
-        X: =550
-        Y: =325
+        Width: =360
+        X: =500
+        Y: =310
         ZIndex: =36
 
     Button4_65 As button:
@@ -961,17 +879,36 @@ TrangChu_NhapHang_1 As screen:
         FontWeight: =FontWeight.Bold
         HoverBorderColor: =RGBA(127, 235, 117, 1)
         HoverFill: =RGBA(127, 235, 117, 1)
-        OnSelect: |-
-            =Set(showNotice2, false);
-            Clear(col_ProductLargerQuantity); Clear(col_ProductSmallerQuantity);
-            Clear(col_ProductEqualQuantity)
+        OnSelect: =
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =RGBA(127, 235, 117, 1)
         Size: =12
         Text: ="OK"
         Visible: =showNotice2
-        Width: =175
-        X: =595
+        Width: =118
+        X: =716
         Y: =416
         ZIndex: =37
+
+    Button4_67 As button:
+        BorderColor: =RGBA(255, 0, 0, 1)
+        BorderThickness: =1
+        Color: =RGBA(255, 0, 0, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        HoverBorderColor: =RGBA(255, 0, 0, 1)
+        HoverFill: =RGBA(255, 0, 0, 1)
+        OnSelect: |-
+            =Set(showNotice2, false);
+            Clear(col_ProductLargerQuantity); Clear(col_ProductSmallerQuantity);
+            Clear(col_ProductEqualQuantity)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(255, 0, 0, 1)
+        Size: =12
+        Text: ="Cancel"
+        Visible: =showNotice2
+        Width: =118
+        X: =531
+        Y: =416
+        ZIndex: =38
 

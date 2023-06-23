@@ -86,6 +86,8 @@ TrangChu_Admin As screen:
                     Refresh(QLK_Product_Supplier);
                     
                     Reset(gal_DetailOrderPending_HA_DO_HA_6);
+                    Set(showChart, false);
+                    Set(showTotal, true);
                     
                     Set(colorBtnApprove, Color.White);
                     Set(fillBtnApprove, RGBA(127, 235, 117, 1));
@@ -95,7 +97,8 @@ TrangChu_Admin As screen:
                     Set(fillBtnOrder, RGBA(0, 0, 0, 0));
                     Set(colorBtnExport, Color.Black);
                     Set(fillBtnExport, RGBA(0, 0, 0, 0));
-                    
+                    Set(colorStatistical, Color.Black);
+                    Set(fillStatistical, RGBA(0, 0, 0, 0));
                     Set(textChart_HomeAdmin, "Approve");
                     
                     Set(IDOrder_HomeAdmin, LookUp(FirstN(col_DatasourceOrder_HomeAdmin, 1), true, ID));
@@ -258,7 +261,10 @@ TrangChu_Admin As screen:
                     Set(fillBtnOrder, RGBA(0, 0, 0, 0));
                     Set(colorBtnExport, Color.Black);
                     Set(fillBtnExport, RGBA(0, 0, 0, 0));
-                    Set(textChart_HomeAdmin, "Top Products Imported");
+                    Set(colorStatistical, Color.Black);
+                    Set(fillStatistical, RGBA(0, 0, 0, 0));
+                    Set(showChart, false);
+                    Set(showTotal, true);
                     
                     // Nho Set trong App
                     Set(visibleDetailOrderNotPending_HomeAdmin, true);
@@ -391,7 +397,10 @@ TrangChu_Admin As screen:
                     Set(fillBtnOrder, RGBA(127, 235, 117, 1));
                     Set(colorBtnExport, Color.Black);
                     Set(fillBtnExport, RGBA(0, 0, 0, 0));
-                    Set(textChart_HomeAdmin, "Top Products Ordered");
+                    Set(colorStatistical, Color.Black);
+                    Set(fillStatistical, RGBA(0, 0, 0, 0));
+                    Set(showChart, false);
+                    Set(showTotal, true);
                     
                     // Nho Set trong App
                     Set(visibleDetailOrderNotPending_HomeAdmin, true);
@@ -538,7 +547,11 @@ TrangChu_Admin As screen:
                     Set(fillBtnOrder, RGBA(0, 0, 0, 0));
                     Set(colorBtnExport, Color.White);
                     Set(fillBtnExport, RGBA(127, 235, 117, 1));
-                    Set(textChart_HomeAdmin, "Top Products Exported");
+                    Set(colorStatistical, Color.Black);
+                    Set(fillStatistical, RGBA(0, 0, 0, 0));
+                    Set(showChart, false);
+                    Set(showTotal, true);
+                    
                     
                     // Nho Set trong App
                     Set(visibleDetailOrderNotPending_HomeAdmin, true);
@@ -647,6 +660,88 @@ TrangChu_Admin As screen:
                 X: =54
                 Y: =455
                 ZIndex: =11
+
+            Button4_60 As button:
+                BorderColor: =RGBA(127, 235, 117, 1)
+                BorderThickness: =1
+                Color: =colorStatistical
+                Fill: =fillStatistical
+                HoverBorderColor: =RGBA(127, 235, 117, 1)
+                HoverColor: =RGBA(21, 161, 60, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                OnSelect: |+
+                    =Reset(gal_DetailOrderNotPending_7);
+                    Set(colorBtnApprove, Color.Black);
+                    Set(fillBtnApprove, RGBA(0, 0, 0, 0));
+                    Set(colorBtnImport, Color.Black);
+                    Set(fillBtnImport, RGBA(0, 0, 0, 0));
+                    Set(colorBtnOrder, Color.Black);
+                    Set(fillBtnOrder, RGBA(0, 0, 0, 0));
+                    Set(colorBtnExport, Color.Black);
+                    Set(fillBtnExport, RGBA(0, 0, 0, 0));
+                    Set(colorStatistical, Color.White);
+                    Set(fillStatistical, RGBA(127, 235, 117, 1));
+                    Set(numDatasource, 6);
+                    Set(showTotal, false);
+                    Set(textChart_HomeAdmin, "Top Products Exported");
+                    Clear(col_DatasourceOrder_HomeAdmin);
+                    Set(showChart, true);
+                    // Nho Set trong App
+                    ClearCollect(
+                        col_Product, 
+                        RenameColumns(
+                            ShowColumns(
+                                Filter(
+                                    QLK_ImportFormInformation, 
+                                    IDImport in ShowColumns(
+                                        Filter(
+                                            QLK_ImportForm, Status = 4 || Status = 5
+                                        ), "IDImport"
+                                    )
+                                ),
+                                "IDProduct", "Quantity"
+                            ), "IDProduct", "ID_Product"
+                        )
+                    ); 
+                    
+                    ClearCollect(col_SumQuantityProduct, GroupBy(col_Product, "ID_Product","GroupedItems"));
+                    ClearCollect(
+                        col_Temp, 
+                        ShowColumns(
+                            Filter(
+                                QLK_Product, 
+                                IDProduct in 
+                                ShowColumns(col_SumQuantityProduct, "ID_Product")
+                            ), 
+                            "IDProduct", "Image"
+                        )
+                    );
+                    
+                    ClearCollect(
+                        col_TopProduct_HomeAdmin,      
+                        SortByColumns(
+                            AddColumns(
+                                col_SumQuantityProduct, 
+                                "TotalQuantity", 
+                                Sum(GroupedItems, Quantity), 
+                                "Image",
+                                LookUp(col_Temp, IDProduct = col_SumQuantityProduct[@ID_Product], Image)  
+                            ), 
+                            "TotalQuantity",
+                        SortOrder.Descending
+                        )    
+                    );
+                    
+                    Set(maxQuantity, Max(col_TopProduct_HomeAdmin, TotalQuantity));
+                    
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(127, 235, 117, 1)
+                Size: =12
+                Text: ="Statistical"
+                Width: =175
+                X: =54
+                Y: =515
+                ZIndex: =12
 
         Separator1_44 As rectangle:
             BorderColor: =RGBA(237, 237, 237, 1)
@@ -1052,6 +1147,144 @@ TrangChu_Admin As screen:
                     Y: =16
                     ZIndex: =7
 
+            grp_Chart_HomeAdmin_2 As group:
+                Height: =5
+                Width: =5
+                X: =-786
+                Y: =-59
+                ZIndex: =22
+
+                background_Chart_HA_4 As text:
+                    Default: =""
+                    DisabledBorderColor: =RGBA(237, 237, 237, 1)
+                    DisabledFill: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Fill: =RGBA(255, 255, 255, 0.5)
+                    Height: =539
+                    RadiusBottomLeft: =15
+                    RadiusBottomRight: =15
+                    RadiusTopLeft: =15
+                    RadiusTopRight: =15
+                    Visible: =showChart
+                    Width: =625
+                    X: =36
+                    Y: =132
+                    ZIndex: =13
+
+                line_100_percent_HA_2 As rectangle:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(237, 237, 237, 0.5)
+                    Height: =2
+                    OnSelect: =
+                    Visible: =showChart
+                    Width: =525
+                    X: =85
+                    Y: =268
+                    ZIndex: =14
+
+                line_80_percent_HA_2 As rectangle:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(237, 237, 237, 0.5)
+                    Height: =2
+                    OnSelect: =
+                    Visible: =showChart
+                    Width: =525
+                    X: =85
+                    Y: =334
+                    ZIndex: =15
+
+                line_60_percent_HA_2 As rectangle:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(237, 237, 237, 0.5)
+                    Height: =2
+                    OnSelect: =
+                    Visible: =showChart
+                    Width: =525
+                    X: =85
+                    Y: =400
+                    ZIndex: =16
+
+                line_40_percent_HA_2 As rectangle:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(237, 237, 237, 0.5)
+                    Height: =2
+                    OnSelect: =
+                    Visible: =showChart
+                    Width: =525
+                    X: =85
+                    Y: =466
+                    ZIndex: =17
+
+                line_20_percent_HA_7 As rectangle:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(237, 237, 237, 0.5)
+                    Height: =2
+                    OnSelect: =
+                    Visible: =showChart
+                    Width: =525
+                    X: =85
+                    Y: =531
+                    ZIndex: =18
+
+                line_0_percent_HA_2 As rectangle:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(237, 237, 237, 0.5)
+                    Height: =2
+                    OnSelect: =
+                    Visible: =showChart
+                    Width: =525
+                    X: =85
+                    Y: =597
+                    ZIndex: =19
+
+                lbl_TitleChart_HA_2 As label:
+                    Align: =Align.Center
+                    AutoHeight: =true
+                    FontWeight: =FontWeight.Bold
+                    Height: =39
+                    Size: =17
+                    Text: =textChart_HomeAdmin
+                    Visible: =showChart
+                    Width: =625
+                    X: =35
+                    Y: =145
+                    ZIndex: =20
+
+                gal_Chart_HA_2 As gallery.galleryHorizontal:
+                    DelayItemLoading: =true
+                    Height: =514
+                    Items: =col_TopProduct_HomeAdmin
+                    LoadingSpinner: =LoadingSpinner.Data
+                    ShowScrollbar: =false
+                    TemplateSize: =111
+                    Transition: =Transition.Pop
+                    Visible: =showChart
+                    Width: =607
+                    X: =81
+                    Y: =165
+                    ZIndex: =21
+
+                    Button1_8 As button:
+                        BorderStyle: =BorderStyle.None
+                        Fill: =RGBA(127, 235, 117, 0.7)
+                        Height: =460 * ThisItem.TotalQuantity / maxQuantity
+                        HoverFill: =RGBA(127, 235, 117, 1)
+                        PressedFill: =RGBA(118, 214, 109, 1)
+                        Text: =""
+                        Width: =111
+                        Y: |
+                            =420 - Self.Height + 50
+                        ZIndex: =1
+
+                    Label24_18 As label:
+                        Align: =Align.Center
+                        Size: =10
+                        Text: =ThisItem.TotalQuantity
+                        Width: =44
+                        X: =33
+                        Y: =464
+                        ZIndex: =2
+
             Group6_3 As group:
                 Height: =5
                 Width: =5
@@ -1064,7 +1297,7 @@ TrangChu_Admin As screen:
                     BorderThickness: =1
                     DelayItemLoading: =true
                     Height: =453
-                    Items: =col_DetailsOrder_HomeAdmin
+                    Items: =col_TopProduct_HomeAdmin
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     ShowScrollbar: =false
@@ -1083,18 +1316,7 @@ TrangChu_Admin As screen:
                         BorderColor: =RGBA(219, 219, 219, 1)
                         BorderThickness: =0.5
                         Height: =50
-                        Image: |
-                            =
-                            
-                            // 1: Order, 2: Import, 3: Export, 4: Pending, 
-                            /*
-                            If(
-                                numDatasource = 1 || numDatasource = 2 || numDatasource = 3,
-                                LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, Image),
-                                LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct, 'Image_Pro-Supplier')
-                            ) */
-                            
-                            LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct, 'Image_Pro-Supplier')
+                        Image: =ThisItem.Image
                         RadiusBottomLeft: =15
                         RadiusBottomRight: =15
                         RadiusTopLeft: =15
@@ -1109,8 +1331,8 @@ TrangChu_Admin As screen:
                         Height: =32
                         OnSelect: =Select(Parent)
                         Size: =11
-                        Text: |+
-                            =If(
+                        Text: |-
+                            =/*If(
                                 ThisItem.IDOrder in QLK_OrderFormInformation.IDOrderForm,
                                 LookUp(
                                     QLK_Product_Supplier, 
@@ -1137,6 +1359,9 @@ TrangChu_Admin As screen:
                                 )
                             )
                             
+                            */
+                            
+                            LookUp(QLK_Product, IDProduct = ThisItem.ID_Product, Name)
                         Width: =212
                         X: =75
                         Y: =12
@@ -1150,7 +1375,7 @@ TrangChu_Admin As screen:
                         OnSelect: =Select(Parent)
                         Size: =8
                         Text: |-
-                            =Text(ThisItem.Price, "#,###" & " VND")
+                            =Text(LookUp(QLK_Product, IDProduct = ThisItem.ID_Product, OutputPrice), "#,###" & " VND")
                         Width: =115
                         X: =123
                         Y: =39
@@ -1160,7 +1385,7 @@ TrangChu_Admin As screen:
                         Align: =Align.Center
                         OnSelect: =Select(Parent)
                         Size: =11
-                        Text: =ThisItem.Quantity
+                        Text: =ThisItem.TotalQuantity
                         Width: =55
                         X: =296
                         Y: =17
@@ -1196,7 +1421,7 @@ TrangChu_Admin As screen:
                     Align: =Align.Center
                     FontWeight: =FontWeight.Bold
                     Height: =39
-                    Text: ="Details Order"
+                    Text: ="Details"
                     Width: =176
                     X: =796
                     Y: =106
@@ -1221,6 +1446,7 @@ TrangChu_Admin As screen:
                            col_DetailsOrder_HomeAdmin,
                            TotalPrice
                         ),  "#,###") & " VND"
+                    Visible: =showTotal
                     Width: =264
                     X: =752
                     Y: =612
@@ -1720,10 +1946,10 @@ TrangChu_Admin As screen:
                     RadiusBottomRight: =20
                     RadiusTopLeft: =20
                     RadiusTopRight: =20
-                    Visible: =If(numDatasource <> 4, true, false)
+                    Visible: =If(numDatasource <> 4, If(numDatasource = 6, false, true))
                     Width: =218
-                    X: =802
-                    Y: =677
+                    X: =775
+                    Y: =658
                     ZIndex: =12
 
     Icon5_3 As icon.Hamburger:

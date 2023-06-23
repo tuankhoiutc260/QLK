@@ -131,7 +131,9 @@ DangNhap As screen:
                     Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, Permission)),
                     If(
                         LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, Permission).Value = "Manager",
-                        
+                        Set(showChart, false);
+            Set(showTotal, true);
+            
                         Refresh(QLK_OrderForm);
                         Refresh(QLK_OrderFormInformation);
                         Refresh(QLK_ImportForm);
@@ -148,6 +150,8 @@ DangNhap As screen:
                         Set(fillBtnOrder, RGBA(0, 0, 0, 0));
                         Set(colorBtnExport, Color.Black);
                         Set(fillBtnExport, RGBA(0, 0, 0, 0));
+                        Set(colorStatistical, Color.Black);
+                        Set(fillStatistical, RGBA(0, 0, 0, 0));
                         Set(numDatasource, 4); //4: pending
             
                         //Set(textChart_HomeAdmin, "Approve");
