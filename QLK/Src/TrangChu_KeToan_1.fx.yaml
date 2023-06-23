@@ -3097,7 +3097,7 @@ TrangChu_KeToan_1 As screen:
                         DisabledBorderColor: =RGBA(166, 166, 166, 1)
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         DisabledFill: =RGBA(244, 244, 244, 1)
-                        DisplayMode: =If(CountRows(col_DetailsExport_HomeAccountant) = 0, DisplayMode.Disabled, DisplayMode.Edit)
+                        DisplayMode: =If(CountRows(col_DetailsExport_HomeAccountant) = 0 || IsBlank(ComboBox3.Selected), DisplayMode.Disabled, DisplayMode.Edit)
                         Duration: =2000
                         Fill: =RGBA(205, 247, 205, 1)
                         FontWeight: =FontWeight.Semibold
@@ -3111,7 +3111,8 @@ TrangChu_KeToan_1 As screen:
                                     IDExport: NewIDExport_HomeAccountant,
                                     TotalPrice: Sum(col_DetailsExport_HomeAccountant, TotalPrice), 
                                     Status: 1,
-                                    IDCustomer: ComboBox3.Selected.ID
+                                    IDCustomer: ComboBox3.Selected.ID,
+                                    UserCreated:emailLogin
                                 }
                             );
                             
@@ -3174,11 +3175,11 @@ TrangChu_KeToan_1 As screen:
                                 UpdateIf(QLK_Zone, ID_Zone = T.ID_Zone, {QuantityIsContained: T.Max_Value}));
                             
                             ClearCollect(
-                                col_DetailsNewOrder_HomeAccountant,
+                                col_DetailsExport_HomeAccountant,
                                 ForAll(
-                                    Sequence(CountRows(col_DetailsNewOrder_HomeAccountant)),
+                                    Sequence(CountRows(col_DetailsExport_HomeAccountant)),
                                     Patch(
-                                        Last(FirstN(col_DetailsNewOrder_HomeAccountant, Value)),
+                                        Last(FirstN(col_DetailsExport_HomeAccountant, Value)),
                                         {RowNumber: Value}
                                     )
                                 )

@@ -339,8 +339,11 @@ DangNhap As screen:
                         Set(maxQuantity, Max(col_TopProduct_HomeAdmin, TotalQuantity));
                         Navigate(TrangChu_Admin);
             
-                        Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
-                        Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, Permission)),
+                                Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
+                                Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, Permission));
+                                Set(fullName, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, FullName));  
+                                Set(imageLogin, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Portrait'));    
+                                Set(emailLogin, txt_Email_Login.Text);      
                         If(
                             LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, Permission).Value = "WarehouseStaff",
                             Navigate(TrangChu_NhapHang);
@@ -367,6 +370,8 @@ DangNhap As screen:
                                 // Change Fill color button
                                 Set(FillUnPaid_HomeAccountant, RGBA(127, 235, 117, 1)); Set(ColorUnPaid_HomeAccountant, RGBA(255, 255, 255, 1));
                                 Set(FillPaid_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorPaid_HomeAccountant, RGBA(127, 235, 117, 1));
+                                Set(FillOrdered_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorOrdered_HomeAccountant, RGBA(127, 235, 117, 1));
+            
             
                                 Set(visible_cont_Ordered_HomeAccountant, true);
                                 Set(visible_cont_NewOrder_HomeAccountant, false);
