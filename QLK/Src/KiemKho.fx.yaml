@@ -16,11 +16,34 @@ KiemKho As screen:
         Y: =110
         ZIndex: =1
 
+    btn_ExProduct_2 As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =RGBA(237, 237, 237, 1)
+        BorderThickness: =0
+        Color: =RGBA(0, 94, 146, 1)
+        Fill: =RGBA(237, 237, 237, 1)
+        HoverBorderColor: =RGBA(237, 237, 237, 1)
+        HoverFill: =RGBA(0, 94, 146, 1)
+        OnSelect: |-
+            =ClearCollect(colInventoryProduct, ShowColumns(QLK_CheckStock, "ID_CheckStock", "ID_ProductCS", "QuantityInStock", "RealQuantity", "IDZoneCS","OscillateQuantity","OscillatePrice","Checker", "Created"));
+            Set(varCheckStock,InventoryProduct.Run(JSON(colInventoryProduct,JSONFormat.IncludeBinaryData)).checkstockfile);Launch(varCheckStock)
+        PressedBorderColor: =RGBA(237, 237, 237, 1)
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =13
+        Text: ="Export to Excel"
+        Width: =192
+        X: =937
+        Y: =131
+        ZIndex: =2
+
     Rectangle1_25 As rectangle:
         Fill: =RGBA(76, 133, 45, 0.77)
         Height: =768
         Width: =164
-        ZIndex: =2
+        ZIndex: =3
 
     Button2_16 As button:
         BorderStyle: =BorderStyle.Dotted
@@ -39,7 +62,7 @@ KiemKho As screen:
             
             Warehouse"
         Width: =164
-        ZIndex: =3
+        ZIndex: =4
 
     Icon4_24 As icon.Home:
         Color: =RGBA(255, 255, 255, 1)
@@ -48,7 +71,7 @@ KiemKho As screen:
         Width: =50
         X: =57
         Y: =15
-        ZIndex: =4
+        ZIndex: =5
 
     Button2_128 As button:
         BorderThickness: =0
@@ -69,7 +92,7 @@ KiemKho As screen:
             Product"
         Width: =164
         Y: =110
-        ZIndex: =5
+        ZIndex: =6
 
     Button2_129 As button:
         BorderThickness: =0
@@ -88,7 +111,7 @@ KiemKho As screen:
             Inventory"
         Width: =164
         Y: =220
-        ZIndex: =6
+        ZIndex: =7
 
     Icon8_12 As icon.Shop:
         Color: =RGBA(255, 255, 255, 1)
@@ -97,7 +120,7 @@ KiemKho As screen:
         Width: =50
         X: =57
         Y: =122
-        ZIndex: =7
+        ZIndex: =8
 
     Icon11_39 As icon.ListWatchlistRemind:
         Color: =RGBA(255, 255, 255, 1)
@@ -106,7 +129,7 @@ KiemKho As screen:
         Width: =50
         X: =57
         Y: =232
-        ZIndex: =8
+        ZIndex: =9
 
     Button2_133 As button:
         BorderThickness: =0
@@ -126,7 +149,7 @@ KiemKho As screen:
             Logout"
         Width: =164
         Y: =651
-        ZIndex: =9
+        ZIndex: =10
 
     Icon10_21 As icon.Leave:
         Color: =RGBA(255, 255, 255, 1)
@@ -135,7 +158,7 @@ KiemKho As screen:
         Width: =50
         X: =57
         Y: =675
-        ZIndex: =10
+        ZIndex: =11
 
     Image4_47 As image:
         Height: =56
@@ -147,7 +170,7 @@ KiemKho As screen:
         Width: =56
         X: =966
         Y: =20
-        ZIndex: =11
+        ZIndex: =12
 
     Label2_46 As label:
         Font: =Font.'Segoe UI'
@@ -157,7 +180,7 @@ KiemKho As screen:
         Width: =243
         X: =1035
         Y: =15
-        ZIndex: =12
+        ZIndex: =13
 
     Label2_47 As label:
         Color: |-
@@ -176,7 +199,7 @@ KiemKho As screen:
         Width: =196
         X: =1035
         Y: =45
-        ZIndex: =13
+        ZIndex: =14
 
     Image4_46 As image:
         Height: =74
@@ -184,7 +207,7 @@ KiemKho As screen:
         Width: =258
         X: =179
         Y: =11
-        ZIndex: =14
+        ZIndex: =15
 
     Button2_130 As button:
         BorderThickness: =0
@@ -203,7 +226,7 @@ KiemKho As screen:
             Set price"
         Width: =164
         Y: =332
-        ZIndex: =15
+        ZIndex: =16
 
     Icon2_8 As icon.Money:
         Color: =RGBA(255, 255, 255, 1)
@@ -212,7 +235,7 @@ KiemKho As screen:
         Width: =50
         X: =57
         Y: =345
-        ZIndex: =16
+        ZIndex: =17
 
     lbl_OrderedID_DuyetDatHang_11 As label:
         Align: =Align.Center
@@ -225,7 +248,7 @@ KiemKho As screen:
         Width: =354
         X: =245
         Y: =122
-        ZIndex: =17
+        ZIndex: =18
 
     Button2_131 As button:
         BorderThickness: =0
@@ -246,7 +269,7 @@ KiemKho As screen:
             Order list"
         Width: =164
         Y: =440
-        ZIndex: =18
+        ZIndex: =19
 
     Icon3_6 As icon.ShoppingCart:
         Color: =RGBA(255, 255, 255, 1)
@@ -255,7 +278,7 @@ KiemKho As screen:
         Width: =50
         X: =57
         Y: =453
-        ZIndex: =19
+        ZIndex: =20
 
     Button2_132 As button:
         BorderThickness: =0
@@ -274,7 +297,7 @@ KiemKho As screen:
             Statistical"
         Width: =164
         Y: =550
-        ZIndex: =20
+        ZIndex: =21
 
     Icon15_5 As icon.TrendingUpwards:
         Color: =RGBA(255, 255, 255, 1)
@@ -283,14 +306,14 @@ KiemKho As screen:
         Width: =50
         X: =57
         Y: =564
-        ZIndex: =21
+        ZIndex: =22
 
     Icon11_40 As icon.VerticalLine:
         Height: =110
         Icon: =Icon.VerticalLine
         X: =132
         Y: =220
-        ZIndex: =22
+        ZIndex: =23
 
     "gal_ThietLapGia_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         BorderColor: =RGBA(202, 202, 202, 1)
@@ -306,7 +329,7 @@ KiemKho As screen:
         Width: =1072
         X: =227
         Y: =235
-        ZIndex: =23
+        ZIndex: =24
 
         lbl_InputPrice_4 As label:
             Align: =Align.Center
@@ -410,7 +433,7 @@ KiemKho As screen:
         Width: =1072
         X: =227
         Y: =183
-        ZIndex: =24
+        ZIndex: =25
 
     lbl_TotalPrice_DuyetDatHang_9 As label:
         Align: =Align.Center
@@ -421,7 +444,7 @@ KiemKho As screen:
         Width: =136
         X: =260
         Y: =184
-        ZIndex: =25
+        ZIndex: =26
 
     btn_PendingList_DuyetDatHang_18 As button:
         AutoDisableOnSelect: =false
@@ -442,7 +465,7 @@ KiemKho As screen:
         Width: =156
         X: =1143
         Y: =130
-        ZIndex: =26
+        ZIndex: =27
 
     lbl_TotalPrice_DuyetDatHang_11 As label:
         Align: =Align.Center
@@ -453,7 +476,7 @@ KiemKho As screen:
         Width: =136
         X: =480
         Y: =183
-        ZIndex: =27
+        ZIndex: =28
 
     lbl_TotalPrice_DuyetDatHang_13 As label:
         Align: =Align.Center
@@ -464,7 +487,7 @@ KiemKho As screen:
         Width: =126
         X: =986
         Y: =184
-        ZIndex: =28
+        ZIndex: =29
 
     lbl_TotalPrice_DuyetDatHang_12 As label:
         Align: =Align.Center
@@ -475,7 +498,7 @@ KiemKho As screen:
         Width: =138
         X: =849
         Y: =183
-        ZIndex: =29
+        ZIndex: =30
 
     lbl_TotalPrice_DuyetDatHang_14 As label:
         Align: =Align.Center
@@ -486,7 +509,7 @@ KiemKho As screen:
         Width: =160
         X: =1114
         Y: =182
-        ZIndex: =30
+        ZIndex: =31
 
     grpProCS As group:
         Height: =5
@@ -509,7 +532,7 @@ KiemKho As screen:
             Width: =1134
             X: =196
             Y: =110
-            ZIndex: =31
+            ZIndex: =32
 
         "gal_ProductCS As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
             BorderColor: =RGBA(202, 202, 202, 1)
@@ -535,7 +558,7 @@ KiemKho As screen:
             Width: =1071
             X: =228
             Y: =235
-            ZIndex: =32
+            ZIndex: =33
 
             lbl_NameProduct_5 As label:
                 Align: =Align.Center
@@ -634,7 +657,7 @@ KiemKho As screen:
             Width: =1072
             X: =227
             Y: =183
-            ZIndex: =33
+            ZIndex: =34
 
         lbl_DateCreated_DuyetDatHang_2 As label:
             Align: =Align.Center
@@ -646,7 +669,7 @@ KiemKho As screen:
             Width: =99
             X: =855
             Y: =184
-            ZIndex: =34
+            ZIndex: =35
 
         lbl_OrderedID_DuyetDatHang_12 As label:
             Align: =Align.Center
@@ -659,7 +682,7 @@ KiemKho As screen:
             Width: =314
             X: =495
             Y: =184
-            ZIndex: =35
+            ZIndex: =36
 
         lbl_TotalPrice_DuyetDatHang_10 As label:
             Align: =Align.Center
@@ -671,7 +694,7 @@ KiemKho As screen:
             Width: =125
             X: =983
             Y: =182
-            ZIndex: =36
+            ZIndex: =37
 
         lbl_Status_DuyetDatHang_2 As label:
             Align: =Align.Center
@@ -682,7 +705,7 @@ KiemKho As screen:
             Visible: =showgrpProCS
             X: =1133
             Y: =183
-            ZIndex: =37
+            ZIndex: =38
 
         lbl_OrderedID_DuyetDatHang_13 As label:
             Align: =Align.Center
@@ -696,7 +719,7 @@ KiemKho As screen:
             Width: =354
             X: =245
             Y: =119
-            ZIndex: =38
+            ZIndex: =39
 
         btn_RefusedList_DuyetDatHang_1 As button:
             AutoDisableOnSelect: =false
@@ -718,7 +741,7 @@ KiemKho As screen:
             Width: =89
             X: =1209
             Y: =131
-            ZIndex: =39
+            ZIndex: =40
 
     grpCS As group:
         Height: =5
@@ -732,7 +755,7 @@ KiemKho As screen:
             Height: =768
             Visible: =showgrpCS
             Width: =1366
-            ZIndex: =40
+            ZIndex: =41
 
         TextInput1_26 As text:
             Default: =
@@ -748,7 +771,7 @@ KiemKho As screen:
             Width: =715
             X: =428
             Y: =248
-            ZIndex: =41
+            ZIndex: =42
 
         Label30 As label:
             Align: =Align.Center
@@ -761,7 +784,7 @@ KiemKho As screen:
             Width: =362
             X: =628
             Y: =264
-            ZIndex: =42
+            ZIndex: =43
 
         Label33 As label:
             Font: =Font.'Segoe UI'
@@ -773,7 +796,7 @@ KiemKho As screen:
             Width: =124
             X: =457
             Y: =316
-            ZIndex: =43
+            ZIndex: =44
 
         Label37 As label:
             Font: =Font.'Segoe UI'
@@ -783,7 +806,7 @@ KiemKho As screen:
             Width: =210
             X: =553
             Y: =316
-            ZIndex: =44
+            ZIndex: =45
 
         Label33_1 As label:
             Font: =Font.'Segoe UI'
@@ -795,7 +818,7 @@ KiemKho As screen:
             Width: =134
             X: =799
             Y: =316
-            ZIndex: =45
+            ZIndex: =46
 
         Label37_1 As label:
             Font: =Font.'Segoe UI'
@@ -805,7 +828,7 @@ KiemKho As screen:
             Width: =225
             X: =933
             Y: =316
-            ZIndex: =46
+            ZIndex: =47
 
         Label33_2 As label:
             Font: =Font.'Segoe UI'
@@ -817,7 +840,7 @@ KiemKho As screen:
             Width: =124
             X: =458
             Y: =365
-            ZIndex: =47
+            ZIndex: =48
 
         Label37_2 As label:
             Font: =Font.'Segoe UI'
@@ -827,7 +850,7 @@ KiemKho As screen:
             Width: =505
             X: =574
             Y: =364
-            ZIndex: =48
+            ZIndex: =49
 
         Label33_3 As label:
             Font: =Font.'Segoe UI'
@@ -839,7 +862,7 @@ KiemKho As screen:
             Width: =95
             X: =458
             Y: =413
-            ZIndex: =49
+            ZIndex: =50
 
         Label37_3 As label:
             Align: =Align.Center
@@ -850,7 +873,7 @@ KiemKho As screen:
             Width: =166
             X: =553
             Y: =412
-            ZIndex: =50
+            ZIndex: =51
 
         Label33_4 As label:
             Font: =Font.'Segoe UI'
@@ -862,7 +885,7 @@ KiemKho As screen:
             Width: =191
             X: =453
             Y: =464
-            ZIndex: =51
+            ZIndex: =52
 
         txt_QuanStock As label:
             Align: =Align.Center
@@ -873,7 +896,7 @@ KiemKho As screen:
             Width: =90
             X: =649
             Y: =464
-            ZIndex: =52
+            ZIndex: =53
 
         Label33_5 As label:
             Font: =Font.'Segoe UI'
@@ -885,7 +908,7 @@ KiemKho As screen:
             Width: =191
             X: =787
             Y: =463
-            ZIndex: =53
+            ZIndex: =54
 
         txt_RealQuantity As text:
             Align: =Align.Center
@@ -894,7 +917,7 @@ KiemKho As screen:
             Width: =57
             X: =973
             Y: =463
-            ZIndex: =54
+            ZIndex: =55
 
         Label33_6 As label:
             Font: =Font.'Segoe UI'
@@ -906,7 +929,7 @@ KiemKho As screen:
             Width: =160
             X: =457
             Y: =516
-            ZIndex: =55
+            ZIndex: =56
 
         Label37_5 As label:
             Align: =Align.Center
@@ -917,7 +940,7 @@ KiemKho As screen:
             Width: =242
             X: =613
             Y: =513
-            ZIndex: =56
+            ZIndex: =57
 
         btn_RefusedList_DuyetDatHang_2 As button:
             AutoDisableOnSelect: =false
@@ -939,7 +962,7 @@ KiemKho As screen:
             Width: =156
             X: =866
             Y: =569
-            ZIndex: =57
+            ZIndex: =58
 
         btn_RefusedList_DuyetDatHang_10 As button:
             AutoDisableOnSelect: =false
@@ -958,7 +981,8 @@ KiemKho As screen:
                     RealQuantity: txt_RealQuantity.Text,
                     OscillateQuantity: -(txt_QuanStock.Text - txt_RealQuantity.Text),
                     OscillatePrice: -gal_ProductCS.Selected.InputPrice * (txt_QuanStock.Text - txt_RealQuantity.Text),
-                    IDZoneCS: drop_LocationCS.SelectedText.Value
+                    IDZoneCS: drop_LocationCS.SelectedText.Value,
+                    Checker: LookUp(QLK_Account, ID = idDangNhap, FullName)
                 }
                 );
                 Patch(QLK_Product, LookUp(QLK_Product, IDProduct = ID_ProCS),
@@ -983,7 +1007,7 @@ KiemKho As screen:
             Width: =156
             X: =674
             Y: =569
-            ZIndex: =58
+            ZIndex: =59
 
     lbl_OrderedID_DuyetDatHang_16 As label:
         Align: =Align.Center
@@ -996,7 +1020,7 @@ KiemKho As screen:
         Width: =314
         X: =199
         Y: =182
-        ZIndex: =59
+        ZIndex: =60
 
     drop_LocationCS As dropdown:
         Items: =Filter(QLK_Zone, ID_ProductZone = ID_ProCS)
@@ -1004,7 +1028,7 @@ KiemKho As screen:
         Width: =99
         X: =975
         Y: =412
-        ZIndex: =60
+        ZIndex: =61
 
     Label33_7 As label:
         Font: =Font.'Segoe UI'
@@ -1016,7 +1040,7 @@ KiemKho As screen:
         Width: =185
         X: =759
         Y: =412
-        ZIndex: =61
+        ZIndex: =62
 
     lbl_TotalPrice_DuyetDatHang_15 As label:
         Align: =Align.Center
@@ -1027,5 +1051,5 @@ KiemKho As screen:
         Width: =96
         X: =731
         Y: =184
-        ZIndex: =62
+        ZIndex: =63
 

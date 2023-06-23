@@ -45,7 +45,9 @@ HangHoa As screen:
         Fill: =RGBA(237, 237, 237, 1)
         HoverBorderColor: =RGBA(237, 237, 237, 1)
         HoverFill: =RGBA(0, 94, 146, 1)
-        OnSelect: =Set(varProductFileLink,ExProduct.Run(JSON(colProductTT,JSONFormat.IncludeBinaryData)).filelink);Launch(varProductFileLink)
+        OnSelect: |-
+            =ClearCollect(colProductTT, ShowColumns(QLK_Product, "IDProduct", "Name", "Quantity", "QuantityInStock", "InputPrice","OutputPrice","MinimumQuantity","Location"));
+            Set(varProductFileLink,ExProduct.Run(JSON(colProductTT,JSONFormat.IncludeBinaryData)).filelink);Launch(varProductFileLink)
         PressedBorderColor: =RGBA(237, 237, 237, 1)
         RadiusBottomLeft: =20
         RadiusBottomRight: =20
@@ -240,8 +242,7 @@ HangHoa As screen:
             =Navigate(HangHoa);
             Set(DSHangHoa, "DSTrongKho");
             Set(showImportRequest, false);
-            Refresh(QLK_Product);
-            ClearCollect(colProductTT, ShowColumns(QLK_Product, "IDProduct", "Name", "Quantity", "QuantityInStock", "InputPrice","OutputPrice","MinimumQuantity","Location"))
+            Refresh(QLK_Product)
         RadiusBottomLeft: =
         RadiusBottomRight: =
         RadiusTopLeft: =

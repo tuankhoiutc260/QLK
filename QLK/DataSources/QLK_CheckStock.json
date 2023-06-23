@@ -25,6 +25,7 @@
       "{VersionNumber}": "Version number",
       "Author": "Created By",
       "Author#Claims": "Created By Claims",
+      "Checker": "Checker",
       "ComplianceAssetId": "Compliance Asset Id",
       "Created": "Created",
       "Editor": "Modified By",
