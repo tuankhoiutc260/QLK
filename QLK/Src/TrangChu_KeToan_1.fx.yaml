@@ -1166,7 +1166,7 @@ TrangChu_KeToan_1 As screen:
                     DisabledBorderColor: =RGBA(166, 166, 166, 1)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
-                    DisplayMode: =
+                    DisplayMode: =If(CountRows(col_DatasourceOrdered_HomeAccountant) = 0, DisplayMode.Disabled, DisplayMode.Edit)
                     Duration: =1000
                     Fill: =RGBA(127, 235, 117, 1)
                     FontWeight: =FontWeight.Semibold
@@ -1335,21 +1335,22 @@ TrangChu_KeToan_1 As screen:
                         
                         ForAll(col_DetailsOrdered_HomeAccountant As T, 
                             Patch(QLK_Product, 
-                            {
-                                IDProduct: T.IDProduct,
-                                Name: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Name_Pro-Supplier'),
-                                Quantity: T.Quantity, 
-                                MinimumQuantity: 200,
-                                InputPrice: T.Price,
-                                OutputPrice: T.Price + 0.1 * T.Price,
-                                Image: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Image_Pro-Supplier'),
-                                BarCode: T.IDProduct, 
-                                Description: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Describe_Pro-Supplier'),
-                                Length: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Length),
-                                Width: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Width),
-                                Height: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Height),
-                                ID_TypeOfDevice: Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, ID_TypeOfDevice))
-                            }
+                                {
+                                    IDProduct: T.IDProduct,
+                                    Name: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Name_Pro-Supplier'),
+                                    Quantity: T.Quantity, 
+                                    MinimumQuantity: 200,
+                                    InputPrice: T.Price,
+                                    OutputPrice: T.Price + 0.1 * T.Price,
+                                    Image: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Image_Pro-Supplier'),
+                                    BarCode: T.IDProduct, 
+                                    Description: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Describe_Pro-Supplier'),
+                                    Length: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Length),
+                                    Width: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Width),
+                                    IDSupplier: Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, ID_Supplier)),
+                                    Height: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Height),
+                                    ID_TypeOfDevice: Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, ID_TypeOfDevice))
+                                }
                             )
                         )
                         //Set(StatusOrder_HomeAccountant, LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, Status))
