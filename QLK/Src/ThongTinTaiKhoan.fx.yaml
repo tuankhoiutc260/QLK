@@ -38,7 +38,7 @@ ThongTinTaiKhoan As screen:
         Font: =Font.'Segoe UI'
         FontWeight: =FontWeight.Normal
         Height: =110
-        OnSelect: =Navigate(Approve_Admin)
+        OnSelect: =Navigate(TrangChu_Admin)
         RadiusBottomLeft: =
         RadiusBottomRight: =
         RadiusTopLeft: =
@@ -178,7 +178,7 @@ ThongTinTaiKhoan As screen:
         FontWeight: =FontWeight.Bold
         Size: =15
         Text: =LookUp(QLK_Account, ID = idDangNhap, FullName)
-        Width: =196
+        Width: =234
         X: =1035
         Y: =16
         ZIndex: =13
