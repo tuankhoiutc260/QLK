@@ -2720,9 +2720,13 @@ TrangChu_KeToan_1 As screen:
                                 )
                             );
                                 
-                            QLK_Approve_NewOrder_Orders.Run(JSON(col_DetailsNewOrder_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), "devapps@bhk.vn", 
-                                 LookUp(QLK_Account, Gmail = emailLogin, FullName), Sum(col_DetailsNewOrder_HomeAccountant, TotalPrice), LookUp(QLK_OrderForm, IDOrder = NewIDNewOrder_HomeAccoutant, ID),
-                                 LookUp(QLK_OrderForm, IDOrder = NewIDNewOrder_HomeAccoutant, ID));
+                            QLK_Approve_NewOrder_Orders.Run(
+                                JSON(col_DetailsNewOrder_HomeAccountant, JSONFormat.IgnoreBinaryData & JSONFormat.IgnoreUnsupportedTypes), 
+                                "devapps@bhk.vn", LookUp(QLK_Account, Gmail = emailLogin, FullName), 
+                                Sum(col_DetailsNewOrder_HomeAccountant, TotalPrice), 
+                                LookUp(QLK_OrderForm, IDOrder = NewIDNewOrder_HomeAccoutant, ID), 
+                                LookUp(QLK_OrderForm, IDOrder = NewIDNewOrder_HomeAccoutant, ID)
+                            );
                             
                             
                             Clear(col_DetailsNewOrder_HomeAccountant);
