@@ -358,7 +358,7 @@ TrangChu_NhapHang_1 As screen:
                 OnChange: =
                 OnSelect: =Select(Parent)
                 Width: =57
-                X: =438
+                X: =430
                 Y: =26
                 ZIndex: =7
 
@@ -385,8 +385,8 @@ TrangChu_NhapHang_1 As screen:
                 PaddingRight: =0
                 PaddingTop: =0
                 Text: =ThisItem.Quantity
-                Width: =26
-                X: =509
+                Width: =46
+                X: =501
                 ZIndex: =13
 
             grp_ImageProduct_cIP_IP2_2 As group:
@@ -429,7 +429,7 @@ TrangChu_NhapHang_1 As screen:
                 PaddingTop: =0
                 Text: ="/"
                 Width: =26
-                X: =495
+                X: =487
                 ZIndex: =14
 
             Separator1_18 As rectangle:
@@ -764,19 +764,19 @@ TrangChu_NhapHang_1 As screen:
             ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_61.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_61.Height - 32 & "px;background-color:RGBA(255, 255, 255, 1);box-shadow:0 5px 10px 0px  #7FEB75; border-radius:15px'></div>" 
         Visible: =showNotice
         Width: =340
-        X: =536
-        Y: =239
+        X: =512
+        Y: =281
         ZIndex: =31
 
     Label16 As label:
         Align: =Align.Center
         AutoHeight: =true
         FontWeight: =FontWeight.Semibold
-        Text: ="You have entered too many"
+        Text: ="You have entered too many!"
         Visible: =showNotice
         Width: =265
-        X: =573
-        Y: =283
+        X: =549
+        Y: =325
         ZIndex: =32
 
     Button4_64 As button:
@@ -796,8 +796,8 @@ TrangChu_NhapHang_1 As screen:
         Text: ="OK"
         Visible: =showNotice
         Width: =175
-        X: =618
-        Y: =374
+        X: =594
+        Y: =416
         ZIndex: =33
 
     bgr_Black_Success_8 As text:
@@ -820,8 +820,8 @@ TrangChu_NhapHang_1 As screen:
             ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_62.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_62.Height - 32 & "px;background-color:RGBA(255, 255, 255, 1);box-shadow:0 5px 10px 0px  #7FEB75; border-radius:15px'></div>" 
         Visible: =showNotice2
         Width: =340
-        X: =536
-        Y: =239
+        X: =513
+        Y: =281
         ZIndex: =35
 
     Label16_4 As label:
@@ -831,8 +831,8 @@ TrangChu_NhapHang_1 As screen:
         Text: ="The amount of input is not enough!"
         Visible: =showNotice2
         Width: =265
-        X: =573
-        Y: =283
+        X: =550
+        Y: =325
         ZIndex: =36
 
     Button4_65 As button:
@@ -852,7 +852,7 @@ TrangChu_NhapHang_1 As screen:
         Text: ="OK"
         Visible: =showNotice2
         Width: =175
-        X: =618
-        Y: =374
+        X: =595
+        Y: =416
         ZIndex: =37
 

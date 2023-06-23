@@ -428,7 +428,7 @@ TrangChu_NhapHang As screen:
                         )
                     )
                 );
-                
+                Clear(col_OrderScan);
                 /*
                 ClearCollect(col_OrderList_ScanImport, 
                     ShowColumns(Filter(QLK_OrderForm, true), "IDOrder"));

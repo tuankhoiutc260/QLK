@@ -1847,8 +1847,7 @@ TrangChu_KeToan_1 As screen:
                         Align: =Align.Center
                         Height: =28
                         Text: |-
-                            =
-                            "Total: " &
+                            ="Total: " &
                             Text(Sum(
                                col_DetailsOrdered_HomeAccountant,
                                TotalPrice
@@ -4630,8 +4629,8 @@ TrangChu_KeToan_1 As screen:
             RadiusTopLeft: =20
             RadiusTopRight: =20
             Visible: =showSuccess
-            X: =713
-            Y: =344
+            X: =633
+            Y: =334
             ZIndex: =26
 
     bgr_Black_Success_9 As text:

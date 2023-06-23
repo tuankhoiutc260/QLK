@@ -352,6 +352,7 @@ DangNhap As screen:
                             If(
                                 LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, Permission).Value = "Accountant",
                                 Navigate(TrangChu_KeToan_1);
+                                Set(StatusOrdered_HomeAccountant, 4);
             
                                 //Create collection Import Request
                                 ClearCollect(
