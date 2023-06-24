@@ -355,10 +355,11 @@ DangNhap As screen:
                             Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, Permission)),
                             If(
                                 LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, Permission).Value = "Accountant",
-                                Navigate(TrangChu_KeToan_1);
+                                Navigate(TrangChu_KeToan);
                                 Set(StatusOrdered_HomeAccountant, 4);
             
                                 //Create collection Import Request
+                                /*
                                 ClearCollect(
                                     col_ImportRequest_HomeAccountant, 
                                     RenameColumns(
@@ -370,7 +371,7 @@ DangNhap As screen:
                                         ), 
                                         "ID_ProductRequest", "IDProduct"
                                     )
-                                );
+                                );*/
                                 
                                 // Change Fill color button
                                 Set(FillUnPaid_HomeAccountant, RGBA(127, 235, 117, 1)); Set(ColorUnPaid_HomeAccountant, RGBA(255, 255, 255, 1));
@@ -380,8 +381,8 @@ DangNhap As screen:
             
                                 Set(visible_cont_Ordered_HomeAccountant, true);
                                 Set(visible_cont_NewOrder_HomeAccountant, false);
+                                Set(visible_cont_Export_HomeAccountant, false);
                                 Set(visible_cont_Import_HomeAccountant, false);
-                                //Set(StatusOfAccountant, 1); // 1: Cac phieu da order, 2: Import phieu moi, 3: Order hang moi
             
                                 Refresh(QLK_OrderForm);
                                 Refresh(QLK_OrderFormInformation);
@@ -389,8 +390,6 @@ DangNhap As screen:
                                 Refresh(QLK_ImportFormInformation);
                                 Refresh(QLK_ExportForm);
                                 Refresh(QLK_ExportFormInformation);
-            
-                                //Reset(gal_ProductListOrdered_cOHA1);
             
                                 Set(colorBtnOrdered_Accountant, Color.White);
                                 Set(fillBtnOrdered_Accountant, RGBA(127, 235, 117, 1));
@@ -470,12 +469,6 @@ DangNhap As screen:
                                     col_DatasourceOrdered_HomeAccountant,
                                     SortByColumns(temp, "Created", SortOrder.Descending)
                                 );
-                                
-            
-                                // Nho Set trong App
-                                //Set(visibleDetailOrderNotPending_HomeAccountant, false);
-                                //Set(visibleDetailOrderPending_HomeAccountant, true);
-                                //Set(numDatasource, 4); //4: pending
             
                                 // --- Reset lại Details Ordered
                                 ClearCollect(
@@ -541,7 +534,7 @@ DangNhap As screen:
             
                                 Set(
                                     StatusOrder_HomeAccountant, 
-                                    LookUp(col_DatasourceOrder_HomeAccountant, ID = LookUp(FirstN(col_DatasourceOrder_HomeAccountant, 1), true, ID), Status)
+                                    LookUp(col_DatasourceOrdered_HomeAccountant, ID = LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID), Status)
                                 );
             
                                 //-----                         

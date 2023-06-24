@@ -1314,7 +1314,9 @@ TrangChu_Admin As screen:
                     HoverBorderColor: =RGBA(237, 237, 237, 1)
                     HoverFill: =RGBA(255, 0, 0, 1)
                     OnSelect: |-
-                        =If(
+                        =ForAll(col_DetailsOrder_HomeAdmin As T, Patch(QLK_Product, LookUp(QLK_Product, IDProduct = T.IDProduct), {Quantity: LookUp(QLK_Product, IDProduct = T.IDProduct, Quantity) + T[@Quantity]}));
+                        
+                        If(
                             IDOrder_HomeAdmin in col_DatasourceOrderRequest_HomeAdmin[@ID],
                             If(
                                 IsEmpty(
@@ -1376,6 +1378,7 @@ TrangChu_Admin As screen:
                                 )
                             )
                         );
+                        
                         
                         // --- Reset đơn yêu cầu
                         ClearCollect(
