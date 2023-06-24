@@ -669,25 +669,17 @@ TrangChu_Admin As screen:
                 HoverBorderColor: =RGBA(127, 235, 117, 1)
                 HoverColor: =RGBA(21, 161, 60, 1)
                 HoverFill: =RGBA(0, 0, 0, 0)
-                OnSelect: |+
-                    =Reset(gal_DetailOrderNotPending_7);
-                    Set(colorBtnApprove, Color.Black);
-                    Set(fillBtnApprove, RGBA(0, 0, 0, 0));
-                    Set(colorBtnImport, Color.Black);
-                    Set(fillBtnImport, RGBA(0, 0, 0, 0));
-                    Set(colorBtnOrder, Color.Black);
-                    Set(fillBtnOrder, RGBA(0, 0, 0, 0));
-                    Set(colorBtnExport, Color.Black);
-                    Set(fillBtnExport, RGBA(0, 0, 0, 0));
-                    Set(colorStatistical, Color.White);
-                    Set(fillStatistical, RGBA(127, 235, 117, 1));
-                    Set(numDatasource, 6);
-                    Set(showTotal, false);
-                    Set(textChart_HomeAdmin, "Top Products Exported");
-                    Clear(col_DatasourceOrder_HomeAdmin);
-                    Set(showChart, true);
-                    // Nho Set trong App
-                    ClearCollect(
+                OnSelect: |-
+                    =Navigate(TrangChu_Statistical, ScreenTransition.Cover);
+                    Set(colorBtnImportStatistical, Color.White);
+                    Set(fillBtnImportStatistical, RGBA(127, 235, 117, 1));
+                    Set(colorBtnOrderStatistical, Color.Black);
+                    Set(fillBtnOrderStatistical, RGBA(0, 0, 0, 0));
+                    Set(colorBtnExportStatistical, Color.Black);
+                    Set(fillBtnExportStatistical, RGBA(0, 0, 0, 0));
+                    Set(textChart_HomeAdmin, "Top Products Ordered");
+                    
+                    Collect(
                         col_Product, 
                         RenameColumns(
                             ShowColumns(
@@ -733,7 +725,6 @@ TrangChu_Admin As screen:
                     );
                     
                     Set(maxQuantity, Max(col_TopProduct_HomeAdmin, TotalQuantity));
-                    
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(127, 235, 117, 1)
                 Size: =12
@@ -1146,144 +1137,6 @@ TrangChu_Admin As screen:
                     X: =16
                     Y: =16
                     ZIndex: =7
-
-            grp_Chart_HomeAdmin_2 As group:
-                Height: =5
-                Width: =5
-                X: =-786
-                Y: =-59
-                ZIndex: =22
-
-                background_Chart_HA_4 As text:
-                    Default: =""
-                    DisabledBorderColor: =RGBA(237, 237, 237, 1)
-                    DisabledFill: =RGBA(255, 255, 255, 1)
-                    DisplayMode: =DisplayMode.Disabled
-                    Fill: =RGBA(255, 255, 255, 0.5)
-                    Height: =539
-                    RadiusBottomLeft: =15
-                    RadiusBottomRight: =15
-                    RadiusTopLeft: =15
-                    RadiusTopRight: =15
-                    Visible: =showChart
-                    Width: =625
-                    X: =36
-                    Y: =132
-                    ZIndex: =13
-
-                line_100_percent_HA_2 As rectangle:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    Fill: =RGBA(237, 237, 237, 0.5)
-                    Height: =2
-                    OnSelect: =
-                    Visible: =showChart
-                    Width: =525
-                    X: =85
-                    Y: =268
-                    ZIndex: =14
-
-                line_80_percent_HA_2 As rectangle:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    Fill: =RGBA(237, 237, 237, 0.5)
-                    Height: =2
-                    OnSelect: =
-                    Visible: =showChart
-                    Width: =525
-                    X: =85
-                    Y: =334
-                    ZIndex: =15
-
-                line_60_percent_HA_2 As rectangle:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    Fill: =RGBA(237, 237, 237, 0.5)
-                    Height: =2
-                    OnSelect: =
-                    Visible: =showChart
-                    Width: =525
-                    X: =85
-                    Y: =400
-                    ZIndex: =16
-
-                line_40_percent_HA_2 As rectangle:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    Fill: =RGBA(237, 237, 237, 0.5)
-                    Height: =2
-                    OnSelect: =
-                    Visible: =showChart
-                    Width: =525
-                    X: =85
-                    Y: =466
-                    ZIndex: =17
-
-                line_20_percent_HA_7 As rectangle:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    Fill: =RGBA(237, 237, 237, 0.5)
-                    Height: =2
-                    OnSelect: =
-                    Visible: =showChart
-                    Width: =525
-                    X: =85
-                    Y: =531
-                    ZIndex: =18
-
-                line_0_percent_HA_2 As rectangle:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    Fill: =RGBA(237, 237, 237, 0.5)
-                    Height: =2
-                    OnSelect: =
-                    Visible: =showChart
-                    Width: =525
-                    X: =85
-                    Y: =597
-                    ZIndex: =19
-
-                lbl_TitleChart_HA_2 As label:
-                    Align: =Align.Center
-                    AutoHeight: =true
-                    FontWeight: =FontWeight.Bold
-                    Height: =39
-                    Size: =17
-                    Text: =textChart_HomeAdmin
-                    Visible: =showChart
-                    Width: =625
-                    X: =35
-                    Y: =145
-                    ZIndex: =20
-
-                gal_Chart_HA_2 As gallery.galleryHorizontal:
-                    DelayItemLoading: =true
-                    Height: =514
-                    Items: =col_TopProduct_HomeAdmin
-                    LoadingSpinner: =LoadingSpinner.Data
-                    ShowScrollbar: =false
-                    TemplateSize: =111
-                    Transition: =Transition.Pop
-                    Visible: =showChart
-                    Width: =607
-                    X: =81
-                    Y: =165
-                    ZIndex: =21
-
-                    Button1_8 As button:
-                        BorderStyle: =BorderStyle.None
-                        Fill: =RGBA(127, 235, 117, 0.7)
-                        Height: =460 * ThisItem.TotalQuantity / maxQuantity
-                        HoverFill: =RGBA(127, 235, 117, 1)
-                        PressedFill: =RGBA(118, 214, 109, 1)
-                        Text: =""
-                        Width: =111
-                        Y: |
-                            =420 - Self.Height + 50
-                        ZIndex: =1
-
-                    Label24_18 As label:
-                        Align: =Align.Center
-                        Size: =10
-                        Text: =ThisItem.TotalQuantity
-                        Width: =44
-                        X: =33
-                        Y: =464
-                        ZIndex: =2
 
             Group6_3 As group:
                 Height: =5
