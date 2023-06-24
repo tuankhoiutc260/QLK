@@ -29,20 +29,6 @@ TrangChu_KeToan As screen:
             Y: =15
             ZIndex: =2
 
-        bgr_Black_NewOrderProduct_6 As text:
-            Default: =
-            DisabledBorderColor: =RGBA(219, 219, 219, 1)
-            DisabledFill: =RGBA(128, 128, 128, 0.42)
-            DisplayMode: =DisplayMode.Disabled
-            Height: =768
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =0
-            RadiusTopRight: =0
-            Visible: =back_Black_HomeAdmin
-            Width: =1366
-            ZIndex: =3
-
         "'cont_Right_HomaAdmin(R_HA)_3' As groupContainer.manualLayoutContainer":
             Height: =768
             Width: =1129
