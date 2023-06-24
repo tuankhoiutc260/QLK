@@ -34,18 +34,6 @@ TrangChu_Statistical As screen:
             Width: =237
             ZIndex: =3
 
-            Image18_8 As image:
-                Height: =55
-                Image: =imageLogin
-                RadiusBottomLeft: =45
-                RadiusBottomRight: =45
-                RadiusTopLeft: =45
-                RadiusTopRight: =45
-                Width: =55
-                X: =114
-                Y: =120
-                ZIndex: =4
-
             Label28_16 As label:
                 Align: =Align.Center
                 AutoHeight: =true
@@ -83,7 +71,7 @@ TrangChu_Statistical As screen:
                     Set(fillBtnOrderStatistical, RGBA(0, 0, 0, 0));
                     Set(colorBtnExportStatistical, Color.White);
                     Set(fillBtnExportStatistical, RGBA(127, 235, 117, 1));
-                    Set(textChart_HomeAdmin, "Top Products Exported");
+                    Set(textChart_StatisticalHomeAdmin, "Top Products Exported");
                     
                     ClearCollect(
                         col_Product, 
@@ -156,7 +144,7 @@ TrangChu_Statistical As screen:
                     Set(fillBtnOrderStatistical, RGBA(0, 0, 0, 0));
                     Set(colorBtnExportStatistical, Color.Black);
                     Set(fillBtnExportStatistical, RGBA(0, 0, 0, 0));
-                    Set(textChart_HomeAdmin, "Top Products Ordered");
+                    Set(textChart_StatisticalHomeAdmin, "Top Products Imported");
                     
                     Collect(
                         col_Product, 
@@ -248,7 +236,7 @@ TrangChu_Statistical As screen:
                     Set(fillBtnOrderStatistical, RGBA(127, 235, 117, 1));
                     Set(colorBtnExportStatistical, Color.Black);
                     Set(fillBtnExportStatistical, RGBA(0, 0, 0, 0));
-                    Set(textChart_HomeAdmin, "Top Products Ordered");
+                    Set(textChart_StatisticalHomeAdmin, "Top Products Ordered");
                     
                     // Nho Set trong App
                     ClearCollect(
@@ -325,6 +313,18 @@ TrangChu_Statistical As screen:
                 X: =57
                 Y: =613
                 ZIndex: =13
+
+            Image18_8 As image:
+                BorderColor: =RGBA(54, 176, 75, 1)
+                BorderThickness: =1
+                Image: =imageLogin
+                RadiusBottomLeft: =50
+                RadiusBottomRight: =50
+                RadiusTopLeft: =50
+                RadiusTopRight: =50
+                X: =90
+                Y: =75
+                ZIndex: =14
 
         Separator1_45 As rectangle:
             BorderColor: =RGBA(237, 237, 237, 1)
@@ -516,7 +516,7 @@ TrangChu_Statistical As screen:
                     FontWeight: =FontWeight.Bold
                     Height: =39
                     Size: =17
-                    Text: ="Top Products Imported"
+                    Text: =textChart_StatisticalHomeAdmin
                     Width: =625
                     X: =35
                     Y: =145

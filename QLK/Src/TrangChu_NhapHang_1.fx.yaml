@@ -298,11 +298,12 @@ TrangChu_NhapHang_1 As screen:
                 col_ImportRequest_HomeAccountant
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
+            ShowScrollbar: =false
             TemplatePadding: =0
             TemplateSize: =104
-            Width: =830
-            X: =266
-            Y: =332
+            Width: =824
+            X: =271
+            Y: =328
             ZIndex: =20
 
             lbl_ValueProductName__cIP_IP2_2 As label:
@@ -451,7 +452,7 @@ TrangChu_NhapHang_1 As screen:
                 Visible: |-
                     =If(ThisItem.IDProduct in col_ProductScaned, false, true)
                     //If(ThisItem.ID in col_ProductScaned, false, true)
-                Width: =830
+                Width: =354
                 ZIndex: =16
 
         lbl_ProductName_cIP_IP2_2 As label:
@@ -568,14 +569,23 @@ TrangChu_NhapHang_1 As screen:
                 
                 Set(temps, ShowColumns(col_ProductSmallerQuantity, "IDProduct"));
                 With(
-                    {wString: Concat(col_ProductSmallerQuantity, lbl_ValueProductName__cIP_IP2_2, ", ")},
+                    {wString: Concat(col_ProductSmallerQuantity, lbl_ValueProductName__cIP_IP2_2, Char(10))},
                     Set(IDSPThieu, Left(wString, Len(wString)-1));
                 );
                 
                 
-                If(CountRows(col_ProductLargerQuantity) > 0, Set(showNotice, true));
+                If(
+                    CountRows(col_ProductLargerQuantity) > 0,
+                        Set(showNotice, true));
                 
-                If(CountRows(col_ProductSmallerQuantity) > 0, Set(showNotice2, true));
+                If(
+                    CountRows(col_ProductSmallerQuantity) > 0, 
+                    If(
+                        CountRows(col_ProductLargerQuantity) > 0,
+                        Set(showNotice, true),
+                        Set(showNotice2, true)
+                    )
+                )
                 /*
                 
                 If(
@@ -796,7 +806,7 @@ TrangChu_NhapHang_1 As screen:
     shadow_ImportGoods_IMPI_61 As htmlViewer:
         Height: =205
         HtmlText: |-
-            ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_61.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_61.Height - 32 & "px;background-color:RGBA(255, 255, 255, 1);box-shadow:0 5px 10px 0px  #7FEB75; border-radius:15px'></div>" 
+            ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_61.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_61.Height - 32 & "px;background-color:RGBA(255, 255, 255, 1);box-shadow:0 5px 10px 0px  #FF0000; border-radius:15px'></div>" 
         Visible: =showNotice
         Width: =340
         X: =512
@@ -811,22 +821,22 @@ TrangChu_NhapHang_1 As screen:
         Visible: =showNotice
         Width: =265
         X: =549
-        Y: =325
+        Y: =378
         ZIndex: =32
 
     Button4_64 As button:
-        BorderColor: =RGBA(127, 235, 117, 1)
+        BorderColor: =RGBA(202, 202, 202, 1)
         BorderThickness: =1
-        Color: =RGBA(38, 240, 95, 1)
+        Color: =RGBA(149, 149, 149, 1)
         Fill: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Bold
-        HoverBorderColor: =RGBA(127, 235, 117, 1)
-        HoverFill: =RGBA(127, 235, 117, 1)
+        HoverBorderColor: =RGBA(219, 219, 219, 1)
+        HoverFill: =RGBA(149, 149, 149, 1)
         OnSelect: |-
             =Set(showNotice, false);
             Clear(col_ProductLargerQuantity); Clear(col_ProductSmallerQuantity);
         PressedColor: =RGBA(255, 255, 255, 1)
-        PressedFill: =RGBA(127, 235, 117, 1)
+        PressedFill: =RGBA(219, 219, 219, 1)
         Size: =12
         Text: ="OK"
         Visible: =showNotice
@@ -850,25 +860,24 @@ TrangChu_NhapHang_1 As screen:
         ZIndex: =34
 
     shadow_ImportGoods_IMPI_62 As htmlViewer:
-        Height: =236
+        Height: =287
         HtmlText: |-
-            ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_62.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_62.Height - 32 & "px;background-color:RGBA(255, 255, 255, 1);box-shadow:0 5px 10px 0px  #7FEB75; border-radius:15px'></div>" 
+            ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_62.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_62.Height - 32 & "px;background-color:RGBA(255, 255, 255, 1);box-shadow:0 5px 10px 0px  #FF0000; border-radius:15px'></div>" 
         Visible: =showNotice2
-        Width: =440
-        X: =463
-        Y: =266
+        Width: =476
+        X: =425
+        Y: =240
         ZIndex: =35
 
     Label16_4 As label:
         Align: =Align.Center
-        AutoHeight: =true
         FontWeight: =FontWeight.Semibold
-        Text: |-
-            ="Enter the missing quantity for the item: " & Char(10) & IDSPThieu & Char(10) & "Do you want to continue?"
+        Height: =98
+        Text: =Char(10) & IDSPThieu & Char(10) & Char(10)
         Visible: =showNotice2
         Width: =360
-        X: =500
-        Y: =310
+        X: =483
+        Y: =319
         ZIndex: =36
 
     Button4_65 As button:
@@ -878,16 +887,16 @@ TrangChu_NhapHang_1 As screen:
         Fill: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Bold
         HoverBorderColor: =RGBA(127, 235, 117, 1)
-        HoverFill: =RGBA(127, 235, 117, 1)
+        HoverFill: =RGBA(88, 245, 73, 1)
         OnSelect: =
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =RGBA(127, 235, 117, 1)
         Size: =12
         Text: ="OK"
         Visible: =showNotice2
-        Width: =118
-        X: =716
-        Y: =416
+        Width: =120
+        X: =693
+        Y: =449
         ZIndex: =37
 
     Button4_67 As button:
@@ -907,8 +916,48 @@ TrangChu_NhapHang_1 As screen:
         Size: =12
         Text: ="Cancel"
         Visible: =showNotice2
-        Width: =118
-        X: =531
-        Y: =416
+        Width: =120
+        X: =508
+        Y: =449
         ZIndex: =38
+
+    Label16_6 As label:
+        Align: =Align.Center
+        Height: =32
+        Text: ="Enter the missing quantity for the item!!" 
+        Visible: =showNotice2
+        Width: =332
+        X: =529
+        Y: =283
+        ZIndex: =39
+
+    Label16_7 As label:
+        Align: =Align.Center
+        AutoHeight: =true
+        Color: =RGBA(255, 0, 0, 1)
+        FontWeight: =FontWeight.Semibold
+        Text: ="Do you want to continue?"
+        Visible: =showNotice2
+        Width: =360
+        X: =483
+        Y: =417
+        ZIndex: =40
+
+    Icon5 As icon.Error:
+        Color: =RGBA(255, 0, 0, 1)
+        DisplayMode: =DisplayMode.View
+        Icon: =Icon.Error
+        Visible: =showNotice2
+        X: =454
+        Y: =267
+        ZIndex: =41
+
+    Icon5_2 As icon.Error:
+        Color: =RGBA(255, 0, 0, 1)
+        DisplayMode: =DisplayMode.View
+        Icon: =Icon.Error
+        Visible: =showNotice
+        X: =650
+        Y: =308
+        ZIndex: =42
 

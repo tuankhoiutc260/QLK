@@ -35,14 +35,15 @@ TrangChu_Admin As screen:
             ZIndex: =3
 
             Image18_7 As image:
-                Height: =55
-                RadiusBottomLeft: =45
-                RadiusBottomRight: =45
-                RadiusTopLeft: =45
-                RadiusTopRight: =45
-                Width: =55
-                X: =114
-                Y: =120
+                BorderColor: =RGBA(54, 176, 75, 1)
+                BorderThickness: =1
+                Image: =imageLogin
+                RadiusBottomLeft: =50
+                RadiusBottomRight: =50
+                RadiusTopLeft: =50
+                RadiusTopRight: =50
+                X: =90
+                Y: =75
                 ZIndex: =4
 
             Label28_14 As label:
@@ -61,7 +62,7 @@ TrangChu_Admin As screen:
                 AutoHeight: =true
                 FontWeight: =FontWeight.Bold
                 Height: =32
-                Text: ="Name"
+                Text: =fullName
                 Width: =183
                 X: =49
                 Y: =204
@@ -677,7 +678,7 @@ TrangChu_Admin As screen:
                     Set(fillBtnOrderStatistical, RGBA(0, 0, 0, 0));
                     Set(colorBtnExportStatistical, Color.Black);
                     Set(fillBtnExportStatistical, RGBA(0, 0, 0, 0));
-                    Set(textChart_HomeAdmin, "Top Products Ordered");
+                    Set(textChart_StatisticalHomeAdmin, "Top Products Imported");
                     
                     Collect(
                         col_Product, 
@@ -797,13 +798,13 @@ TrangChu_Admin As screen:
                 Visible: =visibleDetailOrderNotPending_HomeAdmin
                 Width: =658
                 X: =20
-                Y: =85
+                Y: =99
                 ZIndex: =3
 
-                shadow_ImportGoods_IMPI_43 As htmlViewer:
+                shadow_ImportGoods_IMPI_65 As htmlViewer:
                     Height: =122
                     HtmlText: |-
-                        ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_43.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_43.Height - 32 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 5px 10px 0px  #ccc; border-radius:15px'></div>" 
+                        ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_65.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_65.Height - 32 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 0px 5px 0px  #7FEB75; border-radius:15px'></div>" 
                     Visible: =If(ThisItem.IsSelected, true, false)
                     Width: =658
                     ZIndex: =1
@@ -930,7 +931,7 @@ TrangChu_Admin As screen:
                     Width: =625
                     X: =16
                     Y: =16
-                    ZIndex: =7
+                    ZIndex: =5
 
                 Label27_50 As label:
                     Align: =Align.Center
@@ -941,7 +942,7 @@ TrangChu_Admin As screen:
                     Width: =158
                     X: =436
                     Y: =43
-                    ZIndex: =8
+                    ZIndex: =6
 
                 Label27_51 As label:
                     Align: =Align.Center
@@ -952,7 +953,7 @@ TrangChu_Admin As screen:
                     Width: =99
                     X: =337
                     Y: =40
-                    ZIndex: =9
+                    ZIndex: =7
 
             "gal_DetailOrderPending_HA_DO_HA_6 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
                 BorderStyle: =BorderStyle.None
@@ -974,10 +975,10 @@ TrangChu_Admin As screen:
                 Y: =99
                 ZIndex: =4
 
-                shadow_ImportGoods_IMPI_44 As htmlViewer:
+                shadow_ImportGoods_IMPI_66 As htmlViewer:
                     Height: =122
                     HtmlText: |-
-                        ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_44.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_44.Height - 32 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 5px 10px 0px  #ccc; border-radius:15px'></div>" 
+                        ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_66.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_66.Height - 32 & "px;background-color:RGBA(255, 255, 255, 0.7);box-shadow:0 0px 5px 0px  #7FEB75; border-radius:15px'></div>" 
                     Visible: =If(ThisItem.IsSelected, true, false)
                     Width: =658
                     ZIndex: =1
@@ -1048,7 +1049,7 @@ TrangChu_Admin As screen:
                     BorderThickness: =0.5
                     Fill: =RGBA(0, 0, 0, 0)
                     FocusedBorderThickness: =1
-                    Height: =89
+                    Height: =90
                     HoverBorderColor: =RGBA(219, 219, 219, 1)
                     HoverFill: =
                     OnSelect: |-
@@ -1133,9 +1134,9 @@ TrangChu_Admin As screen:
                     RadiusTopLeft: =15
                     RadiusTopRight: =15
                     Text: =""
-                    Width: =625
-                    X: =16
-                    Y: =16
+                    Width: =626
+                    X: =15
+                    Y: =15
                     ZIndex: =7
 
             Group6_3 As group:
@@ -1150,7 +1151,7 @@ TrangChu_Admin As screen:
                     BorderThickness: =1
                     DelayItemLoading: =true
                     Height: =453
-                    Items: =col_TopProduct_HomeAdmin
+                    Items: =col_DetailsOrder_HomeAdmin
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Data
                     ShowScrollbar: =false
@@ -1169,7 +1170,7 @@ TrangChu_Admin As screen:
                         BorderColor: =RGBA(219, 219, 219, 1)
                         BorderThickness: =0.5
                         Height: =50
-                        Image: =ThisItem.Image
+                        Image: =LookUp(QLK_Product_Supplier, IDProduct_Supplier = ThisItem.IDProduct, 'Image_Pro-Supplier')
                         RadiusBottomLeft: =15
                         RadiusBottomRight: =15
                         RadiusTopLeft: =15
@@ -1184,8 +1185,8 @@ TrangChu_Admin As screen:
                         Height: =32
                         OnSelect: =Select(Parent)
                         Size: =11
-                        Text: |-
-                            =/*If(
+                        Text: |+
+                            =If(
                                 ThisItem.IDOrder in QLK_OrderFormInformation.IDOrderForm,
                                 LookUp(
                                     QLK_Product_Supplier, 
@@ -1212,9 +1213,6 @@ TrangChu_Admin As screen:
                                 )
                             )
                             
-                            */
-                            
-                            LookUp(QLK_Product, IDProduct = ThisItem.ID_Product, Name)
                         Width: =212
                         X: =75
                         Y: =12
@@ -1228,7 +1226,7 @@ TrangChu_Admin As screen:
                         OnSelect: =Select(Parent)
                         Size: =8
                         Text: |-
-                            =Text(LookUp(QLK_Product, IDProduct = ThisItem.ID_Product, OutputPrice), "#,###" & " VND")
+                            =Text(LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, OutputPrice), "#,###" & " VND")
                         Width: =115
                         X: =123
                         Y: =39
@@ -1238,7 +1236,7 @@ TrangChu_Admin As screen:
                         Align: =Align.Center
                         OnSelect: =Select(Parent)
                         Size: =11
-                        Text: =ThisItem.TotalQuantity
+                        Text: =ThisItem.Quantity
                         Width: =55
                         X: =296
                         Y: =17
@@ -1524,7 +1522,7 @@ TrangChu_Admin As screen:
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
                     DisplayMode: =If(CountRows(col_DetailsOrder_HomeAdmin) = 0, DisplayMode.Disabled, DisplayMode.Edit)
-                    Duration: =
+                    Duration: =2000
                     Fill: =RGBA(205, 247, 205, 1)
                     FontWeight: =FontWeight.Bold
                     Height: =39
@@ -1769,8 +1767,8 @@ TrangChu_Admin As screen:
                         );
                         */
                     OnTimerEnd: |-
-                        =Set(showSuccess, false) && 
-                        Set(showInformationImportInvoiceForm, false)
+                        =Set(showSuccess, false) 
+                        //&& Set(showInformationImportInvoiceForm, false)
                     OnTimerStart: =Set(showSuccess, true) 
                     RadiusBottomLeft: =20
                     RadiusBottomRight: =20
@@ -1822,4 +1820,36 @@ TrangChu_Admin As screen:
         X: =574
         Y: =36
         ZIndex: =4
+
+    grp_Success_5 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =7
+
+        bgr_Black_Success_10 As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(128, 128, 128, 0.42)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =768
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =showSuccess
+            Width: =1366
+            ZIndex: =5
+
+        img_Success_5 As image:
+            Image: =green_success
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showSuccess
+            X: =633
+            Y: =334
+            ZIndex: =6
 
