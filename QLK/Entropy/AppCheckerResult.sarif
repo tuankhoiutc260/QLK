@@ -22195,7 +22195,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 2926,
+                  "charOffset": 2896,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22235,7 +22235,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2924,
+                  "charOffset": 2894,
                   "snippet": {
                     "text": "="
                   }
@@ -22275,7 +22275,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 3252,
+                  "charOffset": 3222,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22315,9 +22315,49 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3250,
+                  "charOffset": 3220,
                   "snippet": {
                     "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_NhapHang_1",
+                "type": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 3268,
+                  "snippet": {
+                    "text": "&&"
                   }
                 }
               },
