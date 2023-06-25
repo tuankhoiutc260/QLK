@@ -17418,90 +17418,6 @@
               "message": {
                 "text": "Error occurred running rule app-InefficientDelayLoading."
               }
-            },
-            {
-              "associatedRule": {
-                "id": "app-InefficientDelayLoading",
-                "index": 19
-              },
-              "descriptor": {
-                "id": "app-InefficientDelayLoading"
-              },
-              "message": {
-                "text": "Error occurred running rule app-InefficientDelayLoading."
-              }
-            },
-            {
-              "associatedRule": {
-                "id": "app-InefficientDelayLoading",
-                "index": 19
-              },
-              "descriptor": {
-                "id": "app-InefficientDelayLoading"
-              },
-              "message": {
-                "text": "Error occurred running rule app-InefficientDelayLoading."
-              }
-            },
-            {
-              "associatedRule": {
-                "id": "app-InefficientDelayLoading",
-                "index": 19
-              },
-              "descriptor": {
-                "id": "app-InefficientDelayLoading"
-              },
-              "message": {
-                "text": "Error occurred running rule app-InefficientDelayLoading."
-              }
-            },
-            {
-              "associatedRule": {
-                "id": "app-InefficientDelayLoading",
-                "index": 19
-              },
-              "descriptor": {
-                "id": "app-InefficientDelayLoading"
-              },
-              "message": {
-                "text": "Error occurred running rule app-InefficientDelayLoading."
-              }
-            },
-            {
-              "associatedRule": {
-                "id": "app-InefficientDelayLoading",
-                "index": 19
-              },
-              "descriptor": {
-                "id": "app-InefficientDelayLoading"
-              },
-              "message": {
-                "text": "Error occurred running rule app-InefficientDelayLoading."
-              }
-            },
-            {
-              "associatedRule": {
-                "id": "app-InefficientDelayLoading",
-                "index": 19
-              },
-              "descriptor": {
-                "id": "app-InefficientDelayLoading"
-              },
-              "message": {
-                "text": "Error occurred running rule app-InefficientDelayLoading."
-              }
-            },
-            {
-              "associatedRule": {
-                "id": "app-InefficientDelayLoading",
-                "index": 19
-              },
-              "descriptor": {
-                "id": "app-InefficientDelayLoading"
-              },
-              "message": {
-                "text": "Error occurred running rule app-InefficientDelayLoading."
-              }
             }
           ]
         }
@@ -18680,7 +18596,7 @@
                 },
                 "region": {
                   "charLength": 63,
-                  "charOffset": 1139,
+                  "charOffset": 1011,
                   "snippet": {
                     "text": "CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = T.ID))"
                   }
@@ -18720,7 +18636,7 @@
                 },
                 "region": {
                   "charLength": 61,
-                  "charOffset": 1654,
+                  "charOffset": 1526,
                   "snippet": {
                     "text": "CountRows(Filter(QLK_ImportFormInformation, IDImport = T.ID))"
                   }
@@ -18760,7 +18676,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 2167,
+                  "charOffset": 2039,
                   "snippet": {
                     "text": "CountRows(Filter(QLK_ExportFormInformation, IDExportForm = T.ID))"
                   }
@@ -18800,7 +18716,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 3027,
+                  "charOffset": 2899,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
                   }
@@ -18840,7 +18756,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3025,
+                  "charOffset": 2897,
                   "snippet": {
                     "text": "="
                   }
@@ -18880,7 +18796,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 3741,
+                  "charOffset": 3613,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
                   }
@@ -18920,7 +18836,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3739,
+                  "charOffset": 3611,
                   "snippet": {
                     "text": "="
                   }
@@ -18960,7 +18876,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 4464,
+                  "charOffset": 4336,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
                   }
@@ -19000,7 +18916,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4462,
+                  "charOffset": 4334,
                   "snippet": {
                     "text": "="
                   }
@@ -19040,7 +18956,7 @@
                 },
                 "region": {
                   "charLength": 63,
-                  "charOffset": 1139,
+                  "charOffset": 1011,
                   "snippet": {
                     "text": "CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = T.ID))"
                   }
@@ -19080,7 +18996,7 @@
                 },
                 "region": {
                   "charLength": 61,
-                  "charOffset": 1654,
+                  "charOffset": 1526,
                   "snippet": {
                     "text": "CountRows(Filter(QLK_ImportFormInformation, IDImport = T.ID))"
                   }
@@ -19120,7 +19036,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 2167,
+                  "charOffset": 2039,
                   "snippet": {
                     "text": "CountRows(Filter(QLK_ExportFormInformation, IDExportForm = T.ID))"
                   }
@@ -19160,7 +19076,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 3027,
+                  "charOffset": 2899,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
                   }
@@ -19200,7 +19116,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3025,
+                  "charOffset": 2897,
                   "snippet": {
                     "text": "="
                   }
@@ -19240,7 +19156,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 3741,
+                  "charOffset": 3613,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
                   }
@@ -19280,7 +19196,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3739,
+                  "charOffset": 3611,
                   "snippet": {
                     "text": "="
                   }
@@ -19320,7 +19236,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 4464,
+                  "charOffset": 4336,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
                   }
@@ -19360,7 +19276,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4462,
+                  "charOffset": 4334,
                   "snippet": {
                     "text": "="
                   }
@@ -19400,7 +19316,7 @@
                 },
                 "region": {
                   "charLength": 63,
-                  "charOffset": 1195,
+                  "charOffset": 1069,
                   "snippet": {
                     "text": "CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = T.ID))"
                   }
@@ -19440,7 +19356,7 @@
                 },
                 "region": {
                   "charLength": 61,
-                  "charOffset": 1766,
+                  "charOffset": 1640,
                   "snippet": {
                     "text": "CountRows(Filter(QLK_ImportFormInformation, IDImport = T.ID))"
                   }
@@ -19480,7 +19396,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 2335,
+                  "charOffset": 2209,
                   "snippet": {
                     "text": "CountRows(Filter(QLK_ExportFormInformation, IDExportForm = T.ID))"
                   }
@@ -19520,7 +19436,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 3195,
+                  "charOffset": 3069,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
                   }
@@ -19560,7 +19476,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3193,
+                  "charOffset": 3067,
                   "snippet": {
                     "text": "="
                   }
@@ -19600,7 +19516,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 3909,
+                  "charOffset": 3783,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
                   }
@@ -19640,7 +19556,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3907,
+                  "charOffset": 3781,
                   "snippet": {
                     "text": "="
                   }
@@ -19680,7 +19596,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 4632,
+                  "charOffset": 4506,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
                   }
@@ -19720,7 +19636,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4630,
+                  "charOffset": 4504,
                   "snippet": {
                     "text": "="
                   }
@@ -19730,46 +19646,6 @@
                 "member": "OnSelect",
                 "module": "TrangChu_KeToan",
                 "type": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_59"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.gal_Ordered_Accountant.btn_SelectProductListOrdered_cOHA1_1.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.gal_Ordered_Accountant.btn_SelectProductListOrdered_cOHA1_1.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 1054,
-                  "snippet": {
-                    "text": "!"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_KeToan",
-                "type": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.gal_Ordered_Accountant.btn_SelectProductListOrdered_cOHA1_1"
               }
             }
           ],
@@ -20362,7 +20238,7 @@
                 },
                 "region": {
                   "charLength": 63,
-                  "charOffset": 1716,
+                  "charOffset": 1590,
                   "snippet": {
                     "text": "CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = T.ID))"
                   }
@@ -20402,7 +20278,7 @@
                 },
                 "region": {
                   "charLength": 61,
-                  "charOffset": 2231,
+                  "charOffset": 2105,
                   "snippet": {
                     "text": "CountRows(Filter(QLK_ImportFormInformation, IDImport = T.ID))"
                   }
@@ -20442,7 +20318,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 2744,
+                  "charOffset": 2618,
                   "snippet": {
                     "text": "CountRows(Filter(QLK_ExportFormInformation, IDExportForm = T.ID))"
                   }
@@ -20482,7 +20358,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 3606,
+                  "charOffset": 3480,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
                   }
@@ -20522,7 +20398,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3604,
+                  "charOffset": 3478,
                   "snippet": {
                     "text": "="
                   }
@@ -20562,7 +20438,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 4320,
+                  "charOffset": 4194,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
                   }
@@ -20602,7 +20478,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4318,
+                  "charOffset": 4192,
                   "snippet": {
                     "text": "="
                   }
@@ -20642,7 +20518,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 5043,
+                  "charOffset": 4917,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
                   }
@@ -20682,7 +20558,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 5041,
+                  "charOffset": 4915,
                   "snippet": {
                     "text": "="
                   }
@@ -20722,7 +20598,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1178,
+                  "charOffset": 1052,
                   "snippet": {
                     "text": "!"
                   }
@@ -22159,7 +22035,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 1944,
+                  "charOffset": 1655,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22199,7 +22075,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1942,
+                  "charOffset": 1653,
                   "snippet": {
                     "text": "="
                   }
@@ -22239,7 +22115,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 3893,
+                  "charOffset": 4032,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22279,7 +22155,87 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3891,
+                  "charOffset": 4030,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_NhapHang_1",
+                "type": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 45,
+                  "charOffset": 4352,
+                  "snippet": {
+                    "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_NhapHang_1",
+                "type": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 4350,
                   "snippet": {
                     "text": "="
                   }
@@ -22319,289 +22275,9 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3939,
+                  "charOffset": 4398,
                   "snippet": {
                     "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_NhapHang_1",
-                "type": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 45,
-                  "charOffset": 4467,
-                  "snippet": {
-                    "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_NhapHang_1",
-                "type": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 4465,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_NhapHang_1",
-                "type": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 45,
-                  "charOffset": 4787,
-                  "snippet": {
-                    "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_NhapHang_1",
-                "type": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 4785,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_NhapHang_1",
-                "type": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 2,
-                  "charOffset": 4833,
-                  "snippet": {
-                    "text": "&&"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_NhapHang_1",
-                "type": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 45,
-                  "charOffset": 5882,
-                  "snippet": {
-                    "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_NhapHang_1",
-                "type": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 5880,
-                  "snippet": {
-                    "text": "="
                   }
                 }
               },
@@ -22719,7 +22395,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 2148,
+                  "charOffset": 2024,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22759,7 +22435,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2146,
+                  "charOffset": 2022,
                   "snippet": {
                     "text": "="
                   }
@@ -22799,7 +22475,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2194,
+                  "charOffset": 2070,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22839,7 +22515,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 2690,
+                  "charOffset": 2520,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22879,7 +22555,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2688,
+                  "charOffset": 2518,
                   "snippet": {
                     "text": "="
                   }
@@ -22919,7 +22595,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 2976,
+                  "charOffset": 2806,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22959,7 +22635,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2974,
+                  "charOffset": 2804,
                   "snippet": {
                     "text": "="
                   }
@@ -22999,7 +22675,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3022,
+                  "charOffset": 2852,
                   "snippet": {
                     "text": "&&"
                   }
@@ -26775,446 +26451,6 @@
           "message": {
             "arguments": [
               "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 63,
-                  "charOffset": 1141,
-                  "snippet": {
-                    "text": "CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = T.ID))"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_KeToan",
-                "type": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "CountRows"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 61,
-                  "charOffset": 1656,
-                  "snippet": {
-                    "text": "CountRows(Filter(QLK_ImportFormInformation, IDImport = T.ID))"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_KeToan",
-                "type": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "CountRows"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 65,
-                  "charOffset": 2169,
-                  "snippet": {
-                    "text": "CountRows(Filter(QLK_ExportFormInformation, IDExportForm = T.ID))"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_KeToan",
-                "type": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "CountRows"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint-OpNotSupportedByService",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 65,
-                  "charOffset": 3029,
-                  "snippet": {
-                    "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_KeToan",
-                "type": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 3027,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_KeToan",
-                "type": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 65,
-                  "charOffset": 3743,
-                  "snippet": {
-                    "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_KeToan",
-                "type": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 3741,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_KeToan",
-                "type": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 65,
-                  "charOffset": 4466,
-                  "snippet": {
-                    "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_KeToan",
-                "type": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 4464,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_KeToan",
-                "type": "TrangChu_KeToan.'cont_HomeAdmin(HA)_3'.'cont_Right_HomaAdmin(R_HA)_3'.cont_Ordered_HomeAccountant_cOHA1_1.Button4_61"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Filter"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.Button4_76.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.Button4_76.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 45,
-                  "charOffset": 149,
-                  "snippet": {
-                    "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_NhapHang_1",
-                "type": "TrangChu_NhapHang_1.Button4_76"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.Button4_76.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.Button4_76.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 147,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_NhapHang_1",
-                "type": "TrangChu_NhapHang_1.Button4_76"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
             ],
             "id": "issue"
           },
@@ -32988,36 +32224,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.bgr_Black_Success_12.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.bgr_Black_Success_12.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "TrangChu_NhapHang_1",
-                "type": "TrangChu_NhapHang_1.bgr_Black_Success_12"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 10
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.ShowDialogueSuaKH"
                 }
               ],
@@ -35598,7 +34804,7 @@
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"TrangChu_KeToan\" is 419, which exceeds the maximum threshold recommended (300)."
+                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"TrangChu_KeToan\" is 418, which exceeds the maximum threshold recommended (300)."
               }
             },
             {
