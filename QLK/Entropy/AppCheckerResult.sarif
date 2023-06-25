@@ -22195,7 +22195,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 2859,
+                  "charOffset": 2850,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22235,7 +22235,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2857,
+                  "charOffset": 2848,
                   "snippet": {
                     "text": "="
                   }
@@ -22275,7 +22275,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 3179,
+                  "charOffset": 3170,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22315,7 +22315,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3177,
+                  "charOffset": 3168,
                   "snippet": {
                     "text": "="
                   }
@@ -22355,7 +22355,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3225,
+                  "charOffset": 3216,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22475,7 +22475,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 545,
+                  "charOffset": 1948,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22515,7 +22515,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 543,
+                  "charOffset": 1946,
                   "snippet": {
                     "text": "="
                   }
@@ -22555,7 +22555,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 591,
+                  "charOffset": 1994,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22595,7 +22595,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 1050,
+                  "charOffset": 2444,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22635,7 +22635,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1048,
+                  "charOffset": 2442,
                   "snippet": {
                     "text": "="
                   }
@@ -22675,7 +22675,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 1336,
+                  "charOffset": 2730,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22715,7 +22715,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1334,
+                  "charOffset": 2728,
                   "snippet": {
                     "text": "="
                   }
@@ -22755,7 +22755,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1382,
+                  "charOffset": 2776,
                   "snippet": {
                     "text": "&&"
                   }
