@@ -351,8 +351,11 @@ DangNhap As screen:
                         If(
                             LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, Permission).Value = "WarehouseStaff",
                             Navigate(TrangChu_NhapHang);
-                            Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
-                            Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, Permission)),
+                                Set(idDangNhap, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ID));
+                                Set(userPermision, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, Permission));
+                                Set(fullName, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, FullName));  
+                                Set(imageLogin, LookUp(QLK_Account, Gmail = txt_Email_Login.Text, ' Portrait'));    
+                                Set(emailLogin, txt_Email_Login.Text),
                             If(
                                 LookUp(QLK_Account, Gmail = txt_Email_Login.Text And Password = txt_Password_Login.Text, Permission).Value = "Accountant",
                                 Navigate(TrangChu_KeToan);

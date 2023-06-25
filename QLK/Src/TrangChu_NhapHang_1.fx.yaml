@@ -606,6 +606,16 @@ TrangChu_NhapHang_1 As screen:
                                     }
                                 )
                             ); 
+                            ForAll(
+                                col_ProductToImport As T,
+                                Patch(
+                                    QLK_Product, 
+                                    LookUp(QLK_Product, IDProduct = T.IDProduct),
+                                    {
+                                        Quantity: LookUp(QLK_Product, IDProduct = T.IDProduct, Quantity) + T.txt_ValueQuantity_cIP_IP2_2.Text
+                                    }
+                                )
+                            ); 
                             Navigate(TrangChu_NhapHang),
                             If(
                                 LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ImportForm.IDImport, 
@@ -621,6 +631,16 @@ TrangChu_NhapHang_1 As screen:
                                         }
                                     )
                                 );
+                                ForAll(
+                                    col_ProductToImport As T,
+                                    Patch(
+                                        QLK_Product, 
+                                        LookUp(QLK_Product, IDProduct = T.IDProduct),
+                                        {
+                                            Quantity: LookUp(QLK_Product, IDProduct = T.IDProduct, Quantity) + T.txt_ValueQuantity_cIP_IP2_2.Text
+                                        }
+                                    )
+                                ); 
                                 Navigate(TrangChu_NhapHang),
                                 If(
                                     LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ImportForm.IDImport, 

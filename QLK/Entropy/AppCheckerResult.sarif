@@ -22195,7 +22195,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 2527,
+                  "charOffset": 2926,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22235,7 +22235,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2525,
+                  "charOffset": 2924,
                   "snippet": {
                     "text": "="
                   }
@@ -22275,7 +22275,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 2853,
+                  "charOffset": 3252,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22315,7 +22315,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2851,
+                  "charOffset": 3250,
                   "snippet": {
                     "text": "="
                   }
@@ -25475,7 +25475,7 @@
                 },
                 "region": {
                   "charLength": 63,
-                  "charOffset": 13749,
+                  "charOffset": 14022,
                   "snippet": {
                     "text": "CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = T.ID))"
                   }
@@ -25515,7 +25515,7 @@
                 },
                 "region": {
                   "charLength": 61,
-                  "charOffset": 14584,
+                  "charOffset": 14857,
                   "snippet": {
                     "text": "CountRows(Filter(QLK_ImportFormInformation, IDImport = T.ID))"
                   }
@@ -25555,7 +25555,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 15417,
+                  "charOffset": 15690,
                   "snippet": {
                     "text": "CountRows(Filter(QLK_ExportFormInformation, IDExportForm = T.ID))"
                   }
@@ -25595,7 +25595,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 16755,
+                  "charOffset": 17028,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
                   }
@@ -25635,7 +25635,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 16753,
+                  "charOffset": 17026,
                   "snippet": {
                     "text": "="
                   }
@@ -25675,7 +25675,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 17829,
+                  "charOffset": 18102,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
                   }
@@ -25715,7 +25715,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 17827,
+                  "charOffset": 18100,
                   "snippet": {
                     "text": "="
                   }
@@ -25755,7 +25755,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 18892,
+                  "charOffset": 19165,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
                   }
@@ -25795,7 +25795,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 18890,
+                  "charOffset": 19163,
                   "snippet": {
                     "text": "="
                   }
