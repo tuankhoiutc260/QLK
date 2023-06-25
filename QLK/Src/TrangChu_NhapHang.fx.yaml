@@ -390,7 +390,11 @@ TrangChu_NhapHang As screen:
             HoverContentColor: =RGBA(255, 255, 255, 1)
             HoverFillColor: =RGBA(154, 245, 149, 1)
             OnScan: |-
-                =Clear(col_ProductScaned);
+                =Refresh(QLK_ImportForm);
+                Refresh(QLK_OrderForm);
+                Refresh(QLK_ExportForm);
+                
+                Clear(col_ProductScaned);
                 
                 ClearCollect(col_ScanOrder_ScanImport, barcode_Import_2.Barcodes);
                 If(

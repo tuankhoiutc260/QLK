@@ -22115,7 +22115,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 1956,
+                  "charOffset": 4032,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22155,7 +22155,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1954,
+                  "charOffset": 4030,
                   "snippet": {
                     "text": "="
                   }
@@ -22195,7 +22195,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 2850,
+                  "charOffset": 4352,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22235,87 +22235,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2848,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_NhapHang_1",
-                "type": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 45,
-                  "charOffset": 3170,
-                  "snippet": {
-                    "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "TrangChu_NhapHang_1",
-                "type": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "LookUp"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-SuggestRemoteExecutionHint",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TrangChu_NhapHang_1.'cont_HomeAdmin(HA)_6'.btn_ImportGoods_cIP_IP_2.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 3168,
+                  "charOffset": 4350,
                   "snippet": {
                     "text": "="
                   }
@@ -22355,7 +22275,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3216,
+                  "charOffset": 4398,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22475,7 +22395,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 1948,
+                  "charOffset": 2024,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22515,7 +22435,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1946,
+                  "charOffset": 2022,
                   "snippet": {
                     "text": "="
                   }
@@ -22555,7 +22475,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 1994,
+                  "charOffset": 2070,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22595,7 +22515,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 2444,
+                  "charOffset": 2520,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22635,7 +22555,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2442,
+                  "charOffset": 2518,
                   "snippet": {
                     "text": "="
                   }
@@ -22675,7 +22595,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 2730,
+                  "charOffset": 2806,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22715,7 +22635,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2728,
+                  "charOffset": 2804,
                   "snippet": {
                     "text": "="
                   }
@@ -22755,7 +22675,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 2776,
+                  "charOffset": 2852,
                   "snippet": {
                     "text": "&&"
                   }
@@ -24435,7 +24355,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 373,
+                  "charOffset": 452,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -24475,7 +24395,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 371,
+                  "charOffset": 450,
                   "snippet": {
                     "text": "="
                   }
@@ -24515,7 +24435,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 883,
+                  "charOffset": 962,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -24555,7 +24475,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 881,
+                  "charOffset": 960,
                   "snippet": {
                     "text": "="
                   }
@@ -24595,7 +24515,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 1371,
+                  "charOffset": 1450,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -24635,7 +24555,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1369,
+                  "charOffset": 1448,
                   "snippet": {
                     "text": "="
                   }

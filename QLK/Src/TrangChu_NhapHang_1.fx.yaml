@@ -597,12 +597,22 @@ TrangChu_NhapHang_1 As screen:
                             Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 4, Importer: emailLogin, ImportDate: Now()});
                             ForAll(
                                 col_OrderScan As T,
-                                Patch(
-                                    QLK_OrderFormInformation, 
-                                    LookUp(QLK_OrderFormInformation, IDOrderForm = LookUp(col_ScanOrder_ScanImport, true, Value)),
+                                Patch(QLK_Product, 
                                     {
-                                        QuantityImport: T.Quantity,
-                                        TotalPriceAfterImport: LookUp(QLK_Product, IDProduct = T.IDProduct, InputPrice) * T.Quantity
+                                        IDProduct: T.IDProduct,
+                                        Name: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Name_Pro-Supplier'),
+                                        Quantity: T.Quantity,
+                                        MinimumQuantity: 200,
+                                        InputPrice: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier'),
+                                        OutputPrice: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier') + 0.1 * LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier'),
+                                        Image: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Image_Pro-Supplier'),
+                                        BarCode: T.IDProduct, 
+                                        Description: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Describe_Pro-Supplier'),
+                                        Length: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Length),
+                                        Width: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Width),
+                                        IDSupplier: Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, ID_Supplier)),
+                                        Height: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Height),
+                                        ID_TypeOfDevice: Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, ID_TypeOfDevice))
                                     }
                                 )
                             ); 
@@ -616,6 +626,7 @@ TrangChu_NhapHang_1 As screen:
                                     }
                                 )
                             ); 
+                            Reset(txt_ValueQuantity_cIP_IP2_2);
                             Navigate(TrangChu_NhapHang),
                             If(
                                 LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ImportForm.IDImport, 
@@ -641,6 +652,7 @@ TrangChu_NhapHang_1 As screen:
                                         }
                                     )
                                 ); 
+                                Reset(txt_ValueQuantity_cIP_IP2_2);
                                 Navigate(TrangChu_NhapHang),
                                 If(
                                     LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ImportForm.IDImport, 
@@ -919,25 +931,25 @@ TrangChu_NhapHang_1 As screen:
                 LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_OrderForm.IDOrder, 
                 Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 4, Importer: emailLogin, ImportDate: Now()});
                 ForAll(col_ProductToImport As T, 
-                Patch(QLK_Product, 
-                    {
-                        IDProduct: T.IDProduct,
-                        Name: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Name_Pro-Supplier'),
-                        Quantity: T.txt_ValueQuantity_cIP_IP2_2,
-                        MinimumQuantity: 200,
-                        InputPrice: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier'),
-                        OutputPrice: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier') + 0.1 * LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier'),
-                        Image: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Image_Pro-Supplier'),
-                        BarCode: T.IDProduct, 
-                        Description: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Describe_Pro-Supplier'),
-                        Length: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Length),
-                        Width: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Width),
-                        IDSupplier: Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, ID_Supplier)),
-                        Height: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Height),
-                        ID_TypeOfDevice: Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, ID_TypeOfDevice))
-                    }
-                )
-            );
+                    Patch(QLK_Product, 
+                        {
+                            IDProduct: T.IDProduct,
+                            Name: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Name_Pro-Supplier'),
+                            Quantity: T.txt_ValueQuantity_cIP_IP2_2,
+                            MinimumQuantity: 200,
+                            InputPrice: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier'),
+                            OutputPrice: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier') + 0.1 * LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier'),
+                            Image: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Image_Pro-Supplier'),
+                            BarCode: T.IDProduct, 
+                            Description: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Describe_Pro-Supplier'),
+                            Length: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Length),
+                            Width: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Width),
+                            IDSupplier: Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, ID_Supplier)),
+                            Height: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Height),
+                            ID_TypeOfDevice: Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, ID_TypeOfDevice))
+                        }
+                    )
+                );
                 ForAll(
                     col_ProductToImport As T,
                     Patch(
