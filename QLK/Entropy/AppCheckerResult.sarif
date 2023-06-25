@@ -22555,7 +22555,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 995,
+                  "charOffset": 1002,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22595,7 +22595,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 993,
+                  "charOffset": 1000,
                   "snippet": {
                     "text": "="
                   }
@@ -22635,7 +22635,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 1281,
+                  "charOffset": 1288,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22675,7 +22675,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1279,
+                  "charOffset": 1286,
                   "snippet": {
                     "text": "="
                   }
