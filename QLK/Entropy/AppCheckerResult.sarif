@@ -22035,7 +22035,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 1639,
+                  "charOffset": 1655,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22075,7 +22075,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1637,
+                  "charOffset": 1653,
                   "snippet": {
                     "text": "="
                   }
@@ -22115,7 +22115,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 1906,
+                  "charOffset": 1962,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22155,7 +22155,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1904,
+                  "charOffset": 1960,
                   "snippet": {
                     "text": "="
                   }
@@ -22195,7 +22195,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 2356,
+                  "charOffset": 2527,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22235,7 +22235,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2354,
+                  "charOffset": 2525,
                   "snippet": {
                     "text": "="
                   }
@@ -22275,7 +22275,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 2642,
+                  "charOffset": 2853,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22315,7 +22315,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2640,
+                  "charOffset": 2851,
                   "snippet": {
                     "text": "="
                   }
