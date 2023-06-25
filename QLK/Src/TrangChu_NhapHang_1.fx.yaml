@@ -293,9 +293,9 @@ TrangChu_NhapHang_1 As screen:
             Fill: =RGBA(255, 255, 255, 0.68)
             Height: =301
             Items: |-
-                =col_OrderScan
+                =//col_OrderScan
                 //RenameColumns(col_ProductInWarehouse_HomeAccountant, "ID", "IDProduct")
-                //col_ImportRequest_HomeAccountant
+                col_ImportRequest_HomeAccountant
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
@@ -452,7 +452,7 @@ TrangChu_NhapHang_1 As screen:
                 Visible: |-
                     =If(ThisItem.IDProduct in col_ProductScaned, false, true)
                     //If(ThisItem.ID in col_ProductScaned, false, true)
-                Width: =824
+                Width: =341
                 ZIndex: =16
 
         lbl_ProductName_cIP_IP2_2 As label:
@@ -553,7 +553,7 @@ TrangChu_NhapHang_1 As screen:
                         Collect(col_ProductLargerQuantity, T.IDProduct),
                         
                         If(
-                            Value(T.txt_ValueQuantity_cIP_IP2_2.Text) < T.Quantity,
+                            Value(T.txt_ValueQuantity_cIP_IP2_2.Text) < T.Quantity, 
                             Collect(
                                 col_ProductSmallerQuantity, 
                                 ShowColumns(Filter(Table(T), T.IDProduct, T.Quantity), "IDProduct", "lbl_ValueProductName__cIP_IP2_2", "txt_ValueQuantity_cIP_IP2_2")),
@@ -576,14 +576,23 @@ TrangChu_NhapHang_1 As screen:
                 
                 If(
                     CountRows(col_ProductLargerQuantity) > 0,
-                        Set(showNotice, true));
+                    If(
+                        LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ExportForm.IDExport, 
+                        Set(showNotice5, true),
+                        Set(showNotice, true)
+                    )
+                );
                 
                 If(
                     CountRows(col_ProductSmallerQuantity) > 0, 
                     If(
-                        CountRows(col_ProductLargerQuantity) > 0,
-                        Set(showNotice, true),
-                        Set(showNotice2, true)
+                        LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ExportForm.IDExport, 
+                        Set(showNotice5, true),
+                        If(
+                            CountRows(col_ProductLargerQuantity) > 0,
+                            Set(showNotice, true),
+                            Set(showNotice2, true)
+                        )
                     )
                 );
                 
@@ -595,6 +604,7 @@ TrangChu_NhapHang_1 As screen:
                         If(
                             LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_OrderForm.IDOrder, 
                             Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 4, Importer: emailLogin, ImportDate: Now()});
+                            
                             ForAll(
                                 col_OrderScan As T,
                                 Patch(QLK_Product, 
@@ -616,17 +626,19 @@ TrangChu_NhapHang_1 As screen:
                                     }
                                 )
                             ); 
+                
                             ForAll(
                                 col_OrderScan As T,
                                 Patch(
-                                    QLK_Product, 
-                                    LookUp(QLK_Product, IDProduct = T.IDProduct),
+                                    QLK_OrderFormInformation, 
+                                    LookUp(QLK_OrderFormInformation, IDOrderForm = LookUp(col_ScanOrder_ScanImport, true, Value) && IDProduct_Supplier = T.IDProduct),
                                     {
-                                        Quantity: LookUp(QLK_Product, IDProduct = T.IDProduct, Quantity) + T.Quantity
+                                        QuantityImport: T.Quantity,
+                                        TotalPriceAfterImport: LookUp(QLK_Product, IDProduct = T.IDProduct, InputPrice) * T.Quantity
                                     }
                                 )
-                            ); 
-                            Reset(txt_ValueQuantity_cIP_IP2_2);
+                            );
+                            
                             Navigate(TrangChu_NhapHang),
                             If(
                                 LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ImportForm.IDImport, 
@@ -652,12 +664,23 @@ TrangChu_NhapHang_1 As screen:
                                         }
                                     )
                                 ); 
-                                Reset(txt_ValueQuantity_cIP_IP2_2);
                                 Navigate(TrangChu_NhapHang),
                                 If(
-                                    LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ImportForm.IDImport, 
-                                    Set(showNotice2, false);
-                                    Set(showNotice3, true);
+                                    LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ExportForm.IDExport, 
+                                    //Set(showNotice2, false);
+                                    //Set(showNotice3, true);
+                                    Patch(QLK_ExportForm, LookUp(QLK_ExportForm, IDExport = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 4, Exporter: emailLogin, ExportDate: Now()});
+                                    ForAll(
+                                        col_OrderScan As T,
+                                        Patch(
+                                            QLK_Product, 
+                                            LookUp(QLK_Product, IDProduct = T.IDProduct),
+                                            {
+                                                QuantityInStock: LookUp(QLK_Product, IDProduct = T.IDProduct, QuantityInStock) - T.Quantity
+                                            }
+                                        )
+                                    ); 
+                                    Navigate(TrangChu_NhapHang)
                                 )
                             )
                         )
@@ -933,20 +956,20 @@ TrangChu_NhapHang_1 As screen:
                 ForAll(col_ProductToImport As T, 
                     Patch(QLK_Product, 
                         {
-                            IDProduct: T.IDProduct,
-                            Name: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Name_Pro-Supplier'),
-                            Quantity: T.txt_ValueQuantity_cIP_IP2_2,
-                            MinimumQuantity: 200,
-                            InputPrice: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier'),
-                            OutputPrice: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier') + 0.1 * LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier'),
-                            Image: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Image_Pro-Supplier'),
-                            BarCode: T.IDProduct, 
-                            Description: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Describe_Pro-Supplier'),
-                            Length: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Length),
-                            Width: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Width),
-                            IDSupplier: Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, ID_Supplier)),
-                            Height: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Height),
-                            ID_TypeOfDevice: Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, ID_TypeOfDevice))
+                                    IDProduct: T.IDProduct,
+                                    Name: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Name_Pro-Supplier'),
+                                    Quantity: Value(T.txt_ValueQuantity_cIP_IP2_2.Text),
+                                    MinimumQuantity: 200,
+                                    InputPrice: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier'),
+                                    OutputPrice: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier') + 0.1 * LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier'),
+                                    Image: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Image_Pro-Supplier'),
+                                    BarCode: T.IDProduct, 
+                                    Description: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Describe_Pro-Supplier'),
+                                    Length: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Length),
+                                    Width: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Width),
+                                    IDSupplier: Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, ID_Supplier)),
+                                    Height: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Height),
+                                    ID_TypeOfDevice: Value(LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, ID_TypeOfDevice))
                         }
                     )
                 );
@@ -956,11 +979,12 @@ TrangChu_NhapHang_1 As screen:
                         QLK_OrderFormInformation, 
                         LookUp(QLK_OrderFormInformation, IDOrderForm = LookUp(col_ScanOrder_ScanImport, true, Value) && IDProduct_Supplier = T.IDProduct),
                         {
-                            QuantityImport: T.txt_ValueQuantity_cIP_IP2_2,
+                            QuantityImport: Value(T.txt_ValueQuantity_cIP_IP2_2.Text),
                             TotalPriceAfterImport: LookUp(QLK_Product, IDProduct = T.IDProduct, InputPrice) * Value(T.txt_ValueQuantity_cIP_IP2_2.Text)
                         }
                     )
-                ),
+                );
+                Navigate(TrangChu_NhapHang),
                 If(
                     LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ImportForm.IDImport, 
                     Patch(QLK_ImportForm, LookUp(QLK_ImportForm, IDImport = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 4, Importer: emailLogin, ImportDate: Now()});
@@ -970,11 +994,12 @@ TrangChu_NhapHang_1 As screen:
                             QLK_ImportFormInformation, 
                             LookUp(QLK_ImportFormInformation, IDImport = LookUp(col_ScanOrder_ScanImport, true, Value) && IDProduct = T.IDProduct),
                             {
-                                QuantityImport: T.txt_ValueQuantity_cIP_IP2_2,
+                                QuantityImport: Value(T.txt_ValueQuantity_cIP_IP2_2.Text),
                                 TotalPriceAfterImport: LookUp(QLK_Product, IDProduct = T.IDProduct, InputPrice) * Value(T.txt_ValueQuantity_cIP_IP2_2.Text)
                             }
                         )
-                    ),
+                    );    
+                    Navigate(TrangChu_NhapHang),
                     If(
                         LookUp(col_ScanOrder_ScanImport, true, Value) in QLK_ImportForm.IDImport, 
                         Set(showNotice2, false);
@@ -1116,4 +1141,93 @@ TrangChu_NhapHang_1 As screen:
         X: =650
         Y: =308
         ZIndex: =47
+
+    bgr_Black_Success_12 As text:
+        Default: =
+        DisabledBorderColor: =RGBA(219, 219, 219, 1)
+        DisabledFill: =RGBA(128, 128, 128, 0.42)
+        DisplayMode: =DisplayMode.Disabled
+        Height: =768
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Visible: =showNotice5
+        Width: =1366
+        ZIndex: =48
+
+    shadow_ImportGoods_IMPI_68 As htmlViewer:
+        Height: =205
+        HtmlText: |-
+            ="<div style='margin:10px;width:" & shadow_ImportGoods_IMPI_68.Width - 32 & "px;height:" & shadow_ImportGoods_IMPI_68.Height - 32 & "px;background-color:RGBA(255, 255, 255, 1);box-shadow:0 5px 10px 0px  #FF0000; border-radius:15px'></div>" 
+        Visible: =showNotice5
+        Width: =340
+        X: =512
+        Y: =281
+        ZIndex: =49
+
+    Label16_9 As label:
+        Align: =Align.Center
+        AutoHeight: =true
+        FontWeight: =FontWeight.Semibold
+        Text: ="Enter the wrong quantity!"
+        Visible: =showNotice5
+        Width: =265
+        X: =549
+        Y: =378
+        ZIndex: =50
+
+    Button4_76 As button:
+        BorderColor: =RGBA(202, 202, 202, 1)
+        BorderThickness: =1
+        Color: =RGBA(149, 149, 149, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =47
+        HoverBorderColor: =RGBA(219, 219, 219, 1)
+        HoverFill: =RGBA(149, 149, 149, 1)
+        OnSelect: |-
+            =Set(showNotice5, false);
+            Clear(col_ProductLargerQuantity); Clear(col_ProductSmallerQuantity);
+            Patch(QLK_OrderForm, LookUp(QLK_OrderForm, IDOrder = LookUp(col_ScanOrder_ScanImport, true, Value)), {Status: 6});
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(219, 219, 219, 1)
+        Size: =12
+        Text: ="Report to Accountant"
+        Visible: =showNotice5
+        Width: =118
+        X: =690
+        Y: =409
+        ZIndex: =51
+
+    Icon5_6 As icon.Error:
+        Color: =RGBA(255, 0, 0, 1)
+        DisplayMode: =DisplayMode.View
+        Icon: =Icon.Error
+        Visible: =showNotice5
+        X: =650
+        Y: =308
+        ZIndex: =52
+
+    Button4_77 As button:
+        BorderColor: =RGBA(202, 202, 202, 1)
+        BorderThickness: =1
+        Color: =RGBA(149, 149, 149, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =47
+        HoverBorderColor: =RGBA(219, 219, 219, 1)
+        HoverFill: =RGBA(149, 149, 149, 1)
+        OnSelect: |-
+            =Set(showNotice5, false);
+            Clear(col_ProductLargerQuantity); Clear(col_ProductSmallerQuantity);
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(219, 219, 219, 1)
+        Size: =12
+        Text: ="Cancel"
+        Visible: =showNotice5
+        Width: =118
+        X: =558
+        Y: =409
+        ZIndex: =54
 

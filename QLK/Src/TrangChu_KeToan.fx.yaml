@@ -582,76 +582,56 @@ TrangChu_KeToan As screen:
                         Height: =64
                         HoverBorderColor: =RGBA(219, 219, 219, 1)
                         HoverFill: =
-                        OnSelect: |
-                            =Set(IDOrdered_HomeAccountant, ThisItem.ID);
-                            Set(StatusOrdered_HomeAccountant, ThisItem.Status);
+                        OnSelect: |+
+                            =
+                            Reset(gal_Ordered_Accountant);
+                            Reset(gal_DetailsOrdered_Accountant);
                             
-                            If(
-                                ThisItem.ID in col_DatasourceOrderRequest_HomeAccountant[@ID],
-                                ClearCollect(
-                                    col_DetailsOrdered_HomeAccountant,
-                                    RenameColumns(
-                                        ShowColumns(
-                                            Filter(
-                                                QLK_OrderFormInformation, 
-                                                IDOrderForm = IDOrdered_HomeAccountant
-                                            ), 
-                                            "IDOrderForm",
-                                            "IDProduct_Supplier",
-                                            "Quantity",
-                                            "ID_TypeOfDevice",
-                                            "Price",
-                                            "TotalPrice"
-                                        ), 
-                                        "IDOrderForm", "IDOrder",
-                                        "IDProduct_Supplier", "IDProduct"
-                                    )
-                                ),
+                            Refresh(QLK_Product_Supplier);
+                            Refresh(QLK_Product);
                             
-                                If(
-                                    ThisItem.ID in col_DatasourceImportRequest_HomeAccountant[@ID],
-                                    ClearCollect(
-                                        col_DetailsOrdered_HomeAccountant,
-                                        RenameColumns(
-                                            ShowColumns(
-                                                Filter(
-                                                    QLK_ImportFormInformation, 
-                                                    IDImport = IDOrdered_HomeAccountant
-                                                ), 
-                                                "IDImport",
-                                                "IDProduct",
-                                                "Quantity",
-                                                "ID_TypeOfDevice",
-                                                "Price",
-                                                "TotalPrice"
-                                            ), 
-                                            "IDImport", "IDOrder"
-                                        )
-                                    ),
+                            Set(colorBtnOrdered_Accountant, Color.Black);
+                            Set(fillBtnOrdered_Accountant, RGBA(0, 0, 0, 0));
+                            Set(colorBtnImport_Accoutant, Color.Black);
+                            Set(fillBtnImport_Accountant, RGBA(0, 0, 0, 0));
+                            Set(colorBtnNewOrder_Accountant, Color.White);
+                            Set(fillBtnNewOrder_Accountant, RGBA(127, 235, 117, 1));
+                            Set(colorBtnExport_Accountant, Color.Black);
+                            Set(fillBtnExport_Accountant, RGBA(0, 0, 0, 0));
                             
-                                    If(
-                                        ThisItem.ID in col_DatasourceExportRequest_HomeAccountant[@ID],
-                                        ClearCollect(
-                                            col_DetailsOrdered_HomeAccountant,
-                                            RenameColumns(
-                                                ShowColumns(
-                                                    Filter(
-                                                        QLK_ExportFormInformation, 
-                                                        IDExportForm = IDOrdered_HomeAccountant
-                                                    ), 
-                                                    "IDExportForm",
-                                                    "IDProduct",
-                                                    "Quantity",
-                                                    "ID_TypeOfDevice",
-                                                    "Price",
-                                                    "TotalPrice"
-                                                ), 
-                                                "IDExportForm", "IDOrder"
-                                            )  
-                                        )
-                                    )        
+                            Set(visible_cont_Ordered_HomeAccountant, false);
+                            Set(visible_cont_Import_HomeAccountant, false);
+                            Set(visible_cont_NewOrder_HomeAccountant, true);
+                            Set(visible_cont_Export_HomeAccountant, false);
+                            Set(StatusOfAccountant, 3); // 1: Cac phieu da order, 2: Import phieu moi, 3: Order hang moi
+                            
+                            
+                            // Create collection Product Order not in Warehouse
+                            ClearCollect(
+                                col_ProductNewOrder_HomeAccountant, 
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(
+                                            QLK_Product_Supplier, 
+                                            !(IDProduct_Supplier in QLK_Product.IDProduct))
+                                        , 
+                                        "IDProduct_Supplier", 
+                                        "Name_Supplier", 
+                                        "Price_Supplier",
+                                        "Image_Pro_x002d_Supplier", 
+                                        "ID_Supplier", 
+                                        "Describe_Pro_x002d_Supplier",
+                                        "ID_TypeOfDevice"
+                                    ), 
+                                    "IDProduct_Supplier", "ID",
+                                    "Name_Supplier", "Name",
+                                    "Price_Supplier", "Price",
+                                    "Image_Pro_x002d_Supplier", "Image",
+                                    "Describe_Pro_x002d_Supplier", "Description"
                                 )
-                            )
+                            );
+                            
+                            
                         RadiusBottomLeft: =15
                         RadiusBottomRight: =15
                         RadiusTopLeft: =15
@@ -1369,6 +1349,8 @@ TrangChu_KeToan As screen:
                         Set(FillUnPaid_HomeAccountant, RGBA(127, 235, 117, 1)); Set(ColorUnPaid_HomeAccountant, RGBA(255, 255, 255, 1));
                         Set(FillPaid_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorPaid_HomeAccountant, RGBA(127, 235, 117, 1));
                         Set(FillOrdered_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorOrdered_HomeAccountant, RGBA(127, 235, 117, 1));
+                        Set(FillErrorInvoice_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorErrorInvoice_HomeAccountant, RGBA(127, 235, 117, 1));
+                        
                         
                         Set(StatusOrdered_HomeAccountant, 4);
                         Refresh(QLK_OrderForm);
@@ -1513,9 +1495,9 @@ TrangChu_KeToan As screen:
                     PressedFill: =RGBA(127, 235, 117, 1)
                     Size: =12
                     Text: ="Unpaid"
-                    Width: =175
-                    X: =63
-                    Y: =38
+                    Width: =150
+                    X: =113
+                    Y: =61
                     ZIndex: =10
 
                 Button4_43 As button:
@@ -1531,6 +1513,8 @@ TrangChu_KeToan As screen:
                         Set(FillPaid_HomeAccountant, RGBA(127, 235, 117, 1)); Set(ColorPaid_HomeAccountant, RGBA(255, 255, 255, 1));
                         Set(FillUnPaid_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorUnPaid_HomeAccountant, RGBA(127, 235, 117, 1));
                         Set(FillOrdered_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorOrdered_HomeAccountant, RGBA(127, 235, 117, 1));
+                        Set(FillErrorInvoice_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorErrorInvoice_HomeAccountant, RGBA(127, 235, 117, 1));
+                        
                         Refresh(QLK_OrderForm);
                         Refresh(QLK_ImportForm);
                         Refresh(QLK_ExportForm);
@@ -1674,9 +1658,9 @@ TrangChu_KeToan As screen:
                     PressedFill: =RGBA(127, 235, 117, 1)
                     Size: =12
                     Text: ="Paid"
-                    Width: =175
-                    X: =258
-                    Y: =38
+                    Width: =150
+                    X: =274
+                    Y: =60
                     ZIndex: =11
 
                 Button4_59 As button:
@@ -1692,6 +1676,7 @@ TrangChu_KeToan As screen:
                         Set(FillPaid_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorPaid_HomeAccountant, RGBA(127, 235, 117, 1));
                         Set(FillUnPaid_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorUnPaid_HomeAccountant, RGBA(127, 235, 117, 1));
                         Set(FillOrdered_HomeAccountant, RGBA(127, 235, 117, 1)); Set(ColorOrdered_HomeAccountant, RGBA(255, 255, 255, 1));
+                        Set(FillErrorInvoice_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorErrorInvoice_HomeAccountant, RGBA(127, 235, 117, 1));
                         Set(StatusOrdered_HomeAccountant, 1);
                         
                         Refresh(QLK_OrderForm);
@@ -1836,9 +1821,9 @@ TrangChu_KeToan As screen:
                     PressedFill: =RGBA(127, 235, 117, 1)
                     Size: =12
                     Text: ="Ordered"
-                    Width: =175
-                    X: =463
-                    Y: =38
+                    Width: =150
+                    X: =437
+                    Y: =61
                     ZIndex: =12
 
                 Button4_58 As button:
@@ -2003,6 +1988,169 @@ TrangChu_KeToan As screen:
                     X: =813
                     Y: =20
                     ZIndex: =13
+
+                Button4_61 As button:
+                    BorderColor: =RGBA(127, 235, 117, 1)
+                    BorderThickness: =1
+                    Color: =ColorErrorInvoice_HomeAccountant
+                    Fill: =FillErrorInvoice_HomeAccountant
+                    FontWeight: =FontWeight.Bold
+                    HoverBorderColor: =RGBA(127, 235, 117, 1)
+                    HoverFill: =RGBA(127, 235, 117, 1)
+                    OnSelect: |
+                        =// Change Fill color button
+                        Set(FillPaid_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorPaid_HomeAccountant, RGBA(127, 235, 117, 1));
+                        Set(FillUnPaid_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorUnPaid_HomeAccountant, RGBA(127, 235, 117, 1));
+                        Set(FillOrdered_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorOrdered_HomeAccountant, RGBA(127, 235, 117, 1));
+                        Set(FillErrorInvoice_HomeAccountant, RGBA(127, 235, 117, 1)); Set(ColorErrorInvoice_HomeAccountant, RGBA(255, 255, 255, 1));
+                        
+                        Set(StatusOrdered_HomeAccountant, 1);
+                        
+                        Refresh(QLK_OrderForm);
+                        Refresh(QLK_ImportForm);
+                        Refresh(QLK_ExportForm);
+                        
+                        Reset(gal_Ordered_Accountant);
+                        Reset(gal_DetailsOrdered_Accountant);
+                        
+                        //Set(IDOrder_HomeAccountant, LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID));
+                        
+                        ClearCollect(
+                            col_DatasourceOrderRequest_HomeAccountant, 
+                            AddColumns(
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(QLK_OrderForm, Status = 6), 
+                                        "IDOrder", "Created", "TotalPrice", "Status"
+                                        ),
+                                    "IDOrder", "ID"
+                                ) As T, 
+                                "QuantityProduct", 
+                                CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = T.ID)) & " Products",
+                                "ProductIn", // 1: In warehouse, 2: Of Supplier
+                                2
+                            )
+                        );
+                        
+                        ClearCollect(
+                            col_DatasourceImportRequest_HomeAccountant, 
+                            AddColumns(
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(QLK_ImportForm, Status = 6), 
+                                        "IDImport", "Created", "TotalPrice", "Status"
+                                        ),
+                                    "IDImport", "ID"
+                                ) As T, 
+                                "QuantityProduct", 
+                                CountRows(Filter(QLK_ImportFormInformation, IDImport = T.ID)) & " Products",
+                                "ProductIn", // 1: In warehouse, 2: Of Supplier
+                                1
+                            )
+                        );
+                        
+                        ClearCollect(
+                            col_DatasourceExportRequest_HomeAccountant, 
+                            AddColumns(
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(QLK_ExportForm, Status = 6), 
+                                        "IDExport", "Created", "TotalPrice", "Status"
+                                        ),
+                                    "IDExport", "ID"
+                                ) As T, 
+                                "QuantityProduct", 
+                                CountRows(Filter(QLK_ExportFormInformation, IDExportForm = T.ID)) & " Products",
+                                "ProductIn", // 1: In warehouse, 2: Of Supplier
+                                1
+                            )
+                        );
+                        
+                        
+                        ClearCollect(                
+                            temp,
+                            col_DatasourceOrderRequest_HomeAccountant,
+                            col_DatasourceImportRequest_HomeAccountant,
+                            col_DatasourceExportRequest_HomeAccountant
+                        );
+                        
+                        ClearCollect(
+                            col_DatasourceOrdered_HomeAccountant,
+                            SortByColumns(temp, "Created", SortOrder.Descending)
+                        );
+                        
+                        // --- Reset lại Details Ordered
+                        ClearCollect(
+                            col_DetailsOrdered_HomeAccountant,
+                            If(
+                                LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID) in col_DatasourceOrderRequest_HomeAccountant[@ID],
+                                RenameColumns(
+                                    ShowColumns(
+                                        Filter(
+                                            QLK_OrderFormInformation,
+                                            IDOrderForm = LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)
+                                        ),
+                                        "IDOrderForm",
+                                        "IDProduct_Supplier",
+                                        "Quantity",
+                                        "ID_TypeOfDevice",
+                                        "Price",
+                                        "TotalPrice"
+                                    ), 
+                                    "IDOrderForm", "IDOrder",
+                                    "IDProduct_Supplier", "IDProduct"
+                                ),
+                        
+                                If(
+                                    LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID) in col_DatasourceImportRequest_HomeAccountant[@ID],
+                                    RenameColumns(
+                                        ShowColumns(
+                                            Filter(
+                                                QLK_ImportFormInformation,
+                                                IDImport = LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)
+                                            ),
+                                            "IDImport",
+                                            "IDProduct",
+                                            "Quantity",
+                                            "ID_TypeOfDevice",
+                                            "Price",
+                                            "TotalPrice"
+                                        ), 
+                                        "IDImport", "IDOrder"
+                                    ),
+                        
+                                    If(
+                                        LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID) in col_DatasourceExportRequest_HomeAccountant[@ID],
+                                        RenameColumns(
+                                            ShowColumns(
+                                                Filter(
+                                                    QLK_ExportFormInformation,
+                                                    IDExportForm = LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)
+                                                ),
+                                                "IDExportForm",
+                                                "IDProduct",
+                                                "Quantity",
+                                                "ID_TypeOfDevice",
+                                                "Price",
+                                                "TotalPrice"
+                                            ), 
+                                            "IDExportForm", "IDOrder"
+                                        )
+                                    )
+                                )
+                            )  
+                        );
+                        
+                        Set(StatusOrder_HomeAccountant, LookUp(col_DatasourceOrderRequest_HomeAccountant, ID = LookUp(FirstN(col_DatasourceOrderRequest_HomeAccountant, 1), true, ID), Status));
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(127, 235, 117, 1)
+                    Size: =12
+                    Text: ="Error Invoice"
+                    Visible: =false
+                    Width: =150
+                    X: =517
+                    Y: =61
+                    ZIndex: =14
 
             TextInput8_1 As text:
                 Align: =Align.Center
@@ -3466,7 +3614,8 @@ TrangChu_KeToan As screen:
             HoverColor: =RGBA(21, 161, 60, 1)
             HoverFill: =RGBA(0, 0, 0, 0)
             OnSelect: |
-                =Refresh(QLK_OrderForm);
+                =Refresh(QLK_OrderForm);Set(FillErrorInvoice_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorErrorInvoice_HomeAccountant, RGBA(127, 235, 117, 1));
+                
                 Refresh(QLK_OrderFormInformation);
                 Refresh(QLK_ImportForm);
                 Refresh(QLK_ImportFormInformation);
@@ -3643,6 +3792,7 @@ TrangChu_KeToan As screen:
             OnSelect: |-
                 =Reset(gal_Ordered_Accountant);
                 Reset(gal_DetailsOrdered_Accountant);
+                Set(FillErrorInvoice_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorErrorInvoice_HomeAccountant, RGBA(127, 235, 117, 1));
                 
                 Refresh(QLK_ImportForm);
                 Refresh(QLK_ImportFormInformation);
@@ -3696,7 +3846,8 @@ TrangChu_KeToan As screen:
             HoverFill: =RGBA(0, 0, 0, 0)
             OnSelect: |-
                 =Reset(gal_Ordered_Accountant);
-                Reset(gal_DetailsOrdered_Accountant);
+                Reset(gal_DetailsOrdered_Accountant);Set(FillErrorInvoice_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorErrorInvoice_HomeAccountant, RGBA(127, 235, 117, 1));
+                
                 
                 Refresh(QLK_Product_Supplier);
                 Refresh(QLK_Product);
@@ -3763,7 +3914,8 @@ TrangChu_KeToan As screen:
             OnSelect: |-
                 =Reset(gal_Ordered_Accountant);
                 Reset(gal_DetailsOrdered_Accountant);
-                Set(visibleNameCutomer, false);
+                Set(visibleNameCutomer, false);Set(FillErrorInvoice_HomeAccountant, RGBA(255, 255, 255, 1)); Set(ColorErrorInvoice_HomeAccountant, RGBA(127, 235, 117, 1));
+                
                 Refresh(QLK_Product);
                 Set(colorBtnOrdered_Accountant, Color.Black);
                 Set(fillBtnOrdered_Accountant, RGBA(0, 0, 0, 0));
