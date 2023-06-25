@@ -22115,7 +22115,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 1962,
+                  "charOffset": 1956,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22155,7 +22155,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1960,
+                  "charOffset": 1954,
                   "snippet": {
                     "text": "="
                   }
@@ -22195,7 +22195,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 2896,
+                  "charOffset": 2847,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22235,7 +22235,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 2894,
+                  "charOffset": 2845,
                   "snippet": {
                     "text": "="
                   }
@@ -22275,7 +22275,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 3222,
+                  "charOffset": 3167,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22315,7 +22315,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3220,
+                  "charOffset": 3165,
                   "snippet": {
                     "text": "="
                   }
@@ -22355,7 +22355,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 3268,
+                  "charOffset": 3213,
                   "snippet": {
                     "text": "&&"
                   }
@@ -22554,8 +22554,48 @@
                   "relativeAddress": 0
                 },
                 "region": {
+                  "charLength": 2,
+                  "charOffset": 591,
+                  "snippet": {
+                    "text": "&&"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_NhapHang_1",
+                "type": "TrangChu_NhapHang_1.Button4_65"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_NhapHang_1.Button4_65.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_NhapHang_1.Button4_65.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
                   "charLength": 45,
-                  "charOffset": 1002,
+                  "charOffset": 1038,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22595,7 +22635,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1000,
+                  "charOffset": 1036,
                   "snippet": {
                     "text": "="
                   }
@@ -22635,7 +22675,7 @@
                 },
                 "region": {
                   "charLength": 45,
-                  "charOffset": 1288,
+                  "charOffset": 1324,
                   "snippet": {
                     "text": "LookUp(col_ScanOrder_ScanImport, true, Value)"
                   }
@@ -22675,9 +22715,49 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 1286,
+                  "charOffset": 1322,
                   "snippet": {
                     "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "TrangChu_NhapHang_1",
+                "type": "TrangChu_NhapHang_1.Button4_65"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "LookUp"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-SuggestRemoteExecutionHint",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TrangChu_NhapHang_1.Button4_65.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TrangChu_NhapHang_1.Button4_65.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 2,
+                  "charOffset": 1370,
+                  "snippet": {
+                    "text": "&&"
                   }
                 }
               },
