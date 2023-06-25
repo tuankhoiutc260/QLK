@@ -293,9 +293,9 @@ TrangChu_NhapHang_1 As screen:
             Fill: =RGBA(255, 255, 255, 0.68)
             Height: =301
             Items: |-
-                =//col_OrderScan
+                =col_OrderScan
                 //RenameColumns(col_ProductInWarehouse_HomeAccountant, "ID", "IDProduct")
-                col_ImportRequest_HomeAccountant
+                //col_ImportRequest_HomeAccountant
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
             ShowScrollbar: =false
@@ -452,7 +452,7 @@ TrangChu_NhapHang_1 As screen:
                 Visible: |-
                     =If(ThisItem.IDProduct in col_ProductScaned, false, true)
                     //If(ThisItem.ID in col_ProductScaned, false, true)
-                Width: =380
+                Width: =824
                 ZIndex: =16
 
         lbl_ProductName_cIP_IP2_2 As label:
