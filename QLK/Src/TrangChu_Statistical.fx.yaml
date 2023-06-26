@@ -147,7 +147,7 @@ TrangChu_Statistical As screen:
                     Set(fillBtnExportStatistical, RGBA(0, 0, 0, 0));
                     Set(textChart_StatisticalHomeAdmin, "Top Products Imported");
                     
-                    Collect(
+                    ClearCollect(
                         col_Product, 
                         RenameColumns(
                             ShowColumns(

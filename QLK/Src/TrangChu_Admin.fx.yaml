@@ -290,7 +290,7 @@ TrangChu_Admin As screen:
                         AddColumns(
                             RenameColumns(
                                 ShowColumns(
-                                    Filter(QLK_ImportForm, Status = 4 || Status = 5), 
+                                    Filter(QLK_ImportForm, Status = 2 || Status = 3 || Status = 4 || Status = 5), 
                                     "IDImport", "Created", "TotalPrice", "Status"
                                     ),
                                 "IDImport", "ID"
@@ -312,7 +312,7 @@ TrangChu_Admin As screen:
                                     QLK_ImportFormInformation, 
                                     IDImport in ShowColumns(
                                         Filter(
-                                            QLK_ImportForm, Status = 4 || Status = 5
+                                            QLK_ImportForm, Status = 2 || Status = 3 || Status = 4 || Status = 5
                                         ), "IDImport"
                                     )
                                 ),
@@ -415,7 +415,7 @@ TrangChu_Admin As screen:
                         AddColumns(
                             RenameColumns(
                                 ShowColumns(
-                                    Filter(QLK_OrderForm, Status = 4 || Status = 5), 
+                                    Filter(QLK_OrderForm, Status = 2 || Status = 3 || Status = 4 || Status = 5), 
                                     "IDOrder", "Created", "TotalPrice", "Status"
                                     ),
                                 "IDOrder", "ID"
@@ -438,7 +438,7 @@ TrangChu_Admin As screen:
                                     QLK_OrderFormInformation, 
                                     IDOrderForm in ShowColumns(
                                         Filter(
-                                            QLK_OrderForm, Status = 4 || Status = 5
+                                            QLK_OrderForm, Status = 2 || Status = 3 || Status = 4 || Status = 5
                                         ), "IDOrder"
                                     )
                                 ),
@@ -568,7 +568,7 @@ TrangChu_Admin As screen:
                         AddColumns(
                             RenameColumns(
                                 ShowColumns(
-                                    Filter(QLK_ExportForm, Status = 4 || Status = 5), 
+                                    Filter(QLK_ExportForm, Status = 2 || Status = 3 || Status = 4 || Status = 5), 
                                     "IDExport", "Created", "TotalPrice", "Status"
                                     ),
                                 "IDExport", "ID"
@@ -591,7 +591,7 @@ TrangChu_Admin As screen:
                                     QLK_ExportFormInformation, 
                                     IDExportForm in ShowColumns(
                                         Filter(
-                                            QLK_ExportForm, Status = 4 || Status = 5
+                                            QLK_ExportForm, Status = 2 || Status = 3 || Status = 4 || Status = 5
                                         ), "IDExport"
                                     )
                                 ),
@@ -848,6 +848,28 @@ TrangChu_Admin As screen:
                     Y: =64
                     ZIndex: =4
 
+                Label27_50 As label:
+                    Align: =Align.Center
+                    OnSelect: =Select(Parent)
+                    Size: =11
+                    Text: |-
+                        =Text(ThisItem.TotalPrice, "#,###" & " VND")
+                    Width: =158
+                    X: =436
+                    Y: =43
+                    ZIndex: =5
+
+                Label27_51 As label:
+                    Align: =Align.Center
+                    Height: =46
+                    OnSelect: =Select(Parent)
+                    Size: =11
+                    Text: =ThisItem.QuantityProduct
+                    Width: =99
+                    X: =337
+                    Y: =40
+                    ZIndex: =6
+
                 Button9_11 As button:
                     Fill: =RGBA(0, 0, 0, 0)
                     FocusedBorderThickness: =1
@@ -931,28 +953,6 @@ TrangChu_Admin As screen:
                     Width: =625
                     X: =16
                     Y: =16
-                    ZIndex: =5
-
-                Label27_50 As label:
-                    Align: =Align.Center
-                    OnSelect: =Select(Parent)
-                    Size: =11
-                    Text: |-
-                        =Text(ThisItem.TotalPrice, "#,###" & " VND")
-                    Width: =158
-                    X: =436
-                    Y: =43
-                    ZIndex: =6
-
-                Label27_51 As label:
-                    Align: =Align.Center
-                    Height: =46
-                    OnSelect: =Select(Parent)
-                    Size: =11
-                    Text: =ThisItem.QuantityProduct
-                    Width: =99
-                    X: =337
-                    Y: =40
                     ZIndex: =7
 
             "gal_DetailOrderPending_HA_DO_HA_6 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
@@ -1808,14 +1808,29 @@ TrangChu_Admin As screen:
 
                 TextInput5_3 As text:
                     Align: =Align.Center
-                    BorderStyle: =BorderStyle.None
+                    BorderColor: =RGBA(127, 235, 117, 1)
                     Default: |-
-                        =If(StatusOfOrder_HomeAdmin = 4,
-                            "Unpaid", "Paid")
-                    DisabledBorderColor: =RGBA(253, 222, 207, 1)
-                    DisabledColor: =RGBA(0, 0, 0, 1)
-                    DisabledFill: =If(StatusOfOrder_HomeAdmin = 5, RGBA(127,235,117,1), RGBA(251, 188, 159, 1))
+                        =If(
+                            StatusOfOrder_HomeAdmin = 2, 
+                            "Approved",
+                            If(
+                                StatusOfOrder_HomeAdmin = 3,
+                                "Refused",
+                                If( 
+                                    StatusOfOrder_HomeAdmin = 4,
+                                    "Unpaid",
+                                    "Paid"
+                                )
+                            )
+                        )
+                    DisabledBorderColor: =RGBA(127, 235, 117, 1)
+                    DisabledColor: =RGBA(127, 235, 117, 1)
+                    DisabledFill: |-
+                        =//If(StatusOfOrder_HomeAdmin = 5, RGBA(127,235,117,1), RGBA(251, 188, 159, 1))
+                        Color.White
                     DisplayMode: =DisplayMode.Disabled
+                    Fill: =Color.White
+                    FontWeight: =FontWeight.Semibold
                     Height: =36
                     RadiusBottomLeft: =20
                     RadiusBottomRight: =20
