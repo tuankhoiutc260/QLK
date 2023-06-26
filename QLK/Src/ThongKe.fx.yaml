@@ -386,7 +386,8 @@ ThongKe As screen:
                     Height: =494
                     ItemBorderThickness: =1
                     Items: =QLK_Product
-                    Width: =529
+                    OnSelect: =
+                    Width: =680
                     Y: =70
                     ZIndex: =3
 
@@ -395,8 +396,8 @@ ThongKe As screen:
                     ItemColorSet: =PieChart1.ItemColorSet
                     Items: =PieChart1.SeriesLabels
                     Size: =16
-                    Width: =536
-                    X: =566
+                    Width: =421
+                    X: =680
                     Y: =134
                     ZIndex: =4
 

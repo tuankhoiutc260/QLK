@@ -5875,7 +5875,14 @@
         "DisplayMode",
         "ZIndex",
         "Size",
-        "BorderThickness",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "BorderThickness",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
@@ -5889,6 +5896,14 @@
           "AutoRuleBindingEnabled": false,
           "AutoRuleBindingString": "",
           "InvariantPropertyName": "ShowLabels",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "false",
+          "InvariantPropertyName": "OnSelect",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         }
@@ -6010,6 +6025,11 @@
         {
           "Category": "Design",
           "PropertyName": "ShowLabels",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Behavior",
+          "PropertyName": "OnSelect",
           "RuleProviderType": "Unknown"
         }
       ],

@@ -397,8 +397,10 @@ KiemKho As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =69
             HoverFill: =RGBA(187, 221, 140, 0.4)
-            OnSelect: |
+            OnSelect: |-
                 =Select(Parent);
+                Set(idCheckStock, ThisItem.ID_CheckStock);
+                Set(showTTCS, true)
             PressedFill: =
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
@@ -1052,4 +1054,326 @@ KiemKho As screen:
         X: =731
         Y: =184
         ZIndex: =63
+
+    Group7 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =90
+
+        Rectangle23 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.43)
+            Height: =768
+            Visible: =showTTCS
+            Width: =1366
+            ZIndex: =64
+
+        TextInput1_28 As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =538
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showTTCS
+            Width: =795
+            X: =377
+            Y: =137
+            ZIndex: =65
+
+        Label17 As label:
+            Align: =Align.Center
+            Color: =RGBA(184, 0, 0, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =25
+            Text: ="Inventory information"
+            Visible: =showTTCS
+            Width: =377
+            X: =598
+            Y: =172
+            ZIndex: =66
+
+        Label19 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="ID Check Stock: "
+            Visible: =showTTCS
+            Width: =168
+            X: =404
+            Y: =233
+            ZIndex: =67
+
+        Label19_2 As label:
+            Font: =Font.'Segoe UI'
+            OnSelect: =
+            Size: =15
+            Text: =idCheckStock
+            Visible: =showTTCS
+            Width: =209
+            X: =573
+            Y: =233
+            ZIndex: =68
+
+        Label19_3 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Time check:"
+            Visible: =showTTCS
+            Width: =133
+            X: =800
+            Y: =233
+            ZIndex: =69
+
+        Label19_4 As label:
+            Font: =Font.'Segoe UI'
+            OnSelect: =
+            Size: =15
+            Text: =LookUp(QLK_CheckStock, ID_CheckStock = idCheckStock, Created)
+            Visible: =showTTCS
+            Width: =248
+            X: =933
+            Y: =233
+            ZIndex: =70
+
+        Label19_5 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Inventory checker:"
+            Visible: =showTTCS
+            Width: =206
+            X: =411
+            Y: =283
+            ZIndex: =71
+
+        Label19_6 As label:
+            Font: =Font.'Segoe UI'
+            OnSelect: =
+            Size: =15
+            Text: =LookUp(QLK_CheckStock, ID_CheckStock = idCheckStock, Checker)
+            Visible: =showTTCS
+            Width: =359
+            X: =607
+            Y: =283
+            ZIndex: =72
+
+        Label19_7 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Product:"
+            Visible: =showTTCS
+            Width: =196
+            X: =411
+            Y: =331
+            ZIndex: =73
+
+        Label19_8 As label:
+            Font: =Font.'Segoe UI'
+            OnSelect: =
+            Size: =15
+            Text: =LookUp(QLK_Product, IDProduct = LookUp(QLK_CheckStock, ID_CheckStock = idCheckStock, ID_ProductCS), Name)
+            Visible: =showTTCS
+            Width: =288
+            X: =543
+            Y: =332
+            ZIndex: =74
+
+        Label19_9 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Location:"
+            Visible: =showTTCS
+            Width: =196
+            X: =411
+            Y: =379
+            ZIndex: =75
+
+        Label19_10 As label:
+            Font: =Font.'Segoe UI'
+            OnSelect: =
+            Size: =15
+            Text: =LookUp(QLK_CheckStock, ID_CheckStock = idCheckStock, IDZoneCS)
+            Visible: =showTTCS
+            Width: =264
+            X: =608
+            Y: =375
+            ZIndex: =76
+
+        Label19_11 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Quantity of system:"
+            Visible: =showTTCS
+            Width: =206
+            X: =411
+            Y: =426
+            ZIndex: =77
+
+        Label19_12 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            OnSelect: =
+            Size: =15
+            Text: =LookUp(QLK_CheckStock, ID_CheckStock = idCheckStock, QuantityInZone)
+            Visible: =showTTCS
+            Width: =93
+            X: =614
+            Y: =424
+            ZIndex: =78
+
+        Label19_13 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Real Quantity:"
+            Visible: =showTTCS
+            Width: =206
+            X: =411
+            Y: =471
+            ZIndex: =79
+
+        Label19_14 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            OnSelect: =
+            Size: =15
+            Text: =LookUp(QLK_CheckStock, ID_CheckStock = idCheckStock, RealQuantity)
+            Visible: =showTTCS
+            Width: =90
+            X: =617
+            Y: =470
+            ZIndex: =80
+
+        Label19_15 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Price: "
+            Visible: =showTTCS
+            Width: =106
+            X: =782
+            Y: =332
+            ZIndex: =81
+
+        Label19_16 As label:
+            Font: =Font.'Segoe UI'
+            OnSelect: =
+            Size: =15
+            Text: =LookUp(QLK_Product, IDProduct = LookUp(QLK_CheckStock, ID_CheckStock = idCheckStock, ID_ProductCS), InputPrice)
+            Visible: =showTTCS
+            Width: =113
+            X: =864
+            Y: =332
+            ZIndex: =82
+
+        Label19_17 As label:
+            Font: =Font.'Segoe UI'
+            OnSelect: =
+            Size: =15
+            Text: ="VnĐ"
+            Visible: =showTTCS
+            Width: =113
+            X: =972
+            Y: =331
+            ZIndex: =83
+
+        Label19_18 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Oscillate Quantity: "
+            Visible: =showTTCS
+            Width: =206
+            X: =411
+            Y: =517
+            ZIndex: =84
+
+        Label19_19 As label:
+            Font: =Font.'Segoe UI'
+            OnSelect: =
+            Size: =15
+            Text: =LookUp(QLK_CheckStock, ID_CheckStock = idCheckStock, OscillateQuantity)
+            Visible: =showTTCS
+            Width: =90
+            X: =637
+            Y: =517
+            ZIndex: =85
+
+        Label19_20 As label:
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Size: =15
+            Text: |-
+                ="Oscillate Price: "
+            Visible: =showTTCS
+            Width: =206
+            X: =411
+            Y: =557
+            ZIndex: =86
+
+        Label19_21 As label:
+            Font: =Font.'Segoe UI'
+            OnSelect: =
+            Size: =15
+            Text: =LookUp(QLK_CheckStock, ID_CheckStock = idCheckStock, OscillatePrice) & " VnĐ"
+            Visible: =showTTCS
+            Width: =163
+            X: =637
+            Y: =557
+            ZIndex: =87
+
+        Image11 As image:
+            BorderThickness: =2
+            Height: =209
+            Image: =LookUp(QLK_Product, IDProduct = LookUp(QLK_CheckStock, ID_CheckStock = idCheckStock, ID_ProductCS), Image)
+            RadiusBottomLeft: =020
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showTTCS
+            Width: =297
+            X: =842
+            Y: =388
+            ZIndex: =88
+
+        btn_PendingList_DuyetDatHang_19 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: =Set(showTTCS, false)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="Cancel"
+            Visible: =showTTCS
+            Width: =156
+            X: =942
+            Y: =618
+            ZIndex: =89
 
