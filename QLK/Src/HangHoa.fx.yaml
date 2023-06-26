@@ -445,6 +445,7 @@ HangHoa As screen:
 
         lbl_DayOver As label:
             Align: =Align.Center
+            Color: =If(Value(lbl_DayOver.Text) <= 10, RGBA(255,0,0,100))
             Height: =71
             OnSelect: =Select(Parent)
             Text: =Round((ThisItem.QuantityInStock+ThisItem.Quantity)/(Sum(Filter(QLK_ExportFormInformation, IDProduct = ThisItem.IDProduct && (DateValue(Now()) - DateValue(Created)) <= 10), Quantity)/10),0)
