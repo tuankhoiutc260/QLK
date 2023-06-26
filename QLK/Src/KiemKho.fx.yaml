@@ -1198,7 +1198,7 @@ KiemKho As screen:
                 ="Location:"
             Visible: =showTTCS
             Width: =196
-            X: =411
+            X: =436
             Y: =379
             ZIndex: =75
 
@@ -1208,8 +1208,8 @@ KiemKho As screen:
             Size: =15
             Text: =LookUp(QLK_CheckStock, ID_CheckStock = idCheckStock, IDZoneCS)
             Visible: =showTTCS
-            Width: =264
-            X: =608
+            Width: =155
+            X: =633
             Y: =375
             ZIndex: =76
 
@@ -1221,7 +1221,7 @@ KiemKho As screen:
                 ="Quantity of system:"
             Visible: =showTTCS
             Width: =206
-            X: =411
+            X: =436
             Y: =426
             ZIndex: =77
 
@@ -1233,7 +1233,7 @@ KiemKho As screen:
             Text: =LookUp(QLK_CheckStock, ID_CheckStock = idCheckStock, QuantityInZone)
             Visible: =showTTCS
             Width: =93
-            X: =614
+            X: =639
             Y: =424
             ZIndex: =78
 
@@ -1245,7 +1245,7 @@ KiemKho As screen:
                 ="Real Quantity:"
             Visible: =showTTCS
             Width: =206
-            X: =411
+            X: =436
             Y: =471
             ZIndex: =79
 
@@ -1257,7 +1257,7 @@ KiemKho As screen:
             Text: =LookUp(QLK_CheckStock, ID_CheckStock = idCheckStock, RealQuantity)
             Visible: =showTTCS
             Width: =90
-            X: =617
+            X: =642
             Y: =470
             ZIndex: =80
 
@@ -1303,7 +1303,7 @@ KiemKho As screen:
                 ="Oscillate Quantity: "
             Visible: =showTTCS
             Width: =206
-            X: =411
+            X: =436
             Y: =517
             ZIndex: =84
 
@@ -1314,7 +1314,7 @@ KiemKho As screen:
             Text: =LookUp(QLK_CheckStock, ID_CheckStock = idCheckStock, OscillateQuantity)
             Visible: =showTTCS
             Width: =90
-            X: =637
+            X: =662
             Y: =517
             ZIndex: =85
 
@@ -1326,7 +1326,7 @@ KiemKho As screen:
                 ="Oscillate Price: "
             Visible: =showTTCS
             Width: =206
-            X: =411
+            X: =436
             Y: =557
             ZIndex: =86
 
@@ -1337,7 +1337,7 @@ KiemKho As screen:
             Text: =LookUp(QLK_CheckStock, ID_CheckStock = idCheckStock, OscillatePrice) & " VnĐ"
             Visible: =showTTCS
             Width: =163
-            X: =637
+            X: =662
             Y: =557
             ZIndex: =87
 
