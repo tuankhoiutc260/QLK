@@ -1055,6 +1055,7 @@ TrangChu_Admin As screen:
                     OnSelect: |-
                         =
                         Set(IDOrder_HomeAdmin, ThisItem.ID);
+                        Set(StatusOrderApprove, ThisItem.Status);
                         //Set(StatusOfOrder_HomeAdmin, ThisItem.Status);
                         // 1: Order, 2: Import, 3: Export, 4: Pending
                         If(
@@ -1226,7 +1227,27 @@ TrangChu_Admin As screen:
                         OnSelect: =Select(Parent)
                         Size: =8
                         Text: |-
-                            =Text(LookUp(QLK_Product, IDProduct = ThisItem.IDProduct, OutputPrice), "#,###" & " VND")
+                            =If(
+                                IDOrder_HomeAdmin in col_DatasourceOrderRequest_HomeAdmin[@ID],
+                                Text(
+                                    ThisItem.Price,
+                                    "#,###" & " VND"
+                                ),
+                                If(
+                                    IDOrder_HomeAdmin in col_DatasourceImportRequest_HomeAdmin[@ID],
+                                    Text(
+                                        ThisItem.Price,
+                                        "#,###" & " VND"
+                                    ),
+                                    If(
+                                        IDOrder_HomeAdmin in col_DatasourceExportRequest_HomeAdmin[@ID],
+                                        Text(
+                                            ThisItem.Price + 0.1 * ThisItem.Price,
+                                            "#,###" & " VND"
+                                        )
+                                    )
+                                )
+                            )
                         Width: =115
                         X: =123
                         Y: =39
