@@ -2565,7 +2565,7 @@ TrangChu_KeToan As screen:
                                 "devapps@bhk.vn", LookUp(QLK_Account, Gmail = emailLogin, FullName), 
                                 Sum(col_DetailsNewOrder_HomeAccountant, TotalPrice), 
                                 LookUp(QLK_OrderForm, IDOrder = NewIDNewOrder_HomeAccoutant, ID), 
-                                LookUp(QLK_OrderForm, IDOrder = NewIDNewOrder_HomeAccoutant, ID)
+                                LookUp(QLK_OrderForm, IDOrder = NewIDNewOrder_HomeAccoutant, ID), NewIDNewOrder_HomeAccoutant
                             );
                             
                             
