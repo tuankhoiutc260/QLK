@@ -979,7 +979,7 @@ TrangChu_NhapHang_1 As screen:
                         QLK_OrderFormInformation, 
                         LookUp(QLK_OrderFormInformation, IDOrderForm = LookUp(col_ScanOrder_ScanImport, true, Value) && IDProduct_Supplier = T.IDProduct),
                         {
-                            QuantityImport: T.txt_ValueQuantity_cIP_IP2_2,
+                            QuantityImport: Value(T.txt_ValueQuantity_cIP_IP2_2.Text),
                             TotalPriceAfterImport: LookUp(QLK_Product, IDProduct = T.IDProduct, InputPrice) * Value(T.txt_ValueQuantity_cIP_IP2_2.Text)
                         }
                     )
@@ -994,7 +994,7 @@ TrangChu_NhapHang_1 As screen:
                             QLK_ImportFormInformation, 
                             LookUp(QLK_ImportFormInformation, IDImport = LookUp(col_ScanOrder_ScanImport, true, Value) && IDProduct = T.IDProduct),
                             {
-                                QuantityImport: T.txt_ValueQuantity_cIP_IP2_2,
+                                QuantityImport: Value(T.txt_ValueQuantity_cIP_IP2_2.Text),
                                 TotalPriceAfterImport: LookUp(QLK_Product, IDProduct = T.IDProduct, InputPrice) * Value(T.txt_ValueQuantity_cIP_IP2_2.Text)
                             }
                         )
@@ -1243,7 +1243,7 @@ TrangChu_NhapHang_1 As screen:
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =RGBA(127, 235, 117, 1)
         Size: =12
-        Text: ="Log Out"
+        Text: ="Back"
         Width: =175
         X: =53
         Y: =676

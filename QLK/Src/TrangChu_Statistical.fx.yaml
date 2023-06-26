@@ -106,7 +106,7 @@ TrangChu_Statistical As screen:
                     
                     ClearCollect(
                         col_TopProduct_HomeAdmin,      
-                        First(
+                        FirstN(
                             SortByColumns(
                                 AddColumns(
                                     col_SumQuantityProduct, 
@@ -159,7 +159,7 @@ TrangChu_Statistical As screen:
                                         ), "IDImport"
                                     )
                                 ),
-                                "IDProduct", "Quantity"
+                                "IDProduct", "QuantityImport"
                             ), "IDProduct", "ID_Product"
                         )
                     ); 
@@ -184,7 +184,7 @@ TrangChu_Statistical As screen:
                             AddColumns(
                                 col_SumQuantityProduct, 
                                 "TotalQuantity", 
-                                Sum(GroupedItems, Quantity), 
+                                Sum(GroupedItems, QuantityImport), 
                                 "Image",
                                 LookUp(col_Temp, IDProduct = col_SumQuantityProduct[@ID_Product], Image)  
                             ), 
@@ -253,7 +253,7 @@ TrangChu_Statistical As screen:
                                         ), "IDOrder"
                                     )
                                 ),
-                                "IDProduct_Supplier", "Quantity"
+                                "IDProduct_Supplier", "QuantityImport"
                             ), 
                             "IDProduct_Supplier", "ID_Product"
                         )
@@ -274,12 +274,12 @@ TrangChu_Statistical As screen:
                     );
                     
                     ClearCollect(
-                        col_TopProduct_HomeAdmin,      First(
+                        col_TopProduct_HomeAdmin,      FirstN(
                             SortByColumns(
                                 AddColumns(
                                     col_SumQuantityProduct, 
                                     "TotalQuantity", 
-                                    Sum(GroupedItems, Quantity), 
+                                    Sum(GroupedItems, QuantityImport), 
                                     "Image",
                                     LookUp(col_Temp, IDProduct_Supplier = col_SumQuantityProduct[@ID_Product], Image_Pro_x002d_Supplier)  
                                 ),
