@@ -75,7 +75,7 @@
       "optimizedforteamsmeeting": false,
       "packagemodernruntime": false,
       "parallelcodegen": false,
-      "pdffunction": false,
+      "pdffunction": true,
       "powerfxdecimal": false,
       "projectionmapping": true,
       "reactformulabar": false,
@@ -156,6 +156,7 @@
     "DanhSachOrder",
     "ThongKe",
     "KiemKho",
-    "Screen4"
+    "Screen4",
+    "Screen1"
   ]
 }
