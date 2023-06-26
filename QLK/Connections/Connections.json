@@ -1,4 +1,32 @@
 {
+  "106a2774-c3fa-41db-8de3-093acdc2d158": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "aa3b44e2-81ba-424c-b86a-dfb377b310cf"
+        }
+      },
+      "parameterHintsV2": {
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "aa3b44e2-81ba-424c-b86a-dfb377b310cf"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "ExProduct"
+    ],
+    "dependencies": {
+      "shared_onedriveforbusiness": "a242a407-a391-4941-a958-9776306d31f8"
+    },
+    "dependents": [],
+    "id": "106a2774-c3fa-41db-8de3-093acdc2d158"
+  },
   "276c7d45-bfe7-4b38-b653-48308dff6f77": {
     "connectionRef": {
       "apiTier": "Standard",
@@ -174,40 +202,6 @@
     "dependents": [],
     "id": "6a2b44ed-a442-49e7-9f16-fe86d7ee5099"
   },
-  "6d65953e-ad5a-4e70-8f9c-cda0bab33e46": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1636/1.0.1636.3297/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "a242a407-a391-4941-a958-9776306d31f8": {
-          "value": "shared_onedriveforbusiness"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "aa3b44e2-81ba-424c-b86a-dfb377b310cf"
-        }
-      },
-      "parameterHintsV2": {
-        "shared_onedriveforbusiness": {
-          "value": "a242a407-a391-4941-a958-9776306d31f8"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "aa3b44e2-81ba-424c-b86a-dfb377b310cf"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "ExProduct"
-    ],
-    "dependencies": {
-      "shared_onedriveforbusiness": "a242a407-a391-4941-a958-9776306d31f8"
-    },
-    "dependents": [],
-    "id": "6d65953e-ad5a-4e70-8f9c-cda0bab33e46"
-  },
   "90858449-243c-47f9-9670-41b4923c35e9": {
     "connectionRef": {
       "displayName": "Logic flows",
@@ -300,9 +294,9 @@
     "dataSources": [],
     "dependencies": {},
     "dependents": [
-      "6d65953e-ad5a-4e70-8f9c-cda0bab33e46",
       "b246e8f9-3e33-454f-966e-f2360cdfaf27",
-      "4623dd30-3c13-41f6-83ce-e440f8710275"
+      "4623dd30-3c13-41f6-83ce-e440f8710275",
+      "106a2774-c3fa-41db-8de3-093acdc2d158"
     ],
     "id": "a242a407-a391-4941-a958-9776306d31f8"
   },
