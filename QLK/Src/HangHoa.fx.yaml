@@ -83,7 +83,7 @@ HangHoa As screen:
             Set(IDScanSP, Blank());
             Set(IDScanSP, LookUp(ColScanSP, true, Value));
             If(LookUp(QLK_Product, IDProduct = Label43.Text, IDProduct) <> Blank(),Set(showGrpScanSP, true), 
-                Notify("The code is not correct");
+                Set(showThongBaoMSP, true);
                 Set(showGrpScanSP, false)
             )
             
@@ -1927,6 +1927,71 @@ HangHoa As screen:
             X: =1103
             Y: =668
             ZIndex: =78
+
+    Group1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =133
+
+        Rectangle21 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.43)
+            Height: =768
+            Visible: =showThongBaoMSP
+            Width: =1366
+            ZIndex: =129
+
+        TextInput1_27 As text:
+            Default: =
+            DisabledBorderColor: =RGBA(219, 219, 219, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Height: =184
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Visible: =showThongBaoMSP
+            Width: =381
+            X: =578
+            Y: =327
+            ZIndex: =130
+
+        Label7 As label:
+            Align: =Align.Center
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =67
+            Size: =20
+            Text: ="Product code does not exist in stock"
+            Visible: =showThongBaoMSP
+            Width: =318
+            X: =613
+            Y: =361
+            ZIndex: =131
+
+        btn_BelowStockLevel_1 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(237, 237, 237, 1)
+            BorderThickness: =0
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            HoverBorderColor: =RGBA(237, 237, 237, 1)
+            HoverFill: =RGBA(255, 0, 0, 1)
+            OnSelect: =Set(showThongBaoMSP, false)
+            PressedBorderColor: =RGBA(237, 237, 237, 1)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =13
+            Text: ="Cancel"
+            Visible: =showThongBaoMSP
+            Width: =126
+            X: =699
+            Y: =448
+            ZIndex: =132
 
     grpDelete As group:
         Height: =5

@@ -14,6 +14,7 @@ App As appinfo:
         Set(showChamDo, false);
         Set(showgrpProCS, false);
         Set(showgrpCS, false);
+        Set(showThongBaoMSP, false);
         
         Set(showInformationImportInvoiceForm, false);
         Set(showOrderProductForm, false);
