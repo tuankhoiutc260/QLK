@@ -420,8 +420,8 @@ HangHoa As screen:
             OnSelect: =Select(Parent)
             Text: =ThisItem.InputPrice & " Vnđ"
             Width: =143
-            X: =387
-            Y: =10
+            X: =686
+            Y: =13
             ZIndex: =3
 
         lbl_OutputPrice As label:
@@ -450,8 +450,8 @@ HangHoa As screen:
             OnSelect: =Select(Parent)
             Text: =Round((ThisItem.QuantityInStock+ThisItem.Quantity)/(Sum(Filter(QLK_ExportFormInformation, IDProduct = ThisItem.IDProduct && (DateValue(Now()) - DateValue(Created)) <= 10), Quantity)/10),0)
             Width: =101
-            X: =689
-            Y: =13
+            X: =405
+            Y: =10
             ZIndex: =6
 
         lbl_Location As label:
@@ -552,8 +552,8 @@ HangHoa As screen:
         OnSelect: =
         Text: ="Quantity"
         Width: =99
-        X: =531
-        Y: =184
+        X: =504
+        Y: =180
         ZIndex: =29
 
     lbl_OrderedID_DuyetDatHang_1 As label:
@@ -575,8 +575,8 @@ HangHoa As screen:
         OnSelect: =
         Text: ="Input Price"
         Width: =125
-        X: =627
-        Y: =183
+        X: =917
+        Y: =181
         ZIndex: =31
 
     lbl_Status_DuyetDatHang_1 As label:
@@ -639,8 +639,8 @@ HangHoa As screen:
         OnSelect: =
         Text: ="The number of days is over"
         Width: =136
-        X: =905
-        Y: =183
+        X: =621
+        Y: =180
         ZIndex: =37
 
     Label43 As label:
