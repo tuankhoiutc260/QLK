@@ -106,6 +106,7 @@ TrangChu_Statistical As screen:
                     
                     ClearCollect(
                         col_TopProduct_HomeAdmin,      
+                        First(
                             SortByColumns(
                                 AddColumns(
                                     col_SumQuantityProduct, 
@@ -116,7 +117,7 @@ TrangChu_Statistical As screen:
                                 ), 
                             "TotalQuantity",
                             SortOrder.Descending
-                        )    
+                        )    ,5)
                     );
                     
                     Set(maxQuantity, Max(col_TopProduct_HomeAdmin, TotalQuantity));
@@ -177,7 +178,8 @@ TrangChu_Statistical As screen:
                     );
                     
                     ClearCollect(
-                        col_TopProduct_HomeAdmin,      
+                        col_TopProduct_HomeAdmin,     
+                        FirstN( 
                         SortByColumns(
                             AddColumns(
                                 col_SumQuantityProduct, 
@@ -188,7 +190,7 @@ TrangChu_Statistical As screen:
                             ), 
                             "TotalQuantity",
                         SortOrder.Descending
-                        )    
+                        )    ,5)
                     );
                     
                     Set(maxQuantity, Max(col_TopProduct_HomeAdmin, TotalQuantity));
@@ -272,7 +274,7 @@ TrangChu_Statistical As screen:
                     );
                     
                     ClearCollect(
-                        col_TopProduct_HomeAdmin,      
+                        col_TopProduct_HomeAdmin,      First(
                             SortByColumns(
                                 AddColumns(
                                     col_SumQuantityProduct, 
@@ -283,7 +285,7 @@ TrangChu_Statistical As screen:
                                 ),
                                 "TotalQuantity",
                                 SortOrder.Descending
-                            )    
+                            )    ,5)
                     );
                     
                     Set(maxQuantity, Max(col_TopProduct_HomeAdmin, TotalQuantity));
@@ -346,7 +348,7 @@ TrangChu_Statistical As screen:
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =0
-            Visible: =back_Black_HomeAdmin
+            Visible: =
             Width: =1366
             ZIndex: =5
 

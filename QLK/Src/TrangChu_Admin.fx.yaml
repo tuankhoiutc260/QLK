@@ -755,7 +755,7 @@ TrangChu_Admin As screen:
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =0
-            Visible: =back_Black_HomeAdmin
+            Visible: =
             Width: =1366
             ZIndex: =5
 

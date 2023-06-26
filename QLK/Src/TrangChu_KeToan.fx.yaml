@@ -582,56 +582,73 @@ TrangChu_KeToan As screen:
                         Height: =64
                         HoverBorderColor: =RGBA(219, 219, 219, 1)
                         HoverFill: =
-                        OnSelect: |+
+                        OnSelect: |-
                             =
-                            Reset(gal_Ordered_Accountant);
-                            Reset(gal_DetailsOrdered_Accountant);
                             
-                            Refresh(QLK_Product_Supplier);
-                            Refresh(QLK_Product);
+                            Set(IDOrdered_HomeAccountant, ThisItem.ID);
+                            Set(StatsOrder, ThisItem.Status);
                             
-                            Set(colorBtnOrdered_Accountant, Color.Black);
-                            Set(fillBtnOrdered_Accountant, RGBA(0, 0, 0, 0));
-                            Set(colorBtnImport_Accoutant, Color.Black);
-                            Set(fillBtnImport_Accountant, RGBA(0, 0, 0, 0));
-                            Set(colorBtnNewOrder_Accountant, Color.White);
-                            Set(fillBtnNewOrder_Accountant, RGBA(127, 235, 117, 1));
-                            Set(colorBtnExport_Accountant, Color.Black);
-                            Set(fillBtnExport_Accountant, RGBA(0, 0, 0, 0));
-                            
-                            Set(visible_cont_Ordered_HomeAccountant, false);
-                            Set(visible_cont_Import_HomeAccountant, false);
-                            Set(visible_cont_NewOrder_HomeAccountant, true);
-                            Set(visible_cont_Export_HomeAccountant, false);
-                            Set(StatusOfAccountant, 3); // 1: Cac phieu da order, 2: Import phieu moi, 3: Order hang moi
-                            
-                            
-                            // Create collection Product Order not in Warehouse
+                            // --- Reset lại Details Ordered
                             ClearCollect(
-                                col_ProductNewOrder_HomeAccountant, 
-                                RenameColumns(
-                                    ShowColumns(
-                                        Filter(
-                                            QLK_Product_Supplier, 
-                                            !(IDProduct_Supplier in QLK_Product.IDProduct))
-                                        , 
-                                        "IDProduct_Supplier", 
-                                        "Name_Supplier", 
-                                        "Price_Supplier",
-                                        "Image_Pro_x002d_Supplier", 
-                                        "ID_Supplier", 
-                                        "Describe_Pro_x002d_Supplier",
-                                        "ID_TypeOfDevice"
-                                    ), 
-                                    "IDProduct_Supplier", "ID",
-                                    "Name_Supplier", "Name",
-                                    "Price_Supplier", "Price",
-                                    "Image_Pro_x002d_Supplier", "Image",
-                                    "Describe_Pro_x002d_Supplier", "Description"
-                                )
+                                col_DetailsOrdered_HomeAccountant,
+                                If(
+                                    IDOrdered_HomeAccountant in col_DatasourceOrderRequest_HomeAccountant[@ID],
+                                    RenameColumns(
+                                        ShowColumns(
+                                            Filter(
+                                                QLK_OrderFormInformation,
+                                                IDOrderForm = IDOrdered_HomeAccountant
+                                            ),
+                                            "IDOrderForm",
+                                            "IDProduct_Supplier",
+                                            "Quantity",
+                                            "ID_TypeOfDevice",
+                                            "Price",
+                                            "TotalPrice"
+                                        ), 
+                                        "IDOrderForm", "IDOrder",
+                                        "IDProduct_Supplier", "IDProduct"
+                                    ),
+                            
+                                    If(
+                                        IDOrdered_HomeAccountant in col_DatasourceImportRequest_HomeAccountant[@ID],
+                                        RenameColumns(
+                                            ShowColumns(
+                                                Filter(
+                                                    QLK_ImportFormInformation,
+                                                    IDImport = IDOrdered_HomeAccountant
+                                                ),
+                                                "IDImport",
+                                                "IDProduct",
+                                                "Quantity",
+                                                "ID_TypeOfDevice",
+                                                "Price",
+                                                "TotalPrice"
+                                            ), 
+                                            "IDImport", "IDOrder"
+                                        ),
+                            
+                                        If(
+                                            IDOrdered_HomeAccountant in col_DatasourceExportRequest_HomeAccountant[@ID],
+                                            RenameColumns(
+                                                ShowColumns(
+                                                    Filter(
+                                                        QLK_ExportFormInformation,
+                                                        IDExportForm = IDOrdered_HomeAccountant
+                                                    ),
+                                                    "IDExportForm",
+                                                    "IDProduct",
+                                                    "Quantity",
+                                                    "ID_TypeOfDevice",
+                                                    "Price",
+                                                    "TotalPrice"
+                                                ), 
+                                                "IDExportForm", "IDOrder"
+                                            )
+                                        )
+                                    )
+                                )  
                             );
-                            
-                            
                         RadiusBottomLeft: =15
                         RadiusBottomRight: =15
                         RadiusTopLeft: =15
@@ -1829,9 +1846,9 @@ TrangChu_KeToan As screen:
                 Button4_58 As button:
                     BorderColor: =RGBA(127, 235, 117, 1)
                     BorderThickness: =1
-                    Color: =ColorUnPaid_HomeAccountant
+                    Color: =RGBA(127, 235, 117, 1)
                     DisplayMode: =DisplayMode.View
-                    Fill: =FillUnPaid_HomeAccountant
+                    Fill: =RGBA(0, 0, 0, 0)
                     FontWeight: =FontWeight.Bold
                     HoverBorderColor: =RGBA(127, 235, 117, 1)
                     HoverFill: =RGBA(127, 235, 117, 1)
@@ -1983,7 +2000,7 @@ TrangChu_KeToan As screen:
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(127, 235, 117, 1)
                     Size: =12
-                    Text: =If(StatusOrdered_HomeAccountant = 1, "Pending Approval", If(StatusOrdered_HomeAccountant = 2, "Pending Import", If(StatusOrdered_HomeAccountant = 3, "Refused", If(StatusOrdered_HomeAccountant = 4, "Pending for pay", "Finish"))))
+                    Text: =If(StatsOrder = 1, "Pending Approval", If(StatsOrder = 2, "Pending Import", If(StatsOrder = 3, "Refused", If(StatsOrder = 4, "Pending for pay", "Finish"))))
                     Width: =175
                     X: =813
                     Y: =20
