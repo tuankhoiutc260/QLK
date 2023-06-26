@@ -1248,7 +1248,7 @@ SoDoKho As screen:
             LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation, Width) & "x" &
             LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation, Height) & " Cm"
         Visible: =showSetLocation
-        Width: =167
+        Width: =177
         X: =941
         Y: =390
         ZIndex: =115
@@ -1293,7 +1293,7 @@ SoDoKho As screen:
         FontWeight: =FontWeight.Semibold
         Size: =15
         Text: |-
-            ="Maximum number of containers:"
+            ="Quantity can be added:"
         Visible: =showSetLocation
         Width: =329
         X: =494
@@ -1312,7 +1312,7 @@ SoDoKho As screen:
             LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation, Height)),0) - LookUp(QLK_Zone, ID_Zone = drop_Location2.SelectedText.Value, QuantityIsContained)
         Visible: =showSetLocation
         Width: =152
-        X: =809
+        X: =753
         Y: =492
         ZIndex: =117
 
@@ -1336,7 +1336,7 @@ SoDoKho As screen:
                LookUp(QLK_Product, IDProduct = IDProduct_GalProductLocation, Quantity), txt_MaxQuantity.Text)
         Visible: =showSetLocation
         Width: =152
-        X: =807
+        X: =751
         Y: =537
         ZIndex: =119
 
