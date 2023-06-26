@@ -1,10 +1,10 @@
 Screen1 As screen:
 
-    PdfViewer7 As pdfViewer:
+    PdfViewer1 As pdfViewer:
         BorderColor: =RGBA(0, 0, 0, 1)
         Document: =ExportOrdertoPDF
         Fill: =RGBA(0, 0, 0, 0.5)
-        Height: =768
-        Width: =1366
+        X: =40
+        Y: =40
         ZIndex: =1
 

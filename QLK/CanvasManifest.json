@@ -98,7 +98,7 @@
       "zeroalltabindexes": false
     },
     "Author": "",
-    "BindingErrorCount": 28,
+    "BindingErrorCount": 24,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 500,
     "DocumentAppType": "DesktopOrTablet",
@@ -147,9 +147,6 @@
     "TaiKhoan",
     "ThemTaiKhoan",
     "ThongTinTaiKhoan",
-    "TrangChuNhapHang",
-    "NhapHang_4",
-    "NhapHangOrder",
     "SoDoKho",
     "HangHoa",
     "ThietLapGia",

@@ -418,6 +418,7 @@ TrangChu_Statistical As screen:
                         )
                     );
                         
+                    Set(varProductFileLink1,QLK_CreateCSVImport.Run(JSON(col_CSVImport,JSONFormat.IncludeBinaryData)).filelink);Launch(varProductFileLink1)
                     //ClearCollect(col_CSVImportFinish, col_CSVImport);
                         
                 PressedColor: =RGBA(255, 255, 255, 1)

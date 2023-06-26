@@ -676,6 +676,18 @@ TrangChu_KeToan As screen:
                         Y: =31
                         ZIndex: =10
 
+                    Label25 As label:
+                        Align: =Align.Center
+                        Color: =If(ThisItem.Status = 1, Color.Black, If(ThisItem.Status = 2, RGBA(127, 235, 117, 1), If(ThisItem.Status = 3, Color.Red, If(ThisItem.Status = 4, Color.Blue, RGBA(127, 235, 117, 1)))))
+                        OnSelect: =Select(Parent)
+                        Size: =8
+                        Text: =If(ThisItem.Status = 1, "Pending Approval", If(ThisItem.Status = 2, "Pending Import", If(ThisItem.Status = 3, "Refused", If(ThisItem.Status = 4, "Pending for pay", "Finish"))))
+                        Visible: =If(ThisItem.Status = 1, false, true)
+                        Width: =86
+                        X: =565
+                        Y: =28
+                        ZIndex: =11
+
                 btn_PayListOrdered_cOHA1_3 As timer:
                     BorderThickness: =0
                     DisabledBorderColor: =RGBA(166, 166, 166, 1)
@@ -1139,7 +1151,7 @@ TrangChu_KeToan As screen:
                     Size: =12
                     Start: =
                     Text: ="Pay"
-                    Visible: =If(StatusOrdered_HomeAccountant = 4, true, false)
+                    Visible: =If(StatsOrder = 4, true, false)
                     Width: =146
                     X: =828
                     Y: =541
@@ -1847,7 +1859,7 @@ TrangChu_KeToan As screen:
                 Button4_58 As button:
                     BorderColor: =RGBA(127, 235, 117, 1)
                     BorderThickness: =1
-                    Color: =RGBA(127, 235, 117, 1)
+                    Color: =If(StatsOrder = 1,  RGBA(127, 235, 117, 1), If(StatsOrder = 2, RGBA(127, 235, 117, 1), If(StatsOrder = 3, Color.Red, If(StatsOrder = 4, Color.Blue, RGBA(127, 235, 117, 1)))))
                     DisplayMode: =DisplayMode.View
                     Fill: =RGBA(0, 0, 0, 0)
                     FontWeight: =FontWeight.Bold
@@ -2001,7 +2013,8 @@ TrangChu_KeToan As screen:
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(127, 235, 117, 1)
                     Size: =12
-                    Text: =If(StatsOrder = 1, "Pending Approval", If(StatsOrder = 2, "Pending Import", If(StatsOrder = 3, "Refused", If(StatsOrder = 4, "Pending for pay", "Finish"))))
+                    Text: |
+                        =If(StatsOrder = 1, "Pending Approval", If(StatsOrder = 2, "Pending Import", If(StatsOrder = 3, "Refused", If(StatsOrder = 4, "Pending for pay", "Finish"))))
                     Width: =175
                     X: =813
                     Y: =20
@@ -2183,7 +2196,7 @@ TrangChu_KeToan As screen:
                     PressedFill: =RGBA(127, 235, 117, 1)
                     Size: =12
                     Text: ="Print Order"
-                    Visible: =If(StatusOrdered_HomeAccountant = 1, true, false)
+                    Visible: =If(StatsOrder = 2, true, false)
                     Width: =175
                     X: =813
                     Y: =559

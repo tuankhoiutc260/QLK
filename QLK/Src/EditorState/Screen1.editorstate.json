@@ -1,6 +1,6 @@
 {
   "ControlStates": {
-    "PdfViewer7": {
+    "PdfViewer1": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -34,7 +34,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "PdfViewer7",
+      "Name": "PdfViewer1",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [

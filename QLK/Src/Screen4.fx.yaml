@@ -18,29 +18,11 @@ Screen4 As screen:
         Y: =688
         ZIndex: =9
 
-    Button15 As button:
-        OnSelect: |-
-            =Set(ExportOrdertoPDF, PDF(Container1));
-            Navigate(Screen1)
-        Text: ="Button"
-        X: =13
-        Y: =585
-        ZIndex: =12
-
     Container1 As groupContainer.manualLayoutContainer:
         Height: =768
         Width: =992
         X: =188
         ZIndex: =13
-
-        HtmlText1 As htmlViewer:
-            Height: =420
-            HtmlText: |-
-                ="<img src="&"https://bhktechcorp.sharepoint.com/sites/Khoi/_layouts/15/barcodeimagefromitem.aspx?ID=33&list=77ec279f-b72c-4ff2-b1d0-6e2c3fb00d7a"&">"
-            Width: =492
-            X: =229
-            Y: =348
-            ZIndex: =10
 
         Group15 As group:
             Height: =5
@@ -453,4 +435,13 @@ Screen4 As screen:
                 X: =203
                 Y: =45
                 ZIndex: =9
+
+    btnSend As button:
+        OnSelect: |-
+            =Office365Outlook.SendEmailV2("ntkvtv5464@gmail.com", "No", "No", {Attachments: Table({Name: "test.pdf", ContentBytes: PDF(Container1)})})
+        Text: ="Button"
+        Visible: =false
+        X: =13
+        Y: =322
+        ZIndex: =14
 
