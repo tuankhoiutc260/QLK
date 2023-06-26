@@ -1231,3 +1231,21 @@ TrangChu_NhapHang_1 As screen:
         Y: =409
         ZIndex: =54
 
+    Button4_24 As button:
+        BorderColor: =RGBA(127, 235, 117, 1)
+        BorderThickness: =1
+        Color: =RGBA(38, 240, 95, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        HoverBorderColor: =RGBA(127, 235, 117, 1)
+        HoverFill: =RGBA(127, 235, 117, 1)
+        OnSelect: =Back(ScreenTransition.Fade);
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(127, 235, 117, 1)
+        Size: =12
+        Text: ="Log Out"
+        Width: =175
+        X: =53
+        Y: =676
+        ZIndex: =55
+

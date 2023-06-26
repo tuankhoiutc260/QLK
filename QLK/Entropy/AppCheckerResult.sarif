@@ -17886,6 +17886,18 @@
               "message": {
                 "text": "Error occurred running rule app-InefficientDelayLoading."
               }
+            },
+            {
+              "associatedRule": {
+                "id": "app-InefficientDelayLoading",
+                "index": 20
+              },
+              "descriptor": {
+                "id": "app-InefficientDelayLoading"
+              },
+              "message": {
+                "text": "Error occurred running rule app-InefficientDelayLoading."
+              }
             }
           ]
         }
@@ -21263,7 +21275,7 @@
                 },
                 "region": {
                   "charLength": 63,
-                  "charOffset": 1139,
+                  "charOffset": 1121,
                   "snippet": {
                     "text": "CountRows(Filter(QLK_OrderFormInformation, IDOrderForm = T.ID))"
                   }
@@ -21303,7 +21315,7 @@
                 },
                 "region": {
                   "charLength": 61,
-                  "charOffset": 1654,
+                  "charOffset": 1636,
                   "snippet": {
                     "text": "CountRows(Filter(QLK_ImportFormInformation, IDImport = T.ID))"
                   }
@@ -21343,7 +21355,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 2167,
+                  "charOffset": 2149,
                   "snippet": {
                     "text": "CountRows(Filter(QLK_ExportFormInformation, IDExportForm = T.ID))"
                   }
@@ -21383,7 +21395,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 3027,
+                  "charOffset": 3009,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
                   }
@@ -21423,7 +21435,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3025,
+                  "charOffset": 3007,
                   "snippet": {
                     "text": "="
                   }
@@ -21463,7 +21475,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 3741,
+                  "charOffset": 3723,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
                   }
@@ -21503,7 +21515,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 3739,
+                  "charOffset": 3721,
                   "snippet": {
                     "text": "="
                   }
@@ -21543,7 +21555,7 @@
                 },
                 "region": {
                   "charLength": 65,
-                  "charOffset": 4464,
+                  "charOffset": 4446,
                   "snippet": {
                     "text": "LookUp(FirstN(col_DatasourceOrdered_HomeAccountant, 1), true, ID)"
                   }
@@ -21583,7 +21595,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 4462,
+                  "charOffset": 4444,
                   "snippet": {
                     "text": "="
                   }

@@ -1290,7 +1290,7 @@ TrangChu_KeToan As screen:
                             Size: =9
                             Text: =ThisItem.Quantity
                             Width: =40
-                            X: =331
+                            X: =315
                             Y: =17
                             ZIndex: =6
 
@@ -1300,7 +1300,7 @@ TrangChu_KeToan As screen:
                             Size: =7
                             Text: ="x"
                             Width: =40
-                            X: =312
+                            X: =300
                             Y: =17
                             ZIndex: =8
 
@@ -1535,7 +1535,7 @@ TrangChu_KeToan As screen:
                         Refresh(QLK_OrderForm);
                         Refresh(QLK_ImportForm);
                         Refresh(QLK_ExportForm);
-                        Set(StatusOrdered_HomeAccountant, 5);
+                        Set(StatsOrder, 5);
                         
                         Reset(gal_Ordered_Accountant);
                         Reset(gal_DetailsOrdered_Accountant);
