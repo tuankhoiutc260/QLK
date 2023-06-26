@@ -1269,7 +1269,7 @@ KiemKho As screen:
                 ="Price: "
             Visible: =showTTCS
             Width: =106
-            X: =782
+            X: =817
             Y: =332
             ZIndex: =81
 
@@ -1280,7 +1280,7 @@ KiemKho As screen:
             Text: =LookUp(QLK_Product, IDProduct = LookUp(QLK_CheckStock, ID_CheckStock = idCheckStock, ID_ProductCS), InputPrice)
             Visible: =showTTCS
             Width: =113
-            X: =864
+            X: =927
             Y: =332
             ZIndex: =82
 
@@ -1291,7 +1291,7 @@ KiemKho As screen:
             Text: ="VnĐ"
             Visible: =showTTCS
             Width: =113
-            X: =972
+            X: =1035
             Y: =331
             ZIndex: =83
 

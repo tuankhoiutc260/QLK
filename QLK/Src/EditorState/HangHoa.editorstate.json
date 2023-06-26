@@ -11806,7 +11806,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Button7_4",
-      "ParentIndex": 48,
+      "ParentIndex": 46,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -28203,7 +28203,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_DateCreated_DuyetDatHang_1",
-      "ParentIndex": 45,
+      "ParentIndex": 52,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -28485,7 +28485,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_DayOver",
-      "ParentIndex": 5,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -28760,7 +28760,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_InputPrice",
-      "ParentIndex": 7,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -29035,7 +29035,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_Location",
-      "ParentIndex": 6,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -29310,7 +29310,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_NameProduct",
-      "ParentIndex": 4,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -29606,7 +29606,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_OrderedID_DuyetDatHang_1",
-      "ParentIndex": 49,
+      "ParentIndex": 47,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -30184,7 +30184,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_OutputPrice",
-      "ParentIndex": 3,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -33405,7 +33405,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_Status_DuyetDatHang_1",
-      "ParentIndex": 52,
+      "ParentIndex": 51,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -33694,7 +33694,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_TotalPrice_DuyetDatHang_1",
-      "ParentIndex": 47,
+      "ParentIndex": 48,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -33983,7 +33983,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_TotalPrice_DuyetDatHang_2",
-      "ParentIndex": 50,
+      "ParentIndex": 49,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -34272,7 +34272,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_TotalPrice_DuyetDatHang_3",
-      "ParentIndex": 51,
+      "ParentIndex": 50,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -34561,7 +34561,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lbl_TotalPrice_DuyetDatHang_8",
-      "ParentIndex": 46,
+      "ParentIndex": 45,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
