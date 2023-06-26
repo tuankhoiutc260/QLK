@@ -25,7 +25,6 @@
       "{VersionNumber}": "Version number",
       "Author": "Created By",
       "Author#Claims": "Created By Claims",
-      "Barcode_Supplier": "Barcode_Pro-Supplier",
       "ComplianceAssetId": "Compliance Asset Id",
       "Created": "Created",
       "Describe_Pro_x002d_Supplier": "Describe_Pro-Supplier",
@@ -41,6 +40,8 @@
       "Modified": "Modified",
       "Name_Supplier": "Name_Pro-Supplier",
       "OData__ColorTag": "Color Tag",
+      "OData__dlc_BarcodePreview": "Barcode",
+      "OData__dlc_BarcodeValue": "Barcode Value",
       "Price_Supplier": "Price_Pro-Supplier",
       "Title": "Title",
       "Width": "Width"

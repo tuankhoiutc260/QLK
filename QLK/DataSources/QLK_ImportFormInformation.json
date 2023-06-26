@@ -35,6 +35,8 @@
       "IDProduct": "IDProduct",
       "Modified": "Modified",
       "OData__ColorTag": "Color Tag",
+      "OData__dlc_BarcodePreview": "Barcode",
+      "OData__dlc_BarcodeValue": "Barcode Value",
       "Price": "Price",
       "Quantity": "Quantity",
       "QuantityImport": "QuantityImport",

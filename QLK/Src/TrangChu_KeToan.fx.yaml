@@ -587,6 +587,7 @@ TrangChu_KeToan As screen:
                             
                             Set(IDOrdered_HomeAccountant, ThisItem.ID);
                             Set(StatsOrder, ThisItem.Status);
+                            Set(TimeCreate, ThisItem.Created);
                             
                             // --- Reset lại Details Ordered
                             ClearCollect(
@@ -1536,7 +1537,7 @@ TrangChu_KeToan As screen:
                         Refresh(QLK_ImportForm);
                         Refresh(QLK_ExportForm);
                         Set(StatsOrder, 5);
-                        
+                        Set(StatusOrdered_HomeAccountant, 4);
                         Reset(gal_Ordered_Accountant);
                         Reset(gal_DetailsOrdered_Accountant);
                         
@@ -2168,6 +2169,25 @@ TrangChu_KeToan As screen:
                     X: =517
                     Y: =61
                     ZIndex: =14
+
+                Button4_27 As button:
+                    BorderColor: =RGBA(127, 235, 117, 1)
+                    BorderThickness: =1
+                    Color: =RGBA(38, 240, 95, 1)
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FontWeight: =FontWeight.Bold
+                    HoverBorderColor: =RGBA(127, 235, 117, 1)
+                    HoverFill: =RGBA(127, 235, 117, 1)
+                    OnSelect: =Navigate(Screen4)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(127, 235, 117, 1)
+                    Size: =12
+                    Text: ="Print Order"
+                    Visible: =If(StatusOrdered_HomeAccountant = 1, true, false)
+                    Width: =175
+                    X: =813
+                    Y: =559
+                    ZIndex: =16
 
             TextInput8_1 As text:
                 Align: =Align.Center

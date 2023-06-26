@@ -616,7 +616,7 @@ TrangChu_NhapHang_1 As screen:
                                         InputPrice: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier'),
                                         OutputPrice: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier') + 0.1 * LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier'),
                                         Image: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Image_Pro-Supplier'),
-                                        BarCode: T.IDProduct, 
+                                        BarCodex: T.IDProduct, 
                                         Description: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Describe_Pro-Supplier'),
                                         Length: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Length),
                                         Width: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Width),
@@ -816,6 +816,12 @@ TrangChu_NhapHang_1 As screen:
             Y: =35
             ZIndex: =35
 
+        Label20 As label:
+            Text: =LookUp(QLK_Product_Supplier,IDProduct_Supplier = "SAMSUNGMB01", 'Barcode Value')
+            X: =224
+            Y: =259
+            ZIndex: =38
+
     bgr_Black_Success_5 As text:
         Default: =
         DisabledBorderColor: =RGBA(219, 219, 219, 1)
@@ -963,7 +969,7 @@ TrangChu_NhapHang_1 As screen:
                                     InputPrice: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier'),
                                     OutputPrice: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier') + 0.1 * LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Price_Pro-Supplier'),
                                     Image: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Image_Pro-Supplier'),
-                                    BarCode: T.IDProduct, 
+                                    BarCodex: T.IDProduct, 
                                     Description: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, 'Describe_Pro-Supplier'),
                                     Length: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Length),
                                     Width: LookUp(QLK_Product_Supplier, IDProduct_Supplier = T.IDProduct, Width),
